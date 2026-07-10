@@ -1,0 +1,17 @@
+{
+  "name": "naxodev",
+  "description": "Agent skills by naxodev — installable via the skills CLI or as a Claude Code plugin.",
+  "owner": {
+    "name": "Nacho Vazquez",
+    "email": "nacho@naxo.dev"
+  },
+  "plugins": [
+    {
+      "name": "skills",
+      "description": "naxodev's agent skills for Claude Code.",
+      "version": "0.4.0",
+      "source": "./",
+      "author": { "name": "Nacho Vazquez" }
+    }
+  ]
+}

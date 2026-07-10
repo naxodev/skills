@@ -1,0 +1,12 @@
+{
+  "name": "pr-walkthrough-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic scripts for the pr-walkthrough skill (fetch, audio, build).",
+  "dependencies": {
+    "kokoro-js": "^1.2.1",
+    "mermaid": "^11",
+    "shiki": "^3"
+  }
+}
