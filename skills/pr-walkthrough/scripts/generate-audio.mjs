@@ -30,6 +30,15 @@ import { resolve, isAbsolute } from 'node:path';
 const MODEL_ID = 'onnx-community/Kokoro-82M-v1.0-ONNX';
 const DEFAULT_VOICE = 'af_heart';
 
+// Kokoro's context window is 512 tokens and kokoro-js tokenizes with
+// `truncation: true`, so a single generate() call silently drops everything
+// past ~510 phonemes — roughly 28 seconds of speech. A one-paragraph narration
+// blows through that, which is why long clips used to stop mid-sentence.
+// Phonemes run a little under one per character for English prose, so we batch
+// text to a conservative character budget, synthesize each batch separately,
+// and stitch the waveforms back together.
+const CHUNK_CHARS = 350;
+
 function parseArgs(argv) {
   const out = {};
   for (let i = 0; i < argv.length; i++) {
@@ -81,9 +90,12 @@ if (ff.error) skip('ffmpeg not found on PATH');
 if (!/libmp3lame/.test(ff.stdout || '')) skip('ffmpeg lacks the libmp3lame MP3 encoder');
 
 // --- Load kokoro-js (may download the model on first run) --------------------
-let KokoroTTS;
+// Dynamic so a missing install degrades to text-only instead of crashing;
+// chunk-narration.mjs pulls kokoro-js in too, so it loads the same way.
+let KokoroTTS, chunkNarration;
 try {
   ({ KokoroTTS } = await import('kokoro-js'));
+  ({ chunkNarration } = await import('./chunk-narration.mjs'));
 } catch (err) {
   skip(`kokoro-js not installed (${err.message}). Run \`bun install\` in the scripts dir`);
 }
@@ -95,13 +107,16 @@ try {
   skip(`could not load the Kokoro model (${err.message})`);
 }
 
-// Encode a WAV buffer to mono MP3 (~48 kbps) and return a base64 data-URI.
-function wavToMp3DataUri(wavBuffer) {
+// Encode raw mono float32 PCM to MP3 (~48 kbps) and return a base64 data-URI.
+// PCM rather than WAV because the clip is stitched from several generate()
+// calls, and there's no WAV header to rebuild if we hand ffmpeg the samples.
+function pcmToMp3DataUri(pcm, sampleRate) {
   return new Promise((res, rej) => {
     const ffmpeg = spawn(
       'ffmpeg',
-      ['-hide_banner', '-loglevel', 'error', '-i', 'pipe:0',
-       '-ac', '1', '-c:a', 'libmp3lame', '-b:a', '48k', '-f', 'mp3', 'pipe:1'],
+      ['-hide_banner', '-loglevel', 'error',
+       '-f', 'f32le', '-ar', String(sampleRate), '-ac', '1', '-i', 'pipe:0',
+       '-c:a', 'libmp3lame', '-b:a', '48k', '-f', 'mp3', 'pipe:1'],
       { stdio: ['pipe', 'pipe', 'inherit'] }
     );
     const chunks = [];
@@ -113,17 +128,34 @@ function wavToMp3DataUri(wavBuffer) {
       res(`data:audio/mpeg;base64,${b64}`);
     });
     ffmpeg.stdin.on('error', () => {}); // ignore EPIPE if ffmpeg dies early
-    ffmpeg.stdin.end(wavBuffer);
+    ffmpeg.stdin.end(Buffer.from(pcm.buffer, pcm.byteOffset, pcm.byteLength));
   });
 }
 
-// Synthesize one narration string all the way to an MP3 data-URI.
+// Synthesize one narration string all the way to an MP3 data-URI, in as many
+// passes as the text needs to stay inside Kokoro's context window.
 async function clip(text, label) {
-  const audio = await tts.generate(text, { voice });
-  const wav = Buffer.from(audio.toWav());
-  const uri = await wavToMp3DataUri(wav);
+  const parts = [];
+  let sampleRate = 24000;
+  const pieces = chunkNarration(text, CHUNK_CHARS);
+  for (const piece of pieces) {
+    const audio = await tts.generate(piece, { voice });
+    sampleRate = audio.sampling_rate;
+    parts.push(audio.audio);
+  }
+
+  const total = parts.reduce((n, p) => n + p.length, 0);
+  const pcm = new Float32Array(total);
+  let offset = 0;
+  for (const part of parts) {
+    pcm.set(part, offset);
+    offset += part.length;
+  }
+
+  const uri = await pcmToMp3DataUri(pcm, sampleRate);
   const kb = Math.round((uri.length * 3) / 4 / 1024);
-  console.error(`  ${label}: ~${kb} KB`);
+  const seconds = (total / sampleRate).toFixed(1);
+  console.error(`  ${label}: ${seconds}s, ~${kb} KB (${pieces.length} pass(es))`);
   return uri;
 }
 
