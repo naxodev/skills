@@ -24,6 +24,7 @@ Add `-a <agent>` to target a specific agent, e.g. `-a opencode` or `-a claude-co
 | Skill | Description |
 | --- | --- |
 | [`pr-walkthrough`](skills/pr-walkthrough) | Generates a narrative HTML walkthrough of a pull request, with build-time syntax highlighting, palette-themed mermaid diagrams, and optional embedded audio narration. |
+| [`writing-technical-docs`](skills/writing-technical-docs) | Opinionated playbook for writing documentation pages, anchored in the Diátaxis framework — quadrant choice, a how-to template, style rules, and a verification checklist. |
 
 `pr-walkthrough`'s optional audio, diagram, and syntax-highlighting features need dependencies installed once: run `bun install` in `skills/pr-walkthrough/scripts/`. Audio narration also requires `ffmpeg` on `PATH`.
 

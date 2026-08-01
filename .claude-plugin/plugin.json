@@ -1,6 +1,6 @@
 {
   "name": "skills",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "naxodev's agent skills for Claude Code.",
   "author": { "name": "Nacho Vazquez" }
 }
