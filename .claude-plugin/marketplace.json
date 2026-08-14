@@ -9,7 +9,7 @@
     {
       "name": "skills",
       "description": "naxodev's agent skills for Claude Code.",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "source": "./",
       "author": { "name": "Nacho Vazquez" }
     }
