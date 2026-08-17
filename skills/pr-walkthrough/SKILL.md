@@ -1,6 +1,8 @@
 ---
 name: pr-walkthrough
-description: Generates a narrative HTML walkthrough of a pull request, with optional embedded audio narration — an essay covering problem, motivation, trade-offs, alternatives, and file tour. Use when the user wants to tell the story of a PR to a non-reviewer audience, or asks for a walkthrough, explainer, or narrated version of a change. NOT for code review.
+description: Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.
+disable-model-invocation: true
+compatibility: Requires Node.js; run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`.
 ---
 
 # PR Walkthrough
@@ -13,7 +15,7 @@ Produces an essay-shaped HTML walkthrough of a pull request. Output is a story, 
 
 Steps in order. Steps 2 and 3 are what keep the output grounded — run them every time.
 
-**Skill root:** `${CLAUDE_PLUGIN_ROOT}` is Claude Code's plugin root. On other agents (opencode, etc.) it is unset — read `${CLAUDE_PLUGIN_ROOT}/skills/pr-walkthrough` throughout as the directory containing this SKILL.md.
+Relative paths below resolve from the skill root, the directory containing this `SKILL.md`.
 
 ### 1 · Resolve the PR
 
@@ -25,13 +27,17 @@ gh pr view --json number --jq .number
 
 If that fails (no PR for current branch), ask the user.
 
+**Complete when:** the PR number is known; for a small PR, the existing pushback has been offered and the workflow proceeds only if the user insists (or stops for the requested short summary).
+
 ### 2 · Fetch PR data (deterministic)
 
 ```bash
-node ${CLAUDE_PLUGIN_ROOT}/skills/pr-walkthrough/scripts/fetch-pr.mjs <PR#>
+node scripts/fetch-pr.mjs <PR#>
 ```
 
 Prints the path to a JSON dump in `/tmp` containing PR metadata + full diff. Use that path as input for all subagents below.
+
+**Complete when:** the fetch command succeeded and returned a readable JSON dump path.
 
 ### 3 · Dispatch four subagents in parallel
 
@@ -43,6 +49,8 @@ Dispatch all four subagents in parallel — in Claude Code, four `Agent` tool ca
 | **diff-tour** | Walk through each changed file in 2-4 sentences each, in narrative form (not "adds X, removes Y"). Group new vs. modified. Identify the central piece of new logic, not just every line. Return as a table-ready file list with a one-sentence summary per file. Also return, verbatim, the 2-4 most load-bearing hunks of the diff — each trimmed to its essential lines and paired with a short explanation of what to notice — these feed the key-code blocks in the walkthrough. |
 | **tradeoffs** | List documented limitations, edge cases, known gaps. Sources: code comments in the diff matching "limitation", "TODO", "out of scope", "known issue", "gap"; the PR body's own caveats; tests that document weak behavior (e.g. "treats X as Y when we can't tell"). For each, capture the choice AND the reason. |
 | **alternatives** | What other approaches were considered and rejected? Sources: PR body, commit messages on the branch (`gh pr view --json commits`), linked issue text, code comments saying "considered X but". Do not invent. If none are documented, state "none documented" and return. |
+
+**Complete when:** all four named reports returned with the requested evidence and shape, and no undocumented alternatives were invented.
 
 ### 4 · Synthesize the manifest
 
@@ -89,10 +97,12 @@ Code samples and diagrams are supplied as structured `code` / `diagrams` entries
 
 Write the manifest to `/tmp/pr-<N>-manifest.json`.
 
+**Complete when:** the through-line was used, the manifest contains the required grounded sections and fields, and `/tmp/pr-<N>-manifest.json` was written.
+
 ### 5 · Generate narration audio (deterministic)
 
 ```bash
-node ${CLAUDE_PLUGIN_ROOT}/skills/pr-walkthrough/scripts/generate-audio.mjs \
+node scripts/generate-audio.mjs \
   --manifest /tmp/pr-<N>-manifest.json \
   --output /tmp/pr-<N>-audio.json \
   [--voice af_heart]
@@ -102,13 +112,15 @@ Synthesizes each section's `narration` (and `narrationIntro`) with kokoro-js —
 
 - **First run downloads the ~330 MB model** (cached afterward). Later runs load it in ~10–15s and synthesize a few seconds per section.
 - **Graceful fallback:** if kokoro-js isn't installed or ffmpeg is missing, the script prints a warning and exits 0 **without** writing the sidecar. The build then produces the plain text-only HTML. So it's safe to always run this step.
-- One-time setup on a fresh machine: `cd ${CLAUDE_PLUGIN_ROOT}/skills/pr-walkthrough/scripts && bun install` (installs kokoro-js). ffmpeg must be on PATH with libmp3lame.
+- One-time setup on a fresh machine: `cd scripts && bun install` (installs kokoro-js). ffmpeg must be on PATH with libmp3lame.
 - `--voice` overrides the default (`af_heart`); kokoro-js's `tts.list_voices()` prints the options.
+
+**Complete when:** the command exited successfully and either wrote the sidecar or emitted the documented graceful-fallback warning.
 
 ### 6 · Build (deterministic)
 
 ```bash
-node ${CLAUDE_PLUGIN_ROOT}/skills/pr-walkthrough/scripts/build.mjs \
+node scripts/build.mjs \
   --manifest /tmp/pr-<N>-manifest.json \
   --audio /tmp/pr-<N>-audio.json \
   --output ~/Desktop/pr-<N>-walkthrough.html
@@ -120,9 +132,13 @@ When any section contains a `<pre class="mermaid">` block, the build inlines the
 
 `code` entries are syntax-highlighted at build time with Shiki (vitesse themes, follows the light/dark toggle; no client-side JS). If shiki isn't installed (`bun install` covers it), the build warns and emits plain code blocks. Placeholder/entry mismatches exit non-zero with a specific message — fix the manifest and retry.
 
+**Complete when:** the build command exited successfully and the requested self-contained HTML file exists.
+
 ### 7 · Hand off
 
 Tell the user the file path. It's a single self-contained HTML — audio is embedded, so it stays shareable as one file. On macOS, ask before running `open` — they may want to inspect first.
+
+**Complete when:** the user was given the file path, and `open` was run only after explicit consent.
 
 ## When the PR is small
 

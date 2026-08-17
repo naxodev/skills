@@ -45,6 +45,8 @@ AI-written docs.
     how-to and tutorial, ask: does the reader already know the domain? Yes
     → how-to. No → tutorial.
 
+**Complete when:** one quadrant is selected, and mixed reader needs have been split rather than blended into one page.
+
 2.  **Read the API surface before writing.** Hallucinated APIs are the
     dominant failure mode. Before typing a single code example, read:
 
@@ -59,14 +61,20 @@ AI-written docs.
     `{/* VERIFY: ... */}` comment and continue. Never invent a parameter,
     return shape, or error tag from training memory.
 
+**Complete when:** every public symbol and behavior planned for the page is grounded in current source, README, or usage, with unresolved claims marked `VERIFY` instead of invented.
+
 3.  **Apply the quadrant template.** For how-to guides — by far the most
     common request — see [HOW-TO-TEMPLATE.md](HOW-TO-TEMPLATE.md). Tutorials,
     reference, and explanation pages each have a different shape; do not
     use the how-to template for them.
 
+**Complete when:** the draft follows the selected quadrant's structure and uses `HOW-TO-TEMPLATE.md` only for a how-to guide.
+
 4.  **Apply the style rules.** Voice, headings, code blocks, linking, and
     things to omit are all in [STYLE.md](STYLE.md). The AI-specific failure
     modes section is required reading before declaring a page done.
+
+**Complete when:** the applicable `STYLE.md` rules and AI-failure-mode check have been applied to the full draft.
 
 5.  **Verify before claiming complete** (this is non-negotiable):
 
@@ -86,6 +94,8 @@ AI-written docs.
         appear in `src/` exactly as written, it was hallucinated.
 
     Only after all five: mark the task complete.
+
+**Complete when:** all five verification substeps have passed, or any genuinely unavailable external-service check is explicitly reported without being claimed as passed.
 
 ## Anti-patterns (stop and revise if you catch yourself doing these)
 
