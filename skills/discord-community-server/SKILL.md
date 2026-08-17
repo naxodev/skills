@@ -7,12 +7,7 @@ description: Plans, configures, audits, or improves an official Discord communit
 
 Build a product-specific community with least privilege, a durable support boundary, and a verified launch path. Treat Discord as a live collaboration layer, not the permanent record for product work.
 
-Resolve bundled files from the skill root:
-
-- **Claude Code plugin:** `${CLAUDE_PLUGIN_ROOT}/skills/discord-community-server`
-- **Codex, OpenCode, Pi, and other Agent Skills clients:** the directory containing this `SKILL.md`
-
-Call that directory `<skill-root>` below. Read `<skill-root>/REFERENCE.md` before changing a server. Also read `<skill-root>/OPERATIONS.md` when the work includes private cohorts, forums, Server Guide resources, community assets, recurring events, invites, or channel reordering. Copy `<skill-root>/STATE-TEMPLATE.md` to a private project-local operations location when the server will outlive the current session.
+Read [REFERENCE.md](REFERENCE.md) before changing a server. Also read [OPERATIONS.md](OPERATIONS.md) when the work includes private cohorts, forums, Server Guide resources, community assets, recurring events, invites, or channel reordering. Copy [STATE-TEMPLATE.md](STATE-TEMPLATE.md) to a private project-local operations location when the server will outlive the current session.
 
 ## Guardrails
 
@@ -28,7 +23,7 @@ Call that directory `<skill-root>` below. Read `<skill-root>/REFERENCE.md` befor
 - Give bots and roles explicit permissions. Do not grant Discord's `Administrator` permission. Reject any app that requires it.
 - Keep security reports, conduct reports, and actionable product work in durable systems outside Discord.
 
-If a secret reaches logs, chat, a screenshot, a file, or shell output, revoke it first. Then use the matching recovery path in `<skill-root>/REFERENCE.md`: rotate webhook credentials and update their consumer; revoke exposed invites and let a human replace them; rotate account or bot credentials through their human-owned provider. Never inspect the replacement.
+If a secret reaches logs, chat, a screenshot, a file, or shell output, revoke it first. Then use the matching recovery path in [REFERENCE.md](REFERENCE.md): rotate webhook credentials and update their consumer; revoke exposed invites and let a human replace them; rotate account or bot credentials through their human-owned provider. Never inspect the replacement.
 
 ## Workflow
 
@@ -55,7 +50,7 @@ Choose an operating mode:
 
 ### 2. Write the operating plan
 
-Create a private project-local state file from `<skill-root>/STATE-TEMPLATE.md`. Exclude the full file from version control. If the project needs committed state, create a separate sanitized copy containing only public, non-identifying information.
+Create a private project-local state file from [STATE-TEMPLATE.md](STATE-TEMPLATE.md). Exclude the full file from version control. If the project needs committed state, create a separate sanitized copy containing only public, non-identifying information.
 
 Define:
 
@@ -87,7 +82,7 @@ In audit mode, inspect and record each item without changing it. In greenfield o
 5. Configure private staff areas and opt-in sensitive areas.
 6. Test permissions before adding integrations.
 
-Use the role and permission model in `<skill-root>/REFERENCE.md`. For a private cohort, apply the access, category, and read-only channel invariants in `<skill-root>/OPERATIONS.md`.
+Use the role and permission model in [REFERENCE.md](REFERENCE.md). For a private cohort, apply the access, category, and read-only channel invariants in [OPERATIONS.md](OPERATIONS.md).
 
 **Complete when:** in audit mode, every gap is recorded and nothing changed. In greenfield or improvement mode, the approved changes are applied, `@everyone` cannot reach staff or unselected opt-in areas, and no role or bot has `Administrator`.
 
@@ -102,7 +97,7 @@ Prefer a small structure such as:
 
 Rename and split these only when the project's product architecture or observed traffic requires it. Forums, announcement channels, Rules Screening, Onboarding, and Server Guide require Community; enable it before planning those capabilities. When Community stays disabled, use explicit read-only text-channel fallbacks and mark forum/tag behavior not applicable. Use text channels for flowing conversation.
 
-Create tags from real product surfaces, not generic labels. Every feedback-like forum—support, bugs, feedback, or showcase—requires at least one member-selectable purpose, package, or domain tag and keeps workflow-state tags moderator-only. Keep public and confidential feedback paths separate when they serve different audiences. Use the forum invariants and optional defaults in `<skill-root>/OPERATIONS.md`.
+Create tags from real product surfaces, not generic labels. Every feedback-like forum—support, bugs, feedback, or showcase—requires at least one member-selectable purpose, package, or domain tag and keeps workflow-state tags moderator-only. Keep public and confidential feedback paths separate when they serve different audiences. Use the forum invariants and optional defaults in [OPERATIONS.md](OPERATIONS.md).
 
 Make rules, announcements, and automated release channels read-only for members.
 
@@ -120,7 +115,7 @@ When Onboarding is available, it should:
 - Keep voice or sensitive content opt-in
 - Give three concrete starter tasks
 
-For external links, use the read-only backing-channel pattern in `<skill-root>/OPERATIONS.md`. Keep confidential cohort onboarding out of the global Server Guide.
+For external links, use the read-only backing-channel pattern in [OPERATIONS.md](OPERATIONS.md). Keep confidential cohort onboarding out of the global Server Guide.
 
 AutoMod should cover mention spam, suspected spam, abusive language, credential-like strings, and unwanted external Discord invites. Route non-credential alerts to a private moderation channel. Block credential-like strings without sending their matched content to an alert channel. Avoid broad keyword rules that block normal technical discussion.
 
@@ -128,7 +123,7 @@ AutoMod should cover mention spam, suspected spam, abusive language, credential-
 
 ### 6. Add integrations conservatively
 
-Use native Discord moderation before adding moderation bots. Evaluate every app against the checklist in `<skill-root>/REFERENCE.md`. Install an app only when it owns a clear workflow that native features cannot provide.
+Use native Discord moderation before adding moderation bots. Evaluate every app against the checklist in [REFERENCE.md](REFERENCE.md). Install an app only when it owns a clear workflow that native features cannot provide.
 
 For release notifications, prefer a repository webhook limited to release events. Filter to published releases when the provider supports action filters. Keep curated announcements separate from automated release traffic. The human creates, copies, pastes, tests, rotates, and revokes the webhook outside the agent session. Verify only redacted provider state and the resulting non-secret notification.
 
@@ -146,7 +141,7 @@ An empty server feels unfinished. Seed only the community jobs in the approved p
 - One recurring event or office-hours session when the plan includes events and a host exists
 - A short announcement when the plan includes an announcement surface
 
-Build community and event assets from canonical brand sources using `<skill-root>/OPERATIONS.md`. Review each asset before upload, preserve approved raster and vector sources, and verify recurring-event changes on the live series at Discord crop sizes.
+Build community and event assets from canonical brand sources using [OPERATIONS.md](OPERATIONS.md). Review each asset before upload, preserve approved raster and vector sources, and verify recurring-event changes on the live series at Discord crop sizes.
 
 Never seed fake member conversations or fake testimonials.
 
@@ -154,7 +149,7 @@ Never seed fake member conversations or fake testimonials.
 
 ### 8. Verify as a member
 
-Read and run the matrix in `<skill-root>/VERIFICATION.md`. Classify each check before running it:
+Read and run the matrix in [VERIFICATION.md](VERIFICATION.md). Classify each check before running it:
 
 - **Role preview:** channel visibility and static permission shape
 - **Real member:** onboarding, posting, invite, forum, Server Guide, and voice boundaries, performed by a fresh human-operated non-privileged test account with a single-use, short-lived test invite
