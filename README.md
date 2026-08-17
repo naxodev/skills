@@ -29,9 +29,6 @@ Add `-a <agent>` to target a specific agent, e.g. `-a opencode` or `-a claude-co
 
 `pr-walkthrough`'s optional audio, diagram, and syntax-highlighting features need dependencies installed once: run `bun install` in `skills/pr-walkthrough/scripts/`. Audio narration also requires `ffmpeg` on `PATH`.
 
-## Adding a skill
+## Contributing
 
-1. Create `skills/<name>/SKILL.md` with `name` and `description` frontmatter.
-2. Reference any bundled files via `${CLAUDE_PLUGIN_ROOT}/skills/<name>/...` for Claude Code, with a fallback note for other agents (skill root = the directory containing the SKILL.md).
-3. Add a concise user-facing entry to `CHANGELOG.md` under the release version.
-4. Bump the version in both `.claude-plugin/marketplace.json` and `.claude-plugin/plugin.json`.
+Contributors should follow the repository contract in [AGENTS.md](AGENTS.md).
