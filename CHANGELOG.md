@@ -4,6 +4,7 @@ This file records notable user-facing changes to the skills collection.
 
 ## Unreleased
 
+- Replaced remaining Discord sibling `<skill-root>` placeholders with skill-root-relative references.
 - Added explicit plugin catalog metadata and automated validation for skills, strict plugin configuration, and version synchronization.
 - Made `pr-walkthrough` explicitly user-invoked in Claude and Codex, with portable relative resource paths and documented runtime compatibility.
 - Added checkable workflow completion criteria across the skills.

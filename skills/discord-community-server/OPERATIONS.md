@@ -52,7 +52,7 @@ Read this reference for private cohorts, forums, Server Guide resources, communi
 
 - Keep the project's durable systems authoritative for confirmed bugs, releases, and consequential work.
 - Apply recurring-event artwork and event updates to the full series. Verify the live result at Discord crop sizes.
-- Follow the secret-safe webhook procedure in `<skill-root>/REFERENCE.md` after any credential exposure: revoke first, replace, update, test with synthetic data, delete the test message, and remove temporary copies.
+- Follow the secret-safe webhook procedure in [REFERENCE.md](REFERENCE.md) after any credential exposure: revoke first, replace, update, test with synthetic data, delete the test message, and remove temporary copies.
 
 ## Optional defaults
 

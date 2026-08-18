@@ -140,7 +140,7 @@ Private-program boundaries, when applicable:
 
 ## Verification
 
-Use the matrix in `<skill-root>/VERIFICATION.md` from the originating skill. Record every row as passed, failed, not applicable, or untested. Never count untested as passed.
+Use the verification matrix from the originating skill. Record every row as passed, failed, not applicable, or untested. Never count untested as passed.
 
 | Check | Method: role preview / real member / human attestation | Status | Non-secret evidence or untested impact |
 | ----- | ------------------------------------------------------ | ------ | -------------------------------------- |
