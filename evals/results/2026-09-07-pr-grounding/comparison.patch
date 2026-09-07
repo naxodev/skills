@@ -1,0 +1,65 @@
+diff --git a/skills/pr-walkthrough/SKILL.md b/skills/pr-walkthrough/SKILL.md
+index 53cd19a..31837de 100644
+--- a/skills/pr-walkthrough/SKILL.md
++++ b/skills/pr-walkthrough/SKILL.md
+@@ -50,11 +50,36 @@ Dispatch all four subagents in parallel — in Claude Code, four `Agent` tool ca
+ | **tradeoffs** | List documented limitations, edge cases, known gaps. Sources: code comments in the diff matching "limitation", "TODO", "out of scope", "known issue", "gap"; the PR body's own caveats; tests that document weak behavior (e.g. "treats X as Y when we can't tell"). For each, capture the choice AND the reason. |
+ | **alternatives** | What other approaches were considered and rejected? Sources: PR body, commit messages on the branch (`gh pr view --json commits`), linked issue text, code comments saying "considered X but". Do not invent. If none are documented, state "none documented" and return. |
+ 
++Each report must pair its non-trivial claims with a source locator: a JSON field, diff hunk, commit, issue passage, or test. Keep author statements distinct from code observations.
++
+ **Complete when:** all four named reports returned with the requested evidence and shape, and no undocumented alternatives were invented.
+ 
+ ### 4 · Synthesize the manifest
+ 
+-First write the through-line: one sentence naming the single story this PR tells. It appears nowhere in the output — it decides which sections from the STYLE.md arc make the cut and which reports' material gets left behind.
++Before writing prose, save `pr-<N>-claims.md` beside the manifest. Start it with a **before/after comparison** derived from the diff, not the PR description:
++
++1. Reconstruct the changed statements in their old and new execution order. Quote both versions.
++2. For each claimed added operation or cost, record where that operation appears before and after. Compare the same execution path. Equal source counts alone do not prove equal runtime cost, but a moved statement alone does not prove additional work either.
++3. List the paths discussed in the description whose code is absent. Record their implementation and runtime behavior as unknown.
++4. Compare the author's explanation with this reconstruction. Write each agreement or discrepancy explicitly before deciding what the essay can claim.
++
++Then reconcile the reports into a claim ledger:
++
++| Claim | Evidence locator | Status | Wording decision |
++|---|---|---|---|
++| One non-trivial statement | File and hunk, JSON field, or documented result | Observed / reported / inferred / unknown | State, attribute, qualify, or omit |
++
++Use **observed** for behavior established by the shown code or an actual check, **reported** for an author's assertion, **inferred** for a deduction with stated assumptions, and **unknown** for missing evidence. These are evidence categories, not confidence scores.
++
++- Compare both sides of the diff before describing new work, costs, or guarantees. A relocated operation establishes a change in order; a net increase needs separate evidence.
++- When a description and the code disagree, attribute the description and explain what the code establishes. Preserve the discrepancy rather than turning the author's account into a verified fact.
++- For an untouched path mentioned only as follow-up work, report that follow-up. Describe its implementation or failure behavior only when its source or a documented result is available.
++- State the guarantee the shown code establishes. Execution order alone does not prove request success, concurrency safety, or measured performance.
++- Copy commit subjects used in metadata exactly from the supplied material. Use neutral labels for any missing scope, issue, or result.
++
++Every causal, cost, limitation, and guarantee claim that survives synthesis must have a ledger row. Carry the same attribution into the HTML and any narration. Keep the ledger as an evidence artifact rather than adding a table to the essay.
++
++Write the through-line: one sentence naming the single story this PR tells. It appears nowhere in the output — it decides which sections from the STYLE.md arc make the cut and which reports' material gets left behind.
+ 
+ Then combine the four reports into one JSON manifest matching this shape:
+ 
+@@ -97,7 +122,9 @@ Code samples and diagrams are supplied as structured `code` / `diagrams` entries
+ 
+ Write the manifest to `/tmp/pr-<N>-manifest.json`.
+ 
+-**Complete when:** the through-line was used, the manifest contains the required grounded sections and fields, and `/tmp/pr-<N>-manifest.json` was written.
++Audit the saved prose against the comparison before building. For every sentence that asserts a new cost, guaranteed outcome, or behavior of an unseen path, quote the sentence in the ledger and identify its supporting evidence. Rewrite an unsupported sentence as an attributed report or remove it. Recheck the title, subtitle, recap, and narration too; these often reintroduce claims that the main sections qualified.
++
++**Complete when:** the ledger contains the quoted before/after comparison, the prose audit accounts for every cost, guarantee, and unseen-path assertion, conflicting sources remain attributed throughout the manifest and narration, and both files were written.
+ 
+ ### 5 · Generate narration audio (deterministic)
+ 
+@@ -136,9 +163,9 @@ When any section contains a `<pre class="mermaid">` block, the build inlines the
+ 
+ ### 7 · Hand off
+ 
+-Tell the user the file path. It's a single self-contained HTML — audio is embedded, so it stays shareable as one file. On macOS, ask before running `open` — they may want to inspect first.
++Tell the user the HTML and claim-ledger paths. The HTML is self-contained — audio is embedded, so it stays shareable as one file. On macOS, ask before running `open` — they may want to inspect first.
+ 
+-**Complete when:** the user was given the file path, and `open` was run only after explicit consent.
++**Complete when:** the user was given the HTML and claim-ledger paths, and `open` was run only after explicit consent.
+ 
+ ## When the PR is small
+ 

@@ -4,6 +4,14 @@ This file records notable user-facing changes to the skills collection.
 
 ## Unreleased
 
+### Added
+
+- Recorded a nine-run PR walkthrough evidence experiment, including failed candidate patches and per-run findings.
+
+### Changed
+
+- Clarified evaluation isolation, exact skill-version checks, and reporting of skipped workflow steps after observing rubric leakage in an excluded setup run.
+
 ## 0.8.0 - 2026-09-07
 
 ### Added

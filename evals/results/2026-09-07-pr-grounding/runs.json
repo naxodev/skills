@@ -1,0 +1,347 @@
+{
+  "caseId": "pr-grounding",
+  "runs": [
+    {
+      "phase": "baseline",
+      "run": 1,
+      "model": "xai/grok-4.3#high",
+      "revision": "1d50b0fc0bb0c6600ece949a30b7ddd393a0c104",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "skillLines": 145,
+      "seconds": 84.73,
+      "toolCalls": 19,
+      "nativeSubagentCalls": 0,
+      "sections": 6,
+      "ledgerProduced": false,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: The PR body lists two deliberate limitations. Extra clock read on every request We now call Date.now() on every request, even when the token is still valid. The author accepts this cost to avoid the initial failed request. Streaming requests untouched Streaming requests remain on a separate path and need a follow-up. The fix applies only to the non-streaming dispatch path shown above. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "The PR body lists two deliberate limitations. Extra clock read on every request We now call Date.now() on every request, even when the token is still valid. The author accepts this cost to avoid the initial failed request. Streaming requests untouched Streaming requests remain on a separate path and need a follow-up. The fix applies only to the non-streaming dispatch path shown above.",
+      "localEvidence": ".evals/pr-grounding-baseline-isolated-wq4Q6r/run-1",
+      "visibleTranscriptSha256": "bb075749411bd1cf3ae7f39610432287307e189cba796888ff5e9f396128a046"
+    },
+    {
+      "phase": "baseline",
+      "run": 2,
+      "model": "xai/grok-4.3#high",
+      "revision": "1d50b0fc0bb0c6600ece949a30b7ddd393a0c104",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "skillLines": 145,
+      "seconds": 115.639,
+      "toolCalls": 21,
+      "nativeSubagentCalls": 0,
+      "sections": 6,
+      "ledgerProduced": false,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: The change accepts two documented limitations from the PR body. Streaming requests stay on a separate path Streaming requests remain on a separate path and need a follow-up. The standard request path is fixed; the streaming implementation is untouched. Extra clock read An additional Date.now() call occurs on every request. The cost is accepted because it eliminates the initial failed request after expiry. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "The change accepts two documented limitations from the PR body. Streaming requests stay on a separate path Streaming requests remain on a separate path and need a follow-up. The standard request path is fixed; the streaming implementation is untouched. Extra clock read An additional Date.now() call occurs on every request. The cost is accepted because it eliminates the initial failed request after expiry.",
+      "localEvidence": ".evals/pr-grounding-baseline-isolated-wq4Q6r/run-2",
+      "visibleTranscriptSha256": "e70c0a472958d08220d53d3b0b452503c3704bd750f5a479793a4c0a431fd6a2"
+    },
+    {
+      "phase": "baseline",
+      "run": 3,
+      "model": "xai/grok-4.3#high",
+      "revision": "1d50b0fc0bb0c6600ece949a30b7ddd393a0c104",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "skillLines": 145,
+      "seconds": 100.615,
+      "toolCalls": 20,
+      "nativeSubagentCalls": 0,
+      "sections": 6,
+      "ledgerProduced": false,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: The PR records two deliberate limits. Streaming requests stay on their own path Streaming requests remain on a separate path and need a follow-up. One extra clock read on every call The extra clock read is accepted to avoid the initial failed request. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "The PR records two deliberate limits. Streaming requests stay on their own path Streaming requests remain on a separate path and need a follow-up. One extra clock read on every call The extra clock read is accepted to avoid the initial failed request.",
+      "localEvidence": ".evals/pr-grounding-baseline-isolated-wq4Q6r/run-3",
+      "visibleTranscriptSha256": "62280189694c52d3ea2c93bc0cc7d6f4957784eb8825d037d3d13ad8c3007f75"
+    },
+    {
+      "phase": "ledger",
+      "run": 1,
+      "model": "xai/grok-4.3#high",
+      "revision": "90e239dc5d08385c196a24b437d53f25b30e25f4",
+      "skillSha256": "ed299c11e65cef3adbfadfb1975cb28d75fa81aa1c772fb1750ce63111325b5d",
+      "skillLines": 163,
+      "seconds": 138.301,
+      "toolCalls": 20,
+      "nativeSubagentCalls": 0,
+      "sections": 5,
+      "ledgerProduced": true,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: The author records two explicit limits in the PR body. Streaming requests use a separate path Requests that stream data remain on their own code path and receive no change. A follow-up is required to apply the same ordering fix there. An extra clock read on every request Every call now executes Date.now() even when the token is still valid. The author accepts this cost to eliminate the failure on the first post-expiry request. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "The author records two explicit limits in the PR body. Streaming requests use a separate path Requests that stream data remain on their own code path and receive no change. A follow-up is required to apply the same ordering fix there. An extra clock read on every request Every call now executes Date.now() even when the token is still valid. The author accepts this cost to eliminate the failure on the first post-expiry request.",
+      "localEvidence": ".evals/pr-grounding-candidate-isolated-ZCcWUN/run-1",
+      "visibleTranscriptSha256": "5230981266fc7e71d0386f0679daf355ed214a1c085c0b728f5d233d5cffe84a"
+    },
+    {
+      "phase": "ledger",
+      "run": 2,
+      "model": "xai/grok-4.3#high",
+      "revision": "90e239dc5d08385c196a24b437d53f25b30e25f4",
+      "skillSha256": "ed299c11e65cef3adbfadfb1975cb28d75fa81aa1c772fb1750ce63111325b5d",
+      "skillLines": 163,
+      "seconds": 96.221,
+      "toolCalls": 23,
+      "nativeSubagentCalls": 0,
+      "sections": 6,
+      "ledgerProduced": true,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: Streaming path left unchanged The PR body states that streaming requests remain on a separate path and will need a follow-up change. No code for that path was touched. Extra clock read on every call Every request now reads the system clock even when the token is still valid. The author accepted this cost explicitly to avoid the first-request failure mode. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "Streaming path left unchanged The PR body states that streaming requests remain on a separate path and will need a follow-up change. No code for that path was touched. Extra clock read on every call Every request now reads the system clock even when the token is still valid. The author accepted this cost explicitly to avoid the first-request failure mode.",
+      "localEvidence": ".evals/pr-grounding-candidate-isolated-ZCcWUN/run-2",
+      "visibleTranscriptSha256": "ad343a077161b62c05eb31805ad8704de1da10d32b1f92f667af498fbc839bf3"
+    },
+    {
+      "phase": "ledger",
+      "run": 3,
+      "model": "xai/grok-4.3#high",
+      "revision": "90e239dc5d08385c196a24b437d53f25b30e25f4",
+      "skillSha256": "ed299c11e65cef3adbfadfb1975cb28d75fa81aa1c772fb1750ce63111325b5d",
+      "skillLines": 163,
+      "seconds": 116.596,
+      "toolCalls": 17,
+      "nativeSubagentCalls": 0,
+      "sections": 6,
+      "ledgerProduced": true,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: Streaming requests Streaming requests travel a separate code path and are untouched by this change; the PR body explicitly flags them as requiring a follow-up. Extra clock read Every request now performs an additional Date.now() comparison. The author accepts this cost to remove the initial failed request. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "Streaming requests Streaming requests travel a separate code path and are untouched by this change; the PR body explicitly flags them as requiring a follow-up. Extra clock read Every request now performs an additional Date.now() comparison. The author accepts this cost to remove the initial failed request.",
+      "localEvidence": ".evals/pr-grounding-candidate-isolated-ZCcWUN/run-3",
+      "visibleTranscriptSha256": "f5d3cc65c1c2990a39ca5814265d038eff7c4d62cb4fd16d4aab3b35dbfa1dc3"
+    },
+    {
+      "phase": "comparison",
+      "run": 1,
+      "model": "xai/grok-4.3#high",
+      "revision": "55f8f5b1d4fe9afa51fcfdc3b680bd350cd1ba97",
+      "skillSha256": "6236870bbc6415d1505dd225d47f51b93f1bdf1fb0aa33211d6706ebd57213bd",
+      "skillLines": 172,
+      "seconds": 135.568,
+      "toolCalls": 21,
+      "nativeSubagentCalls": 0,
+      "sections": 6,
+      "ledgerProduced": true,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: The change is deliberately narrow. Two documented limitations remain: Streaming requests unchanged Streaming requests travel a separate code path. They still refresh after dispatch and will need their own follow-up change. The PR body flags this explicitly. Extra clock read on every request Every call now executes Date.now() before sending, even when the token is fresh. The author accepts this cost to eliminate the initial failure case. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "The change is deliberately narrow. Two documented limitations remain: Streaming requests unchanged Streaming requests travel a separate code path. They still refresh after dispatch and will need their own follow-up change. The PR body flags this explicitly. Extra clock read on every request Every call now executes Date.now() before sending, even when the token is fresh. The author accepts this cost to eliminate the initial failure case.",
+      "localEvidence": ".evals/pr-grounding-comparison-isolated-fEl1aU/run-1",
+      "visibleTranscriptSha256": "a60060db87d9731377bcfca38c1610598754fda907df815387c91a36771a55e4"
+    },
+    {
+      "phase": "comparison",
+      "run": 2,
+      "model": "xai/grok-4.3#high",
+      "revision": "55f8f5b1d4fe9afa51fcfdc3b680bd350cd1ba97",
+      "skillSha256": "6236870bbc6415d1505dd225d47f51b93f1bdf1fb0aa33211d6706ebd57213bd",
+      "skillLines": 172,
+      "seconds": 96.54,
+      "toolCalls": 18,
+      "nativeSubagentCalls": 0,
+      "sections": 5,
+      "ledgerProduced": true,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: Streaming requests untouched The PR body records that streaming requests remain on a separate path and need a follow-up. Their refresh timing is unchanged by this diff. Extra clock read on every request The body accepts the additional Date.now() call on every request in exchange for eliminating the initial failure. No measurement of the cost appears in the supplied materials. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "Streaming requests untouched The PR body records that streaming requests remain on a separate path and need a follow-up. Their refresh timing is unchanged by this diff. Extra clock read on every request The body accepts the additional Date.now() call on every request in exchange for eliminating the initial failure. No measurement of the cost appears in the supplied materials.",
+      "localEvidence": ".evals/pr-grounding-comparison-isolated-fEl1aU/run-2",
+      "visibleTranscriptSha256": "70ad1645a10d4d8dee59019f5165ea8a82161a9775fc2808a7bc0da467d5d022"
+    },
+    {
+      "phase": "comparison",
+      "run": 3,
+      "model": "xai/grok-4.3#high",
+      "revision": "55f8f5b1d4fe9afa51fcfdc3b680bd350cd1ba97",
+      "skillSha256": "6236870bbc6415d1505dd225d47f51b93f1bdf1fb0aa33211d6706ebd57213bd",
+      "skillLines": 172,
+      "seconds": 109.311,
+      "toolCalls": 20,
+      "nativeSubagentCalls": 0,
+      "sections": 6,
+      "ledgerProduced": true,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: the explanation identifies refresh-before-send as the intended repair for the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json, trade-offs: Worth saying out loud: the extra Date.now() now executes before every request on this path. Two documented limitations remain: Streaming requests untouched Streaming requests travel a separate code path. The supplied materials record that they still need a follow-up fix; no streaming code appears in the diff. Clock read cost accepted The author explicitly accepts the additional clock read to avoid the initial failed request. The diff confirms the check is now unconditional before send. The prose does not distinguish the author's extra-read claim from relocation of the existing statement in the diff."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the build command and exit 0. work/pr-42-walkthrough.html exists, has section headings, and contains no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: the cost narrative and closing summary repeat the unsupported extra-clock-read claim. Section count alone was not used to fail this criterion because the current small-PR and mandatory-summary instructions conflict."
+        }
+      ],
+      "evidenceExcerpt": "Worth saying out loud: the extra Date.now() now executes before every request on this path. Two documented limitations remain: Streaming requests untouched Streaming requests travel a separate code path. The supplied materials record that they still need a follow-up fix; no streaming code appears in the diff. Clock read cost accepted The author explicitly accepts the additional clock read to avoid the initial failed request. The diff confirms the check is now unconditional before send.",
+      "localEvidence": ".evals/pr-grounding-comparison-isolated-fEl1aU/run-3",
+      "visibleTranscriptSha256": "78121fbdfa0c01a5586b5528124af273f290247783d6ff5286aacdb38b5613bb"
+    }
+  ]
+}
