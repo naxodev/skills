@@ -4,6 +4,25 @@ This file records notable user-facing changes to the skills collection.
 
 ## Unreleased
 
+## 0.8.0 - 2026-09-07
+
+### Added
+
+- Added a downloadable PR walkthrough example, usage prompts, and contributor setup instructions.
+- Added offline skill evaluation cases, isolated fixture preparation, and evidence-based reviewer reports.
+- Added JavaScript type checking, linting, CLI regression tests, and automated catalog and local Markdown link checks to CI.
+
+### Changed
+
+- Made technical documentation evidence and verification fit local APIs, external APIs, conceptual pages, and operational pages.
+- Documented PR walkthrough runtime, GitHub CLI, and subagent requirements.
+
+### Fixed
+
+- Passed PR identifiers directly to GitHub CLI arguments instead of interpreting them through a shell.
+- Removed stale narration before reruns and skipped the audio toolchain for text-only manifests.
+- Preserved dollar-sign replacement patterns in walkthrough text and repaired nested fences in the documentation template.
+
 ## 0.7.0 - 2026-08-18
 
 ### Changed

@@ -47,21 +47,23 @@ AI-written docs.
 
 **Complete when:** one quadrant is selected, and mixed reader needs have been split rather than blended into one page.
 
-2.  **Read the API surface before writing.** Hallucinated APIs are the
-    dominant failure mode. Before typing a single code example, read:
+2.  **Read the evidence before writing.** Match the source to the page:
 
-    - The package's `src/index.ts` (or equivalent barrel). Anything not
-      re-exported is **internal** — do not document it as public.
-    - The signatures, JSDoc, and types of every symbol you mention.
-    - The package README (often the authoritative spec).
-    - Any sibling Understanding / concept page the new page should link to.
-    - At least one real usage site (test, example app, demo).
+    - **Local APIs:** inspect package exports or documented entry points,
+      then the signatures, types, and at least one real usage site. Use
+      the actual layout; public APIs need not live in `src/` or a barrel.
+    - **External APIs:** read the provider's official reference for the
+      version in use. Verify each imported symbol, option, and example.
+    - **Conceptual pages:** read the project's decisions, domain terms,
+      and current behavior. Separate documented reasons from inference.
+    - **Operational pages:** inspect the relevant configuration, scripts,
+      and runbooks. Establish the prerequisites and observable outcome.
 
-    If uncertain about a behavior after this, leave a
-    `{/* VERIFY: ... */}` comment and continue. Never invent a parameter,
-    return shape, or error tag from training memory.
+    Read the project README and relevant sibling pages in every branch.
+    Mark unresolved claims with a `VERIFY` comment in the document's
+    native format, and resolve them before presenting a finished page.
 
-**Complete when:** every public symbol and behavior planned for the page is grounded in current source, README, or usage, with unresolved claims marked `VERIFY` instead of invented.
+**Complete when:** each planned claim has a relevant source, and unresolved claims are marked `VERIFY` rather than stated as fact.
 
 3.  **Apply the quadrant template.** For how-to guides — by far the most
     common request — see [HOW-TO-TEMPLATE.md](HOW-TO-TEMPLATE.md). Tutorials,
@@ -78,24 +80,25 @@ AI-written docs.
 
 5.  **Verify before claiming complete** (this is non-negotiable):
 
-    1.  **Run the project's docs build** (e.g. `nx build docs`,
-        `npm run docs:build`). MDX errors are silent in editors and loud
-        in CI.
-    2.  **Follow the page yourself.** Open a fresh terminal, copy each
-        snippet in order, verify the described outcome happens. If a step
-        needs adapter keys or external services, state that and stop —
-        don't fake it.
-    3.  **Re-read every code snippet against the current source.** Types
-        change.
-    4.  **Check the sidebar.** New pages should appear without manual
-        registration if auto-sidebar is configured; if they don't, fix
-        the config in the same change.
-    5.  **Grep for the symbols you used.** If a function name doesn't
-        appear in `src/` exactly as written, it was hallucinated.
+    1.  **Run the configured docs build and checks.** If none exist,
+        mark the build not applicable and inspect the rendered Markdown
+        or MDX with the available viewer.
+    2.  **Follow procedural examples in order.** Run runnable snippets
+        in a clean context and compare the outcome to the page. For
+        live-service or credential-dependent steps, report the blocked
+        check as untested. Verify independent parts where possible.
+    3.  **Check claims against their sources.** Recheck local examples
+        against current exports and usage, external examples against
+        versioned official docs, and conceptual claims against decisions
+        or observed behavior. Resolve or remove every `VERIFY` marker.
+    4.  **Check navigation and links.** Verify local links and the page's
+        entry point. Check sidebar registration when a sidebar exists;
+        otherwise mark that check not applicable.
 
-    Only after all five: mark the task complete.
+    Report each applicable check as passed, failed, or untested. Use
+    not applicable only when the page or project does not need it.
 
-**Complete when:** all five verification substeps have passed, or any genuinely unavailable external-service check is explicitly reported without being claimed as passed.
+**Complete when:** all applicable checks pass, or the handoff identifies the blocked checks and labels the page a draft. Every not-applicable check has a reason, and the page contains no unresolved factual claim.
 
 ## Anti-patterns (stop and revise if you catch yourself doing these)
 

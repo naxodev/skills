@@ -7,7 +7,7 @@ Docusaurus, Nextra, Mintlify, plain Markdown).
 
 ## The shape
 
-```mdx
+````mdx
 ---
 title: <Imperative task in Title Case>
 description: <One sentence: "How to <do X> with <component>.">
@@ -60,7 +60,7 @@ How to confirm the change took effect (a log line, a test command, a UI cue).
 - [Related how-to](/guides/<area>/<page>)
 - [Reference: <symbol>](/reference/<area>/<symbol>)
 - [Why this works](/understanding/<concept>)
-```
+````
 
 ## Section-by-section guidance
 
@@ -99,7 +99,7 @@ UI cue. This is the single section AI agents most often forget.
 
 The following page (lightly trimmed) is a model how-to in this style:
 
-```mdx
+````mdx
 ---
 title: Use a custom LLM provider
 description: How to swap the Engine's LLM adapter — Gemini, OpenAI, Anthropic, or your own.
@@ -155,7 +155,7 @@ Send a request through the engine and confirm a non-empty
 
 - [Customize the system prompt](/guides/engine/system-prompt)
 - [The Engine](/understanding/engine) — what happens after the adapter returns
-```
+````
 
 Note what the example *omits*: marketing copy, a "Conclusion" section, a
 duplicate code block before each step explaining what the code does, and

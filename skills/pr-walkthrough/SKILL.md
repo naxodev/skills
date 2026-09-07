@@ -2,7 +2,7 @@
 name: pr-walkthrough
 description: Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.
 disable-model-invocation: true
-compatibility: Requires Node.js; run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`.
+compatibility: Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.
 ---
 
 # PR Walkthrough
@@ -111,7 +111,7 @@ node scripts/generate-audio.mjs \
 Synthesizes each section's `narration` (and `narrationIntro`) with kokoro-js — a local, offline neural TTS — and encodes each clip to mono MP3 via ffmpeg, writing a sidecar JSON of base64 data-URIs. Notes:
 
 - **First run downloads the ~330 MB model** (cached afterward). Later runs load it in ~10–15s and synthesize a few seconds per section.
-- **Graceful fallback:** if kokoro-js isn't installed or ffmpeg is missing, the script prints a warning and exits 0 **without** writing the sidecar. The build then produces the plain text-only HTML. So it's safe to always run this step.
+- **Graceful fallback:** if the manifest has no narration, kokoro-js cannot load, or ffmpeg is unavailable, the script prints a warning and exits 0 without a sidecar. It removes any previous sidecar before processing, so a rerun cannot reuse old narration. The build then produces text-only HTML.
 - One-time setup on a fresh machine: `cd scripts && bun install` (installs kokoro-js). ffmpeg must be on PATH with libmp3lame.
 - `--voice` overrides the default (`af_heart`); kokoro-js's `tts.list_voices()` prints the options.
 

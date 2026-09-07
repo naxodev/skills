@@ -23,7 +23,7 @@
  * WITHOUT writing the output file. build.mjs then produces the plain HTML.
  * Genuine bad-input errors (missing manifest, bad flags) still exit non-zero.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { spawn, spawnSync } from 'node:child_process';
 import { resolve, isAbsolute } from 'node:path';
 
@@ -39,7 +39,9 @@ const DEFAULT_VOICE = 'af_heart';
 // and stitch the waveforms back together.
 const CHUNK_CHARS = 350;
 
+/** @param {string[]} argv */
 function parseArgs(argv) {
+  /** @type {Record<string, string>} */
   const out = {};
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i];
@@ -54,6 +56,9 @@ function parseArgs(argv) {
 }
 
 // Hard error: bad input/usage. Exits non-zero so the caller notices.
+/** @param {string} msg
+ * @returns {never}
+ */
 function fail(msg) {
   console.error(`generate-audio: ${msg}`);
   process.exit(2);
@@ -61,11 +66,15 @@ function fail(msg) {
 
 // Soft skip: toolchain unavailable. Warns and exits 0 with no output file so
 // the build degrades to plain HTML.
+/** @param {string} msg
+ * @returns {never}
+ */
 function skip(msg) {
   console.error(`generate-audio: ${msg} — skipping audio, walkthrough will be text-only.`);
   process.exit(0);
 }
 
+/** @param {string} p */
 const abs = (p) => (isAbsolute(p) ? p : resolve(process.cwd(), p));
 
 const args = parseArgs(process.argv.slice(2));
@@ -73,15 +82,24 @@ if (!args.manifest || !args.output) {
   fail('usage: generate-audio.mjs --manifest <path> --output <path> [--voice <id>]');
 }
 const voice = args.voice || DEFAULT_VOICE;
+const outputPath = abs(args.output);
+if (outputPath === abs(args.manifest)) fail('output must differ from manifest');
+// A skipped or failed rerun must not leave narration from an earlier manifest.
+rmSync(outputPath, { force: true });
 
+/** @type {import('./types.js').Manifest} */
 let manifest;
 try {
   manifest = JSON.parse(readFileSync(abs(args.manifest), 'utf8'));
 } catch (err) {
-  fail(`failed to read or parse manifest: ${err.message}`);
+  fail(`failed to read or parse manifest: ${err instanceof Error ? err.message : String(err)}`);
 }
 if (!Array.isArray(manifest.sections) || manifest.sections.length === 0) {
   fail('manifest.sections must be a non-empty array');
+}
+
+if (!manifest.narrationIntro && !manifest.sections.some((section) => section?.narration)) {
+  skip('manifest has no narration');
 }
 
 // --- Preflight: ffmpeg must exist and speak libmp3lame -----------------------
@@ -92,24 +110,33 @@ if (!/libmp3lame/.test(ff.stdout || '')) skip('ffmpeg lacks the libmp3lame MP3 e
 // --- Load kokoro-js (may download the model on first run) --------------------
 // Dynamic so a missing install degrades to text-only instead of crashing;
 // chunk-narration.mjs pulls kokoro-js in too, so it loads the same way.
-let KokoroTTS, chunkNarration;
+let KokoroTTS;
+/** @type {typeof import('./chunk-narration.mjs').chunkNarration} */
+let chunkNarration;
 try {
   ({ KokoroTTS } = await import('kokoro-js'));
   ({ chunkNarration } = await import('./chunk-narration.mjs'));
 } catch (err) {
-  skip(`kokoro-js not installed (${err.message}). Run \`bun install\` in the scripts dir`);
+  skip(`kokoro-js not installed (${err instanceof Error ? err.message : String(err)}). Run \`bun install\` in the scripts dir`);
 }
 
+/** @type {import('kokoro-js').KokoroTTS} */
 let tts;
 try {
   tts = await KokoroTTS.from_pretrained(MODEL_ID, { dtype: 'q8', device: 'cpu' });
 } catch (err) {
-  skip(`could not load the Kokoro model (${err.message})`);
+  skip(`could not load the Kokoro model (${err instanceof Error ? err.message : String(err)})`);
 }
+if (!Object.hasOwn(tts.voices, voice)) fail(`unknown voice: ${voice}`);
+const selectedVoice = /** @type {keyof typeof tts.voices} */ (voice);
 
 // Encode raw mono float32 PCM to MP3 (~48 kbps) and return a base64 data-URI.
 // PCM rather than WAV because the clip is stitched from several generate()
 // calls, and there's no WAV header to rebuild if we hand ffmpeg the samples.
+/** @param {Float32Array} pcm
+ * @param {number} sampleRate
+ * @returns {Promise<string>}
+ */
 function pcmToMp3DataUri(pcm, sampleRate) {
   return new Promise((res, rej) => {
     const ffmpeg = spawn(
@@ -119,6 +146,7 @@ function pcmToMp3DataUri(pcm, sampleRate) {
        '-c:a', 'libmp3lame', '-b:a', '48k', '-f', 'mp3', 'pipe:1'],
       { stdio: ['pipe', 'pipe', 'inherit'] }
     );
+    /** @type {Buffer[]} */
     const chunks = [];
     ffmpeg.stdout.on('data', (c) => chunks.push(c));
     ffmpeg.on('error', rej);
@@ -134,12 +162,15 @@ function pcmToMp3DataUri(pcm, sampleRate) {
 
 // Synthesize one narration string all the way to an MP3 data-URI, in as many
 // passes as the text needs to stay inside Kokoro's context window.
+/** @param {string} text
+ * @param {string} label
+ */
 async function clip(text, label) {
   const parts = [];
   let sampleRate = 24000;
   const pieces = chunkNarration(text, CHUNK_CHARS);
   for (const piece of pieces) {
-    const audio = await tts.generate(piece, { voice });
+    const audio = await tts.generate(piece, { voice: selectedVoice });
     sampleRate = audio.sampling_rate;
     parts.push(audio.audio);
   }
@@ -159,6 +190,7 @@ async function clip(text, label) {
   return uri;
 }
 
+/** @type {{intro: string | null, sections: (string | null)[]}} */
 const result = { intro: null, sections: [] };
 
 if (manifest.narrationIntro && String(manifest.narrationIntro).trim()) {
@@ -176,7 +208,7 @@ for (let i = 0; i < manifest.sections.length; i++) {
   result.sections.push(await clip(String(n).trim(), `section ${i + 1}`));
 }
 
-writeFileSync(abs(args.output), JSON.stringify(result));
+writeFileSync(outputPath, JSON.stringify(result));
 const count = result.sections.filter(Boolean).length + (result.intro ? 1 : 0);
 console.error(`generate-audio: wrote ${count} clip(s) to ${abs(args.output)}`);
 process.stdout.write(abs(args.output) + '\n');

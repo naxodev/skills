@@ -76,7 +76,9 @@ import { createRequire } from 'node:module';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+/** @param {string[]} argv */
 function parseArgs(argv) {
+  /** @type {Record<string, string>} */
   const out = {};
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i];
@@ -92,11 +94,15 @@ function parseArgs(argv) {
   return out;
 }
 
+/** @param {string} msg
+ * @returns {never}
+ */
 function fail(msg) {
   console.error(msg);
   process.exit(2);
 }
 
+/** @param {unknown} s */
 function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -130,13 +136,15 @@ const audioPath = args.audio
     : resolve(process.cwd(), args.audio)
   : null;
 
+/** @type {import('./types.js').Manifest} */
 let manifest;
 try {
   manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 } catch (err) {
-  fail(`failed to read or parse manifest: ${err.message}`);
+  fail(`failed to read or parse manifest: ${err instanceof Error ? err.message : String(err)}`);
 }
 
+/** @type {(keyof import('./types.js').Manifest)[]} */
 const required = ['title', 'eyebrow', 'dek', 'sections'];
 for (const k of required) {
   if (manifest[k] === undefined || manifest[k] === null || manifest[k] === '') {
@@ -155,13 +163,14 @@ if (manifest.sections.length > 11) {
 
 // Optional narration audio sidecar. A read failure degrades to plain HTML
 // rather than aborting the build — the whole point of the graceful fallback.
+/** @type {import('./types.js').AudioSidecar | null} */
 let audio = null;
 if (audioPath) {
   try {
     audio = JSON.parse(readFileSync(audioPath, 'utf8'));
   } catch (err) {
     console.error(
-      `build: could not read audio sidecar (${err.message}) — emitting text-only HTML`
+      `build: could not read audio sidecar (${err instanceof Error ? err.message : String(err)}) — emitting text-only HTML`
     );
     audio = null;
   }
@@ -171,6 +180,7 @@ if (audioPath) {
 // plain-text fallback — same shape as the mermaid handling below. Only
 // attempt the import if some section actually uses it, and only import it
 // once for the whole build.
+/** @type {typeof import('shiki').codeToHtml | null} */
 let codeToHtml = null;
 const needsShiki = manifest.sections.some(
   (s) => s && Array.isArray(s.code) && s.code.length > 0
@@ -190,8 +200,12 @@ if (needsShiki) {
   }
 }
 
-const SHIKI_THEMES = { light: 'vitesse-light', dark: 'vitesse-dark' };
+const SHIKI_THEMES = /** @type {const} */ ({ light: 'vitesse-light', dark: 'vitesse-dark' });
 
+/** @param {import('./types.js').CodeEntry} entry
+ * @param {number} n
+ * @param {number} idx
+ */
 async function renderCodeEntry(entry, n, idx) {
   if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
     fail(`section ${n}: code[${idx}] must be an object with "lang" and "source"`);
@@ -224,6 +238,10 @@ async function renderCodeEntry(entry, n, idx) {
     : pre;
 }
 
+/** @param {string} entry
+ * @param {number} n
+ * @param {number} idx
+ */
 function renderDiagramEntry(entry, n, idx) {
   if (typeof entry !== 'string' || entry.trim() === '') {
     fail(`section ${n}: diagrams[${idx}] must be a non-empty string`);
@@ -236,6 +254,14 @@ function renderDiagramEntry(entry, n, idx) {
 // dangling placeholder or an orphaned array entry must fail loudly (exit 2)
 // rather than silently dropping content or leaving a placeholder literal in
 // the output.
+/** @template T
+ * @param {string} content
+ * @param {T[] | undefined} arr
+ * @param {string} tag
+ * @param {string} fieldName
+ * @param {number} n
+ * @param {(entry: T, section: number, index: number) => string | Promise<string>} render
+ */
 async function expandPlaceholders(content, arr, tag, fieldName, n, render) {
   const entries = Array.isArray(arr) ? arr : [];
   const re = new RegExp(`\\{\\{${tag}:(\\d+)\\}\\}`, 'g');
@@ -479,15 +505,15 @@ const playAll = hasAudio
 
 const template = readFileSync(templatePath, 'utf8');
 const html = template
-  .replaceAll('{{TITLE}}', escapeHtml(manifest.title))
-  .replaceAll('{{EYEBROW}}', escapeHtml(manifest.eyebrow))
-  .replaceAll('{{DEK}}', escapeHtml(manifest.dek))
-  .replaceAll('{{META}}', escapeHtml(manifest.meta ?? ''))
-  .replaceAll('{{PLAYALL}}', playAll)
-  .replaceAll('{{SECTIONS}}', sectionsHtml)
+  .replaceAll('{{TITLE}}', () => escapeHtml(manifest.title))
+  .replaceAll('{{EYEBROW}}', () => escapeHtml(manifest.eyebrow))
+  .replaceAll('{{DEK}}', () => escapeHtml(manifest.dek))
+  .replaceAll('{{META}}', () => escapeHtml(manifest.meta ?? ''))
+  .replaceAll('{{PLAYALL}}', () => playAll)
+  .replaceAll('{{SECTIONS}}', () => sectionsHtml)
   .replaceAll(
     '{{FOOTER}}',
-    escapeHtml(manifest.footer ?? manifest.meta ?? '')
+    () => escapeHtml(manifest.footer ?? manifest.meta ?? '')
   )
   .replaceAll('{{MERMAID}}', () => mermaidInjection);
 

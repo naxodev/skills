@@ -20,4 +20,6 @@ When adding or releasing a skill, synchronize:
 
 After manifest edits, run `claude plugin validate . --strict` and the repository validation script (`bash scripts/validate.sh`).
 
+Before completing a change, run `bun run check`. For instruction or invocation changes, use the relevant cases in [evals/README.md](evals/README.md) and report unrun model evaluations explicitly.
+
 Use `jj` when `.jj/` is present. Do not add AI attribution to commits.

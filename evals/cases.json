@@ -1,0 +1,105 @@
+[
+  {
+    "id": "docs-local-api",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-package"],
+    "prompt": "Write a how-to page for changing the release-label prefix in the supplied package. Read the source and run the example with Bun. Save guide.md in the copied fixture directory and report verification.",
+    "criteria": [
+      { "id": "grounding", "expect": "Uses releaseLabel(version, { prefix }) from the public index.ts and invents no options." },
+      { "id": "execution", "expect": "Runs a working example and records its actual output or assertion result." },
+      { "id": "applicability", "expect": "Marks docs build and sidebar not applicable with reasons; does not demand a src directory." },
+      { "id": "quadrant", "expect": "Produces a task-focused how-to with a verification step." }
+    ]
+  },
+  {
+    "id": "docs-external-api",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/external-api.md"],
+    "prompt": "Draft a how-to for creating a parcel with the supplied fictional provider reference. Treat that file as the official evidence for this offline evaluation. No service or credentials exist. Save guide.md and report verification.",
+    "criteria": [
+      { "id": "contract", "expect": "Uses POST /v2/parcels, destination, weightGrams, and bearer authentication; invents no SDK or retryPolicy field." },
+      { "id": "honesty", "expect": "Reports live execution untested and labels the output a draft rather than claiming a successful request." },
+      { "id": "scope", "expect": "Uses provider evidence rather than looking for a local implementation of the external API." }
+    ]
+  },
+  {
+    "id": "docs-concept",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/operations.md"],
+    "prompt": "Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification.",
+    "criteria": [
+      { "id": "reasoning", "expect": "Explains durable timelines and handover from the decision without inventing retention guarantees or response commitments." },
+      { "id": "quadrant", "expect": "Writes an explanation, not a forced step-by-step API tutorial." },
+      { "id": "applicability", "expect": "Treats code execution, docs build, and sidebar as not applicable with reasons." }
+    ]
+  },
+  {
+    "id": "discord-audit",
+    "kind": "workflow",
+    "skill": "discord-community-server",
+    "fixtures": ["evals/fixtures/discord-audit.md"],
+    "prompt": "Audit this fictional server from the supplied snapshot. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md.",
+    "criteria": [
+      { "id": "read-only", "expect": "Produces an audit with no writes to a live server or claims of applied changes." },
+      { "id": "findings", "expect": "Finds writable announcements, missing required forum tags, and privileged interest-role permissions." },
+      { "id": "evidence", "expect": "Separates the supplied role-preview observation from untested fresh-member checks and unverified current feature labels." },
+      { "id": "fit", "expect": "Uses command execution and build previews as relevant community terms and preserves the durable reporting routes." }
+    ]
+  },
+  {
+    "id": "pr-grounding",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #42. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "causality", "expect": "Explains that refresh moves before send to avoid the first failed request after expiry." },
+      { "id": "evidence", "expect": "Attributes the extra-clock-read claim to the PR body, distinguishes it from the moved check in the diff, and names the streaming follow-up. Invents no rejected alternatives, linked issues, or benchmarks." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML from a manifest and reports the actual file path." },
+      { "id": "proportion", "expect": "Uses the small-PR arc and adds no unsupported story merely to fill sections." }
+    ]
+  },
+  {
+    "id": "route-docs-positive",
+    "kind": "routing",
+    "skill": "writing-technical-docs",
+    "fixtures": [],
+    "prompt": "Improve this README installation guide and verify that its commands work.",
+    "criteria": [{ "id": "selection", "expect": "Selects writing-technical-docs." }]
+  },
+  {
+    "id": "route-docs-negative",
+    "kind": "routing",
+    "skill": null,
+    "fixtures": [],
+    "prompt": "Rename an internal variable in the parser. No documentation changes are needed.",
+    "criteria": [{ "id": "selection", "expect": "Selects none of the catalog skills." }]
+  },
+  {
+    "id": "route-discord-positive",
+    "kind": "routing",
+    "skill": "discord-community-server",
+    "fixtures": [],
+    "prompt": "Audit the roles and onboarding of our official Discord beta community.",
+    "criteria": [{ "id": "selection", "expect": "Selects discord-community-server." }]
+  },
+  {
+    "id": "route-discord-negative",
+    "kind": "routing",
+    "skill": null,
+    "fixtures": [],
+    "prompt": "Fix the JSON parser in our Discord webhook HTTP client. Server configuration is out of scope.",
+    "criteria": [{ "id": "selection", "expect": "Selects none of the catalog skills; a Discord keyword alone is insufficient." }]
+  },
+  {
+    "id": "route-pr-negative",
+    "kind": "routing",
+    "skill": null,
+    "fixtures": [],
+    "prompt": "Review this PR for bugs and report findings inline.",
+    "criteria": [{ "id": "selection", "expect": "Selects none of the catalog skills; pr-walkthrough is explicitly user-invoked and is not a code review." }]
+  }
+]

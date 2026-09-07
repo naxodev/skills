@@ -2,6 +2,7 @@ import { test, expect } from 'bun:test';
 import { chunkNarration } from './chunk-narration.mjs';
 
 const BUDGET = 350;
+/** @param {string} s */
 const words = (s) => s.split(/\s+/).filter(Boolean);
 
 const PARAGRAPH = [
