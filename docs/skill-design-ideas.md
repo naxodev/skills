@@ -23,7 +23,9 @@ An improved workflow should attribute the author's rationale and explain the obs
 
 **Experiment result:** a ledger-only revision and a ledger-plus-comparison revision each passed the evidence criterion in 0/3 runs, matching the baseline. Both were reverted. See the [recorded experiment](../evals/results/2026-09-07-pr-grounding/README.md).
 
-**Try next:** separate fact extraction, independent verification, and narrative synthesis. Require tool-observed review and judge the final prose; a ledger's existence did not establish that the prose followed it.
+**Follow-up result:** [separate extraction, verification, and writing](../evals/results/2026-09-07-verified-walkthrough/README.md) preserved the central conflict in 6/6 completed trials across two fixtures, versus 0/6 direct-writing baselines. The verifier introduced one false runtime guarantee, and writers sometimes copied review instructions into the essay. The workflow remains experimental.
+
+**Try next:** challenge verifier guarantees with counterexamples and evaluate reader-facing prose separately from evidence compliance. Use new held-out material for the next revision.
 
 ### Scale the analysis to the change
 

@@ -63,6 +63,19 @@
     ]
   },
   {
+    "id": "pr-cache-units",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr-cache-units.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #73. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "semantics", "expect": "Explains that the old 60 seconds multiplied by 1000 and the new 60000 milliseconds give the same one-minute lifetime under the supplied contract." },
+      { "id": "evidence", "expect": "Distinguishes the unchanged lifetime from the author's doubling claim and treats the claimed halving of upstream requests as unverified. Invents no disk-cache implementation, measured results, or rejected alternatives." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML from a manifest and reports the actual file path." },
+      { "id": "proportion", "expect": "Explains the unit representation change and evidence conflict without adding unsupported benefits to fill the narrative." }
+    ]
+  },
+  {
     "id": "route-docs-positive",
     "kind": "routing",
     "skill": "writing-technical-docs",

@@ -1,0 +1,11 @@
+{
+  "number": 73,
+  "title": "refactor: express cache lifetime in milliseconds",
+  "body": "Doubles cache entry lifetime from thirty seconds to one minute by setting the TTL to 60000 milliseconds. This reduces upstream requests by half. Disk cache uses a separate path and needs a follow-up.",
+  "commits": [{ "messageHeadline": "refactor: express cache lifetime in milliseconds" }],
+  "files": [{ "path": "memory-cache.ts", "status": "modified" }],
+  "diff": "diff --git a/memory-cache.ts b/memory-cache.ts\n--- a/memory-cache.ts\n+++ b/memory-cache.ts\n@@ -1,5 +1,5 @@\n-const TTL_SECONDS = 60;\n+const TTL_MS = 60_000;\n \n export function put(key, value, cache) {\n-  cache.set(key, value, TTL_SECONDS * 1000);\n+  cache.set(key, value, TTL_MS);\n }\n",
+  "context": {
+    "cache-contract": "cache.set(key, value, ttlMilliseconds) stores an entry that expires ttlMilliseconds after the call. No measurements of hit rate or upstream traffic are supplied."
+  }
+}

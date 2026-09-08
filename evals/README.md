@@ -55,3 +55,6 @@ See [cases.json](cases.json) for prompts and criteria. Run artifacts under `.eva
 When sharing a result, include the case, model, revision, attempts, criterion outcomes, and evidence locations.
 
 - [PR walkthrough evidence experiment](results/2026-09-07-pr-grounding/README.md): baseline and two prompt revisions, three runs each. Neither revision improved the evidence criterion; both were reverted.
+- [Independently verified walkthroughs](results/2026-09-07-verified-walkthrough/README.md): actual extractor, verifier, and writer sessions improved conflict handling on two fixtures, with remaining factual and prose-quality defects.
+
+Use the [three-stage protocol guide](protocols/README.md) to reproduce that experimental workflow.

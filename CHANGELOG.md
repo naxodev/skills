@@ -7,6 +7,7 @@ This file records notable user-facing changes to the skills collection.
 ### Added
 
 - Recorded a nine-run PR walkthrough evidence experiment, including failed candidate patches and per-run findings.
+- Added a cache-unit conflict fixture and a frozen three-stage walkthrough evaluation protocol, with a twelve-trial comparison and recorded factual and prose-quality defects.
 
 ### Changed
 

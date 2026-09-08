@@ -1,0 +1,914 @@
+{
+  "model": "xai/grok-4.3#high",
+  "protocolSha256": "cc6a3e874837ca59c0c0d322a5805031387f6eb2087c5a1509681061d5cf442d",
+  "trials": [
+    {
+      "caseId": "pr-grounding",
+      "mode": "baseline",
+      "run": 1,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "baseline",
+          "sessionID": "ses_f81a87d09ffeIqqOe4zfFZWTrW",
+          "status": "completed",
+          "seconds": 104.02,
+          "toolCalls": 14,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "af88c80a2ab04dcfe9e91570fb318b5c87fc3b7d91c3df8abdd09d5033758363",
+          "localEvidence": ".evals/verified-baseline-pr-grounding-qirasR/run-1/baseline"
+        }
+      ],
+      "totalStageSeconds": 104.02,
+      "sections": 6,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: explains the refresh-before-send change and intended response to the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: The fix moves the expiry check ahead of the send. If the token is stale, refresh it first; only then dispatch the payload. This guarantees the send always uses a fresh token on the happy path, at the cost of one extra clock read on every request. The change is isolated to the shared request helper; streaming requests use a separate code path and are left unchanged. {{CODE:0}} The final prose does not consistently distinguish the author account from the code observation."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/pr-42-walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: unsupported benefits or cost claims are expanded or repeated in the narrative. Section count alone was not used as a failure."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": false
+      },
+      "manifestSha256": "453c64c215eae5e242da9cc6c6211d3dd7de7ed6f3b65c624348405b69d8cd9e",
+      "htmlSha256": "4ef6341f30a650c8ed32d7b942470b37a018864c2ea123b0caade9cc3a808c88"
+    },
+    {
+      "caseId": "pr-grounding",
+      "mode": "baseline",
+      "run": 2,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "baseline",
+          "sessionID": "ses_f81a86fdcfferfORGcAWp4TYKA",
+          "status": "completed",
+          "seconds": 116.164,
+          "toolCalls": 20,
+          "sourceReads": 2,
+          "upstreamReads": 0,
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "666aa5eb2e1d0b7df83fb691b2b375c4138b6edf466f86c9e834d4210d2cf491",
+          "localEvidence": ".evals/verified-baseline-pr-grounding-qirasR/run-2/baseline"
+        }
+      ],
+      "totalStageSeconds": 116.164,
+      "sections": 6,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: explains the refresh-before-send change and intended response to the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: Streaming requests Streaming requests remain on a separate path and need a follow-up. Extra clock read The extra clock read is accepted to avoid the initial failed request. The final prose does not consistently distinguish the author account from the code observation."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/pr-42-walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: unsupported benefits or cost claims are expanded or repeated in the narrative. Section count alone was not used as a failure."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": false
+      },
+      "manifestSha256": "43e82801736db3ae93f664c47c56f909b06512205d749f101d3cb8393a49c261",
+      "htmlSha256": "232d8ef713299e0bdb8afde8a3cfd30f953741fcce148c5186c45a70fa0bd402"
+    },
+    {
+      "caseId": "pr-grounding",
+      "mode": "baseline",
+      "run": 3,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "baseline",
+          "sessionID": "ses_f81a860fdffeLTY3f76Tvb2802",
+          "status": "completed",
+          "seconds": 83.058,
+          "toolCalls": 15,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "1b353f7c0007fc6963cc3d560a793852133875e44e085cfcd62f06a613f92c3f",
+          "localEvidence": ".evals/verified-baseline-pr-grounding-qirasR/run-3/baseline"
+        }
+      ],
+      "totalStageSeconds": 83.058,
+      "sections": 5,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/pr-42-manifest.json: explains the refresh-before-send change and intended response to the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: Streaming requests use a separate code path and still refresh after dispatch; that remains a follow-up. The extra Date.now() call on every request is accepted to prevent the initial failure. The final prose does not consistently distinguish the author account from the code observation."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/pr-42-walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-42-manifest.json: unsupported benefits or cost claims are expanded or repeated in the narrative. Section count alone was not used as a failure."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": false
+      },
+      "manifestSha256": "d2dff18a122737a6c25968bcacbbc7ccb46f75f2c10fa2f459922a7b0ce9a34b",
+      "htmlSha256": "9b148caee20413954a22142adf6a854a285b15d724704deeaaa550251d526a61"
+    },
+    {
+      "caseId": "pr-grounding",
+      "mode": "pipeline",
+      "run": 1,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81a87fb7ffe07qa1oVwsjBYdp",
+          "status": "completed",
+          "seconds": 73.464,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "5a64241f75870f6de36c7a885ff3a1216f7b3b2993a4f5776403b07cec95d9a0",
+          "visibleTranscriptSha256": "3a53c373099b2b60f292128535135be8992f096dc0a33289541b0fc9b59b1412",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-AS1Nz0/run-1/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f81a75d4fffeHA8iSfmo1eBVDx",
+          "status": "completed",
+          "seconds": 43.329,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "5a64241f75870f6de36c7a885ff3a1216f7b3b2993a4f5776403b07cec95d9a0",
+          "outputSha256": "b2b272132adbb526692253e626852df8aecfdb05421950aea6ab18c302d80473",
+          "visibleTranscriptSha256": "b30fa41d8b82d2670d8b49995434dbbfde6748c6093f2f66a6695a9ddd29b440",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-AS1Nz0/run-1/verify"
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f81a6aeb8ffeiuagF3cKyMe1Q2",
+          "status": "completed",
+          "seconds": 95.399,
+          "toolCalls": 21,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "b2b272132adbb526692253e626852df8aecfdb05421950aea6ab18c302d80473",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "0caf6e834175b1e9e2f561b89819330a898828e4aae7e9b3125fb09e2d97bcc8",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-AS1Nz0/run-1/write"
+        }
+      ],
+      "totalStageSeconds": 212.192,
+      "sections": 6,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json: explains the refresh-before-send change and intended response to the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json: The PR body states that streaming requests remain on a separate path and need a follow-up (V4). The caveat on V4 notes that no code, path details, implementation, or follow-up plan for the streaming path is present in the PR object or diff. The clock-read question The PR body states that an extra Date.now() clock read is introduced and accepted as trade-off to avoid the initial failed request (V5). However, the provided diff shows relocation of the existing conditional (containing one Date.now() call) from after to before the send, with no net addition of clock reads visible in the request function. The caveat on V5 preserves the conflict: body wording asserts 'extra' clock read; diff demonstrates move of one conditional. No performance data or measurement of clock read cost is included. Execution order changed in shown path; outcomes under expiry or concurrent calls are not demonstrated by the diff alone. Scope of the diff Per the constraints, the diff is the sole source of code change details; it shows only the request function with the conditional moved; no other functions, the streaming path, client.refresh implementation, or full file context are provided. The move changes execution order of the refresh check relative to send in the visible request function; this is not a guarantee of outcomes without knowledge of refresh side effects, expiry timing, or callers. Code not included in the provided diff or PR object has unknown implementation. The separate streaming request path, if it exists, is not shown and its refresh handling is unknown. The writer must preserve the distinction between the author's reported cause and the observed diff change, and must not treat the relocation as a demonstrated cost increase or performance improvement. The final prose preserves the central source conflict and keeps the absent-path follow-up attributed."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "work/manifest.json: the explanation stays within the code change, source conflict, and recorded follow-up. Internal drafting language is separately flagged as a prose-quality defect."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": true
+      },
+      "manifestSha256": "7619c4b8920a487b46f1909f6aab5a2f4e01cd9a6bdbc63c3d27affbca598696",
+      "htmlSha256": "5bc1299a1f6c88200a4f86d99a91e8e3b03421c58a26bcd10741dc42cf5a72e9"
+    },
+    {
+      "caseId": "pr-grounding",
+      "mode": "pipeline",
+      "run": 3,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81a86a0effe1SycYwy3yOn2A5",
+          "status": "completed",
+          "seconds": 46.328,
+          "toolCalls": 2,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "23a2a3fbfcdbe81443b8b9b9db315ac6cb597288da54cac83739d8bb0f023d89",
+          "visibleTranscriptSha256": "74ea583f6e835026c317d979de87b85da94f08cf204176ed47d6db01ed9c13ee",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-AS1Nz0/run-3/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f81a7b26bffeiHfXFrfSOlmoiB",
+          "status": "completed",
+          "seconds": 82.116,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "23a2a3fbfcdbe81443b8b9b9db315ac6cb597288da54cac83739d8bb0f023d89",
+          "outputSha256": "f8b8366ef41094147465e161b26279aaecac5217746aab60a980fcadf2ba1dde",
+          "visibleTranscriptSha256": "89afeec23491725f287855a64315a4df6200d3d607bc5f692f870d3a1ea3a9cb",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-AS1Nz0/run-3/verify"
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f81a66de6ffeNqWrIralVoDRZS",
+          "status": "completed",
+          "seconds": 70.222,
+          "toolCalls": 9,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "f8b8366ef41094147465e161b26279aaecac5217746aab60a980fcadf2ba1dde",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "5140c5cebf4183ac722fd5a3e22dd0c7e0b778d3ce573d612c8314e3050c8ba7",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-AS1Nz0/run-3/write"
+        }
+      ],
+      "totalStageSeconds": 198.666,
+      "sections": 6,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json: explains the refresh-before-send change and intended response to the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json: The author states that the extra clock read is accepted to avoid the initial failed request, yet the verified diff shows a relocation of the existing single check with no added read (V8). The caveat records this as an unresolved discrepancy between the author's description and the code change; the observation aligns the claim with the actual diff. Streaming requests remain on a separate path and need a follow-up (V5 reported, with the caveat that no details on the separate path are provided and the diff covers only the request function). Constraints note that whether the order change resolves the reported failure in all cases, affects streaming, or carries performance impact cannot be determined from the provided material (no tests or other files present). The final prose preserves the central source conflict and keeps the absent-path follow-up attributed."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/manifest.json: the essay adds the unsupported guarantee that both versions execute exactly one clock read per request; a rejecting-send counterexample disproves it."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": true,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": true
+      },
+      "manifestSha256": "6ffe3ba8ef810887c98d7a8a577322ee53f037ceb4cc6f946fe6c16a43d50f0c",
+      "htmlSha256": "d85219b678b1fbb047567e33ed0f6a14f59e86712f85d37ebdab769743c1f609"
+    },
+    {
+      "caseId": "pr-grounding",
+      "mode": "pipeline",
+      "run": 2,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81a09eb2ffexL4Hcj4RRQk0tF",
+          "status": "completed",
+          "seconds": 44.715,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "7744d039e1690cef590f90b1df67bafb422a991098f035813ce4c44726e7e1c9",
+          "visibleTranscriptSha256": "9d2af5569b282f5b781fc056c47881ef092a1e9b945e3d7a710b4c2ad90b2521",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-8DIH8o/run-2/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f819fed44ffeS7mD66i77MB2RZ",
+          "status": "completed",
+          "seconds": 73.632,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "7744d039e1690cef590f90b1df67bafb422a991098f035813ce4c44726e7e1c9",
+          "outputSha256": "917b311019998994f1a04620bcc922f87d9d57b86d26712ddb14376fb9995ac9",
+          "visibleTranscriptSha256": "e065ce3e2a7ab6f95ee251040c7a4b00a8d3d8d27c16e1a79cf2f4989f25615a",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-8DIH8o/run-2/verify"
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f819ec8d1ffemj2r9utJ7b9W8k",
+          "status": "completed",
+          "seconds": 101.035,
+          "toolCalls": 9,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "917b311019998994f1a04620bcc922f87d9d57b86d26712ddb14376fb9995ac9",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "6683b413b95696ed70b58783a4a0fe06ad2121e9f5633b1c985e0de9d0e869da",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-8DIH8o/run-2/write"
+        }
+      ],
+      "totalStageSeconds": 219.382,
+      "sections": 5,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json: explains the refresh-before-send change and intended response to the reported expiry failure."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json: The PR body reports that streaming requests remain on a separate path and need a follow-up. The diff contains only the non-streaming request function, therefore the streaming implementation is absent from the provided material. The body also states that the extra clock read is accepted to avoid the initial failed request. The diff, however, shows only the relocation of the single existing Date.now() call; no net addition of clock reads is visible in the change. This difference between the author's characterization and the diff itself is preserved as part of the record. The writer is constrained against claiming any net increase in clock reads or any performance effect; the diff demonstrates reordering under identical assumptions. The change consists solely of moving the expiresAt check inside the request function; no additional code paths or files are present. The final prose preserves the central source conflict and keeps the absent-path follow-up attributed."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "work/manifest.json: the explanation stays within the code change, source conflict, and recorded follow-up. Internal drafting language is separately flagged as a prose-quality defect."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": true
+      },
+      "manifestSha256": "27efeb7dc073ebdd81b039f1c0a722034c51609d671b02f83915b1c68166fbbb",
+      "htmlSha256": "c844f26005bfc87d60adc3b12f1790fdb2eda20d409d39f932c4df3d27968944"
+    },
+    {
+      "caseId": "pr-cache-units",
+      "mode": "baseline",
+      "run": 1,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "baseline",
+          "sessionID": "ses_f81a09a4bffe9XDt1ZVh1deHSq",
+          "status": "completed",
+          "seconds": 111.042,
+          "toolCalls": 16,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "fbd095bac3b365aac242c9980e088d80b70efbc20a539ab3db1527bc55174e82",
+          "localEvidence": ".evals/verified-baseline-pr-cache-units-3kHPQK/run-1/baseline"
+        }
+      ],
+      "totalStageSeconds": 111.042,
+      "sections": 6,
+      "criteria": [
+        {
+          "id": "semantics",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: does not consistently establish unchanged lifetime; the text repeats the thirty-second or doubling account without resolving it against the shown old constant."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: The original expression hid the real duration. A reader had to mentally multiply by 1000 to know how long an entry would live. The PR body states the intent was to double the lifetime from thirty seconds to one minute; after the change the value is written directly as 60000. This also reduces the number of upstream requests by half. The context supplied with the PR notes that no hit-rate or traffic measurements were provided, so the benefit is stated qualitatively. The final prose does not consistently distinguish the author account from the code observation."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/pr-73-walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: unsupported benefits or cost claims are expanded or repeated in the narrative. Section count alone was not used as a failure."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": false
+      },
+      "manifestSha256": "3285e87f80b2cb586fb844412530acee4f178935fffde501d37ea3152ea01ce8",
+      "htmlSha256": "94ef270272d3e76b7ed1ce68423a5d96198710852816279ebff4e60467b1c17c"
+    },
+    {
+      "caseId": "pr-cache-units",
+      "mode": "baseline",
+      "run": 2,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "baseline",
+          "sessionID": "ses_f81a08609ffe3BdvSoxBGuoleO",
+          "status": "completed",
+          "seconds": 98.993,
+          "toolCalls": 16,
+          "sourceReads": 2,
+          "upstreamReads": 0,
+          "inputSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "5eeba2ed7c5e238327a542cb9a5cf6aacc39cc95ed531a9f77aefa76a4161377",
+          "localEvidence": ".evals/verified-baseline-pr-cache-units-3kHPQK/run-2/baseline"
+        }
+      ],
+      "totalStageSeconds": 98.993,
+      "sections": 5,
+      "criteria": [
+        {
+          "id": "semantics",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: does not consistently establish unchanged lifetime; the text repeats the thirty-second or doubling account without resolving it against the shown old constant."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: The memory-cache.ts module defined cache entry lifetime as a count of seconds that was then scaled to milliseconds at the call site. The constant TTL_SECONDS = 60 and the * 1000 multiplier were the only place the thirty-second default appeared in source. The final prose does not consistently distinguish the author account from the code observation."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/pr-73-walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: unsupported benefits or cost claims are expanded or repeated in the narrative. Section count alone was not used as a failure."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": false
+      },
+      "manifestSha256": "a06fb671bdefd937247899a02ebc82be161f01b24c7883b5c4eaa72bca9c5527",
+      "htmlSha256": "aa5d3065606ead5ab105b9aff18590c60f6317933aff7ca74a9138cea427ad75"
+    },
+    {
+      "caseId": "pr-cache-units",
+      "mode": "baseline",
+      "run": 3,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "baseline",
+          "sessionID": "ses_f81a07803ffeD7AI0JIWKC45uE",
+          "status": "completed",
+          "seconds": 101.51,
+          "toolCalls": 12,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "f8f2faefa43c08906250fab910c084df114886a1468dc269a9b39f2bfe8dc484",
+          "localEvidence": ".evals/verified-baseline-pr-cache-units-3kHPQK/run-3/baseline"
+        }
+      ],
+      "totalStageSeconds": 101.51,
+      "sections": 6,
+      "criteria": [
+        {
+          "id": "semantics",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: does not consistently establish unchanged lifetime; the text repeats the thirty-second or doubling account without resolving it against the shown old constant."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: The contract for cache.set expects milliseconds, yet nothing in the constant name told you that. A reader could easily assume the 60 was already in the unit the cache wanted and pass it directly, producing a 60-millisecond lifetime instead of 60 seconds. The PR body notes that this change also doubles the lifetime (from a prior 30-second default to 60), but the diff itself only removes the multiplication. The supplied context records that cache.set(key, value, ttlMilliseconds) stores an entry that expires after the supplied milliseconds; no hit-rate measurements are supplied. The final prose does not consistently distinguish the author account from the code observation."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/pr-73-walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/pr-73-manifest.json: unsupported benefits or cost claims are expanded or repeated in the narrative. Section count alone was not used as a failure."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": false
+      },
+      "manifestSha256": "ced58a66041bfb52b32233f0d6708b73b5cdb57b1bd84b14e04d7935f7a8fa2b",
+      "htmlSha256": "dce37dd4da0e38955b828de5c047b0eafefffb32c873865672225e86a2a5900e"
+    },
+    {
+      "caseId": "pr-cache-units",
+      "mode": "pipeline",
+      "run": 2,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81a08ddcffer34y8NkmvaG71t",
+          "status": "completed",
+          "seconds": 54.31,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+          "outputSha256": "56e84f3cbdd1082f831992551af8b49bae50f8914339e3720c69294ffc9333c1",
+          "visibleTranscriptSha256": "a478f35d6782730f769323141e6c7c9a6e8151a816c0f7c5308c85d8c72ab28b",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-qwqZ9F/run-2/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f819fb5f7ffeJXA4R4NfxteOtE",
+          "status": "completed",
+          "seconds": 74.549,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "56e84f3cbdd1082f831992551af8b49bae50f8914339e3720c69294ffc9333c1",
+          "outputSha256": "b1c9e210371b56e69421c5fc31695289df236206c9ea900c593981cc7ef31d38",
+          "visibleTranscriptSha256": "d359db1c3b41fc2a827cf15d6347474ce2f1e7470b9d72c382cb88d59e01a561",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-qwqZ9F/run-2/verify"
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f819e8f06ffejw3ic1sLwVUC4s",
+          "status": "completed",
+          "seconds": 99.779,
+          "toolCalls": 15,
+          "sourceReads": 1,
+          "upstreamReads": 2,
+          "inputSha256": "b1c9e210371b56e69421c5fc31695289df236206c9ea900c593981cc7ef31d38",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "336aba94378dc10e47cce1b60f81cfbe1acbbe28cba20cbebdca61b68c1277c6",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-qwqZ9F/run-2/write"
+        }
+      ],
+      "totalStageSeconds": 228.638,
+      "sections": 5,
+      "criteria": [
+        {
+          "id": "semantics",
+          "result": "pass",
+          "evidence": "work/manifest.json: explicitly reconstructs the old and new TTL argument as 60000 ms and explains unchanged lifetime."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json: The pull-request title is \"refactor: express cache lifetime in milliseconds\" (V9) and the commit headline matches exactly (V10). The author body opens by stating that the change \"Doubles cache entry lifetime from thirty seconds to one minute by setting the TTL to 60000 milliseconds\" (V4). That thirty-second figure conflicts with the diff's prior definition of sixty seconds (V4 caveat). The same body asserts \"This reduces upstream requests by half\" while the context notes that no measurements of hit rate or upstream traffic are supplied (V5, V8). The final prose preserves the central source conflict and keeps the absent-path follow-up attributed."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "work/manifest.json: the explanation stays within the code change, source conflict, and recorded follow-up. Internal drafting language is separately flagged as a prose-quality defect."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": true
+      },
+      "manifestSha256": "b3c116f966ce204b7518fe65f23a834ee05858c23fea394f1746ceca54932b4f",
+      "htmlSha256": "6d83d7591cd41605e154b33d7c9635712303229f9be1f9cd8eabb0d114c1ed64"
+    },
+    {
+      "caseId": "pr-cache-units",
+      "mode": "pipeline",
+      "run": 1,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f8198c207ffeQ6bpbUA1KTEF2Z",
+          "status": "completed",
+          "seconds": 65.854,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+          "outputSha256": "88e328740fe07c9744c2469cc28261e2dfe7c6f50c0f06a6c46fd8516343dca1",
+          "visibleTranscriptSha256": "239c0c7707a7d9cd1f63a5e2293aef64c36e8c119663b1aaacbd26ab6ca29af2",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-ZdCZR0/run-1/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f8197be04ffeF3H4FRoGIRVwIg",
+          "status": "completed",
+          "seconds": 48.206,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "88e328740fe07c9744c2469cc28261e2dfe7c6f50c0f06a6c46fd8516343dca1",
+          "outputSha256": "0469523b821864ea77a07adbe65cb6f6905a6ae945272c7d56cce5b2f89c765a",
+          "visibleTranscriptSha256": "101988f7a590b719bb175402a707bc0ac9f7d76b58b987908831767fa1c6ccf7",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-ZdCZR0/run-1/verify"
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f8196fc7cffeyNLFmnRtPkNwRX",
+          "status": "completed",
+          "seconds": 66.114,
+          "toolCalls": 9,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "0469523b821864ea77a07adbe65cb6f6905a6ae945272c7d56cce5b2f89c765a",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "5877789edacc94bd3f8dbd84c0f6f72b53c3094bbc0955c83fb48a74ec0d2dfa",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-ZdCZR0/run-1/write"
+        }
+      ],
+      "totalStageSeconds": 180.174,
+      "sections": 5,
+      "criteria": [
+        {
+          "id": "semantics",
+          "result": "pass",
+          "evidence": "work/manifest.json: explicitly reconstructs the old and new TTL argument as 60000 ms and explains unchanged lifetime."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json: The PR body states that the edit \"Doubles cache entry lifetime from thirty seconds to one minute by setting the TTL to 60000 milliseconds\" and that \"This reduces upstream requests by half.\" The diff records a prior constant of 60 seconds whose multiplied value already equalled 60000 milliseconds; the new constant is also 60000 and is passed directly, so the value reaching cache.set remains identical. Context notes that no measurements of hit rate or upstream traffic are supplied. The final prose preserves the central source conflict and keeps the absent-path follow-up attributed."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "fail",
+          "evidence": "work/manifest.json: the conclusion claims any future measurement of request reduction needs another modification, which the supplied evidence does not establish."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": true,
+        "reviewerScaffoldingInProse": true
+      },
+      "manifestSha256": "d6e1d7aedbcebb65a3978c0d52544f162a6993755117fc6225a1e09a704ce8d4",
+      "htmlSha256": "5efd059417a22a1649cb25e85c7ed84aae0373e9684ee99f7c1ac7d4219911de"
+    },
+    {
+      "caseId": "pr-cache-units",
+      "mode": "pipeline",
+      "run": 3,
+      "revision": "7c2d9c03ad75d99bdd7c94a91fc366dd580860c1",
+      "sourceSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+      "skillSha256": "47e6c69eb083f3485aea315afee917e94951a685d535340263ecdb0d4eb617d8",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f8195deceffexiDX7mwnXG6vM9",
+          "status": "completed",
+          "seconds": 39.453,
+          "toolCalls": 2,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+          "outputSha256": "e9558e925fd61a45172750fddc549801a984c9b4b20f3621ec75d3329fba2700",
+          "visibleTranscriptSha256": "9635a49d899a9f76dfa51e13de40d2348715b70dc03ff39094741a6391c0ab5f",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-zocohW/run-3/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f8195424bffevvAXrgCcfYZGZc",
+          "status": "completed",
+          "seconds": 56.2,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "e9558e925fd61a45172750fddc549801a984c9b4b20f3621ec75d3329fba2700",
+          "outputSha256": "13cfd5c46d7ed0fa88acc01e002bfc274f749c3f4321b81f56a760ff693f04fd",
+          "visibleTranscriptSha256": "d4008a22bfe2bf96bb70e2f00d3aff269770f5cf19845ca382a53e3bcb5c8edf",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-zocohW/run-3/verify"
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f8194613affeFBHhaKAAKmrSH2",
+          "status": "completed",
+          "seconds": 72.266,
+          "toolCalls": 8,
+          "sourceReads": 1,
+          "upstreamReads": 1,
+          "inputSha256": "13cfd5c46d7ed0fa88acc01e002bfc274f749c3f4321b81f56a760ff693f04fd",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "015eb7059d2685a6ac84b5686c448319f6db6496917927ac66f4eaccbf1b6a47",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-zocohW/run-3/write"
+        }
+      ],
+      "totalStageSeconds": 167.919,
+      "sections": 5,
+      "criteria": [
+        {
+          "id": "semantics",
+          "result": "pass",
+          "evidence": "work/manifest.json: explicitly reconstructs the old and new TTL argument as 60000 ms and explains unchanged lifetime."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json: The PR body states that the change \"Doubles cache entry lifetime from thirty seconds to one minute by setting the TTL to 60000 milliseconds.\" The evidence for the claim is the body text; code reconstruction shows the TTL value passed to cache.set is identical before and after. Attribution to the author statement does not constitute agreement with its accuracy; the stated doubling is contradicted by the unchanged value. The body also asserts \"This reduces upstream requests by half.\" No measurements of hit rate or upstream traffic are supplied, and the TTL passed remains the same, so the reduction claim lacks support from the diff. A final sentence records that \"Disk cache uses a separate path and needs a follow-up.\" The disk cache implementation is absent from the provided diff, leaving its status unknown. The final prose preserves the central source conflict and keeps the absent-path follow-up attributed."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "transcript.md records the builder command and exit 0. work/walkthrough.html contains the final manifest sections and no audio elements."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "work/manifest.json: the explanation stays within the code change, source conflict, and recorded follow-up. Internal drafting language is separately flagged as a prose-quality defect."
+        }
+      ],
+      "supplementaryFindings": {
+        "unqualifiedOneReadPerCallClaim": false,
+        "universalFutureMeasurementClaim": false,
+        "reviewerScaffoldingInProse": false
+      },
+      "manifestSha256": "ee5a91c8d0fefa9581f0a9bb5f14322e8e86679ae7767e6eda1bfdda124d9918",
+      "htmlSha256": "92c45b0dc7ac9fdd3856a63bfdea084a212ea2640a89129dc6c20c1bb35936b9"
+    }
+  ],
+  "excluded": [
+    {
+      "caseId": "pr-grounding",
+      "mode": "pipeline",
+      "run": 2,
+      "reason": "Error: verify session did not succeed",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81a875c0ffezSltJWo5UslnrB",
+          "status": "completed",
+          "seconds": 55.898,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "3938445998397bd1fd8a5309d64a3b662b72acd1b52cafda296a5a2d6b0818ea",
+          "visibleTranscriptSha256": "11713e4c45bde1bdaa9231a0242ade23ec560de7f4972385466da64a85978297",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-AS1Nz0/run-2/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f81a7973fffeIm9uebwA0Dn7ij",
+          "status": "failed",
+          "seconds": 363.646,
+          "toolCalls": 0,
+          "sourceReads": 0,
+          "upstreamReads": 0,
+          "inputSha256": "3938445998397bd1fd8a5309d64a3b662b72acd1b52cafda296a5a2d6b0818ea",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "b816df2b20e68a9d19708a46d7efebe84a4bf990b3b34d42bd6e0f5983935a4f",
+          "localEvidence": ".evals/verified-pipeline-pr-grounding-AS1Nz0/run-2/verify"
+        }
+      ]
+    },
+    {
+      "caseId": "pr-cache-units",
+      "mode": "pipeline",
+      "run": 1,
+      "reason": "Error: verify session did not succeed",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81a09cddffe09hVM464Q5lD7A",
+          "status": "completed",
+          "seconds": 67.835,
+          "toolCalls": 3,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+          "outputSha256": "ebee9d65e7654d858fd643a53318b1a53b44f6dcd56ea2fc7bca3e54fab45ebe",
+          "visibleTranscriptSha256": "2cd4bc41a25e9673e7f5e08fd58a99785f7e692e7c2ae8157b797233865d4406",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-qwqZ9F/run-1/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f819f91afffe9sDG2LtDvVjMKs",
+          "status": "failed",
+          "seconds": 361.343,
+          "toolCalls": 0,
+          "sourceReads": 0,
+          "upstreamReads": 0,
+          "inputSha256": "ebee9d65e7654d858fd643a53318b1a53b44f6dcd56ea2fc7bca3e54fab45ebe",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "78b90ca2ad3e1a8580ed8a7a38f69b92df87996ae907ff2f0bce3b9c49a272b4",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-qwqZ9F/run-1/verify"
+        }
+      ]
+    },
+    {
+      "caseId": "pr-cache-units",
+      "mode": "pipeline",
+      "run": 3,
+      "reason": "Error: verify session did not succeed",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81a08117ffefgBdQ3fnMGE7tD",
+          "status": "completed",
+          "seconds": 81.674,
+          "toolCalls": 4,
+          "sourceReads": 1,
+          "upstreamReads": 0,
+          "inputSha256": "6f9fc7c5ef6f759f448fc1690e0a8e34038708c3439d21236c06ac212b68f169",
+          "outputSha256": "fbb0f7030fe90435937144c8b0c5389d5c9f14eee38b5594bc1ca81dacb0bbde",
+          "visibleTranscriptSha256": "6106e21fc77d7babadbba16746f1bb7be4b59ae8a292dbb1e719b5a42e1e0b58",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-qwqZ9F/run-3/extract"
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f819f3f61ffeXzx5gYOZjH85bS",
+          "status": "failed",
+          "seconds": 361.716,
+          "toolCalls": 0,
+          "sourceReads": 0,
+          "upstreamReads": 0,
+          "inputSha256": "fbb0f7030fe90435937144c8b0c5389d5c9f14eee38b5594bc1ca81dacb0bbde",
+          "outputSha256": null,
+          "visibleTranscriptSha256": "0df11ece89376d1d50d372bbd69ed1f355aa2598dada7a006dfa71a6d832a261",
+          "localEvidence": ".evals/verified-pipeline-pr-cache-units-qwqZ9F/run-3/verify"
+        }
+      ]
+    }
+  ]
+}
