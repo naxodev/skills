@@ -1,6 +1,6 @@
 # Conceptual improvements to the skills
 
-These are proposals for the next iteration. The reliability fixes, validation, examples, and evaluation suite are implemented separately.
+These are proposals and recorded experiments for improving the skills. Adopted changes are marked below.
 Choose a proposal based on observed evaluation failures before expanding the instructions.
 
 ## Start with these three
@@ -25,7 +25,9 @@ An improved workflow should attribute the author's rationale and explain the obs
 
 **Follow-up result:** [separate extraction, verification, and writing](../evals/results/2026-09-07-verified-walkthrough/README.md) preserved the central conflict in 6/6 completed trials across two fixtures, versus 0/6 direct-writing baselines. The verifier introduced one false runtime guarantee, and writers sometimes copied review instructions into the essay. The workflow remains experimental.
 
-**Try next:** challenge verifier guarantees with counterexamples and evaluate reader-facing prose separately from evidence compliance. Use new held-out material for the next revision.
+**Adopted improvement:** a [writer-only comparison](../evals/results/2026-09-08-challenged-walkthrough/README.md) reused the earlier verified facts unchanged and improved the reader-facing score from 1/6 to 6/6. The skill now tells writers to translate evidence notes into prose and keep internal review material out of the essay.
+
+**Still experimental:** executed counterexamples exposed limits, but incorrect guarantees reappeared in titles and summaries. Next test an independent check of the final narrative against the source and probe results.
 
 ### Scale the analysis to the change
 

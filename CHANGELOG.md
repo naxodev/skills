@@ -8,10 +8,12 @@ This file records notable user-facing changes to the skills collection.
 
 - Recorded a nine-run PR walkthrough evidence experiment, including failed candidate patches and per-run findings.
 - Added a cache-unit conflict fixture and a frozen three-stage walkthrough evaluation protocol, with a twelve-trial comparison and recorded factual and prose-quality defects.
+- Added a lock-cleanup fixture, explicit guarantee and reader-facing criteria, and a counterexample/replay protocol with recorded first-pass and quotation-repair results.
 
 ### Changed
 
 - Clarified evaluation isolation, exact skill-version checks, and reporting of skipped workflow steps after observing rubric leakage in an excluded setup run.
+- Added reader-facing walkthrough style rules after an isolated writer comparison: preserve meaningful qualifications while keeping internal review IDs and drafting instructions out of the essay.
 
 ## 0.8.0 - 2026-09-07
 

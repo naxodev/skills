@@ -97,7 +97,7 @@ Code samples and diagrams are supplied as structured `code` / `diagrams` entries
 
 Write the manifest to `/tmp/pr-<N>-manifest.json`.
 
-**Complete when:** the through-line was used, the manifest contains the required grounded sections and fields, and `/tmp/pr-<N>-manifest.json` was written.
+**Complete when:** the through-line was used, the manifest contains the required grounded sections and fields, the reader-facing prose check in `STYLE.md` was applied, and `/tmp/pr-<N>-manifest.json` was written.
 
 ### 5 · Generate narration audio (deterministic)
 

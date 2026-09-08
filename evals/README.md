@@ -56,5 +56,6 @@ When sharing a result, include the case, model, revision, attempts, criterion ou
 
 - [PR walkthrough evidence experiment](results/2026-09-07-pr-grounding/README.md): baseline and two prompt revisions, three runs each. Neither revision improved the evidence criterion; both were reverted.
 - [Independently verified walkthroughs](results/2026-09-07-verified-walkthrough/README.md): actual extractor, verifier, and writer sessions improved conflict handling on two fixtures, with remaining factual and prose-quality defects.
+- [Counterexamples and reader-facing prose](results/2026-09-08-challenged-walkthrough/README.md): an isolated writer comparison supported focused style changes; probes did not reliably preserve guarantees in the final narrative.
 
 Use the [three-stage protocol guide](protocols/README.md) to reproduce that experimental workflow.

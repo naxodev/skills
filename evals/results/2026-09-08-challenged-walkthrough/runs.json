@@ -1,0 +1,1232 @@
+{
+  "model": "xai/grok-4.3#high",
+  "reviewerModel": "openai/gpt-6-astra#medium",
+  "protocols": {
+    "v1": "cc6a3e874837ca59c0c0d322a5805031387f6eb2087c5a1509681061d5cf442d",
+    "v2": "3af93454483d08d40ca595b7d2b3b3d6907ab17a7cbfb5969f2318fcd1f0e994"
+  },
+  "main": [
+    {
+      "variant": "v1",
+      "caseId": "pr-grounding-quality",
+      "run": 1,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f8135c7c7ffeGYYMR1IC11pK5M",
+          "status": "completed",
+          "seconds": 41.924,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-1/extract",
+          "transcriptSha256": "2055afe7e94d13fde3446d1a22b883c68ce7bd837e74c2fbb2fdfd1874866374",
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "50269362a4eedcf2c6715b31dc1632e7bea2ecc07b107ee4197fe560a0623741",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f813521f3ffeNDQh6MAPQzxAaR",
+          "status": "completed",
+          "seconds": 62.928,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-1/verify",
+          "transcriptSha256": "42adc8b6b145e21bfa4eac255435fa7477d09a4fbae7d8846df9968e6bc71938",
+          "inputSha256": "50269362a4eedcf2c6715b31dc1632e7bea2ecc07b107ee4197fe560a0623741",
+          "outputSha256": "8fbaba9912497dbd4a6eacd1724458510332bf70c5693a8ff52f0cb74192782d",
+          "probeReplay": null
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f81342704ffeOEXsrYjcGtvZI3",
+          "status": "completed",
+          "seconds": 99.182,
+          "toolCalls": 23,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-1/write",
+          "transcriptSha256": "3be60d2a7a1399f9d320d621a0cf48b6dc25a6396ae8e1fcce8cac41e1f35cb3",
+          "inputSha256": "8fbaba9912497dbd4a6eacd1724458510332bf70c5693a8ff52f0cb74192782d",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay invents a second Date.now evaluation and adopts the extra-read account; it also claims one read per request path despite the old send-rejection path skipping the condition. Expected criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay invents a second Date.now evaluation and adopts the extra-read account; it also claims one read per request path despite the old send-rejection path skipping the condition. Expected criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay invents a second Date.now evaluation and adopts the extra-read account; it also claims one read per request path despite the old send-rejection path skipping the condition. Expected criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay invents a second Date.now evaluation and adopts the extra-read account; it also claims one read per request path despite the old send-rejection path skipping the condition. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay invents a second Date.now evaluation and adopts the extra-read account; it also claims one read per request path despite the old send-rejection path skipping the condition. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 204.034,
+      "manifestSha256": "b249efef64698401d90b26f9c8dac88c8770212064b6a847e74aab35e0d85077",
+      "htmlSha256": "8b1a81169c3d724ba2cfc585987bda126e64cb24580153078772c89a2ad9d18c",
+      "title": "Refresh credentials before dispatch",
+      "sections": 5
+    },
+    {
+      "variant": "v1",
+      "caseId": "pr-grounding-quality",
+      "run": 2,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f8132a1a0ffebFGDy3B7J6ZJ5k",
+          "status": "completed",
+          "seconds": 50.498,
+          "toolCalls": 6,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-2/extract",
+          "transcriptSha256": "dbba7e64d551d4c75be07bbde743e1ead21fde119fa51992de3942de0bba25ec",
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "1bc40455067f28d2067c1b257d2ee8fd594ce7379cbf09087efd175d509f164d",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f8131da24ffeKvWRjeVf44hKIX",
+          "status": "completed",
+          "seconds": 81.556,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-2/verify",
+          "transcriptSha256": "3fc37d45c44e9076f53ebbf861b94e84afc76d8a736b8a211fcf8377d552d960",
+          "inputSha256": "1bc40455067f28d2067c1b257d2ee8fd594ce7379cbf09087efd175d509f164d",
+          "outputSha256": "3dad7db1a0b2163590eea44e3459579faa3f74412797071450c691fdcaf4b048",
+          "probeReplay": null
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f81309490ffeipI7PIgG1XsrNx",
+          "status": "completed",
+          "seconds": 61.501,
+          "toolCalls": 7,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-2/write",
+          "transcriptSha256": "fd4a3e3f3d737cf81690c5037acc079dff64b12fa13b22ab548bea093e9b2e6e",
+          "inputSha256": "3dad7db1a0b2163590eea44e3459579faa3f74412797071450c691fdcaf4b048",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says the relocation keeps the first request from failing and the recap says exactly one read. The recap also leaks 'the verification requires us to preserve'. Expected criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says the relocation keeps the first request from failing and the recap says exactly one read. The recap also leaks 'the verification requires us to preserve'. Expected criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says the relocation keeps the first request from failing and the recap says exactly one read. The recap also leaks 'the verification requires us to preserve'. Expected criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says the relocation keeps the first request from failing and the recap says exactly one read. The recap also leaks 'the verification requires us to preserve'. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says the relocation keeps the first request from failing and the recap says exactly one read. The recap also leaks 'the verification requires us to preserve'. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 193.555,
+      "manifestSha256": "7f6ca220f85590820c23aa2241ee27550b5ac08a13aa7730475afadcc843ac86",
+      "htmlSha256": "eaadd2c989573c8777fa5e54fc1140500a9ac3c79df1bbce31cceb2d03b97044",
+      "title": "Refresh credentials before dispatch",
+      "sections": 5
+    },
+    {
+      "variant": "v1",
+      "caseId": "pr-grounding-quality",
+      "run": 3,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f812fa150ffe7CXHmZXtxVEKDA",
+          "status": "completed",
+          "seconds": 42.466,
+          "toolCalls": 4,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-3/extract",
+          "transcriptSha256": "93ebb2e7c5f991a1e0d9419958af01dc32bd35104611acf3833263a54bc81b6d",
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "524b16051288e391465a12fe9e8069e5f6b7b2d0baa9f2e93f3147b9e520ce9d",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f812ef87effeZ2OmOu5bo45vpI",
+          "status": "completed",
+          "seconds": 60.973,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-3/verify",
+          "transcriptSha256": "7a121b39c8934e912a8ebf6d8edba64621c9d1c1287c59945a23b5297f603627",
+          "inputSha256": "524b16051288e391465a12fe9e8069e5f6b7b2d0baa9f2e93f3147b9e520ce9d",
+          "outputSha256": "f5b1bf2eef4d56d611598daf72ef30fee972c21fc188280dd3cc58d196e8b4d8",
+          "probeReplay": null
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f812e0509ffe5PXA71wIVLxGo2",
+          "status": "completed",
+          "seconds": 112.888,
+          "toolCalls": 16,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-3/write",
+          "transcriptSha256": "add4348e43de7128e389d25d690a85c76f2e13f383eea338c585ef574fb94184",
+          "inputSha256": "f5b1bf2eef4d56d611598daf72ef30fee972c21fc188280dd3cc58d196e8b4d8",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text replaces the disputed extra-read account with an unqualified unchanged per-invocation count. Internal V identifiers, constraint labels, and drafting instructions appear throughout. Expected criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text replaces the disputed extra-read account with an unqualified unchanged per-invocation count. Internal V identifiers, constraint labels, and drafting instructions appear throughout. Expected criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text replaces the disputed extra-read account with an unqualified unchanged per-invocation count. Internal V identifiers, constraint labels, and drafting instructions appear throughout. Expected criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text replaces the disputed extra-read account with an unqualified unchanged per-invocation count. Internal V identifiers, constraint labels, and drafting instructions appear throughout. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text replaces the disputed extra-read account with an unqualified unchanged per-invocation count. Internal V identifiers, constraint labels, and drafting instructions appear throughout. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 216.327,
+      "manifestSha256": "6328c525b18d261b279beb212b65bffb111bd53d724cc1abcee3c1fb8d238bfd",
+      "htmlSha256": "70e3fb2bc81fcaade05468cd040c225325824abf0a43a0470be26ee980da5856",
+      "title": "Credentials refreshed before the first send after expiry",
+      "sections": 6
+    },
+    {
+      "variant": "v2",
+      "caseId": "pr-grounding-quality",
+      "run": 1,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f8135c766ffeDi6mpLZYQpHY2b",
+          "status": "completed",
+          "seconds": 33.112,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-1/extract",
+          "transcriptSha256": "1cb87badbbaf114840357dc502271a146f5fe540cc79ae1094d8a9c480ed52fa",
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "4cba6b5ed7a31394e1f6bb9863392dbe4d0a4b92762e43837244513623bb972f",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f81354395ffe7hrw20U0UEbNBM",
+          "status": "completed",
+          "seconds": 167.349,
+          "toolCalls": 14,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-1/verify",
+          "transcriptSha256": "a9e9e9b860a52c2ba461ae902a0555429916b0ae72efa4d7f8b7c4d305350421",
+          "inputSha256": "4cba6b5ed7a31394e1f6bb9863392dbe4d0a4b92762e43837244513623bb972f",
+          "outputSha256": "b70188d6b10a6ec621551a856db95bd45ba7c134dc636e2f9ea1c69e39dccdfc",
+          "probeReplay": {
+            "exit": 0,
+            "sha256": "b1c1f56e14c43b2b135d1dd860fcbe05dbf488856f741c8382b8ec36d99e1bcb",
+            "programSha256": "17980128752c6fc98c576713e777af150afbc0480632792db9c3ff1d1fa4e33e"
+          }
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f8132b0e8ffes675GeSikL4zS5",
+          "status": "completed",
+          "seconds": 75.603,
+          "toolCalls": 16,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-1/write",
+          "transcriptSha256": "8380b73cdfdfdedd616299816386c2b58e3564d3fd828a8184b7042cd99493d8",
+          "inputSha256": "b70188d6b10a6ec621551a856db95bd45ba7c134dc636e2f9ea1c69e39dccdfc",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose scopes modeled outcomes and counts to success paths, but does not present or attribute the author's extra-read assertion. The evidence criterion therefore fails despite otherwise grounded prose. Expected criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose scopes modeled outcomes and counts to success paths, but does not present or attribute the author's extra-read assertion. The evidence criterion therefore fails despite otherwise grounded prose. Expected criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose scopes modeled outcomes and counts to success paths, but does not present or attribute the author's extra-read assertion. The evidence criterion therefore fails despite otherwise grounded prose. Expected criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose scopes modeled outcomes and counts to success paths, but does not present or attribute the author's extra-read assertion. The evidence criterion therefore fails despite otherwise grounded prose. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose scopes modeled outcomes and counts to success paths, but does not present or attribute the author's extra-read assertion. The evidence criterion therefore fails despite otherwise grounded prose. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 276.06399999999996,
+      "manifestSha256": "21d33d2dc8ea6ba7a726de9c122ead26e95653187e46f2628e327b3fff33b3ed",
+      "htmlSha256": "76d0ac0f5323bc317836466faea9d755bf6f3b6036ee78617be67b8cbcc6a37c",
+      "title": "Credential refresh before the first request",
+      "sections": 6
+    },
+    {
+      "variant": "v2",
+      "caseId": "pr-grounding-quality",
+      "run": 2,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81318727ffenDMnVyG0zJ4Gys",
+          "status": "completed",
+          "seconds": 71.263,
+          "toolCalls": 6,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-2/extract",
+          "transcriptSha256": "d0951fb7e781ca236bd4f249935eda4a57d39d054c86a72f8bd6d335b80da0e8",
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "0e996a972d4a444cba025fbc1680a15b31b8d3bf2eeb79660e9de92557c2f663",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f81306d60ffekTRlVqcJ4BecUm",
+          "status": "completed",
+          "seconds": 197.826,
+          "toolCalls": 8,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-2/verify",
+          "transcriptSha256": "436f1c02f066d1a3d0a1c9585243f6802611b49081f0ef954ffce7d023726f12",
+          "inputSha256": "0e996a972d4a444cba025fbc1680a15b31b8d3bf2eeb79660e9de92557c2f663",
+          "outputSha256": "59f06f6337f24cc5d084f31865a8a4f2608cbb544a10a87c87fab719ac9de4a7",
+          "probeReplay": {
+            "exit": 0,
+            "sha256": "9adf8b3d30d74c67bb68a91207750a1d9f2a1bb7493de0573a055ddaddc1f0ba",
+            "programSha256": "113bd45563c2ceac8d89dc10cbc1da30ae87e55fcc620f4b683c480d82fcb79e"
+          }
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f812d63bcffeu1jZCiLS4hiYZ2",
+          "status": "completed",
+          "seconds": 57.346,
+          "toolCalls": 13,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-2/write",
+          "transcriptSha256": "6ea56f13de5e7f04483de3eef66993b213ba43ba9e0a2b643de901e422091b59",
+          "inputSha256": "59f06f6337f24cc5d084f31865a8a4f2608cbb544a10a87c87fab719ac9de4a7",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose attributes the failure, contrasts the author's cost account with relocation, discusses the unreachable old post-send check on error paths, and remains reader-facing. Expected criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose attributes the failure, contrasts the author's cost account with relocation, discusses the unreachable old post-send check on error paths, and remains reader-facing. Expected criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose attributes the failure, contrasts the author's cost account with relocation, discusses the unreachable old post-send check on error paths, and remains reader-facing. Expected criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose attributes the failure, contrasts the author's cost account with relocation, discusses the unreachable old post-send check on error paths, and remains reader-facing. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The prose attributes the failure, contrasts the author's cost account with relocation, discusses the unreachable old post-send check on error paths, and remains reader-facing. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 326.435,
+      "manifestSha256": "ebf7926b1b03d6d81b8d631e7b7011af4353a3f781dc242a30acaa75d5f5719d",
+      "htmlSha256": "dee5ebc81b4da49824f7d4c9823742c983390bd1ca31360801e0525fcd7c8ff2",
+      "title": "Refresh credentials before dispatch",
+      "sections": 5
+    },
+    {
+      "variant": "v2",
+      "caseId": "pr-grounding-quality",
+      "run": 3,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f812c7fbaffeMGV7gwCTkBhLWW",
+          "status": "completed",
+          "seconds": 36.51,
+          "toolCalls": 4,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-3/extract",
+          "transcriptSha256": "9ea8a75de812237a032eadfeddf293447317f65750f52ffc4ac2280929d3800e",
+          "inputSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+          "outputSha256": "7a9daedb736a353d8faa939f4d121576e36dac524897d868f6fea0a07812786b",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f812bee48ffe826rIJNl6ipHtT",
+          "status": "completed",
+          "seconds": 137.054,
+          "toolCalls": 8,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-3/verify",
+          "transcriptSha256": "94f99e20f64f2076a9a3c3fbaeab22f0fcfdc3586238938b675c6052581c0d73",
+          "inputSha256": "7a9daedb736a353d8faa939f4d121576e36dac524897d868f6fea0a07812786b",
+          "outputSha256": "53aa3ae9feb541567bd01a00566a4a8fe79ea3fedb9066325d89687414078977",
+          "probeReplay": {
+            "exit": 0,
+            "sha256": "13abd55e6d8e86462810d43b45488a3dab1b1634a0848d038682fb58bf7ee5d0",
+            "programSha256": "78bad009bdddaad7f548548f5c810fa38551d778385edee4be6057a691579c62"
+          }
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f8129d238ffekqOL1DPGASYFUx",
+          "status": "completed",
+          "seconds": 84.694,
+          "toolCalls": 20,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-grounding-quality-IgGjn0/run-3/write",
+          "transcriptSha256": "715150b68ff787372428bca56c7cab55e16e039336224f2809b66b16814ff3fe",
+          "inputSha256": "53aa3ae9feb541567bd01a00566a4a8fe79ea3fedb9066325d89687414078977",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body claims one more clock read on every call, even with valid credentials, and the recap expands that claim to every invocation. Later qualifications do not withdraw it. The final saved prose is complete and reader-facing. Expected criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body claims one more clock read on every call, even with valid credentials, and the recap expands that claim to every invocation. Later qualifications do not withdraw it. The final saved prose is complete and reader-facing. Expected criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body claims one more clock read on every call, even with valid credentials, and the recap expands that claim to every invocation. Later qualifications do not withdraw it. The final saved prose is complete and reader-facing. Expected criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body claims one more clock read on every call, even with valid credentials, and the recap expands that claim to every invocation. Later qualifications do not withdraw it. The final saved prose is complete and reader-facing. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body claims one more clock read on every call, even with valid credentials, and the recap expands that claim to every invocation. Later qualifications do not withdraw it. The final saved prose is complete and reader-facing. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 258.258,
+      "manifestSha256": "ccac349d34b8703b16e0f671ec0faa13970a7cb8a07fcbf5650cf0d39530ca23",
+      "htmlSha256": "06ff6a6694a922e95b400d4953cd53504b71b76c1c87838b879b09b164423349",
+      "title": "Reordering credential refresh before the send",
+      "sections": 6
+    },
+    {
+      "variant": "v1",
+      "caseId": "pr-lock-cleanup",
+      "run": 1,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+      "firstPass": {
+        "status": "blocked",
+        "error": "Error: quote does not match source for V6"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81272016ffea8hT9xDR70COsw",
+          "status": "completed",
+          "seconds": 27.486,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-1/extract",
+          "transcriptSha256": "2d685f1cf2cb29b5dfdad3387d9a1695fb30e9becb6824286c589e5d9fc4eb4a",
+          "inputSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+          "outputSha256": "0e0ad26a399608ba5e5ce6a7ff4c2d3e68c588e00069dd9e3fe38e07df633e01",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f8126b25effeMLQiQXKjE5VUkM",
+          "status": "completed",
+          "seconds": 63.155,
+          "toolCalls": 8,
+          "formatRepair": {
+            "error": "Error: quote does not match source for V6",
+            "started": 1788835833217,
+            "budget": 1,
+            "seconds": 24.888,
+            "passed": true
+          },
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-1/verify",
+          "transcriptSha256": "7fb205395751eb8c60a0c0d88c7a96261574f5990765bc2c3ffe3eb299440a41",
+          "inputSha256": "0e0ad26a399608ba5e5ce6a7ff4c2d3e68c588e00069dd9e3fe38e07df633e01",
+          "outputSha256": "130889444500660b3048289ce4faeac1487183ddb1d6234ad7a085f353cc8236",
+          "probeReplay": null
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f8112f4d4ffebb4erXBTPZOHTP",
+          "status": "completed",
+          "seconds": 70.435,
+          "toolCalls": 8,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-1/write",
+          "transcriptSha256": "af9842aafe8f370ccbc675275b41ba9750360f44e21a536c916c59b8181345a1",
+          "inputSha256": "130889444500660b3048289ce4faeac1487183ddb1d6234ad7a085f353cc8236",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The recap says task error preservation follows from finally semantics, omitting that release rejection replaces the task error. It also describes its attribution treatment rather than only the code. Expected criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The recap says task error preservation follows from finally semantics, omitting that release rejection replaces the task error. It also describes its attribution treatment rather than only the code. Expected criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The recap says task error preservation follows from finally semantics, omitting that release rejection replaces the task error. It also describes its attribution treatment rather than only the code. Expected criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The recap says task error preservation follows from finally semantics, omitting that release rejection replaces the task error. It also describes its attribution treatment rather than only the code. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The recap says task error preservation follows from finally semantics, omitting that release rejection replaces the task error. It also describes its attribution treatment rather than only the code. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 161.07600000000002,
+      "manifestSha256": "68ac5f09083e26ee27f9f7595f80f53691808bd3095b37b321e9dfd86b65fd6d",
+      "htmlSha256": "39c75b4f1bf6f2be7980dd64d750edaa49cdb89bd67603458f988242999bd1a4",
+      "title": "Attempting lock release after task failure",
+      "sections": 6
+    },
+    {
+      "variant": "v1",
+      "caseId": "pr-lock-cleanup",
+      "run": 2,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81261ae6ffenzjBNb7X4NVMeo",
+          "status": "completed",
+          "seconds": 39.811,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-2/extract",
+          "transcriptSha256": "06dbf9a26f0f2c0e06cf4d567a8d46e5583b57a06020ad20a430329e5fa4fcfe",
+          "inputSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+          "outputSha256": "31b4a7293acbfbec29d1c8939dd1857cfc5ff8b69db2f88ebf69bacf97d8023e",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f81257ce6ffe0Slew1EnDXsqF6",
+          "status": "completed",
+          "seconds": 53.289,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-2/verify",
+          "transcriptSha256": "753059f0917e0b862a9dc21fae896a0320c901be3bb7385a0d76c67d195d0bf9",
+          "inputSha256": "31b4a7293acbfbec29d1c8939dd1857cfc5ff8b69db2f88ebf69bacf97d8023e",
+          "outputSha256": "38812ec7e9813269f801b2627d3eee87bb2728ea1b1464e2a5c7c3149bc89469",
+          "probeReplay": null
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f8124a6d6ffe3js3ShjW03ZQqR",
+          "status": "completed",
+          "seconds": 79.872,
+          "toolCalls": 20,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-2/write",
+          "transcriptSha256": "d49cd4e7ac7e70b95322c79ed04f27e8a736a8bc4509add8c9b54b3f61f23c62",
+          "inputSha256": "38812ec7e9813269f801b2627d3eee87bb2728ea1b1464e2a5c7c3149bc89469",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body explains release-error replacement but the recap says whether a rejecting release would mask a task error cannot be determined. Internal V/F IDs and approval labels reach the essay. Expected criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body explains release-error replacement but the recap says whether a rejecting release would mask a task error cannot be determined. Internal V/F IDs and approval labels reach the essay. Expected criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body explains release-error replacement but the recap says whether a rejecting release would mask a task error cannot be determined. Internal V/F IDs and approval labels reach the essay. Expected criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body explains release-error replacement but the recap says whether a rejecting release would mask a task error cannot be determined. Internal V/F IDs and approval labels reach the essay. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The body explains release-error replacement but the recap says whether a rejecting release would mask a task error cannot be determined. Internal V/F IDs and approval labels reach the essay. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 172.97199999999998,
+      "manifestSha256": "141103b0c7f59476d9af2a4a8ca2845e3440e31cfd30ed905e8f7203d18b1b96",
+      "htmlSha256": "a24ea8674ca1c74457c190cbd986517451e2fe7801a3ebe0ebe5843234b7df2f",
+      "title": "PR #91: fix: attempt lock release after task failure",
+      "sections": 6
+    },
+    {
+      "variant": "v1",
+      "caseId": "pr-lock-cleanup",
+      "run": 3,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81236c66ffeFq5wjDwMFzv0qb",
+          "status": "completed",
+          "seconds": 90.831,
+          "toolCalls": 4,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-3/extract",
+          "transcriptSha256": "14b5394b62050ec6a4ad0a2b4e61b95a10e8fb5e3e64d6778b0592818d3fc04c",
+          "inputSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+          "outputSha256": "40a5c8ab22c2781ffa80722c44f1497a357ed0b2ef93f112dba2ed5fa660f232",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f8122070fffeASvXJfOM8lq872",
+          "status": "completed",
+          "seconds": 66.568,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-3/verify",
+          "transcriptSha256": "6d48c74b99779e8087a76d016075aa1b992d4ab195dc96352b88183acfaee1b2",
+          "inputSha256": "40a5c8ab22c2781ffa80722c44f1497a357ed0b2ef93f112dba2ed5fa660f232",
+          "outputSha256": "7f83ccd4aeae2bee9374fb2f0e07f8cd482752aac503664e3170c5a1728cc48c",
+          "probeReplay": null
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f8120fd94ffeTjcrzUAzo1jY3B",
+          "status": "completed",
+          "seconds": 80.7,
+          "toolCalls": 15,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-3/write",
+          "transcriptSha256": "04c18b05049fff06aa9a8f3d765c668152ccb080364342cd5c32653479227f06",
+          "inputSha256": "7f83ccd4aeae2bee9374fb2f0e07f8cd482752aac503664e3170c5a1728cc48c",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay only weakens the error-preservation guarantee instead of explaining release rejection replacing task rejection; it does not distinguish rejected release from successful cleanup. It includes 'This conflict ... must be preserved'. Expected criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay only weakens the error-preservation guarantee instead of explaining release rejection replacing task rejection; it does not distinguish rejected release from successful cleanup. It includes 'This conflict ... must be preserved'. Expected criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay only weakens the error-preservation guarantee instead of explaining release rejection replacing task rejection; it does not distinguish rejected release from successful cleanup. It includes 'This conflict ... must be preserved'. Expected criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay only weakens the error-preservation guarantee instead of explaining release rejection replacing task rejection; it does not distinguish rejected release from successful cleanup. It includes 'This conflict ... must be preserved'. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The essay only weakens the error-preservation guarantee instead of explaining release rejection replacing task rejection; it does not distinguish rejected release from successful cleanup. It includes 'This conflict ... must be preserved'. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 238.099,
+      "manifestSha256": "1cfb5155b0341f5d64092010de5cdc5f8eb4d98f5b44a985e235f36c4dae157b",
+      "htmlSha256": "2ad1ca170f31c652e30b22d66f8a185b068fd8619552e58425f536d3248fcb60",
+      "title": "Lock release moves into finally",
+      "sections": 5
+    },
+    {
+      "variant": "v2",
+      "caseId": "pr-lock-cleanup",
+      "run": 1,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+      "firstPass": {
+        "status": "blocked",
+        "error": "Error: quote does not match source for F8"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81272016ffdKxevha0MurF59r",
+          "status": "completed",
+          "seconds": 107.087,
+          "toolCalls": 6,
+          "formatRepair": {
+            "error": "Error: quote does not match source for F8",
+            "started": 1788835833385,
+            "budget": 1,
+            "seconds": 47.1,
+            "passed": true
+          },
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-GoaIMZ/run-1/extract",
+          "transcriptSha256": "dd4ea3ad1fafb9cca42cbf7f64a6a69918ecd0bc17e44070455007eb10d0ee67",
+          "inputSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+          "outputSha256": "7865f044f37f97bb61765fc917f2ea3ff3cdee69fa722354f8b88415293c64d4",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f81129faeffeNVRrss14XhcgcO",
+          "status": "completed",
+          "seconds": 166.504,
+          "toolCalls": 7,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-GoaIMZ/run-1/verify",
+          "transcriptSha256": "2a11bafa146dc7ac32fc09d0612f864a77060a77bae68173e73cde16fc2d3007",
+          "inputSha256": "7865f044f37f97bb61765fc917f2ea3ff3cdee69fa722354f8b88415293c64d4",
+          "outputSha256": "313bc71555c05503529bddf25818a13c79f038ee3150ad4e75731f9f0a7630e4",
+          "probeReplay": {
+            "exit": 0,
+            "sha256": "5b5ecee92f70b2c35ba560998bd60260bcd63ad2af9a2142397c9b5b50cfb016",
+            "programSha256": "a2882cf1e40dce36430048145bba5cf8c6e359639d527222d140dbabf8d65b58"
+          }
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f81100f5effecxhejHJ78okQ2l",
+          "status": "completed",
+          "seconds": 95.197,
+          "toolCalls": 14,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-GoaIMZ/run-1/write",
+          "transcriptSha256": "dc8958dcbce712b88d0bc51d8a4cf5b172195964d8016209117a3811fd6e5c14",
+          "inputSha256": "313bc71555c05503529bddf25818a13c79f038ee3150ad4e75731f9f0a7630e4",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text asserts lock ownership outcomes not established by the contract. Its recap says release rejections keep prior semantics, contradicting the combined task/release rejection path explained in the body. Expected criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text asserts lock ownership outcomes not established by the contract. Its recap says release rejections keep prior semantics, contradicting the combined task/release rejection path explained in the body. Expected criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text asserts lock ownership outcomes not established by the contract. Its recap says release rejections keep prior semantics, contradicting the combined task/release rejection path explained in the body. Expected criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text asserts lock ownership outcomes not established by the contract. Its recap says release rejections keep prior semantics, contradicting the combined task/release rejection path explained in the body. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text asserts lock ownership outcomes not established by the contract. Its recap says release rejections keep prior semantics, contradicting the combined task/release rejection path explained in the body. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 368.788,
+      "manifestSha256": "56fdcbc90a39363a6a8cb3d5388e6ceca5aa66225dfc1677f46207f2cd72538d",
+      "htmlSha256": "70c967bad292f74c49eaabd34d8449629bf7cddde7f5d2d4e8619ed10b25cdad",
+      "title": "Attempting lock release after task failure",
+      "sections": 5
+    },
+    {
+      "variant": "v2",
+      "caseId": "pr-lock-cleanup",
+      "run": 3,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+      "firstPass": {
+        "status": "blocked",
+        "error": "Error: quote does not match source for V5"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f8120ae5fffeVMCb6RzJ20f39h",
+          "status": "completed",
+          "seconds": 65.494,
+          "toolCalls": 2,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-GoaIMZ/run-3/extract",
+          "transcriptSha256": "0b9495a5cfa27021b1ca54672a20495c04ea58ada3cabb6026c412562b6335d0",
+          "inputSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+          "outputSha256": "883dba079de8b46fc633137334c1cfe6750ce4d66d3ebd8ce1ee6d76e7784c05",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f811fac0bffeUypFP045sRodWf",
+          "status": "completed",
+          "seconds": 174.948,
+          "toolCalls": 12,
+          "formatRepair": {
+            "error": "Error: quote does not match source for V5",
+            "started": 1788836154810,
+            "budget": 1,
+            "seconds": 28.46,
+            "passed": true
+          },
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-GoaIMZ/run-3/verify",
+          "transcriptSha256": "c561a0bc050f764072579052a1dff2a335ef425f3fbc3a0652f6fdc06d86b11a",
+          "inputSha256": "883dba079de8b46fc633137334c1cfe6750ce4d66d3ebd8ce1ee6d76e7784c05",
+          "outputSha256": "006edf3181bb223dd4e0503d8ca33e71df09d2bb2c3e365c539cf9663acb0aef",
+          "probeReplay": {
+            "exit": 0,
+            "sha256": "628b6cf2c6b8fdf4c6483ac3b321ea3c036432d099bba16280b736c7cd2dbb3b",
+            "programSha256": "992c7858799810b659a1fac1b2bd3ab987b049ffd644364ef5b168682306ef1e"
+          }
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f810dff41ffedUWBUTz1PiMyI4",
+          "status": "completed",
+          "seconds": 162.054,
+          "toolCalls": 16,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-GoaIMZ/run-3/write",
+          "transcriptSha256": "819f120e09189a1a3aea09a9a7f6e4fcaff1a5f3fe3abe1c0781a5a450bf521a",
+          "inputSha256": "006edf3181bb223dd4e0503d8ca33e71df09d2bb2c3e365c539cf9663acb0aef",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text correctly explains acquisition placement and error replacement but says acquisition rejection leaves the lock unreleased and does not explain that a rejected release fails to establish successful cleanup. Expected criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text correctly explains acquisition placement and error replacement but says acquisition rejection leaves the lock unreleased and does not explain that a rejected release fails to establish successful cleanup. Expected criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text correctly explains acquisition placement and error replacement but says acquisition rejection leaves the lock unreleased and does not explain that a rejected release fails to establish successful cleanup. Expected criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text correctly explains acquisition placement and error replacement but says acquisition rejection leaves the lock unreleased and does not explain that a rejected release fails to establish successful cleanup. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The text correctly explains acquisition placement and error replacement but says acquisition rejection leaves the lock unreleased and does not explain that a rejected release fails to establish successful cleanup. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 402.496,
+      "manifestSha256": "cd955929b8987d0b33c1f3548350773e01b278f2ff8089abb195e148e08a115e",
+      "htmlSha256": "4d0b79a21d7f1a7f39efce5c30d263eafb077400b6ed74a13f9d095b8843fda9",
+      "title": "Attempting lock release after task failure",
+      "sections": 6
+    },
+    {
+      "variant": "v2",
+      "caseId": "pr-lock-cleanup",
+      "run": 2,
+      "revision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "sourceSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+      "firstPass": {
+        "status": "completed"
+      },
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f811a0df9ffepU0ID1xFn3ouMC",
+          "status": "completed",
+          "seconds": 78.475,
+          "toolCalls": 3,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-mATGKT/run-2/extract",
+          "transcriptSha256": "619e4d076f1044c1e9e8dd68aa2188d818a2f985022dbaf904c53eabd1af1907",
+          "inputSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+          "outputSha256": "468ebc9c8fb5b82c064a8534109186a55743ca9b01ccadc4ed9b260bc746731a",
+          "probeReplay": null
+        },
+        {
+          "name": "verify",
+          "sessionID": "ses_f8118d8b3ffedTQpyuWMqRTxiV",
+          "status": "completed",
+          "seconds": 148.917,
+          "toolCalls": 7,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-mATGKT/run-2/verify",
+          "transcriptSha256": "f9c2b8c93e6333ecafcc47453893708b65ba9804c4bfd1a8134263dc06c16ea0",
+          "inputSha256": "468ebc9c8fb5b82c064a8534109186a55743ca9b01ccadc4ed9b260bc746731a",
+          "outputSha256": "ad8330c299515aef0a9a18770c5d871e08bf1865aa1c2981e031a188775fe28b",
+          "probeReplay": {
+            "exit": 0,
+            "sha256": "a0bfabe839d3da912fdc85606dd15cad4006bed835c10884b436c83a797f64ff",
+            "programSha256": "e113305bd54135b651084c53019bd9ed7cb4df6ceb336f55c03259bbf9b6ff1f"
+          }
+        },
+        {
+          "name": "write",
+          "sessionID": "ses_f81168dc7ffemb6l0FFOGiGZvv",
+          "status": "completed",
+          "seconds": 89.121,
+          "toolCalls": 11,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-mATGKT/run-2/write",
+          "transcriptSha256": "a09a1f927cca7a3b9aeb4f3a788ec5c4260b15cfbdf77253a44583f99c62ec9e",
+          "inputSha256": "ad8330c299515aef0a9a18770c5d871e08bf1865aa1c2981e031a188775fe28b",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ],
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says release failure keeps its original exit behavior, which is false when task and release both reject. The body does not identify both false author assertions as reports and assumes lock ownership state. Expected criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says release failure keeps its original exit behavior, which is false when task and release both reject. The body does not identify both false author assertions as reports and assumes lock ownership state. Expected criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says release failure keeps its original exit behavior, which is false when task and release both reject. The body does not identify both false author assertions as reports and assumes lock ownership state. Expected criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says release failure keeps its original exit behavior, which is false when task and release both reject. The body does not identify both false author assertions as reports and assumes lock ownership state. Expected criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "work/manifest.json and work/walkthrough.html; independent review: The dek says release failure keeps its original exit behavior, which is false when task and release both reject. The body does not identify both false author assertions as reports and assumes lock ownership state. Expected criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "totalStageSeconds": 316.513,
+      "manifestSha256": "1a5adc7e0bafbe0a5eadce4d410d195e32906a22b2a107001e64e82b98c4f52d",
+      "htmlSha256": "41e34836309fe16429ab5808d1c0aedb614b92ab8550455040b204fa523eeb2b",
+      "title": "fix: attempt lock release after task failure",
+      "sections": 5
+    }
+  ],
+  "excluded": [
+    {
+      "variant": "v2",
+      "caseId": "pr-lock-cleanup",
+      "run": 2,
+      "error": "Error: extract session did not succeed",
+      "stages": [
+        {
+          "name": "extract",
+          "sessionID": "ses_f81263377ffeUqHCqZpViEROPA",
+          "status": "failed",
+          "seconds": 361.213,
+          "toolCalls": 0,
+          "formatRepair": null,
+          "localEvidence": ".evals/challenged-v2-pr-lock-cleanup-GoaIMZ/run-2/extract",
+          "transcriptSha256": "8bbff606399945acad0cdd6174404625d0cdb1b9a4252830e37fbc6dc33f2a45",
+          "inputSha256": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+          "outputSha256": null,
+          "probeReplay": null
+        }
+      ]
+    }
+  ],
+  "writerOnly": [
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 1,
+      "scope": "reader-facing-only",
+      "readerFacing": "pass",
+      "upstreamInputsUnchanged": true,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "8fbaba9912497dbd4a6eacd1724458510332bf70c5693a8ff52f0cb74192782d"
+      },
+      "baselineEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-1/write",
+      "session": {
+        "name": "write",
+        "sessionID": "ses_f810035d3ffdnMX4ASnQTrzC7Y",
+        "status": "completed",
+        "seconds": 132.987,
+        "toolCalls": 16,
+        "formatRepair": null,
+        "localEvidence": ".evals/writer-ablation-pr-grounding-quality-k3U3qi/run-1",
+        "transcriptSha256": "ec4ecbd4caecbff24a1c5c83c10ad398967a64354d8830bb215b1bccbe5546b0"
+      },
+      "manifestSha256": "79a65c6912d1a3704929f91f20cbf5bd5a9d93846e2a22e84b1b9aa67d0e69f0",
+      "htmlSha256": "0ca04014821edc317fa79a61d1d72310cf100d5b9daa9738982775e0fe059f9c",
+      "title": "Reordering credential refresh before dispatch",
+      "sections": 5
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 2,
+      "scope": "reader-facing-only",
+      "readerFacing": "pass",
+      "upstreamInputsUnchanged": true,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "3dad7db1a0b2163590eea44e3459579faa3f74412797071450c691fdcaf4b048"
+      },
+      "baselineEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-2/write",
+      "session": {
+        "name": "write",
+        "sessionID": "ses_f80fe2a9affebZhVpuq2J8oGrK",
+        "status": "completed",
+        "seconds": 82.18,
+        "toolCalls": 12,
+        "formatRepair": null,
+        "localEvidence": ".evals/writer-ablation-pr-grounding-quality-k3U3qi/run-2",
+        "transcriptSha256": "53a61270fde8cf8a309189c95c05c5af022c38683fccce9222c4b876d248ee88"
+      },
+      "manifestSha256": "824c46c2b1a91261aba4f513d178b7740b1558180c141f8fa9f7c1363ad5dbc8",
+      "htmlSha256": "fbdc530aa0ef87e68167e9efcd42d835bd04fe26bfd5f1b8793d48ebf54efd8c",
+      "title": "Refresh before dispatch in the request helper",
+      "sections": 5
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 3,
+      "scope": "reader-facing-only",
+      "readerFacing": "pass",
+      "upstreamInputsUnchanged": true,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "f5b1bf2eef4d56d611598daf72ef30fee972c21fc188280dd3cc58d196e8b4d8"
+      },
+      "baselineEvidence": ".evals/challenged-v1-pr-grounding-quality-XPbay3/run-3/write",
+      "session": {
+        "name": "write",
+        "sessionID": "ses_f80fce5dbffeIy8RCEvf1EMuso",
+        "status": "completed",
+        "seconds": 104.578,
+        "toolCalls": 12,
+        "formatRepair": null,
+        "localEvidence": ".evals/writer-ablation-pr-grounding-quality-k3U3qi/run-3",
+        "transcriptSha256": "1d206c83603721476ac231521f868ca536d660156facc1c3230c4276f9428dfe"
+      },
+      "manifestSha256": "f85f6e2b22034a7fdafbceaf4fd134f97aaff463efe584945c1073f39732040e",
+      "htmlSha256": "2e473943739d0e3079be117ae515ed0dea79863c5de4e209512d46878a6f34b6",
+      "title": "fix: refresh credentials before dispatch",
+      "sections": 6
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 1,
+      "scope": "reader-facing-only",
+      "readerFacing": "pass",
+      "upstreamInputsUnchanged": true,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "130889444500660b3048289ce4faeac1487183ddb1d6234ad7a085f353cc8236"
+      },
+      "baselineEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-1/write",
+      "session": {
+        "name": "write",
+        "sessionID": "ses_f810035d3ffep446eZ2ebdMcTC",
+        "status": "completed",
+        "seconds": 84.352,
+        "toolCalls": 10,
+        "formatRepair": null,
+        "localEvidence": ".evals/writer-ablation-pr-lock-cleanup-KONrvQ/run-1",
+        "transcriptSha256": "52b1aa392e2368fd337fb83921c38aefdff0e6f19710565b4b7a15e9a595da01"
+      },
+      "manifestSha256": "9d2bd7699d5ee3d414a0fa4e69756ff96fbfa77ebe8febe47a094cefd2d5e06a",
+      "htmlSha256": "be5d15f1290d807910eafe5b5ad2966fc4b1f0fb0fd811018c94736db96df563",
+      "title": "Lock release on task failure in a job runner",
+      "sections": 6
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 2,
+      "scope": "reader-facing-only",
+      "readerFacing": "pass",
+      "upstreamInputsUnchanged": true,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "38812ec7e9813269f801b2627d3eee87bb2728ea1b1464e2a5c7c3149bc89469"
+      },
+      "baselineEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-2/write",
+      "session": {
+        "name": "write",
+        "sessionID": "ses_f80fee82fffeNn9NlWBQ5n3qi8",
+        "status": "completed",
+        "seconds": 94.579,
+        "toolCalls": 18,
+        "formatRepair": null,
+        "localEvidence": ".evals/writer-ablation-pr-lock-cleanup-KONrvQ/run-2",
+        "transcriptSha256": "8c4a72581be6a49da2a9ad9de99a6bb7db1f80f08a913f3b4bc7e2729b43b90f"
+      },
+      "manifestSha256": "2e4767231e58f627c3034dacf2c3ed12b94a445347f16c421c07309486408a12",
+      "htmlSha256": "1062d3540ff14522308a38822f4ee07d2ff04511b5805541000895daf640923d",
+      "title": "Lock release moves into finally for task failures",
+      "sections": 6
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 3,
+      "scope": "reader-facing-only",
+      "readerFacing": "pass",
+      "upstreamInputsUnchanged": true,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "7f83ccd4aeae2bee9374fb2f0e07f8cd482752aac503664e3170c5a1728cc48c"
+      },
+      "baselineEvidence": ".evals/challenged-v1-pr-lock-cleanup-FyZaei/run-3/write",
+      "session": {
+        "name": "write",
+        "sessionID": "ses_f80fd723fffeMmmYaZjkk42x4z",
+        "status": "completed",
+        "seconds": 132.597,
+        "toolCalls": 21,
+        "formatRepair": null,
+        "localEvidence": ".evals/writer-ablation-pr-lock-cleanup-KONrvQ/run-3",
+        "transcriptSha256": "71d9cdf1621e5437ffcbdad9c1099f4dbe7db9ab256ef9c480568f4c7ba18d91"
+      },
+      "manifestSha256": "062845c463395018411203699933db76e84d6b0e7bc40b02ff7356866fffa956",
+      "htmlSha256": "94dcba30262c728ca80c06cbe67d9e7f4145d190fd3ea6cb905fa47c9a6c2b1d",
+      "title": "Lock release moves into finally after task in runJob",
+      "sections": 6
+    }
+  ]
+}

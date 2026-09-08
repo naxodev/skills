@@ -30,6 +30,8 @@ For small PRs (single-file refactors), collapse to 5 sections: setting → why �
 
 ## Voice
 
+- **Reader-facing.** Keep internal fact IDs, approval labels, reviewer directions, and drafting instructions in analysis artifacts. Use identifiers from the actual source when they help explain the program. Check the title, subtitle, sections, recap, and narration for leaked review material before handing off.
+- **Natural attribution.** Translate evidence notes into prose: use "The author reports…" or "The diff shows…" where attribution matters. Preserve the meaning of important qualifications without copying reviewer wording or repeating the same caveat throughout the essay.
 - **Essay-shaped.** Long paragraphs over short bullets. Bullets only when the items are genuinely parallel and don't carry their own narrative.
 - **Second person + first-person plural.** "You might ask." "We rejected this path." Avoid passive ("it was rejected") — it's a tell of AI-generated prose.
 - **Concrete > abstract.** Show the file, the constraint comment, the failure mode. A reader who can picture a real case beats one with a vague principle.

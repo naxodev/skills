@@ -3,6 +3,8 @@
 The [frozen protocol](verified-walkthrough.json) separates fact extraction, verification, and writing into three fresh sessions.
 It is an experimental evaluation workflow. Its [first comparison](../results/2026-09-07-verified-walkthrough/README.md) improved conflict detection, but exposed factual and prose-quality defects.
 
+See the [counterexample and reader-facing revision](CHALLENGED-WALKTHROUGH.md) for the next experiment and its bounded quotation-repair policy.
+
 ## Prepare the inputs
 
 Choose a case from [cases.json](../cases.json). Keep its criteria and reference outputs with the reviewer.

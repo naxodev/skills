@@ -76,6 +76,34 @@
     ]
   },
   {
+    "id": "pr-grounding-quality",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #42. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "causality", "expect": "Explains the refresh-before-send change and attributes the reported expiry failure to the author." },
+      { "id": "evidence", "expect": "Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown." },
+      { "id": "guarantees", "expect": "Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions." },
+      { "id": "reader-facing", "expect": "Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML reflecting the final manifest and reports the output path." }
+    ]
+  },
+  {
+    "id": "pr-lock-cleanup",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr-lock-cleanup.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #91. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "mechanics", "expect": "Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally." },
+      { "id": "evidence", "expect": "Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results." },
+      { "id": "guarantees", "expect": "Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection." },
+      { "id": "reader-facing", "expect": "Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML reflecting the final manifest and reports the output path." }
+    ]
+  },
+  {
     "id": "route-docs-positive",
     "kind": "routing",
     "skill": "writing-technical-docs",

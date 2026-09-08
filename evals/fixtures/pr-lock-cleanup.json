@@ -1,0 +1,11 @@
+{
+  "number": 91,
+  "title": "fix: attempt lock release after task failure",
+  "body": "Move lock release into finally. The lock is now always released, including when acquisition fails, and the original task error is always preserved. Batch jobs use a separate path and need a follow-up.",
+  "commits": [{ "messageHeadline": "fix: attempt lock release after task failure" }],
+  "files": [{ "path": "run-job.ts", "status": "modified" }],
+  "diff": "diff --git a/run-job.ts b/run-job.ts\n--- a/run-job.ts\n+++ b/run-job.ts\n@@ -1,6 +1,8 @@\n export async function runJob(lock, task) {\n   await lock.acquire();\n-  const result = await task();\n-  await lock.release();\n-  return result;\n+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }\n }\n",
+  "context": {
+    "contracts": "lock.acquire(), lock.release(), and task() return promises. Each may fulfill or reject. No implementations, production logs, test results, or batch-job source are supplied."
+  }
+}
