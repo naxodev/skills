@@ -1,0 +1,10 @@
+{
+  "title": "Moss Catalog: invalidate a cache entry after writing",
+  "body": "The author says invalidating after the write removes stale cache reads, including concurrent readers.",
+  "contracts": [
+    "cache is a synchronous Map. Each read and update uses the same Map for this model; no distributed cache is shown.",
+    "db.write atomically commits its value before fulfillment; rejection leaves the stored value unchanged.",
+    "db.read captures a snapshot when invoked, but its promise may fulfill after a later write commits.",
+    "read is unchanged. No generation check, cancellation, TTL, or synchronization of in-flight readers is supplied."
+  ]
+}

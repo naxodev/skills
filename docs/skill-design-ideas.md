@@ -29,6 +29,8 @@ An improved workflow should attribute the author's rationale and explain the obs
 
 **Still experimental:** a [paired final-audit study](../evals/results/2026-09-08-final-narrative-audit/README.md) repaired 6/6 saved drafts with Astra proposals and 0/6 with Grok proposals under masked review. The inputs and audit prompt were unchanged between model arms. This supports selecting a capable final reviewer, but needs new drafts and correct controls before becoming the default workflow.
 
+**Prepared, not evaluated:** a [same-model audit-stage study](../evals/results/2026-09-09-audit-stage/README.md) isolates adding an audit to an unchanged Astra draft. Three new fixtures and title-corrupted controls passed deterministic preparation. Both permitted external graders failed authentication, so all nine writers and fifteen audits remain unrun.
+
 ### Scale the analysis to the change
 
 The current workflow always dispatches four reports and asks every file to appear in the tour.

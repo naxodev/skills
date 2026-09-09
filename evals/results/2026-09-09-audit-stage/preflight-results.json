@@ -1,0 +1,222 @@
+{
+  "catalog": [
+    {
+      "providerID": "anthropic",
+      "id": "claude-opus-5",
+      "enabled": true,
+      "variants": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ]
+    },
+    {
+      "providerID": "anthropic",
+      "id": "claude-opus-4-8",
+      "enabled": true,
+      "variants": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "attempt": "initial",
+      "session": {
+        "id": "ses_f79a1c89bffey1Jx4YevsHASxL",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "model": {
+          "id": "claude-opus-4-8",
+          "providerID": "anthropic",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "failed",
+        "time": {
+          "created": 1788960716668,
+          "updated": 1788960716730,
+          "idle": 1788960717040
+        },
+        "title": "neutral availability claude-opus-4-8",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-study-20260909"
+        }
+      },
+      "errors": [
+        {
+          "model": {
+            "id": "claude-opus-4-8",
+            "providerID": "anthropic",
+            "variant": "medium"
+          },
+          "finish": "error",
+          "error": {
+            "type": "provider.auth",
+            "message": "OAuth access token is invalid.",
+            "status": 401
+          },
+          "visible": []
+        }
+      ]
+    },
+    {
+      "attempt": "initial",
+      "session": {
+        "id": "ses_f79a1cb86ffeiJepkIcYrPy1i3",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "model": {
+          "id": "claude-opus-5",
+          "providerID": "anthropic",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "failed",
+        "time": {
+          "created": 1788960715921,
+          "updated": 1788960715983,
+          "idle": 1788960716524
+        },
+        "title": "neutral availability claude-opus-5",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-study-20260909"
+        }
+      },
+      "errors": [
+        {
+          "model": {
+            "id": "claude-opus-5",
+            "providerID": "anthropic",
+            "variant": "medium"
+          },
+          "finish": "error",
+          "error": {
+            "type": "provider.auth",
+            "message": "OAuth access token is invalid.",
+            "status": 401
+          },
+          "visible": []
+        }
+      ]
+    },
+    {
+      "attempt": "one-fresh-rerun",
+      "session": {
+        "id": "ses_f799a9328ffeWyHgIRo8yD7Fan",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "model": {
+          "id": "claude-opus-4-8",
+          "providerID": "anthropic",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "failed",
+        "time": {
+          "created": 1788961189103,
+          "updated": 1788961189168,
+          "idle": 1788961189487
+        },
+        "title": "neutral availability claude-opus-4-8",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-study-20260909"
+        }
+      },
+      "errors": [
+        {
+          "model": {
+            "id": "claude-opus-4-8",
+            "providerID": "anthropic",
+            "variant": "medium"
+          },
+          "finish": "error",
+          "error": {
+            "type": "provider.auth",
+            "message": "OAuth access token is invalid.",
+            "status": 401
+          },
+          "visible": []
+        }
+      ]
+    },
+    {
+      "attempt": "one-fresh-rerun",
+      "session": {
+        "id": "ses_f799a9606ffeZHfxgOkNLf8toM",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "model": {
+          "id": "claude-opus-5",
+          "providerID": "anthropic",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "failed",
+        "time": {
+          "created": 1788961188375,
+          "updated": 1788961188438,
+          "idle": 1788961188953
+        },
+        "title": "neutral availability claude-opus-5",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-study-20260909"
+        }
+      },
+      "errors": [
+        {
+          "model": {
+            "id": "claude-opus-5",
+            "providerID": "anthropic",
+            "variant": "medium"
+          },
+          "finish": "error",
+          "error": {
+            "type": "provider.auth",
+            "message": "OAuth access token is invalid.",
+            "status": 401
+          },
+          "visible": []
+        }
+      ]
+    }
+  ]
+}

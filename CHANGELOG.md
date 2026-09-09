@@ -10,6 +10,7 @@ This file records notable user-facing changes to the skills collection.
 - Added a cache-unit conflict fixture and a frozen three-stage walkthrough evaluation protocol, with a twelve-trial comparison and recorded factual and prose-quality defects.
 - Added a lock-cleanup fixture, explicit guarantee and reader-facing criteria, and a counterexample/replay protocol with recorded first-pass and quotation-repair results.
 - Added a source-linked final narrative audit protocol and local `audit` command, with masked before/after reviews comparing two audit models on identical saved drafts.
+- Prepared a same-model final-audit experiment with retry, transaction, and cache fixtures, deterministic probes, and title-only control defects. Recorded external grader authentication failures and unrun model counts.
 
 ### Changed
 
