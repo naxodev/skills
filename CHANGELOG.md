@@ -9,6 +9,7 @@ This file records notable user-facing changes to the skills collection.
 - Recorded a nine-run PR walkthrough evidence experiment, including failed candidate patches and per-run findings.
 - Added a cache-unit conflict fixture and a frozen three-stage walkthrough evaluation protocol, with a twelve-trial comparison and recorded factual and prose-quality defects.
 - Added a lock-cleanup fixture, explicit guarantee and reader-facing criteria, and a counterexample/replay protocol with recorded first-pass and quotation-repair results.
+- Added a source-linked final narrative audit protocol and local `audit` command, with masked before/after reviews comparing two audit models on identical saved drafts.
 
 ### Changed
 

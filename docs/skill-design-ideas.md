@@ -27,7 +27,7 @@ An improved workflow should attribute the author's rationale and explain the obs
 
 **Adopted improvement:** a [writer-only comparison](../evals/results/2026-09-08-challenged-walkthrough/README.md) reused the earlier verified facts unchanged and improved the reader-facing score from 1/6 to 6/6. The skill now tells writers to translate evidence notes into prose and keep internal review material out of the essay.
 
-**Still experimental:** executed counterexamples exposed limits, but incorrect guarantees reappeared in titles and summaries. Next test an independent check of the final narrative against the source and probe results.
+**Still experimental:** a [paired final-audit study](../evals/results/2026-09-08-final-narrative-audit/README.md) repaired 6/6 saved drafts with Astra proposals and 0/6 with Grok proposals under masked review. The inputs and audit prompt were unchanged between model arms. This supports selecting a capable final reviewer, but needs new drafts and correct controls before becoming the default workflow.
 
 ### Scale the analysis to the change
 

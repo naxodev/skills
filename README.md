@@ -68,6 +68,8 @@ To run metadata and catalog validation alone, use `bash scripts/validate.sh`.
 Run `bun run sample` to rebuild the sample HTML. No audio synthesis is needed.
 For instruction changes, follow the [behavior evaluation guide](evals/README.md). Those evaluations require fresh agent sessions and evidence-based review; CI does not claim a model behavior pass rate.
 
+The experimental [narrative audit command](evals/protocols/AUDIT-TOOL.md) prepares text-field coverage and applies source-linked audit edits to a separate manifest.
+
 ## Contributing
 
 Contributors should follow the repository contract in [AGENTS.md](AGENTS.md).

@@ -10,7 +10,8 @@
     "validate": "bash scripts/validate.sh",
     "check": "bun run typecheck && bun run lint && bun run test && bun run validate",
     "sample": "node skills/pr-walkthrough/scripts/build.mjs --manifest examples/pr-walkthrough.json --output examples/pr-walkthrough.html",
-    "evals": "bun scripts/evals.ts"
+    "evals": "bun scripts/evals.ts",
+    "audit": "bun scripts/narrative-audit.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",

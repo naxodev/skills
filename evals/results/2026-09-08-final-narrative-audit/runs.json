@@ -1,0 +1,2272 @@
+{
+  "protocolSha256": "a85df6b657af8c6bb70ee49bcafc4356b5e3910aaabc0b497fb9a6cac3489919",
+  "applicatorSha256": "8543a82b0c63c301a389f1d402097b0c0848654fd5f4b2efb629337e2a5b4efe",
+  "gradingModel": "openai/gpt-6-astra#medium",
+  "audits": [
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 1,
+      "model": "xai/grok-4.3#high",
+      "sessionID": "ses_f7c2214feffe7n9LFf4xFGi3c2",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/dek",
+          "problem": "The dek asserts that the change is 'addressing the initial failure after expiry that the author reported', presenting the resolution as fact. The source only contains the author's reported motivation and intent (the failure description and the instruction to move the refresh); it does not demonstrate that the change resolves the failure. The probe shows resolution only under introduced model assumptions (send throws on expired dispatch; refresh succeeds) and shows other paths with different outcomes.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch."
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/modelIntroduced/0",
+              "quote": "MockClient: send throws exactly when expiresAt <= Date.now() at send invocation time (absent from source; required to make the claimed failure mode observable)"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expiredBeforeCall/new/refreshCalls",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/sections/1/content",
+          "problem": "The second paragraph claims that under the timing 'a client whose expiresAt was already in the past would attempt the send with stale credentials and only then attempt a refresh that came too late for that call.' This sequence is unsupported by the source diff (old code has send statement before the if-refresh, so the refresh is not reached if send throws) and by the probe's expiredBeforeCall case that reproduces the reported failure (old: refreshCalls=0, error from send). The narrative's elaboration invents a post-send refresh attempt occurring in the failure scenario; the first paragraph correctly reports the author's account, but the added causal detail exceeds the shown code structure and probe observations.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expiredBeforeCall/old/refreshCalls",
+              "value": 0
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expiredBeforeCall/old/error",
+              "value": "credentials expired"
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/modelIntroduced/0",
+              "quote": "MockClient: send throws exactly when expiresAt <= Date.now() at send invocation time (absent from source; required to make the claimed failure mode observable)"
+            }
+          ]
+        }
+      ],
+      "edits": 2,
+      "formatRepairs": 1,
+      "formatError": "Error: evidence quote does not occur verbatim: A1 probe/assumptions/modelIntroduced",
+      "seconds": 186.164,
+      "toolCalls": 18,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "b70188d6b10a6ec621551a856db95bd45ba7c134dc636e2f9ea1c69e39dccdfc",
+        "manifest.json": "21d33d2dc8ea6ba7a726de9c122ead26e95653187e46f2628e327b3fff33b3ed",
+        "probe-results.json": "ee52334c8c1639a002fe17c2615cb77e5d0ea8fbda90463ccaedefa1bdc50b66",
+        "counterexample.mjs": "17980128752c6fc98c576713e777af150afbc0480632792db9c3ff1d1fa4e33e",
+        "fields.json": "71a4b8ab0735b562be0d2db8398413d42462aa5ac60f299e7188bba5ed9393f0"
+      },
+      "outputManifestSha256": "a841511643519e7b482a4f5e86de4550a2734d872b021bd478bf318e06948cbd",
+      "outputHtmlSha256": "9fa8640660f77a145d8d4bfce653eb1edc543ece0496f931f4965fc5ccdc70e1",
+      "auditSha256": "ee8e64ef754d8110e154e0ee1479bdb35798ea25a9e7510b1efb6a798fab76c1",
+      "transcriptSha256": "30a7c36d47d23b4fc134dbd5c3239ff80c965009a0c24a8c054a1d7a9cfb39a9",
+      "localEvidence": ".evals/narrative-audit-pr-grounding-quality-Ai81Cx/run-1"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 2,
+      "model": "xai/grok-4.3#high",
+      "sessionID": "ses_f7c1f39a0ffep8XfCT4VdDjozv",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "pass",
+      "findings": [],
+      "edits": 0,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 63.053,
+      "toolCalls": 9,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "59f06f6337f24cc5d084f31865a8a4f2608cbb544a10a87c87fab719ac9de4a7",
+        "manifest.json": "ebf7926b1b03d6d81b8d631e7b7011af4353a3f781dc242a30acaa75d5f5719d",
+        "probe-results.json": "49442db9ca4278bcbd4bc6547679fe17e368d08ec8117eee973ad33a5c5d4145",
+        "counterexample.mjs": "113bd45563c2ceac8d89dc10cbc1da30ae87e55fcc620f4b683c480d82fcb79e",
+        "fields.json": "51054ef7f70e0bd3a24ee09fde4ee29613c8cfdf45d70cba9b2ba52050cb33d1"
+      },
+      "outputManifestSha256": "6bf6cd5e76c820e1f97465530082b706c4698adbc11f0dcef6a93ba42983e8aa",
+      "outputHtmlSha256": "dee5ebc81b4da49824f7d4c9823742c983390bd1ca31360801e0525fcd7c8ff2",
+      "auditSha256": "a37db05a78a861d73fd6309fca02f7f9e45dbacad85e2602c455bfac04d820da",
+      "transcriptSha256": "2474fd27477e726828d48b449e1af39850f6ed5e32225123dbb3b1b492ac64de",
+      "localEvidence": ".evals/narrative-audit-pr-grounding-quality-Ai81Cx/run-2"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 3,
+      "model": "xai/grok-4.3#high",
+      "sessionID": "ses_f7c1e3f00ffekSzxk7Het5VUoG",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/sections/2/content",
+          "problem": "The narrative asserts that 'the new ordering performs one more Date.now() read on every call that reaches the function' but the diff relocates the if-condition (with its Date.now call) from after send to before send; there is no added expression or execution.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/sections/1/content",
+          "problem": "The narrative reports the PR body's claim of accepting an 'extra clock read' as fact without clarifying that the shown diff moves the expiry check (and its Date.now) rather than introducing an additional one.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The extra clock read is accepted to avoid the initial failed request."
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "pointer": "/sections/5/content",
+          "problem": "The recap states 'at the cost of an extra clock read on every invocation' which the diff does not support (one Date.now source expression before and after the move) and which the modeled cases show is not an increase in execution count.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            }
+          ]
+        }
+      ],
+      "edits": 3,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 119.238,
+      "toolCalls": 11,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "53aa3ae9feb541567bd01a00566a4a8fe79ea3fedb9066325d89687414078977",
+        "manifest.json": "ccac349d34b8703b16e0f671ec0faa13970a7cb8a07fcbf5650cf0d39530ca23",
+        "probe-results.json": "d1e34326e7b17d2656ae6dc23b84e1f5a5628e5267d8bb5b5007acda680e042f",
+        "counterexample.mjs": "78bad009bdddaad7f548548f5c810fa38551d778385edee4be6057a691579c62",
+        "fields.json": "4c1fddd0893c2f115d92ad2e5bcca62dc778beb833babea7de86dfe58ddd9545"
+      },
+      "outputManifestSha256": "08d4bc86d020837b01f8a59b5b42df5160ddd5d4e4264829decf4293dde316c4",
+      "outputHtmlSha256": "6f0e4453347f756b4bc055e814a0b5560e2e46ea2616e34a7343814a10c318d6",
+      "auditSha256": "59d3eb3ba5c860798f61f90e54be087e9265f131c92603b3958c344ce9f5435e",
+      "transcriptSha256": "54dd2e30f6a3c0c575c09c1bb60e6fbc4019024eebd1deaf2f0cd66298366b59",
+      "localEvidence": ".evals/narrative-audit-pr-grounding-quality-Ai81Cx/run-3"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 1,
+      "model": "xai/grok-4.3#high",
+      "sessionID": "ses_f7c2214feffdicc8hPVfvd39Df",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/sections/0/content",
+          "problem": "The statement 'leaving the lock held for subsequent callers' asserts a runtime state effect and impact on other callers that is not present in the source (which supplies only promise contracts and the structural diff) and is not observed in the probe (which only counts calls within runJob, without modeling lock held state or subsequent callers).",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/dek",
+          "problem": "The phrase 'to keep the lock from staying held when the task rejects' asserts a specific lock state transition ('staying held') whose semantics are not supplied by the source contracts or diff and are not measured by the probe model.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "pointer": "/sections/2/content",
+          "problem": "The claim 'Release therefore runs after task completion or rejection whenever acquire has already succeeded and the release promise itself fulfills' incorrectly conditions the execution of the release call on the release promise fulfilling. Per the probe, the release call executes (releaseCalls becomes 1) on task rejection even when release rejects (see release_reject_after_task_reject case, where after shows releaseCalls=1 but error='release fail' instead of task error). This blurs the distinction between operation invocation and successful completion.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/cases/4/after",
+              "value": {
+                "result": null,
+                "error": "release fail",
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introduced_by_model/3",
+              "quote": "standard JavaScript async/await try-finally semantics for error propagation (finally rejection overrides any pending rejection from try block)"
+            }
+          ]
+        },
+        {
+          "id": "A4",
+          "pointer": "/sections/4/content",
+          "problem": "The recap 'task failure no longer bypasses release when release fulfills' attaches the fulfills condition to avoidance of bypass (i.e., whether the release call executes), which is imprecise per the code and probe (release call executes whenever acquire succeeds, including release-reject paths). This risks inconsistency with the body distinction between call execution and promise fulfillment.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/cases/4/after",
+              "value": {
+                "result": null,
+                "error": "release fail",
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            }
+          ]
+        }
+      ],
+      "edits": 4,
+      "formatRepairs": 1,
+      "formatError": "Error: evidence quote does not occur verbatim: A3 probe/assumptions/introduced_by_model",
+      "seconds": 126.083,
+      "toolCalls": 12,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "313bc71555c05503529bddf25818a13c79f038ee3150ad4e75731f9f0a7630e4",
+        "manifest.json": "56fdcbc90a39363a6a8cb3d5388e6ceca5aa66225dfc1677f46207f2cd72538d",
+        "probe-results.json": "f11b9e6b15b2d663c4a94a71708c7ec5517affc361a88abd4d26d745c063f881",
+        "counterexample.mjs": "a2882cf1e40dce36430048145bba5cf8c6e359639d527222d140dbabf8d65b58",
+        "fields.json": "59a2080a5bb4492d39f45fadbb53643a88fe3964b1fcdae3b2fda6f2b8e74465"
+      },
+      "outputManifestSha256": "2b9f6e0a6d3b81e588784d2c077098eba4f10daf5cfbbd4c54479682e471aab2",
+      "outputHtmlSha256": "6d5b6b71711d59f21a37588835e023e8d9c093d20e1db34961a621b66a592a0e",
+      "auditSha256": "3cc9252c45bc719b3ae9fd27330bea5070f57ff7cbfe0fb37692a2173676e03e",
+      "transcriptSha256": "1c1eb0235ed9c36ae5a0a86e3eb49df0b682fc072ee1a8fde362e4b71f7d0109",
+      "localEvidence": ".evals/narrative-audit-pr-lock-cleanup-zjngGo/run-1"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 2,
+      "model": "xai/grok-4.3#high",
+      "sessionID": "ses_f7c202436ffe1oT1cE9o8ZWTaR",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "pass",
+      "findings": [],
+      "edits": 0,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 49.449,
+      "toolCalls": 7,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "ad8330c299515aef0a9a18770c5d871e08bf1865aa1c2981e031a188775fe28b",
+        "manifest.json": "1a5adc7e0bafbe0a5eadce4d410d195e32906a22b2a107001e64e82b98c4f52d",
+        "probe-results.json": "c3b8ab0d6a584bd713c99dece957ec398550b4022b3acb93668bc72efc0d8578",
+        "counterexample.mjs": "e113305bd54135b651084c53019bd9ed7cb4df6ceb336f55c03259bbf9b6ff1f",
+        "fields.json": "f5960606a05341f515b175739a615b8307e770019cc65183ede77c97dea3391e"
+      },
+      "outputManifestSha256": "6ddaedf8d3a8a826f6868fcc36e14a3c57c5f5f867562d92003a27e050a953e0",
+      "outputHtmlSha256": "41e34836309fe16429ab5808d1c0aedb614b92ab8550455040b204fa523eeb2b",
+      "auditSha256": "fe9835bf596da27458efba55f50e40656dc7a4ac0b0c223dbe5235a76c76c685",
+      "transcriptSha256": "796a5c1c8ff8e352ba4aa2f917c4610949c4de820714f886cf0ef163c14198eb",
+      "localEvidence": ".evals/narrative-audit-pr-lock-cleanup-zjngGo/run-2"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 3,
+      "model": "xai/grok-4.3#high",
+      "sessionID": "ses_f7c1f5e8bffeEe2CP1ZJGpCVB3",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/sections/5/content",
+          "problem": "The recap states that the change 'ensures that, after a successful lock acquisition, release is called once when the task succeeds or fails, provided the release promise itself fulfills.' This phrasing incorrectly conditions the release call itself on release fulfillment. Release is called (the await executes and releaseCalls increments) even when the release promise rejects, as shown by the releaseThrows cases; the fulfillment condition affects only error propagation semantics.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/cases/releaseThrowsAfterTaskError/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "released": true,
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/releaseThrowsAfterSuccess/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "released": true,
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }\n }"
+            }
+          ]
+        }
+      ],
+      "edits": 1,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 67.519,
+      "toolCalls": 8,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "006edf3181bb223dd4e0503d8ca33e71df09d2bb2c3e365c539cf9663acb0aef",
+        "manifest.json": "cd955929b8987d0b33c1f3548350773e01b278f2ff8089abb195e148e08a115e",
+        "probe-results.json": "ca5d3c11eeb16d473bdaa0e25b189a24842a54a05814207f7039139f1dade462",
+        "counterexample.mjs": "992c7858799810b659a1fac1b2bd3ab987b049ffd644364ef5b168682306ef1e",
+        "fields.json": "a8af0becd7c2e456762bb8408cab5f0fe08a684c2e92dade486b13d7bb8ba4bb"
+      },
+      "outputManifestSha256": "30e34a8109c40d416696cb6094c78f92da01404f43fcab30d96d62c4f32b210d",
+      "outputHtmlSha256": "0caa193d9a9434286b8219cc70b6fecac82840b5f6a5dca86412cfea5b041219",
+      "auditSha256": "4ae29f251878bba64b9d3a938c60c926ff3d400d9461dadbdad061ea2e9f56a6",
+      "transcriptSha256": "a9376322129a02b6d269cfc0f22e4a4162f7a21b0e0f6ee850937060e4c17b91",
+      "localEvidence": ".evals/narrative-audit-pr-lock-cleanup-zjngGo/run-3"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 1,
+      "model": "openai/gpt-6-astra#medium",
+      "sessionID": "ses_f7c1a90a5ffenG4TcBclUpgNyg",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/title",
+          "problem": "The title presents refresh before the first request without the condition and suggests first-request-specific behavior. The code checks expiry on each invocation and refreshes only if the condition is true.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": " export async function request(client, payload) {\n+  if (client.expiresAt <= Date.now()) await client.refresh();"
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/dek",
+          "problem": "The subtitle states that the change addresses the failure as an established outcome. The source supplies the author's motivation, while success is demonstrated only in a model with introduced client behavior.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch."
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/modelIntroduced/0",
+              "quote": "MockClient: send throws exactly when expiresAt <= Date.now() at send invocation time (absent from source; required to make the claimed failure mode observable)"
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "pointer": "/sections/0/content",
+          "problem": "The old flow is described as sending and then checking expiry without stating that await must fulfill. A rejected send exits before the check, and calling refresh does not establish its successful completion.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expiredBeforeCall/old",
+              "value": {
+                "result": null,
+                "error": "credentials expired",
+                "refreshCalls": 0,
+                "sendCalls": 1,
+                "finalExpiresAt": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "A4",
+          "pointer": "/sections/1/title",
+          "problem": "The heading turns a reported failure into an unconditional prediction. The source does not show send semantics, and the probe introduces expiry rejection as an assumption.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The first request after expiry failed because credentials were refreshed after dispatch."
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/modelIntroduced/0",
+              "quote": "MockClient: send throws exactly when expiresAt <= Date.now() at send invocation time (absent from source; required to make the claimed failure mode observable)"
+            }
+          ]
+        },
+        {
+          "id": "A5",
+          "pointer": "/sections/1/content",
+          "problem": "The second paragraph asserts stale credential use and a subsequent refresh attempt. Credential propagation is unknown, and if send rejects, the old function never reaches refresh. This distinction matters to the author's explanation of the failure.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expiredBeforeCall/old/refreshCalls",
+              "value": 0
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/modelIntroduced/5",
+              "quote": "no modeling of streaming path, concurrent calls, or actual credential propagation (unknown from source)"
+            }
+          ]
+        },
+        {
+          "id": "A6",
+          "pointer": "/sections/2/content",
+          "problem": "'Due to expire' and 'preemptive refresh' suggest a refresh window before expiry. The comparison is expiresAt <= Date.now(), with no margin. The explanation should also distinguish awaiting refresh from guaranteed dispatch or valid credentials afterward.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/refreshFailsBeforeSend/new/sendCalls",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "A7",
+          "pointer": "/sections/3/content",
+          "problem": "'No net addition of a clock read occurs' broadens the qualified success-path statement into a runtime claim. A rejected old send skips the helper's clock read; the new helper reads the clock first under ordinary property access. The probe reports send/refresh counts, not clock-read counts, and client-internal clock cost is unknown. The field also omits the author's conflicting 'extra clock read' account.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The extra clock read is accepted to avoid the initial failed request."
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expiredBeforeCall/old",
+              "value": {
+                "result": null,
+                "error": "credentials expired",
+                "refreshCalls": 0,
+                "sendCalls": 1,
+                "finalExpiresAt": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "A8",
+          "pointer": "/sections/5/content",
+          "problem": "The recap's Date.now count lacks the necessary restriction to the helper's own expression, and it omits early-exit count differences and the author's cost claim. Its success statement should describe the specific example, including refresh extending expiry, rather than imply that refresh fulfillment alone suffices. Streaming scope should remain attributed because that implementation is absent.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "Streaming requests remain on a separate path and need a follow-up. The extra clock read is accepted to avoid the initial failed request."
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/modelIntroduced/1",
+              "quote": "MockClient.refresh: on success sets expiresAt = now + 10000; on failure throws \"refresh failed\""
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expiredBeforeCall/new/result",
+              "value": {
+                "ok": true,
+                "payload": {
+                  "test": true
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "edits": 8,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 151.962,
+      "toolCalls": 8,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "b70188d6b10a6ec621551a856db95bd45ba7c134dc636e2f9ea1c69e39dccdfc",
+        "manifest.json": "21d33d2dc8ea6ba7a726de9c122ead26e95653187e46f2628e327b3fff33b3ed",
+        "probe-results.json": "ee52334c8c1639a002fe17c2615cb77e5d0ea8fbda90463ccaedefa1bdc50b66",
+        "counterexample.mjs": "17980128752c6fc98c576713e777af150afbc0480632792db9c3ff1d1fa4e33e",
+        "fields.json": "71a4b8ab0735b562be0d2db8398413d42462aa5ac60f299e7188bba5ed9393f0"
+      },
+      "outputManifestSha256": "774fec1bdb5c26387a414847c02f1f58a3bb970349ac65d85a17ef94f9dcad89",
+      "outputHtmlSha256": "37a0b1d3ceaacd10e431020b0008412c65a1ae286f796ce63a1c192e31f0d599",
+      "auditSha256": "4ed97616997de3c3e481a67925a52e0589fcc0bfdd081b73a1610113dda95538",
+      "transcriptSha256": "b29165c2ff55982941ed87357765c9f529e243be5d0add3789189405453f43b1",
+      "localEvidence": ".evals/narrative-audit-astra-pr-grounding-quality-smHxdF/run-1"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 2,
+      "model": "openai/gpt-6-astra#medium",
+      "sessionID": "ses_f7c183aa3ffeAOrLdc2tzdnFYn",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/dek",
+          "problem": "Saying the relocation addresses the failure presents the intended production outcome as established. The source reports a cause and requests a move; successful modeled examples use an invented refresh implementation.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch."
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introduced_by_model/1",
+              "quote": "client.refresh updates expiresAt to Date.now()+1h (minimal stub to make state progress)"
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/meta",
+          "problem": "Streaming path unchanged reads as an independently verified implementation claim. The source only reports a separate path needing follow-up and supplies the request-function diff.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "Streaming requests remain on a separate path and need a follow-up."
+            },
+            {
+              "file": "source",
+              "pointer": "/files",
+              "value": [
+                {
+                  "path": "client.ts",
+                  "status": "modified"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "pointer": "/sections/0/content",
+          "problem": "The old-flow description does not distinguish successful send completion from rejection. The old check runs only after the awaited send fulfills; a thrown or rejected send skips it. Even when reached, invoking refresh does not prove successful refresh completion.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expired_at_start/before",
+              "value": {
+                "success": false,
+                "error": "Credential expired at dispatch",
+                "code": "EXPIRED",
+                "refreshCalls": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": "A4",
+          "pointer": "/sections/1/title",
+          "problem": "The heading presents a verified causal explanation, while the supplied cause is the author's report and the client implementation is not shown.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The first request after expiry failed because credentials were refreshed after dispatch."
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introduced_by_model/0",
+              "quote": "client.send throws with code EXPIRED precisely when expiresAt <= Date.now() at invocation (models the reported failure cause)"
+            }
+          ]
+        },
+        {
+          "id": "A5",
+          "pointer": "/sections/1/content",
+          "problem": "The second sentence asserts actual credential receipt and failure as fact, although send receives only payload in the shown call and its credential handling is unknown. The explanation also leaves the author's after-dispatch refresh account unreconciled with the old awaited send: if it rejects as modeled, refresh is never reached.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The first request after expiry failed because credentials were refreshed after dispatch."
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expired_at_start/before",
+              "value": {
+                "success": false,
+                "error": "Credential expired at dispatch",
+                "code": "EXPIRED",
+                "refreshCalls": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": "A6",
+          "pointer": "/sections/2/content",
+          "problem": "The prose incorrectly lists no elapsed time as a modeled condition. The probe uses wall time and its boundary case starts with the run-start timestamp, not a clock frozen at the check. It also needs to distinguish awaiting refresh from successful renewal: refresh rejection prevents send, and fulfillment alone does not establish valid production credentials.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introduced_by_model/4",
+              "quote": "Date.now() calls use wall time but expiresAt set relative to run-start now for determinism within single execution"
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introduced_by_model/1",
+              "quote": "client.refresh updates expiresAt to Date.now()+1h (minimal stub to make state progress)"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/expired_at_start/after",
+              "value": {
+                "success": true,
+                "response": {
+                  "status": 200,
+                  "data": {
+                    "id": "expired_at_start"
+                  }
+                },
+                "refreshCalls": 1
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/boundary_expires_equal_now/after",
+              "value": {
+                "success": true,
+                "response": {
+                  "status": 200,
+                  "data": {
+                    "id": "boundary"
+                  }
+                },
+                "refreshCalls": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "A7",
+          "pointer": "/sections/3/content",
+          "problem": "The cost paragraph conflates one Date.now expression with equal runtime reads. On a send rejection, the old request skips that read while the new request already evaluated it, assuming the property access succeeds. The probe counts refresh calls, not clock reads or cost. The last paragraph also generalizes refresh execution to all send-throw paths, although refresh is conditional on expiry and must fulfill before send is reached.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The extra clock read is accepted to avoid the initial failed request."
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/send_throws_on_error_path",
+              "value": {
+                "before": {
+                  "success": false,
+                  "error": "unrelated send failure",
+                  "code": null,
+                  "refreshCalls": 0
+                },
+                "after": {
+                  "success": false,
+                  "error": "unrelated send failure",
+                  "code": null,
+                  "refreshCalls": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "A8",
+          "pointer": "/sections/4/content",
+          "problem": "The recap attributes a resolved outcome to the author, whose body reports the cause and intended fix rather than verification. Its reference to stated assumptions inherits the false frozen-time qualification, and placing other failure modes outside the shown source obscures visible await rejection paths.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch."
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);"
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introduced_by_model/4",
+              "quote": "Date.now() calls use wall time but expiresAt set relative to run-start now for determinism within single execution"
+            }
+          ]
+        }
+      ],
+      "edits": 8,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 143.526,
+      "toolCalls": 8,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "59f06f6337f24cc5d084f31865a8a4f2608cbb544a10a87c87fab719ac9de4a7",
+        "manifest.json": "ebf7926b1b03d6d81b8d631e7b7011af4353a3f781dc242a30acaa75d5f5719d",
+        "probe-results.json": "49442db9ca4278bcbd4bc6547679fe17e368d08ec8117eee973ad33a5c5d4145",
+        "counterexample.mjs": "113bd45563c2ceac8d89dc10cbc1da30ae87e55fcc620f4b683c480d82fcb79e",
+        "fields.json": "51054ef7f70e0bd3a24ee09fde4ee29613c8cfdf45d70cba9b2ba52050cb33d1"
+      },
+      "outputManifestSha256": "fab7f5426b784766ab8d56fc5f9fddb1ee7277d527bbe114648d548cca6a2421",
+      "outputHtmlSha256": "78b5d2f486529fe4def5377a40355e7507650d223ec7a0a083fb85fb891784bb",
+      "auditSha256": "d364887fc8d549dab1df0c2c0e38e60d6237f82b4fcd239c23458a95579209b5",
+      "transcriptSha256": "e633a53777ca068e9b61b52f742ad960cccda4229cd35b89d8e71e698ff0fe57",
+      "localEvidence": ".evals/narrative-audit-astra-pr-grounding-quality-smHxdF/run-2"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "run": 3,
+      "model": "openai/gpt-6-astra#medium",
+      "sessionID": "ses_f7c1605c9ffenv42hb5hoccBGP",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/dek",
+          "problem": "The summary makes error-free refresh sound sufficient for success and implies a verified path boundary. The examples also assume refresh extends expiry, send fails only for expiry, and time is fixed. They do not establish success for the real client or identify every caller of request.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introducedByModel/0",
+              "quote": "send throws 'send failed: credentials expired at dispatch' precisely when expiresAt <= Date.now() at the moment send is invoked (models the reported 'first request after expiry failed' from /body)"
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introducedByModel/1",
+              "quote": "successful refresh() updates expiresAt to Date.now()+5000 (assumes refresh succeeds in making subsequent send work)"
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introducedByModel/4",
+              "quote": "no time elapses between the if-check and send (fixed now throughout)"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": " export async function request(client, payload) {"
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/sections/0/content",
+          "problem": "The old function does not necessarily refresh after attempting send or return its response regardless of refresh. A rejected send skips the check; a rejected refresh prevents the return even after send succeeds. The comparison includes equality, not just time strictly past expiry.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/2/observed/refreshCalls",
+              "value": 0
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/2/observed/error",
+              "quote": "send failed: credentials expired at dispatch"
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "pointer": "/sections/1/title",
+          "problem": "The heading presents the reported cause of the first failure as established. The source supplies an author's diagnosis, without the client implementation or a production reproduction.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The first request after expiry failed because credentials were refreshed after dispatch."
+            }
+          ]
+        },
+        {
+          "id": "A4",
+          "pointer": "/sections/1/content",
+          "problem": "The paragraph converts the author's account into a definite stale-credential send followed by refresh. Credential handling is unshown, and in the modeled expired case the old send rejects before refresh. The attributed extra-clock-read rationale also needs its disagreement with the unchanged source-expression count made clear.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The extra clock read is accepted to avoid the initial failed request."
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/2/observed/refreshCalls",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "A5",
+          "pointer": "/sections/2/content",
+          "problem": "Refresh invocation is treated as completion, and the false-condition path is called unchanged even though the check moves across an awaited send. The diff moves one Date.now() expression rather than adding one. Runtime counts depend on reachability: old code skips its check when send rejects. The probe records send and refresh invocations, not clock reads, and its stubs also read the clock. Error-free refresh alone does not prove the claimed elimination of failure.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/5/observed",
+              "value": {
+                "success": false,
+                "error": "refresh failed: network error",
+                "refreshCalls": 1,
+                "sendCalls": 0,
+                "finalExpiresAt": 999999999000,
+                "response": null
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introducedByModel/1",
+              "quote": "successful refresh() updates expiresAt to Date.now()+5000 (assumes refresh succeeds in making subsequent send work)"
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introducedByModel/0",
+              "quote": "send throws 'send failed: credentials expired at dispatch' precisely when expiresAt <= Date.now() at the moment send is invoked (models the reported 'first request after expiry failed' from /body)"
+            }
+          ]
+        },
+        {
+          "id": "A6",
+          "pointer": "/sections/3/content",
+          "problem": "The discussion makes the modeled benefit depend only on non-throwing refresh and generalizes the old send failure from one expired fixture. In that fixture the old refresh never runs. The real send may succeed, after which an old refresh rejection would prevent return. Passing modeled examples require additional stub assumptions and cannot establish real-client success.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/cases/4/observed",
+              "value": {
+                "success": false,
+                "error": "send failed: credentials expired at dispatch",
+                "refreshCalls": 0,
+                "sendCalls": 1,
+                "finalExpiresAt": 999999999000,
+                "response": null
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/5/observed",
+              "value": {
+                "success": false,
+                "error": "refresh failed: network error",
+                "refreshCalls": 1,
+                "sendCalls": 0,
+                "finalExpiresAt": 999999999000,
+                "response": null
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introducedByModel/1",
+              "quote": "successful refresh() updates expiresAt to Date.now()+5000 (assumes refresh succeeds in making subsequent send work)"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;"
+            }
+          ]
+        },
+        {
+          "id": "A7",
+          "pointer": "/sections/4/content",
+          "problem": "Calling the shown function non-streaming treats the author's path description as verified code scope. The diff identifies request but contains no callers or streaming implementation.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "Streaming requests remain on a separate path and need a follow-up."
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": " export async function request(client, payload) {"
+            }
+          ]
+        },
+        {
+          "id": "A8",
+          "pointer": "/sections/5/content",
+          "problem": "The recap adds an every-invocation cost to the author's rationale despite a moved, not added, clock expression. It overgeneralizes modeled success as requiring successful refresh even though the not-expired case succeeds without refresh. It describes failure as simply earlier despite distinct errors and skipped operations, and says effects outside refresh success are not shown despite the exceptional probe. The recap needs the full model qualifications and a clear distinction between the reported streaming boundary and verified scope.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The extra clock read is accepted to avoid the initial failed request."
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "-  if (client.expiresAt <= Date.now()) await client.refresh();"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/1/observed/success",
+              "value": true
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/1/observed/refreshCalls",
+              "value": 0
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/4/observed/error",
+              "quote": "send failed: credentials expired at dispatch"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/5/observed/error",
+              "quote": "refresh failed: network error"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/5/observed/sendCalls",
+              "value": 0
+            },
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "Streaming requests remain on a separate path and need a follow-up."
+            }
+          ]
+        }
+      ],
+      "edits": 8,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 190.018,
+      "toolCalls": 9,
+      "inputHashes": {
+        "source.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "verification.json": "53aa3ae9feb541567bd01a00566a4a8fe79ea3fedb9066325d89687414078977",
+        "manifest.json": "ccac349d34b8703b16e0f671ec0faa13970a7cb8a07fcbf5650cf0d39530ca23",
+        "probe-results.json": "d1e34326e7b17d2656ae6dc23b84e1f5a5628e5267d8bb5b5007acda680e042f",
+        "counterexample.mjs": "78bad009bdddaad7f548548f5c810fa38551d778385edee4be6057a691579c62",
+        "fields.json": "4c1fddd0893c2f115d92ad2e5bcca62dc778beb833babea7de86dfe58ddd9545"
+      },
+      "outputManifestSha256": "84831bc149e72bb7966ab3ff1fc25a581e3a956afc827f8b5fdfbb998a59cd00",
+      "outputHtmlSha256": "9c78c47d52adb8a1a71b4db32c16e2f5dbe6de3ab8780dec44a920da26c006e6",
+      "auditSha256": "34aa533b265e1f7802cddaa96721e42bb2eda002e6cd10e5d783f8b3e1481f7d",
+      "transcriptSha256": "e27e5c8bbf3098d3732ce8e6472dd5cf023d78068b15ad26fd75fd2efab0f941",
+      "localEvidence": ".evals/narrative-audit-astra-pr-grounding-quality-smHxdF/run-3"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 1,
+      "model": "openai/gpt-6-astra#medium",
+      "sessionID": "ses_f7c1a90a4ffeCHVWd8ZXvWbbp8",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/dek",
+          "problem": "The subtitle presents preventing a held lock as the change's effect. The diff establishes a release attempt after task rejection, not successful unlocking. Release may reject, and the lock implementation and state are unknown.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "lock.acquire(), lock.release(), and task() return promises. Each may fulfill or reject. No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/sections/0/content",
+          "problem": "The opening describes successful release without bounding it to the successful promise path, then asserts that task rejection leaves the lock held for later callers. The old code skips the release call on task rejection, but the supplied evidence does not establish lock state or effects on subsequent callers.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   await lock.acquire();\n-  const result = await task();\n-  await lock.release();\n-  return result;"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "Each may fulfill or reject. No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "pointer": "/sections/1/title",
+          "problem": "The heading asserts a held-lock outcome that is not demonstrated. Only bypassing the release call is established by the old control flow.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "-  const result = await task();\n-  await lock.release();"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        },
+        {
+          "id": "A4",
+          "pointer": "/sections/2/content",
+          "problem": "The explanation conflates invoking release with its fulfillment by conditioning 'runs' on the release promise fulfilling. After acquire fulfills and task settles, release is invoked even if it rejects. The probe measures calls and captured error messages, not lock state or successful unlocking.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/4/after",
+              "value": {
+                "result": null,
+                "error": "release fail",
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introduced_by_model/0",
+              "quote": "stub implementations of lock and task with controllable rejection and call counters"
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introduced_by_model/1",
+              "quote": "error message capture instead of full Error objects for deterministic observation"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        },
+        {
+          "id": "A5",
+          "pointer": "/sections/4/content",
+          "problem": "The recap incorrectly generalizes unchanged semantics to release rejections. When both task and release reject, the old code propagates the task error without calling release, while the new code propagates the release error. It also repeats the fulfillment condition on calling release and turns the author's batch-path report into an established implementation fact despite absent batch source.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/cases/4/before",
+              "value": {
+                "result": null,
+                "error": "task fail",
+                "acquireCalls": 1,
+                "releaseCalls": 0
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/4/after",
+              "value": {
+                "result": null,
+                "error": "release fail",
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }"
+            },
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "Batch jobs use a separate path and need a follow-up."
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        }
+      ],
+      "edits": 5,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 123.827,
+      "toolCalls": 8,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "313bc71555c05503529bddf25818a13c79f038ee3150ad4e75731f9f0a7630e4",
+        "manifest.json": "56fdcbc90a39363a6a8cb3d5388e6ceca5aa66225dfc1677f46207f2cd72538d",
+        "probe-results.json": "f11b9e6b15b2d663c4a94a71708c7ec5517affc361a88abd4d26d745c063f881",
+        "counterexample.mjs": "a2882cf1e40dce36430048145bba5cf8c6e359639d527222d140dbabf8d65b58",
+        "fields.json": "59a2080a5bb4492d39f45fadbb53643a88fe3964b1fcdae3b2fda6f2b8e74465"
+      },
+      "outputManifestSha256": "67330a63c56d593160f7476afc151d95bd7daf6a920fe4341d99553b7eadb494",
+      "outputHtmlSha256": "ee6e2b828c3d5b7a419e2cc4cba07c9f759138c313be2f15996697a016dc42d8",
+      "auditSha256": "2df280936ea6bae6b911382f048251345fb13d0d42035212bec115436a0048f7",
+      "transcriptSha256": "1ebad3160768b071681dbeefde7fa9d3df49963bbddd637744faa3866756c665",
+      "localEvidence": ".evals/narrative-audit-astra-pr-lock-cleanup-uwDTfX/run-1"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 2,
+      "model": "openai/gpt-6-astra#medium",
+      "sessionID": "ses_f7c18a75bffeGjKzKCGPns5szk",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/dek",
+          "problem": "The subtitle says release failure keeps its original exit behavior. After task rejection, the old code never invoked release; the new code can reject with the release error instead of the task error. Only acquire failure is unchanged across these paths.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/cases/taskFailsReleaseFails/old",
+              "value": {
+                "result": null,
+                "error": "task failed",
+                "releaseCalled": false,
+                "acquireCalled": true
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/taskFailsReleaseFails/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "releaseCalled": true,
+                "acquireCalled": true
+              }
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }"
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/sections/1/title",
+          "problem": "The heading asserts that the lock remained acquired. The code establishes a skipped release call, but the supplied contracts do not establish the lock's actual state or the task's effects.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "lock.acquire(), lock.release(), and task() return promises. Each may fulfill or reject. No implementations, production logs, test results, or batch-job source are supplied."
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "-  const result = await task();\n-  await lock.release();\n-  return result;"
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "pointer": "/sections/1/content",
+          "problem": "The paragraph treats continued lock ownership as observed behavior. Only omission of runJob's release call follows from task rejection. The modeled probe records invocation flags and errors, not lock ownership.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "-  const result = await task();\n-  await lock.release();\n-  return result;"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            },
+            {
+              "file": "probe",
+              "pointer": "/assumptions/introducedByModel/4",
+              "quote": "observation keys: result, error (message), releaseCalled, acquireCalled"
+            }
+          ]
+        },
+        {
+          "id": "A4",
+          "pointer": "/sections/2/content",
+          "problem": "The paragraph says a successful task result reaches the caller after release completes without requiring release fulfillment. A rejected release overrides that pending return even when the task fulfills.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+    return await task();\n+  } finally {\n+    await lock.release();"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/taskSucceedsReleaseFails/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "releaseCalled": true,
+                "acquireCalled": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "A5",
+          "pointer": "/sections/3/title",
+          "problem": "The heading labels the section's paths untouched, but the section includes the newly reachable release failure after task failure. That path changes both cleanup invocation and the rejection reaching the caller.",
+          "evidence": [
+            {
+              "file": "probe",
+              "pointer": "/cases/taskFailsReleaseFails/old",
+              "value": {
+                "result": null,
+                "error": "task failed",
+                "releaseCalled": false,
+                "acquireCalled": true
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/taskFailsReleaseFails/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "releaseCalled": true,
+                "acquireCalled": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "A6",
+          "pointer": "/sections/3/content",
+          "problem": "The statement that the diff does not claim acquire-failure coverage obscures the explicit claim in the PR body. The explanation must distinguish the author's guarantees from the code, including the contradicted guarantee of preserving task errors. Release invocation also does not prove successful unlocking.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The lock is now always released, including when acquisition fails, and the original task error is always preserved."
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   await lock.acquire();"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/acquireFails/new/releaseCalled",
+              "value": false
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/taskFailsReleaseFails/new/error",
+              "quote": "release failed"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "lock.acquire(), lock.release(), and task() return promises. Each may fulfill or reject. No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        }
+      ],
+      "edits": 6,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 115.513,
+      "toolCalls": 8,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "ad8330c299515aef0a9a18770c5d871e08bf1865aa1c2981e031a188775fe28b",
+        "manifest.json": "1a5adc7e0bafbe0a5eadce4d410d195e32906a22b2a107001e64e82b98c4f52d",
+        "probe-results.json": "c3b8ab0d6a584bd713c99dece957ec398550b4022b3acb93668bc72efc0d8578",
+        "counterexample.mjs": "e113305bd54135b651084c53019bd9ed7cb4df6ceb336f55c03259bbf9b6ff1f",
+        "fields.json": "f5960606a05341f515b175739a615b8307e770019cc65183ede77c97dea3391e"
+      },
+      "outputManifestSha256": "b3dcce94b5123ea842f9c09b852ef1ef1b57a307fb927aef86e1b7756554b5fe",
+      "outputHtmlSha256": "2f01b8b20d38cf72ee1632d4dbbe2cb140dca1677e5516b5da4f774c41dfe00e",
+      "auditSha256": "dfc2fb6143fd6368b61a74cd5b518d0b5080b7cf4fce439789d34ecd3b00dd91",
+      "transcriptSha256": "b78fc82d4b9c579888b22665098b4dc43611b10331b97e66edde0ee5a39754e9",
+      "localEvidence": ".evals/narrative-audit-astra-pr-lock-cleanup-uwDTfX/run-2"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "run": 3,
+      "model": "openai/gpt-6-astra#medium",
+      "sessionID": "ses_f7c16dfc2ffezolFto4cfM6PEo",
+      "inputBundleRevision": "039186924d83d1ac17bbd7035e0addd6b59bc67d",
+      "draftRevision": "cb44690cb7ced3f15cc5e4938790ffcf0f7734b1",
+      "verdict": "revise",
+      "findings": [
+        {
+          "id": "A1",
+          "pointer": "/dek",
+          "problem": "The subtitle says try/finally ensures release after successful acquisition. It ensures an invocation when the task settles, not successful completion or a particular lock state. Release may reject, including after a successful task.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "lock.acquire(), lock.release(), and task() return promises. Each may fulfill or reject."
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/releaseThrowsAfterSuccess/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "released": true,
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "pointer": "/sections/0/content",
+          "problem": "The opening describes successful acquisition, release, and return without limiting this sequence to fulfillment paths. The old code awaited calls that could reject; in particular, a release rejection prevented returning the task result. The source does not establish actual lock state.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   await lock.acquire();\n-  const result = await task();\n-  await lock.release();\n-  return result;"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "lock.acquire(), lock.release(), and task() return promises. Each may fulfill or reject."
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/releaseThrowsAfterSuccess/old",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "released": true,
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "pointer": "/sections/1/title",
+          "problem": "The heading asserts that task errors left the lock acquired. The code shows a skipped release call, but no implementation or held-state observation establishes the resulting lock state.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "-  const result = await task();\n-  await lock.release();"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/taskThrows/old/releaseCalls",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "A4",
+          "pointer": "/sections/3/content",
+          "problem": "An acquire rejection proves that this function skips release, not that a lock remains unreleased. Acquisition side effects are unknown. The modeled released flag also cannot establish successful release: the stub sets it before rejecting, and the observations show released=true alongside a release error.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "   await lock.acquire();"
+            },
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }"
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/acquireThrows/new/releaseCalls",
+              "value": 0
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/acquireThrows/old/releaseCalls",
+              "value": 0
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/releaseThrowsAfterTaskError/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "released": true,
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "A5",
+          "pointer": "/sections/3/content",
+          "problem": "The paragraph presents the separate batch path and its unchanged behavior as established facts. Only the author's report supports the separate-path claim; no batch-job source is supplied to verify its relationship to runJob or its behavior.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "Batch jobs use a separate path and need a follow-up."
+            },
+            {
+              "file": "source",
+              "pointer": "/context/contracts",
+              "quote": "No implementations, production logs, test results, or batch-job source are supplied."
+            }
+          ]
+        },
+        {
+          "id": "A6",
+          "pointer": "/sections/5/content",
+          "problem": "The recap attaches release fulfillment to the once-per-invocation call guarantee. Fulfillment is required to preserve the task outcome, not to invoke release. Both modeled release-rejection paths still record one call. The count should be scoped to this function's direct call per invocation, rather than unspecified calls inside supplied implementations.",
+          "evidence": [
+            {
+              "file": "source",
+              "pointer": "/diff",
+              "quote": "+  try {\n+    return await task();\n+  } finally {\n+    await lock.release();\n+  }"
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/releaseThrowsAfterSuccess/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "released": true,
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            },
+            {
+              "file": "probe",
+              "pointer": "/cases/releaseThrowsAfterTaskError/new",
+              "value": {
+                "result": null,
+                "error": "release failed",
+                "released": true,
+                "acquireCalls": 1,
+                "releaseCalls": 1
+              }
+            },
+            {
+              "file": "source",
+              "pointer": "/body",
+              "quote": "The lock is now always released, including when acquisition fails, and the original task error is always preserved."
+            }
+          ]
+        }
+      ],
+      "edits": 5,
+      "formatRepairs": 0,
+      "formatError": null,
+      "seconds": 144.619,
+      "toolCalls": 9,
+      "inputHashes": {
+        "source.json": "4b2f7eee906f84c7a84eb9b63b1ad7dd49f6623e11e9982faaaf6034e85124c1",
+        "verification.json": "006edf3181bb223dd4e0503d8ca33e71df09d2bb2c3e365c539cf9663acb0aef",
+        "manifest.json": "cd955929b8987d0b33c1f3548350773e01b278f2ff8089abb195e148e08a115e",
+        "probe-results.json": "ca5d3c11eeb16d473bdaa0e25b189a24842a54a05814207f7039139f1dade462",
+        "counterexample.mjs": "992c7858799810b659a1fac1b2bd3ab987b049ffd644364ef5b168682306ef1e",
+        "fields.json": "a8af0becd7c2e456762bb8408cab5f0fe08a684c2e92dade486b13d7bb8ba4bb"
+      },
+      "outputManifestSha256": "d34964d646775a3d8c21c9f5418d5e66e9a59131cfd3ef712dc5d48974abeded",
+      "outputHtmlSha256": "e50cc0ed3ddc77c06402da3a5d3bb12704cdef0d8e7d8c31fce68a02c9c61ad5",
+      "auditSha256": "8757275c8c4da5bac36bfe3e5daab5457d812a6725dd216dd08239a17e8ddd11",
+      "transcriptSha256": "b41d4fd212171427cfe175c2e0019662c324f31a275695193561825d6e70a6ec",
+      "localEvidence": ".evals/narrative-audit-astra-pr-lock-cleanup-uwDTfX/run-3"
+    }
+  ],
+  "reviews": [
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-01",
+      "arm": "astra",
+      "run": 3,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The explanation attributes the reported failure, preserves the extra-read distinction, and bounds modeled success and clock counts to their source assumptions. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The explanation attributes the reported failure, preserves the extra-read distinction, and bounds modeled success and clock counts to their source assumptions. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The explanation attributes the reported failure, preserves the extra-read distinction, and bounds modeled success and clock counts to their source assumptions. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The explanation attributes the reported failure, preserves the extra-read distinction, and bounds modeled success and clock counts to their source assumptions. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The explanation attributes the reported failure, preserves the extra-read distinction, and bounds modeled success and clock counts to their source assumptions. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-01"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-02",
+      "arm": "before",
+      "run": 2,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; Metadata and footer assert 'streaming path unchanged' despite absent streaming implementation and callers. Correct attribution elsewhere does not establish that stronger scope claim. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; Metadata and footer assert 'streaming path unchanged' despite absent streaming implementation and callers. Correct attribution elsewhere does not establish that stronger scope claim. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; Metadata and footer assert 'streaming path unchanged' despite absent streaming implementation and callers. Correct attribution elsewhere does not establish that stronger scope claim. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; Metadata and footer assert 'streaming path unchanged' despite absent streaming implementation and callers. Correct attribution elsewhere does not establish that stronger scope claim. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; Metadata and footer assert 'streaming path unchanged' despite absent streaming implementation and callers. Correct attribution elsewhere does not establish that stronger scope claim. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-02"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-03",
+      "arm": "grok",
+      "run": 1,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The author's extra-read claim is omitted while the text asserts no net addition, and the recap asserts that streaming requests are untouched. Counts are otherwise qualified to success paths. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The author's extra-read claim is omitted while the text asserts no net addition, and the recap asserts that streaming requests are untouched. Counts are otherwise qualified to success paths. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The author's extra-read claim is omitted while the text asserts no net addition, and the recap asserts that streaming requests are untouched. Counts are otherwise qualified to success paths. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The author's extra-read claim is omitted while the text asserts no net addition, and the recap asserts that streaming requests are untouched. Counts are otherwise qualified to success paths. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The author's extra-read claim is omitted while the text asserts no net addition, and the recap asserts that streaming requests are untouched. Counts are otherwise qualified to success paths. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-03"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-04",
+      "arm": "astra",
+      "run": 1,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes skipped old refresh from late completion, preserves author/source disagreement, and avoids treating refresh fulfillment or modeled success as a production guarantee. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes skipped old refresh from late completion, preserves author/source disagreement, and avoids treating refresh fulfillment or modeled success as a production guarantee. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes skipped old refresh from late completion, preserves author/source disagreement, and avoids treating refresh fulfillment or modeled success as a production guarantee. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes skipped old refresh from late completion, preserves author/source disagreement, and avoids treating refresh fulfillment or modeled success as a production guarantee. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes skipped old refresh from late completion, preserves author/source disagreement, and avoids treating refresh fulfillment or modeled success as a production guarantee. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-04"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-05",
+      "arm": "before",
+      "run": 3,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The old failing path is described as refreshing after rejection, and the body and recap assert an extra read on every invocation. Modeled success is insufficiently qualified. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The old failing path is described as refreshing after rejection, and the body and recap assert an extra read on every invocation. Modeled success is insufficiently qualified. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The old failing path is described as refreshing after rejection, and the body and recap assert an extra read on every invocation. Modeled success is insufficiently qualified. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The old failing path is described as refreshing after rejection, and the body and recap assert an extra read on every invocation. Modeled success is insufficiently qualified. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The old failing path is described as refreshing after rejection, and the body and recap assert an extra read on every invocation. Modeled success is insufficiently qualified. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-05"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-06",
+      "arm": "grok",
+      "run": 3,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The old failing path still incorrectly reaches refresh. The correction says both versions execute exactly one read per invocation and reinterprets the author's extra-read account as a repositioned-read account. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The old failing path still incorrectly reaches refresh. The correction says both versions execute exactly one read per invocation and reinterprets the author's extra-read account as a repositioned-read account. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The old failing path still incorrectly reaches refresh. The correction says both versions execute exactly one read per invocation and reinterprets the author's extra-read account as a repositioned-read account. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The old failing path still incorrectly reaches refresh. The correction says both versions execute exactly one read per invocation and reinterprets the author's extra-read account as a repositioned-read account. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The old failing path still incorrectly reaches refresh. The correction says both versions execute exactly one read per invocation and reinterprets the author's extra-read account as a repositioned-read account. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-06"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-07",
+      "arm": "before",
+      "run": 1,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The narrative invents a refresh attempt after the modeled old send rejection, omits the author's extra-read account, and claims unchanged streaming behavior. Its explicit clock count is limited to success paths. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The narrative invents a refresh attempt after the modeled old send rejection, omits the author's extra-read account, and claims unchanged streaming behavior. Its explicit clock count is limited to success paths. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The narrative invents a refresh attempt after the modeled old send rejection, omits the author's extra-read account, and claims unchanged streaming behavior. Its explicit clock count is limited to success paths. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The narrative invents a refresh attempt after the modeled old send rejection, omits the author's extra-read account, and claims unchanged streaming behavior. Its explicit clock count is limited to success paths. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The narrative invents a refresh attempt after the modeled old send rejection, omits the author's extra-read account, and claims unchanged streaming behavior. Its explicit clock count is limited to success paths. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-07"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-08",
+      "arm": "grok",
+      "run": 2,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; Metadata/footer assert unchanged streaming behavior and the body asserts exclusive non-streaming scope without the relevant source. Modeled timing and refresh-on-error wording also need more precise qualification. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; Metadata/footer assert unchanged streaming behavior and the body asserts exclusive non-streaming scope without the relevant source. Modeled timing and refresh-on-error wording also need more precise qualification. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; Metadata/footer assert unchanged streaming behavior and the body asserts exclusive non-streaming scope without the relevant source. Modeled timing and refresh-on-error wording also need more precise qualification. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; Metadata/footer assert unchanged streaming behavior and the body asserts exclusive non-streaming scope without the relevant source. Modeled timing and refresh-on-error wording also need more precise qualification. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; Metadata/footer assert unchanged streaming behavior and the body asserts exclusive non-streaming scope without the relevant source. Modeled timing and refresh-on-error wording also need more precise qualification. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-08"
+    },
+    {
+      "caseId": "pr-grounding-quality",
+      "maskedItem": "item-09",
+      "arm": "astra",
+      "run": 2,
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text accurately distinguishes moved expressions from path-dependent execution, describes skipped and failed awaits, preserves author attribution, and identifies the probe's wall-time assumptions. Criterion: Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text accurately distinguishes moved expressions from path-dependent execution, describes skipped and failed awaits, preserves author attribution, and identifies the probe's wall-time assumptions. Criterion: Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text accurately distinguishes moved expressions from path-dependent execution, describes skipped and failed awaits, preserves author attribution, and identifies the probe's wall-time assumptions. Criterion: Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text accurately distinguishes moved expressions from path-dependent execution, describes skipped and failed awaits, preserves author attribution, and identifies the probe's wall-time assumptions. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text accurately distinguishes moved expressions from path-dependent execution, describes skipped and failed awaits, preserves author attribution, and identifies the probe's wall-time assumptions. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/credentials/item-09"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-01",
+      "arm": "astra",
+      "run": 3,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes acquisition placement, release invocation, fulfillment, error replacement, and the probe stub flag from actual lock state; the recap preserves all relevant boundaries. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes acquisition placement, release invocation, fulfillment, error replacement, and the probe stub flag from actual lock state; the recap preserves all relevant boundaries. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes acquisition placement, release invocation, fulfillment, error replacement, and the probe stub flag from actual lock state; the recap preserves all relevant boundaries. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes acquisition placement, release invocation, fulfillment, error replacement, and the probe stub flag from actual lock state; the recap preserves all relevant boundaries. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text distinguishes acquisition placement, release invocation, fulfillment, error replacement, and the probe stub flag from actual lock state; the recap preserves all relevant boundaries. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-01"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-02",
+      "arm": "before",
+      "run": 2,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text asserts held-lock state, fails to identify both false author guarantees, and says release failure preserves original exit behavior despite the changed combined-failure path. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The text asserts held-lock state, fails to identify both false author guarantees, and says release failure preserves original exit behavior despite the changed combined-failure path. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The text asserts held-lock state, fails to identify both false author guarantees, and says release failure preserves original exit behavior despite the changed combined-failure path. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text asserts held-lock state, fails to identify both false author guarantees, and says release failure preserves original exit behavior despite the changed combined-failure path. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text asserts held-lock state, fails to identify both false author guarantees, and says release failure preserves original exit behavior despite the changed combined-failure path. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-02"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-03",
+      "arm": "grok",
+      "run": 1,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; A heading asserts lock ownership state and the recap drops batch attribution while retaining the false statement that release rejection keeps prior semantics. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; A heading asserts lock ownership state and the recap drops batch attribution while retaining the false statement that release rejection keeps prior semantics. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; A heading asserts lock ownership state and the recap drops batch attribution while retaining the false statement that release rejection keeps prior semantics. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; A heading asserts lock ownership state and the recap drops batch attribution while retaining the false statement that release rejection keeps prior semantics. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; A heading asserts lock ownership state and the recap drops batch attribution while retaining the false statement that release rejection keeps prior semantics. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-03"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-04",
+      "arm": "astra",
+      "run": 1,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text separates release invocation from unlocking, correctly describes both-reject precedence, labels modeled observations, and retains the boundaries in the recap. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text separates release invocation from unlocking, correctly describes both-reject precedence, labels modeled observations, and retains the boundaries in the recap. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text separates release invocation from unlocking, correctly describes both-reject precedence, labels modeled observations, and retains the boundaries in the recap. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text separates release invocation from unlocking, correctly describes both-reject precedence, labels modeled observations, and retains the boundaries in the recap. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The text separates release invocation from unlocking, correctly describes both-reject precedence, labels modeled observations, and retains the boundaries in the recap. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-04"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-05",
+      "arm": "before",
+      "run": 3,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The recap conditions invocation on release fulfillment. The text asserts ownership state and unverified batch behavior, and never clearly distinguishes rejected release from successful cleanup. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The recap conditions invocation on release fulfillment. The text asserts ownership state and unverified batch behavior, and never clearly distinguishes rejected release from successful cleanup. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The recap conditions invocation on release fulfillment. The text asserts ownership state and unverified batch behavior, and never clearly distinguishes rejected release from successful cleanup. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The recap conditions invocation on release fulfillment. The text asserts ownership state and unverified batch behavior, and never clearly distinguishes rejected release from successful cleanup. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The recap conditions invocation on release fulfillment. The text asserts ownership state and unverified batch behavior, and never clearly distinguishes rejected release from successful cleanup. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-05"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-06",
+      "arm": "grok",
+      "run": 3,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The recap repairs the invocation condition, but unsupported ownership and batch claims remain, and release rejection is not clearly distinguished from successful cleanup. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The recap repairs the invocation condition, but unsupported ownership and batch claims remain, and release rejection is not clearly distinguished from successful cleanup. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The recap repairs the invocation condition, but unsupported ownership and batch claims remain, and release rejection is not clearly distinguished from successful cleanup. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The recap repairs the invocation condition, but unsupported ownership and batch claims remain, and release rejection is not clearly distinguished from successful cleanup. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The recap repairs the invocation condition, but unsupported ownership and batch claims remain, and release rejection is not clearly distinguished from successful cleanup. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-06"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-07",
+      "arm": "before",
+      "run": 1,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The body and recap incorrectly condition invocation on release fulfillment. Held-state and batch claims exceed the source, and release rejection is falsely summarized as unchanged behavior. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The body and recap incorrectly condition invocation on release fulfillment. Held-state and batch claims exceed the source, and release rejection is falsely summarized as unchanged behavior. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The body and recap incorrectly condition invocation on release fulfillment. Held-state and batch claims exceed the source, and release rejection is falsely summarized as unchanged behavior. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The body and recap incorrectly condition invocation on release fulfillment. Held-state and batch claims exceed the source, and release rejection is falsely summarized as unchanged behavior. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The body and recap incorrectly condition invocation on release fulfillment. Held-state and batch claims exceed the source, and release rejection is falsely summarized as unchanged behavior. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-07"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-08",
+      "arm": "grok",
+      "run": 2,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The output retains unsupported lock-state claims and a false subtitle describing unchanged release-failure behavior, despite correct conditional error precedence in the body. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The output retains unsupported lock-state claims and a false subtitle describing unchanged release-failure behavior, despite correct conditional error precedence in the body. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "fail",
+          "evidence": "manifest.json and document.html; The output retains unsupported lock-state claims and a false subtitle describing unchanged release-failure behavior, despite correct conditional error precedence in the body. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The output retains unsupported lock-state claims and a false subtitle describing unchanged release-failure behavior, despite correct conditional error precedence in the body. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The output retains unsupported lock-state claims and a false subtitle describing unchanged release-failure behavior, despite correct conditional error precedence in the body. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-08"
+    },
+    {
+      "caseId": "pr-lock-cleanup",
+      "maskedItem": "item-09",
+      "arm": "astra",
+      "run": 2,
+      "criteria": [
+        {
+          "id": "mechanics",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The subtitle, body, and recap distinguish attempt from successful unlocking and explain acquisition rejection and replacement of a task error by release rejection; author claims remain identified. Criterion: Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The subtitle, body, and recap distinguish attempt from successful unlocking and explain acquisition rejection and replacement of a task error by release rejection; author claims remain identified. Criterion: Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The subtitle, body, and recap distinguish attempt from successful unlocking and explain acquisition rejection and replacement of a task error by release rejection; author claims remain identified. Criterion: Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The subtitle, body, and recap distinguish attempt from successful unlocking and explain acquisition rejection and replacement of a task error by release rejection; author claims remain identified. Criterion: Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "manifest.json and document.html; The subtitle, body, and recap distinguish attempt from successful unlocking and explain acquisition rejection and replacement of a task error by release rejection; author claims remain identified. Criterion: Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "localEvidence": ".evals/final-audit-review-pack/locks/item-09"
+    }
+  ],
+  "reviewSessions": [
+    {
+      "case": "credentials",
+      "sessionID": "ses_f7c0e9c99ffe1qnhKMQmP6CG5m",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "localExport": ".evals/final-audit-review-pack/credentials-review-session.json"
+    },
+    {
+      "case": "locks",
+      "sessionID": "ses_f7c0e604bffe5GkKug34C5FrzH",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "localExport": ".evals/final-audit-review-pack/locks-review-session.json"
+    }
+  ]
+}
