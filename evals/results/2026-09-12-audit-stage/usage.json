@@ -1,0 +1,308 @@
+[
+  {
+    "label": "25ff8cad-2b4a-4b84-bb93-9377d2908ab7",
+    "stage": "availability",
+    "elapsedMs": 5349,
+    "cost": 0.026624,
+    "tokens": {
+      "input": 13103,
+      "output": 1,
+      "reasoning": 26,
+      "cache": {
+        "read": 512,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [],
+    "outsideReads": 0
+  },
+  {
+    "label": "78cf910d-7943-4630-a5c6-1bfbf6e08139",
+    "stage": "qualification-runs",
+    "elapsedMs": 16721,
+    "cost": 0.032208,
+    "tokens": {
+      "input": 13309,
+      "output": 146,
+      "reasoning": 743,
+      "cache": {
+        "read": 512,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [],
+    "outsideReads": 0
+  },
+  {
+    "label": "8f1c107f-2037-4737-9864-463d2a520004",
+    "stage": "qualification-runs",
+    "elapsedMs": 9122,
+    "cost": 0.029382,
+    "tokens": {
+      "input": 13279,
+      "output": 145,
+      "reasoning": 283,
+      "cache": {
+        "read": 512,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [],
+    "outsideReads": 0
+  },
+  {
+    "label": "c10e5024-2a90-4185-88ed-18dca05a43fb",
+    "stage": "qualification-runs",
+    "elapsedMs": 7808,
+    "cost": 0.029196,
+    "tokens": {
+      "input": 13303,
+      "output": 113,
+      "reasoning": 276,
+      "cache": {
+        "read": 512,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [],
+    "outsideReads": 0
+  },
+  {
+    "label": "16a6e6d3-2107-4ac5-9008-0755ca32f973",
+    "stage": "qualification-runs",
+    "elapsedMs": 8332,
+    "cost": 0.029022,
+    "tokens": {
+      "input": 13124,
+      "output": 118,
+      "reasoning": 291,
+      "cache": {
+        "read": 640,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [],
+    "outsideReads": 0
+  },
+  {
+    "label": "c328958c-c7d7-4a0c-9c24-a3277b58201f",
+    "stage": "qualification-runs",
+    "elapsedMs": 8775,
+    "cost": 0.029554,
+    "tokens": {
+      "input": 13326,
+      "output": 144,
+      "reasoning": 297,
+      "cache": {
+        "read": 512,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [],
+    "outsideReads": 0
+  },
+  {
+    "label": "8f065741-2c21-4b2a-8691-abef3135fedf",
+    "stage": "qualification-runs",
+    "elapsedMs": 8798,
+    "cost": 0.029184,
+    "tokens": {
+      "input": 13285,
+      "output": 127,
+      "reasoning": 266,
+      "cache": {
+        "read": 512,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [],
+    "outsideReads": 0
+  },
+  {
+    "label": "e35fc47c-d9b7-4340-960f-4c12b305e908",
+    "stage": "acceptance-runs",
+    "fixture": "retry",
+    "elapsedMs": 216421,
+    "cost": 0.195276,
+    "tokens": {
+      "input": 50066,
+      "output": 3744,
+      "reasoning": 9980,
+      "cache": {
+        "read": 25600,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "write"
+    ],
+    "outsideReads": 0
+  },
+  {
+    "label": "9ed5f86a-1100-4d6f-a976-0e2d2b40469a",
+    "stage": "acceptance-runs",
+    "fixture": "transaction",
+    "elapsedMs": 245804,
+    "cost": 0.222178,
+    "tokens": {
+      "input": 54771,
+      "output": 4137,
+      "reasoning": 10497,
+      "cache": {
+        "read": 49664,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "outsideReads": 0
+  },
+  {
+    "label": "bb6f9fca-a7f1-44fe-b614-36f3e61d3a25",
+    "stage": "acceptance-runs",
+    "fixture": "cache",
+    "elapsedMs": 270625,
+    "cost": 0.240758,
+    "tokens": {
+      "input": 56983,
+      "output": 3803,
+      "reasoning": 13201,
+      "cache": {
+        "read": 49536,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "outsideReads": 0
+  },
+  {
+    "label": "f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db",
+    "stage": "revised-acceptance-runs",
+    "fixture": "retry",
+    "elapsedMs": 338463,
+    "cost": 0.23849199999999998,
+    "tokens": {
+      "input": 46082,
+      "output": 3781,
+      "reasoning": 15391,
+      "cache": {
+        "read": 62592,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "outsideReads": 0
+  },
+  {
+    "label": "33f79ff4-8f54-456a-a403-737b383d4988",
+    "stage": "revised-acceptance-runs",
+    "fixture": "transaction",
+    "elapsedMs": 239634,
+    "cost": 0.18017,
+    "tokens": {
+      "input": 37532,
+      "output": 3025,
+      "reasoning": 11282,
+      "cache": {
+        "read": 38528,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "outsideReads": 0
+  },
+  {
+    "label": "aa1d754e-a1a2-449d-a509-c2e7fa474a08",
+    "stage": "revised-acceptance-runs",
+    "fixture": "cache",
+    "elapsedMs": 275313,
+    "cost": 0.231624,
+    "tokens": {
+      "input": 55631,
+      "output": 3809,
+      "reasoning": 12134,
+      "cache": {
+        "read": 49408,
+        "write": 0
+      }
+    },
+    "identityVerified": true,
+    "toolNames": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "outsideReads": 0
+  }
+]

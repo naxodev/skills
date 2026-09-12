@@ -1,0 +1,60 @@
+{
+  "selectedAt": "2026-09-12T13:23:53.250Z",
+  "selected": "xai/grok-4.6#high",
+  "score": 6,
+  "denominator": 6,
+  "falsePositives": 0,
+  "repairs": 0,
+  "rows": [
+    {
+      "label": "78cf910d-7943-4630-a5c6-1bfbf6e08139",
+      "status": "supported",
+      "referenceStatus": "supported",
+      "exactQuotes": true,
+      "rationaleAdjudication": "pass; matches source and deterministic witness",
+      "passed": true
+    },
+    {
+      "label": "8f1c107f-2037-4737-9864-463d2a520004",
+      "status": "contradicted",
+      "referenceStatus": "contradicted",
+      "exactQuotes": true,
+      "rationaleAdjudication": "pass; matches source and deterministic witness",
+      "passed": true
+    },
+    {
+      "label": "c10e5024-2a90-4185-88ed-18dca05a43fb",
+      "status": "supported",
+      "referenceStatus": "supported",
+      "exactQuotes": true,
+      "rationaleAdjudication": "pass; matches source and deterministic witness",
+      "passed": true
+    },
+    {
+      "label": "16a6e6d3-2107-4ac5-9008-0755ca32f973",
+      "status": "contradicted",
+      "referenceStatus": "contradicted",
+      "exactQuotes": true,
+      "rationaleAdjudication": "pass; matches source and deterministic witness",
+      "passed": true
+    },
+    {
+      "label": "c328958c-c7d7-4a0c-9c24-a3277b58201f",
+      "status": "supported",
+      "referenceStatus": "supported",
+      "exactQuotes": true,
+      "rationaleAdjudication": "pass; matches source and deterministic witness",
+      "passed": true
+    },
+    {
+      "label": "8f065741-2c21-4b2a-8691-abef3135fedf",
+      "status": "contradicted",
+      "referenceStatus": "contradicted",
+      "exactQuotes": true,
+      "rationaleAdjudication": "pass; matches source and deterministic witness",
+      "passed": true
+    }
+  ],
+  "otherCandidates": "not reached; first candidate passed",
+  "limitation": "Small screening test only. Rationale boilerplate is unnecessary but does not contradict the claim statuses."
+}

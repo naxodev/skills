@@ -1,0 +1,38 @@
+{
+  "info": {
+    "id": "ses_f6a3900ecffeLeKzJGkui5g0aq",
+    "projectID": "global",
+    "agent": "build",
+    "model": {
+      "id": "grok-4.6",
+      "providerID": "xai",
+      "variant": "high"
+    },
+    "cost": 0.032208,
+    "tokens": {
+      "input": 13309,
+      "output": 146,
+      "reasoning": 743,
+      "cache": {
+        "read": 512,
+        "write": 0
+      }
+    },
+    "outcome": "succeeded",
+    "time": {
+      "created": 1789219241789,
+      "updated": 1789219242786,
+      "idle": 1789219258433
+    },
+    "title": "availability check",
+    "location": {
+      "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-78cf910d-7943-4630-a5c6-1bfbf6e08139"
+    }
+  },
+  "visible": [
+    {
+      "type": "text",
+      "text": "{\"status\":\"supported\",\"quote\":\"After the aggregate rejects, releasing the sibling still records its effect.\",\"sourceQuote\":\"await Promise.all([Promise.reject(new Error(\\\"stop\\\")), sibling]).catch(() => events.push(\\\"rejected\\\")); release(); await sibling; return events;\",\"rationale\":\"The program awaits Promise.all of a rejected promise and a still-pending sibling, records \\\"rejected\\\" in catch, then calls release(), which pushes \\\"sibling\\\" and resolves. The observed events [\\\"rejected\\\",\\\"sibling\\\"] show that this run recorded the sibling effect after the aggregate rejected. That is this execution's outcome, not a guarantee that every host cancels or ignores leftover siblings.\"}"
+    }
+  ]
+}

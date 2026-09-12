@@ -1,0 +1,38 @@
+{
+  "info": {
+    "id": "ses_f6a389867ffeTUlgCdt2ccMa5f",
+    "projectID": "global",
+    "agent": "build",
+    "model": {
+      "id": "grok-4.6",
+      "providerID": "xai",
+      "variant": "high"
+    },
+    "cost": 0.029196,
+    "tokens": {
+      "input": 13303,
+      "output": 113,
+      "reasoning": 276,
+      "cache": {
+        "read": 512,
+        "write": 0
+      }
+    },
+    "outcome": "succeeded",
+    "time": {
+      "created": 1789219268535,
+      "updated": 1789219269408,
+      "idle": 1789219276272
+    },
+    "title": "availability check",
+    "location": {
+      "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-c10e5024-2a90-4185-88ed-18dca05a43fb"
+    }
+  },
+  "visible": [
+    {
+      "type": "text",
+      "text": "{\"status\":\"supported\",\"quote\":\"With offset 1 and limit 2, this page contains b and c.\",\"sourceQuote\":\"const rows = [\\\"a\\\", \\\"b\\\", \\\"c\\\", \\\"d\\\"]; const offset = 1; const limit = 2; return rows.slice(offset, offset + limit);\",\"rationale\":\"For this array, slice(1, 3) yields [\\\"b\\\",\\\"c\\\"], matching the observed result. That is this run's outcome, not a guarantee for every list.\"}"
+    }
+  ]
+}

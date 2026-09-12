@@ -1,0 +1,30 @@
+{
+  "frozenAt": "2026-09-12T13:38:04.399Z",
+  "rationale": "CONTROL-INVESTIGATION.md",
+  "records": [
+    {
+      "path": "evals/results/2026-09-12-audit-stage/controls/retry-correct.json",
+      "sha256": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134"
+    },
+    {
+      "path": "evals/results/2026-09-12-audit-stage/controls/retry-flawed.json",
+      "sha256": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d"
+    },
+    {
+      "path": "evals/results/2026-09-12-audit-stage/controls/transaction-correct.json",
+      "sha256": "ce14afd0b32374ef6fe7daec5a2709101d23c30499b79085b3ccc97db2243054"
+    },
+    {
+      "path": "evals/results/2026-09-12-audit-stage/controls/transaction-flawed.json",
+      "sha256": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb"
+    },
+    {
+      "path": "evals/results/2026-09-12-audit-stage/controls/cache-correct.json",
+      "sha256": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef"
+    },
+    {
+      "path": "evals/results/2026-09-12-audit-stage/controls/cache-flawed.json",
+      "sha256": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec"
+    }
+  ]
+}

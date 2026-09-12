@@ -1,0 +1,122 @@
+[
+  {
+    "fixture": "retry",
+    "version": "initial",
+    "kind": "correct",
+    "manifest": "../2026-09-09-audit-stage/reviewer/retry-correct.json",
+    "html": "builds/retry-initial-correct.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/retry-initial-correct.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "retry",
+    "version": "initial",
+    "kind": "flawed",
+    "manifest": "../2026-09-09-audit-stage/reviewer/retry-flawed.json",
+    "html": "builds/retry-initial-flawed.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/retry-initial-flawed.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "retry",
+    "version": "revised",
+    "kind": "correct",
+    "manifest": "controls/retry-correct.json",
+    "html": "builds/retry-revised-correct.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/retry-revised-correct.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "retry",
+    "version": "revised",
+    "kind": "flawed",
+    "manifest": "controls/retry-flawed.json",
+    "html": "builds/retry-revised-flawed.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/retry-revised-flawed.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "transaction",
+    "version": "initial",
+    "kind": "correct",
+    "manifest": "../2026-09-09-audit-stage/reviewer/transaction-correct.json",
+    "html": "builds/transaction-initial-correct.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/transaction-initial-correct.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "transaction",
+    "version": "initial",
+    "kind": "flawed",
+    "manifest": "../2026-09-09-audit-stage/reviewer/transaction-flawed.json",
+    "html": "builds/transaction-initial-flawed.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/transaction-initial-flawed.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "transaction",
+    "version": "revised",
+    "kind": "correct",
+    "manifest": "controls/transaction-correct.json",
+    "html": "builds/transaction-revised-correct.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/transaction-revised-correct.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "transaction",
+    "version": "revised",
+    "kind": "flawed",
+    "manifest": "controls/transaction-flawed.json",
+    "html": "builds/transaction-revised-flawed.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/transaction-revised-flawed.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "cache",
+    "version": "initial",
+    "kind": "correct",
+    "manifest": "../2026-09-09-audit-stage/reviewer/cache-correct.json",
+    "html": "builds/cache-initial-correct.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/cache-initial-correct.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "cache",
+    "version": "initial",
+    "kind": "flawed",
+    "manifest": "../2026-09-09-audit-stage/reviewer/cache-flawed.json",
+    "html": "builds/cache-initial-flawed.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/cache-initial-flawed.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "cache",
+    "version": "revised",
+    "kind": "correct",
+    "manifest": "controls/cache-correct.json",
+    "html": "builds/cache-revised-correct.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/cache-revised-correct.html\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "cache",
+    "version": "revised",
+    "kind": "flawed",
+    "manifest": "controls/cache-flawed.json",
+    "html": "builds/cache-revised-flawed.html",
+    "exit": 0,
+    "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/builds/cache-revised-flawed.html\n",
+    "stderr": ""
+  }
+]

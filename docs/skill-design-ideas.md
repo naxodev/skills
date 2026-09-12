@@ -31,6 +31,8 @@ An improved workflow should attribute the author's rationale and explain the obs
 
 **Prepared, not evaluated:** a [same-model audit-stage study](../evals/results/2026-09-09-audit-stage/README.md) isolates adding an audit to an unchanged Astra draft. Three new fixtures and title-corrupted controls passed deterministic preparation. Both permitted external graders failed authentication, so all nine writers and fifteen audits remain unrun.
 
+**Resumed, still blocked:** [replacement-grader screening](../evals/results/2026-09-12-audit-stage/README.md) passed 6/6 with Grok 4.6. Full control reviews exposed a metadata evidence gap and disputed omissions/prose judgments. A documented control revision removed unsupported field claims, but independent artifact acceptance remained unresolved. No audit-effectiveness result exists.
+
 ### Scale the analysis to the change
 
 The current workflow always dispatches four reports and asks every file to appear in the tour.

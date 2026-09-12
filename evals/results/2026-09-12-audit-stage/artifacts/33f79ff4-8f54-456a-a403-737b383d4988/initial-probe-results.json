@@ -1,0 +1,160 @@
+{
+  "assumptions": "In-memory staged transaction and external notification counter; no actual database or process-kill simulation.",
+  "results": {
+    "before": {
+      "none": {
+        "paid": true,
+        "notifications": 1,
+        "events": [
+          "begin",
+          "write",
+          "publish",
+          "commit"
+        ],
+        "errors": []
+      },
+      "write": {
+        "paid": false,
+        "notifications": 0,
+        "events": [
+          "begin",
+          "rollback"
+        ],
+        "errors": [
+          "write"
+        ]
+      },
+      "commit": {
+        "paid": false,
+        "notifications": 1,
+        "events": [
+          "begin",
+          "write",
+          "publish",
+          "rollback"
+        ],
+        "errors": [
+          "commit"
+        ]
+      },
+      "publish-before": {
+        "paid": false,
+        "notifications": 0,
+        "events": [
+          "begin",
+          "write",
+          "publish",
+          "rollback"
+        ],
+        "errors": [
+          "publish-before"
+        ]
+      },
+      "publish-after": {
+        "paid": false,
+        "notifications": 1,
+        "events": [
+          "begin",
+          "write",
+          "publish",
+          "rollback"
+        ],
+        "errors": [
+          "publish-after"
+        ]
+      },
+      "concurrent": {
+        "paid": true,
+        "notifications": 2,
+        "events": [
+          "begin",
+          "write",
+          "begin",
+          "write",
+          "publish",
+          "publish",
+          "commit",
+          "commit"
+        ],
+        "errors": []
+      }
+    },
+    "after": {
+      "none": {
+        "paid": true,
+        "notifications": 1,
+        "events": [
+          "begin",
+          "write",
+          "commit",
+          "publish"
+        ],
+        "errors": []
+      },
+      "write": {
+        "paid": false,
+        "notifications": 0,
+        "events": [
+          "begin",
+          "rollback"
+        ],
+        "errors": [
+          "write"
+        ]
+      },
+      "commit": {
+        "paid": false,
+        "notifications": 0,
+        "events": [
+          "begin",
+          "write",
+          "rollback"
+        ],
+        "errors": [
+          "commit"
+        ]
+      },
+      "publish-before": {
+        "paid": true,
+        "notifications": 0,
+        "events": [
+          "begin",
+          "write",
+          "commit",
+          "publish"
+        ],
+        "errors": [
+          "publish-before"
+        ]
+      },
+      "publish-after": {
+        "paid": true,
+        "notifications": 1,
+        "events": [
+          "begin",
+          "write",
+          "commit",
+          "publish"
+        ],
+        "errors": [
+          "publish-after"
+        ]
+      },
+      "concurrent": {
+        "paid": true,
+        "notifications": 2,
+        "events": [
+          "begin",
+          "write",
+          "begin",
+          "write",
+          "commit",
+          "commit",
+          "publish",
+          "publish"
+        ],
+        "errors": []
+      }
+    }
+  }
+}
