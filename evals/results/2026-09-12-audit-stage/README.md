@@ -1,141 +1,172 @@
-# Grader qualification passed; control acceptance remains blocked
+# Same-model final audit: completed pairs with mixed review results
 
-`xai/grok-4.6#high` passed the frozen six-case screening test. It did not independently accept the three control narratives,
-even after a documented control revision. The audit-effectiveness study stopped at that prerequisite.
-**No Astra writer or audit ran. There is no paired effectiveness result.**
+All **nine Astra writers, nine paired Astra audits, six control audits, and 30 masked Grok grades completed**.
+Audits changed five of nine drafts and repaired all three seeded false titles. They also made three unnecessary edits to an admitted
+correct retry control. The operator's source review identifies ten distinct text defects removed, but retains three uncertain revised
+artifacts. The [parent integration review](PARENT-RESULT-REVIEW.md) confirms the control outcomes and retains the main-result limitations.
+**This is not a nine-of-nine factual or prose pass.**
 
-This resumes the [September 9 study](../2026-09-09-audit-stage/README.md) at revision `1c11e03c`.
-That historical blocked record retains its bytes. The active skills and [final audit protocol](../../protocols/FINAL-NARRATIVE-AUDIT.md) also retain their bytes.
+This study isolates adding one fresh audit to an exact original draft. Both stages used `openai/gpt-6-astra#medium`, the build agent,
+and inherited provider settings. Grading used `xai/grok-4.6#high` in fresh masked contexts. Execution began September 12 and final grading
+finished September 13. The result directory retains the start date.
 
-## What ran
+## Admission and chronology
+
+The [September 9 design](../2026-09-09-audit-stage/PROTOCOL.md) and its blocked historical record remain byte-identical.
+The active skills and [final audit protocol](../../protocols/FINAL-NARRATIVE-AUDIT.md) also remain byte-identical.
+
+The [grader amendment](AMENDMENT.md), [qualification prompt](QUALIFICATION.md), and [six executable cases with answer key](qualification.ts)
+were locked in [freeze.json](freeze.json) before any model answer. Grok 4.6 answered exactly READY and passed **6/6**, with exact quotes,
+correct statuses, and source-consistent rationales. No false positives or prompt repairs occurred on that screen.
+[Catalog evidence](catalog.json) establishes the fixed candidate order and valid variants. Grok 4.5 and the free MiMo fallback were not reached.
+The [qualification assessment](qualification-assessment.json) is a small screening result, not a reliability guarantee.
+
+Three initial control reviews found a real metadata packet gap and disputed completeness/prose findings.
+The [investigation](CONTROL-INVESTIGATION.md) documented limited control corrections and a deterministic retry witness.
+[Revised control hashes](control-revision-lock.json) preceded three fresh reviews. All 51 revised control fields were supported/nonfactual,
+but Grok still disputed omissions and prose. The operator initially stopped too strictly; that [interim report](INTERIM-REPORT.md) and
+[interim decision](interim-control-acceptance.json) remain available.
+
+Before any writer, the parent reviewed source/probes, grades, and style rules and admitted **3/3 revised controls as factually correct**.
+[Parent adjudication](PARENT-ADJUDICATION.md) rejects mandatory keyword inventories and leakage findings based only on natural attribution.
+The [timestamped admission](control-acceptance.json) hashes that decision and the unchanged revised controls.
+**Admission was parent source-level adjudication, not Grok's unqualified artifact acceptance.** No further control, prompt, rubric,
+or candidate-selection change occurred. Main judgments below remain the operator's assessments; the parent performed a targeted integration review.
+
+## Full denominators and execution results
 
 | Stage | Completed / planned | Result |
 | --- | --- | --- |
-| Neutral Grok 4.6 availability | 1 / 1 | Exact `READY`; exported model and location match |
-| Qualification examples | 6 / 6 | Six correct statuses and source-grounded rationales; no false positives |
-| Initial correct-control reviews | 3 / 3 | No artifact accepted; metadata evidence gap and disputed findings |
-| Revised correct-control reviews | 3 / 3 | All 51 fields supported/nonfactual; completeness and prose remain disputed |
-| Astra writers | 0 / 9 | Untested: control acceptance prerequisite failed |
-| Paired Astra audits | 0 / 9 | Untested |
-| Separate control audits | 0 / 6 | Untested |
-| Masked primary artifact grades | 0 / 30 potential artifacts | Untested; no primary artifacts exist |
-| Available control HTML builds | 12 / 12 | Initial/revised, correct/flawed; text-only builds passed |
+| Writers | 9 / 9 | All original manifests saved |
+| Exact-original audits | 9 / 9 | Five revise, four pass |
+| Correct-control audits | 3 / 3 | Retry revised; transaction/cache preserved |
+| Flawed-control audits | 3 / 3 | All three false titles revised |
+| Masked primary grades | 30 / 30 | Every artifact received a fresh grade |
+| Primary text-only HTML builds | 30 / 30 | All passed |
 
-Control acceptance reviews are prerequisite reviews, not the six control audits in the study denominator.
-The 12 control builds do not establish factual correctness or browser rendering.
+No slot was replaced or excluded. No audit blocked, no provider admission failure occurred, and no caller-requested mechanical repair
+or semantic retry occurred. Models sometimes checked or edited their own output during their initial turn; those tool actions remain
+in the transcripts. The 12 preparatory control builds are separate from the 30 primary artifact builds.
 
-## Qualification was frozen before answers
+Two foreground grading calls were interrupted. The currently running owned model finished normally each time.
+The operator recovered those existing sessions without resending a prompt, then resumed the original saved shuffle.
+Exact end-to-end latency is unavailable for those two recovered grades; service timestamps and all tokens/cost remain recorded.
 
-The [amendment](AMENDMENT.md), [prompt](QUALIFICATION.md), and [executable examples and reference answers](qualification.ts)
-were hashed in [freeze.json](freeze.json) before the first model response. All six local witnesses passed first.
-Subjects were Promise.all rejection, shallow-copy aliasing, pagination, nullish fallback, sort mutation, and Unicode length.
-Three claims were supported and three contradicted. Each model context received exactly one anonymous case, without its answer key.
+## Paired factual and prose results
 
-The [catalog snapshot](catalog.json) confirms the fixed order: Grok 4.6 high, Grok 4.5 high, then MiMo V2.5 Free without a variant.
-MiMo was enabled and listed zero prices. The first candidate passed, so later candidates were not reached or scored.
-There was no threshold adjustment, prompt tuning, format repair, or semantic retry.
-The [qualification assessment](qualification-assessment.json) keeps each result and its reference comparison.
-Raw visible answers are linked by opaque label through [qualification-runs.json](qualification-runs.json).
+The [source-level adjudication](ADJUDICATION.md) separates confirmed text repairs, ambiguous corrections, retained concerns, and
+rejected model findings. The [machine-readable adjudication](adjudicated-results.json) is separate from
+[normalized raw grades](normalized-model-grades.json). Neither normalization nor a build decides factual truth.
 
-The passing rationales contain unnecessary “not a universal guarantee” boilerplate.
-It did not change the six claim judgments. This small screen does not establish reliable full-document grading.
+| Pair | Fixture/run | Edited fields | Operator factual judgment | Raw Grok prose |
+| --- | --- | --- | --- | --- |
+| 0 | Retry 1 | 5 | Fail → uncertain | Uncertain → pass |
+| 1 | Transaction 1 | 0 | Pass → pass | Pass → pass |
+| 2 | Cache 1 | 1 | Fail → pass | Fail → uncertain |
+| 3 | Retry 2 | 4 | Fail → pass | Uncertain → uncertain |
+| 4 | Transaction 2 | 2 | Uncertain → pass | Fail → uncertain |
+| 5 | Cache 2 | 0 | Pass → pass | Uncertain → fail |
+| 6 | Retry 3 | 3 | Fail → uncertain | Pass → fail |
+| 7 | Transaction 3 | 0 | Uncertain → uncertain | Pass → pass |
+| 8 | Cache 3 | 0 | Pass → pass | Fail → fail |
 
-## Why control acceptance failed
+The operator identifies **10 distinct text defects, across 11 field occurrences in four pairs, removed**:
+elapsed-time claims not entailed by requested sleeps; returned-error versus promise-rejection wording; unsupported caller classification;
+a misplaced exhaustion guard; a contract-attribution error; and the unsupported cache “concurrency limit” headline.
+No confirmed introduced text defect was found. Two retry code fragments remain unchanged and visibly elided; their presentation may fail
+the code criterion. Transaction scope and successful-await wording also need consistent parent judgment.
 
-Initial grades rejected “Fictional source change” because fictionality was absent from the masked source packets.
-That was a real packet mismatch: the withheld study documentation establishes fictionality, but the grader could not see it.
-The retry grade also read a general 10/20/40 delay sequence as applying to the adjacent two-retry example.
+Provisional totals are 3 pass / 4 fail / 2 uncertain originals and 6 pass / 0 confirmed fail / 3 uncertain revisions.
+This is an operator assessment, not external model consensus or a parent-certified whole-artifact pass rate.
+Attribution improves in the three retry drafts under that review; the other six already distinguish author claims from shown behavior.
+Structured code is byte-identical across every pair. A Grok code concern disappearing after an unrelated text edit is not a code repair.
 
-The [investigation](CONTROL-INVESTIGATION.md) separates those issues from disputed false positives.
-A [local witness](investigate.mjs) confirms 10/20 for budget two and 10/20/40 for budget three.
-[Recorded results](investigation-results.jsonl) preserve the send/sleep order.
+Raw judgments vary on identical artifacts. Cache 2 was untouched yet its prose changed from uncertain to fail.
+The untouched correct cache control changed from pass to uncertain. Transaction 1's unchanged metadata was unsupported in one grade
+and accepted in the other. These differences are grading variation, not audit effects.
 
-Before any writer, all controls received a supported metadata label. The retry example now states its budget explicitly.
-[Revised hashes](control-revision-lock.json) were recorded before three fresh reviews with the unchanged grading request.
-Each flawed counterpart still differs only at `/title`. No criterion or grader changed.
+Some graders said `verification.json` was not supplied, although the saved workspace contains its explicit empty findings.
+Some rejected fictional framing while others accepted identical wording; the writer prompt explicitly establishes that framing but was
+withheld from the grader. Those packet/read disagreements are preserved rather than counted as new behavioral defects.
+Verification-inventory language in reader prose remains a separate editorial concern. Repeated attribution, denser caveats, and prose
+quality require parent judgment; the report makes no overall prose-improvement claim.
 
-| Revised control | Field judgments | Grader omission findings | Grader prose |
+## Controls: detection and preservation are different outcomes
+
+| Fixture | Flawed title | Correct-control preservation | Extra correct-control edits |
 | --- | --- | --- | --- |
-| Retry | 17 supported/nonfactual | Wall-clock warning; explicit labeling of unchanged behavior | Uncertain |
-| Transaction | 17 supported/nonfactual | Missing words “cross-call lock”, despite stated duplicate publication | Fail |
-| Cache | 17 supported/nonfactual | TTL, cancellation, synchronous cache operations | Uncertain |
+| Retry | Repaired | Failed byte-preservation | Three qualification edits |
+| Transaction | Repaired | Preserved exact bytes | None |
+| Cache | Repaired | Preserved exact bytes | None |
 
-All six grades preserve correct attribution of the author's overclaims. All nevertheless flag some attribution or evidence wording as prose leakage.
-For example, the revised transaction grade calls “The author calls payment and notification atomic” reviewer language.
-The frozen criteria require meaningful author/source distinctions; that wording alone does not establish leakage.
-The cache grade acknowledges that omitted TTL/cancellation may be acceptable shortening. The retry control already says “requested delays”.
+All **3/3 seeded factual/attribution title defects were repaired**. The raw grader also marks all three original false titles contradicted
+and their replacements supported. Completeness/prose disputes are reported separately.
+Correct-control byte preservation was **2/3**. Retry changed `/sections/0/title`, `/sections/0/content`, and `/sections/1/content`.
+Under the parent's pre-run admission, these are unnecessary qualification edits. They added 365 bytes and 58 words without a confirmed
+new factual error. The flawed retry audit made the same three extra edits beyond repairing its title.
 
-These findings are not all demonstrably false. An explicit unchanged-behavior label or a less dense transaction paragraph could help readers.
-Their materiality remains unresolved, so field support is not promoted into an artifact-level pass.
-The [adjudicated acceptance decision](control-acceptance.json) remains separate from the original model grades.
-The selected grader was frozen after screening. Replacing it after seeing control outcomes would change the selection procedure.
-The run therefore stops at independent control acceptance rather than overriding it or repeatedly rewriting controls until they pass.
+## Growth, latency, and service usage
 
-## Inspect the evidence
+[Paired results](paired-results.json) retain every field, extracted text, code block, manifest hash, change list, raw rating, and build output.
+HTMLRewriter parses content; named/numeric references are decoded and structured placeholders are excluded from prose counts.
+Plain fields and code entries are measured directly. No HTML-stripping regex supplies the reported measurements.
 
-| Fixture | Initial grade | Revised grade |
-| --- | --- | --- |
-| Retry | [Grade](artifacts/e35fc47c-d9b7-4340-960f-4c12b305e908/initial-grade.json) | [Grade](artifacts/f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/initial-grade.json) |
-| Transaction | [Grade](artifacts/9ed5f86a-1100-4d6f-a976-0e2d2b40469a/initial-grade.json) | [Grade](artifacts/33f79ff4-8f54-456a-a403-737b383d4988/initial-grade.json) |
-| Cache | [Grade](artifacts/bb6f9fca-a7f1-44fe-b614-36f3e61d3a25/initial-grade.json) | [Grade](artifacts/aa1d754e-a1a2-449d-a509-c2e7fa474a08/initial-grade.json) |
+| Pair | UTF-8 bytes, original → revised | Byte growth | Prose words | Text code points |
+| --- | --- | --- | --- | --- |
+| 0 | 3435 → 3752 | +317 (+9.23%) | 358 → 405 | 2451 → 2768 |
+| 1 | 3433 → 3433 | 0 | 380 → 380 | 2605 → 2605 |
+| 2 | 3471 → 3491 | +20 (+0.58%) | 363 → 365 | 2320 → 2340 |
+| 3 | 3490 → 3879 | +389 (+11.15%) | 394 → 442 | 2589 → 2965 |
+| 4 | 3680 → 3877 | +197 (+5.35%) | 377 → 407 | 2634 → 2831 |
+| 5 | 3466 → 3466 | 0 | 368 → 368 | 2346 → 2346 |
+| 6 | 3664 → 3977 | +313 (+8.54%) | 396 → 439 | 2611 → 2924 |
+| 7 | 3231 → 3231 | 0 | 343 → 343 | 2415 → 2415 |
+| 8 | 3508 → 3508 | 0 | 363 → 363 | 2363 → 2363 |
 
-Each grade directory contains its exact prompt, visible text/tool transcript, immutable inputs, field inventory, manifest, and execution record.
-Transcripts retain tool inputs and outputs and exclude hidden reasoning and provider state.
-[Evidence hashes](evidence-hashes.json) cover the public artifacts. Raw export hashes are in the execution records.
-The [build records](builds.json) link all 12 HTML files and preserve command output and warnings.
-[Input comparisons](input-comparisons.json) verify exact fixture bytes, complete pointer coverage, and verbatim field quotes for all six control grades.
+Main-pair median growth was **20 bytes / 0.58%**, ranging from 0 to 389 bytes / 0 to 11.15%.
+Median prose growth was 2 words (range 0–48) and 20 code points (range 0–376).
+Code text remains unchanged and is reported separately. All nine original writers satisfy the four-section, 250–450-word request
+under the parser-based displayed-prose count.
 
-All 13 sessions used fresh stripped sibling jj clones and explicit API locations. No session invoked a skill, delegated,
-or read outside its supplied workspace in the recorded tools. Exported model and location identities were checked structurally.
-Controls received the local style/schema alongside their source/probes; some graders read these files and some did not.
-The grader saw neither the answer key nor the control identities, prior reviews, or benchmark criteria beyond the generic request.
+| Stage | Median seconds | Range seconds | Latencies available | Reported USD |
+| --- | --- | --- | --- | --- |
+| Writers | 67.030 | 54.789–77.623 | 9/9 | 0 |
+| Main audits | 63.127 | 45.806–105.772 | 9/9 | 0 |
+| Control audits | 66.190 | 40.195–92.572 | 6/6 | 0 |
+| Masked grading | 287.882 | 188.316–358.529 | 28/30 | 7.206024 |
 
-The smoke runner initially compared JSON object strings and incorrectly flagged a property-order mismatch after a successful response.
-Structural comparison fixed that host-side check; the original READY response was retained without a model rerun.
-The control runner used a 600-second foreground bound; the screening runner used 300 seconds. No session reached either bound.
-Session clones were removed after local exports and artifact snapshots were saved. The stable external archive was copied afterward.
-The owner clone remains available for integration.
+Latencies cover submission through wait/export and exclude clone creation. Two recovery latencies are unavailable, not zero.
+Zero Astra cost is the service's reported value, not a claim that the service was free.
+[Study usage](study-summary.json) and [per-session execution records](study-executions.json) retain input/output/reasoning/cache token
+counts and actual reported charges. Screening/control-admission cost was USD 1.513668; total recorded study service cost was
+**USD 8.719692**. No list-price cost, temperature, or seed was inferred.
 
-## Metrics and limits
+## Evidence and review entry points
 
-[Usage](usage.json) records prompt-through-wait/export latency, service tokens including cache counts, and service-reported cost for all 13 sessions.
-These are service-reported charges, not price-list estimates. No temperature or seed was invented.
-No infrastructure exclusion, zero-token rerun, or model repair occurred.
+- [Parent review queue and source rationale](ADJUDICATION.md): confirmed repairs and unresolved judgments.
+- [All raw grade findings in pair order](GRADE-DIGEST.md): exact original model findings without adjudication overrides.
+- [Paired results](paired-results.json): paths to original/revised manifests, audit records, grades, HTML, and metrics.
+- [Unmasked mapping](unmasked-mapping.json): published only after all 30 grades were saved. The live mapping stayed outside model workspaces.
+- [Main HTML directory](main-builds): all 30 text-only builds. [Preparatory builds](builds.json) remain separate.
+- [Execution evidence](study-executions.json) and [shell review](shell-review.json): actual identities, hashes, tools, and local validation commands.
+- [Evidence hashes](evidence-hashes.json): public artifacts; raw-export hashes also appear in each execution record.
 
-| Stage | Median seconds | Range seconds | Service-reported cost (USD) |
-| --- | --- | --- | --- |
-| Availability | 5.349 | 5.349–5.349 | 0.026624 |
-| Qualification | 8.787 | 7.808–16.721 | 0.178546 |
-| Initial acceptance | 245.804 | 216.421–270.625 | 0.658212 |
-| Revised acceptance | 275.313 | 239.634–338.463 | 0.650286 |
+Each modifying session used its own stripped sibling jj clone with explicit API location. Fresh contexts saw only their supplied packet;
+no tool invoked a skill, delegated, read repository history, or read outside that workspace. Relative paths were resolved against the
+recorded session location. Local shell calls validated artifacts; their complete commands/results are in visible transcripts.
+The caller revalidated all source/probe bytes, exact audit inputs, public prepare/apply behavior, field coverage, code preservation,
+and final builds. Visible transcripts exclude hidden reasoning and provider state. Full raw exports stay under ignored `.evals/resumed`
+and the stable external archive for parent integration.
 
-Total recorded service cost was USD 1.513668. These stage measurements include submission, waiting, and export, but exclude clone creation.
+All 510 field pointers are covered. [Quotation issues](grade-quotation-issues.json) retain four grade rows whose quotes still differ
+after HTML/whitespace/placeholder normalization: two omit or join spans and two change punctuation around code excerpts.
+Those rows are not certified as verbatim evidence. No model was re-prompted to improve a saved grade; source-level review uses the
+unchanged original fields instead. Other normalization differences remain visible in the per-field quotation flags.
 
-[Control growth](control-growth.json) records exact changed fields, UTF-8 bytes, Unicode code points, word counts, and extracted text.
-HTMLRewriter parses content fields; plain fields are measured directly. No code entries exist in these controls.
-The changes are pre-writer control corrections, not audit edits or paired effectiveness outcomes.
-Needless audit edits, factual repair transitions, prose transitions, primary build transitions, and original/revised draft growth remain untested.
+## Verification and limits
 
-| Correct control | Changed fields | UTF-8 bytes, initial → revised | Growth | Text code points | Words |
-| --- | --- | --- | --- | --- | --- |
-| Retry | `/meta`, `/sections/1/content` | 1693 → 1667 | −26 (−1.54%) | 1264 → 1238 | 186 → 182 |
-| Transaction | `/meta` | 1760 → 1732 | −28 (−1.59%) | 1331 → 1303 | 193 → 189 |
-| Cache | `/meta` | 1850 → 1822 | −28 (−1.51%) | 1421 → 1393 | 229 → 225 |
-
-Median control byte change was −28, ranging from −28 to −26. These corrections addressed an evidence gap and an ambiguous example.
-All other fields retain their exact strings; the title-corrupted counterparts preserve the one-field defect.
-
-The [screening runner](run.ts) and [study runner](study.ts) retain the executed API patterns.
-Only screening and control acceptance paths were exercised. The main-study path is untested and gated by the failed acceptance record.
-The [summary script](summarize.ts) validates identity, tool scope, title-only control differences, frozen hashes, builds, and measurements.
-Its archive contains raw exports under `.evals/resumed` and a public evidence snapshot for parent integration.
-
-## Verification
-
-- Frozen root and nested walkthrough dependencies installed successfully.
-- The original preparation script passed three probe suites and six control builds without changing historical bytes.
-- Six screening witnesses and both retry-investigation witnesses passed locally.
-- All 12 available original/revised control HTML builds passed.
-- Explicit strict study-script type checking passed with `bun x tsc --noEmit -p evals/results/2026-09-12-audit-stage/tsconfig.json`.
-- Repository `bun run check` passed: type checking, lint, 40 tests, and catalog/link/skill/plugin validation.
-- Main writer/audit/grading model evaluations and browser rendering are explicitly unrun.
+All model execution and deterministic result assembly are complete. Root and nested frozen installs, explicit strict study-script type
+checking, repository `bun run check`, frozen-input checks, and artifact builds are verified before integration.
+Browser rendering and audio were not evaluated. Parent independent adjudication of the main disputed findings remains pending.
+The small heterogeneous sample, grader variability, parent-admitted controls, and optional qualification edits prevent a general
+reliability claim or an active-workflow change.

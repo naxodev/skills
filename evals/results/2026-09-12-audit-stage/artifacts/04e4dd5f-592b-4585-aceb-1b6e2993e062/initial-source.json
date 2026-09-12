@@ -1,0 +1,13 @@
+{
+  "title": "Lantern Ledger: publish after the payment transaction",
+  "body": "The author says moving publish prevents notifications for failed commits and makes payment and notification atomic.",
+  "contracts": [
+    "transaction invokes the callback once and commits its staged writes only after callback fulfillment. It fulfills with undefined after commit. Callback or commit rejection rolls back all staged writes.",
+    "publish is an external operation outside the database transaction. Its rejection may happen before or after an externally visible notification.",
+    "markPaid is idempotent for a given id. Neither transaction nor publish supplies a delivery deduplication guarantee.",
+    "A process can stop between awaited operations. No durable outbox, background retry, or cross-call lock is supplied."
+  ],
+  "before": "export async function before(db, publish, id) {\n  return db.transaction(async (tx) => {\n    await tx.markPaid(id);\n    await publish(id);\n  });\n}",
+  "after": "export async function after(db, publish, id) {\n  await db.transaction(async (tx) => {\n    await tx.markPaid(id);\n  });\n  await publish(id);\n}",
+  "unchanged": "none"
+}

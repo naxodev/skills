@@ -1,0 +1,41 @@
+{
+  "title": "Cedar Relay retries only eligible failures",
+  "eyebrow": "Fictional change · Delivery retries",
+  "dek": "A retryability check stops permanent failures, while exponential delays spread out further attempts. Delivery can still produce duplicate effects.",
+  "meta": "Source walkthrough · Deterministic modeled probes",
+  "footer": "Based on the supplied source and probe results. No production timing measurements or separate verification findings are supplied.",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "One send, then a limited number of retries",
+      "content": "<p class=\"lead\">Cedar Relay wraps an asynchronous delivery operation, <code>send</code>, with a bounded retry loop. You supply <code>retries</code> as a nonnegative integer and <code>sleep</code> as an asynchronous wait. A successful send returns immediately; a rejection enters the retry path.</p><p>The budget counts extra attempts. With two retries, the loop can call <code>send</code> three times. Previously, every rejection received the same treatment: request a 10-millisecond wait, then try again unless the budget was exhausted.</p>"
+    },
+    {
+      "eyebrow": "The gap",
+      "title": "Permanent failures kept going",
+      "content": "<p>Send errors already carry a boolean <code>retryable</code> property, but the old loop ignored it. In the supplied permanent-failure probe, the first send rejects with <code>retryable: false</code>. The old implementation waits and makes a second call, which the model allows to succeed. The new implementation stops after one call and propagates the permanent error.</p><p>This removes an attempt that the error contract says should not happen. It does not establish the author's claimed exactly-once delivery guarantee.</p>"
+    },
+    {
+      "eyebrow": "The mechanism",
+      "title": "Check eligibility before waiting",
+      "content": "<p>The catch branch now uses two reasons to stop:</p>{{CODE:0}}<p>A non-retryable error exits immediately. A retryable error also exits on the final allowed attempt, with no further wait. Otherwise, the loop requests an increasing delay:</p>{{CODE:1}}<p>Because <code>attempt</code> starts at zero, requested waits are 10, 20, then 40 milliseconds as the budget permits. The exhaustion probe records three sends and waits of 10 and 20, replacing 10 and 10. These are requested delays: the probe's sleep resolves immediately and measures no elapsed time.</p><p>A zero retry budget still permits one send. If <code>sleep</code> rejects, its error propagates and prevents another send.</p>",
+      "code": [
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "if (!error.retryable || attempt === retries) throw error;"
+        },
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "await sleep(10 * 2 ** attempt);"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Better retry decisions, no duplicate protection",
+      "content": "<p>The change filters failures and increases waits within the existing budget. A rejection can still follow a committed remote effect: the duplicate probe records two effects after a retry. There is no deduplication or idempotency contract. Separate calls also share neither a counter nor a lock; the concurrent probe records an effect from each call. Retry policy improves, but exactly-once delivery remains unsupported.</p>"
+    }
+  ]
+}

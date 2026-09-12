@@ -1,7 +1,7 @@
 import { cpSync, mkdirSync, readdirSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, randomInt } from 'node:crypto';
 import { isDeepStrictEqual } from 'node:util';
 import { prepareNarrativeAudit, applyNarrativeAudit } from '../../../scripts/narrative-audit.js';
 
@@ -44,11 +44,14 @@ function create(fixture: string, kind: string, model: Model, manifest?: string):
   const immutable: Record<string, string> = {};
   for (const file of readdirSync(work)) if (!file.startsWith('.')) immutable[file] = hash(readFileSync(join(work, file), 'utf8'));
   const sessionID = (JSON.parse(api('post', '/api/session', { title: 'component trial', agent: 'build', model, location: { directory: work } }, work)) as {data: {id: string}}).data.id;
-  return { label, fixture, kind, work, evidence, model, sessionID, immutable, attempts: [] };
+  const trial: Trial = { label, fixture, kind, work, evidence, model, sessionID, immutable, attempts: [] };
+  json(join(evidence, 'execution.json'), trial);
+  return trial;
 }
 function respond(trial: Trial, prompt: string, phase = 'initial') {
   writeFileSync(join(trial.evidence, `${phase}-prompt.md`), prompt);
   const start = Date.now();
+  json(join(trial.evidence, `${phase}-submission.json`), {startedAt: new Date(start).toISOString(), sessionID: trial.sessionID});
   let error: string | null = null;
   try {
     api('post', `/api/session/${trial.sessionID}/prompt`, { text: prompt }, trial.work);
@@ -74,6 +77,10 @@ function gradePrompt() {
   return readFileSync(join(prior, 'reviewer/CRITERIA.md'), 'utf8').split('## Generic masked grading request\n')[1]!.split('## Reference facts')[0]! + '\nRead manifest.json, fields.json, source.json, functions.mjs, probe.mjs and probe-results.json in this directory. Use these supplied files directly. Save grade.json. Do not invoke skills or delegate.';
 }
 function finish(trial: Trial) {
+  const archive = join(temp, 'audit-stage-resumed-evidence-20260912');
+  mkdirSync(join(archive, '.evals/resumed'), { recursive: true });
+  for (const file of readdirSync(raw)) if (file.startsWith(trial.label)) cpSync(join(raw, file), join(archive, '.evals/resumed', file));
+  cpSync(trial.evidence, join(archive, 'public/artifacts', trial.label), { recursive: true });
   rmSync(trial.work, { recursive: true, force: true });
 }
 const mode = process.argv[2];
@@ -104,7 +111,7 @@ if (mode === 'main') {
     records.push(record); json(join(output, 'pairs.json'), records); finish(trial);
     console.log(`writer ${fixture} ${replicate}: ${trial.label} ${record.error ?? 'saved'}`);
   }
-  for (const fixture of fixtures) for (const kind of ['correct', 'flawed']) records.push({ fixture, kind, original: join(prior, `reviewer/${fixture}-${kind}.json`) });
+  for (const fixture of fixtures) for (const kind of ['correct', 'flawed']) records.push({ fixture, kind, original: join(output, `controls/${fixture}-${kind}.json`) });
   for (const record of records) {
     if (!record.original) continue;
     const manifest = readFileSync(record.original, 'utf8');
@@ -129,4 +136,31 @@ if (mode === 'main') {
     json(join(output, 'pairs.json'), records); finish(trial);
     console.log(`audit ${record.fixture} ${record.kind}: ${record.error ?? 'saved'}`);
   }
+}
+if (mode === 'grade') {
+  const pairs = JSON.parse(readFileSync(join(output, 'pairs.json'), 'utf8')) as {fixture: string; kind: string; original: string; revised?: string}[];
+  const artifacts = pairs.flatMap((pair, index) => ['original', 'revised'].flatMap(stage => {
+    const path = stage === 'original' ? pair.original : pair.revised;
+    return path ? [{pair: index, fixture: pair.fixture, kind: pair.kind, stage, path}] : [];
+  }));
+  for (let i = artifacts.length - 1; i > 0; i--) { const j = randomInt(i + 1); [artifacts[i], artifacts[j]] = [artifacts[j]!, artifacts[i]!]; }
+  const mappingPath = join(temp, 'audit-stage-resumed-evidence-20260912/masked-mapping.json');
+  const resume = process.argv.includes('--resume');
+  const mapping = resume ? JSON.parse(readFileSync(mappingPath, 'utf8')) as (typeof artifacts[number] & {opaque: string})[] : artifacts.map(artifact => ({...artifact, opaque: randomUUID()}));
+  if (!resume) json(mappingPath, mapping);
+  const records: {opaque: string; label: string; error?: string}[] = resume ? JSON.parse(readFileSync(join(output, 'masked-grades.json'), 'utf8')) : [];
+  const batchLimit = Number(process.argv.find(arg => arg.startsWith('--batch='))?.slice(8) ?? Infinity);
+  let launched = 0;
+  for (const item of mapping) {
+    if (records.some(record => record.opaque === item.opaque)) continue;
+    if (launched++ >= batchLimit) break;
+    const trial = create(item.fixture, item.opaque, grader, readFileSync(item.path, 'utf8'));
+    let error: string | undefined;
+    try { respond(trial, gradePrompt()); } catch (caught) { error = String(caught); }
+    records.push({opaque: item.opaque, label: trial.label, error});
+    json(join(output, 'masked-grades.json'), records);
+    finish(trial);
+    console.log(`grade ${records.length}/${mapping.length}: ${trial.label} ${error ?? 'saved'}`);
+  }
+  if (records.length === mapping.length) json(join(output, 'unmasked-mapping.json'), mapping);
 }

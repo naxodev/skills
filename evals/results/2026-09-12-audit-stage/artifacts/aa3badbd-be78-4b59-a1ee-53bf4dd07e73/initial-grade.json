@@ -1,0 +1,170 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Lantern Ledger: commit before notifying",
+      "status": "supported",
+      "rationale": "Source title names Lantern Ledger. The after function awaits db.transaction(...) then await publish(id). The transaction contract fulfills only after commit. Probe results.after.none.events is [begin, write, commit, publish]. The title paraphrases that order. It does not claim atomicity."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Payment flow · Component study",
+      "status": "nonfactual",
+      "rationale": "Document kicker. Not a truth-apt claim about the functions, contracts, or probe."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "Moving publication past the commit prevents notifications for rolled-back payments, but leaves delivery as a separate operation.",
+      "status": "supported",
+      "rationale": "After moves publish outside the transaction. Contract: callback or commit rejection rolls back and the transaction promise rejects, so after never reaches publish. Probe: results.after.write.notifications is 0 and results.after.commit.notifications is 0, versus results.before.commit.notifications is 1. Separate delivery is the after source itself and the contract that publish is external. This is control-flow plus contract, not a universalization of one passing example."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Fictional change · Source and supplied in-memory probe",
+      "status": "unsupported",
+      "rationale": "Nothing in source.json, functions.mjs, probe.mjs, or probe-results.json calls the change fictional. The in-memory probe part matches probe-results.assumptions, but the field as a whole asserts an unevidenced framing."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "Based on the supplied source, transaction contracts, and probe evidence.",
+      "status": "nonfactual",
+      "rationale": "Provenance line for the page. Not a claim about program behavior."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Chapter label. Not a program claim."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "A callback is not a commit",
+      "status": "supported",
+      "rationale": "Contract: transaction commits staged writes only after callback fulfillment. before.none.events runs publish before commit, so the callback is distinct from commit."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Lantern Ledger marks a payment as paid and publishes a notification for its identifier. Originally, both awaited operations ran inside the database transaction callback. The database commits staged writes only after that callback fulfills, so publication happened before commit. The notification is external to the transaction. Putting publish(id) inside the callback makes the database wait for it, but cannot make a rollback retract it.",
+      "status": "supported",
+      "rationale": "before awaits tx.markPaid(id) and publish(id) inside db.transaction. Contract: commit occurs only after callback fulfillment; publish is external. Probe before.none.events is [begin, write, publish, commit]. before.commit keeps notifications 1 after rollback. Waiting follows from awaiting the callback before commit. Rollback cannot retract an external notification."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The gap",
+      "status": "nonfactual",
+      "rationale": "Chapter label. Not a program claim."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "A notification could outlive a rollback",
+      "status": "supported",
+      "rationale": "Probe results.before.commit and results.before['publish-after'] each have notifications 1, paid false, and a rollback event. The hedge 'could' matches those modeled cases."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "A failed commit could leave you with a notification for an unpaid record. The supplied probe demonstrates this: the original function publishes once, then rolls back when commit fails. Publication can also become visible before its own promise rejects, triggering a rollback after the notification escapes. The author describes the change as making payment and notification atomic. The source supports a narrower guarantee: it orders publication after a successful commit. These operations still cannot succeed or fail as one unit.",
+      "status": "supported",
+      "rationale": "results.before.commit: notifications 1, paid false, events include publish then rollback. results.before['publish-after']: notifications 1, paid false, rollback; contract says publish rejection may follow a visible notification. Source body: the author says the change 'makes payment and notification atomic.' After awaits publish only after transaction fulfillment (after commit). Not one unit: results.after['publish-before'] is paid true with notifications 0; results.after['publish-after'] is paid true with notifications 1 and an error. Contract also allows a process stop between awaited operations."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The changed mechanism",
+      "status": "nonfactual",
+      "rationale": "Chapter label. Not a program claim."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "Wait for the transaction, then publish",
+      "status": "supported",
+      "rationale": "after source: await db.transaction(...) then await publish(id). Matches CODE:0 then CODE:1."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The changed function first awaits the transaction itself. That promise fulfills only after commit. A write or commit rejection therefore exits the function before publication. The next statement runs outside the callback. Publication failure now leaves the payment committed. In the supplied results, rejection before visibility leaves zero notifications; rejection after visibility leaves one. Both calls report an error, so an error alone cannot tell you whether delivery occurred. The probe models staged writes and an external counter, rather than a real database. Its assertions cover ordering and these failure outcomes; it does not simulate a process stopping.",
+      "status": "supported",
+      "rationale": "Contract: transaction fulfills with undefined after commit. after.write and after.commit events have no publish. after['publish-before'] and after['publish-after'] have paid true. after['publish-before'].notifications is 0 with errors [publish-before]; after['publish-after'].notifications is 1 with errors [publish-after]. Assumptions string: in-memory staged transaction and external counter; no actual database or process-kill simulation. probe.mjs asserts after.none.events [begin, write, commit, publish] and those failure outcomes. Process stop is a contract limitation, not a probe case."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Chapter label. Not a program claim."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Safer ordering, separate delivery",
+      "status": "supported",
+      "rationale": "After orders publish after commit, which removes the before.commit escaped notification. Delivery remains a separate await publish(id). 'Safer' is comparative, not a universal safety guarantee."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "Failed transactions no longer reach publication. Delivery remains vulnerable to a process stopping between commit and publish, with no durable outbox or background retry supplied. Retrying after a visible notification can duplicate it. An idempotent markPaid does not deduplicate publication: the probe's two concurrent calls produce two notifications in both versions. This change fixes premature notification, not atomic or exactly-once delivery.",
+      "status": "supported",
+      "rationale": "after.write and after.commit never emit publish. Contract: a process can stop between awaited operations; no durable outbox or background retry. Retry duplication: after['publish-after'] leaves paid true, notifications 1, and an error; a later after call still awaits publish; contract says neither transaction nor publish supplies delivery deduplication. Concurrent probe is scoped to the modeled runs: results.before.concurrent.notifications and results.after.concurrent.notifications are both 2. Premature notify-before-commit is gone in after.commit; atomicity is contradicted by publish-before/after on after; exactly-once is contradicted by concurrent 2 and the no-dedup contract."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "No cross-call lock is supplied.",
+      "where_in_inputs": "source.json contracts[3]: 'No durable outbox, background retry, or cross-call lock is supplied.'",
+      "manifest": "/sections/3/content names outbox and background retry, and reports concurrent duplicate notifications, but never names the missing cross-call lock.",
+      "materiality": "The concurrent result already shows duplicate delivery. The omitted lock is the contract's name for the missing serialization, not a separate unseen failure mode. Recorded because the contract lists it with the other absences."
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/meta",
+      "quote": "Fictional change · Source and supplied in-memory probe",
+      "note": "Audit-packet framing. 'Fictional' and 'supplied' are not reader-facing product language."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "Based on the supplied source, transaction contracts, and probe evidence.",
+      "note": "Evidence-inventory footer rather than reader-facing close."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The source supports a narrower guarantee",
+      "note": "Adjudication voice comparing an author claim to evidence. Nearby 'The author describes the change as making payment and notification atomic' is ordinary attribution."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The supplied probe demonstrates this",
+      "note": "'Supplied' echoes the review brief. Naming the probe as evidence is otherwise legitimate."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "In the supplied results",
+      "note": "Same 'supplied' tell. The surrounding limitation sentences about the in-memory model are honest, not leaked instructions."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "quote": "Putting publish(id) inside the callback makes the database wait for it, but cannot make a rollback retract it.",
+        "rating": "pass"
+      },
+      {
+        "quote": "These operations still cannot succeed or fail as one unit.",
+        "rating": "pass"
+      },
+      {
+        "quote": "Both calls report an error, so an error alone cannot tell you whether delivery occurred.",
+        "rating": "pass"
+      },
+      {
+        "quote": "This change fixes premature notification, not atomic or exactly-once delivery.",
+        "rating": "pass"
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Whether /meta 'Fictional change' should be nonfactual document chrome instead of unsupported. Graded unsupported because the phrase is truth-apt and no supplied input states it.",
+    "Whether omitting 'cross-call lock' is a material limitation or already covered by the concurrent two-notification result.",
+    "Whether 'Retrying after a visible notification can duplicate it' is fully evidenced. No retry scenario exists in probe.mjs. The sentence follows from after['publish-after'] plus the no-dedup contract plus after always calling publish. Status remains supported; the missing retry run is the uncertainty.",
+    "Whether repeated 'supplied' is required probe attribution or reviewer-language leakage. Listed as leakage; it does not change field factual status."
+  ]
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "pointer": "/title",
+    "value": "Cedar Relay retries only eligible failures"
+  },
+  {
+    "pointer": "/eyebrow",
+    "value": "Component study · Retry behavior"
+  },
+  {
+    "pointer": "/dek",
+    "value": "A retryability check stops retries after permanent failures, while the loop requests exponentially increasing delays before further attempts. Neither change guarantees exactly-once delivery."
+  },
+  {
+    "pointer": "/meta",
+    "value": "Fictional change · Source and deterministic probe results"
+  },
+  {
+    "pointer": "/footer",
+    "value": "Based on the supplied source and modeled probes. No timing or production measurements; no separate verification findings were supplied."
+  },
+  {
+    "pointer": "/sections/0/eyebrow",
+    "value": "The setting"
+  },
+  {
+    "pointer": "/sections/0/title",
+    "value": "One send, then a bounded retry budget"
+  },
+  {
+    "pointer": "/sections/0/content",
+    "value": "<p class=\"lead\">Cedar Relay wraps an asynchronous <code>send</code> operation with a retry loop. Previously, every rejection could trigger another attempt after a requested 10-millisecond delay. A successful send returned immediately; the final failed attempt threw its error.</p><p>The <code>retries</code> argument counts extra attempts. With a budget of two, you can make at most three sends. A zero budget still allows the initial send.</p>"
+  },
+  {
+    "pointer": "/sections/1/eyebrow",
+    "value": "The gap"
+  },
+  {
+    "pointer": "/sections/1/title",
+    "value": "Permanent failures still got another attempt"
+  },
+  {
+    "pointer": "/sections/1/content",
+    "value": "<p>Send errors carry a boolean <code>retryable</code> property, but the old loop ignored it. In the supplied permanent-failure probe, the first send rejects with <code>retryable: false</code>. The old implementation requests a 10-millisecond sleep and sends again after that promise resolves; the new implementation rejects with that error after one call, without requesting sleep. The modeled sleep resolves immediately.</p><p>This removes the extra attempt for a failure marked as permanent. The supplied contract does not identify who sets that classification. It does not establish whether a rejected send already changed the remote system.</p>"
+  },
+  {
+    "pointer": "/sections/2/eyebrow",
+    "value": "The changed mechanism"
+  },
+  {
+    "pointer": "/sections/2/title",
+    "value": "Keep the bound, filter the error, double the delay"
+  },
+  {
+    "pointer": "/sections/2/content",
+    "value": "<p>The updated loop preserves the attempt budget and awaits each send:</p>{{CODE:0}}<p>Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries. Returning the awaited result stops the loop on success.</p><p>The catch block now decides whether another attempt is eligible before requesting a delay:</p>{{CODE:1}}<p>A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on. The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before. These are requested delays: the probe resolves sleep immediately. A rejected sleep propagates and prevents another send.</p>"
+  },
+  {
+    "pointer": "/sections/3/eyebrow",
+    "value": "The short version"
+  },
+  {
+    "pointer": "/sections/3/title",
+    "value": "Better retry decisions, not exactly-once delivery"
+  },
+  {
+    "pointer": "/sections/3/content",
+    "value": "<p>The change filters failures and increases requested retry delays within the existing budget. The author's exactly-once claim exceeds that mechanism: a remote effect can commit before a send rejects, and the duplicate probe records two effects in both implementations. There is no deduplication or idempotency contract. Separate calls share no retry counter, and no lock or cross-call delivery exclusion is supplied. The concurrent probe records an effect from each modeled call; it does not establish the internal state of an unshown send implementation.</p>"
+  }
+]

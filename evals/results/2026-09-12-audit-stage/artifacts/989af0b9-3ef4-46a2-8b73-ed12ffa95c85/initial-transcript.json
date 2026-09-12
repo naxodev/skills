@@ -1,0 +1,256 @@
+[
+  {
+    "type": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "I'll read the supplied inputs first and review every listed field against those contracts only."
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read directory /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85, entries 1-11\n.git/\n.jj/\nfields.json\nfunctions.mjs\nmanifest.json\nMANIFEST.md\nprobe-results.json\nprobe.mjs\nsource.json\nSTYLE.md\nverification.json"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789266912353,
+          "ran": 1789266912449,
+          "completed": 1789266912480
+        }
+      },
+      {
+        "type": "tool",
+        "name": "glob",
+        "state": {
+          "status": "completed",
+          "input": {
+            "pattern": "**/*"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/verification.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/manifest.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/functions.mjs\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/STYLE.md\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/MANIFEST.md\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/fields.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/probe-results.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/source.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/probe.mjs"
+            }
+          ],
+          "metadata": {
+            "count": 9,
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789266912453,
+          "ran": 1789266912472,
+          "completed": 1789266912499
+        }
+      }
+    ]
+  },
+  {
+    "type": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "Reading the six supplied files next so every listed field can be checked against contracts and probes."
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/manifest.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/manifest.json, lines 1-29\n1: {\n2:   \"title\": \"Post-write invalidation closes one stale-fill window\",\n3:   \"eyebrow\": \"Moss Catalog\",\n4:   \"dek\": \"Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.\",\n5:   \"meta\": \"Deterministic modeled examples\",\n6:   \"footer\": \"The model uses one shared Map, without a generation check for readers.\",\n7:   \"sections\": [\n8:     {\n9:       \"eyebrow\": \"The setting\",\n10:       \"title\": \"Early deletion left a window for stale fills\",\n11:       \"content\": \"<p class=\\\"lead\\\">The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.</p>\"\n12:     },\n13:     {\n14:       \"eyebrow\": \"The change\",\n15:       \"title\": \"Delete only after the write fulfills\",\n16:       \"content\": \"<p>The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.</p>\"\n17:     },\n18:     {\n19:       \"eyebrow\": \"The boundary\",\n20:       \"title\": \"An older snapshot can arrive after deletion\",\n21:       \"content\": \"<p>The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.</p>\"\n22:     },\n23:     {\n24:       \"eyebrow\": \"The short version\",\n25:       \"title\": \"Close one cache-fill window\",\n26:       \"content\": \"<p>Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.</p>\"\n27:     }\n28:   ]\n29: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789266918362,
+          "ran": 1789266919171,
+          "completed": 1789266919187
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/fields.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/fields.json, lines 1-70\n1: [\n2:   {\n3:     \"pointer\": \"/title\",\n4:     \"value\": \"Post-write invalidation closes one stale-fill window\"\n5:   },\n6:   {\n7:     \"pointer\": \"/eyebrow\",\n8:     \"value\": \"Moss Catalog\"\n9:   },\n10:   {\n11:     \"pointer\": \"/dek\",\n12:     \"value\": \"Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.\"\n13:   },\n14:   {\n15:     \"pointer\": \"/meta\",\n16:     \"value\": \"Deterministic modeled examples\"\n17:   },\n18:   {\n19:     \"pointer\": \"/footer\",\n20:     \"value\": \"The model uses one shared Map, without a generation check for readers.\"\n21:   },\n22:   {\n23:     \"pointer\": \"/sections/0/eyebrow\",\n24:     \"value\": \"The setting\"\n25:   },\n26:   {\n27:     \"pointer\": \"/sections/0/title\",\n28:     \"value\": \"Early deletion left a window for stale fills\"\n29:   },\n30:   {\n31:     \"pointer\": \"/sections/0/content\",\n32:     \"value\": \"<p class=\\\"lead\\\">The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.</p>\"\n33:   },\n34:   {\n35:     \"pointer\": \"/sections/1/eyebrow\",\n36:     \"value\": \"The change\"\n37:   },\n38:   {\n39:     \"pointer\": \"/sections/1/title\",\n40:     \"value\": \"Delete only after the write fulfills\"\n41:   },\n42:   {\n43:     \"pointer\": \"/sections/1/content\",\n44:     \"value\": \"<p>The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.</p>\"\n45:   },\n46:   {\n47:     \"pointer\": \"/sections/2/eyebrow\",\n48:     \"value\": \"The boundary\"\n49:   },\n50:   {\n51:     \"pointer\": \"/sections/2/title\",\n52:     \"value\": \"An older snapshot can arrive after deletion\"\n53:   },\n54:   {\n55:     \"pointer\": \"/sections/2/content\",\n56:     \"value\": \"<p>The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.</p>\"\n57:   },\n58:   {\n59:     \"pointer\": \"/sections/3/eyebrow\",\n60:     \"value\": \"The short version\"\n61:   },\n62:   {\n63:     \"pointer\": \"/sections/3/title\",\n64:     \"value\": \"Close one cache-fill window\"\n65:   },\n66:   {\n67:     \"pointer\": \"/sections/3/content\",\n68:     \"value\": \"<p>Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.</p>\"\n69:   }\n70: ]"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789266919177,
+          "ran": 1789266919992,
+          "completed": 1789266920009
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/source.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/source.json, lines 1-13\n1: {\n2:   \"title\": \"Moss Catalog: invalidate a cache entry after writing\",\n3:   \"body\": \"The author says invalidating after the write removes stale cache reads, including concurrent readers.\",\n4:   \"contracts\": [\n5:     \"cache is a synchronous Map. Each read and update uses the same Map for this model; no distributed cache is shown.\",\n6:     \"db.write atomically commits its value before fulfillment; rejection leaves the stored value unchanged.\",\n7:     \"db.read captures a snapshot when invoked, but its promise may fulfill after a later write commits.\",\n8:     \"read is unchanged. No generation check, cancellation, TTL, or synchronization of in-flight readers is supplied.\"\n9:   ],\n10:   \"before\": \"export async function before(db, cache, key, value) {\\n  cache.delete(key);\\n  await db.write(key, value);\\n}\",\n11:   \"after\": \"export async function after(db, cache, key, value) {\\n  await db.write(key, value);\\n  cache.delete(key);\\n}\",\n12:   \"unchanged\": \"export async function read(db, cache, key) {\\n  if (cache.has(key)) return cache.get(key);\\n  const value = await db.read(key);\\n  cache.set(key, value);\\n  return value;\\n}\"\n13: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789266920001,
+          "ran": 1789266920875,
+          "completed": 1789266920882
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/functions.mjs"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/functions.mjs, lines 1-16\n1: export async function read(db, cache, key) {\n2:   if (cache.has(key)) return cache.get(key);\n3:   const value = await db.read(key);\n4:   cache.set(key, value);\n5:   return value;\n6: }\n7: \n8: export async function before(db, cache, key, value) {\n9:   cache.delete(key);\n10:   await db.write(key, value);\n11: }\n12: \n13: export async function after(db, cache, key, value) {\n14:   await db.write(key, value);\n15:   cache.delete(key);\n16: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789266920877,
+          "ran": 1789266921641,
+          "completed": 1789266921650
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/probe.mjs"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/probe.mjs, lines 1-89\n1: import assert from 'node:assert/strict';\n2: import { before, after, read } from './functions.mjs';\n3: \n4: function deferred() {\n5:   let resolve;\n6:   const promise = new Promise((done) => { resolve = done; });\n7:   return { promise, resolve };\n8: }\n9: async function sequential(fn, fail = false) {\n10:   let stored = 'old';\n11:   const cache = new Map([['key', 'old']]);\n12:   const db = {\n13:     async read() { return stored; },\n14:     async write(key, value) {\n15:       if (fail) throw new Error('write');\n16:       stored = value;\n17:     },\n18:   };\n19:   let error = null;\n20:   await fn(db, cache, 'key', 'new').catch((failure) => { error = failure.message; });\n21:   const cachedAfterUpdate = cache.get('key') ?? null;\n22:   return { stored, cachedAfterUpdate, nextRead: await read(db, cache, 'key'), error };\n23: }\n24: async function overlapping(fn, lateSnapshot) {\n25:   let stored = 'old';\n26:   const cache = new Map();\n27:   const readerStarted = deferred();\n28:   const releaseReader = deferred();\n29:   const writerStarted = deferred();\n30:   const releaseWriter = deferred();\n31:   const db = {\n32:     async read() {\n33:       const snapshot = stored;\n34:       readerStarted.resolve();\n35:       await releaseReader.promise;\n36:       return snapshot;\n37:     },\n38:     async write(key, value) {\n39:       writerStarted.resolve();\n40:       await releaseWriter.promise;\n41:       stored = value;\n42:     },\n43:   };\n44:   let pendingRead;\n45:   let update;\n46:   if (lateSnapshot) {\n47:     pendingRead = read(db, cache, 'key');\n48:     await readerStarted.promise;\n49:     update = fn(db, cache, 'key', 'new');\n50:     await writerStarted.promise;\n51:     releaseWriter.resolve();\n52:     await update;\n53:     releaseReader.resolve();\n54:   } else {\n55:     update = fn(db, cache, 'key', 'new');\n56:     await writerStarted.promise;\n57:     pendingRead = read(db, cache, 'key');\n58:     await readerStarted.promise;\n59:     releaseReader.resolve();\n60:     await pendingRead;\n61:     releaseWriter.resolve();\n62:     await update;\n63:   }\n64:   const overlappingRead = await pendingRead;\n65:   return { stored, overlappingRead, cached: cache.get('key') ?? null, nextRead: await read(db, cache, 'key') };\n66: }\n67: const results = {};\n68: for (const [name, fn] of Object.entries({ before, after })) {\n69:   results[name] = {\n70:     sequential: await sequential(fn),\n71:     failedWrite: await sequential(fn, true),\n72:     fillDuringWrite: await overlapping(fn, false),\n73:     lateSnapshot: await overlapping(fn, true),\n74:   };\n75: }\n76: assert.equal(results.before.fillDuringWrite.nextRead, 'old');\n77: assert.equal(results.after.fillDuringWrite.nextRead, 'new', 'post-write deletion removes a cache fill that completed during the write');\n78: assert.equal(results.after.fillDuringWrite.overlappingRead, 'old');\n79: assert.equal(results.after.failedWrite.cachedAfterUpdate, 'old');\n80: assert.equal(results.before.failedWrite.cachedAfterUpdate, null);\n81: for (const result of Object.values(results)) {\n82:   assert.equal(result.sequential.nextRead, 'new');\n83:   assert.equal(result.failedWrite.stored, 'old');\n84:   assert.equal(result.failedWrite.error, 'write');\n85:   assert.equal(result.lateSnapshot.stored, 'new');\n86:   assert.equal(result.lateSnapshot.cached, 'old', 'an older snapshot can refill the cache after invalidation');\n87:   assert.equal(result.lateSnapshot.nextRead, 'old');\n88: }\n89: console.log(JSON.stringify({ assumptions: 'Explicit promise gates schedule snapshot capture, write commit, and cache fill. One process and one Map; no wall-clock timing.', results }, null, 2));"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789266921645,
+          "ran": 1789266922463,
+          "completed": 1789266922486
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/probe-results.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/probe-results.json, lines 1-57\n1: {\n2:   \"assumptions\": \"Explicit promise gates schedule snapshot capture, write commit, and cache fill. One process and one Map; no wall-clock timing.\",\n3:   \"results\": {\n4:     \"before\": {\n5:       \"sequential\": {\n6:         \"stored\": \"new\",\n7:         \"cachedAfterUpdate\": null,\n8:         \"nextRead\": \"new\",\n9:         \"error\": null\n10:       },\n11:       \"failedWrite\": {\n12:         \"stored\": \"old\",\n13:         \"cachedAfterUpdate\": null,\n14:         \"nextRead\": \"old\",\n15:         \"error\": \"write\"\n16:       },\n17:       \"fillDuringWrite\": {\n18:         \"stored\": \"new\",\n19:         \"overlappingRead\": \"old\",\n20:         \"cached\": \"old\",\n21:         \"nextRead\": \"old\"\n22:       },\n23:       \"lateSnapshot\": {\n24:         \"stored\": \"new\",\n25:         \"overlappingRead\": \"old\",\n26:         \"cached\": \"old\",\n27:         \"nextRead\": \"old\"\n28:       }\n29:     },\n30:     \"after\": {\n31:       \"sequential\": {\n32:         \"stored\": \"new\",\n33:         \"cachedAfterUpdate\": null,\n34:         \"nextRead\": \"new\",\n35:         \"error\": null\n36:       },\n37:       \"failedWrite\": {\n38:         \"stored\": \"old\",\n39:         \"cachedAfterUpdate\": \"old\",\n40:         \"nextRead\": \"old\",\n41:         \"error\": \"write\"\n42:       },\n43:       \"fillDuringWrite\": {\n44:         \"stored\": \"new\",\n45:         \"overlappingRead\": \"old\",\n46:         \"cached\": null,\n47:         \"nextRead\": \"new\"\n48:       },\n49:       \"lateSnapshot\": {\n50:         \"stored\": \"new\",\n51:         \"overlappingRead\": \"old\",\n52:         \"cached\": \"old\",\n53:         \"nextRead\": \"old\"\n54:       }\n55:     }\n56:   }\n57: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789266922469,
+          "ran": 1789266922482,
+          "completed": 1789266922489
+        }
+      }
+    ]
+  },
+  {
+    "type": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "I have the contracts, functions, and probe results. Next I’ll score every listed field and write `grade.json`."
+      },
+      {
+        "type": "tool",
+        "name": "write",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-989af0b9-3ef4-46a2-8b73-ed12ffa95c85/grade.json",
+            "content": "{\n  \"fields\": [\n    {\n      \"pointer\": \"/title\",\n      \"quote\": \"Post-write invalidation closes one stale-fill window\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.after deletes only after await db.write. Probe before.fillDuringWrite.nextRead is \\\"old\\\" and cached is \\\"old\\\"; after.fillDuringWrite.nextRead is \\\"new\\\" and cached is null. The assertion labels that contrast as a fill that completed during the write. The title scopes the claim to one window, which matches after.lateSnapshot still caching \\\"old\\\".\"\n    },\n    {\n      \"pointer\": \"/eyebrow\",\n      \"quote\": \"Moss Catalog\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"A proper name, not a checkable behavior claim. source.title begins \\\"Moss Catalog:\\\", so the label matches the supplied source name, but it still has no true/false content about the functions or probes.\"\n    },\n    {\n      \"pointer\": \"/dek\",\n      \"quote\": \"Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after.fillDuringWrite: overlappingRead \\\"old\\\", cached null, nextRead \\\"new\\\", matching probe.mjs assert equal(results.after.fillDuringWrite.nextRead, \\\"new\\\"). after.lateSnapshot: cached \\\"old\\\", nextRead \\\"old\\\", matching assert equal(result.lateSnapshot.cached, \\\"old\\\") and nextRead \\\"old\\\". Contract: db.read captures a snapshot when invoked and may fulfill after a later write commits.\"\n    },\n    {\n      \"pointer\": \"/meta\",\n      \"quote\": \"Deterministic modeled examples\",\n      \"status\": \"supported\",\n      \"rationale\": \"probe-results.json assumptions: \\\"Explicit promise gates schedule snapshot capture, write commit, and cache fill. One process and one Map; no wall-clock timing.\\\" That is a deterministic model, not a live-system measurement.\"\n    },\n    {\n      \"pointer\": \"/footer\",\n      \"quote\": \"The model uses one shared Map, without a generation check for readers.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Contract: cache is a synchronous Map and each read and update uses the same Map; no distributed cache is shown. Contract: read is unchanged; no generation check is supplied. functions.mjs read has no generation field; cache is the Map passed into read/before/after.\"\n    },\n    {\n      \"pointer\": \"/sections/0/eyebrow\",\n      \"quote\": \"The setting\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No checkable claim about cache, write, or probes.\"\n    },\n    {\n      \"pointer\": \"/sections/0/title\",\n      \"quote\": \"Early deletion left a window for stale fills\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.before deletes before await db.write. before.fillDuringWrite overlappingRead, cached, and nextRead are all \\\"old\\\". Probe assert equal(results.before.fillDuringWrite.nextRead, \\\"old\\\").\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.before / functions.mjs before: cache.delete(key) then await db.write. overlapping(fn, false) starts the write, then read on an empty Map, so db.read snapshots stored while it is still \\\"old\\\", cache.set of that value, then the write commits. before.fillDuringWrite: overlappingRead \\\"old\\\", cached \\\"old\\\".\"\n    },\n    {\n      \"pointer\": \"/sections/1/eyebrow\",\n      \"quote\": \"The change\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No checkable claim.\"\n    },\n    {\n      \"pointer\": \"/sections/1/title\",\n      \"quote\": \"Delete only after the write fulfills\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.after / functions.mjs after: await db.write then cache.delete. Contract: db.write commits before fulfillment; rejection leaves the stored value unchanged. after.failedWrite: error \\\"write\\\", cachedAfterUpdate \\\"old\\\" (delete does not run). after.sequential: cachedAfterUpdate null after a successful write.\"\n    },\n    {\n      \"pointer\": \"/sections/1/content\",\n      \"quote\": \"The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() deletes only after await db.write. after.fillDuringWrite.cached is null and nextRead is \\\"new\\\" (fill during write is deleted). sequential(fn, true) starts from Map([['key','old']]); after.failedWrite.cachedAfterUpdate is \\\"old\\\". after.sequential.nextRead is \\\"new\\\". The last sentence is scoped to that sequential example; the same nextRead \\\"new\\\" also appears for before.sequential, so it is true of after but not distinctive.\"\n    },\n    {\n      \"pointer\": \"/sections/2/eyebrow\",\n      \"quote\": \"The boundary\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No checkable claim.\"\n    },\n    {\n      \"pointer\": \"/sections/2/title\",\n      \"quote\": \"An older snapshot can arrive after deletion\",\n      \"status\": \"supported\",\n      \"rationale\": \"overlapping(fn, true): read snapshots stored while it is \\\"old\\\", the update commits and deletes, then the reader is released and cache.set writes that snapshot. after.lateSnapshot: stored \\\"new\\\", cached \\\"old\\\", nextRead \\\"old\\\".\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.body: the author says invalidating after the write removes stale cache reads, including concurrent readers. source.unchanged and contract: read is unchanged; no generation check or in-flight reader synchronization. lateSnapshot path matches the modeled reader; after.lateSnapshot.nextRead is \\\"old\\\". The author paraphrase is narrower than source.body (which also claimed stale cache reads in general) but is not contradicted by the source sentence.\"\n    },\n    {\n      \"pointer\": \"/sections/3/eyebrow\",\n      \"quote\": \"The short version\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No checkable claim.\"\n    },\n    {\n      \"pointer\": \"/sections/3/title\",\n      \"quote\": \"Close one cache-fill window\",\n      \"status\": \"supported\",\n      \"rationale\": \"Same modeled contrast as /title: after.fillDuringWrite.nextRead \\\"new\\\" versus before.fillDuringWrite.nextRead \\\"old\\\". \\\"One\\\" matches the remaining lateSnapshot window (cached \\\"old\\\", nextRead \\\"old\\\").\"\n    },\n    {\n      \"pointer\": \"/sections/3/content\",\n      \"quote\": \"Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after.fillDuringWrite.nextRead is \\\"new\\\" and cached is null. after.fillDuringWrite.overlappingRead is still \\\"old\\\". after.lateSnapshot overlappingRead, cached, and nextRead are \\\"old\\\". Both remaining windows are in the probe results for after.\"\n    }\n  ],\n  \"missing_material_limitations\": [\n    {\n      \"limitation\": \"The supplied read path also has no cancellation and no TTL.\",\n      \"why_material\": \"Contract 4 lists generation check, cancellation, TTL, and in-flight reader synchronization together as not supplied. Reader-facing copy names generation checks and in-flight synchronization (footer and /sections/2/content) and omits cancellation and TTL, so a reader can treat the named controls as the full set.\",\n      \"evidence\": \"source.contracts[3]: \\\"read is unchanged. No generation check, cancellation, TTL, or synchronization of in-flight readers is supplied.\\\"\"\n    },\n    {\n      \"limitation\": \"The model is one process; no distributed cache is shown.\",\n      \"why_material\": \"Post-write Map.delete is easy to over-read as cache invalidation in general. The footer says \\\"one shared Map\\\" but does not state one process or that a distributed cache is not shown.\",\n      \"evidence\": \"source.contracts[0]: \\\"no distributed cache is shown.\\\" probe-results.json assumptions: \\\"One process and one Map; no wall-clock timing.\\\"\"\n    },\n    {\n      \"limitation\": \"Shown schedules are explicit promise gates, not a complete set of interleavings.\",\n      \"why_material\": \"Meta calls them deterministic modeled examples, which is true, but copy such as \\\"closes the window for fills that finish during that write\\\" can still be read as covering every overlapping schedule. Only fillDuringWrite and lateSnapshot are probed.\",\n      \"evidence\": \"probe.mjs overlapping() has two boolean schedules. assumptions: \\\"Explicit promise gates schedule snapshot capture, write commit, and cache fill.\\\"\"\n    }\n  ],\n  \"attribution_errors\": [],\n  \"reviewer_language_leakage\": [\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The author says concurrent stale reads are removed, but read is unchanged.\",\n      \"rationale\": \"Reader-facing catalog copy argues with \\\"the author\\\" instead of stating system behavior. source.body already uses \\\"The author says...\\\" as brief framing of an overclaim; repeating that rebuttal register in the section body is reviewer voice. \\\"but read is unchanged\\\" is the reviewer's warrant, not a description of what after() does.\"\n    }\n  ],\n  \"code_diagram_errors\": [],\n  \"reader_facing_prose\": {\n    \"rating\": \"fail\",\n    \"quotes\": [\n      {\n        \"quote\": \"The author says concurrent stale reads are removed, but read is unchanged.\",\n        \"role\": \"fail\",\n        \"note\": \"Reviewer rebuttal in catalog body. A reader of the change is told about \\\"the author\\\" rather than the cache/write behavior.\"\n      },\n      {\n        \"quote\": \"In the sequential example, the next read sees the new stored value.\",\n        \"role\": \"pass\",\n        \"note\": \"Scopes a passing probe (after.sequential.nextRead \\\"new\\\") to that example. Does not treat it as a universal guarantee.\"\n      },\n      {\n        \"quote\": \"Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.\",\n        \"role\": \"pass\",\n        \"note\": \"Pairs the closed fill-during-write window with the remaining late-snapshot window. Modal \\\"can\\\" matches after.lateSnapshot.\"\n      },\n      {\n        \"quote\": \"It does not prevent stale results from overlapping readers or late cache fills.\",\n        \"role\": \"pass\",\n        \"note\": \"States remaining modeled failures (after.fillDuringWrite.overlappingRead \\\"old\\\"; after.lateSnapshot nextRead \\\"old\\\").\"\n      }\n    ]\n  },\n  \"unresolved_uncertainty\": [\n    \"Whether /eyebrow \\\"Moss Catalog\\\" should be nonfactual (a name) or supported (verbatim from source.title). Status is nonfactual because it is not a behavior claim.\",\n    \"Whether omitting TTL and cancellation is a material limitation gap versus a partial restatement of contract 4. Listed as missing because the prose names some sibling controls and not others.\",\n    \"Whether sequential nextRead \\\"new\\\" in /sections/1/content should be flagged as misleading placement: the same result holds for before.sequential. Status remains supported because the sentence is true of after and is example-scoped.\",\n    \"Whether the author paraphrase \\\"concurrent stale reads are removed\\\" is an attribution error relative to source.body \\\"removes stale cache reads, including concurrent readers.\\\" Treated as supported paraphrase, not an attribution error.\",\n    \"Prose rating is fail from the author-rebuttal sentence. If reviewer-language leakage is scored only in its own list, the remaining scoped sentences would be a pass. That split is unresolved.\"\n  ]\n}\n"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Created file successfully: grade.json"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789267165807,
+          "ran": 1789267165982,
+          "completed": 1789267165994
+        }
+      }
+    ]
+  },
+  {
+    "type": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "Review saved in `grade.json`. Every `fields.json` pointer is scored.\n\n**Contradictions:** none. Checkable claims match `source.after`/`source.before`, the four contracts, and `probe-results.json`.\n\n**Supported (examples):** post-write delete closes the fill-during-write window (`after.fillDuringWrite.nextRead` `\"new\"` vs before `\"old\"`); a late snapshot can refill (`after.lateSnapshot` cached/nextRead `\"old\"`); failed write leaves an existing entry (`cachedAfterUpdate` `\"old\"`); sequential next read is scoped to that example.\n\n**Nonfactual:** `/eyebrow` “Moss Catalog” and the four section eyebrows.\n\n**Missing limitations:** no TTL/cancellation (contract 4 names them; copy does not); one process / no distributed cache; only two gated schedules.\n\n**Leakage:** `/sections/2/content` — “The author says concurrent stale reads are removed, but read is unchanged.”\n\n**Code/diagram errors:** none. **Attribution errors:** none observed.\n\n**Reader-facing prose: fail**, on that author-rebuttal sentence. Other copy is scoped (`\"one\"`, `\"can\"`, `\"In the sequential example\"`). Unresolved whether leakage alone should fail the prose rating."
+      }
+    ]
+  }
+]

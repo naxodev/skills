@@ -1,0 +1,163 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Cedar Relay retries only eligible failures",
+      "status": "supported",
+      "rationale": "source.json names the subject Cedar Relay and says the change filters retries. after() throws when !error.retryable or the attempt budget is spent, so a retryable:false rejection is not retried. Probe after.permanent.calls is 1 with error \"permanent\"; before.permanent.calls is 2. \"Eligible\" is a paraphrase of retryable-and-in-budget, not a source token."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Component study · Retry behavior",
+      "status": "nonfactual",
+      "rationale": "Genre label. It does not assert program behavior, a contract, or a probe result."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "A retryability check stops retries after permanent failures, while the loop requests exponentially increasing delays before further attempts. Neither change guarantees exactly-once delivery.",
+      "status": "supported",
+      "rationale": "after() gates retries on error.retryable; after.permanent has calls 1, delays [], error \"permanent\". Delays are await sleep(10 * 2 ** attempt); after.exhausted.delays is [10, 20] versus before [10, 10]. Contract: a rejection may follow a remote commit, and there is no deduplication or idempotency contract. duplicate.effects is 2 in both implementations. The exactly-once denial is a negative claim from that contract, not a universal inferred from one passing probe."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Fictional change · Source and deterministic probe results",
+      "status": "unsupported",
+      "rationale": "\"Source and deterministic probe results\" matches probe-results.json assumptions (deterministic modeled outcomes). \"Fictional change\" does not appear in source.json, functions.mjs, probe.mjs, or probe-results.json."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "Based on the supplied source and modeled probes. No timing or production measurements; no separate verification findings were supplied.",
+      "status": "supported",
+      "rationale": "probe-results.json assumptions: deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement. source.json and the probe files are the supplied evidence. The verification-findings clause is an absence claim: those listed inputs contain no verification findings. It is not independently evidenced as a positive fact; see unresolved_uncertainty."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Chapter label. No program or probe claim."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "One send, then a bounded retry budget",
+      "status": "supported",
+      "rationale": "Both functions loop for (let attempt = 0; attempt <= retries; attempt++), so one initial send plus retries extra attempts. Probe exhausted.calls is 3 when retries is 2; zeroBudget.calls is 1 when retries is 0. That bound is in the complete functions, not only in one passing case."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Cedar Relay wraps an asynchronous send operation with a retry loop. Previously, every rejection could trigger another attempt after a requested 10-millisecond delay. A successful send returned immediately; the final failed attempt threw its error. The retries argument counts extra attempts. With a budget of two, you can make at most three sends. A zero budget still allows the initial send.",
+      "status": "supported",
+      "rationale": "Contract: send returns a promise. before() does await sleep(10) unless attempt === retries, then throw error; both versions return await send() on success. Probe comment and exhausted.calls=3 with retries=2 show retries counts extra attempts. zeroBudget.calls is 1 and delays []. \"Could\" leaves room for a spent budget or a rejected sleep."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The gap",
+      "status": "nonfactual",
+      "rationale": "Chapter label. No program or probe claim."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Permanent failures still got another attempt",
+      "status": "supported",
+      "rationale": "before() ignores error.retryable and only throws when attempt === retries. before.permanent.calls is 2 with delays [10]."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "Send errors carry a boolean retryable property, but the old loop ignored it. In the supplied permanent-failure probe, the first send rejects with retryable: false. The old implementation requests a 10-millisecond sleep and sends again after that promise resolves; the new implementation rejects with that error after one call, without requesting sleep. The modeled sleep resolves immediately. This removes the extra attempt for a failure marked as permanent. The supplied contract does not identify who sets that classification. It does not establish whether a rejected send already changed the remote system.",
+      "status": "supported",
+      "rationale": "Contract: rejections include boolean retryable; before() never reads it. probe.mjs permanent = { label: 'permanent', retryable: false } as the first outcome. before.permanent: calls 2, delays [10], result \"delivered\". after.permanent: calls 1, delays [], error \"permanent\". Sleep in the probe does not wait. Who sets retryable is not in the contracts. Contract 2 says a rejection may follow a commit, not whether a given rejection did."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The changed mechanism",
+      "status": "nonfactual",
+      "rationale": "Chapter label. No program or probe claim."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "Keep the bound, filter the error, double the delay",
+      "status": "supported",
+      "rationale": "The attempt <= retries loop is unchanged. The new catch is if (!error.retryable || attempt === retries) throw error. sleep(10 * 2 ** attempt) doubles the requested delay on each later attempt (10, 20, 40, …). after.exhausted.delays is [10, 20] versus before [10, 10]."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The updated loop preserves the attempt budget and awaits each send. Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries. Returning the awaited result stops the loop on success. The catch block now decides whether another attempt is eligible before requesting a delay. A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on. The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before. These are requested delays: the probe resolves sleep immediately. A rejected sleep propagates and prevents another send.",
+      "status": "supported",
+      "rationale": "after() still uses attempt from 0 through retries and return await send(). The retryable/budget check runs before sleep. 10 * 2 ** attempt is 10, 20, 40 for attempt 0, 1, 2; the 40 term is from that complete formula, not from a probe (exhaustion uses retries 2, so only 10 and 20). after.exhausted.calls is 3, delays [10, 20]; before.exhausted.delays [10, 10]. Contract: delays are requested milliseconds, not wall-clock; sleep rejection propagates. sleepFailure.calls is 1 and error \"sleep-failed\" in both implementations. The sleep-failure sentence restates the catch-block structure and contract, not only one passing probe."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Chapter label. No program or probe claim."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Better retry decisions, not exactly-once delivery",
+      "status": "supported",
+      "rationale": "The load-bearing claim is that delivery is not exactly-once: contract 2 and duplicate.effects 2 in both implementations. \"Better retry decisions\" is evaluative framing for the retryable filter plus backoff, not a separate measured fact."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "The change filters failures and increases requested retry delays within the existing budget. The author's exactly-once claim exceeds that mechanism: a remote effect can commit before a send rejects, and the duplicate probe records two effects in both implementations. There is no deduplication or idempotency contract. Separate calls share no retry counter, and no lock or cross-call delivery exclusion is supplied. The concurrent probe records an effect from each modeled call; it does not establish the internal state of an unshown send implementation.",
+      "status": "supported",
+      "rationale": "source.json body: the author says the change avoids retrying permanent failures and makes delivery exactly once. Contract 2: rejection may follow a remote commit; no deduplication or idempotency. duplicate.effects is 2 for before and after. Contract 4: separate calls share no retry counter; no lock or cross-call delivery exclusion. concurrentCalls is two traces, each effects 1, total 2. The last sentence correctly refuses to treat that modeled pair as a view of an unshown send implementation. Passing concurrent/duplicate cases are reported as probe records plus contracts, not as a universal delivery guarantee."
+    }
+  ],
+  "observed_contradictions": [],
+  "missing_material_limitations": [],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/meta",
+      "quote": "Fictional change · Source and deterministic probe results",
+      "rationale": "Packet/audit chrome in a reader-facing metadata line, not a translated explanation of the program."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "Based on the supplied source and modeled probes. No timing or production measurements; no separate verification findings were supplied.",
+      "rationale": "Evidence-packet wording (\"supplied source\", \"verification findings were supplied\") belongs in an analysis artifact, not a reader footer."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "In the supplied permanent-failure probe",
+      "rationale": "\"Supplied … probe\" is reviewer evidence-tagging rather than naming the failure mode for a reader."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The supplied contract does not identify who sets that classification. It does not establish whether a rejected send already changed the remote system.",
+      "rationale": "Limitation content is in the contracts, but \"supplied contract does not identify/establish\" is review-memo voice."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "There is no deduplication or idempotency contract. Separate calls share no retry counter, and no lock or cross-call delivery exclusion is supplied.",
+      "rationale": "Near-verbatim copy of source.json contracts 2 and 4, including \"is supplied\", not paraphrased for a reader."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "it does not establish the internal state of an unshown send implementation",
+      "rationale": "Auditor hedge about what a probe cannot show; \"unshown\" is review language."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "fail",
+    "quotes": [
+      "Fictional change · Source and deterministic probe results",
+      "Based on the supplied source and modeled probes. No timing or production measurements; no separate verification findings were supplied.",
+      "In the supplied permanent-failure probe",
+      "The supplied contract does not identify who sets that classification. It does not establish whether a rejected send already changed the remote system.",
+      "no lock or cross-call delivery exclusion is supplied",
+      "it does not establish the internal state of an unshown send implementation"
+    ],
+    "rationale": "The through-line is clear and the four beats stay on retry filtering versus exactly-once. Reader-facing prose still fails: meta, footer, gap, and recap keep review-packet phrasing and nearly copy the source contracts instead of translating them."
+  },
+  "unresolved_uncertainty": [
+    "No listed field is contradicted by source.json, functions.mjs, or probe-results.json. Uncertainty below is not a contradiction.",
+    "\"Fictional change\" may have been meant as nonfactual chrome; it is graded unsupported because the listed inputs never call the change fictional.",
+    "Footer \"no separate verification findings were supplied\" is an absence claim. Listed inputs have no verification findings; that is not a positive source/probe fact.",
+    "Whether \"Better\" in /sections/3/title is nonfactual evaluation or part of a supported summary. Graded with the exactly-once denial, which the contracts and duplicate probe support.",
+    "Contract \"retries is a nonnegative integer\" is not restated. The article covers a zero budget. Uncertain whether that omission is a material limitation; it was not treated as one because it is not required to understand the retry filter or the exactly-once denial.",
+    "Code entries are not in fields.json. Compared to functions.mjs after(): CODE:0 matches the signature and success path with a // … elision; CODE:1 matches the catch body. No diagrams. No code/diagram error recorded.",
+    "Did not infer who wrote or edited the manifest. Did not treat files outside the listed inputs as source contracts."
+  ]
+}

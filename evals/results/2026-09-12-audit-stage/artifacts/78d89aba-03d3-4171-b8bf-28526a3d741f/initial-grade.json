@@ -1,0 +1,158 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Invalidate after a successful write, with a remaining reader race",
+      "status": "supported",
+      "rationale": "after() awaits db.write then cache.delete, so deletion runs only if the write fulfills. after.lateSnapshot.cached and after.lateSnapshot.nextRead are both \"old\", matching probe.mjs assert 'an older snapshot can refill the cache after invalidation'. The same lateSnapshot outcome appears under before, so the remaining race is not unique to after(); the title only claims it remains."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Moss Catalog",
+      "status": "nonfactual",
+      "rationale": "Series label, not a claim about cache, write, or read behavior. source.title begins with the same words, but that still does not make the eyebrow a modeled fact."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.",
+      "status": "supported",
+      "rationale": "after.fillDuringWrite: overlappingRead is \"old\", cached is null, nextRead is \"new\"; probe.mjs asserts post-write deletion removes a fill that completed during the write. after.lateSnapshot: cached and nextRead are \"old\". Both schedules are the overlapping() branches in probe.mjs. The sentence reports those two modeled outcomes, not an untested universal scheduler."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Deterministic modeled examples",
+      "status": "supported",
+      "rationale": "probe-results.json assumptions: explicit promise gates schedule snapshot capture, write commit, and cache fill; one process and one Map; no wall-clock timing. probe.mjs uses deferred() gates rather than timers."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "The model uses one shared Map, without a generation check for readers.",
+      "status": "supported",
+      "rationale": "Contract: cache is a synchronous Map and each read and update uses the same Map; no distributed cache is shown. Contract: read is unchanged, with no generation check. functions.mjs read() has no generation token; before/after/read all take the same cache argument. Probe sequential and overlapping each construct one Map."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Section label, not a behavioral claim."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Early deletion left a window for stale fills",
+      "status": "supported",
+      "rationale": "before() calls cache.delete(key) then await db.write. before.fillDuringWrite has cached \"old\" and nextRead \"old\", while after.fillDuringWrite has cached null and nextRead \"new\". That is the modeled during-write fill window under early deletion."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "<p class=\"lead\">The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.</p>",
+      "status": "supported",
+      "rationale": "First sentence matches source.before and functions.mjs before(). Second sentence matches overlapping(fn, false) on before: write is gated, read misses, db.read snapshots stored while it is still \"old\", cache.set runs, then write commits. before.fillDuringWrite.overlappingRead and .cached are \"old\". Modal \"could\" fits a scheduled example, not every wait."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The change",
+      "status": "nonfactual",
+      "rationale": "Section label, not a behavioral claim."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Delete only after the write fulfills",
+      "status": "supported",
+      "rationale": "after() is await db.write then cache.delete. If write rejects, delete does not run. after.failedWrite.cachedAfterUpdate is \"old\"; after.sequential.cachedAfterUpdate is null."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "<p>The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.</p>",
+      "status": "supported",
+      "rationale": "Clause 1 matches after(). Clause 2 matches after.fillDuringWrite (cached null, nextRead \"new\") versus before.fillDuringWrite (cached \"old\", nextRead \"old\"). Clause 3 matches sequential(fn, true) starting from Map([['key','old']]) and after.failedWrite.cachedAfterUpdate \"old\"; contract says rejection leaves the stored value unchanged, and after never reaches delete. Clause 4 is scoped to the sequential example; after.sequential.nextRead is \"new\". before.sequential.nextRead is also \"new\", which the sentence does not deny."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Section label, not a behavioral claim."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "An older snapshot can arrive after deletion",
+      "status": "supported",
+      "rationale": "Contract: db.read captures a snapshot when invoked, and the promise may fulfill after a later write commits. overlapping(fn, true) captures stored while it is \"old\", awaits update (write commit plus cache.delete), then cache.set of that snapshot. after.lateSnapshot.cached and .nextRead are \"old\"."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "<p>The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.</p>",
+      "status": "supported",
+      "rationale": "First clause paraphrases source.body (invalidating after the write removes stale cache reads, including concurrent readers). \"read is unchanged\" matches source.unchanged, functions.mjs read(), and the contract that read is unchanged. The modeled-reader sentences match the lateSnapshot branch and after.lateSnapshot (overlappingRead \"old\", cached \"old\", nextRead \"old\"). Last sentence matches the contract: no generation check, cancellation, TTL, or in-flight reader synchronization; after() only writes then deletes."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Section label, not a behavioral claim."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Close one cache-fill window",
+      "status": "supported",
+      "rationale": "The during-write fill that remains under before.fillDuringWrite (nextRead \"old\") is gone under after.fillDuringWrite (nextRead \"new\"). after.lateSnapshot.nextRead stays \"old\", so only that one modeled window closes."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "<p>Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.</p>",
+      "status": "supported",
+      "rationale": "First sentence is the fillDuringWrite contrast (before nextRead \"old\" versus after nextRead \"new\"). Second sentence: after.fillDuringWrite.overlappingRead is still \"old\", and after.lateSnapshot.cached and nextRead are \"old\". Those are overlapping-reader and late-fill outcomes in the supplied probe."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "Warm-cache hits during an in-flight successful after() write are not modeled or stated.",
+      "evidence": "overlapping() always uses const cache = new Map() (empty). sequential() starts with Map([['key','old']]) but does not overlap a read with the write. read() returns cache.get on hit. after() does not delete until db.write fulfills, so a pre-existing \"old\" entry would remain readable for the whole wait. The artifact discusses miss-path fills and late snapshots, not this hit-path window. source.body's author claim is about concurrent stale reads; this concurrent hit is a remaining stale read on the supplied functions."
+    },
+    {
+      "limitation": "Contract lists cancellation and TTL as absent; the artifact never names them.",
+      "evidence": "Contract: no generation check, cancellation, TTL, or synchronization of in-flight readers. Footer and section 2 name generation check and in-flight reader synchronization only. Cancellation is the closest omitted control for the lateSnapshot fill. TTL is less tied to the demonstrated race. Not a contradiction; omitted named limits."
+    },
+    {
+      "limitation": "The remaining late-fill race exists under before as well as after; the title can be read as if it were leftover from this change alone.",
+      "evidence": "results.before.lateSnapshot and results.after.lateSnapshot are identical (stored \"new\", cached \"old\", nextRead \"old\"). The body correctly says the change does not prevent late fills. The title's \"remaining reader race\" does not say the race is new, but it also does not say it already existed with early deletion."
+    }
+  ],
+  "attribution_errors": [
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The author says concurrent stale reads are removed",
+      "issue": "source.body says the author claims invalidating after the write removes stale cache reads, including concurrent readers. The manifest drops the method qualifier and the \"stale cache reads, including\" framing. The surrounding section is about that change, so the referent is still the same claim. Compression, not a false speaker or invented quote."
+    }
+  ],
+  "reviewer_language_leakage": [],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "quote": "In the sequential example, the next read sees the new stored value.",
+        "why": "Scopes a probe row (after.sequential.nextRead \"new\") instead of a universal guarantee."
+      },
+      {
+        "quote": "The modeled reader captures the old database value, waits through the update and deletion, then caches that old value.",
+        "why": "Follows overlapping(fn, true) and contract snapshot-on-invoke without treating it as production scheduling."
+      },
+      {
+        "quote": "It does not prevent stale results from overlapping readers or late cache fills.",
+        "why": "Matches after.fillDuringWrite.overlappingRead \"old\" and after.lateSnapshot nextRead \"old\", and refuses the author's concurrent-reader guarantee."
+      },
+      {
+        "quote": "A cache miss could read and cache the old stored value during that wait.",
+        "why": "Modal \"could\" fits before.fillDuringWrite without claiming every interleaving."
+      }
+    ],
+    "notes": "Passing fillDuringWrite and sequential rows do not prove every runtime. Meta \"Deterministic modeled examples\" and footer \"The model uses one shared Map\" keep the unhedged dek/section-3 \"removes\"/\"closes\" sentences inside the supplied model. No diagram or inline code in the manifest to misstate functions.mjs."
+  },
+  "unresolved_uncertainty": [
+    "Whether /eyebrow \"Moss Catalog\" should be nonfactual branding or supported solely because source.title starts with those words. Graded nonfactual.",
+    "Whether the empty-Map overlapping probes make the warm-cache hit window a missing material limitation or an implied consequence of \"Delete only after the write fulfills\". Recorded as missing because the author claim is about concurrent stale reads and the hit path is never shown.",
+    "Whether \"reader race\" overstates a deterministically gated interleaving (probe assumptions: no wall-clock timing). Graded as supported concurrent terminology.",
+    "Whether the section 2 paraphrase of source.body is an attribution error or acceptable compression. Recorded as compression, not a false attribution.",
+    "No supplied input states how many schedules besides fillDuringWrite and lateSnapshot were considered. Cannot know whether other allowed interleavings exist beyond those two overlapping() branches."
+  ]
+}

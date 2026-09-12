@@ -1,0 +1,122 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Publish only after the payment transaction commits",
+      "status": "supported",
+      "rationale": "after() awaits db.transaction(...) then await publish(id). Contract: the transaction fulfills only after commit. Probe after.none.events is [begin, write, commit, publish], so publish runs only after commit."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Lantern Ledger",
+      "status": "supported",
+      "rationale": "source.title begins with 'Lantern Ledger: publish after the payment transaction'."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "A failed commit now prevents publication, while publication failure leaves a committed payment intact.",
+      "status": "supported",
+      "rationale": "Probe after.commit.notifications is 0 and paid is false; before.commit.notifications is 1. Probe after['publish-before'].paid and after['publish-after'].paid are both true. Contract: callback or commit rejection rolls back staged writes; publish is outside the transaction, so its rejection cannot undo a completed commit."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Deterministic modeled examples",
+      "status": "supported",
+      "rationale": "probe.mjs runs fixed in-memory fault scenarios. probe-results.json assumptions state 'In-memory staged transaction and external notification counter; no actual database or process-kill simulation.'"
+    },
+    {
+      "pointer": "/footer",
+      "quote": "The supplied code has no durable outbox or delivery deduplication.",
+      "status": "supported",
+      "rationale": "Contract: 'No durable outbox, background retry, or cross-call lock is supplied.' Contract: 'Neither transaction nor publish supplies a delivery deduplication guarantee.' functions.mjs after() is only await transaction then await publish; no outbox or dedup appears."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not claim anything about the code, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Publication used to precede commit",
+      "status": "supported",
+      "rationale": "before() calls publish(id) inside the transaction callback. Contract: commit runs only after callback fulfillment. Probe before.none.events is [begin, write, publish, commit]."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.",
+      "status": "supported",
+      "rationale": "before() awaits tx.markPaid(id) then publish(id) inside the callback. Probe before.commit: events [begin, write, publish, rollback], notifications 1, paid false. That matches the modeled commit fault in probe.mjs (fault === 'commit' throws after the callback, then rollback)."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The change",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not claim anything about the code, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Wait for the transaction to fulfill",
+      "status": "supported",
+      "rationale": "after() is await db.transaction(...) then await publish(id). Contract: transaction fulfills with undefined after commit. Probe after.none.events is [begin, write, commit, publish]."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.",
+      "status": "supported",
+      "rationale": "after() does not call publish until db.transaction resolves. Write and commit faults throw inside transaction and skip publish. Probe after.write and after.commit both have notifications 0. The phrase 'in that invocation' matches the per-call traces; it does not deny later or concurrent calls."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not claim anything about the code, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "The database cannot roll back publication failures",
+      "status": "supported",
+      "rationale": "after() publishes after the transaction has already fulfilled. Contract: publish is outside the database transaction. Probe after['publish-before'].paid and after['publish-after'].paid are true, so a publish rejection does not roll back the committed markPaid write."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.",
+      "status": "supported",
+      "rationale": "source.body: the author 'makes payment and notification atomic.' Contract: publish is external; rejection may occur before or after a visible notification; markPaid is idempotent; no delivery dedup; a process can stop between awaited operations; no durable outbox, background retry, or cross-call lock. Probe after['publish-before']: paid true, notifications 0. Probe after['publish-after']: paid true, notifications 1. Probe after.concurrent.notifications is 2."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not claim anything about the code, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Commit first, with a remaining delivery gap",
+      "status": "supported",
+      "rationale": "after.none.events is [begin, write, commit, publish] (commit first). Remaining gap: publish is external; after['publish-before'] leaves paid true with 0 notifications; after['publish-after'] leaves paid true with 1 notification; concurrent after still yields 2 notifications; contract allows a stop between operations and supplies no durable retry or dedup."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.",
+      "status": "supported",
+      "rationale": "Probe after.commit.notifications is 0 versus before.commit.notifications 1. Atomicity is contradicted by the same after-function traces: paid can be true with 0 notifications (publish-before) or with a delivered notification plus rejection (publish-after), and concurrent calls publish twice. Contract: publish is outside the transaction."
+    }
+  ],
+  "missing_material_limitations": [],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      "In the modeled commit failure, a notification escaped while the database write rolled back.",
+      "A write or commit rejection therefore prevents publication in that invocation.",
+      "It may also have delivered a notification before rejecting.",
+      "The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic."
+    ],
+    "rationale": "Reader-facing sentences scope the old escape to the modeled commit fault, limit the new commit/write guarantee to that invocation, and use 'may' for publish-visible-then-reject. The dek and short version state the commit-ordering win without treating probe traces as a universal payment-plus-notification guarantee. Passing concurrent and happy-path traces are not used to claim atomic delivery."
+  },
+  "observed_contradictions": [],
+  "unresolved_uncertainty": []
+}

@@ -1,0 +1,169 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Retry filtering does not guarantee exactly-once delivery",
+      "status": "supported",
+      "rationale": "source.json body attributes an exactly-once claim to the author. contracts[1] states a send rejection may happen after the remote side effect commits and that there is no deduplication or idempotency contract. functions.mjs after() still retries when error.retryable is true. probe-results.json results.after.duplicate.effects is 2 with result \"delivered\". The title's negative guarantee matches that contract and modeled outcome; it does not claim delivery never succeeds."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Cedar Relay",
+      "status": "supported",
+      "rationale": "source.json title begins \"Cedar Relay: filter retries and increase delays\". The eyebrow copies that name. No probe speaks to the name."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+      "status": "supported",
+      "rationale": "after() throws when !error.retryable before sleep; results.after.permanent is calls 1, delays [], error \"permanent\". after() sleeps 10 * 2 ** attempt on retryable errors before the last attempt; results.after.exhausted.delays is [10, 20]. contracts[2] says delays are requested milliseconds, not wall-clock. contracts[1] denies a deduplication guarantee; results.after.duplicate.effects is 2. The dek states after() behavior, which the page title already frames as retry filtering."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Deterministic modeled examples",
+      "status": "supported",
+      "rationale": "probe-results.json assumptions is \"Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.\" probe.mjs drives send from a fixed outcomes list and resolves or rejects sleep without measuring elapsed time. The meta line matches that evidence basis. It is not a claim about production traffic."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "A rejected acknowledgment can still follow a committed remote effect.",
+      "status": "supported",
+      "rationale": "contracts[1]: \"A send rejection may happen after the remote side effect commits.\" probe.mjs duplicate scenario throws a retryable error after outcome.effect is true, then a later send also sets effect. results.after.duplicate is effects 2, calls 2, result \"delivered\". \"Can\" is existential and the modeled case shows it."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Section chapter label. It does not assert program behavior, so source and probe neither support nor contradict it."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "The old loop did not classify send failures",
+      "status": "supported",
+      "rationale": "before() catches send errors and only tests attempt === retries; it never reads error.retryable. results.before.permanent is calls 2, delays [10], result \"delivered\" on outcomes [{ error: permanent }, {}] with retries 2, so a retryable:false rejection was retried."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "<p class=\"lead\">The old loop retried rejected sends while retry budget remained, regardless of the error's retryable flag. It requested a ten-millisecond delay before each retry. A successful send returned immediately; an exhausted budget rethrew the send error. A rejected sleep stopped the loop before the next send.</p>",
+      "status": "supported",
+      "rationale": "before() loops while attempt <= retries, returns await send() on fulfillment, throws error when attempt === retries, otherwise await sleep(10), and does not inspect retryable. results.before.permanent retried a permanent error. results.before.exhausted is calls 3, delays [10, 10], error \"transient\". results.before.zeroBudget is calls 1, delays []. Successful send in before.permanent and before.duplicate returns \"delivered\" without further sends. Sleep is inside the catch, so a sleep rejection leaves the function; results.before.sleepFailure is calls 1, delays [10], error \"sleep-failed\". contracts[2] matches \"requested\" rather than measured duration. These are code facts plus the listed modeled traces, not a universal production timing claim."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The change",
+      "status": "nonfactual",
+      "rationale": "Section chapter label, not a program claim."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Classify failures before waiting",
+      "status": "supported",
+      "rationale": "after() evaluates if (!error.retryable || attempt === retries) throw error before await sleep(10 * 2 ** attempt). results.after.permanent has delays [] after a non-retryable error, so no wait ran."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "<p>The changed loop stops on a non-retryable error or an exhausted retry budget, and returns immediately when a send succeeds. A budget of two retries permits up to three sends. If the first two sends reject with retryable errors, the loop requests delays of 10 then 20 milliseconds, provided execution reaches each wait. Each sleep must fulfill before the next send; a rejected sleep propagates instead.</p>",
+      "status": "supported",
+      "rationale": "after() throws on !error.retryable or attempt === retries, else awaits sleep, and returns on send fulfillment. results.after.permanent: calls 1, error \"permanent\". results.after.exhausted: calls 3, error \"transient\", delays [10, 20] with retries 2, matching 10 * 2 ** 0 and 10 * 2 ** 1. The \"up to three sends\" clause is scoped to budget 2, which is the exhausted probe (probe.mjs comment: retries counts extra attempts, not all attempts). \"Provided execution reaches each wait\" matches results.after.sleepFailure: only delays [10] after one retryable send, calls 1, error \"sleep-failed\". await sleep sits before the next loop iteration, so a rejected sleep does not call send again. Delay figures are requested values from sleep's argument, per contracts[2], not measured wall-clock."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Section chapter label, not a program claim."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "A retry can duplicate a remote effect",
+      "status": "supported",
+      "rationale": "contracts[1] allows commit-then-reject and supplies no idempotency. after.duplicate models effect+retryable error then a second effect; results.after.duplicate.effects is 2. \"Can\" is existential. One modeled case does not imply every retry duplicates, and the title does not say that."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>",
+      "status": "supported",
+      "rationale": "source.json body: \"The author says this avoids retrying permanent failures and makes delivery exactly once.\" contracts[1] permits rejection after commit and denies deduplication. probe.mjs duplicate comment: \"a lost acknowledgment permits duplicate side effects\"; results.after.duplicate.effects is 2 (before.duplicate.effects is also 2). contracts[3]: separate calls share no retry counter and no lock or cross-call delivery exclusion. results.after.concurrentCalls is two traces each with effects 1; the probe asserts the summed effects equal 2. Factual content is supported. Reviewer diction in this field is recorded separately and does not change the status."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Section chapter label, not a program claim."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Fewer retries for permanent failures",
+      "status": "supported",
+      "rationale": "before() retries until attempt === retries even when retryable is false. after() throws on !error.retryable before sleep. results.before.permanent.calls is 2 versus results.after.permanent.calls 1 for the same retries=2 permanent-then-success outcomes. That is fewer retries in the modeled case, and the code skips the wait whenever a non-retryable error arrives with remaining budget. The title does not claim a smaller attempt count when retries is 0; results.*.zeroBudget.calls is 1 for both functions."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>",
+      "status": "supported",
+      "rationale": "after() filters on error.retryable; before() does not. Delay formula 10 * 2 ** attempt increases across waits; results.after.exhausted.delays [10, 20] versus results.before.exhausted.delays [10, 10]. The loop is attempt <= retries per call, so attempts are bounded per invocation (exhausted calls 3, zeroBudget calls 1). contracts[1] and results.after.duplicate.effects 2 show the bound is not successful delivery or unique effects. contracts[3] and concurrentCalls (summed effects 2) show the bound is not cross-invocation. \"Requested delays\" matches contracts[2]."
+    }
+  ],
+  "missingMaterialLimitations": [
+    {
+      "limitation": "The lost-acknowledgment duplicate is already present in the old loop.",
+      "evidence": "probe-results.json results.before.duplicate.effects is 2 and results.after.duplicate.effects is 2. contracts[1] applies to send, not only to after().",
+      "whyMaterial": "/sections/2 presents two effects as the boundary of retry filtering. The modeled duplicate does not appear only after the change. Omitting the matching before trace can make the gap look like a consequence of filtering rather than the send contract."
+    },
+    {
+      "limitation": "Modeled sleeps fulfill or reject immediately; delays are not measured durations.",
+      "evidence": "probe-results.json assumptions: \"Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.\" contracts[2]: delays are requested milliseconds, not measured wall-clock durations.",
+      "whyMaterial": "/meta says \"Deterministic modeled examples\" and delay prose says \"requested\", but no reader-facing sentence states that the 10 and 20 figures were not timed and that production sleep duration is unmeasured. That is the remaining half of contracts[2] and the probe assumption."
+    }
+  ],
+  "attributionErrors": [],
+  "reviewerLanguageLeakage": [
+    {
+      "pointer": "/sections/2/content",
+      "quote": "the supplied contract permits a send to reject after its effect commits",
+      "note": "\"supplied contract\" is review-input phrasing. The same fact is contracts[1] and can be stated as send behavior without naming the review packet."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The modeled lost-acknowledgment example records two effects.",
+      "note": "\"modeled ... example records\" is probe-harness language. probe.mjs comments call this a lost acknowledgment; a reader-facing line would state the program outcome without the lab frame."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "share no retry budget or exclusion mechanism",
+      "note": "\"exclusion mechanism\" copies contracts[3] (\"No lock or cross-call delivery exclusion is supplied\") instead of naming the missing lock or the concurrentCalls two-effect outcome."
+    }
+  ],
+  "codeDiagramErrors": [],
+  "readerFacingProse": {
+    "rating": "fail",
+    "quotes": [
+      {
+        "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits.",
+        "role": "fail",
+        "reason": "This is published section HTML. It keeps review-packet wording (\"supplied contract\") in the reader-facing body."
+      },
+      {
+        "quote": "The modeled lost-acknowledgment example records two effects.",
+        "role": "fail",
+        "reason": "Reader-facing prose reports a harness example rather than the send/retry behavior those results stand for."
+      },
+      {
+        "quote": "If the first two sends reject with retryable errors, the loop requests delays of 10 then 20 milliseconds, provided execution reaches each wait.",
+        "role": "pass",
+        "reason": "Scoped to a concrete budget and qualified so one wait is not treated as a universal delay sequence. Passing this sentence does not make the leaked review diction pass."
+      },
+      {
+        "quote": "It bounds send attempts per invocation, not successful delivery or duplicate effects.",
+        "role": "pass",
+        "reason": "States the per-call bound and refuses an exactly-once reading. It does not repair section 2's reviewer language."
+      }
+    ]
+  },
+  "unresolvedUncertainty": [
+    "No code or diagram entries exist in the manifest, so code/diagram accuracy is vacuously empty rather than verified against functions.mjs.",
+    "Whether /meta should be treated as page chrome (nonfactual) instead of a methodology claim; graded supported because it matches probe-results.json assumptions.",
+    "Whether concurrentCalls' summed two effects needed an explicit numeric sentence beyond \"share no retry budget or exclusion mechanism\"; listed as a possible missing limitation, not a field contradiction.",
+    "results.before.permanent.result is \"delivered\" after a permanent error then a success; the setting section does not mention that mixed case. Not contradicted, but it is unstated.",
+    "source.json unchanged is \"none\" while the attempt bound attempt <= retries is the same in before() and after(); the manifest does not discuss what stayed the same. Not a listed-field error."
+  ]
+}

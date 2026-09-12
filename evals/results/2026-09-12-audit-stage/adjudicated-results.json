@@ -1,0 +1,19 @@
+{
+  "authority": "study operator source review; main judgments await parent independent review",
+  "controlsAuthority": "parent pre-writer factual admission in PARENT-ADJUDICATION.md",
+  "confirmedTextRepairs": {"distinctDefects": 10, "fieldOccurrences": 11, "affectedPairs": [0, 2, 3, 6], "confirmedIntroducedDefects": 0},
+  "unresolved": ["elided code in pairs 0 and 6", "original transaction probe scope in pair 4", "await completion language in pairs 4 and 7", "provenance packet boundaries", "prose quality and excessive qualification"],
+  "pairs": [
+    {"pair": 0, "original": "fail", "revised": "uncertain", "removedDistinct": 3, "removedOccurrences": 3, "attribution": "fail -> pass", "prose": "parent review pending"},
+    {"pair": 1, "original": "pass", "revised": "pass", "removedDistinct": 0, "removedOccurrences": 0, "attribution": "pass -> pass", "prose": "parent review pending"},
+    {"pair": 2, "original": "fail", "revised": "pass", "removedDistinct": 1, "removedOccurrences": 1, "attribution": "pass -> pass", "prose": "parent review pending"},
+    {"pair": 3, "original": "fail", "revised": "pass", "removedDistinct": 3, "removedOccurrences": 4, "attribution": "fail -> pass", "prose": "parent review pending"},
+    {"pair": 4, "original": "uncertain", "revised": "pass", "removedDistinct": 0, "removedOccurrences": 0, "attribution": "pass -> pass", "prose": "parent review pending"},
+    {"pair": 5, "original": "pass", "revised": "pass", "removedDistinct": 0, "removedOccurrences": 0, "attribution": "pass -> pass", "prose": "parent review pending"},
+    {"pair": 6, "original": "fail", "revised": "uncertain", "removedDistinct": 3, "removedOccurrences": 3, "attribution": "fail -> pass", "prose": "parent review pending"},
+    {"pair": 7, "original": "uncertain", "revised": "uncertain", "removedDistinct": 0, "removedOccurrences": 0, "attribution": "pass -> pass", "prose": "parent review pending"},
+    {"pair": 8, "original": "pass", "revised": "pass", "removedDistinct": 0, "removedOccurrences": 0, "attribution": "pass -> pass", "prose": "parent review pending"}
+  ],
+  "controls": {"seededTitleRepairs": "3/3", "factualPreservation": "no confirmed new errors", "bytePreservation": "2/3", "needlessCorrectControlFields": {"retry": ["/sections/0/title", "/sections/0/content", "/sections/1/content"], "transaction": [], "cache": []}},
+  "evidence": "ADJUDICATION.md and paired-results.json"
+}

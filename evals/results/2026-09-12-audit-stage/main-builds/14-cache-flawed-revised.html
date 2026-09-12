@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Post-write invalidation closes one stale-fill window</title>
+  <script>
+    // Resolve theme before first paint to avoid a flash. Order:
+    //   1. explicit user choice in localStorage
+    //   2. otherwise, system prefers-color-scheme
+    (function () {
+      var stored = null;
+      try {
+        stored = localStorage.getItem('pr-walkthrough-theme');
+      } catch (_) {
+        /* private mode or disabled storage */
+      }
+      var theme = stored;
+      if (theme !== 'light' && theme !== 'dark') {
+        theme =
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-soft: #4a4a4a;
+      --ink-mute: #767676;
+      --paper: #fbfaf6;
+      --paper-card: #ffffff;
+      --rule: #e6e2d6;
+      --accent: #8a3a1a;
+      --code-bg: #f3efe4;
+      --code-ink: #2a2a2a;
+    }
+    :root[data-theme="dark"] {
+      --ink: #e8e3d8;
+      --ink-soft: #b8b0a0;
+      --ink-mute: #8d8576;
+      --paper: #1a1714;
+      --paper-card: #221e1a;
+      --rule: #36312a;
+      --accent: #d77a4a;
+      --code-bg: #25211c;
+      --code-ink: #d8d3c8;
+    }
+    html {
+      background: var(--paper);
+      transition: background 0.2s ease;
+    }
+    body { transition: color 0.2s ease; }
+    body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+      color: var(--ink);
+      font: 17px/1.7 'Charter', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+    }
+    header .eyebrow {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 0 0 0.5rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    header .dek {
+      font-size: 1.15rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    header .meta {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 13px;
+      color: var(--ink-mute);
+      margin-top: 1.25rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 3rem 0 1rem;
+      letter-spacing: -0.005em;
+    }
+    h2 .num {
+      color: var(--accent);
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 2rem 0 0.5rem;
+      color: var(--ink);
+    }
+    p { margin: 0 0 1.1rem; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    a:hover { text-decoration-thickness: 2px; }
+    code {
+      font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      color: var(--code-ink);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: var(--code-bg);
+      border-radius: 6px;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      margin: 1.3rem 0;
+      font-size: 0.84em;
+      line-height: 1.55;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      font-size: 1em;
+    }
+    /* Fallback only: shown when mermaid.min.js is missing or a diagram fails
+       to render, so the raw source stays visible — styled like any other
+       code block rather than as a diagram canvas. */
+    pre.mermaid {
+      background: var(--code-bg);
+      color: var(--code-ink);
+      border: 1px solid var(--rule);
+      overflow-x: auto;
+    }
+    /* Rendered diagrams: mermaid draws each one twice (light + dark theme
+       variables) and only the variant matching data-theme is shown, so the
+       toggle swaps instantly with no re-render. */
+    .mermaid-fig {
+      margin: 1.3rem 0;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .mermaid-fig svg {
+      max-width: 100%;
+      height: auto;
+    }
+    .mermaid-dark { display: none; }
+    :root[data-theme="dark"] .mermaid-light { display: none; }
+    :root[data-theme="dark"] .mermaid-dark { display: block; }
+    /* Shiki emits its own inline background-color plus --shiki-dark /
+       --shiki-dark-bg custom properties for its second theme; flip to those
+       under our own dark mode instead of duplicating shiki's light-mode
+       inline styles here. */
+    :root[data-theme="dark"] pre.shiki,
+    :root[data-theme="dark"] pre.shiki span {
+      color: var(--shiki-dark) !important;
+      background-color: var(--shiki-dark-bg) !important;
+    }
+    .code-figure { margin: 1.3rem 0; }
+    .code-figure pre { margin: 0.4rem 0 0; }
+    .code-figure figcaption {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 12px;
+      color: var(--ink-mute);
+    }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 1.3rem 0;
+      padding: 0.1rem 0 0.1rem 1.1rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+    .callout {
+      background: var(--paper-card);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+    .callout strong { color: var(--accent); }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.3rem 0;
+      font-size: 0.92em;
+    }
+    th, td {
+      border-bottom: 1px solid var(--rule);
+      padding: 0.6rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--ink-mute);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    hr.section {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 3.5rem 0;
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-mute);
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 13px;
+    }
+    .lead::first-letter {
+      font-size: 3.2rem;
+      float: left;
+      line-height: 0.85;
+      padding: 0.35rem 0.5rem 0 0;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 100;
+      background: var(--paper-card);
+      color: var(--ink-mute);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 0.4rem 0.85rem;
+      font: 11px/1 -apple-system, system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.15s ease, border-color 0.15s ease,
+        background 0.15s ease;
+    }
+    .theme-toggle:hover {
+      color: var(--ink);
+      border-color: var(--ink-mute);
+    }
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .theme-toggle .toggle-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 0.45rem;
+      vertical-align: middle;
+      transform: translateY(-1px);
+    }
+    .pw-audiobar {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .pw-playall {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--paper-card);
+      color: var(--ink-soft);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 0.45rem 0.95rem;
+      font: 12px/1 -apple-system, system-ui, sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .pw-playall:hover { color: var(--ink); border-color: var(--ink-mute); }
+    .pw-playall:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .pw-playall-icon { color: var(--accent); font-size: 0.9em; line-height: 1; }
+    .pw-playall.is-playing .pw-playall-icon { color: var(--ink-mute); }
+    .pw-player { margin: 0.35rem 0 1.4rem; }
+    .pw-audio { width: 100%; height: 34px; }
+    .pw-intro { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html, body, .theme-toggle { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+  <span class="toggle-dot" aria-hidden="true"></span><span class="toggle-label">light</span>
+</button>
+
+<header>
+  <p class="eyebrow">Moss Catalog</p>
+  <h1>Post-write invalidation closes one stale-fill window</h1>
+  <p class="dek">Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.</p>
+  <p class="meta">Deterministic modeled examples</p>
+  
+</header>
+
+<h2 id="pw-sec-1"><span class="num">1 · The setting</span>Early deletion left a window for stale fills</h2>
+<p class="lead">The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.</p>
+
+<h2 id="pw-sec-2"><span class="num">2 · The change</span>Delete only after the write fulfills</h2>
+<p>The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.</p>
+
+<h2 id="pw-sec-3"><span class="num">3 · The boundary</span>An older snapshot can arrive after deletion</h2>
+<p>The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.</p>
+
+<h2 id="pw-sec-4"><span class="num">4 · The short version</span>Close one cache-fill window</h2>
+<p>Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.</p>
+
+<footer>
+  <p>The model uses one shared Map, without a generation check for readers.</p>
+</footer>
+
+<script>
+  (function () {
+    var html = document.documentElement;
+    var btn = document.querySelector('.theme-toggle');
+    var label = btn.querySelector('.toggle-label');
+
+    function render() {
+      var current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      label.textContent = current;
+      btn.setAttribute('aria-pressed', current === 'dark' ? 'true' : 'false');
+    }
+
+    render();
+
+    btn.addEventListener('click', function () {
+      var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('pr-walkthrough-theme', next);
+      } catch (_) {
+        /* storage unavailable — toggle still works in-session */
+      }
+      render();
+    });
+
+    // Follow system changes only if the user hasn't made an explicit choice.
+    if (window.matchMedia) {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', function (e) {
+          var stored = null;
+          try { stored = localStorage.getItem('pr-walkthrough-theme'); } catch (_) {}
+          if (stored !== 'light' && stored !== 'dark') {
+            html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+            render();
+          }
+        });
+    }
+  })();
+</script>
+
+<script>
+  // Narration read-along. No-ops when the walkthrough has no audio (the
+  // "Play narration" control and clips are simply absent).
+  (function () {
+    var btn = document.querySelector('.pw-playall');
+    var seq = Array.prototype.slice.call(document.querySelectorAll('.pw-audio'));
+    if (!btn || !seq.length) return;
+
+    var label = btn.querySelector('.pw-playall-label');
+    var icon = btn.querySelector('.pw-playall-icon');
+    var reduce =
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var chaining = false; // true only while "Play narration" is driving
+    var idx = -1;         // index of the clip currently playing
+
+    function setPlaying(on) {
+      btn.classList.toggle('is-playing', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (label) label.textContent = on ? 'Stop narration' : 'Play narration';
+      if (icon) icon.textContent = on ? '■' : '▶';
+    }
+
+    function scrollToClip(a) {
+      var target = a.getAttribute('data-scroll');
+      var behavior = reduce ? 'auto' : 'smooth';
+      if (target === 'top') {
+        window.scrollTo({ top: 0, behavior: behavior });
+      } else if (target) {
+        var el = document.querySelector(target);
+        if (el) el.scrollIntoView({ behavior: behavior, block: 'start' });
+      }
+    }
+
+    function stop() {
+      chaining = false;
+      if (idx >= 0 && seq[idx] && !seq[idx].paused) seq[idx].pause();
+      setPlaying(false);
+    }
+
+    function playAt(i) {
+      if (i < 0 || i >= seq.length) { stop(); return; }
+      idx = i;
+      scrollToClip(seq[i]);
+      var p = seq[i].play();
+      if (p && typeof p.catch === 'function') p.catch(function () { stop(); });
+    }
+
+    seq.forEach(function (a, i) {
+      // Only one clip audible at a time.
+      a.addEventListener('play', function () {
+        seq.forEach(function (b) { if (b !== a && !b.paused) b.pause(); });
+        idx = i;
+        setPlaying(true);
+      });
+      a.addEventListener('ended', function () {
+        if (chaining) playAt(i + 1);
+        else if (idx === i) setPlaying(false);
+      });
+      // A genuine mid-clip pause (user hit the native control) ends the chain
+      // and resets the button. Ignore the pause that rides along with natural
+      // end-of-clip — the chain advances via 'ended', and that pause can fire
+      // a tick before a.ended flips true, which would otherwise kill the chain.
+      a.addEventListener('pause', function () {
+        if (a.ended || (isFinite(a.duration) && a.currentTime >= a.duration - 0.1)) return;
+        if (idx === i) { chaining = false; setPlaying(false); }
+      });
+    });
+
+    btn.addEventListener('click', function () {
+      if (btn.classList.contains('is-playing')) {
+        stop();
+      } else {
+        chaining = true;
+        playAt(idx < 0 ? 0 : idx);
+      }
+    });
+  })();
+</script>
+
+
+</body>
+</html>

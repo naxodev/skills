@@ -1,0 +1,19 @@
+{
+  "accepted": false,
+  "status": "blocked: independent control acceptance remains unresolved after a documented pre-writer revision",
+  "grader": "xai/grok-4.6#high",
+  "qualificationScore": "6/6",
+  "initialIndependentAcceptance": "0/3",
+  "revisedIndependentAcceptance": "0/3",
+  "revisedFieldStatuses": "51/51 supported or nonfactual",
+  "revisedOmissionFindings": "retry 2; transaction 1; cache 3; materiality disputed",
+  "revisedProse": {"retry": "uncertain", "transaction": "fail", "cache": "uncertain"},
+  "adjudicatedFactualStatus": "uncertain at artifact level: field claims supported; completeness disputes remain",
+  "adjudicatedAttribution": "pass: each author's overclaim is attributed and contradicted by source-grounded boundaries",
+  "adjudicatedProse": "uncertain: some diction could be improved, but attribution and modeled-evidence labels are not themselves reviewer leakage",
+  "decision": "Stop before writers. Do not override the frozen independent acceptance gate or substitute another candidate after selecting a passing grader.",
+  "mainWriters": {"completed": 0, "planned": 9},
+  "mainAudits": {"completed": 0, "planned": 9},
+  "controlAudits": {"completed": 0, "planned": 6},
+  "primaryArtifactGrades": {"completed": 0, "potential": 30}
+}

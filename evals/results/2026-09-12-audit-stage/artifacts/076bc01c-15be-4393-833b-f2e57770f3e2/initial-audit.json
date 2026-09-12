@@ -1,0 +1,60 @@
+{
+  "inputSha256": "e2c4cdb9937475f9338e05db992d84325ec610fd732cccefdba847bedec6b426",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/title",
+      "problem": "The phrase 'with a concurrency limit' implies that the change limits concurrent operations. The update only awaits the write and deletes the cache entry. The supplied contract provides no synchronization of in-flight readers, and the late-snapshot example still leaves a stale cache entry. The title should describe the limited protection for concurrent reads rather than imply a concurrency-control mechanism.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "export async function after(db, cache, key, value) {\n  await db.write(key, value);\n  cache.delete(key);\n}"
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/3",
+          "quote": "read is unchanged. No generation check, cancellation, TTL, or synchronization of in-flight readers is supplied."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/lateSnapshot",
+          "value": {
+            "stored": "new",
+            "overlappingRead": "old",
+            "cached": "old",
+            "nextRead": "old"
+          }
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/title",
+      "findingIds": ["A1"],
+      "value": "Invalidate after the write, with limited protection for concurrent reads"
+    }
+  ],
+  "blockers": []
+}

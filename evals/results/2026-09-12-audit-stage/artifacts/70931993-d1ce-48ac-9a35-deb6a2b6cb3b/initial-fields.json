@@ -1,0 +1,70 @@
+[
+  {
+    "pointer": "/title",
+    "value": "Delete after the write, but watch the late reader"
+  },
+  {
+    "pointer": "/eyebrow",
+    "value": "Moss Catalog · Component study"
+  },
+  {
+    "pointer": "/dek",
+    "value": "Moving cache invalidation after a database commit clears one stale-fill race. An older read can still repopulate the cache afterward."
+  },
+  {
+    "pointer": "/meta",
+    "value": "Fictional change · Single-process cache · Source and supplied probe results"
+  },
+  {
+    "pointer": "/footer",
+    "value": "Based on the supplied source and deterministic probes. No separate verification findings were supplied."
+  },
+  {
+    "pointer": "/sections/0/eyebrow",
+    "value": "The setting"
+  },
+  {
+    "pointer": "/sections/0/title",
+    "value": "A cache that remembers database reads"
+  },
+  {
+    "pointer": "/sections/0/content",
+    "value": "<p class=\"lead\">Moss Catalog shares one synchronous <code>Map</code> between reads and updates. A cache hit returns immediately; a miss asks the database and saves the result. The database captures its read snapshot when called, although the promise can resolve later.</p><p>The unchanged reader makes that last detail important:</p>{{CODE:0}}<p>Nothing checks whether a write occurred while <code>db.read</code> was pending. Whatever snapshot arrives becomes the cached value.</p>"
+  },
+  {
+    "pointer": "/sections/1/eyebrow",
+    "value": "The gap"
+  },
+  {
+    "pointer": "/sections/1/title",
+    "value": "Clearing too early leaves stale data behind"
+  },
+  {
+    "pointer": "/sections/1/content",
+    "value": "<p>The original updater deleted the cache entry before awaiting the write. During that wait, a reader could miss the cache, fetch <code>old</code>, and cache it before the database committed <code>new</code>. The update then finished without another deletion.</p><p>The supplied probe reproduces this order with explicit promise gates rather than timing guesses. Before the change, both the overlapping reader and the next reader receive <code>old</code>, even though storage contains <code>new</code>.</p>"
+  },
+  {
+    "pointer": "/sections/2/eyebrow",
+    "value": "The changed mechanism"
+  },
+  {
+    "pointer": "/sections/2/title",
+    "value": "Commit first, then remove the entry"
+  },
+  {
+    "pointer": "/sections/2/content",
+    "value": "<p>The updater now waits for a successful write before invalidating:</p>{{CODE:0}}<p>Because the database commits before fulfillment, deletion removes a cache fill completed during the write. In the supplied results, the overlapping reader still receives <code>old</code>, but the next read fetches <code>new</code>. A rejected write skips deletion, preserving the existing cache entry while storage stays unchanged.</p><p>A late snapshot still defeats this ordering. A reader can capture <code>old</code>, pause through the commit and deletion, then resume and cache <code>old</code>. The probe shows the next reader receiving that stale value under both implementations.</p>"
+  },
+  {
+    "pointer": "/sections/3/eyebrow",
+    "value": "The short version"
+  },
+  {
+    "pointer": "/sections/3/title",
+    "value": "One race closes; another remains"
+  },
+  {
+    "pointer": "/sections/3/content",
+    "value": "<p>Post-write deletion clears stale fills that finish before invalidation and avoids eviction on failed writes. It does not support the author's broader claim that concurrent stale reads disappear. The reader has no generation check or synchronization to stop an older snapshot from refilling the cache after deletion.</p>"
+  }
+]

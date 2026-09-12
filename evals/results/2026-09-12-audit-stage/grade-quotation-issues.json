@@ -1,0 +1,34 @@
+{
+  "status": "retained mechanical evidence limitations; no post-grade model repair",
+  "count": 4,
+  "rows": [
+    {
+      "pair": 7,
+      "stage": "revised",
+      "label": "174fc77e-cb13-4448-82ef-642c58b04258",
+      "pointer": "/sections/2/content",
+      "quote": "That await completes after commit, not merely after markPaid. A write or commit rejection exits the function before publication. In the supplied in-memory results, a failed commit now leaves zero notifications. ... A publication rejection still rejects the function, but cannot undo the committed payment. The probes show both possibilities: rejection before delivery leaves zero notifications; rejection after delivery leaves one. The author describes payment and notification as atomic, but this code establishes ordering, not an all-or-nothing result."
+    },
+    {
+      "pair": 6,
+      "stage": "revised",
+      "label": "a4864bc6-3551-47b8-af9f-b8968a2e7305",
+      "pointer": "/sections/2/content",
+      "quote": "The updated loop preserves the attempt budget and awaits each send. Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries. Returning the awaited result stops the loop on success. The catch block now decides whether another attempt is eligible before requesting a delay. A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on. The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before. These are requested delays: the probe resolves sleep immediately. A rejected sleep propagates and prevents another send."
+    },
+    {
+      "pair": 7,
+      "stage": "original",
+      "label": "65cc3147-5eb0-4c1f-898b-d58addf1b7b8",
+      "pointer": "/sections/2/content",
+      "quote": "That await completes after commit, not merely after markPaid. A write or commit rejection exits the function before publication. In the supplied in-memory results, a failed commit now leaves zero notifications. A publication rejection still rejects the function, but cannot undo the committed payment. The probes show both possibilities: rejection before delivery leaves zero notifications; rejection after delivery leaves one. The author describes payment and notification as atomic, but this code establishes ordering, not an all-or-nothing result."
+    },
+    {
+      "pair": 1,
+      "stage": "original",
+      "label": "aa3badbd-be78-4b59-a1ee-53bf4dd07e73",
+      "pointer": "/sections/2/content",
+      "quote": "The changed function first awaits the transaction itself. That promise fulfills only after commit. A write or commit rejection therefore exits the function before publication. The next statement runs outside the callback. Publication failure now leaves the payment committed. In the supplied results, rejection before visibility leaves zero notifications; rejection after visibility leaves one. Both calls report an error, so an error alone cannot tell you whether delivery occurred. The probe models staged writes and an external counter, rather than a real database. Its assertions cover ordering and these failure outcomes; it does not simulate a process stopping."
+    }
+  ]
+}

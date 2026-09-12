@@ -1,0 +1,118 @@
+{
+  "completedAt": "2026-09-13T03:11:03.933Z",
+  "groups": [
+    {
+      "stage": "writers",
+      "n": 9,
+      "latencySeconds": {
+        "n": 9,
+        "median": 67.03,
+        "min": 54.789,
+        "max": 77.623
+      },
+      "unavailableLatency": [],
+      "cost": 0,
+      "inputTokens": 228153,
+      "outputTokens": 12197,
+      "reasoningTokens": 638,
+      "cachedReadTokens": 570368,
+      "cachedWriteTokens": 0
+    },
+    {
+      "stage": "main audits",
+      "n": 9,
+      "latencySeconds": {
+        "n": 9,
+        "median": 63.127,
+        "min": 45.806,
+        "max": 105.772
+      },
+      "unavailableLatency": [],
+      "cost": 0,
+      "inputTokens": 228757,
+      "outputTokens": 14027,
+      "reasoningTokens": 902,
+      "cachedReadTokens": 647680,
+      "cachedWriteTokens": 0
+    },
+    {
+      "stage": "control audits",
+      "n": 6,
+      "latencySeconds": {
+        "n": 6,
+        "median": 66.18950000000001,
+        "min": 40.195,
+        "max": 92.572
+      },
+      "unavailableLatency": [],
+      "cost": 0,
+      "inputTokens": 126118,
+      "outputTokens": 8844,
+      "reasoningTokens": 494,
+      "cachedReadTokens": 429056,
+      "cachedWriteTokens": 0
+    },
+    {
+      "stage": "masked grading",
+      "n": 30,
+      "latencySeconds": {
+        "n": 28,
+        "median": 287.88149999999996,
+        "min": 188.316,
+        "max": 358.529
+      },
+      "unavailableLatency": [
+        "c9bb4141-8429-4fcc-b125-331c8e66fbc6",
+        "70e0c08f-f754-4347-90ad-0955ad58ed9f"
+      ],
+      "cost": 7.206024,
+      "inputTokens": 1692266,
+      "outputTokens": 114427,
+      "reasoningTokens": 385891,
+      "cachedReadTokens": 1639168,
+      "cachedWriteTokens": 0
+    }
+  ],
+  "mainGrowth": {
+    "bytes": {
+      "n": 9,
+      "median": 20,
+      "min": 0,
+      "max": 389
+    },
+    "relative": {
+      "n": 9,
+      "median": 0.005762028233938346,
+      "min": 0,
+      "max": 0.11146131805157593
+    },
+    "words": {
+      "n": 9,
+      "median": 2,
+      "min": 0,
+      "max": 48
+    },
+    "codepoints": {
+      "n": 9,
+      "median": 20,
+      "min": 0,
+      "max": 376
+    }
+  },
+  "mechanical": {
+    "writers": 9,
+    "audits": 15,
+    "grades": 30,
+    "builds": 30,
+    "fieldsGraded": 510,
+    "repairs": 0
+  },
+  "unchangedPairs": [
+    1,
+    5,
+    7,
+    8,
+    11,
+    13
+  ]
+}

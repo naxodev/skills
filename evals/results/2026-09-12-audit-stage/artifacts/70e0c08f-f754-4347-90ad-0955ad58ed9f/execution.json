@@ -1,0 +1,64 @@
+{
+  "label": "70e0c08f-f754-4347-90ad-0955ad58ed9f",
+  "fixture": "retry",
+  "kind": "dda674cc-af44-4fc2-8eee-5bd199deb1f2",
+  "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-70e0c08f-f754-4347-90ad-0955ad58ed9f",
+  "evidence": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/70e0c08f-f754-4347-90ad-0955ad58ed9f",
+  "model": {
+    "id": "grok-4.6",
+    "providerID": "xai",
+    "variant": "high"
+  },
+  "sessionID": "ses_f697722a3ffevlhRwerKIfFFr1",
+  "immutable": {
+    "probe.mjs": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+    "source.json": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+    "probe-results.json": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+    "fields.json": "b1d624b8a6dd20d560fe49eb4288cb134ce52498e68f5f7232adeb189090e078",
+    "MANIFEST.md": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+    "STYLE.md": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+    "functions.mjs": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+    "manifest.json": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d",
+    "verification.json": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c"
+  },
+  "attempts": [
+    {
+      "phase": "initial",
+      "elapsedMs": null,
+      "serviceCreatedToIdleMs": 207243,
+      "recoveredAt": "2026-09-13T02:14:38.609Z",
+      "interruption": "Host foreground command interrupted. Model completed normally. No prompt was resent. Exact prompt-through-export latency unavailable.",
+      "info": {
+        "id": "ses_f697722a3ffevlhRwerKIfFFr1",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "grok-4.6",
+          "providerID": "xai",
+          "variant": "high"
+        },
+        "cost": 0.187816,
+        "tokens": {
+          "input": 39720,
+          "output": 3836,
+          "reasoning": 9032,
+          "cache": {
+            "read": 62336,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789231947132,
+          "updated": 1789231948163,
+          "idle": 1789232154375
+        },
+        "title": "component trial",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-70e0c08f-f754-4347-90ad-0955ad58ed9f"
+        }
+      },
+      "rawSha256": "03a3e44c90dc82791a71a0a9c3f87f8e44194ff093d57d5afa281d7780f0cb91"
+    }
+  ]
+}

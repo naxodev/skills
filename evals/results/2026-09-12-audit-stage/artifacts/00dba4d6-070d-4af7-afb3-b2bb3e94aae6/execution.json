@@ -1,0 +1,61 @@
+{
+  "label": "00dba4d6-070d-4af7-afb3-b2bb3e94aae6",
+  "fixture": "cache",
+  "kind": "writer-3",
+  "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-00dba4d6-070d-4af7-afb3-b2bb3e94aae6",
+  "evidence": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/00dba4d6-070d-4af7-afb3-b2bb3e94aae6",
+  "model": {
+    "providerID": "openai",
+    "id": "gpt-6-astra",
+    "variant": "medium"
+  },
+  "sessionID": "ses_f6a09185bffei6AXjgNT9Hp6lJ",
+  "immutable": {
+    "probe.mjs": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+    "source.json": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+    "probe-results.json": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+    "MANIFEST.md": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+    "STYLE.md": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+    "functions.mjs": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+    "verification.json": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c"
+  },
+  "attempts": [
+    {
+      "phase": "initial",
+      "startedAt": "2026-09-12T14:13:01.526Z",
+      "elapsedMs": 68931,
+      "error": null,
+      "info": {
+        "id": "ses_f6a09185bffei6AXjgNT9Hp6lJ",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 32614,
+          "output": 1342,
+          "reasoning": 56,
+          "cache": {
+            "read": 57856,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789222381515,
+          "updated": 1789222382486,
+          "idle": 1789222450367
+        },
+        "title": "component trial",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-00dba4d6-070d-4af7-afb3-b2bb3e94aae6"
+        }
+      },
+      "rawSha256": "efd003032968a3200994120a7e217c7e5926a9c788fc22896fb4071a9ead5be0"
+    }
+  ]
+}

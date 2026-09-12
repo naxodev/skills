@@ -1,0 +1,13 @@
+{
+  "title": "Cedar Relay: filter retries and increase delays",
+  "body": "The author says this avoids retrying permanent failures and makes delivery exactly once.",
+  "contracts": [
+    "retries is a nonnegative integer. send returns a promise and rejects with an object containing a boolean retryable property.",
+    "A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.",
+    "sleep returns a promise; rejection propagates. Delays are requested milliseconds, not measured wall-clock durations.",
+    "Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied."
+  ],
+  "before": "export async function before(send, sleep, retries) {\n  for (let attempt = 0; attempt <= retries; attempt++) {\n    try {\n      return await send();\n    } catch (error) {\n      if (attempt === retries) throw error;\n      await sleep(10);\n    }\n  }\n}",
+  "after": "export async function after(send, sleep, retries) {\n  for (let attempt = 0; attempt <= retries; attempt++) {\n    try {\n      return await send();\n    } catch (error) {\n      if (!error.retryable || attempt === retries) throw error;\n      await sleep(10 * 2 ** attempt);\n    }\n  }\n}",
+  "unchanged": "none"
+}

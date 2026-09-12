@@ -1,0 +1,328 @@
+[
+  {
+    "type": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "I'll read the supplied inputs and review every listed field against the contracts, functions, and probe results."
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read directory /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2, entries 1-11\n.git/\n.jj/\nfields.json\nfunctions.mjs\nmanifest.json\nMANIFEST.md\nprobe-results.json\nprobe.mjs\nsource.json\nSTYLE.md\nverification.json"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224305746,
+          "ran": 1789224305772,
+          "completed": 1789224305786
+        }
+      },
+      {
+        "type": "tool",
+        "name": "glob",
+        "state": {
+          "status": "completed",
+          "input": {
+            "pattern": "**/*"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/verification.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/manifest.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/store/git_target\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/store/extra/943f9c5ccaeae106edb3f86b40510e66e68b44b1fdb0e9708e8e023b2515dde80e745b345767415e789dd388c9c2ad5379eeb4036728643b0fb99f45047d39a7\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/store/extra/heads/943f9c5ccaeae106edb3f86b40510e66e68b44b1fdb0e9708e8e023b2515dde80e745b345767415e789dd388c9c2ad5379eeb4036728643b0fb99f45047d39a7\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/store/extra/ad2af56d3d729d2a653254768978aed91d26f0619fa8ad54f10dd77438d8075cedd29fcaf3888dbe8ad6d9e30c6b60902bdf43c75d75a3e24822b20f08647d98\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/store/extra/482ae5a29fbe856c7272f2071b8b0f0359ee2d89ff392b8a900643fbd0836eccd067b8bf41909e206c90d45d6e7d8b6686b93ecaee5fe1a9060d87b672101310\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/store/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/submodule_store/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/index/segments/3c4b298bd6b3b924b38275976e4d55e0a64b6f501be516049eeb04fab4de15721226c63bdcbb44b68eeab158e9db3a00e0f5bb47eac5fc8e50be5a2032f28d43\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/index/segments/1c1fc05ffa17d47337a90ca72eaeb98bf5963057b84c5f39db0672ddc8c4d0edb71887a54585df8d4928f3f096b6f3740a7ab9b768b748866f7428717b2e1828\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/index/segments/d27ad326963b75736b636adad9fb812eb3f2871e0efb4bc7db37d4b701a4282911eaaee91bed3a759e940769b667be1ed66f2d7f2f41ac3906b87ab7eec19c3a\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/index/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/index/op_links/028d1780dab386d6c29d129cf14ed126bddf9a58464d460fbf00d5da955d751ecf5b7eed5068cd070ec395b8ccb5751054782661b5d89bd9c0eafa0e7382a382\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/index/op_links/0182345aaeace6f4ba9cafd1fc426cd0e315ca96373139e7a49dc0a7ee51da8f17cf56a42d1f8e343be5efe60090d52aa5e6c397240066f142fd1b8617864727\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/index/op_links/b43c7efe7b2d7b9463777ef6337b1ccc2441fc761462714c481978574a142b433aa2fc0906451ab1e6a08cf79e7a39dc26160cf190d732f4c65ef4a52912ff69\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/index/op_links/00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_heads/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_heads/heads/0182345aaeace6f4ba9cafd1fc426cd0e315ca96373139e7a49dc0a7ee51da8f17cf56a42d1f8e343be5efe60090d52aa5e6c397240066f142fd1b8617864727\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/workspace_store/index\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_store/views/e3d581b8398f4e8a013f076a2408c93baa8cd36f864ba0ef275a17a1a95bde75bacd09eef623f6b5e3336843ad89f7ad19a6d39387d08a9c618b7245f1f35b4a\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_store/views/0546b804488e5b8c71debe456f2f706e3bcd0ff6ec96c1d17a2ec7380e3b86f168a484aabae6d376e043b93c15b4012578330402823d58288b8a80bbdf0ed6f3\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_store/views/428a3424c3a614e7defd477ea4ffec52ce7f1bcb88991ffb59de9c1ed8fad018253f3d379bb9dbd77e16ba5da6b0fb5379a752070673cb564cf575677ac10224\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_store/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_store/operations/028d1780dab386d6c29d129cf14ed126bddf9a58464d460fbf00d5da955d751ecf5b7eed5068cd070ec395b8ccb5751054782661b5d89bd9c0eafa0e7382a382\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_store/operations/0182345aaeace6f4ba9cafd1fc426cd0e315ca96373139e7a49dc0a7ee51da8f17cf56a42d1f8e343be5efe60090d52aa5e6c397240066f142fd1b8617864727\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/repo/op_store/operations/b43c7efe7b2d7b9463777ef6337b1ccc2441fc761462714c481978574a142b433aa2fc0906451ab1e6a08cf79e7a39dc26160cf190d732f4c65ef4a52912ff69\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/working_copy/tree_state\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/working_copy/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/working_copy/checkout\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/.jj/.gitignore\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/functions.mjs\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/STYLE.md\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/MANIFEST.md\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/fields.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/probe-results.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/source.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/probe.mjs"
+            }
+          ],
+          "metadata": {
+            "count": 38,
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224305778,
+          "ran": 1789224305804,
+          "completed": 1789224305836
+        }
+      }
+    ]
+  },
+  {
+    "type": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "I'll load the listed inputs next so every field can be checked against the contracts and probes."
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/manifest.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/manifest.json, lines 1-29\n1: {\n2:   \"title\": \"Payment now commits before publication is attempted\",\n3:   \"eyebrow\": \"Lantern Ledger\",\n4:   \"dek\": \"A failed commit now prevents publication, while publication failure leaves a committed payment intact.\",\n5:   \"meta\": \"Deterministic modeled examples\",\n6:   \"footer\": \"The supplied code has no durable outbox or delivery deduplication.\",\n7:   \"sections\": [\n8:     {\n9:       \"eyebrow\": \"The setting\",\n10:       \"title\": \"Publication used to precede commit\",\n11:       \"content\": \"<p class=\\\"lead\\\">The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.</p>\"\n12:     },\n13:     {\n14:       \"eyebrow\": \"The change\",\n15:       \"title\": \"Wait for the transaction to fulfill\",\n16:       \"content\": \"<p>The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.</p>\"\n17:     },\n18:     {\n19:       \"eyebrow\": \"The boundary\",\n20:       \"title\": \"The database cannot roll back publication failures\",\n21:       \"content\": \"<p>The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.</p>\"\n22:     },\n23:     {\n24:       \"eyebrow\": \"The short version\",\n25:       \"title\": \"Commit first, with a remaining delivery gap\",\n26:       \"content\": \"<p>The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.</p>\"\n27:     }\n28:   ]\n29: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224309642,
+          "ran": 1789224310396,
+          "completed": 1789224310414
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/fields.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/fields.json, lines 1-70\n1: [\n2:   {\n3:     \"pointer\": \"/title\",\n4:     \"value\": \"Payment now commits before publication is attempted\"\n5:   },\n6:   {\n7:     \"pointer\": \"/eyebrow\",\n8:     \"value\": \"Lantern Ledger\"\n9:   },\n10:   {\n11:     \"pointer\": \"/dek\",\n12:     \"value\": \"A failed commit now prevents publication, while publication failure leaves a committed payment intact.\"\n13:   },\n14:   {\n15:     \"pointer\": \"/meta\",\n16:     \"value\": \"Deterministic modeled examples\"\n17:   },\n18:   {\n19:     \"pointer\": \"/footer\",\n20:     \"value\": \"The supplied code has no durable outbox or delivery deduplication.\"\n21:   },\n22:   {\n23:     \"pointer\": \"/sections/0/eyebrow\",\n24:     \"value\": \"The setting\"\n25:   },\n26:   {\n27:     \"pointer\": \"/sections/0/title\",\n28:     \"value\": \"Publication used to precede commit\"\n29:   },\n30:   {\n31:     \"pointer\": \"/sections/0/content\",\n32:     \"value\": \"<p class=\\\"lead\\\">The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.</p>\"\n33:   },\n34:   {\n35:     \"pointer\": \"/sections/1/eyebrow\",\n36:     \"value\": \"The change\"\n37:   },\n38:   {\n39:     \"pointer\": \"/sections/1/title\",\n40:     \"value\": \"Wait for the transaction to fulfill\"\n41:   },\n42:   {\n43:     \"pointer\": \"/sections/1/content\",\n44:     \"value\": \"<p>The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.</p>\"\n45:   },\n46:   {\n47:     \"pointer\": \"/sections/2/eyebrow\",\n48:     \"value\": \"The boundary\"\n49:   },\n50:   {\n51:     \"pointer\": \"/sections/2/title\",\n52:     \"value\": \"The database cannot roll back publication failures\"\n53:   },\n54:   {\n55:     \"pointer\": \"/sections/2/content\",\n56:     \"value\": \"<p>The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.</p>\"\n57:   },\n58:   {\n59:     \"pointer\": \"/sections/3/eyebrow\",\n60:     \"value\": \"The short version\"\n61:   },\n62:   {\n63:     \"pointer\": \"/sections/3/title\",\n64:     \"value\": \"Commit first, with a remaining delivery gap\"\n65:   },\n66:   {\n67:     \"pointer\": \"/sections/3/content\",\n68:     \"value\": \"<p>The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.</p>\"\n69:   }\n70: ]"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224310404,
+          "ran": 1789224310996,
+          "completed": 1789224311013
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/source.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/source.json, lines 1-13\n1: {\n2:   \"title\": \"Lantern Ledger: publish after the payment transaction\",\n3:   \"body\": \"The author says moving publish prevents notifications for failed commits and makes payment and notification atomic.\",\n4:   \"contracts\": [\n5:     \"transaction invokes the callback once and commits its staged writes only after callback fulfillment. It fulfills with undefined after commit. Callback or commit rejection rolls back all staged writes.\",\n6:     \"publish is an external operation outside the database transaction. Its rejection may happen before or after an externally visible notification.\",\n7:     \"markPaid is idempotent for a given id. Neither transaction nor publish supplies a delivery deduplication guarantee.\",\n8:     \"A process can stop between awaited operations. No durable outbox, background retry, or cross-call lock is supplied.\"\n9:   ],\n10:   \"before\": \"export async function before(db, publish, id) {\\n  return db.transaction(async (tx) => {\\n    await tx.markPaid(id);\\n    await publish(id);\\n  });\\n}\",\n11:   \"after\": \"export async function after(db, publish, id) {\\n  await db.transaction(async (tx) => {\\n    await tx.markPaid(id);\\n  });\\n  await publish(id);\\n}\",\n12:   \"unchanged\": \"none\"\n13: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224311003,
+          "ran": 1789224311766,
+          "completed": 1789224311783
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/functions.mjs"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/functions.mjs, lines 1-13\n1: export async function before(db, publish, id) {\n2:   return db.transaction(async (tx) => {\n3:     await tx.markPaid(id);\n4:     await publish(id);\n5:   });\n6: }\n7: \n8: export async function after(db, publish, id) {\n9:   await db.transaction(async (tx) => {\n10:     await tx.markPaid(id);\n11:   });\n12:   await publish(id);\n13: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224311773,
+          "ran": 1789224312442,
+          "completed": 1789224312483
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/probe.mjs"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/probe.mjs, lines 1-60\n1: import assert from 'node:assert/strict';\n2: import { before, after } from './functions.mjs';\n3: \n4: async function scenario(fn, fault, concurrent = false) {\n5:   const trace = { paid: false, notifications: 0, events: [], errors: [] };\n6:   const db = {\n7:     async transaction(callback) {\n8:       let staged = false;\n9:       trace.events.push('begin');\n10:       try {\n11:         await callback({ async markPaid() {\n12:           if (fault === 'write') throw new Error('write');\n13:           staged = true;\n14:           trace.events.push('write');\n15:         } });\n16:         if (fault === 'commit') throw new Error('commit');\n17:         if (staged) trace.paid = true;\n18:         trace.events.push('commit');\n19:       } catch (error) {\n20:         trace.events.push('rollback');\n21:         throw error;\n22:       }\n23:     },\n24:   };\n25:   const publish = async () => {\n26:     trace.events.push('publish');\n27:     if (fault === 'publish-before') throw new Error('publish-before');\n28:     trace.notifications++;\n29:     if (fault === 'publish-after') throw new Error('publish-after');\n30:   };\n31:   const invoke = () => fn(db, publish, 'invoice-7').catch((error) => trace.errors.push(error.message));\n32:   if (concurrent) await Promise.all([invoke(), invoke()]);\n33:   else await invoke();\n34:   return trace;\n35: }\n36: const results = {};\n37: for (const [name, fn] of Object.entries({ before, after })) {\n38:   results[name] = {};\n39:   for (const fault of ['none', 'write', 'commit', 'publish-before', 'publish-after']) {\n40:     results[name][fault] = await scenario(fn, fault);\n41:   }\n42:   results[name].concurrent = await scenario(fn, 'none', true);\n43: }\n44: assert.equal(results.before.commit.notifications, 1, 'a notification can escape before a failed commit');\n45: assert.equal(results.after.commit.notifications, 0, 'a failed commit must prevent publish in the changed function');\n46: assert.equal(results.before['publish-before'].paid, false);\n47: assert.equal(results.after['publish-before'].paid, true, 'publication failure cannot undo an already committed payment');\n48: assert.equal(results.after['publish-before'].notifications, 0);\n49: assert.equal(results.after['publish-after'].paid, true);\n50: assert.equal(results.after['publish-after'].notifications, 1);\n51: assert.equal(results.before['publish-after'].paid, false);\n52: assert.equal(results.before['publish-after'].notifications, 1);\n53: assert.deepEqual(results.after.none.events, ['begin', 'write', 'commit', 'publish']);\n54: for (const result of Object.values(results)) {\n55:   assert.equal(result.write.notifications, 0);\n56:   assert.equal(result.write.paid, false);\n57:   assert.equal(result.commit.paid, false);\n58:   assert.equal(result.concurrent.notifications, 2, 'idempotent payment writes do not deduplicate external publication');\n59: }\n60: console.log(JSON.stringify({ assumptions: 'In-memory staged transaction and external notification counter; no actual database or process-kill simulation.', results }, null, 2));"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224312456,
+          "ran": 1789224313160,
+          "completed": 1789224313182
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/probe-results.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/probe-results.json, lines 1-160\n1: {\n2:   \"assumptions\": \"In-memory staged transaction and external notification counter; no actual database or process-kill simulation.\",\n3:   \"results\": {\n4:     \"before\": {\n5:       \"none\": {\n6:         \"paid\": true,\n7:         \"notifications\": 1,\n8:         \"events\": [\n9:           \"begin\",\n10:           \"write\",\n11:           \"publish\",\n12:           \"commit\"\n13:         ],\n14:         \"errors\": []\n15:       },\n16:       \"write\": {\n17:         \"paid\": false,\n18:         \"notifications\": 0,\n19:         \"events\": [\n20:           \"begin\",\n21:           \"rollback\"\n22:         ],\n23:         \"errors\": [\n24:           \"write\"\n25:         ]\n26:       },\n27:       \"commit\": {\n28:         \"paid\": false,\n29:         \"notifications\": 1,\n30:         \"events\": [\n31:           \"begin\",\n32:           \"write\",\n33:           \"publish\",\n34:           \"rollback\"\n35:         ],\n36:         \"errors\": [\n37:           \"commit\"\n38:         ]\n39:       },\n40:       \"publish-before\": {\n41:         \"paid\": false,\n42:         \"notifications\": 0,\n43:         \"events\": [\n44:           \"begin\",\n45:           \"write\",\n46:           \"publish\",\n47:           \"rollback\"\n48:         ],\n49:         \"errors\": [\n50:           \"publish-before\"\n51:         ]\n52:       },\n53:       \"publish-after\": {\n54:         \"paid\": false,\n55:         \"notifications\": 1,\n56:         \"events\": [\n57:           \"begin\",\n58:           \"write\",\n59:           \"publish\",\n60:           \"rollback\"\n61:         ],\n62:         \"errors\": [\n63:           \"publish-after\"\n64:         ]\n65:       },\n66:       \"concurrent\": {\n67:         \"paid\": true,\n68:         \"notifications\": 2,\n69:         \"events\": [\n70:           \"begin\",\n71:           \"write\",\n72:           \"begin\",\n73:           \"write\",\n74:           \"publish\",\n75:           \"publish\",\n76:           \"commit\",\n77:           \"commit\"\n78:         ],\n79:         \"errors\": []\n80:       }\n81:     },\n82:     \"after\": {\n83:       \"none\": {\n84:         \"paid\": true,\n85:         \"notifications\": 1,\n86:         \"events\": [\n87:           \"begin\",\n88:           \"write\",\n89:           \"commit\",\n90:           \"publish\"\n91:         ],\n92:         \"errors\": []\n93:       },\n94:       \"write\": {\n95:         \"paid\": false,\n96:         \"notifications\": 0,\n97:         \"events\": [\n98:           \"begin\",\n99:           \"rollback\"\n100:         ],\n101:         \"errors\": [\n102:           \"write\"\n103:         ]\n104:       },\n105:       \"commit\": {\n106:         \"paid\": false,\n107:         \"notifications\": 0,\n108:         \"events\": [\n109:           \"begin\",\n110:           \"write\",\n111:           \"rollback\"\n112:         ],\n113:         \"errors\": [\n114:           \"commit\"\n115:         ]\n116:       },\n117:       \"publish-before\": {\n118:         \"paid\": true,\n119:         \"notifications\": 0,\n120:         \"events\": [\n121:           \"begin\",\n122:           \"write\",\n123:           \"commit\",\n124:           \"publish\"\n125:         ],\n126:         \"errors\": [\n127:           \"publish-before\"\n128:         ]\n129:       },\n130:       \"publish-after\": {\n131:         \"paid\": true,\n132:         \"notifications\": 1,\n133:         \"events\": [\n134:           \"begin\",\n135:           \"write\",\n136:           \"commit\",\n137:           \"publish\"\n138:         ],\n139:         \"errors\": [\n140:           \"publish-after\"\n141:         ]\n142:       },\n143:       \"concurrent\": {\n144:         \"paid\": true,\n145:         \"notifications\": 2,\n146:         \"events\": [\n147:           \"begin\",\n148:           \"write\",\n149:           \"begin\",\n150:           \"write\",\n151:           \"commit\",\n152:           \"commit\",\n153:           \"publish\",\n154:           \"publish\"\n155:         ],\n156:         \"errors\": []\n157:       }\n158:     }\n159:   }\n160: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224313168,
+          "ran": 1789224313857,
+          "completed": 1789224313874
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/MANIFEST.md"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/MANIFEST.md, lines 1-26\n1: # Manifest shape\n2: \n3: The local builder consumes this JSON shape. The schema summary follows the builder's header and the skill's manifest contract.\n4: \n5: ```json\n6: {\n7:   \"title\": \"Page heading\",\n8:   \"eyebrow\": \"Small label above the heading\",\n9:   \"dek\": \"Subtitle paragraph\",\n10:   \"meta\": \"Small metadata line\",\n11:   \"footer\": \"Footer text\",\n12:   \"sections\": [\n13:     {\n14:       \"eyebrow\": \"Chapter label\",\n15:       \"title\": \"Section heading\",\n16:       \"content\": \"<p>Authored HTML.</p>\"\n17:     }\n18:   ]\n19: }\n20: ```\n21: \n22: Every displayed field above is a string except sections, which is a nonempty array. Use the section count in the writing request.\n23: Optional section code entries use `{ \"lang\": \"js\", \"source\": \"raw code\", \"file\": \"file.mjs\" }`.\n24: Refer to them with `{{CODE:0}}` in content. Optional diagrams are an array of raw Mermaid strings, referenced with `{{DIAGRAM:0}}`.\n25: Optional narrationIntro and section narration fields are plain strings; narration does not need an audio file.\n26: The builder escapes plain text fields and code entries. Escape inline code inside content yourself, including `<`, `>`, and `&`."
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224313865,
+          "ran": 1789224314518,
+          "completed": 1789224314536
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/STYLE.md"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/STYLE.md, lines 1-163\n1: # Voice & prose rules for PR walkthroughs\n2: \n3: ## Focus\n4: \n5: Write the through-line before any section: one sentence naming the single story this PR tells. It never appears in the output — it is the knife. Every section must advance it; material that is true but off the line goes in the bin, however interesting.\n6: \n7: - **One new concept per section.** A reader holds about four things at once. A section that introduces the validation contract AND the theming strategy AND the fallback policy teaches none of them — split or cut.\n8: - **One idea per paragraph, stated in its first sentence.** The rest of the paragraph earns that sentence.\n9: - **End sentences on the new information.** Readers place emphasis where a sentence lands: \"the build fails loudly\" beats \"loud failure is what the build produces.\"\n10: - **The reader has not seen the diff.** Name a thing before leaning on it — a flag, acronym, or internal name used before its introduction costs the reader a re-read.\n11: - **Before shipping, delete the weakest section.** If the essay survives, it was padding. Repeat until it doesn't.\n12: \n13: ## The arc — a menu, not a checklist (6–9 sections)\n14: \n15: Four beats are mandatory: the setting, the gap, what we built, the short version. Everything else is on the menu and must earn its place via the through-line. Beats 1–3 are one story — give each its own section only when each carries distinct weight; otherwise merge them.\n16: \n17: 1. **The setting** — what the system was before this PR. Anchor the reader. Use `<p class=\"lead\">` here.\n18: 2. **The gap / the bug nobody saw** — what was missing or wrong, with a concrete example, not an abstraction.\n19: 3. **Why it matters** — the user-visible or operational cost. Translate technical correctness into \"what does this cost a developer.\"\n20: 4. **The mechanic, briefly** — explain the underlying domain concept the PR touches (Go build tags, ESM/CJS interop, JIT compilation, whatever). Plain language. Imagine the reader is sharp but new to the area. This section is the natural home for a diagram; if the concept has structure — a flow, a lifecycle, a before/after shape — draw it rather than describing it in prose.\n21: 5. **What we built** — the chosen approach in narrative form. Algorithm shape, where it plugs in. NOT a file-by-file dump yet. Include the one or two most load-bearing code hunks here, each introduced and explained (see \"The key code\").\n22: 6. **The honest trade-offs** — what the PR does NOT do, and why. Each trade-off gets the choice AND the reason. Use `<h3>` sub-headings inside this section.\n23: 7. **Alternatives considered** — what was rejected and why. One short paragraph per alternative. If none are documented in the materials, omit this section entirely; don't fabricate.\n24: 8. **What the diff looks like** — file-by-file tour, usually as a 2-column table. Each row: file name (with status: \"new\" / \"modified\") + one narrative sentence.\n25: 9. **A note on the test strategy** — optional. Only if tests are unusually structured (real-fs integration tests, fuzz, golden files, etc.). Skip for vanilla unit-test PRs.\n26: 10. **What's next** — open follow-ups, known issues filed, the priority order. Tie back to \"trade-offs\" — these are usually the same items.\n27: 11. **The short version** — one paragraph for skimmers, at the END. Never at the top.\n28: \n29: For small PRs (single-file refactors), collapse to 5 sections: setting → why → what we built → trade-offs → what's next. For sprawling PRs the hard ceiling is 11, but reaching it means the through-line is probably carrying two stories — cut before you stack.\n30: \n31: ## Voice\n32: \n33: - **Reader-facing.** Keep internal fact IDs, approval labels, reviewer directions, and drafting instructions in analysis artifacts. Use identifiers from the actual source when they help explain the program. Check the title, subtitle, sections, recap, and narration for leaked review material before handing off.\n34: - **Natural attribution.** Translate evidence notes into prose: use \"The author reports…\" or \"The diff shows…\" where attribution matters. Preserve the meaning of important qualifications without copying reviewer wording or repeating the same caveat throughout the essay.\n35: - **Essay-shaped.** Long paragraphs over short bullets. Bullets only when the items are genuinely parallel and don't carry their own narrative.\n36: - **Second person + first-person plural.** \"You might ask.\" \"We rejected this path.\" Avoid passive (\"it was rejected\") — it's a tell of AI-generated prose.\n37: - **Concrete > abstract.** Show the file, the constraint comment, the failure mode. A reader who can picture a real case beats one with a vague principle.\n38: - **Honest about gaps.** Trust comes from saying \"we did not handle X\" before the reader asks. Hiding limitations is a worse failure mode than having them.\n39: - **No marketing.** Don't write \"we're excited to introduce\" or \"leverages tree-sitter\" or \"robustly handles\". Just say what it does.\n40: - **No emoji.** Not in headings, not in tables, not as status icons.\n41: - **No hedging boilerplate.** \"Of course, there are several considerations to keep in mind…\" is dead weight. Cut it.\n42: \n43: ## Section headings\n44: \n45: The build script renders each `<h2>` as:\n46: \n47: ```\n48: N · The eyebrow   ← small accent\n49: The title here    ← big bold\n50: ```\n51: \n52: So the `eyebrow` field is the short chapter label (\"The setting\", \"The mechanic, briefly\") and `title` is the actual H2 line (\"Where we were before this PR\", \"What we're actually parsing\"). They should NOT repeat each other.\n53: \n54: ## Drop-cap\n55: \n56: The first paragraph of section 1, and only that paragraph, gets `<p class=\"lead\">…</p>`. The CSS turns the first letter into a 3.2rem drop-cap. Don't use it anywhere else; the doc loses its visual anchor if there are multiple.\n57: \n58: ## Code blocks\n59: \n60: Multi-line code goes in the section's `code` array, not in `content`. Reference it from prose with a `{{CODE:i}}` placeholder (0-indexed, matching array order). Never hand-write `<pre><code>` — it gets no syntax highlighting and the build warns. Write `source` as raw code, exactly as it reads in an editor — no HTML entity escaping; the build owns escaping and highlighting.\n61: \n62: ```json\n63: {\n64:   \"lang\": \"go\",\n65:   \"file\": \"signal_unix.go\",\n66:   \"source\": \"//go:build unix\\n\\npackage signal\"\n67: }\n68: ```\n69: \n70: - `lang` is a Shiki language id (`ts`, `go`, `py`, `rust`, `bash`, `json`, …). An unknown id degrades to plain text with a build warning.\n71: - `file` renders as a small caption above the block. Set it whenever the code comes from a specific file — it replaces the old `// file:` first-line comment convention.\n72: - Inline code is unchanged: `<code>process.platform</code>`, `<code>foo_linux.go</code>` in prose. You must still escape `<`, `>`, `&` there — `content` is authored HTML the build does not touch.\n73: - To *mention* placeholder syntax in prose without expanding it, entity-escape the braces: `<code>&#123;&#123;CODE:0&#125;&#125;</code>`. A literal placeholder in `content` is treated as a reference and must resolve to an entry.\n74: \n75: ### The key code\n76: \n77: The document should include 2–4 code blocks total showing the most load-bearing code from the PR. Rules:\n78: \n79: - Show the code as it exists AFTER the PR — never raw diff hunks with `+`/`-` markers.\n80: - Trim each block to its essential lines; elide the rest with a `// …` comment. Max ~20 lines per block.\n81: - Introduce the block in prose, show it, then explain what the reader should notice. Never drop a block without commentary.\n82: \n83: ## Diagrams (mermaid)\n84: \n85: Diagram source goes in the section's `diagrams` array, not in `content`. Reference it from prose with a `{{DIAGRAM:i}}` placeholder (0-indexed, matching array order). Write it as raw mermaid — no entity escaping; the build owns escaping.\n86: \n87: ```json\n88: {\n89:   \"diagrams\": [\n90:     \"flowchart LR\\n  A[fetch-pr.mjs] --> B[JSON dump]\"\n91:   ]\n92: }\n93: ```\n94: \n95: Referenced in `content` as `<p>{{DIAGRAM:0}}</p>`.\n96: \n97: When a diagram earns its place: only when it carries structure prose can't — flow, hierarchy, sequence, state. A two-node arrow is prose, not a diagram.\n98: \n99: Budget: 1–3 diagrams per document. Keep each small — roughly 12 nodes or fewer; a diagram that needs a legend is two diagrams.\n100: \n101: Prefer `flowchart` and `sequenceDiagram`.\n102: \n103: Every diagram needs a narration description in the manifest — the listener can't see it.\n104: \n105: Rendering note: diagrams are themed to the document's palette and follow the light/dark toggle. If the mermaid package isn't installed at build time, readers see the diagram source as text — so the source itself should be tidy and readable.\n106: \n107: ## Tables (file tour)\n108: \n109: The canonical \"what the diff looks like\" table:\n110: \n111: ```html\n112: <table>\n113:   <thead>\n114:     <tr><th>File</th><th>What it does</th></tr>\n115:   </thead>\n116:   <tbody>\n117:     <tr>\n118:       <td><code>file.ts</code> (new)</td>\n119:       <td>One narrative sentence — what role this file plays, not a diff of its lines.</td>\n120:     </tr>\n121:   </tbody>\n122: </table>\n123: ```\n124: \n125: Mark new files with `(new)`. Don't mark modified ones. Don't add a \"lines changed\" column — irrelevant to the narrative.\n126: \n127: ## Callouts\n128: \n129: ```html\n130: <div class=\"callout\">\n131:   <p><strong>Worth saying out loud:</strong> the body of the aside.</p>\n132: </div>\n133: ```\n134: \n135: Max 1–2 in the entire document. They're for asides the reader needs but that break the flow. Don't use as a status badge.\n136: \n137: ## Blockquotes\n138: \n139: `<blockquote>` is styled with a left rule and italic body. Use it for direct quotes from a spec, an RFC, or another doc — never to highlight your own prose.\n140: \n141: ## Length\n142: \n143: Word-count ceilings, not goals — the reader's attention is the budget, and a walkthrough that finishes at the bottom of its band beats one that fills it:\n144: - Small PR walkthrough: 500–900 words\n145: - Typical: 1100–1800 words\n146: - Large / multi-feature: up to 2400 words\n147: \n148: If you're pushing 2400, you have multiple stories — pick the strongest one and let the rest go.\n149: \n150: ## Forbidden patterns\n151: \n152: - Lists of acceptance criteria with checkboxes (✅) — looks like a generated test report\n153: - \"Pros and cons\" headings — essay voice doesn't use those\n154: - Tables with status emoji (🟢, ⚠️, ❌)\n155: - \"TL;DR\" at the top — the recap goes at the bottom; the *first* section is the setup\n156: - Quoting the PR body verbatim — paraphrase, integrate\n157: - Inventing alternatives or trade-offs not in the materials — research-driven, not imagined\n158: - \"We hope you find this useful\" / \"thanks for reading\" / any sign-off\n159: - Throat-clearing — a section that opens by announcing what it will discuss instead of discussing it (\"In this section we will look at…\")\n160: \n161: ## When in doubt\n162: \n163: Ask: would a reader who is sharp but new to this area understand WHY we did this, after one read? If no, find the one paragraph that's the bottleneck and rewrite it. If yes, ask the inverse: what did you include that the through-line doesn't need? Cut that, then you're done."
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224314526,
+          "ran": 1789224315283,
+          "completed": 1789224315338
+        }
+      },
+      {
+        "type": "tool",
+        "name": "read",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/verification.json"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/verification.json, lines 1-4\n1: {\n2:   \"status\": \"none\",\n3:   \"findings\": []\n4: }"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224315299,
+          "ran": 1789224315323,
+          "completed": 1789224315331
+        }
+      }
+    ]
+  },
+  {
+    "type": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "I have the contracts, functions, and probe rows. Next I’ll grade every listed field against that evidence and write `grade.json`."
+      },
+      {
+        "type": "tool",
+        "name": "write",
+        "state": {
+          "status": "completed",
+          "input": {
+            "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-50dcc430-ac70-4bfb-a04c-958f60d79cb2/grade.json",
+            "content": "{\n  \"fields\": [\n    {\n      \"pointer\": \"/title\",\n      \"quote\": \"Payment now commits before publication is attempted\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() awaits db.transaction(...), then await publish(id). Contract: transaction commits staged writes only after callback fulfillment and fulfills after commit. Probe after.none.events is [begin, write, commit, publish], versus before.none.events [begin, write, publish, commit]. Ordering is a property of the after control flow plus the transaction contract, not only a passing probe row.\"\n    },\n    {\n      \"pointer\": \"/eyebrow\",\n      \"quote\": \"Lantern Ledger\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Product label from source.title ('Lantern Ledger: publish after the payment transaction'). It is a name, not a checkable claim about behavior.\"\n    },\n    {\n      \"pointer\": \"/dek\",\n      \"quote\": \"A failed commit now prevents publication, while publication failure leaves a committed payment intact.\",\n      \"status\": \"supported\",\n      \"rationale\": \"First clause: after() does not reach publish if the transaction await rejects. Contract: commit rejection rolls back staged writes. Probe after.commit has notifications 0 and paid false; before.commit has notifications 1. Second clause: publish runs only after that await. Contract: publish is outside the transaction. Probe after.publish-before and after.publish-after have paid true. Both follow from after() plus contracts 1–2; the probe rows illustrate them. The dek does not say this holds across process death or other calls.\"\n    },\n    {\n      \"pointer\": \"/meta\",\n      \"quote\": \"Deterministic modeled examples\",\n      \"status\": \"supported\",\n      \"rationale\": \"probe.mjs runs fixed fault names with an in-memory staged transaction and a notification counter. probe-results.json assumptions: 'In-memory staged transaction and external notification counter; no actual database or process-kill simulation.' No randomness is in the probe.\"\n    },\n    {\n      \"pointer\": \"/footer\",\n      \"quote\": \"The supplied code has no durable outbox or delivery deduplication.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Contract 4: 'No durable outbox, background retry, or cross-call lock is supplied.' Contract 3: 'Neither transaction nor publish supplies a delivery deduplication guarantee.' before() and after() contain only transaction, markPaid, and publish. The sentence does not claim a probe executed an outbox.\"\n    },\n    {\n      \"pointer\": \"/sections/0/eyebrow\",\n      \"quote\": \"The setting\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No behavior claim.\"\n    },\n    {\n      \"pointer\": \"/sections/0/title\",\n      \"quote\": \"Publication used to precede commit\",\n      \"status\": \"supported\",\n      \"rationale\": \"before() calls publish inside the transaction callback. Contract: commit happens only after callback fulfillment. Probe before.none.events is [begin, write, publish, commit].\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.\",\n      \"status\": \"supported\",\n      \"rationale\": \"before() awaits tx.markPaid(id) then publish(id) inside the callback. Contract: callback or commit rejection rolls back staged writes. Probe before.commit: notifications 1, paid false, events [begin, write, publish, rollback], errors [commit]. The second sentence names the modeled commit fault, matching probe-results assumptions.\"\n    },\n    {\n      \"pointer\": \"/sections/1/eyebrow\",\n      \"quote\": \"The change\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No behavior claim.\"\n    },\n    {\n      \"pointer\": \"/sections/1/title\",\n      \"quote\": \"Wait for the transaction to fulfill\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() awaits db.transaction(...) before publish. Contract: transaction fulfills with undefined after commit. On rejection the await throws and publish is not invoked, which the following paragraph states. The title names the success-path wait; it does not claim rejection is fulfillment.\"\n    },\n    {\n      \"pointer\": \"/sections/1/content\",\n      \"quote\": \"The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() structure matches the first sentence. Write or commit throw inside transaction; contract rollback rethrows; publish is after the await. Probe after.write and after.commit both have notifications 0. The qualifier 'in that invocation' matches the probe (one call) and does not extend to other calls or a later retry. Support is control flow plus contracts 1–2, with those probe rows as illustrations.\"\n    },\n    {\n      \"pointer\": \"/sections/2/eyebrow\",\n      \"quote\": \"The boundary\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No behavior claim.\"\n    },\n    {\n      \"pointer\": \"/sections/2/title\",\n      \"quote\": \"The database cannot roll back publication failures\",\n      \"status\": \"supported\",\n      \"rationale\": \"After commit, publish is outside the transaction (contract 2; after() order). Probe after.publish-before and after.publish-after keep paid true. A later publish rejection cannot uncommit the payment. The title is about that boundary, not a claim that the database stores publication rows.\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Author claim is in source.body: moving publish 'makes payment and notification atomic.' Contract 2: publish is external; rejection may occur before or after a visible notification. Probe after.publish-before: paid true, notifications 0; after.publish-after: paid true, notifications 1. Contract 4: a process can stop between awaited operations; no durable outbox or background retry. Probe assumptions state there is no process-kill simulation; the process-stop sentence attributes the allowance to the contract, not to a probe observation. Contract 3: markPaid is idempotent; no delivery deduplication. Probe after.concurrent.notifications is 2. 'Can each publish' is existential and matches that modeled concurrent pair plus the missing dedup guarantee.\"\n    },\n    {\n      \"pointer\": \"/sections/3/eyebrow\",\n      \"quote\": \"The short version\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No behavior claim.\"\n    },\n    {\n      \"pointer\": \"/sections/3/title\",\n      \"quote\": \"Commit first, with a remaining delivery gap\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() commits then publishes (after.none.events). Remaining gap is supported by contract 2 (external publish), contract 4 (stop between operations; no outbox/retry), contract 3 (no publish dedup), and after.publish-* plus after.concurrent probe rows. 'Delivery gap' is a summary of those stated leftovers, not a new mechanism.\"\n    },\n    {\n      \"pointer\": \"/sections/3/content\",\n      \"quote\": \"The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.\",\n      \"status\": \"supported\",\n      \"rationale\": \"First sentence: after.commit notifications 0 versus before.commit notifications 1; after() does not call publish if the transaction await rejects. Second sentence contradicts the author atomicity claim using contract 2 and the after publish-failure probes (paid remains true; publish-after can still notify). Atomicity is not shown by the happy-path after.none row, and this paragraph does not treat that row as a universal guarantee.\"\n    }\n  ],\n  \"missing_material_limitations\": [\n    {\n      \"limitation\": \"No cross-call lock is supplied.\",\n      \"source\": \"Contract 4: 'No durable outbox, background retry, or cross-call lock is supplied.'\",\n      \"note\": \"The manifest states concurrent invocations can each publish and that there is no delivery deduplication. It never names the missing cross-call lock. The observable duplicate-publish effect is present; the lock itself is omitted.\"\n    },\n    {\n      \"limitation\": \"Background retry is not supplied, except as the phrase 'no durable retry'.\",\n      \"source\": \"Contract 4 lists 'background retry' beside durable outbox.\",\n      \"note\": \"Footer names outbox and deduplication. Section 2 says 'supplies no durable retry.' That paraphrase covers retry absence. It does not separately say there is no background worker.\"\n    }\n  ],\n  \"attribution_errors\": [\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The author calls payment and notification atomic\",\n      \"issue\": \"source.body says the author claims moving publish 'makes payment and notification atomic,' not that payment and notification are atomic in general. The rest of the paragraph treats the claim as false for the after code, which matches the contracts. Compression only; the rebuttal target is still the author atomicity claim.\"\n    }\n  ],\n  \"reviewer_language_leakage\": [\n    {\n      \"pointer\": \"/footer\",\n      \"quote\": \"The supplied code has no durable outbox or delivery deduplication.\",\n      \"issue\": \"'The supplied code' is audit-input phrasing, not a description of the payment function a reader of the change would use.\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The contract allows a process to stop between operations and supplies no durable retry.\",\n      \"issue\": \"'The contract' names the review's guarantee list (source.contracts) rather than the program. The process-stop fact is correctly tied to that list, not to a probe. The wording still exposes the audit frame.\"\n    }\n  ],\n  \"code_diagram_errors\": [],\n  \"reader_facing_prose\": {\n    \"rating\": \"uncertain\",\n    \"quotes\": [\n      {\n        \"pointer\": \"/sections/0/content\",\n        \"quote\": \"In the modeled commit failure, a notification escaped while the database write rolled back.\",\n        \"note\": \"Concrete and scoped to the modeled fault. Does not present the before.commit row as a universal database law.\"\n      },\n      {\n        \"pointer\": \"/sections/1/content\",\n        \"quote\": \"A write or commit rejection therefore prevents publication in that invocation.\",\n        \"note\": \"The 'in that invocation' bound keeps the claim inside one call.\"\n      },\n      {\n        \"pointer\": \"/sections/3/content\",\n        \"quote\": \"It does not make the committed payment and the external notification atomic.\",\n        \"note\": \"Direct correction of the author claim without turning after.none into a guarantee.\"\n      },\n      {\n        \"pointer\": \"/sections/2/content\",\n        \"quote\": \"The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.\",\n        \"note\": \"One paragraph stacks author rebuttal, external publish, both rejection timings, process stop, retry absence, and concurrency. Accurate, but it reads as a findings list.\"\n      },\n      {\n        \"pointer\": \"/footer\",\n        \"quote\": \"The supplied code has no durable outbox or delivery deduplication.\",\n        \"note\": \"Limitation is true; the voice is not reader-facing.\"\n      }\n    ],\n    \"rationale\": \"No field invents a universal guarantee from a passing example. Qualifiers ('modeled commit failure', 'in that invocation', 'may also', 'can each publish') stay inside contracts and modeled probes. Prose still leaks audit diction ('supplied code', 'the contract') and dumps several leftover limits into one paragraph. Rating is uncertain: facts are careful; voice is mixed.\"\n  },\n  \"unresolved_uncertainty\": [\n    \"Whether /eyebrow 'Lantern Ledger' and the four section eyebrows should be nonfactual labels or treated as supported names from source/style. This review uses nonfactual because they are not behavior claims.\",\n    \"Whether omitting the words 'cross-call lock' is a material gap when concurrent duplicate publish and missing deduplication are already stated. Listed as missing named limitation, not as a contradicted field.\",\n    \"Whether 'Wait for the transaction to fulfill' is over-narrow (fulfill versus settle). Marked supported because after() publishes only after fulfillment and the body covers rejection.\",\n    \"Whether 'The contract allows…' is reviewer leakage or fair use of source.contracts. Listed as leakage of frame, not as a false claim.\",\n    \"Process stop is contracted and explicitly not simulated (probe-results assumptions). Section 2 attributes it to the contract. If a reader treats that sentence as an observed probe, that reading is unsupported; the text itself does not say it was observed.\",\n    \"No code or diagram fields exist in the manifest, so code/diagram error review has nothing to check. Absence of optional code blocks is not scored as a diagram error.\"\n  ]\n}\n"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Created file successfully: grade.json"
+            }
+          ],
+          "metadata": {
+            "truncated": false
+          }
+        },
+        "time": {
+          "created": 1789224529769,
+          "ran": 1789224529917,
+          "completed": 1789224529930
+        }
+      }
+    ]
+  },
+  {
+    "type": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "Review saved in `grade.json`.\n\nNo field is contradicted. Seventeen listed fields: twelve **supported**, five **nonfactual** (product name and section labels).\n\nThe after control flow plus contracts 1–2 support commit-before-publish, failed-commit skipping publish in that call, and publish failure leaving the payment recorded. Concurrent duplicate publish and missing outbox/dedup match contracts 3–4 and the modeled concurrent row. Process stop is contracted; the probe does not simulate process kill.\n\nSeparate notes: unnamed missing **cross-call lock**; mild author-claim compression; audit diction in “supplied code” / “the contract”; no code or diagrams to err. Reader-facing prose is **uncertain** — claims stay scoped, voice still leaks the audit frame."
+      }
+    ]
+  }
+]

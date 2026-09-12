@@ -1,0 +1,4942 @@
+[
+  {
+    "label": "2a288cca-8e8d-4469-bb52-9f9f22be6035",
+    "fixture": "transaction",
+    "kind": "audit-main-1",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "8066d835ad90df5225167a1da16324e1adc8db4bcf476fd3d4d16ba2ef113e41",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ca228e7f53aaf21915be64ca77453076de2b07e2710045059a7150b730ae73e6",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 47418,
+    "cost": 0,
+    "tokens": {
+      "input": 19756,
+      "output": 753,
+      "reasoning": 64,
+      "cache": {
+        "read": 73984,
+        "write": 0
+      }
+    },
+    "rawSha256": "857ee20f17fd7c8f4b9b81f15b11aa24e1778436ca0aac383b4dff8ceb086dce",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "e35fc47c-d9b7-4340-960f-4c12b305e908",
+    "fixture": "retry",
+    "kind": "accept",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "13c8ceb9341ce8c8709fa40bbe7804e1a1081a0a13486a75004951f4bd4aebdb",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "d42cf5a3dc07db2be4092a793611c58dea120e852ebc8f91f9c5febb92535619",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 216421,
+    "cost": 0.195276,
+    "tokens": {
+      "input": 50066,
+      "output": 3744,
+      "reasoning": 9980,
+      "cache": {
+        "read": 25600,
+        "write": 0
+      }
+    },
+    "rawSha256": "af1ccb5bd8335f65ef8b589a62c7f5ad718bb5a42815e1b03e1d59f420fbf44f",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "c9bb4141-8429-4fcc-b125-331c8e66fbc6",
+    "fixture": "cache",
+    "kind": "16c52b15-7787-4d7c-8c41-1d26e4941780",
+    "model": {
+      "id": "grok-4.6",
+      "providerID": "xai",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "731ee32b6e1aa85053d3f2e51cd7a58b30404bc96239d8a115c3497eb76d089b",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "e2c4cdb9937475f9338e05db992d84325ec610fd732cccefdba847bedec6b426",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": null,
+    "serviceCreatedToIdleMs": 399654,
+    "cost": 0.300218,
+    "tokens": {
+      "input": 63301,
+      "output": 3925,
+      "reasoning": 18483,
+      "cache": {
+        "read": 78336,
+        "write": 0
+      }
+    },
+    "rawSha256": "fff9be6651aa88d4570ab807d1935e7104accdb697f1dfcc1de448d26f0ee9fa",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "ca6e3e89-37a0-48cf-a160-4e2e6c677180",
+    "fixture": "retry",
+    "kind": "audit-main-1",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "1753235bfda4fa6dfb40b705a3fa656bebaeb7476eb49abdd5a4cdc1da91dca4",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ec071285494423d68dfadf321c71aebb9f745cb5800a8850582ce568dfb7665b",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 105772,
+    "cost": 0,
+    "tokens": {
+      "input": 42327,
+      "output": 2688,
+      "reasoning": 163,
+      "cache": {
+        "read": 55168,
+        "write": 0
+      }
+    },
+    "rawSha256": "18dd41c841072d346589283186faa99bf89f290bb0be501328c77c23415b77c4",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "b4d10dcc-a1b2-4619-b921-ba9b8a8c669f",
+    "fixture": "retry",
+    "kind": "writer-2",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 67173,
+    "cost": 0,
+    "tokens": {
+      "input": 22402,
+      "output": 1398,
+      "reasoning": 54,
+      "cache": {
+        "read": 69120,
+        "write": 0
+      }
+    },
+    "rawSha256": "c442ac383fc9be9297934a96479d666c81f4f1ce42de0fd4be51fe060037a62d",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "7f628bf5-0e7e-48d0-8a49-ec6175148cbf",
+    "fixture": "transaction",
+    "kind": "writer-2",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 54789,
+    "cost": 0,
+    "tokens": {
+      "input": 22044,
+      "output": 1097,
+      "reasoning": 118,
+      "cache": {
+        "read": 47616,
+        "write": 0
+      }
+    },
+    "rawSha256": "5ee41ad0b5d3a3a3f9848ca9f3ec1d818a42ec62d7fd594cf5c66ceb37a0fcfe",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "65cc3147-5eb0-4c1f-898b-d58addf1b7b8",
+    "fixture": "transaction",
+    "kind": "192243d0-baa1-41de-a28d-1ff65d7fe27d",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "8542b2dd67f8b8873480e80a414543daaa35f87291674c1faec2237525ca2f63",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "a7abac5a92dde78276e69ccdadd9d3614d02b2ad0f62fb4794ec972fd4f2b541",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 263221,
+    "cost": 0.242322,
+    "tokens": {
+      "input": 63197,
+      "output": 3869,
+      "reasoning": 11783,
+      "cache": {
+        "read": 44032,
+        "write": 0
+      }
+    },
+    "rawSha256": "c46cc3a2065eaed536a33c2fb4c092956ce7fa28a1abb48ea17b90b6b43dcc5d",
+    "tools": [
+      "read",
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "80e9eafa-b141-4176-b3c4-1a73cf3696cf",
+    "fixture": "retry",
+    "kind": "6ba4826c-938c-4557-8db8-24087eedebe9",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "67c78ca570d7f213f3f91c12831c03dbf3532527f4a13a770e0fec6efc469e4b",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "7cc10eacc1856f299d5d631b0bf54182c4ac06d7b03096a5f217944ffa84347d",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 316648,
+    "cost": 0.33483,
+    "tokens": {
+      "input": 59230,
+      "output": 5504,
+      "reasoning": 13043,
+      "cache": {
+        "read": 210176,
+        "write": 0
+      }
+    },
+    "rawSha256": "36ed0d167585a28e7b602da4e5d4a6eacf1d05c8e76354d6efbbb3eae2800a6e",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write",
+      "shell",
+      "edit",
+      "edit",
+      "edit",
+      "edit",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "33f79ff4-8f54-456a-a403-737b383d4988",
+    "fixture": "transaction",
+    "kind": "accept",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "b23e7a770693d7cec6988fb891203c09a770969005ce7f168b45a4a579aea716",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ce14afd0b32374ef6fe7daec5a2709101d23c30499b79085b3ccc97db2243054",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 239634,
+    "cost": 0.18017,
+    "tokens": {
+      "input": 37532,
+      "output": 3025,
+      "reasoning": 11282,
+      "cache": {
+        "read": 38528,
+        "write": 0
+      }
+    },
+    "rawSha256": "040a8ec245dd3ef4ac862f3b6f3f3ef566f2ea8e79375b8459590054cf10a16d",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "03d6ccb4-72e2-4207-b33b-1774c49b3e54",
+    "fixture": "transaction",
+    "kind": "writer-3",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 63911,
+    "cost": 0,
+    "tokens": {
+      "input": 41732,
+      "output": 1325,
+      "reasoning": 49,
+      "cache": {
+        "read": 49536,
+        "write": 0
+      }
+    },
+    "rawSha256": "1a2bedad802838782bde3e82a6fe711ee3cce8a6797b4abcc9c45271c6200d3a",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "fd1228b4-0006-46eb-9634-3012ef1863f9",
+    "fixture": "retry",
+    "kind": "audit-main-3",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "9c7a2ce6f8aeb9bedaabeee2a7bb39f75403d92d395d28b688d75b2d7acc7f9e",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "a49060a072a9955854e8050ecb90cded6974ad36a9bf5d6db35332322384788f",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 91072,
+    "cost": 0,
+    "tokens": {
+      "input": 21465,
+      "output": 2276,
+      "reasoning": 125,
+      "cache": {
+        "read": 75392,
+        "write": 0
+      }
+    },
+    "rawSha256": "833ef620eaae55699b4da67d67f69a57aa9a02bd1ed42028bb2c62313cc0e7d3",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "989af0b9-3ef4-46a2-8b73-ed12ffa95c85",
+    "fixture": "cache",
+    "kind": "2c81e9b4-55d9-45f1-aeac-064f0189a891",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "77039b2342397f56848b7e80483b8635beb628876b56a5c59987303683cd8837",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "2fa3e2e9505b221b5b9eaa9e65ef5973461f1183c28840649a5606b611f32213",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 267838,
+    "cost": 0.188166,
+    "tokens": {
+      "input": 35029,
+      "output": 3746,
+      "reasoning": 11576,
+      "cache": {
+        "read": 52352,
+        "write": 0
+      }
+    },
+    "rawSha256": "d830d99e09dc1a87db461b99ecb2a1982c28ecdf503e458edca2b71d69915da9",
+    "tools": [
+      "read",
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "c6b8a766-c8b9-4184-a18d-4b59cb39c9c6",
+    "fixture": "retry",
+    "kind": "audit-main-2",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "6d5776726550f4cbdf5a14783d8d0e297472e4aa2ac4b4f069548eaf6acfc2c9",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "d7887d6ec38f7fa98a036e674192fdd5d7e275430ea262d085cec78b1905dec0",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 103814,
+    "cost": 0,
+    "tokens": {
+      "input": 23695,
+      "output": 2699,
+      "reasoning": 118,
+      "cache": {
+        "read": 74240,
+        "write": 0
+      }
+    },
+    "rawSha256": "f5f0cdd47334ae187ee15a5e6980a1211aebb2adad7aceac6fb2ae53c05f74b8",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "00dba4d6-070d-4af7-afb3-b2bb3e94aae6",
+    "fixture": "cache",
+    "kind": "writer-3",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 68931,
+    "cost": 0,
+    "tokens": {
+      "input": 32614,
+      "output": 1342,
+      "reasoning": 56,
+      "cache": {
+        "read": 57856,
+        "write": 0
+      }
+    },
+    "rawSha256": "efd003032968a3200994120a7e217c7e5926a9c788fc22896fb4071a9ead5be0",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "9829dc01-555d-4dd3-b766-2fefea5b3ea0",
+    "fixture": "cache",
+    "kind": "0d6b00d3-0d99-4313-9279-07c02323b235",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "abe1b4a7e31c3c12d8993c78afb79db818282328139d43d70a8a3ab3017e6a64",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 326029,
+    "cost": 0.22010400000000002,
+    "tokens": {
+      "input": 41277,
+      "output": 3754,
+      "reasoning": 14179,
+      "cache": {
+        "read": 59904,
+        "write": 0
+      }
+    },
+    "rawSha256": "1c77f5db9bc240cef49717c2854d90d5a9428fd812d5b86a206ade9f4739cf65",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "5d4eb988-bc08-4727-afef-d2b583e29b49",
+    "fixture": "transaction",
+    "kind": "90573b7a-280a-464f-bfc3-86cb5ecc5560",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "b23e7a770693d7cec6988fb891203c09a770969005ce7f168b45a4a579aea716",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ce14afd0b32374ef6fe7daec5a2709101d23c30499b79085b3ccc97db2243054",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 188316,
+    "cost": 0.223836,
+    "tokens": {
+      "input": 72283,
+      "output": 3321,
+      "reasoning": 8056,
+      "cache": {
+        "read": 22016,
+        "write": 0
+      }
+    },
+    "rawSha256": "f65dd967c42ed5076d42bdf2c1ad3ec0e306078bb90cf68d286d3927f27b9ea2",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "grep",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "0c9865a0-9520-46a7-87a7-6359550a259f",
+    "fixture": "transaction",
+    "kind": "audit-flawed",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "e2385989f202dcb6179d95275f4a68a1d55b01184f063edf0ea317eea938fc26",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 67549,
+    "cost": 0,
+    "tokens": {
+      "input": 21664,
+      "output": 1425,
+      "reasoning": 40,
+      "cache": {
+        "read": 71040,
+        "write": 0
+      }
+    },
+    "rawSha256": "8f0450abdf6d86503fc531c820e4c2e4a00ed036fa94da2f316e304bebe8d129",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "cdb67700-c294-471c-946f-2664c2825dd0",
+    "fixture": "cache",
+    "kind": "bf886051-cfd9-4c9e-ba79-78996c57486b",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "f718f1b25643b0ff1226800d169940ddaa55d552f9473fd165698b50b3042952",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "d9d5a327a988ada2316e66c6bd40c11a0f39b6a5b5cfba6278a89033ce2aa936",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 291572,
+    "cost": 0.23969599999999996,
+    "tokens": {
+      "input": 51132,
+      "output": 3504,
+      "reasoning": 14324,
+      "cache": {
+        "read": 60928,
+        "write": 0
+      }
+    },
+    "rawSha256": "f33d1f45e747eab91feb5df38f42643984ed57f44d06b4fc16ffd81877f50e5b",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "write",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "bfd0242f-ebd5-4440-a9a3-b0889f21e8da",
+    "fixture": "cache",
+    "kind": "audit-main-3",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "19c25926b461750c34aa591a22c4c7d69a17a2ae95da0d559127575a30ba35e7",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "490389b6f5621f2ec234beae9167eb2c4b8114a9894e0e9de21df5f4c9d7d053",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 49647,
+    "cost": 0,
+    "tokens": {
+      "input": 21624,
+      "output": 868,
+      "reasoning": 53,
+      "cache": {
+        "read": 92160,
+        "write": 0
+      }
+    },
+    "rawSha256": "baabcd4e468ba1ff0487ed51d94173984db57e0f4403e5f7b3ed291c31a23461",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "shell",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "4d45e673-2df4-48be-b0a1-4a110bf64939",
+    "fixture": "cache",
+    "kind": "4cb96125-18b5-4d4c-a329-f7ad83cfa900",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "7dc28ce5fd1196f4401572d7518e8ce2d871efa0122083cc1bbfa86cb9ca3a1c",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3aac3564bb35d9eca61d021abde329d313559eeae14f4dde569475931dd9b519",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 308644,
+    "cost": 0.252324,
+    "tokens": {
+      "input": 58552,
+      "output": 4107,
+      "reasoning": 14259,
+      "cache": {
+        "read": 50048,
+        "write": 0
+      }
+    },
+    "rawSha256": "0d4e6fec6e4d95ba83f0db48b6b3d14eb88bb0e431b4b03b2bfb6c475c5074f4",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "a4864bc6-3551-47b8-af9f-b8968a2e7305",
+    "fixture": "retry",
+    "kind": "3b268c0b-ddb7-4ca5-b0d3-570fd91613f1",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "6e5d0eb9b38ccdcaa00821c21bdc9885965cb3cf53bfe6292ed006ddcefad387",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "5cde3a0317a294f0e32a9036b2efc93793b6febad7f6bf59b800b3584308d7c5",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 358529,
+    "cost": 0.29347799999999996,
+    "tokens": {
+      "input": 62536,
+      "output": 4200,
+      "reasoning": 17393,
+      "cache": {
+        "read": 77696,
+        "write": 0
+      }
+    },
+    "rawSha256": "a5d0334767cba9877ce188520773bd2578aa28e8cd3c1d694d26ee5bc87f9947",
+    "tools": [
+      "read",
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "d583d809-e116-4580-912f-460a765d3f05",
+    "fixture": "retry",
+    "kind": "6b9e65ce-ebba-4511-b6f0-bfb89f016e78",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "38e19077353af67280a1c415521b8c66b98937a7e5b3a64307ae0ecbf9eacc5b",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ea75126d7464b1421c1b160d2f5561d207e657011acadacf396d282db8f5dc00",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 282181,
+    "cost": 0.229266,
+    "tokens": {
+      "input": 45218,
+      "output": 3847,
+      "reasoning": 13574,
+      "cache": {
+        "read": 68608,
+        "write": 0
+      }
+    },
+    "rawSha256": "5b4d72414b4caababcfbfe08fe985fec66b0b0a2d3daf49bfa9c7371ea2926c3",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "e6184a5d-3f57-4533-9292-6bc782b14fac",
+    "fixture": "retry",
+    "kind": "29885a0d-fe30-473f-adf8-06e9b0129526",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "bc2aaf114b9ec53bde771d14cfe173270e3cbd408914136bbfa05040b6e76a53",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 229846,
+    "cost": 0.23749599999999998,
+    "tokens": {
+      "input": 68336,
+      "output": 3675,
+      "reasoning": 10217,
+      "cache": {
+        "read": 34944,
+        "write": 0
+      }
+    },
+    "rawSha256": "61fbb9bcc6b5a993118b2eed7f75b769cbe50582ccd82d63857cb6be842c02c6",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "174fc77e-cb13-4448-82ef-642c58b04258",
+    "fixture": "transaction",
+    "kind": "a99ed592-43ae-470b-8ae5-e56d44a9f05e",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "8542b2dd67f8b8873480e80a414543daaa35f87291674c1faec2237525ca2f63",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "a7abac5a92dde78276e69ccdadd9d3614d02b2ad0f62fb4794ec972fd4f2b541",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 196662,
+    "cost": 0.235224,
+    "tokens": {
+      "input": 72360,
+      "output": 3827,
+      "reasoning": 8697,
+      "cache": {
+        "read": 30720,
+        "write": 0
+      }
+    },
+    "rawSha256": "62b78a375ee39de4f4d9f519de2240e3821f91345c574c4822efedbb4af409ae",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "ef7c4b35-6e83-46e0-81ee-47dd4a0a5f3d",
+    "fixture": "retry",
+    "kind": "audit-flawed",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "b1d624b8a6dd20d560fe49eb4288cb134ce52498e68f5f7232adeb189090e078",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 92572,
+    "cost": 0,
+    "tokens": {
+      "input": 22618,
+      "output": 2255,
+      "reasoning": 110,
+      "cache": {
+        "read": 71936,
+        "write": 0
+      }
+    },
+    "rawSha256": "681bb14911974567eb08a7434266771675163a6dc2298463ca9aa65b0d76ad83",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "aa3badbd-be78-4b59-a1ee-53bf4dd07e73",
+    "fixture": "transaction",
+    "kind": "98d4eb0b-1995-4726-b63f-6281bb00dc0e",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "8066d835ad90df5225167a1da16324e1adc8db4bcf476fd3d4d16ba2ef113e41",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ca228e7f53aaf21915be64ca77453076de2b07e2710045059a7150b730ae73e6",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 300999,
+    "cost": 0.234698,
+    "tokens": {
+      "input": 46060,
+      "output": 3695,
+      "reasoning": 14788,
+      "cache": {
+        "read": 63360,
+        "write": 0
+      }
+    },
+    "rawSha256": "261422f82a883384ebb2e665d1119497ada6d6150838823f58738fad95bbe18d",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "78d89aba-03d3-4171-b8bf-28526a3d741f",
+    "fixture": "cache",
+    "kind": "d8cfd7ca-25eb-4dcc-b73b-938d8b0b7f14",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "4c2b81ae8a52aee2298733591f05bd04e71e58f664d17a7e106de90350fc22d8",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 270821,
+    "cost": 0.24043599999999998,
+    "tokens": {
+      "input": 61864,
+      "output": 3597,
+      "reasoning": 12633,
+      "cache": {
+        "read": 38656,
+        "write": 0
+      }
+    },
+    "rawSha256": "b83ad4215f87781817a74b3eb80964403c59497eaf578d844dd86e64b7ec305b",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "3ee767dc-be43-4d72-9913-b1f90cc446e2",
+    "fixture": "retry",
+    "kind": "a946f3f2-492d-4c34-a09d-50093f6b5151",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "83d5d70ff31e0598e124e84a324ef3d3b6e6d55d5b749d2175420b9afbbbdacd",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "7c2d7bf7370d9407d5943d9780b9286f6a7b020c9a66e9309b60ab5cd584985d",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 296785,
+    "cost": 0.29402199999999995,
+    "tokens": {
+      "input": 81769,
+      "output": 4119,
+      "reasoning": 13927,
+      "cache": {
+        "read": 44416,
+        "write": 0
+      }
+    },
+    "rawSha256": "844e0f1fdd7b6c0c9900acbf61f9ff19f462240d14cb998b82445080ada7a0e5",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "grep",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "46136718-bf96-44fc-b965-bf5d26fd7cac",
+    "fixture": "retry",
+    "kind": "a9556a73-220a-4883-a6e9-aebc2fc9d2c6",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "1753235bfda4fa6dfb40b705a3fa656bebaeb7476eb49abdd5a4cdc1da91dca4",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ec071285494423d68dfadf321c71aebb9f745cb5800a8850582ce568dfb7665b",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 317855,
+    "cost": 0.235168,
+    "tokens": {
+      "input": 46090,
+      "output": 4280,
+      "reasoning": 14314,
+      "cache": {
+        "read": 62848,
+        "write": 0
+      }
+    },
+    "rawSha256": "778d2bd6fa5e8fa36c441eea663edf1460a6f59af10e17d94189d577a51ee6ec",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "70e0c08f-f754-4347-90ad-0955ad58ed9f",
+    "fixture": "retry",
+    "kind": "dda674cc-af44-4fc2-8eee-5bd199deb1f2",
+    "model": {
+      "id": "grok-4.6",
+      "providerID": "xai",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "b1d624b8a6dd20d560fe49eb4288cb134ce52498e68f5f7232adeb189090e078",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": null,
+    "serviceCreatedToIdleMs": 207243,
+    "cost": 0.187816,
+    "tokens": {
+      "input": 39720,
+      "output": 3836,
+      "reasoning": 9032,
+      "cache": {
+        "read": 62336,
+        "write": 0
+      }
+    },
+    "rawSha256": "03a3e44c90dc82791a71a0a9c3f87f8e44194ff093d57d5afa281d7780f0cb91",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "b15da6e3-cbf4-4e62-9694-482b9dcd207f",
+    "fixture": "transaction",
+    "kind": "4772ac8e-0c16-45df-ab93-3be30d16e835",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "53e1ab07aaa2ae0cd32f8b8cf08ab11d0688689e769c568cae15f2d086fdbadc",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "be773c3d928d73aa84d491b5a1cdb086195e2926595c12ff86e645da98f31105",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 284191,
+    "cost": 0.228694,
+    "tokens": {
+      "input": 45161,
+      "output": 3366,
+      "reasoning": 14416,
+      "cache": {
+        "read": 63360,
+        "write": 0
+      }
+    },
+    "rawSha256": "3aeed62ecbb41c142962aecc3409398f73f1e0d769950f4c34af3df9914094f8",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "c784bf37-c542-4dd9-a78f-60427b76c967",
+    "fixture": "retry",
+    "kind": "559681cb-0527-4de2-be3f-152f8b3b1cff",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "9c7a2ce6f8aeb9bedaabeee2a7bb39f75403d92d395d28b688d75b2d7acc7f9e",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "a49060a072a9955854e8050ecb90cded6974ad36a9bf5d6db35332322384788f",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 334521,
+    "cost": 0.28092,
+    "tokens": {
+      "input": 57387,
+      "output": 3837,
+      "reasoning": 16302,
+      "cache": {
+        "read": 90624,
+        "write": 0
+      }
+    },
+    "rawSha256": "2f02a0eac57f6c0f5c161d05ba36642773a8646b5c52d8b03347c9a9763b517d",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "38e18b39-daa4-4aa2-a6aa-f47ea4e88284",
+    "fixture": "transaction",
+    "kind": "09611a71-25cd-480b-8cf3-ecd00ce34143",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "8066d835ad90df5225167a1da16324e1adc8db4bcf476fd3d4d16ba2ef113e41",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ca228e7f53aaf21915be64ca77453076de2b07e2710045059a7150b730ae73e6",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 269983,
+    "cost": 0.23516199999999998,
+    "tokens": {
+      "input": 56869,
+      "output": 3768,
+      "reasoning": 12288,
+      "cache": {
+        "read": 50176,
+        "write": 0
+      }
+    },
+    "rawSha256": "e2ca8b56a500977b821e519ab4016d4b29bc54f9fc9735a573b2c2db31d64633",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "565820d5-0074-4c19-baa5-7d4ed5a07626",
+    "fixture": "retry",
+    "kind": "writer-3",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 64702,
+    "cost": 0,
+    "tokens": {
+      "input": 22313,
+      "output": 1375,
+      "reasoning": 85,
+      "cache": {
+        "read": 69248,
+        "write": 0
+      }
+    },
+    "rawSha256": "2133687a4a7daefc9d8702dc55f1031e483e161ac3e803ef78850ce749633859",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "6b838483-4522-41f9-ae27-91f8cf88ce7d",
+    "fixture": "transaction",
+    "kind": "writer-1",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 71242,
+    "cost": 0,
+    "tokens": {
+      "input": 22327,
+      "output": 1355,
+      "reasoning": 61,
+      "cache": {
+        "read": 68992,
+        "write": 0
+      }
+    },
+    "rawSha256": "4e889fda604ccf8f696ae2ec06caa87b2318f499486aa7fb354c3c11ee8aec2d",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "09a027d1-0ed4-4f85-9264-3242fa1316fb",
+    "fixture": "cache",
+    "kind": "writer-2",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 77623,
+    "cost": 0,
+    "tokens": {
+      "input": 22085,
+      "output": 1429,
+      "reasoning": 57,
+      "cache": {
+        "read": 68480,
+        "write": 0
+      }
+    },
+    "rawSha256": "1e72a6ede6fad60f861ea52fd3c501b053f7cd9e11d132770e5bc65c2211e98d",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "bb6f9fca-a7f1-44fe-b614-36f3e61d3a25",
+    "fixture": "cache",
+    "kind": "accept",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "2b439ecefce363c15f158ef7d0b9c92b705686fab846f112d3e1311576894a86",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "cabe00b93e4755affea9a46e4045c6fc58dcae39ba4fb45fd6f1faacfe895b85",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 270625,
+    "cost": 0.240758,
+    "tokens": {
+      "input": 56983,
+      "output": 3803,
+      "reasoning": 13201,
+      "cache": {
+        "read": 49536,
+        "write": 0
+      }
+    },
+    "rawSha256": "c9d48fa8a0aeb36245b8db8ad1ffd7cb90d4b7ee94150a5e6f93d079cadf4194",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "948a4239-fae8-4977-966a-2f8ec7814e03",
+    "fixture": "retry",
+    "kind": "8350b5c1-8de6-45b4-a4b5-3fd7df567c71",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "6d5776726550f4cbdf5a14783d8d0e297472e4aa2ac4b4f069548eaf6acfc2c9",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "d7887d6ec38f7fa98a036e674192fdd5d7e275430ea262d085cec78b1905dec0",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 314090,
+    "cost": 0.25828399999999996,
+    "tokens": {
+      "input": 66552,
+      "output": 3590,
+      "reasoning": 14372,
+      "cache": {
+        "read": 34816,
+        "write": 0
+      }
+    },
+    "rawSha256": "52fcbf91dd0d41f09e5f1312baec7f4381c28830da05a666bffed79d39d00fa9",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "04e4dd5f-592b-4585-aceb-1b6e2993e062",
+    "fixture": "transaction",
+    "kind": "3b0c5f00-5f53-44dd-89ca-a4aa3f4c4c68",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "b23e7a770693d7cec6988fb891203c09a770969005ce7f168b45a4a579aea716",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ce14afd0b32374ef6fe7daec5a2709101d23c30499b79085b3ccc97db2243054",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 193540,
+    "cost": 0.19862799999999997,
+    "tokens": {
+      "input": 65182,
+      "output": 2596,
+      "reasoning": 8664,
+      "cache": {
+        "read": 1408,
+        "write": 0
+      }
+    },
+    "rawSha256": "df46ca8364117b9f306fe1badf4e0ced27deeef7de513f6ebcec50618d12e285",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "d626f3f8-6941-4566-a388-5a9f6993082d",
+    "fixture": "retry",
+    "kind": "writer-1",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 66401,
+    "cost": 0,
+    "tokens": {
+      "input": 22507,
+      "output": 1427,
+      "reasoning": 125,
+      "cache": {
+        "read": 69120,
+        "write": 0
+      }
+    },
+    "rawSha256": "86269ae76930a2ccc8270e30c9274643bc936767d8813ad2d13ef56a57deb164",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "6aad2545-b4fb-4115-8f10-9edcb11b9718",
+    "fixture": "cache",
+    "kind": "9f96ee69-6529-4d00-a6e0-b36d6a8b61d0",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "19c25926b461750c34aa591a22c4c7d69a17a2ae95da0d559127575a30ba35e7",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "490389b6f5621f2ec234beae9167eb2c4b8114a9894e0e9de21df5f4c9d7d053",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 269287,
+    "cost": 0.246876,
+    "tokens": {
+      "input": 64341,
+      "output": 3695,
+      "reasoning": 11236,
+      "cache": {
+        "read": 57216,
+        "write": 0
+      }
+    },
+    "rawSha256": "bd2b796127171e0e131316d681e18fc22905a088042ff3d11f2619fdbe8ec30f",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "grep",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "f1e29745-e019-4438-b7f3-b9328c62f4ca",
+    "fixture": "cache",
+    "kind": "writer-1",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 67030,
+    "cost": 0,
+    "tokens": {
+      "input": 20129,
+      "output": 1449,
+      "reasoning": 33,
+      "cache": {
+        "read": 70400,
+        "write": 0
+      }
+    },
+    "rawSha256": "a5bf63410122248bfff9be77546ad72a616e983db193bbe196f0bb8661c5cada",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "70931993-d1ce-48ac-9a35-deb6a2b6cb3b",
+    "fixture": "cache",
+    "kind": "593e060e-22de-4109-a093-49d24681913f",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "19c25926b461750c34aa591a22c4c7d69a17a2ae95da0d559127575a30ba35e7",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "490389b6f5621f2ec234beae9167eb2c4b8114a9894e0e9de21df5f4c9d7d053",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 293592,
+    "cost": 0.214614,
+    "tokens": {
+      "input": 41327,
+      "output": 3964,
+      "reasoning": 13336,
+      "cache": {
+        "read": 56320,
+        "write": 0
+      }
+    },
+    "rawSha256": "fbfba5f8c422181fdb263807d7ef44f37d1de806bbd4229e937093391919a2b4",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "f833148c-b925-4c53-8d8a-e37cdda3501c",
+    "fixture": "cache",
+    "kind": "7baebb80-8dcc-4a11-8b1f-c9dec31b668e",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "4c2b81ae8a52aee2298733591f05bd04e71e58f664d17a7e106de90350fc22d8",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 300259,
+    "cost": 0.233576,
+    "tokens": {
+      "input": 45163,
+      "output": 3960,
+      "reasoning": 14699,
+      "cache": {
+        "read": 62592,
+        "write": 0
+      }
+    },
+    "rawSha256": "6b4219c23dbaf773e9fa23bffc522b127fc3689be0a56bf30adb6badb81cd25e",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "50dcc430-ac70-4bfb-a04c-958f60d79cb2",
+    "fixture": "transaction",
+    "kind": "f03f8765-4a2d-494a-8a80-09d02586bb53",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "50b47208d9e8b9493435c9d53d8ee8a908db1b42f4563484e9480d680e381742",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "f994137347a1d0b0735c7fb587b058112ad3bcdcdd5305edbb49547fdf7c268c",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 239679,
+    "cost": 0.23404400000000003,
+    "tokens": {
+      "input": 61832,
+      "output": 4075,
+      "reasoning": 10759,
+      "cache": {
+        "read": 42752,
+        "write": 0
+      }
+    },
+    "rawSha256": "ae1a4a12ebcf5e433410a4a15e73bb2adaada61da74512699048a372b3cf0c2a",
+    "tools": [
+      "read",
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "02d23ae2-7e7b-4c08-b29d-f09c0616ae5e",
+    "fixture": "transaction",
+    "kind": "audit-correct",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "b23e7a770693d7cec6988fb891203c09a770969005ce7f168b45a4a579aea716",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "ce14afd0b32374ef6fe7daec5a2709101d23c30499b79085b3ccc97db2243054",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 45093,
+    "cost": 0,
+    "tokens": {
+      "input": 21023,
+      "output": 737,
+      "reasoning": 56,
+      "cache": {
+        "read": 70528,
+        "write": 0
+      }
+    },
+    "rawSha256": "555c6df5d8e5c55faaa8bf28802510bd9f7a234819690724f9555473ba2dae31",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "076bc01c-15be-4393-833b-f2e57770f3e2",
+    "fixture": "cache",
+    "kind": "audit-main-1",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "731ee32b6e1aa85053d3f2e51cd7a58b30404bc96239d8a115c3497eb76d089b",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "e2c4cdb9937475f9338e05db992d84325ec610fd732cccefdba847bedec6b426",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 63127,
+    "cost": 0,
+    "tokens": {
+      "input": 36112,
+      "output": 1370,
+      "reasoning": 121,
+      "cache": {
+        "read": 57984,
+        "write": 0
+      }
+    },
+    "rawSha256": "41417e7a17a3c48d1a1f37ff92c9994b428eecfc4d230b6a7dc72d6d9d72cf39",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "d51fa258-b8e3-4933-ad1c-882908c02b38",
+    "fixture": "cache",
+    "kind": "audit-flawed",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "abe1b4a7e31c3c12d8993c78afb79db818282328139d43d70a8a3ab3017e6a64",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 64830,
+    "cost": 0,
+    "tokens": {
+      "input": 19666,
+      "output": 1570,
+      "reasoning": 36,
+      "cache": {
+        "read": 72320,
+        "write": 0
+      }
+    },
+    "rawSha256": "725eee4d082b744daf50aee9a6dfb30f68d636b6e059f62d593ddeb31c85bcf2",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "4ef5c2a4-d9f5-4cb1-912d-8a6d3e2a13ca",
+    "fixture": "transaction",
+    "kind": "9331918c-ffa2-4cbb-80ca-47f0370a0d73",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "e2385989f202dcb6179d95275f4a68a1d55b01184f063edf0ea317eea938fc26",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 200903,
+    "cost": 0.181724,
+    "tokens": {
+      "input": 52341,
+      "output": 3539,
+      "reasoning": 8064,
+      "cache": {
+        "read": 14848,
+        "write": 0
+      }
+    },
+    "rawSha256": "7707dd2b37ac720fa58fab20440a2cd2ffaa8bcadfee726c62cc89db975b5c8d",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "3cba9b69-f281-4e3f-adb6-887e3e2d81aa",
+    "fixture": "transaction",
+    "kind": "audit-main-3",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "8542b2dd67f8b8873480e80a414543daaa35f87291674c1faec2237525ca2f63",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "a7abac5a92dde78276e69ccdadd9d3614d02b2ad0f62fb4794ec972fd4f2b541",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 45818,
+    "cost": 0,
+    "tokens": {
+      "input": 21434,
+      "output": 749,
+      "reasoning": 51,
+      "cache": {
+        "read": 72064,
+        "write": 0
+      }
+    },
+    "rawSha256": "0dfbe1b8f8e34a07fce37aa7659a8fbc15ec07cee61eadeabd787e7edbb346ac",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "5bca2329-10d5-4630-bd18-a59f01ec1f73",
+    "fixture": "transaction",
+    "kind": "audit-main-2",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "53e1ab07aaa2ae0cd32f8b8cf08ab11d0688689e769c568cae15f2d086fdbadc",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "be773c3d928d73aa84d491b5a1cdb086195e2926595c12ff86e645da98f31105",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 82041,
+    "cost": 0,
+    "tokens": {
+      "input": 20938,
+      "output": 1890,
+      "reasoning": 100,
+      "cache": {
+        "read": 75008,
+        "write": 0
+      }
+    },
+    "rawSha256": "4949ac33bd43341a41ebb1e396f57ef64ef148a4c8203a75d89112c2619363f1",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "a8a0205f-0702-4255-8d3e-5d16c14e95e5",
+    "fixture": "transaction",
+    "kind": "586b3028-40fe-4b21-89df-00f703225fa7",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "4e813aa0afe15fbf4b4dd6482aa4742f7bb2bff51d3d7b6efd473ddf1ead74b1",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "e25ce8e4e84c69f27b40263766596a92905887a74d4d9d4189bf38d0c917b88b",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 294938,
+    "cost": 0.22797399999999998,
+    "tokens": {
+      "input": 52457,
+      "output": 4896,
+      "reasoning": 13694,
+      "cache": {
+        "read": 23040,
+        "write": 0
+      }
+    },
+    "rawSha256": "2d0cb5fc5f618806d4cf0aad6848329a69143b4328a4e5dd5903a3ba1573d5b4",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "99f33a43-2812-4025-ad92-f91b506da255",
+    "fixture": "retry",
+    "kind": "audit-correct",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "bc2aaf114b9ec53bde771d14cfe173270e3cbd408914136bbfa05040b6e76a53",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 91382,
+    "cost": 0,
+    "tokens": {
+      "input": 20523,
+      "output": 2100,
+      "reasoning": 202,
+      "cache": {
+        "read": 73344,
+        "write": 0
+      }
+    },
+    "rawSha256": "9a41d0c4aabdf63c14535e05c44257e5b53a15d4b1f375caa8eeb51a8131dd3f",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "aa1d754e-a1a2-449d-a509-c2e7fa474a08",
+    "fixture": "cache",
+    "kind": "accept",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "4c2b81ae8a52aee2298733591f05bd04e71e58f664d17a7e106de90350fc22d8",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 275313,
+    "cost": 0.231624,
+    "tokens": {
+      "input": 55631,
+      "output": 3809,
+      "reasoning": 12134,
+      "cache": {
+        "read": 49408,
+        "write": 0
+      }
+    },
+    "rawSha256": "491b57efc871f21350b4faf20a90cfcad887c43e92b6145cbbe1c29031273e7a",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "d2aaea11-ee32-4d1e-adab-6cdbbd8be583",
+    "fixture": "cache",
+    "kind": "d922755a-e8f2-47a0-a299-7ee7ff804f27",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "7dc28ce5fd1196f4401572d7518e8ce2d871efa0122083cc1bbfa86cb9ca3a1c",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3aac3564bb35d9eca61d021abde329d313559eeae14f4dde569475931dd9b519",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 299191,
+    "cost": 0.259702,
+    "tokens": {
+      "input": 72280,
+      "output": 3544,
+      "reasoning": 14121,
+      "cache": {
+        "read": 18304,
+        "write": 0
+      }
+    },
+    "rawSha256": "8e9b02b2f95f86d845b98c484f44a2704bd7889c1d5429d08c744f188c15b0ac",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "4649d208-ed1c-4bcf-a634-831bf6afa298",
+    "fixture": "cache",
+    "kind": "audit-correct",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "4c2b81ae8a52aee2298733591f05bd04e71e58f664d17a7e106de90350fc22d8",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 40195,
+    "cost": 0,
+    "tokens": {
+      "input": 20624,
+      "output": 757,
+      "reasoning": 50,
+      "cache": {
+        "read": 69888,
+        "write": 0
+      }
+    },
+    "rawSha256": "fe43810767e276a89bfd13ac8e327ba901b22db3f550ea5d23e8d0c7a3df681a",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "ee6380a7-f39e-4455-99af-5ef5218d3afa",
+    "fixture": "retry",
+    "kind": "9b53c8bf-7714-4e28-8ef5-484e21591c33",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "f4e2b7677c88b8f7b4692e7c0183cb92dd39754d4ebaa4ad802d072df9c38bd7",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "cc1de0d2cd25b22627a72ed06f78f0327f2b1f2e32c0ec1cc2235a42ece0711e",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 267469,
+    "cost": 0.216726,
+    "tokens": {
+      "input": 43420,
+      "output": 2791,
+      "reasoning": 13662,
+      "cache": {
+        "read": 62336,
+        "write": 0
+      }
+    },
+    "rawSha256": "b8ac0e1700a611a56295584c0622c6f2b7fa85abcf7f6801d86c93ed51672e58",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "be2ef51d-3488-4c4e-bf62-c8c0bc9f754e",
+    "fixture": "cache",
+    "kind": "audit-main-2",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "7dc28ce5fd1196f4401572d7518e8ce2d871efa0122083cc1bbfa86cb9ca3a1c",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3aac3564bb35d9eca61d021abde329d313559eeae14f4dde569475931dd9b519",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 45806,
+    "cost": 0,
+    "tokens": {
+      "input": 21406,
+      "output": 734,
+      "reasoning": 107,
+      "cache": {
+        "read": 71680,
+        "write": 0
+      }
+    },
+    "rawSha256": "c573a95ebb0986ac332271561e26e08e233cb7b7b039bf9f990a260bec825559",
+    "tools": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "9ed5f86a-1100-4d6f-a976-0e2d2b40469a",
+    "fixture": "transaction",
+    "kind": "accept",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "e27d8f62ebab5e670d1809179b4394c8bb61393feecc67df0a7e70ade4f2d25b",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "856cb553e6273832420effa868af46115cd53478ec034a5c355fdb70ecc6332e",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 245804,
+    "cost": 0.222178,
+    "tokens": {
+      "input": 54771,
+      "output": 4137,
+      "reasoning": 10497,
+      "cache": {
+        "read": 49664,
+        "write": 0
+      }
+    },
+    "rawSha256": "093564eb0090c10822a049f09d67dcf60f75a368ad836c54ee9c862ec7dcb581",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  },
+  {
+    "label": "f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db",
+    "fixture": "retry",
+    "kind": "accept",
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "immutable": [
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "unchanged": true
+      },
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "unchanged": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "unchanged": true
+      },
+      {
+        "file": "fields.json",
+        "sha256": "bc2aaf114b9ec53bde771d14cfe173270e3cbd408914136bbfa05040b6e76a53",
+        "unchanged": true
+      },
+      {
+        "file": "MANIFEST.md",
+        "sha256": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+        "unchanged": true
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+        "unchanged": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "unchanged": true
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134",
+        "unchanged": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "unchanged": true
+      }
+    ],
+    "elapsedMs": 338463,
+    "cost": 0.23849199999999998,
+    "tokens": {
+      "input": 46082,
+      "output": 3781,
+      "reasoning": 15391,
+      "cache": {
+        "read": 62592,
+        "write": 0
+      }
+    },
+    "rawSha256": "8991a2896018525a81739950df7353ef8a24d129109439e2e4356446056cb723",
+    "tools": [
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "write"
+    ],
+    "identityVerified": true,
+    "hostRepairs": 0,
+    "toolScope": "local supplied workspace only"
+  }
+]

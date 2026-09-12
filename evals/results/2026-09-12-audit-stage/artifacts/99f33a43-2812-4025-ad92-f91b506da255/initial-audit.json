@@ -1,0 +1,104 @@
+{
+  "inputSha256": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/sections/0/title",
+      "problem": "The heading says every rejection was retried. The old loop throws on budget exhaustion, and a rejected sleep prevents another send. The distinction supported by the source is that the old loop did not classify send errors.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/before",
+          "quote": "if (attempt === retries) throw error;\n      await sleep(10);"
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/before/sleepFailure",
+          "value": { "calls": 1, "effects": 0, "delays": [10], "result": null, "error": "sleep-failed" }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "pointer": "/sections/0/content",
+      "problem": "The paragraph describes retries continuing until the budget runs out without accounting for successful sends or sleep rejection. Both can end an invocation before exhaustion. Requesting a delay is not enough to ensure that another send occurs.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/before",
+          "quote": "return await send();"
+        },
+        {
+          "file": "source",
+          "pointer": "/before",
+          "quote": "if (attempt === retries) throw error;\n      await sleep(10);"
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/2",
+          "quote": "sleep returns a promise; rejection propagates."
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "pointer": "/sections/1/content",
+      "problem": "The two-retry description presents both delay requests and a final send without stating the path conditions. The 20-millisecond request requires a second retryable rejection, and the third send requires both sleeps to fulfill. The later sleep-rejection qualification does not account for an earlier successful send or a later non-retryable failure. The modeled exhausted example demonstrates one path, not every invocation with that budget.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "return await send();"
+        },
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "if (!error.retryable || attempt === retries) throw error;\n      await sleep(10 * 2 ** attempt);"
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/exhausted",
+          "value": { "calls": 3, "effects": 0, "delays": [10, 20], "result": null, "error": "transient" }
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/sections/0/title",
+      "findingIds": ["A1"],
+      "value": "The old loop did not classify send failures"
+    },
+    {
+      "pointer": "/sections/0/content",
+      "findingIds": ["A2"],
+      "value": "<p class=\"lead\">The old loop retried rejected sends regardless of their retryable flag, while retry budget remained and sleep fulfilled. It requested a ten-millisecond delay before each retry. A successful send returned immediately; budget exhaustion or a rejected sleep ended the invocation with an error.</p>"
+    },
+    {
+      "pointer": "/sections/1/content",
+      "findingIds": ["A3"],
+      "value": "<p>The changed loop stops on a non-retryable error and returns on a successful send. A budget of two retries permits up to three sends. If the first two sends reject with retryable errors and both sleeps fulfill, the loop requests 10 milliseconds before the second send and 20 milliseconds before the third. A rejected sleep prevents the next send. If the third send rejects, its error propagates without another delay or retry.</p>"
+    }
+  ],
+  "blockers": []
+}

@@ -1,0 +1,151 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Publish after the payment commits",
+      "status": "supported",
+      "rationale": "functions.mjs after() awaits db.transaction(...) then await publish(id). source.json contract 1 says the transaction fulfills only after commit. probe-results.json after.none.events is [begin, write, commit, publish]."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Lantern Ledger · Component study",
+      "status": "nonfactual",
+      "rationale": "Page kicker, not a truth-apt claim about the functions. The 'Lantern Ledger' token matches source.json title; 'Component study' is a genre label with no source or probe content."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "Moving a notification past the commit boundary prevents one false signal, but does not make payment and delivery atomic.",
+      "status": "supported",
+      "rationale": "after() publishes only after the transaction await. probe-results.json before.commit is unpaid with 1 notification; after.commit is unpaid with 0. after.publish-before is paid with 0 notifications. source.json contract 2 places publish outside the transaction; contract 4 allows a stop between awaited operations. The author's atomicity claim in source.json body is therefore false. The 'one false signal' wording is the unpaid-but-notified commit-failure case the probes record, not a universal extra-database guarantee."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Fictional change · Source and supplied in-memory probe results",
+      "status": "unsupported",
+      "rationale": "'Fictional change' does not appear in source.json, functions.mjs, probe.mjs, or probe-results.json. The second clause matches probe-results.json assumptions (in-memory staged transaction and notification counter)."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "Based on the supplied source and probes. No real database or process-kill simulation is included.",
+      "status": "supported",
+      "rationale": "probe-results.json assumptions state an in-memory staged transaction and 'no actual database or process-kill simulation.' probe.mjs logs the same assumption string. source.json contract 4 states a process can stop between awaited operations but supplies no kill probe."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Chapter label. Not a claim about the program."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Two operations, one transaction callback",
+      "status": "supported",
+      "rationale": "source.json before and functions.mjs before() await tx.markPaid(id) and publish(id) inside the db.transaction callback."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Originally, both awaited operations ran inside the database transaction callback. The database stages the payment write, then commits only after the callback fulfills.",
+      "status": "supported",
+      "rationale": "functions.mjs before() matches that placement. source.json contract 1: transaction commits staged writes only after callback fulfillment. Contract 2: publish is external, so rollback cannot retract a notification. probe-results.json before.commit keeps notifications at 1 after rollback."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The gap",
+      "status": "nonfactual",
+      "rationale": "Chapter label. Not a claim about the program."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "A notification could outlive a failed commit",
+      "status": "supported",
+      "rationale": "probe-results.json before.commit: paid false, notifications 1, events [begin, write, publish, rollback]."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "If publication succeeded and the later commit failed, the original function left the payment unpaid but sent one notification. The supplied probe records exactly that sequence: begin, write, publish, rollback.",
+      "status": "supported",
+      "rationale": "Matches probe-results.json before.commit. before.publish-after is also unpaid with 1 notification, matching contract 2 (reject after a visible notification) and contract 1 (callback rejection rolls back). source.json body attributes atomicity to the author; after.commit has 0 notifications, but after.publish-before is paid with 0 notifications, so the two operations are not atomic. No field-level contradiction: 'cannot make the two operations succeed together' is the atomicity denial, not a denial of after.none (paid true, notifications 1)."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The mechanism",
+      "status": "nonfactual",
+      "rationale": "Chapter label. Not a claim about the program."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "Await the commit before publishing",
+      "status": "supported",
+      "rationale": "functions.mjs after() awaits db.transaction(...) before publish. source.json contract 1: that await fulfills after commit."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "Under the supplied contract, that first await completes only after commit. A write or commit rejection exits before publish. Publication failure now leaves the payment committed.",
+      "status": "supported",
+      "rationale": "Contract 1: fulfill after commit; callback or commit rejection rolls back. after.write and after.commit events contain no publish; notifications 0; paid false. after.publish-before: paid true, notifications 0. after.publish-after: paid true, notifications 1. Those two counts match the increment in probe.mjs (throw before increment vs throw after). probe-results.json assumptions call these in-memory observations. verification.json in this directory has status none and findings []. The CODE:0/CODE:1 bodies match functions.mjs after() and probe.mjs lines 27–29."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Chapter label. Not a claim about the program."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Commit first is an ordering guarantee",
+      "status": "supported",
+      "rationale": "after() orders commit before publish. That ordering is what after.commit shows (no publish). Contracts 2–4 still leave payment and notification as separate outcomes."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "The change prevents notifications for failed commits. It still allows a committed payment without a notification if publication fails or the process stops between operations. No durable outbox or background retry closes that gap. Retrying an ambiguous publication can duplicate delivery: markPaid is idempotent, but publication has no deduplication guarantee. The concurrent probe produces two notifications in both versions. Payment and notification remain separate outcomes.",
+      "status": "supported",
+      "rationale": "after.commit notifications 0 follows from after() plus contract 1, not from generalizing a single probe row to every database. after.publish-before is paid with 0 notifications. Contract 4 supplies process-stop and no outbox/retry. Contract 3: markPaid is idempotent; neither transaction nor publish supplies delivery dedup. before.concurrent and after.concurrent both have notifications 2. 'If publication fails' is the publish-before case; publish-after still leaves a notification, which section 2 already recorded."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "No cross-call lock is supplied.",
+      "source": "source.json contracts[3]",
+      "rationale": "Contract 4 states no cross-call lock. The recap reports two concurrent notifications and no publication dedup, but it never names the missing lock. The duplication outcome is disclosed; the lock limitation is not."
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The author's atomicity claim therefore needs a narrower reading",
+      "rationale": "Reviewer stance about how to read a claim. Reader-facing prose should state the ordering result and the remaining split outcomes, not instruct a narrower reading."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "the supplied verification file records no separate findings",
+      "rationale": "Points at an internal verification.json artifact. That file is not part of the program under discussion."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "fail",
+    "quotes": [
+      {
+        "quote": "The author's atomicity claim therefore needs a narrower reading",
+        "reason": "Reviewer diction in a reader-facing section."
+      },
+      {
+        "quote": "the supplied verification file records no separate findings",
+        "reason": "Internal process note, not an explanation of payment or publish."
+      },
+      {
+        "quote": "If publication succeeded and the later commit failed, the original function left the payment unpaid but sent one notification.",
+        "reason": "Concrete and accurate; not enough to pass the page while the leakage remains."
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Whether 'Fictional change' was meant as nonfactual framing rather than an unsupported factual claim. This review marked /meta unsupported because the phrase is absent from source, functions, and probes.",
+    "Whether 'cannot make the two operations succeed together' could be read as denying the after.none happy path (paid true, notifications 1). This review treated it as an atomicity denial in context of the author's claim, not a field-level contradiction.",
+    "Whether omitting the words 'cross-call lock' is a missing material limitation when the concurrent probe result is already stated. Listed under missing_material_limitations with that caveat.",
+    "verification.json was not in the listed review inputs (manifest, fields, source, functions, probe, probe-results). The /sections/2/content claim about it matches that file's empty findings; if that file is out of scope, that clause would be unsupported rather than leakage-plus-supported."
+  ],
+  "contradictions_observed": []
+}
