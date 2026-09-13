@@ -108,6 +108,11 @@ pages. Full drafting, automatic routing, browser review, live services, and
 actual MDX framework rendering remain unrun. The small source packet and focused
 verification request limit generalization to the prior full-drafting failure.
 
+That was this study's historical limit. The later
+[full-workflow comparison](../2026-09-13-docs-e2e/README.md) now covers drafting
+through verification on the original two reader cases. Its scores form a separate
+batch; automatic routing, browser review, live services, and MDX rendering remain unrun.
+
 Raw exports, visible-only transcripts, workspaces, runtime evidence, exact
 skill snapshots, and frozen fixtures are retained outside the owner clone:
 
