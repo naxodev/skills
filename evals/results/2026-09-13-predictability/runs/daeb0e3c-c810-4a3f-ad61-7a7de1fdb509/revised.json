@@ -1,0 +1,29 @@
+{
+  "title": "Retry filtering does not guarantee exactly-once delivery",
+  "eyebrow": "Cedar Relay",
+  "dek": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+  "meta": "Deterministic modeled examples",
+  "footer": "A rejected acknowledgment can still follow a committed remote effect.",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The old loop did not classify send failures",
+      "content": "<p class=\"lead\">The old loop returned when a send fulfilled. After a rejected send, it threw if the retry budget was exhausted; otherwise, it requested a ten-millisecond delay without checking the error's retryable property. Another send followed only if that sleep fulfilled. A rejected sleep propagated and stopped the loop.</p>"
+    },
+    {
+      "eyebrow": "The change",
+      "title": "Classify failures before waiting",
+      "content": "<p>The changed loop stops on a non-retryable error and returns when a send fulfills. With a budget of two retries, it permits up to three sends. If the first two sends both reject with retryable errors and their sleeps fulfill, it requests delays of 10 then 20 milliseconds before the second and third sends. A rejected sleep prevents the next send. If the third send rejects, its error propagates without another delay.</p>"
+    },
+    {
+      "eyebrow": "The boundary",
+      "title": "A retry can duplicate a remote effect",
+      "content": "<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>"
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Fewer retries for permanent failures",
+      "content": "<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>"
+    }
+  ]
+}

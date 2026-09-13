@@ -1,0 +1,206 @@
+[
+  {
+    "type": "text",
+    "text": "I'll read the supplied manifest, contracts, functions, and probe files first, then grade every listed field against that evidence only."
+  },
+  {
+    "type": "tool",
+    "name": "glob",
+    "state": {
+      "status": "completed",
+      "input": {
+        "pattern": "*"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/verification.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/manifest.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/functions.mjs\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/fields.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/probe-results.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/source.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/probe.mjs"
+        }
+      ],
+      "metadata": {
+        "count": 7,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read directory /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981, entries 1-9\n.git/\n.jj/\nfields.json\nfunctions.mjs\nmanifest.json\nprobe-results.json\nprobe.mjs\nsource.json\nverification.json"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/manifest.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/manifest.json, lines 1-29\n1: {\n2:   \"title\": \"Retry filtering makes every delivery exactly once\",\n3:   \"eyebrow\": \"Cedar Relay\",\n4:   \"dek\": \"Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.\",\n5:   \"meta\": \"Deterministic modeled examples\",\n6:   \"footer\": \"A rejected acknowledgment can still follow a committed remote effect.\",\n7:   \"sections\": [\n8:     {\n9:       \"eyebrow\": \"The setting\",\n10:       \"title\": \"The old loop retried every rejection\",\n11:       \"content\": \"<p class=\\\"lead\\\">The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.</p>\"\n12:     },\n13:     {\n14:       \"eyebrow\": \"The change\",\n15:       \"title\": \"Classify failures before waiting\",\n16:       \"content\": \"<p>The changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.</p>\"\n17:     },\n18:     {\n19:       \"eyebrow\": \"The boundary\",\n20:       \"title\": \"A retry can duplicate a remote effect\",\n21:       \"content\": \"<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>\"\n22:     },\n23:     {\n24:       \"eyebrow\": \"The short version\",\n25:       \"title\": \"Fewer retries for permanent failures\",\n26:       \"content\": \"<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>\"\n27:     }\n28:   ]\n29: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/fields.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/fields.json, lines 1-70\n1: [\n2:   {\n3:     \"pointer\": \"/title\",\n4:     \"value\": \"Retry filtering makes every delivery exactly once\"\n5:   },\n6:   {\n7:     \"pointer\": \"/eyebrow\",\n8:     \"value\": \"Cedar Relay\"\n9:   },\n10:   {\n11:     \"pointer\": \"/dek\",\n12:     \"value\": \"Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.\"\n13:   },\n14:   {\n15:     \"pointer\": \"/meta\",\n16:     \"value\": \"Deterministic modeled examples\"\n17:   },\n18:   {\n19:     \"pointer\": \"/footer\",\n20:     \"value\": \"A rejected acknowledgment can still follow a committed remote effect.\"\n21:   },\n22:   {\n23:     \"pointer\": \"/sections/0/eyebrow\",\n24:     \"value\": \"The setting\"\n25:   },\n26:   {\n27:     \"pointer\": \"/sections/0/title\",\n28:     \"value\": \"The old loop retried every rejection\"\n29:   },\n30:   {\n31:     \"pointer\": \"/sections/0/content\",\n32:     \"value\": \"<p class=\\\"lead\\\">The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.</p>\"\n33:   },\n34:   {\n35:     \"pointer\": \"/sections/1/eyebrow\",\n36:     \"value\": \"The change\"\n37:   },\n38:   {\n39:     \"pointer\": \"/sections/1/title\",\n40:     \"value\": \"Classify failures before waiting\"\n41:   },\n42:   {\n43:     \"pointer\": \"/sections/1/content\",\n44:     \"value\": \"<p>The changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.</p>\"\n45:   },\n46:   {\n47:     \"pointer\": \"/sections/2/eyebrow\",\n48:     \"value\": \"The boundary\"\n49:   },\n50:   {\n51:     \"pointer\": \"/sections/2/title\",\n52:     \"value\": \"A retry can duplicate a remote effect\"\n53:   },\n54:   {\n55:     \"pointer\": \"/sections/2/content\",\n56:     \"value\": \"<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>\"\n57:   },\n58:   {\n59:     \"pointer\": \"/sections/3/eyebrow\",\n60:     \"value\": \"The short version\"\n61:   },\n62:   {\n63:     \"pointer\": \"/sections/3/title\",\n64:     \"value\": \"Fewer retries for permanent failures\"\n65:   },\n66:   {\n67:     \"pointer\": \"/sections/3/content\",\n68:     \"value\": \"<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>\"\n69:   }\n70: ]"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/source.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/source.json, lines 1-13\n1: {\n2:   \"title\": \"Cedar Relay: filter retries and increase delays\",\n3:   \"body\": \"The author says this avoids retrying permanent failures and makes delivery exactly once.\",\n4:   \"contracts\": [\n5:     \"retries is a nonnegative integer. send returns a promise and rejects with an object containing a boolean retryable property.\",\n6:     \"A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.\",\n7:     \"sleep returns a promise; rejection propagates. Delays are requested milliseconds, not measured wall-clock durations.\",\n8:     \"Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.\"\n9:   ],\n10:   \"before\": \"export async function before(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    } catch (error) {\\n      if (attempt === retries) throw error;\\n      await sleep(10);\\n    }\\n  }\\n}\",\n11:   \"after\": \"export async function after(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    } catch (error) {\\n      if (!error.retryable || attempt === retries) throw error;\\n      await sleep(10 * 2 ** attempt);\\n    }\\n  }\\n}\",\n12:   \"unchanged\": \"none\"\n13: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/functions.mjs"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/functions.mjs, lines 1-21\n1: export async function before(send, sleep, retries) {\n2:   for (let attempt = 0; attempt <= retries; attempt++) {\n3:     try {\n4:       return await send();\n5:     } catch (error) {\n6:       if (attempt === retries) throw error;\n7:       await sleep(10);\n8:     }\n9:   }\n10: }\n11: \n12: export async function after(send, sleep, retries) {\n13:   for (let attempt = 0; attempt <= retries; attempt++) {\n14:     try {\n15:       return await send();\n16:     } catch (error) {\n17:       if (!error.retryable || attempt === retries) throw error;\n18:       await sleep(10 * 2 ** attempt);\n19:     }\n20:   }\n21: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/probe.mjs"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/probe.mjs, lines 1-50\n1: import assert from 'node:assert/strict';\n2: import { before, after } from './functions.mjs';\n3: \n4: async function scenario(fn, outcomes, retries, sleepRejects = false) {\n5:   const trace = { calls: 0, effects: 0, delays: [], result: null, error: null };\n6:   try {\n7:     trace.result = await fn(async () => {\n8:       const outcome = outcomes[trace.calls++];\n9:       assert.ok(outcome, 'the supplied retry budget must bound send calls');\n10:       if (outcome.effect) trace.effects++;\n11:       if (outcome.error) throw outcome.error;\n12:       return 'delivered';\n13:     }, async (delay) => {\n14:       trace.delays.push(delay);\n15:       if (sleepRejects) throw { label: 'sleep-failed' };\n16:     }, retries);\n17:   } catch (error) {\n18:     trace.error = error.label;\n19:   }\n20:   return trace;\n21: }\n22: const transient = { label: 'transient', retryable: true };\n23: const permanent = { label: 'permanent', retryable: false };\n24: const results = {};\n25: for (const [name, fn] of Object.entries({ before, after })) {\n26:   results[name] = {\n27:     permanent: await scenario(fn, [{ error: permanent }, {}], 2),\n28:     exhausted: await scenario(fn, Array(3).fill({ error: transient }), 2),\n29:     zeroBudget: await scenario(fn, [{ error: transient }], 0),\n30:     duplicate: await scenario(fn, [{ effect: true, error: transient }, { effect: true }], 2),\n31:     sleepFailure: await scenario(fn, [{ error: transient }], 2, true),\n32:     concurrentCalls: await Promise.all([1, 2].map(() => scenario(fn, [{ effect: true }], 2))),\n33:   };\n34: }\n35: assert.equal(results.before.permanent.calls, 2);\n36: assert.equal(results.after.permanent.calls, 1);\n37: assert.equal(results.after.permanent.error, 'permanent');\n38: assert.deepEqual(results.before.exhausted.delays, [10, 10]);\n39: assert.deepEqual(results.after.exhausted.delays, [10, 20]);\n40: for (const result of Object.values(results)) {\n41:   assert.equal(result.exhausted.calls, 3, 'retries counts extra attempts, not all attempts');\n42:   assert.equal(result.exhausted.error, 'transient');\n43:   assert.equal(result.zeroBudget.calls, 1);\n44:   assert.deepEqual(result.zeroBudget.delays, []);\n45:   assert.equal(result.duplicate.effects, 2, 'a lost acknowledgment permits duplicate side effects');\n46:   assert.equal(result.sleepFailure.calls, 1, 'a rejected sleep prevents another send');\n47:   assert.equal(result.sleepFailure.error, 'sleep-failed');\n48:   assert.equal(result.concurrentCalls.reduce((sum, item) => sum + item.effects, 0), 2);\n49: }\n50: console.log(JSON.stringify({ assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.', results }, null, 2));"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/probe-results.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/probe-results.json, lines 1-127\n1: {\n2:   \"assumptions\": \"Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.\",\n3:   \"results\": {\n4:     \"before\": {\n5:       \"permanent\": {\n6:         \"calls\": 2,\n7:         \"effects\": 0,\n8:         \"delays\": [\n9:           10\n10:         ],\n11:         \"result\": \"delivered\",\n12:         \"error\": null\n13:       },\n14:       \"exhausted\": {\n15:         \"calls\": 3,\n16:         \"effects\": 0,\n17:         \"delays\": [\n18:           10,\n19:           10\n20:         ],\n21:         \"result\": null,\n22:         \"error\": \"transient\"\n23:       },\n24:       \"zeroBudget\": {\n25:         \"calls\": 1,\n26:         \"effects\": 0,\n27:         \"delays\": [],\n28:         \"result\": null,\n29:         \"error\": \"transient\"\n30:       },\n31:       \"duplicate\": {\n32:         \"calls\": 2,\n33:         \"effects\": 2,\n34:         \"delays\": [\n35:           10\n36:         ],\n37:         \"result\": \"delivered\",\n38:         \"error\": null\n39:       },\n40:       \"sleepFailure\": {\n41:         \"calls\": 1,\n42:         \"effects\": 0,\n43:         \"delays\": [\n44:           10\n45:         ],\n46:         \"result\": null,\n47:         \"error\": \"sleep-failed\"\n48:       },\n49:       \"concurrentCalls\": [\n50:         {\n51:           \"calls\": 1,\n52:           \"effects\": 1,\n53:           \"delays\": [],\n54:           \"result\": \"delivered\",\n55:           \"error\": null\n56:         },\n57:         {\n58:           \"calls\": 1,\n59:           \"effects\": 1,\n60:           \"delays\": [],\n61:           \"result\": \"delivered\",\n62:           \"error\": null\n63:         }\n64:       ]\n65:     },\n66:     \"after\": {\n67:       \"permanent\": {\n68:         \"calls\": 1,\n69:         \"effects\": 0,\n70:         \"delays\": [],\n71:         \"result\": null,\n72:         \"error\": \"permanent\"\n73:       },\n74:       \"exhausted\": {\n75:         \"calls\": 3,\n76:         \"effects\": 0,\n77:         \"delays\": [\n78:           10,\n79:           20\n80:         ],\n81:         \"result\": null,\n82:         \"error\": \"transient\"\n83:       },\n84:       \"zeroBudget\": {\n85:         \"calls\": 1,\n86:         \"effects\": 0,\n87:         \"delays\": [],\n88:         \"result\": null,\n89:         \"error\": \"transient\"\n90:       },\n91:       \"duplicate\": {\n92:         \"calls\": 2,\n93:         \"effects\": 2,\n94:         \"delays\": [\n95:           10\n96:         ],\n97:         \"result\": \"delivered\",\n98:         \"error\": null\n99:       },\n100:       \"sleepFailure\": {\n101:         \"calls\": 1,\n102:         \"effects\": 0,\n103:         \"delays\": [\n104:           10\n105:         ],\n106:         \"result\": null,\n107:         \"error\": \"sleep-failed\"\n108:       },\n109:       \"concurrentCalls\": [\n110:         {\n111:           \"calls\": 1,\n112:           \"effects\": 1,\n113:           \"delays\": [],\n114:           \"result\": \"delivered\",\n115:           \"error\": null\n116:         },\n117:         {\n118:           \"calls\": 1,\n119:           \"effects\": 1,\n120:           \"delays\": [],\n121:           \"result\": \"delivered\",\n122:           \"error\": null\n123:         }\n124:       ]\n125:     }\n126:   }\n127: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/verification.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/verification.json, lines 1-4\n1: {\n2:   \"status\": \"none\",\n3:   \"findings\": []\n4: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "text",
+    "text": "I have the contracts, functions, and probe results. Next I’ll grade every listed field against that evidence and write `grade.json`."
+  },
+  {
+    "type": "tool",
+    "name": "write",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f31b7020-6c1e-4709-8f61-b52705da0981/grade.json",
+        "content": "{\n  \"fields\": [\n    {\n      \"pointer\": \"/title\",\n      \"quote\": \"Retry filtering makes every delivery exactly once\",\n      \"status\": \"contradicted\",\n      \"rationale\": \"Source contracts state a send may reject after the remote effect commits and that there is no deduplication or idempotency contract. Probe after.duplicate records effects=2 with result delivered; after.concurrentCalls sums to 2 effects across separate invocations. Retry filtering only adds !error.retryable before sleep (after.permanent.calls=1 versus before.permanent.calls=2). That does not make delivery exactly once. Source.body frames exactly-once as what the author says, not as an established result. Passing single-effect traces do not license this universal guarantee.\"\n    },\n    {\n      \"pointer\": \"/eyebrow\",\n      \"quote\": \"Cedar Relay\",\n      \"status\": \"supported\",\n      \"rationale\": \"Source.title begins with 'Cedar Relay: filter retries and increase delays'. The eyebrow repeats that product name and makes no extra operational claim.\"\n    },\n    {\n      \"pointer\": \"/dek\",\n      \"quote\": \"Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after throws when !error.retryable; probe after.permanent is calls=1, delays=[], error=permanent. Retryable path uses sleep(10 * 2 ** attempt); after.exhausted.delays is [10, 20]. Contract: delays are requested milliseconds, and there is no deduplication or idempotency contract. after.duplicate.effects is 2.\"\n    },\n    {\n      \"pointer\": \"/meta\",\n      \"quote\": \"Deterministic modeled examples\",\n      \"status\": \"supported\",\n      \"rationale\": \"probe-results.assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.' The meta names the supplied evidence class. It does not claim production measurement.\"\n    },\n    {\n      \"pointer\": \"/footer\",\n      \"quote\": \"A rejected acknowledgment can still follow a committed remote effect.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Contract: 'A send rejection may happen after the remote side effect commits.' Probe duplicate first outcome is { effect: true, error: transient }, then a second effect; both before.duplicate and after.duplicate record effects=2. Modal 'can' matches the modeled case.\"\n    },\n    {\n      \"pointer\": \"/sections/0/eyebrow\",\n      \"quote\": \"The setting\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No claim about send, sleep, retries, or effects.\"\n    },\n    {\n      \"pointer\": \"/sections/0/title\",\n      \"quote\": \"The old loop retried every rejection\",\n      \"status\": \"supported\",\n      \"rationale\": \"In surrounding content this refers to rejected sends, not sleep. before has no error.retryable check and retries until attempt === retries. before.permanent.calls=2 after a retryable:false rejection; before.exhausted.calls=3. Not a claim that sleep rejections are retried: before.sleepFailure.calls=1 and error=sleep-failed.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"<p class=\\\"lead\\\">The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.</p>\",\n      \"status\": \"supported\",\n      \"rationale\": \"before sleeps only when attempt !== retries, with sleep(10). before.exhausted is calls=3, delays=[10, 10], error=transient for retries=2. before.zeroBudget is calls=1, delays=[] when retries=0. 'Requested' matches the contract that delays are requested milliseconds.\"\n    },\n    {\n      \"pointer\": \"/sections/1/eyebrow\",\n      \"quote\": \"The change\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No operational claim.\"\n    },\n    {\n      \"pointer\": \"/sections/1/title\",\n      \"quote\": \"Classify failures before waiting\",\n      \"status\": \"supported\",\n      \"rationale\": \"after inspects error.retryable and whether attempt === retries, then either throws or await sleep(...). Non-retryable errors skip sleep: after.permanent.delays=[].\"\n    },\n    {\n      \"pointer\": \"/sections/1/content\",\n      \"quote\": \"<p>The changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.</p>\",\n      \"status\": \"supported\",\n      \"rationale\": \"after.permanent.calls=1, error=permanent. For retries=2, loop is attempt <= retries so three sends; after.exhausted.calls=3 and delays=[10, 20] from 10 * 2 ** 0 and 10 * 2 ** 1. Scoped to a budget of two retries, not a universal send cap. after.sleepFailure.calls=1, error=sleep-failed; contract: sleep rejection propagates. 'Request delays' matches requested milliseconds, not wall-clock.\"\n    },\n    {\n      \"pointer\": \"/sections/2/eyebrow\",\n      \"quote\": \"The boundary\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No operational claim.\"\n    },\n    {\n      \"pointer\": \"/sections/2/title\",\n      \"quote\": \"A retry can duplicate a remote effect\",\n      \"status\": \"supported\",\n      \"rationale\": \"Contract allows commit-then-reject and supplies no idempotency. Probe duplicate (lost acknowledgment then a second send with effect) records effects=2 for before and after. Modal 'can' is the modeled possibility, not a claim that every retry duplicates.\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>\",\n      \"status\": \"supported\",\n      \"rationale\": \"Source.body: the author says the change 'makes delivery exactly once.' Contract: rejection may follow a committed effect; separate calls share no retry counter; no lock or cross-call delivery exclusion. Probe duplicate.effects=2; concurrentCalls is two invocations each with effects=1 (sum 2). Factual content matches; 'supplied contract' is reviewer phrasing, recorded under reviewer-language leakage rather than as a factual miss.\"\n    },\n    {\n      \"pointer\": \"/sections/3/eyebrow\",\n      \"quote\": \"The short version\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section label only. No operational claim.\"\n    },\n    {\n      \"pointer\": \"/sections/3/title\",\n      \"quote\": \"Fewer retries for permanent failures\",\n      \"status\": \"supported\",\n      \"rationale\": \"Comparative and scoped to permanent failures. after.permanent.calls=1 versus before.permanent.calls=2 with retries=2. Exhausted retryable traces still use three sends on both sides, which this title does not deny.\"\n    },\n    {\n      \"pointer\": \"/sections/3/content\",\n      \"quote\": \"<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>\",\n      \"status\": \"supported\",\n      \"rationale\": \"after filters on error.retryable and sleeps 10 * 2 ** attempt instead of 10. The loop bound is per call (attempt <= retries). Contract: no shared retry counter, no deduplication. after.duplicate.effects=2; concurrentCalls do not share a budget. The bound is on sends in one invocation, not on unique remote effects.\"\n    }\n  ],\n  \"missing_material_limitations\": [\n    {\n      \"limitation\": \"Requested delays are not measured wall-clock durations; probe sleeps resolve immediately with no timing or production measurement.\",\n      \"why_material\": \"A reader can treat 10 then 20 milliseconds as elapsed time or production backoff evidence.\",\n      \"evidence\": \"Contract: 'Delays are requested milliseconds, not measured wall-clock durations.' probe-results.assumptions: 'immediate sleep promises; no timing or production measurement.' Prose says 'requested' in /dek and /sections/1/content but never states the wall-clock or measurement limit.\",\n      \"where_absent\": \"No field states that durations are unmeasured or that sleeps are immediate in the model.\"\n    },\n    {\n      \"limitation\": \"retries=0 still performs one send and requests no delay.\",\n      \"why_material\": \"The walkthrough explains that two retries permit three sends but never defines retries as extra attempts. Readers may think retries is the total send cap.\",\n      \"evidence\": \"Probe comment: 'retries counts extra attempts, not all attempts.' before.zeroBudget and after.zeroBudget are calls=1, delays=[], error=transient.\",\n      \"where_absent\": \"No field mentions a zero retry budget.\"\n    },\n    {\n      \"limitation\": \"Classification depends on a boolean error.retryable on the send rejection object.\",\n      \"why_material\": \"Body says 'non-retryable error' and 'filters failures' without the contract's classification field. The stop condition is otherwise unspecified.\",\n      \"evidence\": \"Contract: send 'rejects with an object containing a boolean retryable property.' after: if (!error.retryable || attempt === retries) throw error;\",\n      \"where_absent\": \"No field names retryable or the rejection-object shape.\"\n    }\n  ],\n  \"attribution_errors\": [\n    {\n      \"pointer\": \"/title\",\n      \"quote\": \"Retry filtering makes every delivery exactly once\",\n      \"problem\": \"Source.body attributes exactly-once to the author as a claim ('The author says this ... makes delivery exactly once'). The title states that claim as the walkthrough's own fact, without attribution. /sections/2/content later attributes the same claim to the author and contradicts it.\"\n    }\n  ],\n  \"reviewer_language_leakage\": [\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"the supplied contract\",\n      \"problem\": \"Eval-harness phrasing. Reader-facing prose would name the behavior limit, not 'the supplied contract'.\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"exclusion mechanism\",\n      \"problem\": \"Copies contract wording ('No lock or cross-call delivery exclusion is supplied') instead of stating the runtime fact that concurrent calls do not share a lock.\"\n    }\n  ],\n  \"code_diagram_errors\": [],\n  \"reader_facing_prose\": {\n    \"rating\": \"fail\",\n    \"rationale\": \"The lead title asserts a universal exactly-once delivery guarantee. Contracts and probes contradict it. Later fields (dek, footer, sections 2–3) hedge correctly, so this is an internal contradiction, not a uniformly false article. Passing modeled traces (one effect per successful concurrent call; after stopping on permanent) do not prove that guarantee.\",\n    \"quotes\": {\n      \"fail\": [\n        {\n          \"pointer\": \"/title\",\n          \"quote\": \"Retry filtering makes every delivery exactly once\",\n          \"why\": \"Universal delivery guarantee contradicted by no-idempotency contract and duplicate/concurrent probes.\"\n        }\n      ],\n      \"pass\": [\n        {\n          \"pointer\": \"/dek\",\n          \"quote\": \"Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.\"\n        },\n        {\n          \"pointer\": \"/footer\",\n          \"quote\": \"A rejected acknowledgment can still follow a committed remote effect.\"\n        },\n        {\n          \"pointer\": \"/sections/1/content\",\n          \"quote\": \"With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends.\"\n        },\n        {\n          \"pointer\": \"/sections/2/title\",\n          \"quote\": \"A retry can duplicate a remote effect\"\n        },\n        {\n          \"pointer\": \"/sections/3/content\",\n          \"quote\": \"It bounds send attempts per invocation, not successful delivery or duplicate effects.\"\n        }\n      ],\n      \"uncertain\": [\n        {\n          \"pointer\": \"/sections/0/title\",\n          \"quote\": \"The old loop retried every rejection\",\n          \"why\": \"Accurate for unclassified send rejections until the budget ends. Absolute 'every rejection' could be read to include sleep failures, which propagate without another send. Surrounding content narrows this to rejected sends; status remains supported, prose remains slightly over-broad.\"\n        }\n      ]\n    }\n  },\n  \"unresolved_uncertainty\": [\n    {\n      \"item\": \"Whether /eyebrow 'Cedar Relay' should be nonfactual (proper name) rather than supported.\",\n      \"resolution_used\": \"supported, because source.title supplies that name and the field adds no extra claim.\",\n      \"impact\": \"Does not change the prose fail, which rests on /title.\"\n    },\n    {\n      \"item\": \"Whether /sections/0/title 'every rejection' is contradicted by sleepFailure.\",\n      \"resolution_used\": \"supported, using surrounding /sections/0/content ('rejected sends until the retry budget ran out').\",\n      \"impact\": \"If read in isolation, that title would be over-broad; it would not create a second contract-level contradiction besides /title.\"\n    }\n  ],\n  \"observed_contradictions_versus_uncertainty\": {\n    \"observed_contradictions\": [\n      \"/title claims exactly-once delivery; contracts deny deduplication/idempotency; after.duplicate.effects=2; concurrentCalls sum effects=2; source.body treats exactly-once as the author's claim.\"\n    ],\n    \"uncertainty\": [\n      \"Label taxonomy for Cedar Relay.\",\n      \"Scope of 'every rejection' if the section 0 title is read without its following sentence.\"\n    ]\n  }\n}\n"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Created file successfully: grade.json"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "text",
+    "text": "Saved `grade.json`. Every `fields.json` pointer is graded.\n\n**Contradiction (not uncertainty):** `/title` — “Retry filtering makes every delivery exactly once”. Contracts deny deduplication/idempotency. `after.duplicate.effects` is 2. Concurrent invocations sum to 2 effects.\n\n**Supported:** dek, meta, footer, and sections 0–3 titles/content (section 0 title supported in context of rejected sends, not sleep).\n\n**Nonfactual:** the four section eyebrows.\n\n**Reader-facing prose: fail.** Quote: “Retry filtering makes every delivery exactly once”. Dek, footer, and sections 2–3 hedge correctly; that makes an internal split, not a uniformly false piece.\n\n**Also recorded:** missing wall-clock/measurement limit, zero-budget meaning of `retries`, and `error.retryable`; title attribution of the author’s exactly-once claim; “supplied contract” / “exclusion mechanism” leakage. No code or diagram errors. Unresolved items are label taxonomy only."
+  }
+]

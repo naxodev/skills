@@ -1,0 +1,26 @@
+{
+  "inputSha256": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef",
+  "verdict": "pass",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [],
+  "edits": [],
+  "blockers": []
+}

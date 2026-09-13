@@ -1,0 +1,156 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Retry filtering makes every delivery exactly once",
+      "status": "contradicted",
+      "rationale": "source.contracts[1] says a send rejection may happen after the remote side effect commits and that there is no deduplication or idempotency contract. source.contracts[3] says separate calls share no retry counter or cross-call exclusion. probe-results.json results.after.duplicate.effects is 2 after a retryable rejection that already recorded an effect. results.after.concurrentCalls sums to 2 effects. The title states a universal exactly-once guarantee. Adjacent qualifications in /dek, /footer, and /sections/2 do not cancel a false title. source.body records exactly-once as what the author says, not as a verified property. Passing modeled successes do not prove that guarantee."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Cedar Relay",
+      "status": "supported",
+      "rationale": "source.json title is \"Cedar Relay: filter retries and increase delays\". The eyebrow repeats that product name."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+      "status": "supported",
+      "rationale": "after() throws when !error.retryable. probe-results.json results.after.permanent has calls 1, delays [], error \"permanent\". results.after.exhausted.delays is [10, 20], matching sleep(10 * 2 ** attempt) on attempts 0 and 1. source.contracts[1] denies a deduplication guarantee. source.contracts[2] says delays are requested milliseconds, which matches \"requested delays\"."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Deterministic modeled examples",
+      "status": "supported",
+      "rationale": "probe-results.json assumptions state: \"Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.\" The meta names that evidence class."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "A rejected acknowledgment can still follow a committed remote effect.",
+      "status": "supported",
+      "rationale": "source.contracts[1]: \"A send rejection may happen after the remote side effect commits.\" probe.mjs duplicate scenario passes { effect: true, error: transient } on the first send. results.after.duplicate and results.before.duplicate each record effects 2."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not assert a property of the functions, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "The old loop retried every rejection",
+      "status": "supported",
+      "rationale": "before() retries any caught send error until attempt === retries. It does not read error.retryable. probe-results.json results.before.permanent.calls is 2 after a non-retryable error. results.before.exhausted.calls is 3 after retryable errors."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.",
+      "status": "supported",
+      "rationale": "before() sleeps only when attempt !== retries, then continues the loop. sleep(10) is the only delay. results.before.exhausted has calls 3 and delays [10, 10]. results.before.zeroBudget has calls 1 and delays [], so the last rejection is not followed by a sleep. source.contracts[2] treats those values as requested milliseconds."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The change",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not assert a property of the functions, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Classify failures before waiting",
+      "status": "supported",
+      "rationale": "after() inspects error.retryable in the catch path before await sleep(10 * 2 ** attempt). A non-retryable error throws without sleep. results.after.permanent.delays is []. results.after.exhausted.delays is [10, 20] only after retryable errors."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.",
+      "status": "supported",
+      "rationale": "The non-retryable clause is results.after.permanent: calls 1, error \"permanent\", delays []. For retries=2, attempt runs 0..2 so three sends are possible; results.after.exhausted.calls is 3 and delays are [10, 20], which is 10 * 2 ** 0 then 10 * 2 ** 1 before the final send. source.contracts[2] says sleep rejection propagates. results.after.sleepFailure.calls is 1 and error is \"sleep-failed\". The three-send bound is tied to the stated budget of two retries, not a universal send count."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not assert a property of the functions, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "A retry can duplicate a remote effect",
+      "status": "supported",
+      "rationale": "The word \"can\" is a possibility claim. results.after.duplicate.effects is 2 when the first send commits an effect and then rejects as retryable. source.contracts[1] supplies no idempotency contract."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.",
+      "status": "supported",
+      "rationale": "source.body: \"The author says this avoids retrying permanent failures and makes delivery exactly once.\" source.contracts[1] permits reject-after-commit and denies deduplication. results.after.duplicate.effects is 2. source.contracts[3]: \"Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.\" results.after.concurrentCalls is two invocations each with effects 1. Factual support does not clear the separate reviewer-language issue in \"the supplied contract\"."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not assert a property of the functions, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Fewer retries for permanent failures",
+      "status": "supported",
+      "rationale": "results.before.permanent.calls is 2. results.after.permanent.calls is 1. after() throws on !error.retryable instead of sleeping and sending again."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.",
+      "status": "supported",
+      "rationale": "after() adds the error.retryable filter and sleep(10 * 2 ** attempt). The loop is attempt <= retries inside one call, so the bound is per invocation. results.after.exhausted.error is \"transient\" (delivery is not guaranteed). results.after.duplicate.effects is 2. source.contracts[1] and [3] deny delivery and exclusion guarantees. \"Requested delays\" matches source.contracts[2]."
+    }
+  ],
+  "missing_material_limitations": [],
+  "missing_material_limitations_note": "The false exactly-once title is a contradictory claim, not an omitted limit. /dek, /footer, /sections/1/content, /sections/2, and /sections/3 already state stop-on-permanent, requested delays, sleep rejection, reject-after-commit, duplicate effects, and no shared budget. Omitting the closed-form 10 * 2 ** attempt beyond the modeled 10 then 20, and omitting retries as a nonnegative integer, does not change that causal story. Those are optional wording gaps, not material omissions.",
+  "attribution_errors": [
+    {
+      "pointer": "/title",
+      "quote": "Retry filtering makes every delivery exactly once",
+      "problem": "Presents exactly-once delivery as a fact about retry filtering. source.body attributes that claim to the author. The contracts and duplicate probe contradict it. /sections/2 later attributes the claim to the author, but that does not repair the unattributed title.",
+      "source": "source.json body; source.contracts[1]; probe-results.json results.after.duplicate.effects"
+    }
+  ],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/2/content",
+      "quote": "the supplied contract",
+      "problem": "\"Supplied\" names the review packet's contract list, not a reader-facing send/retry rule. Natural attribution would state the send contract itself."
+    }
+  ],
+  "code_diagram_errors": [],
+  "code_diagram_errors_note": "The manifest excerpts contain no code fences or diagrams. functions.mjs matches source.json before and after. No labeled or elided fragment in the reviewed fields is unfaithful to those sources.",
+  "reader_facing_prose": {
+    "rating": "fail",
+    "rationale": "The title asserts a universal exactly-once guarantee. Modeled probes and the send contract contradict that guarantee. A later accurate dek does not cancel a false title. Passing examples (permanent stop, 10 then 20, two duplicate effects) do not prove universal delivery.",
+    "quotes": [
+      {
+        "pointer": "/title",
+        "quote": "Retry filtering makes every delivery exactly once",
+        "role": "fail"
+      },
+      {
+        "pointer": "/dek",
+        "quote": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+        "role": "accurate_but_does_not_save_title"
+      },
+      {
+        "pointer": "/footer",
+        "quote": "A rejected acknowledgment can still follow a committed remote effect.",
+        "role": "accurate_but_does_not_save_title"
+      },
+      {
+        "pointer": "/sections/3/content",
+        "quote": "It bounds send attempts per invocation, not successful delivery or duplicate effects.",
+        "role": "accurate_but_does_not_save_title"
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Whether \"the modeled lost-acknowledgment example\" is reviewer-packet phrasing or acceptable reader-facing description of the duplicate probe. The effects count is supported either way; only the register of the wording is uncertain.",
+    "Whether section eyebrows such as \"The setting\" should be treated as nonfactual labels (used here) or as unsupported claims. They contain no testable predicate.",
+    "No disagreement remains about /title: source.contracts[1] and results.after.duplicate.effects=2 contradict exactly-once. The only residual question is wording register in /sections/2, not that contradiction."
+  ]
+}

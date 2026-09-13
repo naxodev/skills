@@ -1,0 +1,21 @@
+{
+  "sections": [
+    {
+      "eyebrow": "The changed mechanism",
+      "title": "Wait for the commit, then publish",
+      "content": "<p>The changed function first awaits the transaction:</p>{{CODE:0}}<p>That await completes after commit, not merely after <code>markPaid</code>. A write or commit rejection exits the function before publication. In the supplied in-memory results, a failed commit now leaves zero notifications.</p><p>Publication follows outside the callback:</p>{{CODE:1}}<p>A publication rejection still rejects the function, but cannot undo the committed payment. The probes show both possibilities: rejection before delivery leaves zero notifications; rejection after delivery leaves one. The author describes payment and notification as atomic, but this code establishes ordering, not an all-or-nothing result.</p>",
+      "code": [
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "  await db.transaction(async (tx) => {\n    await tx.markPaid(id);\n  });"
+        },
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "  await publish(id);"
+        }
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ This file records notable user-facing changes to the skills collection.
 - Added a source-linked final narrative audit protocol and local `audit` command, with masked before/after reviews comparing two audit models on identical saved drafts.
 - Prepared a same-model final-audit experiment with retry, transaction, and cache fixtures, deterministic probes, and title-only control defects. Recorded external grader authentication failures and unrun model counts.
 - Completed audit-stage evaluation with a frozen Grok grader screen, parent-adjudicated controls, nine paired drafts, six control audits, and thirty masked grades. Recorded seeded-title repairs, unnecessary control edits, grading disagreements, measured costs/growth, and remaining source-level uncertainty.
+- Recorded a bounded walkthrough predictability comparison: adopted an evaluation-only rubric that reduced spurious findings, and rejected a skill rule that did not improve correct-control preservation. Retained all 36 session results and source-based decisions.
 
 ### Changed
 

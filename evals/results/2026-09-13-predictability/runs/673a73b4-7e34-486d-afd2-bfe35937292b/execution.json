@@ -1,0 +1,62 @@
+{
+  "id": "673a73b4-7e34-486d-afd2-bfe35937292b",
+  "sessionID": "ses_f64b6f96cffe7I0KJ6l65ChckB",
+  "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-673a73b4-7e34-486d-afd2-bfe35937292b",
+  "attempts": [
+    {
+      "phase": "initial",
+      "startedAt": "2026-09-13T15:00:49.475Z",
+      "elapsedMs": 81489,
+      "info": {
+        "id": "ses_f64b6f96cffe7I0KJ6l65ChckB",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 20204,
+          "output": 1998,
+          "reasoning": 109,
+          "cache": {
+            "read": 73344,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789311649461,
+          "updated": 1789311650800,
+          "idle": 1789311730824
+        },
+        "title": "component judgment",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-673a73b4-7e34-486d-afd2-bfe35937292b"
+        }
+      },
+      "rawSha256": "0fea8b3de2e93d8dc3043b3a497b65b78c72934f0035759f9a843ddb3b48bc24",
+      "promptSha256": "608d7cf346155779ca41f26a7bd7a4d97ac619d9b582f0ce5fea281e3ddfd945"
+    }
+  ],
+  "inputHashes": {
+    "probe.mjs": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+    "source.json": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+    "probe-results.json": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+    "fields.json": "bc2aaf114b9ec53bde771d14cfe173270e3cbd408914136bbfa05040b6e76a53",
+    "functions.mjs": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+    "manifest.json": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134",
+    "verification.json": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c"
+  },
+  "changedFields": [
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/content"
+  ],
+  "bytePreserved": false,
+  "revisedSha256": "fd1c90ab6159b7fdd883d3cf0250006c84f2ef61328705fa3f1e282f40df5243",
+  "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/skill-predictability-20260913/.evals/predictability/673a73b4-7e34-486d-afd2-bfe35937292b.html\n",
+  "htmlSha256": "a1c4f24731aa525eec98d39f0d76aade8f049520a6ee4f092c35bfdef4812e62"
+}

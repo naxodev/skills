@@ -1,0 +1,21 @@
+{
+  "sections": [
+    {
+      "eyebrow": "The changed mechanism",
+      "title": "Keep the bound, filter the error, double the delay",
+      "content": "<p>The updated loop preserves the attempt budget and awaits each send:</p>{{CODE:0}}<p>Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries. Returning the awaited result stops the loop on success.</p><p>The catch block now decides whether another attempt is eligible before requesting a delay:</p>{{CODE:1}}<p>A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on. The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before. These are requested delays: the probe resolves sleep immediately. A rejected sleep propagates and prevents another send.</p>",
+      "code": [
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "export async function after(send, sleep, retries) {\n  for (let attempt = 0; attempt <= retries; attempt++) {\n    try {\n      return await send();\n    // …"
+        },
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "    } catch (error) {\n      if (!error.retryable || attempt === retries) throw error;\n      await sleep(10 * 2 ** attempt);\n    }"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The changed mechanism",
+      "status": "nonfactual",
+      "rationale": "Section label only. It makes no checkable claim about the source contracts, before/after functions, or probe results."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Keep the bound, filter the error, double the delay",
+      "status": "supported",
+      "rationale": "Before and after both use `for (let attempt = 0; attempt <= retries; attempt++)`, so the inclusive bound is unchanged. After adds `if (!error.retryable || attempt === retries) throw error`, which filters retries. After requests `sleep(10 * 2 ** attempt)` instead of `sleep(10)`, so requested delays double each eligible attempt (10, 20, 40, …). Probe after.exhausted.delays is [10, 20] versus before.exhausted.delays [10, 10]."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The updated loop preserves the attempt budget and awaits each send",
+      "status": "supported",
+      "rationale": "After keeps `attempt <= retries` and `return await send()`. Probe after.exhausted.calls is 3 when retries is 2; after.zeroBudget.calls is 1 when retries is 0. Those match before."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries.",
+      "status": "supported",
+      "rationale": "Both functions start at attempt 0 and continue while attempt <= retries, so send runs retries + 1 times when every send rejects. Probe comment: 'retries counts extra attempts, not all attempts'. after.exhausted.calls is 3 for retries 2; after.zeroBudget.calls is 1 for retries 0."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Returning the awaited result stops the loop on success.",
+      "status": "supported",
+      "rationale": "Both functions `return await send()` inside try. A resolved send exits the function. Probe after.duplicate.result is \"delivered\" after the second send succeeds; no further calls."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The catch block now decides whether another attempt is eligible before requesting a delay",
+      "status": "supported",
+      "rationale": "After catch throws when `!error.retryable || attempt === retries`, then `await sleep(...)` only if that guard does not throw. Before only checked `attempt === retries`. Probe after.permanent has calls 1, delays [], error \"permanent\"; before.permanent has calls 2, delays [10], result \"delivered\"."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "A permanent error or exhausted budget throws immediately.",
+      "status": "supported",
+      "rationale": "After throws in catch without sleep when retryable is false or attempt === retries. Probe after.permanent: calls 1, delays [], error \"permanent\". Probe after.exhausted: calls 3, delays [10, 20] (no third delay), error \"transient\"."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on.",
+      "status": "supported",
+      "rationale": "After code is `await sleep(10 * 2 ** attempt)` with attempt 0, 1, 2, … so requested delays are 10, 20, 40, …. This is the function formula, not an overread of the two-delay exhaustion probe. Contract: delays are requested milliseconds, not wall-clock."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before.",
+      "status": "supported",
+      "rationale": "Exact probe-results.json: after.exhausted.calls is 3, after.exhausted.delays is [10, 20]; before.exhausted.delays is [10, 10]. Matches probe.mjs assertions."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "These are requested delays: the probe resolves sleep immediately.",
+      "status": "supported",
+      "rationale": "Contract: 'Delays are requested milliseconds, not measured wall-clock durations.' Probe sleep only pushes the delay argument and resolves unless sleepRejects; assumptions string: 'immediate sleep promises; no timing or production measurement.'"
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "A rejected sleep propagates and prevents another send.",
+      "status": "supported",
+      "rationale": "Contract: 'sleep returns a promise; rejection propagates.' After awaits sleep with no inner catch, so rejection leaves the function. Probe after.sleepFailure: calls 1, delays [10], error \"sleep-failed\". Same for before. Probe assertion: 'a rejected sleep prevents another send'."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract. Retrying a retryable error can duplicate effects.",
+      "evidence": "Source contract: 'A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.' Probe after.duplicate and before.duplicate both have effects 2; probe assertion: 'a lost acknowledgment permits duplicate side effects'. Source body also claims 'makes delivery exactly once', which that contract and probe contradict. The included excerpt never states this.",
+      "scope": "Observed in the saved excerpt only. Other unsaved sections are not supplied."
+    },
+    {
+      "limitation": "Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.",
+      "evidence": "Source contract: 'Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.' Probe concurrentCalls is two independent traces with effects 1 each (sum 2) for both before and after. The included excerpt never states this.",
+      "scope": "Observed in the saved excerpt only. Other unsaved sections are not supplied."
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before. These are requested delays: the probe resolves sleep immediately.",
+      "rationale": "Reader-facing prose names 'the exhaustion probe' and 'the probe', which matches the modeled harness scenario key `exhausted` in probe.mjs rather than describing a delivery example in product terms."
+    }
+  ],
+  "code_diagram_errors": [],
+  "prose": {
+    "rating": "uncertain",
+    "quotes": [
+      {
+        "quote": "These are requested delays: the probe resolves sleep immediately.",
+        "note": "Included prose does not treat the exhaustion delays as measured wall-clock time."
+      },
+      {
+        "quote": "A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on.",
+        "note": "Stated mechanism matches after() and is not an over-generalization from the two recorded exhaustion delays."
+      },
+      {
+        "quote": "The updated loop preserves the attempt budget and awaits each send",
+        "note": "Accurate for the loop bound, but the same excerpt never states the duplicate-effect or cross-call contracts that govern those retries."
+      }
+    ],
+    "rationale": "Every checkable sentence in the excerpt matches the functions, contracts, or exact probe results. No included claim is contradicted. The excerpt is not a whole walkthrough, so omitted duplicate-delivery and cross-call limits cannot be scored as absent from the full piece. Passing examples are not treated as universal guarantees: the 10/20 exhaustion pair is reported as a probe record, while 10, 20, 40 follows the after() formula."
+  },
+  "contradictions": [],
+  "unresolved_uncertainty": [
+    "The saved excerpt does not mention duplicate side effects or the lack of cross-call exclusion. Whether unsaved sections state those contracts is unknown.",
+    "No included text field is contradicted. Uncertainty is about omitted walkthrough context, not about a conflict between the excerpt and the supplied source/probe evidence."
+  ]
+}

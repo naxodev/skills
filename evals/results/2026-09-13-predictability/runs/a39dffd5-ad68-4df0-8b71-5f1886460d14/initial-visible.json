@@ -1,0 +1,187 @@
+[
+  {
+    "type": "text",
+    "text": "I'll review the supplied manifest and contracts directly, then write `grade.json` from those files only."
+  },
+  {
+    "type": "tool",
+    "name": "glob",
+    "state": {
+      "status": "completed",
+      "input": {
+        "pattern": "**/*"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/verification.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/manifest.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/functions.mjs\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/fields.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/probe-results.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/source.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/probe.mjs"
+        }
+      ],
+      "metadata": {
+        "count": 7,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/manifest.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/manifest.json, lines 1-21\n1: {\n2:   \"sections\": [\n3:     {\n4:       \"eyebrow\": \"The changed mechanism\",\n5:       \"title\": \"Keep the bound, filter the error, double the delay\",\n6:       \"content\": \"<p>The updated loop preserves the attempt budget and awaits each send:</p>{{CODE:0}}<p>Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries. Returning the awaited result stops the loop on success.</p><p>The catch block now decides whether another attempt is eligible before requesting a delay:</p>{{CODE:1}}<p>A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on. The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before. These are requested delays: the probe resolves sleep immediately. A rejected sleep propagates and prevents another send.</p>\",\n7:       \"code\": [\n8:         {\n9:           \"lang\": \"js\",\n10:           \"file\": \"functions.mjs\",\n11:           \"source\": \"export async function after(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    // …\"\n12:         },\n13:         {\n14:           \"lang\": \"js\",\n15:           \"file\": \"functions.mjs\",\n16:           \"source\": \"    } catch (error) {\\n      if (!error.retryable || attempt === retries) throw error;\\n      await sleep(10 * 2 ** attempt);\\n    }\"\n17:         }\n18:       ]\n19:     }\n20:   ]\n21: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/fields.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/fields.json, lines 1-14\n1: [\n2:   {\n3:     \"pointer\": \"/sections/0/eyebrow\",\n4:     \"value\": \"The changed mechanism\"\n5:   },\n6:   {\n7:     \"pointer\": \"/sections/0/title\",\n8:     \"value\": \"Keep the bound, filter the error, double the delay\"\n9:   },\n10:   {\n11:     \"pointer\": \"/sections/0/content\",\n12:     \"value\": \"<p>The updated loop preserves the attempt budget and awaits each send:</p>{{CODE:0}}<p>Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries. Returning the awaited result stops the loop on success.</p><p>The catch block now decides whether another attempt is eligible before requesting a delay:</p>{{CODE:1}}<p>A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on. The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before. These are requested delays: the probe resolves sleep immediately. A rejected sleep propagates and prevents another send.</p>\"\n13:   }\n14: ]"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/source.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/source.json, lines 1-13\n1: {\n2:   \"title\": \"Cedar Relay: filter retries and increase delays\",\n3:   \"body\": \"The author says this avoids retrying permanent failures and makes delivery exactly once.\",\n4:   \"contracts\": [\n5:     \"retries is a nonnegative integer. send returns a promise and rejects with an object containing a boolean retryable property.\",\n6:     \"A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.\",\n7:     \"sleep returns a promise; rejection propagates. Delays are requested milliseconds, not measured wall-clock durations.\",\n8:     \"Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.\"\n9:   ],\n10:   \"before\": \"export async function before(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    } catch (error) {\\n      if (attempt === retries) throw error;\\n      await sleep(10);\\n    }\\n  }\\n}\",\n11:   \"after\": \"export async function after(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    } catch (error) {\\n      if (!error.retryable || attempt === retries) throw error;\\n      await sleep(10 * 2 ** attempt);\\n    }\\n  }\\n}\",\n12:   \"unchanged\": \"none\"\n13: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/functions.mjs"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/functions.mjs, lines 1-21\n1: export async function before(send, sleep, retries) {\n2:   for (let attempt = 0; attempt <= retries; attempt++) {\n3:     try {\n4:       return await send();\n5:     } catch (error) {\n6:       if (attempt === retries) throw error;\n7:       await sleep(10);\n8:     }\n9:   }\n10: }\n11: \n12: export async function after(send, sleep, retries) {\n13:   for (let attempt = 0; attempt <= retries; attempt++) {\n14:     try {\n15:       return await send();\n16:     } catch (error) {\n17:       if (!error.retryable || attempt === retries) throw error;\n18:       await sleep(10 * 2 ** attempt);\n19:     }\n20:   }\n21: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/probe.mjs"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/probe.mjs, lines 1-50\n1: import assert from 'node:assert/strict';\n2: import { before, after } from './functions.mjs';\n3: \n4: async function scenario(fn, outcomes, retries, sleepRejects = false) {\n5:   const trace = { calls: 0, effects: 0, delays: [], result: null, error: null };\n6:   try {\n7:     trace.result = await fn(async () => {\n8:       const outcome = outcomes[trace.calls++];\n9:       assert.ok(outcome, 'the supplied retry budget must bound send calls');\n10:       if (outcome.effect) trace.effects++;\n11:       if (outcome.error) throw outcome.error;\n12:       return 'delivered';\n13:     }, async (delay) => {\n14:       trace.delays.push(delay);\n15:       if (sleepRejects) throw { label: 'sleep-failed' };\n16:     }, retries);\n17:   } catch (error) {\n18:     trace.error = error.label;\n19:   }\n20:   return trace;\n21: }\n22: const transient = { label: 'transient', retryable: true };\n23: const permanent = { label: 'permanent', retryable: false };\n24: const results = {};\n25: for (const [name, fn] of Object.entries({ before, after })) {\n26:   results[name] = {\n27:     permanent: await scenario(fn, [{ error: permanent }, {}], 2),\n28:     exhausted: await scenario(fn, Array(3).fill({ error: transient }), 2),\n29:     zeroBudget: await scenario(fn, [{ error: transient }], 0),\n30:     duplicate: await scenario(fn, [{ effect: true, error: transient }, { effect: true }], 2),\n31:     sleepFailure: await scenario(fn, [{ error: transient }], 2, true),\n32:     concurrentCalls: await Promise.all([1, 2].map(() => scenario(fn, [{ effect: true }], 2))),\n33:   };\n34: }\n35: assert.equal(results.before.permanent.calls, 2);\n36: assert.equal(results.after.permanent.calls, 1);\n37: assert.equal(results.after.permanent.error, 'permanent');\n38: assert.deepEqual(results.before.exhausted.delays, [10, 10]);\n39: assert.deepEqual(results.after.exhausted.delays, [10, 20]);\n40: for (const result of Object.values(results)) {\n41:   assert.equal(result.exhausted.calls, 3, 'retries counts extra attempts, not all attempts');\n42:   assert.equal(result.exhausted.error, 'transient');\n43:   assert.equal(result.zeroBudget.calls, 1);\n44:   assert.deepEqual(result.zeroBudget.delays, []);\n45:   assert.equal(result.duplicate.effects, 2, 'a lost acknowledgment permits duplicate side effects');\n46:   assert.equal(result.sleepFailure.calls, 1, 'a rejected sleep prevents another send');\n47:   assert.equal(result.sleepFailure.error, 'sleep-failed');\n48:   assert.equal(result.concurrentCalls.reduce((sum, item) => sum + item.effects, 0), 2);\n49: }\n50: console.log(JSON.stringify({ assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.', results }, null, 2));"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/probe-results.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/probe-results.json, lines 1-127\n1: {\n2:   \"assumptions\": \"Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.\",\n3:   \"results\": {\n4:     \"before\": {\n5:       \"permanent\": {\n6:         \"calls\": 2,\n7:         \"effects\": 0,\n8:         \"delays\": [\n9:           10\n10:         ],\n11:         \"result\": \"delivered\",\n12:         \"error\": null\n13:       },\n14:       \"exhausted\": {\n15:         \"calls\": 3,\n16:         \"effects\": 0,\n17:         \"delays\": [\n18:           10,\n19:           10\n20:         ],\n21:         \"result\": null,\n22:         \"error\": \"transient\"\n23:       },\n24:       \"zeroBudget\": {\n25:         \"calls\": 1,\n26:         \"effects\": 0,\n27:         \"delays\": [],\n28:         \"result\": null,\n29:         \"error\": \"transient\"\n30:       },\n31:       \"duplicate\": {\n32:         \"calls\": 2,\n33:         \"effects\": 2,\n34:         \"delays\": [\n35:           10\n36:         ],\n37:         \"result\": \"delivered\",\n38:         \"error\": null\n39:       },\n40:       \"sleepFailure\": {\n41:         \"calls\": 1,\n42:         \"effects\": 0,\n43:         \"delays\": [\n44:           10\n45:         ],\n46:         \"result\": null,\n47:         \"error\": \"sleep-failed\"\n48:       },\n49:       \"concurrentCalls\": [\n50:         {\n51:           \"calls\": 1,\n52:           \"effects\": 1,\n53:           \"delays\": [],\n54:           \"result\": \"delivered\",\n55:           \"error\": null\n56:         },\n57:         {\n58:           \"calls\": 1,\n59:           \"effects\": 1,\n60:           \"delays\": [],\n61:           \"result\": \"delivered\",\n62:           \"error\": null\n63:         }\n64:       ]\n65:     },\n66:     \"after\": {\n67:       \"permanent\": {\n68:         \"calls\": 1,\n69:         \"effects\": 0,\n70:         \"delays\": [],\n71:         \"result\": null,\n72:         \"error\": \"permanent\"\n73:       },\n74:       \"exhausted\": {\n75:         \"calls\": 3,\n76:         \"effects\": 0,\n77:         \"delays\": [\n78:           10,\n79:           20\n80:         ],\n81:         \"result\": null,\n82:         \"error\": \"transient\"\n83:       },\n84:       \"zeroBudget\": {\n85:         \"calls\": 1,\n86:         \"effects\": 0,\n87:         \"delays\": [],\n88:         \"result\": null,\n89:         \"error\": \"transient\"\n90:       },\n91:       \"duplicate\": {\n92:         \"calls\": 2,\n93:         \"effects\": 2,\n94:         \"delays\": [\n95:           10\n96:         ],\n97:         \"result\": \"delivered\",\n98:         \"error\": null\n99:       },\n100:       \"sleepFailure\": {\n101:         \"calls\": 1,\n102:         \"effects\": 0,\n103:         \"delays\": [\n104:           10\n105:         ],\n106:         \"result\": null,\n107:         \"error\": \"sleep-failed\"\n108:       },\n109:       \"concurrentCalls\": [\n110:         {\n111:           \"calls\": 1,\n112:           \"effects\": 1,\n113:           \"delays\": [],\n114:           \"result\": \"delivered\",\n115:           \"error\": null\n116:         },\n117:         {\n118:           \"calls\": 1,\n119:           \"effects\": 1,\n120:           \"delays\": [],\n121:           \"result\": \"delivered\",\n122:           \"error\": null\n123:         }\n124:       ]\n125:     }\n126:   }\n127: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/verification.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/verification.json, lines 1-4\n1: {\n2:   \"status\": \"none\",\n3:   \"findings\": []\n4: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "text",
+    "text": "All listed fields and probe evidence are in hand. Next I’ll write `grade.json` with per-field status, separate defect classes, and any remaining uncertainty."
+  },
+  {
+    "type": "tool",
+    "name": "write",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-a39dffd5-ad68-4df0-8b71-5f1886460d14/grade.json",
+        "content": "{\n  \"fields\": [\n    {\n      \"pointer\": \"/sections/0/eyebrow\",\n      \"quote\": \"The changed mechanism\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section kicker only. It names the excerpt’s topic and does not assert a testable fact about source.json contracts, before/after, or probe-results.json.\"\n    },\n    {\n      \"pointer\": \"/sections/0/title\",\n      \"quote\": \"Keep the bound, filter the error, double the delay\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.json before and after both use `for (let attempt = 0; attempt <= retries; attempt++)`, so the inclusive bound is kept. after() adds `if (!error.retryable || attempt === retries) throw error`, and probe-results.json after.permanent.calls is 1 versus before.permanent.calls 2. after() requests `sleep(10 * 2 ** attempt)` versus before() `sleep(10)`; probe-results.json after.exhausted.delays is [10, 20] versus before [10, 10].\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The updated loop preserves the attempt budget and awaits each send:\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() keeps `for (let attempt = 0; attempt <= retries; attempt++)` and `return await send()` from before() (source.json before/after; functions.mjs). Adjacent sentences and CODE:0 describe that same loop, not a new bound.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Both functions start at attempt 0 with `attempt <= retries`. probe.mjs exhausted uses retries=2 and asserts calls===3 with message 'retries counts extra attempts, not all attempts'. probe-results.json after.exhausted.calls is 3 and after.zeroBudget.calls is 1 with retries=0.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"Returning the awaited result stops the loop on success.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() does `return await send()` inside try (source.json after; functions.mjs lines 14–15). On resolve, the function returns and does not continue the for-loop. probe-results.json after.duplicate.result is \\\"delivered\\\" after a later successful send.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The catch block now decides whether another attempt is eligible before requesting a delay:\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() catch throws when `!error.retryable || attempt === retries`, then otherwise `await sleep(...)` (source.json after; functions.mjs lines 16–18). Eligibility is decided before any delay request. before() only gated on `attempt === retries`; the retryable check is the new filter. Adjacent CODE:1 matches that catch.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"A permanent error or exhausted budget throws immediately.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Immediate here is adjacent to the catch: throw without sleep. after() throws on `!error.retryable` or `attempt === retries` before sleep. probe-results.json after.permanent has calls 1, delays [], error \\\"permanent\\\". after.exhausted has three sends and only two delays, then error \\\"transient\\\".\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() uses `await sleep(10 * 2 ** attempt)` (source.json after; functions.mjs line 18). For attempt 0, 1, 2 that is 10, 20, 40. Contract: delays are requested milliseconds. The exhaustion probe only observes 10 and 20 because retries=2; the 40 term is the code formula, not a probe-measured universal guarantee.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before.\",\n      \"status\": \"supported\",\n      \"rationale\": \"probe-results.json after.exhausted.calls is 3 and delays [10, 20]; before.exhausted.delays is [10, 10]. Matches probe.mjs asserts on exhausted.calls and the two delay arrays.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"These are requested delays: the probe resolves sleep immediately.\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.json contract: 'Delays are requested milliseconds, not measured wall-clock durations.' probe.mjs sleep only pushes the delay argument and optionally rejects. probe-results.json assumptions: 'immediate sleep promises; no timing or production measurement.'\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"A rejected sleep propagates and prevents another send.\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.json contract: 'sleep returns a promise; rejection propagates.' after() awaits sleep inside catch, so a rejection exits without another send(). probe.mjs asserts sleepFailure.calls===1 and error 'sleep-failed'. probe-results.json after.sleepFailure has calls 1, delays [10], error \\\"sleep-failed\\\".\"\n    }\n  ],\n  \"missing_material_limitations\": [\n    {\n      \"limitation\": \"A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract. An eligible retry can therefore repeat a committed effect.\",\n      \"source_or_contract\": \"source.json contracts[1]; probe.mjs duplicate scenario and assert 'a lost acknowledgment permits duplicate side effects'; probe-results.json after.duplicate.effects === 2 (also before.duplicate.effects === 2).\",\n      \"conflicting_or_omitted_claim\": \"The excerpt says the catch 'decides whether another attempt is eligible' and describes permanent versus exhausted failures. It never states that retryable is not an idempotency signal, or that a lost acknowledgment can commit twice. That omission changes what 'eligible' means: the filter skips non-retryable errors; it does not make a retry safe against duplicate side effects.\",\n      \"why_material\": \"The section’s causal story is when the loop retries. Without the commit-after-reject limit, a reader can treat retryable plus backoff as safe redelivery. source.json body even records an exactly-once claim; the modeled duplicate probe falsifies that guarantee. Passing exhausted/permanent examples do not prove once-only delivery.\"\n    }\n  ],\n  \"attribution_errors\": [],\n  \"reviewer_language_leakage\": [],\n  \"code_diagram_errors\": [],\n  \"reader_facing_prose\": {\n    \"rating\": \"pass\",\n    \"quotes\": [\n      {\n        \"quote\": \"Keep the bound, filter the error, double the delay\",\n        \"verdict\": \"pass\",\n        \"rationale\": \"Names the three after() differences versus before() without claiming exactly-once delivery or wall-clock waits.\"\n      },\n      {\n        \"quote\": \"Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries.\",\n        \"verdict\": \"pass\",\n        \"rationale\": \"Matches the loop and the retries=2 → 3 calls / retries=0 → 1 call probe results.\"\n      },\n      {\n        \"quote\": \"The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before.\",\n        \"verdict\": \"pass\",\n        \"rationale\": \"Scoped to the modeled exhaustion probe rather than a universal production guarantee.\"\n      },\n      {\n        \"quote\": \"These are requested delays: the probe resolves sleep immediately.\",\n        \"verdict\": \"pass\",\n        \"rationale\": \"Keeps requested milliseconds distinct from measured duration, matching the sleep contract and probe assumptions.\"\n      },\n      {\n        \"quote\": \"A rejected sleep propagates and prevents another send.\",\n        \"verdict\": \"pass\",\n        \"rationale\": \"Matches the sleep-rejection contract and after.sleepFailure (1 call, error sleep-failed).\"\n      }\n    ],\n    \"note\": \"Stated mechanism claims are accurate and qualified. The missing idempotency limit is listed separately; it is an omission, not a false sentence in this excerpt. No title or summary here asserts exactly-once delivery.\"\n  },\n  \"unresolved_uncertainty\": [\n    {\n      \"item\": \"Whether source.json contracts[3] (separate calls share no retry counter; no lock or cross-call delivery exclusion) is a material omission in this excerpt.\",\n      \"why_unresolved\": \"probe-results.json after.concurrentCalls shows two independent deliveries (effects 1+1). The excerpt never mentions shared counters or exclusion. That is a real contract, but this saved section only explains one call’s loop, catch filter, and delay formula. It does not claim global budgeting or mutual exclusion. Not listed as a material limitation; not treated as a prose failure.\"\n    },\n    {\n      \"item\": \"Whether omitting the author’s 'exactly once' line from source.json body should itself fail reader-facing prose.\",\n      \"why_unresolved\": \"The excerpt does not repeat that claim. The material gap is the missing no-idempotency contract, already listed. Prose is rated pass for the sentences that appear. If a fuller walkthrough were required to rebut the source body, that requirement is not evidenced in the saved excerpt alone.\"\n    }\n  ]\n}\n"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Created file successfully: grade.json"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "text",
+    "text": "`grade.json` is saved. Every listed field has a pointer, quote, status, and source/probe rationale.\n\nNo stated sentence is contradicted. The eyebrow is nonfactual. Title and content claims match `after()`, the contracts, and the modeled probe.\n\nMaterial gap (separate from those sentences): the excerpt never says a reject can follow a committed effect, or that retries are not idempotent. `after.duplicate.effects` is 2.\n\nNo attribution errors, reviewer-language leakage, or code/diagram defects. Reader-facing prose: **pass**. Remaining uncertainty is whether the no-shared-counter contract belongs in this loop excerpt, and whether silence on the source body’s “exactly once” line should fail the prose."
+  }
+]

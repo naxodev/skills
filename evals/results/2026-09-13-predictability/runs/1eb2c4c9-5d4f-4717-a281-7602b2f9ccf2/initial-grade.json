@@ -1,0 +1,62 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Heading only. It states no checkable fact about the contracts, before/after functions, or probe traces."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "A retry can duplicate a remote effect",
+      "status": "supported",
+      "rationale": "source.json contract: 'A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.' probe.mjs duplicate scenario is one invocation with outcomes [{ effect: true, error: transient }, { effect: true }] and retries=2. probe-results.json records before.duplicate.effects=2 and after.duplicate.effects=2, each with calls=2. The title uses 'can', which matches that modeled case. It does not claim every retry duplicates."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.",
+      "status": "supported",
+      "rationale": "Sentence 1 attribution: source.json body says the author 'makes delivery exactly once.' Sentence 1 contract: source.json says 'A send rejection may happen after the remote side effect commits.' Sentence 2: probe.mjs labels the duplicate run as lost acknowledgment; probe-results.json records effects=2 for before.duplicate and after.duplicate. Sentence 3: source.json says 'Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.' probe.mjs concurrentCalls runs two separate scenario() calls; probe-results.json shows two effects with no shared state. Adjacent true sentences do not create a false claim. The example sentence reports the modeled trace; it does not treat that trace as a universal guarantee."
+    }
+  ],
+  "missing_material_limitations": [],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/0/content",
+      "quote": "the supplied contract",
+      "rationale": "'Supplied' is evaluation-harness wording, not a name for the send API. Natural attribution would cite the author or the send rejection rule without that harness adjective."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The modeled lost-acknowledgment example",
+      "rationale": "'Modeled' is probe-harness wording. The probe comment uses 'lost acknowledgment'; the extra 'modeled' echoes the review protocol rather than reader-facing description of that example."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "quote": "A retry can duplicate a remote effect",
+        "rating": "pass",
+        "rationale": "Existential 'can' fits the duplicate traces. It does not turn one passing example into a universal guarantee."
+      },
+      {
+        "quote": "The modeled lost-acknowledgment example records two effects.",
+        "rating": "pass",
+        "rationale": "Scoped to the example. Matches before.duplicate.effects=2 and after.duplicate.effects=2."
+      },
+      {
+        "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits.",
+        "rating": "pass",
+        "rationale": "Contrasts the author's exactly-once claim with the reject-after-commit contract. A later qualification is not needed to keep the title true; the title is already hedged."
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Whether 'The boundary' was meant to name the exactly-once versus duplicate-effect limit. Graded as a nonfactual heading because the phrase alone is not a checkable claim.",
+    "Whether 'supplied contract' and 'modeled lost-acknowledgment example' are reviewer-language leakage or ordinary critique diction. Listed as leakage because those adjectives match the evaluation harness, not the Cedar Relay send API.",
+    "Whether the separate-invocations sentence, placed after the lost-acknowledgment two-effects sentence, could be read as the cause of those two effects. The lost-acknowledgment run is one invocation (calls=2, effects=2). concurrentCalls is a different path (two invocations, one effect each). The sentence is still factually supported by the contract. This is a possible reading issue, not a recorded contradiction."
+  ]
+}

@@ -60,5 +60,7 @@ When sharing a result, include the case, model, revision, attempts, criterion ou
 - [Final narrative auditing](results/2026-09-08-final-narrative-audit/README.md): a paired recovery study compared audit models using identical drafts and mechanical edits, with a reusable local command.
 - [Final audit-stage isolation](results/2026-09-09-audit-stage/README.md): prepared a same-model paired study with three new executable fixtures and correct/corrupted controls. External grader authentication blocked all narrative sessions.
 - [Completed same-model audit study](results/2026-09-12-audit-stage/README.md): after Grok screening and parent control adjudication, nine paired drafts and six control audits completed. Three seeded titles were repaired, one correct control received needless edits, and main source/prose judgments remain qualified.
+- [Bounded walkthrough predictability comparison](results/2026-09-13-predictability/README.md): 24 grader sessions supported an evaluation-only rubric; 12 revision sessions did not support the proposed skill rule. Both editing arms repaired three false titles and preserved two of three correct controls.
 
 Use the [three-stage protocol guide](protocols/README.md) to reproduce that experimental workflow.
+When grading walkthrough prose against source evidence, use the [context-sensitive evidence rubric](results/2026-09-13-predictability/GRADER-CANDIDATE.md). Its [calibration result](results/2026-09-13-predictability/README.md) records remaining false positives; source adjudication determines correctness.

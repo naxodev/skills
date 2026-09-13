@@ -1,0 +1,57 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Section label, not a truth-apt claim. Source contracts, functions.mjs, and probe-results.json do not define or test a 'boundary' predicate, so the phrase cannot be supported or contradicted."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "A retry can duplicate a remote effect",
+      "status": "supported",
+      "rationale": "Source contract: 'A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.' Probe duplicate scenario is a committed effect then a retryable rejection, then a second committed effect (retries=2). probe-results.json records before.duplicate.effects=2 and after.duplicate.effects=2. The 'can' hedge matches that single modeled path; it does not claim every retry duplicates."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.",
+      "status": "supported",
+      "rationale": "Sentence 1: source.body says the author 'makes delivery exactly once'; contracts state 'A send rejection may happen after the remote side effect commits' and 'There is no deduplication or idempotency contract.' Sentence 2: probe.mjs duplicate case and assert text 'a lost acknowledgment permits duplicate side effects'; both before.duplicate and after.duplicate have effects=2. Sentence 3: contract 'Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.'; concurrentCalls is two separate scenario() invocations each with one effect, and the probe asserts the summed effects equal 2. All three sentences are evidenced. The field does not treat the modeled example as a universal guarantee."
+    }
+  ],
+  "missing_material_limitations": [],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/0/content",
+      "quote": "the supplied contract",
+      "rationale": "'Supplied' names the evaluation packet, not a reader-facing description of Cedar Relay. The rest of the paragraph states contract and probe facts without that packet framing."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "quote": "A retry can duplicate a remote effect",
+        "rationale": "Possibility hedge, not a universal guarantee. Matches the lost-acknowledgment traces for both before and after."
+      },
+      {
+        "quote": "the supplied contract permits a send to reject after its effect commits",
+        "rationale": "Restates the source contract. Does not claim the after function added that permission."
+      },
+      {
+        "quote": "The modeled lost-acknowledgment example records two effects.",
+        "rationale": "Scoped to the modeled example. Does not promote before.duplicate/after.duplicate effects=2 into an always-on production result."
+      },
+      {
+        "quote": "Separate invocations share no retry budget or exclusion mechanism.",
+        "rationale": "Matches the separate-calls contract. concurrentCalls shows two independent deliveries, not a shared lock."
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Whether 'the supplied contract' should fail reader-facing prose rather than sit only under reviewer-language leakage. Rated pass because the factual claims stay correctly scoped.",
+    "Whether after's !error.retryable short-circuit is a material omitted limitation of the duplication title. The modeled duplicate path uses a retryable transient error, and the title says 'can', so it was not recorded as missing."
+  ]
+}

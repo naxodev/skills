@@ -1,0 +1,77 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "This is a section label, not a checkable claim. source.json never names a boundary. functions.mjs and probe-results.json do not define or measure one. No adjacent sentence in the excerpt gives the label a factual referent."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "A retry can duplicate a remote effect",
+      "status": "supported",
+      "rationale": "source.json contracts[1] says a send rejection may happen after the remote side effect commits, and that there is no deduplication or idempotency contract. probe.mjs duplicate runs [{ effect: true, error: transient }, { effect: true }] with retries=2. probe-results.json reports before.duplicate.effects=2 and after.duplicate.effects=2. The assertion text is 'a lost acknowledgment permits duplicate side effects'. The word 'can' matches that modeled possibility. It does not claim every retry duplicates, and this title is not saved by later qualifications because it is already true on its own."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.",
+      "status": "supported",
+      "rationale": "Clause 1 matches source.json body: 'The author says this avoids retrying permanent failures and makes delivery exactly once.' Clause 2 matches contracts[1]: 'A send rejection may happen after the remote side effect commits.' Clause 3 matches the probe duplicate traces (effects=2 for before and after) and the probe comment calling that case a lost acknowledgment. Clause 4 matches contracts[3]: 'Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.' probe-results.json concurrentCalls is two successful one-call traces whose effects sum to 2, which is consistent with that contract sentence. Each clause is independently evidenced. None is contradicted."
+    }
+  ],
+  "missing_material_limitations": [],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/0/content",
+      "quote": "the supplied contract",
+      "rationale": "Natural attribution would name the send/retry contract as an API fact. 'Supplied' is evaluation-harness phrasing. It is not an attribution error: the contrast with 'the author' still points at source.json body versus contracts."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The modeled lost-acknowledgment example records two effects",
+      "rationale": "'Modeled' and 'records two effects' track probe.mjs / probe-results.json (assumptions plus the effects counter), not Cedar Relay reader language. The lost-acknowledgment label itself is in the probe assertion, so the example reference is factually grounded. The leakage is the review-instrument diction, not a false attribution of authorship."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "quote": "A retry can duplicate a remote effect",
+        "rationale": "Pass. The modal matches contracts[1] and the duplicate traces. It does not treat one passing example as a universal guarantee."
+      },
+      {
+        "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits.",
+        "rationale": "Pass as a factual contrast. source.json body attributes exactly-once to the author. contracts[1] permits reject-after-commit. Adjacent 'can' and the modeled-example sentence keep the rebuttal scoped. Reviewer diction in 'supplied' is leakage, not a false reader claim."
+      },
+      {
+        "quote": "The modeled lost-acknowledgment example records two effects.",
+        "rationale": "Pass. The sentence reports the probe example rather than a production or universal result. probe-results.json duplicate.effects is 2 for both functions."
+      },
+      {
+        "quote": "Separate invocations share no retry budget or exclusion mechanism.",
+        "rationale": "Pass as a contract restatement (contracts[3]). It does not say that those concurrent deliveries are caused by retry. The concurrentCalls probe uses a single successful send per invocation, which still matches the no-exclusion claim."
+      }
+    ]
+  },
+  "optional_wording": [
+    {
+      "pointer": "/sections/0/content",
+      "quote": "share no retry budget",
+      "note": "contracts[3] says 'retry counter'. The meaning matches. This is wording, not a factual defect."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The author describes exactly-once delivery",
+      "note": "The source body also says the author claims the change avoids retrying permanent failures. Omitting that other claim does not alter the exactly-once causal story in this excerpt, and it does not deny the after() filter. probe-results.json after.permanent.calls=1 versus before.permanent.calls=2."
+    }
+  ],
+  "unresolved_uncertainty": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The boundary",
+      "note": "No supplied input states what pedagogical object 'the boundary' names. Status remains nonfactual rather than unsupported, because the string is a label. There is no further evidence in the supplied files to promote or demote it."
+    }
+  ]
+}

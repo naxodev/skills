@@ -1,0 +1,114 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The changed mechanism",
+      "status": "nonfactual",
+      "rationale": "Section label only. It names the excerpt. It does not assert a checkable property of the contracts, before/after functions, or probe results."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Wait for the commit, then publish",
+      "status": "supported",
+      "rationale": "after() awaits db.transaction(...) and only then awaits publish(id). The transaction contract says the call fulfills with undefined after commit. Probe after.none.events is [begin, write, commit, publish]."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The changed function first awaits the transaction:",
+      "status": "supported",
+      "rationale": "after() begins with await db.transaction(async (tx) => { await tx.markPaid(id); }). Source after and functions.mjs match that order."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "That await completes after commit, not merely after markPaid.",
+      "status": "supported",
+      "rationale": "Contract: transaction commits staged writes only after callback fulfillment and fulfills with undefined after commit. The awaited call is db.transaction(...), not markPaid alone. after.none.events places commit before publish."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "A write or commit rejection exits the function before publication.",
+      "status": "supported",
+      "rationale": "If the transaction await rejects, after() never reaches await publish(id). after.write.events is [begin, rollback] with notifications 0. after.commit.events is [begin, write, rollback] with notifications 0. Both record errors and no publish event."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "In the supplied in-memory results, a failed commit now leaves zero notifications.",
+      "status": "supported",
+      "rationale": "Scoped to the in-memory probe. after.commit.notifications is 0. before.commit.notifications is 1. Probe assumptions state an in-memory staged transaction and external notification counter."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Publication follows outside the callback:",
+      "status": "supported",
+      "rationale": "In after(), await publish(id) is after the transaction callback that only calls markPaid. Contract: publish is an external operation outside the database transaction. CODE:1 matches functions.mjs."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "A publication rejection still rejects the function, but cannot undo the committed payment.",
+      "status": "supported",
+      "rationale": "after() awaits publish after the transaction await has fulfilled. after.publish-before and after.publish-after both have paid true and a non-empty errors array. before.publish-before has paid false, so the contrast is the moved await."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The probes show both possibilities: rejection before delivery leaves zero notifications; rejection after delivery leaves one.",
+      "status": "supported",
+      "rationale": "Modeled publish() throws before or after incrementing notifications. after.publish-before.notifications is 0. after.publish-after.notifications is 1. Contract: publish rejection may happen before or after an externally visible notification."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The author describes payment and notification as atomic, but this code establishes ordering, not an all-or-nothing result.",
+      "status": "supported",
+      "rationale": "source.body: the author says moving publish makes payment and notification atomic. after() orders commit then publish. Probes are not all-or-nothing: after.publish-before is paid with zero notifications; after.publish-after is paid with one notification and still rejects."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "A process can stop between awaited operations. No durable outbox, background retry, or cross-call lock is supplied.",
+      "why_material": "after() has two sequential awaits. A stop after the transaction fulfills and before publish returns leaves a committed payment with no notification. The excerpt covers publication rejection as a remaining hole. It does not name process stop, outbox, retry, or lock. Probe assumptions say there is no process-kill simulation.",
+      "source": "contracts[3]; probe-results.json assumptions"
+    },
+    {
+      "limitation": "markPaid is idempotent for a given id. Neither transaction nor publish supplies a delivery deduplication guarantee.",
+      "why_material": "after.concurrent.notifications is 2. The probe asserts that idempotent payment writes do not deduplicate external publication. The excerpt never mentions duplicate notifications under concurrent calls.",
+      "source": "contracts[2]; probe.mjs concurrent assertion; after.concurrent"
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [],
+  "code_diagram_errors": [],
+  "prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "quote": "That await completes after commit, not merely after markPaid.",
+        "judgment": "pass",
+        "note": "Matches the transaction contract and after.none event order."
+      },
+      {
+        "quote": "In the supplied in-memory results, a failed commit now leaves zero notifications.",
+        "judgment": "pass",
+        "note": "Does not treat the probe example as a universal guarantee. Matches after.commit.notifications === 0."
+      },
+      {
+        "quote": "A publication rejection still rejects the function, but cannot undo the committed payment.",
+        "judgment": "pass",
+        "note": "Matches after.publish-before and after.publish-after (paid true, function error recorded)."
+      },
+      {
+        "quote": "The probes show both possibilities: rejection before delivery leaves zero notifications; rejection after delivery leaves one.",
+        "judgment": "pass",
+        "note": "Matches the two modeled publish faults. Does not claim a stronger delivery guarantee than the contract."
+      },
+      {
+        "quote": "The author describes payment and notification as atomic, but this code establishes ordering, not an all-or-nothing result.",
+        "judgment": "pass",
+        "note": "Correctly attributes the atomicity claim to the author in source.body and contradicts it with the after() probes."
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Process stop between commit and publish is in the contracts, not in probe.results. The excerpt's silence on crash, outbox, retry, and lock is a missing limitation, not a probe contradiction.",
+    "This manifest is an excerpt. Later omitted sections could cover crash and duplicate-publish limits. Those limits are still absent from the supplied reader-facing fields.",
+    "No diagram is present. Code snippets were checked only against functions.mjs after() and the listed CODE:0/CODE:1 excerpts."
+  ]
+}

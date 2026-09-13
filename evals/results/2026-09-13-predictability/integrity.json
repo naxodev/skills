@@ -1,0 +1,1622 @@
+{
+  "records": [
+    {
+      "id": "f2088d51-68fd-40a7-91b4-0e028c19bc46",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "1eb2c4c9-5d4f-4717-a281-7602b2f9ccf2",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "glob"
+        },
+        {
+          "name": "grep"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "c3b01712-7e9c-463c-b43a-bb81a36b45c8",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "0403421e-b9a7-47d5-a8b1-6d37acd9077b",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "50d36add-4ea2-40c2-bdcb-b82a917c1284",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "a39dffd5-ad68-4df0-8b71-5f1886460d14",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "f31b7020-6c1e-4709-8f61-b52705da0981",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "."
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "283471ed-3c94-4124-8297-f9cbebb7a9d0",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "glob"
+        },
+        {
+          "name": "grep"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "b36a1f24-a972-4ba8-8cc6-6ffd9e1197e4",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "cfbb52f3-03ed-499b-aacc-381c1e8459fb",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "."
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "4753104f-03a6-490a-8063-4c0d05b98bab",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "f58b1d71-eab4-4252-a39a-a0cef8a37832",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "."
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "5a364b38-bfe2-40cb-89de-9337b3f093c3",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "6828fe1a-76f8-4825-a4b4-eba3df97070e",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "06ca3f7e-9ad6-4711-8e07-58bff1b822b0",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "glob"
+        },
+        {
+          "name": "grep",
+          "path": "."
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "de8ee428-442e-4bbf-b67d-a15d6170770d",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "f24bdaac-cf9d-4d64-bbf9-e614cd2f1256",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "grep",
+          "path": "."
+        },
+        {
+          "name": "glob"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "1e964648-d8c9-4886-b4ce-21be97894ae4",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "."
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "edc689425a10d318385ccff566135491dad955a05d075db534df6086bc45c084"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "6a353b32-e7c5-4311-8f11-ecba5b2eb58f",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "."
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "ba5ad905-7937-4b07-9deb-da2aebb98ecb",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "6d507c523a4be73168e2e3bcb1ba575c469d01019a36c2439c05dcca8605b42c"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "eb721ef7-fc86-42b8-9a16-deb54253d435",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "."
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "968c0b6c-482e-473b-9dc2-a50adbb11f36",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "."
+        },
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "2d61fc8d-d541-4a8f-a07d-3c2cee1dc933",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "."
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "3046b0d6-f34f-4c88-825d-0601707a8376",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "glob"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/functions.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "write",
+          "path": "/grade.json"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "673a73b4-7e34-486d-afd2-bfe35937292b",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "2624063d758c495517ace3a92e44390314139e463b5a10de7c21e735aea90ae5"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "5207928d-b4ec-4151-b3fd-b1ff361c8aa7",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "00bc6972fd01d27892cb86a6527d63a0e2bd287d97e3fab914a51bd45077e835"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "daeb0e3c-c810-4a3f-ad61-7a7de1fdb509",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "7bf277f5022d8de9358b2533253082b7614ad18127eb646f6a523dbe2ae52270"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "9c06200a-a1f8-42f7-9c74-4e8112b98a31",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "786d6b96dcea84621f401688e6c232183039bf04b6ebc4e931252301b5c42caf"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "de0f9a1d-138f-45b4-bb85-8f0980b20c01",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "0d5a64a905138fa8c862bd84d9fca07b1fa94f0f0359aaafdaaef6f0e2edeae0"
+        },
+        {
+          "name": "patch"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "2a6791d1-ca0e-49d9-bca4-da5421842200",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "b1a5f7d9c3f3c43d487c448f23f350a23f88c92f7dabfc54ae56108b64fc8552"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "a153fda4-a9f7-4d27-8f6b-f0a2846a0f7c",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "083fb2fd0b2faf8379562f22fbdcee2296f414e4346f8fb8abe5abe81199ee6a"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "7321de3b-a262-46af-b6d0-dab8c530e7b2",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "e582c11d00b4aa139350ebb312c5d515514883c04449e7baef119238b6dda861"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "008f72be-e1ec-439d-beda-e9098e0c0a1f",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "6f777e9664df4c22f6be76bc5280ea22aa923719eef83c3354f80449566cddb8"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "b96968d661ac344fda7ad843bce837eac8b88f374348176781db0baad589f10f"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "882f7526-52a4-4b78-9961-6e6ca7f55165",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "3ce6f4917cc64194b7602a141c386bccadefb616c642c6e992e0ce102e2551e1"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "eba3f6a8-aec4-40a0-94ee-3b7b25f5d59f",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "8c2da2b1d456260f40b75c0bc8b57f9ef7d42baa6d08669a40faa8cf41363804"
+        }
+      ],
+      "cloneRemoved": true
+    },
+    {
+      "id": "0fda016d-3d36-4433-a08c-cc308511820e",
+      "identityVerified": true,
+      "inputsVerified": true,
+      "visiblePartsOnly": true,
+      "tools": [
+        {
+          "name": "read",
+          "path": "/fields.json"
+        },
+        {
+          "name": "read",
+          "path": "/source.json"
+        },
+        {
+          "name": "read",
+          "path": "/verification.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe-results.json"
+        },
+        {
+          "name": "read",
+          "path": "/probe.mjs"
+        },
+        {
+          "name": "read",
+          "path": "/manifest.json"
+        },
+        {
+          "name": "patch"
+        },
+        {
+          "name": "shell",
+          "commandSha256": "5df9e2e4381bce3a5c9dbefadca4582ec00b6662e26b7d4f4aa905418a2c258a"
+        }
+      ],
+      "cloneRemoved": true
+    }
+  ],
+  "controls": [
+    {
+      "fixture": "retry",
+      "correctSha256": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134",
+      "flawedSha256": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d",
+      "changedPointers": [
+        "/title"
+      ]
+    },
+    {
+      "fixture": "transaction",
+      "correctSha256": "ce14afd0b32374ef6fe7daec5a2709101d23c30499b79085b3ccc97db2243054",
+      "flawedSha256": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb",
+      "changedPointers": [
+        "/title"
+      ]
+    },
+    {
+      "fixture": "cache",
+      "correctSha256": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef",
+      "flawedSha256": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec",
+      "changedPointers": [
+        "/title"
+      ]
+    }
+  ],
+  "originalAuditProtocolUnchanged": true,
+  "shellReview": "All observed shell commands are local hash, JSON, evidence, and pointer checks; no external reads, delegation, or semantic retries."
+}

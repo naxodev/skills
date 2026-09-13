@@ -1,0 +1,187 @@
+[
+  {
+    "type": "text",
+    "text": "I'll read the supplied inputs first and review only those files."
+  },
+  {
+    "type": "tool",
+    "name": "glob",
+    "state": {
+      "status": "completed",
+      "input": {
+        "pattern": "*"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/verification.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/manifest.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/functions.mjs\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/fields.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/probe-results.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/source.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/probe.mjs"
+        }
+      ],
+      "metadata": {
+        "count": 7,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/manifest.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/manifest.json, lines 1-9\n1: {\n2:   \"sections\": [\n3:     {\n4:       \"eyebrow\": \"The boundary\",\n5:       \"title\": \"A retry can duplicate a remote effect\",\n6:       \"content\": \"<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>\"\n7:     }\n8:   ]\n9: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/fields.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/fields.json, lines 1-14\n1: [\n2:   {\n3:     \"pointer\": \"/sections/0/eyebrow\",\n4:     \"value\": \"The boundary\"\n5:   },\n6:   {\n7:     \"pointer\": \"/sections/0/title\",\n8:     \"value\": \"A retry can duplicate a remote effect\"\n9:   },\n10:   {\n11:     \"pointer\": \"/sections/0/content\",\n12:     \"value\": \"<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>\"\n13:   }\n14: ]"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/source.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/source.json, lines 1-13\n1: {\n2:   \"title\": \"Cedar Relay: filter retries and increase delays\",\n3:   \"body\": \"The author says this avoids retrying permanent failures and makes delivery exactly once.\",\n4:   \"contracts\": [\n5:     \"retries is a nonnegative integer. send returns a promise and rejects with an object containing a boolean retryable property.\",\n6:     \"A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.\",\n7:     \"sleep returns a promise; rejection propagates. Delays are requested milliseconds, not measured wall-clock durations.\",\n8:     \"Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.\"\n9:   ],\n10:   \"before\": \"export async function before(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    } catch (error) {\\n      if (attempt === retries) throw error;\\n      await sleep(10);\\n    }\\n  }\\n}\",\n11:   \"after\": \"export async function after(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    } catch (error) {\\n      if (!error.retryable || attempt === retries) throw error;\\n      await sleep(10 * 2 ** attempt);\\n    }\\n  }\\n}\",\n12:   \"unchanged\": \"none\"\n13: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/functions.mjs"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/functions.mjs, lines 1-21\n1: export async function before(send, sleep, retries) {\n2:   for (let attempt = 0; attempt <= retries; attempt++) {\n3:     try {\n4:       return await send();\n5:     } catch (error) {\n6:       if (attempt === retries) throw error;\n7:       await sleep(10);\n8:     }\n9:   }\n10: }\n11: \n12: export async function after(send, sleep, retries) {\n13:   for (let attempt = 0; attempt <= retries; attempt++) {\n14:     try {\n15:       return await send();\n16:     } catch (error) {\n17:       if (!error.retryable || attempt === retries) throw error;\n18:       await sleep(10 * 2 ** attempt);\n19:     }\n20:   }\n21: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/probe.mjs"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/probe.mjs, lines 1-50\n1: import assert from 'node:assert/strict';\n2: import { before, after } from './functions.mjs';\n3: \n4: async function scenario(fn, outcomes, retries, sleepRejects = false) {\n5:   const trace = { calls: 0, effects: 0, delays: [], result: null, error: null };\n6:   try {\n7:     trace.result = await fn(async () => {\n8:       const outcome = outcomes[trace.calls++];\n9:       assert.ok(outcome, 'the supplied retry budget must bound send calls');\n10:       if (outcome.effect) trace.effects++;\n11:       if (outcome.error) throw outcome.error;\n12:       return 'delivered';\n13:     }, async (delay) => {\n14:       trace.delays.push(delay);\n15:       if (sleepRejects) throw { label: 'sleep-failed' };\n16:     }, retries);\n17:   } catch (error) {\n18:     trace.error = error.label;\n19:   }\n20:   return trace;\n21: }\n22: const transient = { label: 'transient', retryable: true };\n23: const permanent = { label: 'permanent', retryable: false };\n24: const results = {};\n25: for (const [name, fn] of Object.entries({ before, after })) {\n26:   results[name] = {\n27:     permanent: await scenario(fn, [{ error: permanent }, {}], 2),\n28:     exhausted: await scenario(fn, Array(3).fill({ error: transient }), 2),\n29:     zeroBudget: await scenario(fn, [{ error: transient }], 0),\n30:     duplicate: await scenario(fn, [{ effect: true, error: transient }, { effect: true }], 2),\n31:     sleepFailure: await scenario(fn, [{ error: transient }], 2, true),\n32:     concurrentCalls: await Promise.all([1, 2].map(() => scenario(fn, [{ effect: true }], 2))),\n33:   };\n34: }\n35: assert.equal(results.before.permanent.calls, 2);\n36: assert.equal(results.after.permanent.calls, 1);\n37: assert.equal(results.after.permanent.error, 'permanent');\n38: assert.deepEqual(results.before.exhausted.delays, [10, 10]);\n39: assert.deepEqual(results.after.exhausted.delays, [10, 20]);\n40: for (const result of Object.values(results)) {\n41:   assert.equal(result.exhausted.calls, 3, 'retries counts extra attempts, not all attempts');\n42:   assert.equal(result.exhausted.error, 'transient');\n43:   assert.equal(result.zeroBudget.calls, 1);\n44:   assert.deepEqual(result.zeroBudget.delays, []);\n45:   assert.equal(result.duplicate.effects, 2, 'a lost acknowledgment permits duplicate side effects');\n46:   assert.equal(result.sleepFailure.calls, 1, 'a rejected sleep prevents another send');\n47:   assert.equal(result.sleepFailure.error, 'sleep-failed');\n48:   assert.equal(result.concurrentCalls.reduce((sum, item) => sum + item.effects, 0), 2);\n49: }\n50: console.log(JSON.stringify({ assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.', results }, null, 2));"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/probe-results.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/probe-results.json, lines 1-127\n1: {\n2:   \"assumptions\": \"Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.\",\n3:   \"results\": {\n4:     \"before\": {\n5:       \"permanent\": {\n6:         \"calls\": 2,\n7:         \"effects\": 0,\n8:         \"delays\": [\n9:           10\n10:         ],\n11:         \"result\": \"delivered\",\n12:         \"error\": null\n13:       },\n14:       \"exhausted\": {\n15:         \"calls\": 3,\n16:         \"effects\": 0,\n17:         \"delays\": [\n18:           10,\n19:           10\n20:         ],\n21:         \"result\": null,\n22:         \"error\": \"transient\"\n23:       },\n24:       \"zeroBudget\": {\n25:         \"calls\": 1,\n26:         \"effects\": 0,\n27:         \"delays\": [],\n28:         \"result\": null,\n29:         \"error\": \"transient\"\n30:       },\n31:       \"duplicate\": {\n32:         \"calls\": 2,\n33:         \"effects\": 2,\n34:         \"delays\": [\n35:           10\n36:         ],\n37:         \"result\": \"delivered\",\n38:         \"error\": null\n39:       },\n40:       \"sleepFailure\": {\n41:         \"calls\": 1,\n42:         \"effects\": 0,\n43:         \"delays\": [\n44:           10\n45:         ],\n46:         \"result\": null,\n47:         \"error\": \"sleep-failed\"\n48:       },\n49:       \"concurrentCalls\": [\n50:         {\n51:           \"calls\": 1,\n52:           \"effects\": 1,\n53:           \"delays\": [],\n54:           \"result\": \"delivered\",\n55:           \"error\": null\n56:         },\n57:         {\n58:           \"calls\": 1,\n59:           \"effects\": 1,\n60:           \"delays\": [],\n61:           \"result\": \"delivered\",\n62:           \"error\": null\n63:         }\n64:       ]\n65:     },\n66:     \"after\": {\n67:       \"permanent\": {\n68:         \"calls\": 1,\n69:         \"effects\": 0,\n70:         \"delays\": [],\n71:         \"result\": null,\n72:         \"error\": \"permanent\"\n73:       },\n74:       \"exhausted\": {\n75:         \"calls\": 3,\n76:         \"effects\": 0,\n77:         \"delays\": [\n78:           10,\n79:           20\n80:         ],\n81:         \"result\": null,\n82:         \"error\": \"transient\"\n83:       },\n84:       \"zeroBudget\": {\n85:         \"calls\": 1,\n86:         \"effects\": 0,\n87:         \"delays\": [],\n88:         \"result\": null,\n89:         \"error\": \"transient\"\n90:       },\n91:       \"duplicate\": {\n92:         \"calls\": 2,\n93:         \"effects\": 2,\n94:         \"delays\": [\n95:           10\n96:         ],\n97:         \"result\": \"delivered\",\n98:         \"error\": null\n99:       },\n100:       \"sleepFailure\": {\n101:         \"calls\": 1,\n102:         \"effects\": 0,\n103:         \"delays\": [\n104:           10\n105:         ],\n106:         \"result\": null,\n107:         \"error\": \"sleep-failed\"\n108:       },\n109:       \"concurrentCalls\": [\n110:         {\n111:           \"calls\": 1,\n112:           \"effects\": 1,\n113:           \"delays\": [],\n114:           \"result\": \"delivered\",\n115:           \"error\": null\n116:         },\n117:         {\n118:           \"calls\": 1,\n119:           \"effects\": 1,\n120:           \"delays\": [],\n121:           \"result\": \"delivered\",\n122:           \"error\": null\n123:         }\n124:       ]\n125:     }\n126:   }\n127: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/verification.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/verification.json, lines 1-4\n1: {\n2:   \"status\": \"none\",\n3:   \"findings\": []\n4: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "text",
+    "text": "I have the packet. Next I’ll grade each listed field against the contracts, functions, and probe results, then write `grade.json`."
+  },
+  {
+    "type": "tool",
+    "name": "write",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-f2088d51-68fd-40a7-91b4-0e028c19bc46/grade.json",
+        "content": "{\n  \"fields\": [\n    {\n      \"pointer\": \"/sections/0/eyebrow\",\n      \"quote\": \"The boundary\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Organizational heading, not a testable proposition. Surrounding title and content concern retry duplication versus exactly-once delivery, but the eyebrow itself asserts nothing that source.contracts or probe-results.json can support or contradict.\"\n    },\n    {\n      \"pointer\": \"/sections/0/title\",\n      \"quote\": \"A retry can duplicate a remote effect\",\n      \"status\": \"supported\",\n      \"rationale\": \"Existential claim, not a universal guarantee. source.contracts[1] states a send rejection may happen after the remote side effect commits and supplies no deduplication or idempotency contract. probe.mjs duplicate uses [{ effect: true, error: transient }, { effect: true }] with retries=2. probe-results.json records before.duplicate.effects=2 and after.duplicate.effects=2. after still retries retryable errors, so a lost-ack retry can commit a second effect.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Three claims, each grounded. (1) source.body: 'The author says this avoids retrying permanent failures and makes delivery exactly once.' (2) source.contracts[1]: 'A send rejection may happen after the remote side effect commits.' (3) probe-results.json duplicate.effects is 2 for before and after; probe.mjs names that case 'a lost acknowledgment permits duplicate side effects.' Final sentence matches source.contracts[3] ('Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.') and probe-results.json concurrentCalls, where two separate invocations each record effects=1 (sum 2). No clause is contradicted.\"\n    }\n  ],\n  \"missing_material_limitations\": [\n    {\n      \"limitation\": \"The after change does not prevent the two-effect lost-ack outcome.\",\n      \"evidence\": \"probe-results.json after.duplicate.effects is 2, same as before.duplicate.effects. after only adds error.retryable filtering and 10 * 2 ** attempt delays.\",\n      \"note\": \"The excerpt never names before versus after, so a reader is not told that filter-and-backoff leaves this duplication in place.\"\n    },\n    {\n      \"limitation\": \"Duplication in after depends on a retryable post-commit error and remaining attempts.\",\n      \"evidence\": \"after throws when !error.retryable || attempt === retries. The duplicate probe uses transient (retryable: true). after.permanent.calls is 1 for a non-retryable error.\",\n      \"note\": \"A non-retryable rejection after commit would not retry in after, so it would not duplicate that way. The excerpt does not state this condition.\"\n    },\n    {\n      \"limitation\": \"sleep rejection propagates and prevents another send.\",\n      \"evidence\": \"source.contracts[2]: 'sleep returns a promise; rejection propagates.' probe-results.json sleepFailure for before and after: calls=1, error='sleep-failed', delays=[10].\",\n      \"note\": \"Material to the retry path that produces duplication, but absent from the excerpt.\"\n    },\n    {\n      \"limitation\": \"Modeled traces are not production or timing evidence.\",\n      \"evidence\": \"probe-results.json assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.' source.contracts[2]: delays are requested milliseconds, not measured wall-clock durations.\",\n      \"note\": \"Content already says 'modeled.' It does not state the no-timing / no-production bound. Title uses 'can,' so this is a residual hedge gap, not an overclaim.\"\n    }\n  ],\n  \"attribution_errors\": [],\n  \"reviewer_language_leakage\": [\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"the supplied contract\",\n      \"note\": \"Harness/packet diction. A reader-facing walkthrough would describe send's contract, not a 'supplied' evaluation input.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The modeled lost-acknowledgment example records two effects\",\n      \"note\": \"Points at the probe scenario and the trace.effects counter. 'Modeled' is a correct hedge; 'records two effects' is probe-output language rather than an explanation of delivery.\"\n    }\n  ],\n  \"code_diagram_errors\": [],\n  \"reader_facing_prose\": {\n    \"rating\": \"pass\",\n    \"quotes\": [\n      {\n        \"pointer\": \"/sections/0/title\",\n        \"quote\": \"A retry can duplicate a remote effect\",\n        \"note\": \"Hedges with 'can.' Does not treat the duplicate probe as a universal guarantee.\"\n      },\n      {\n        \"pointer\": \"/sections/0/content\",\n        \"quote\": \"The modeled lost-acknowledgment example records two effects.\",\n        \"note\": \"Reports the modeled example rather than claiming all retries duplicate. Passing examples are not generalized.\"\n      },\n      {\n        \"pointer\": \"/sections/0/content\",\n        \"quote\": \"Separate invocations share no retry budget or exclusion mechanism.\",\n        \"note\": \"States a contract absence, not an overgeneralization from concurrentCalls. Clear and scoped.\"\n      }\n    ]\n  },\n  \"unresolved_uncertainty\": [\n    \"Whether sleep-rejection and the retryable-versus-permanent split are in scope for this excerpt. They are material to retry/delivery, but the saved section is only the duplicate-effect boundary.\",\n    \"No code or diagrams appear in the saved excerpt, so code/diagram accuracy of any unsaved walkthrough body cannot be judged from these inputs.\",\n    \"Eyebrow 'The boundary' has no propositional content; whether it was meant to name at-least-once versus exactly-once is not established by the supplied files.\"\n  ]\n}\n"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Created file successfully: grade.json"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "text",
+    "text": "Review saved in `grade.json`. No field is contradicted.\n\n**Fields**\n- `/sections/0/eyebrow` `\"The boundary\"` — **nonfactual** (heading, not a claim)\n- `/sections/0/title` `\"A retry can duplicate a remote effect\"` — **supported** (contract: reject after commit, no idempotency; duplicate probe: 2 effects in before and after)\n- `/sections/0/content` — **supported** (author exactly-once claim in `source.body`; reject-after-commit in `contracts[1]`; duplicate `effects=2`; separate calls in `contracts[3]` and `concurrentCalls`)\n\n**Other**\n- Attribution errors: none\n- Code/diagram errors: none (no code or diagrams in the excerpt)\n- Reviewer leakage: `\"the supplied contract\"`, `\"records two effects\"`\n- Missing limitations: after still duplicates; duplication needs a retryable error; sleep rejection aborts the next send\n- Reader-facing prose: **pass** — title uses `\"can\"`; the two-effect result is labeled modeled\n\nUnresolved: whether sleep-failure and the retryable split belong in this excerpt; eyebrow intent."
+  }
+]

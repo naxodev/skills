@@ -1,0 +1,144 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The changed mechanism",
+      "status": "nonfactual",
+      "rationale": "Section label only. It does not assert a checkable fact about source.contracts, source.before/after, functions.mjs, probe.mjs, or probe-results.json."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Keep the bound, filter the error, double the delay",
+      "status": "supported",
+      "rationale": "Three deltas match source.after and functions.mjs after versus before: the loop bound stays `for (let attempt = 0; attempt <= retries; attempt++)`; the catch now throws when `!error.retryable`; delay is `sleep(10 * 2 ** attempt)` instead of `sleep(10)`. Probe-results.json after.exhausted.delays is [10, 20] versus before [10, 10]."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "<p>The updated loop preserves the attempt budget and awaits each send:</p>{{CODE:0}}<p>Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries. Returning the awaited result stops the loop on success.</p><p>The catch block now decides whether another attempt is eligible before requesting a delay:</p>{{CODE:1}}<p>A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on. The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before. These are requested delays: the probe resolves sleep immediately. A rejected sleep propagates and prevents another send.</p>",
+      "status": "supported",
+      "rationale": "Every asserted sentence matches source.after, functions.mjs after, the supplied contracts, or the named probe results. No sentence in this field is contradicted. Atomic claim statuses are listed in claims[]. Missing contract limitations are not treated as contradictions of these sentences."
+    }
+  ],
+  "claims": [
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The updated loop preserves the attempt budget and awaits each send",
+      "status": "supported",
+      "rationale": "source.before and source.after use the same `attempt <= retries` bound. Both use `return await send()`. functions.mjs matches both."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries.",
+      "status": "supported",
+      "rationale": "Loop is `attempt = 0; attempt <= retries`. probe.mjs comment: 'retries counts extra attempts, not all attempts'. probe-results.json: exhausted with retries=2 has calls=3; zeroBudget with retries=0 has calls=1 and delays=[]."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Returning the awaited result stops the loop on success.",
+      "status": "supported",
+      "rationale": "`return await send()` exits the function on fulfillment. after.duplicate in probe-results.json: second outcome fulfills, result is \"delivered\", calls=2 not 3."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The catch block now decides whether another attempt is eligible before requesting a delay",
+      "status": "supported",
+      "rationale": "after catch: `if (!error.retryable || attempt === retries) throw error;` then `await sleep(...)`. before only tests `attempt === retries`. Permanent after path requests no delay (after.permanent.delays=[])."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "A permanent error or exhausted budget throws immediately.",
+      "status": "supported",
+      "rationale": "Same catch predicate throws before sleep. after.permanent: calls=1, delays=[], error=\"permanent\". after.exhausted: last failure throws with no third delay; delays=[10, 20], error=\"transient\"."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on.",
+      "status": "supported",
+      "rationale": "Code is `sleep(10 * 2 ** attempt)` for eligible attempts 0, 1, 2, … → 10, 20, 40. Contract: delays are requested milliseconds. The following sentence scopes the retries=2 probe to 10 and 20 only; 40 is the formula, not a probe reading."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before.",
+      "status": "supported",
+      "rationale": "probe-results.json after.exhausted: calls=3, delays=[10, 20]. before.exhausted: calls=3, delays=[10, 10]. Matches probe.mjs deepEqual assertions."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "These are requested delays: the probe resolves sleep immediately.",
+      "status": "supported",
+      "rationale": "Contract: 'Delays are requested milliseconds, not measured wall-clock durations.' probe.mjs sleep only pushes `delay` and returns; probe-results.json assumptions: 'immediate sleep promises; no timing or production measurement.'"
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "A rejected sleep propagates and prevents another send.",
+      "status": "supported",
+      "rationale": "Contract: 'sleep returns a promise; rejection propagates.' `await sleep(...)` is not in an inner try. probe.mjs sleepFailure throws `{ label: 'sleep-failed' }`. after.sleepFailure: calls=1, error=\"sleep-failed\"."
+    }
+  ],
+  "observed_contradictions": [],
+  "missing_material_limitations": [
+    {
+      "limitation": "Retrying a retryable rejection can duplicate a remote side effect. The after function does not provide exactly-once delivery.",
+      "why_material": "The excerpt's subject is the retry filter. source.body states the author 'makes delivery exactly once'. Contract and probe refute that. A reader of only this mechanism text is not told.",
+      "source": "source.contracts: 'A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.' source.body: 'makes delivery exactly once.'",
+      "probe": "probe.mjs duplicate scenario and assertion 'a lost acknowledgment permits duplicate side effects'. probe-results.json after.duplicate: effects=2, result=\"delivered\". Same for before.",
+      "excerpt_gap": "No sentence states duplicate effects, missing idempotency, or that exactly-once is not obtained. Closest nearby text: 'A permanent error or exhausted budget throws immediately.'"
+    },
+    {
+      "limitation": "Separate after() calls do not share a retry counter and have no lock or cross-call delivery exclusion.",
+      "why_material": "Supplied contract and concurrentCalls probe. Weaker than the duplicate-on-retry gap because this excerpt never claims single-flight or a shared budget.",
+      "source": "source.contracts: 'Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.'",
+      "probe": "probe-results.json after.concurrentCalls: two traces, each effects=1; assertion sums effects to 2.",
+      "excerpt_gap": "Content is silent on concurrent or repeated calls."
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before.",
+      "rationale": "Uses the probe.mjs scenario key `exhausted` and the verb 'records' from the modeled harness, not a product-facing description of a retries=2 all-fail run."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "These are requested delays: the probe resolves sleep immediately.",
+      "rationale": "Names 'the probe' and its immediate-resolve sleep stub. The delay-versus-wall-clock distinction is in the contract; the wording is harness language. The scoped claim itself is factually supported."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "fail",
+    "quotes": [
+      {
+        "rating": "pass",
+        "quote": "Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries.",
+        "rationale": "States the loop arithmetic. Matches code and exhausted/zeroBudget probe counts. Does not treat those counts as a universal production guarantee."
+      },
+      {
+        "rating": "pass",
+        "quote": "The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before.",
+        "rationale": "Scoped to the modeled exhaustion run. Matches probe-results.json. Does not present those two delays as the only possible schedule."
+      },
+      {
+        "rating": "pass",
+        "quote": "These are requested delays: the probe resolves sleep immediately.",
+        "rationale": "Correctly refuses wall-clock measurement. Aligns with the delay contract and probe assumptions."
+      },
+      {
+        "rating": "pass",
+        "quote": "A rejected sleep propagates and prevents another send.",
+        "rationale": "Supported by the sleep-rejection contract, the uncaught `await sleep(...)`, and sleepFailure calls=1. Not an overread of a passing example."
+      },
+      {
+        "rating": "fail",
+        "quote": "A permanent error or exhausted budget throws immediately. Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on.",
+        "rationale": "Accurate as a description of throw-versus-delay. As reader-facing retry policy it omits the material limit that a retryable path may still run after a committed effect (after.duplicate.effects=2; no idempotency contract). Passing exhaustion numbers do not license a completeness claim about delivery. source.body's exactly-once claim is left unchallenged."
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "The manifest is an excerpt, not a full walkthrough. Other unsaved sections might state the duplicate-effect and no-lock limitations. This review judges only the supplied fields and cannot confirm that omission is global.",
+    "No sentence in the supplied fields is contradicted. Failure of reader-facing prose is from a material omission plus harness wording, not from a false numeric or control-flow claim.",
+    "If 'exhaustion probe' is the walkthrough's intended name for the modeled experiment, those phrases are scoped evidence rather than leakage. They still match probe.mjs/probe-results.json."
+  ]
+}

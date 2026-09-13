@@ -1,0 +1,190 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Payment and notification now commit atomically",
+      "status": "contradicted",
+      "rationale": "The after function awaits db.transaction, then calls publish outside it. Contract: publish is an external operation outside the database transaction; its rejection may occur before or after a visible notification; a process can stop between awaited operations. Probe after.publish-before: paid true, notifications 0. Probe after.publish-after: paid true, notifications 1. Probe after.concurrent: notifications 2. Payment commit and notification are not one atomic commit. Source body reports the author claim that moving publish 'makes payment and notification atomic'; later sections of this same manifest rebut that claim."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Lantern Ledger",
+      "status": "nonfactual",
+      "rationale": "A proper name with no behavior claim. It matches the leading words of the source title 'Lantern Ledger: publish after the payment transaction', but it is not a statement the contracts or probes can confirm or deny."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "A failed commit now prevents publication, while publication failure leaves a committed payment intact.",
+      "status": "supported",
+      "rationale": "After control flow awaits the transaction before publish. Contract: callback or commit rejection rolls back staged writes; the transaction fulfills only after commit. Probe after.commit: paid false, notifications 0, events begin/write/rollback. Probe after.publish-before: paid true, notifications 0. Probe after.publish-after: paid true, notifications 1. Contrast probe before.commit: notifications 1 with rollback. These are modeled traces for this function, not a universal runtime guarantee."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Deterministic modeled examples",
+      "status": "supported",
+      "rationale": "probe.mjs runs fixed in-memory faults with no nondeterminism. probe-results.json assumptions: 'In-memory staged transaction and external notification counter; no actual database or process-kill simulation.'"
+    },
+    {
+      "pointer": "/footer",
+      "quote": "The supplied code has no durable outbox or delivery deduplication.",
+      "status": "supported",
+      "rationale": "Contract: 'No durable outbox, background retry, or cross-call lock is supplied.' Contract: 'Neither transaction nor publish supplies a delivery deduplication guarantee.' functions.mjs contains only markPaid inside a transaction and a later publish call."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Section kicker. No empirical claim about the functions, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Publication used to precede commit",
+      "status": "supported",
+      "rationale": "before() calls publish inside the transaction callback. Contract: the transaction commits staged writes only after callback fulfillment. Probe before.none.events: begin, write, publish, commit. Probe before.commit.events: begin, write, publish, rollback."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.",
+      "status": "supported",
+      "rationale": "before() awaits tx.markPaid(id) then publish(id) inside the callback. Probe before.commit: notifications 1, paid false, events begin/write/publish/rollback, errors ['commit']. The sentence labels the case as modeled, which matches probe-results assumptions."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The change",
+      "status": "nonfactual",
+      "rationale": "Section kicker. No empirical claim."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Wait for the transaction to fulfill",
+      "status": "supported",
+      "rationale": "after() awaits db.transaction(...) before publish. Contract: the transaction 'fulfills with undefined after commit.'"
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.",
+      "status": "supported",
+      "rationale": "after() does not reach publish if the awaited transaction throws. Probe after.write: notifications 0, paid false. Probe after.commit: notifications 0, paid false. The phrase 'in that invocation' matches the per-call traces; it does not claim a cross-call or process-kill proof. Passing examples do not prove universal guarantees beyond this control flow plus the supplied transaction contract."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Section kicker. No empirical claim."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "The database cannot roll back publication failures",
+      "status": "supported",
+      "rationale": "Contract: publish is outside the database transaction; rejection may happen after a visible notification. After commit, after() cannot use transaction rollback to undo publish. Probe after.publish-before and after.publish-after both leave paid true. Probe before.publish-after still records notifications 1 with paid false: rollback does not retract a notification that already happened."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.",
+      "status": "supported",
+      "rationale": "Source body: the author says moving publish 'makes payment and notification atomic.' Contract: publish is external; rejection may be before or after a visible notification; markPaid is idempotent; neither transaction nor publish deduplicates delivery; a process can stop between awaited operations; no durable outbox, background retry, or cross-call lock. Probe after.publish-before: paid true, notifications 0. Probe after.publish-after: paid true, notifications 1. Probe after.concurrent: notifications 2. Probe asserts 'idempotent payment writes do not deduplicate external publication.' Process stop is a contract statement; the probe does not simulate a kill."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Section kicker. No empirical claim."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Commit first, with a remaining delivery gap",
+      "status": "supported",
+      "rationale": "after.none.events: begin, write, commit, publish. Remaining gap is the post-commit publish plus the contract gaps (process stop, no outbox/retry/dedup, concurrent double publish). Probe after.commit vs before.commit shows commit-first removes the pre-commit escape in that modeled invocation."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.",
+      "status": "supported",
+      "rationale": "Probe after.commit.notifications is 0; before.commit.notifications is 1. The second sentence matches after.publish-before, after.publish-after, after.concurrent, and the external-publish / process-stop / no-dedup contracts. The first sentence follows from after() awaiting a rejecting transaction before publish, scoped to that change, not to unmodeled process kills."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "No cross-call lock",
+      "status": "omitted_by_name",
+      "rationale": "The fourth contract withholds a cross-call lock along with outbox and background retry. The manifest states concurrent double publication and 'no durable retry' / 'no durable outbox or delivery deduplication', but it never names the missing lock."
+    },
+    {
+      "limitation": "Process stop is not in the probe",
+      "status": "stated_as_contract_only",
+      "rationale": "probe-results.json assumptions: no process-kill simulation. /sections/2/content attributes process stop to 'the contract', which is accurate, and does not present a kill trace. The limitation is not missing as a fact; the unprobed status is not labeled besides /meta 'modeled' and the word 'contract'."
+    },
+    {
+      "limitation": "Sequential retry after publish-after",
+      "status": "partially_covered",
+      "rationale": "A caller that retries after() after a visible notification plus reject would hit idempotent markPaid and a second publish. The footer states no delivery deduplication. The body only models concurrent invocations, not a sequential retry."
+    }
+  ],
+  "attribution_errors": [
+    {
+      "pointer": "/title",
+      "quote": "Payment and notification now commit atomically",
+      "rationale": "Source body attributes atomicity to the author as a claim: moving publish 'makes payment and notification atomic.' Source title is 'Lantern Ledger: publish after the payment transaction.' The manifest title states atomic commit in unattributed voice. /sections/2/content later attributes the atomicity claim to the author and rebuts it. Observed mismatch between title voice and source attribution; this review does not infer who wrote or edited the manifest."
+    }
+  ],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/footer",
+      "quote": "The supplied code",
+      "rationale": "Harness phrasing for the input bundle, not reader-facing product language."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The contract allows a process to stop between operations and supplies no durable retry.",
+      "rationale": "Names 'the contract' as an evaluation object from source.json. The underlying limitation is in the source contracts; the wording leaks review framing."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "fail",
+    "quotes": [
+      {
+        "rating": "fail",
+        "pointer": "/title",
+        "quote": "Payment and notification now commit atomically",
+        "rationale": "Primary headline. Contradicted by after() placing publish after commit, by the external-publish and process-stop contracts, and by after.publish-before, after.publish-after, and after.concurrent. Passing modeled examples elsewhere do not make this headline true."
+      },
+      {
+        "rating": "pass",
+        "pointer": "/dek",
+        "quote": "A failed commit now prevents publication, while publication failure leaves a committed payment intact.",
+        "rationale": "Matches after.commit versus after.publish-before and after.publish-after. Does not claim atomicity."
+      },
+      {
+        "rating": "pass",
+        "pointer": "/sections/1/content",
+        "quote": "A write or commit rejection therefore prevents publication in that invocation.",
+        "rationale": "Scoped to one invocation and to write/commit rejection. Matches after.write and after.commit."
+      },
+      {
+        "rating": "pass",
+        "pointer": "/sections/3/content",
+        "quote": "It does not make the committed payment and the external notification atomic.",
+        "rationale": "Correctly denies the atomicity claim that /title asserts."
+      },
+      {
+        "rating": "pass",
+        "pointer": "/footer",
+        "quote": "The supplied code has no durable outbox or delivery deduplication.",
+        "rationale": "Matches the supplied contracts and functions. Reviewer wording does not make the limitation false."
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Process-stop effects are contract-stated and not traced in probe-results.json. /sections/2/content does not treat them as probed. This is not scored as a contradiction.",
+    "Whether 'The database cannot roll back publication failures' is slightly infelicitous (rollback applies to staged writes, not to a failure) is unresolved as wording quality. Factual status is supported in context: rollback cannot undo publish.",
+    "/eyebrow 'Lantern Ledger' is scored nonfactual as a name. It also matches the source title; that match is not a behavior proof.",
+    "Overall reader-facing rating is fail because /title is reader-facing and contradicted. Body sentences that deny atomicity are separately marked pass. This review does not infer whether the title was meant as a claim to rebut."
+  ],
+  "notes": [
+    "Every fields.json pointer is scored from source.json, functions.mjs, probe.mjs, and probe-results.json only.",
+    "Passing modeled traces do not prove universal guarantees. Claims scoped to the changed function's control flow plus the supplied transaction contract are marked supported, not universal.",
+    "Observed contradictions are limited to /title atomic-commit wording versus after(), contracts, and probe after.publish-* / concurrent. Other fields are supported or nonfactual. Uncertainty is listed separately from those contradictions.",
+    "functions.mjs matches source before and after. unchanged is none. No code or diagram appears in the manifest fields."
+  ]
+}
