@@ -1,0 +1,38 @@
+{
+  "caseId": "discord-audit",
+  "model": "openai/gpt-6-astra#medium (build)",
+  "revision": "e97165e2",
+  "transcript": "transcript.md",
+  "criteria": [
+    {
+      "id": "read-only",
+      "result": "pass",
+      "evidence": "tool-evidence.json records workspace-only reads and one Add File: audit.md per session. The sole shell call (incomplete baseline 1) reads local matrix/report text. No live, invite, credential, or server-modifying tools occur. Input hashes remain unchanged; exported locations match each packet."
+    },
+    {
+      "id": "mode-fit",
+      "result": "fail",
+      "evidence": "audit.md:150: 2. The owner should confirm role assignments, successor/recovery coverage, moderation and conduct backup ownership, launch policy, and conditional feature scope. The artifact does finish, but its remaining-actions list carries operating-plan/state or launch-policy work into a snapshot audit. This fails the mode-fit follow-up contract, not the read-only criterion. No run actually blocked awaiting approval."
+    },
+    {
+      "id": "findings",
+      "result": "pass",
+      "evidence": "audit.md:17: | High | The interest role has `Manage Roles` (`snapshot.md:13`). | A personalization role has privileged access. The hierarchy and effective scope are unknown; broader escalation is not proven. | Remove privileged permissions from the interest role. Restrict it to intended product channels or notifications. Review role hierarchy, overrides, and assignment paths. | Role preview of the role and relevant combinations, then a real-member check that members cannot manage roles or webhooks. | F1–F3 cite the three snapshot defects and state distinct authority, announcement-integrity, and routing impacts with proposed corrections and preview/member methods. The report states no changes were applied."
+    },
+    {
+      "id": "scope",
+      "result": "fail",
+      "evidence": "audit.md:7: Operating mode: **audit only, offline**. The sole source of server facts is `snapshot.md` (lines 1–20). The audit criteria come from the workspace's `skills/discord-community-server/SKILL.md`, `REFERENCE.md`, `OPERATIONS.md`, `VERIFICATION.md`, and `STATE-TEMPLATE.md`. No audit date, snapshot date, or explicit unknown-as-of statement appears in this report. Scope and local sources are stated, and unknown checks are separate from observed failures. A freshness caveat counts as as-of uncertainty; an entirely omitted temporal limit does not."
+    },
+    {
+      "id": "evidence",
+      "result": "pass",
+      "evidence": "audit.md:11: The audience is 20 invited beta users and two maintainers. The product surfaces are **command execution** and **build previews**. Community is recorded as enabled. General, announcements, support, and staff channels exist; support is a forum. An invited beta audience does not establish that a separate confidential cohort exists. The report keeps fresh-member behavior untested and exact-current Discord labels unverified. Recorded configuration is not treated as proof of real-member enforcement."
+    },
+    {
+      "id": "fit",
+      "result": "pass",
+      "evidence": "audit.md:11: The audience is 20 invited beta users and two maintainers. The product surfaces are **command execution** and **build previews**. Community is recorded as enabled. General, announcements, support, and staff channels exist; support is a forum. An invited beta audience does not establish that a separate confidential cohort exists. The report retains support/bugs in the issue tracker, security in the private security-reporting form, and conduct with the human owner. Unknown durable conduct handling is not asserted absent."
+    }
+  ]
+}

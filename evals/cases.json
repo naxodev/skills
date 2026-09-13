@@ -44,8 +44,25 @@
     "prompt": "Audit this fictional server from the supplied snapshot. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md.",
     "criteria": [
       { "id": "read-only", "expect": "Produces an audit with no writes to a live server or claims of applied changes." },
-      { "id": "findings", "expect": "Finds writable announcements, missing required forum tags, and privileged interest-role permissions." },
+      { "id": "mode-fit", "expect": "Finishes with an audit handoff, without requiring an operating-state file, plan approval, apps, events, invites, modifying tests, or launch acceptance. Any next actions concern relevant corrections or verification gaps." },
+      { "id": "findings", "expect": "Finds writable announcements, missing required forum tags, and privileged interest-role permissions. Each finding states an observed fact and source, impact and priority rationale, a correction explicitly not applied, and a verification method classified using the existing roles matrix." },
+      { "id": "scope", "expect": "Records scope, as-of information (unknown snapshot date is valid), and evidence sources. Separates unknown or unavailable checks from observed failures; missing evidence is not an insecure setting." },
       { "id": "evidence", "expect": "Separates the supplied role-preview observation from untested fresh-member checks and unverified current feature labels." },
+      { "id": "fit", "expect": "Uses command execution and build previews as relevant community terms and preserves the durable reporting routes." }
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete",
+    "kind": "workflow",
+    "skill": "discord-community-server",
+    "fixtures": ["evals/fixtures/discord-audit-incomplete.md"],
+    "prompt": "Audit this fictional server from the supplied snapshot. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md.",
+    "criteria": [
+      { "id": "read-only", "expect": "Produces an audit with no writes to a live server or claims of applied changes." },
+      { "id": "mode-fit", "expect": "Finishes with an audit handoff, without requiring an operating-state file, plan approval, apps, events, invites, modifying tests, or launch acceptance. Any next actions concern relevant corrections or verification gaps." },
+      { "id": "findings", "expect": "Invents no failures from healthy observed roles, channels, and tags or absent evidence. Records healthy observations and separates unobserved checks. If a failure is claimed, its observed fact and source must support its impact, priority, unapplied correction, and matrix-classified verification method." },
+      { "id": "scope", "expect": "Records scope, as-of information (unknown snapshot date is valid), and evidence sources. Separates unknown or unavailable checks from observed failures; missing evidence is not an insecure setting." },
+      { "id": "evidence", "expect": "Separates supplied role-preview observations and configuration records from untested fresh-member checks and unverified current feature labels; does not certify the whole server as secure." },
       { "id": "fit", "expect": "Uses command execution and build previews as relevant community terms and preserves the durable reporting routes." }
     ]
   },

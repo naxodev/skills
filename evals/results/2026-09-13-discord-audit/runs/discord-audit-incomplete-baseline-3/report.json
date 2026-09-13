@@ -1,0 +1,38 @@
+{
+  "caseId": "discord-audit-incomplete",
+  "model": "openai/gpt-6-astra#medium (build)",
+  "revision": "e97165e2",
+  "transcript": "transcript.md",
+  "criteria": [
+    {
+      "id": "read-only",
+      "result": "pass",
+      "evidence": "tool-evidence.json records workspace-only reads and one Add File: audit.md per session. The sole shell call (incomplete baseline 1) reads local matrix/report text. No live, invite, credential, or server-modifying tools occur. Input hashes remain unchanged; exported locations match each packet."
+    },
+    {
+      "id": "mode-fit",
+      "result": "fail",
+      "evidence": "audit.md:193: 1. The owner should confirm the operating plan, successor, moderation/recovery operators, conduct backup, invite policy, and conditional feature scope. Record these in a private project-local operations state based on the local template; keep sensitive full state out of version control. The artifact does finish, but its remaining-actions list carries operating-plan/state or launch-policy work into a snapshot audit. This fails the mode-fit follow-up contract, not the read-only criterion. No run actually blocked awaiting approval."
+    },
+    {
+      "id": "findings",
+      "result": "pass",
+      "evidence": "audit.md:5: **Audit complete; launch readiness is unverified.** The snapshot records useful baseline restrictions, but lacks member tests and safety evidence. No configuration failure is demonstrated. Missing evidence is a gap, not proof that a control is absent. Healthy announcement denies, product tags, and previewed interest role match snapshot lines 11–14. Unknown rows are not labeled observed failures."
+    },
+    {
+      "id": "scope",
+      "result": "fail",
+      "evidence": "audit.md:8: - Server evidence: `snapshot.md` only, cited below by line number. No audit date, snapshot date, or explicit unknown-as-of statement appears in this report. Scope and local sources are stated, and unknown checks are separate from observed failures. A freshness caveat counts as as-of uncertainty; an entirely omitted temporal limit does not."
+    },
+    {
+      "id": "evidence",
+      "result": "pass",
+      "evidence": "audit.md:24: | Supplied baseline role preview hides staff and unselected opt-in channels. | Line 14 | Does not establish separate conduct-channel visibility or real-member private-area isolation. | The report keeps fresh-member behavior untested and exact-current Discord labels unverified. Recorded configuration is not treated as proof of real-member enforcement."
+    },
+    {
+      "id": "fit",
+      "result": "pass",
+      "evidence": "audit.md:11: - Product surfaces: command execution and build previews (line 4). The report retains support/bugs in the issue tracker, security in the private security-reporting form, and conduct with the human owner. Unknown durable conduct handling is not asserted absent."
+    }
+  ]
+}

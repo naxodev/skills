@@ -73,11 +73,11 @@ Offer a small baseline and expand it only when traffic or a new access boundary 
 **Measure:** unanswered support posts, time spent redirecting requests, and inactive channels after a defined review period.
 Use those observations to simplify or expand the plan; avoid arbitrary community-growth targets.
 
-### Give audits their own output contract
+### Give audits their own output contract — adopted
 
-Audit mode currently travels through a setup workflow whose later steps describe configuration and launch.
-A dedicated audit branch could end with evidence, impact, a proposed change, and a verification method for each finding.
-It should preserve the existing permission boundaries and distinguish role preview from real-member testing.
+Audit mode now exits through an evidence-based handoff before the setup and launch steps.
+Each finding records its source, impact, priority rationale, unapplied correction, and verification method.
+The branch preserves permission boundaries and separates supplied role preview, unrun member tests, and unknown settings.
 
 **Measure:** fewer requests for irrelevant launch approvals and no claim that an audit applied changes.
 

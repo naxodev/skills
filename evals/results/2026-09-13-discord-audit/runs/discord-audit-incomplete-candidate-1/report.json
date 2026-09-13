@@ -1,0 +1,38 @@
+{
+  "caseId": "discord-audit-incomplete",
+  "model": "openai/gpt-6-astra#medium (build)",
+  "revision": "candidate SKILL.md sha256:fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+  "transcript": "transcript.md",
+  "criteria": [
+    {
+      "id": "read-only",
+      "result": "pass",
+      "evidence": "tool-evidence.json records workspace-only reads and one Add File: audit.md per session. The sole shell call (incomplete baseline 1) reads local matrix/report text. No live, invite, credential, or server-modifying tools occur. Input hashes remain unchanged; exported locations match each packet."
+    },
+    {
+      "id": "mode-fit",
+      "result": "pass",
+      "evidence": "audit.md:7: - **Mode:** Audit only; local skill steps 1 and A1–A3. The report ends at the audit branch; follow-up concerns relevant evidence or later authorized corrections. No setup-state, plan approval, app/event/invite creation, or launch acceptance is required."
+    },
+    {
+      "id": "findings",
+      "result": "pass",
+      "evidence": "audit.md:47: **None established.** The snapshot contains no demonstrated mismatch requiring a corrective finding. No severity is assigned to missing evidence, and no corrections were applied. Healthy announcement denies, product tags, and previewed interest role match snapshot lines 11–14. Unknown rows are not labeled observed failures."
+    },
+    {
+      "id": "scope",
+      "result": "pass",
+      "evidence": "audit.md:8: - **Audit date:** 2026-09-13. **Snapshot date:** Unknown. Scope and local sources are stated, and unknown checks are separate from observed failures. A freshness caveat counts as as-of uncertainty; an entirely omitted temporal limit does not."
+    },
+    {
+      "id": "evidence",
+      "result": "pass",
+      "evidence": "audit.md:31: Recorded configuration is documentary evidence, not an executed verification class. Where a matrix check requires human attestation, configuration text alone does not establish that attestation. The supplied role preview is preserved as role-preview evidence, not promoted to real-member evidence. No new verification was run. The report keeps fresh-member behavior untested and exact-current Discord labels unverified. Recorded configuration is not treated as proof of real-member enforcement."
+    },
+    {
+      "id": "fit",
+      "result": "pass",
+      "evidence": "audit.md:20: | Product surfaces | **command execution** and **build previews** (`snapshot.md:4`) | No further product architecture is supplied. | The report retains support/bugs in the issue tracker, security in the private security-reporting form, and conduct with the human owner. Unknown durable conduct handling is not asserted absent."
+    }
+  ]
+}

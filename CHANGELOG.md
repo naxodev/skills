@@ -16,6 +16,7 @@ This file records notable user-facing changes to the skills collection.
 
 ### Changed
 
+- Gave Discord audits a read-only evidence and findings handoff that completes without setup approval or launch actions; unknown checks remain separate from observed failures.
 - Clarified the walkthrough arc: four required sections, evidence-earned optional sections before the final recap, and word ceilings without minimums.
 - Clarified evaluation isolation, exact skill-version checks, and reporting of skipped workflow steps after observing rubric leakage in an excluded setup run.
 - Added reader-facing walkthrough style rules after an isolated writer comparison: preserve meaningful qualifications while keeping internal review IDs and drafting instructions out of the essay.

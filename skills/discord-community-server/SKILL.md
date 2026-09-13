@@ -7,7 +7,7 @@ description: Plans, configures, audits, or improves an official Discord communit
 
 Build a product-specific community with least privilege, a durable support boundary, and a verified launch path. Treat Discord as a live collaboration layer, not the permanent record for product work.
 
-Read [REFERENCE.md](REFERENCE.md) before changing a server. Also read [OPERATIONS.md](OPERATIONS.md) when the work includes private cohorts, forums, Server Guide resources, community assets, recurring events, invites, or channel reordering. Copy [STATE-TEMPLATE.md](STATE-TEMPLATE.md) to a private project-local operations location when the server will outlive the current session.
+Choose the operating mode in step 1. Audits finish in steps A1–A3; greenfield and improvement work continue through steps 2–8. Read [REFERENCE.md](REFERENCE.md) before assessing or changing a server. Also read [OPERATIONS.md](OPERATIONS.md) when the scope includes private cohorts, forums, Server Guide resources, community assets, recurring events, invites, or channel reordering. For greenfield or improvement work, use [STATE-TEMPLATE.md](STATE-TEMPLATE.md) as directed in step 2.
 
 ## Guardrails
 
@@ -29,7 +29,7 @@ If a secret reaches logs, chat, a screenshot, a file, or shell output, revoke it
 
 ### 1. Discover the project
 
-Read the repository's README, contribution guide, security policy, Code of Conduct, package or product map, issue templates, release process, and public documentation. Identify:
+Use the supplied project evidence and available repository documents: README, contribution guide, security policy, Code of Conduct, package or product map, issue templates, release process, and public documentation. Identify, recording unavailable information as unknown:
 
 - The community's audience and launch stage
 - The project's exact domain terms and product surfaces
@@ -38,15 +38,44 @@ Read the repository's README, contribution guide, security policy, Code of Condu
 - Voice, billing, account, or private-cohort areas that need separate access
 - Canonical brand sources, existing community assets, and the managed asset store
 
-Research current Discord capabilities from official Discord documentation before relying on exact labels or permission behavior. Inspect two or three comparable communities only through public or logged-out views, and only for patterns that match this project's scale.
+Use current official Discord documentation before relying on exact live labels or permission behavior, when access is available and within scope. In an offline audit, mark exact-current labels unverified. For greenfield or improvement design, inspect two or three comparable communities only through public or logged-out views, and only for patterns that match this project's scale.
 
 Choose an operating mode:
 
 - **Greenfield:** design a new server, then configure it only after the human approves the operating plan.
-- **Audit:** inspect the existing server without changing it. Run later workflow steps as checks, record gaps, and stop before integration or launch actions.
+- **Audit:** assess the supplied snapshot or authorized read-only observations, then finish in A1–A3.
 - **Improvement:** inventory the existing server, write an exact change and rollback plan, and apply only changes the human approves.
 
-**Complete when:** the mode is explicit, every proposed channel maps to a real community job, and every report type has one durable destination.
+**Complete when:** the mode, scope, project terms, and known durable reporting destinations are recorded, with missing information marked unknown. For greenfield or improvement work, every proposed channel maps to a real community job.
+
+### A1. Establish audit evidence
+
+Record the audit scope, as-of date (or unknown snapshot date), and evidence sources. Read the applicable controls in [REFERENCE.md](REFERENCE.md) and [OPERATIONS.md](OPERATIONS.md), and use [VERIFICATION.md](VERIFICATION.md) to classify what the evidence can prove: role preview, real member, or human attestation. Preserve supplied observations as supplied evidence; a recorded role preview does not establish a fresh-member result.
+
+Assess only the supplied snapshot or authorized read-only observations. Separate observed failures from unknown or unavailable checks; missing evidence does not establish an insecure setting. Keep exact-current labels unverified when current official documentation is unavailable or outside scope.
+
+**Complete when:** each in-scope assessment has a source and evidence class, or an explicit unknown, unavailable, or not-applicable status with a reason.
+
+### A2. Write the audit findings
+
+For each observed failure, record:
+
+- The observed fact and its source
+- Its impact and priority rationale for this community
+- A proposed correction, explicitly not applied
+- A verification method using the existing matrix's role-preview, real-member, or human-attestation distinction
+
+Preserve the project's terms and durable bug, security, and conduct routes in proposed corrections. Report healthy observations and evidence limits without inventing findings to fill the report.
+
+**Complete when:** every finding has evidence, impact, a justified priority, an unapplied correction, and a matching verification method; unknown checks are separate from failures.
+
+### A3. Hand off the audit and stop
+
+Deliver the scope, as-of information, evidence sources, findings, and separate unknown or unavailable checks. A local audit report is sufficient; audit completion does not require a long-lived operating state file or an approved operating plan.
+
+State that no server changes were made, what the evidence verifies, and what remains unverified. Include optional next actions only when they address relevant corrections or verification gaps. Audit completion requires no app, event, invite, modifying test, or launch acceptance. Apply the handoff's information exclusions below, then stop before step 2. If the user later requests implementation, enter improvement mode and use its change plan and authorization rules.
+
+**Complete when:** the audit handoff is delivered with verified and unverified results distinguished, and no server changes claimed or performed.
 
 ### 2. Write the operating plan
 
@@ -73,7 +102,7 @@ Push back on channel sprawl. Start with the smallest structure that separates or
 
 ### 3. Configure access and safety first
 
-In audit mode, inspect and record each item without changing it. In greenfield or improvement mode, apply only the approved plan. Before posting content:
+Apply only the approved plan. Before posting content:
 
 1. Enable Community features only when the approved plan requires them.
 2. Configure verification, moderator MFA, raid protection, explicit-content filtering, and direct-message safety.
@@ -84,7 +113,7 @@ In audit mode, inspect and record each item without changing it. In greenfield o
 
 Use the role and permission model in [REFERENCE.md](REFERENCE.md). For a private cohort, apply the access, category, and read-only channel invariants in [OPERATIONS.md](OPERATIONS.md).
 
-**Complete when:** in audit mode, every gap is recorded and nothing changed. In greenfield or improvement mode, the approved changes are applied, `@everyone` cannot reach staff or unselected opt-in areas, and no role or bot has `Administrator`.
+**Complete when:** the approved changes are applied, `@everyone` cannot reach staff or unselected opt-in areas, and no role or bot has `Administrator`.
 
 ### 4. Build around community jobs
 
