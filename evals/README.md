@@ -64,6 +64,15 @@ When sharing a result, include the case, model, revision, attempts, criterion ou
 - [Walkthrough structure clarification](results/2026-09-13-structure/README.md): twelve synthesis-component sessions checked the required arc, optional sections, and final recap against frozen small and multi-file inputs.
 - [Discord audit output contract](results/2026-09-13-discord-audit/README.md): twelve offline audit sessions compared a dedicated audit handoff on defective and healthy-but-incomplete snapshots. Both arms preserved evidence limits; the candidate removed setup follow-up requirements and made finding fields more consistent.
 - [Technical docs reader contract](results/2026-09-13-docs-reader/README.md): twelve offline sessions produced successful fresh-copy how-to replays and source-grounded explanations in both arms. The change clarifies prerequisites, outcomes, and task-critical rationale; this comparison showed no reader-outcome uplift. Rendered review remained inconsistent.
+- [Documentation renderer discovery](results/2026-09-13-docs-render/README.md): twelve verification-only sessions reviewed plain Markdown successfully in both arms and correctly left custom MDX rendering untested. Candidate sessions made installed-renderer discovery and terminal scope more explicit; no Markdown completion uplift was shown.
+
+The `docs-render-markdown` and `docs-render-mdx` cases verify existing pages rather
+than full drafting. Confirm a suitable terminal Markdown viewer is installed
+before both cases; retain the MDX fixture's missing host and dependencies. Both
+fixtures prohibit browsers, external services, and installation. Judge discovery,
+actual rendered-output inspection, source/navigation checks, and honest capability
+limits independently. An untested MDX rendering outcome can pass the status-reporting
+criterion; it is not a rendering pass.
 
 Use the [three-stage protocol guide](protocols/README.md) to reproduce that experimental workflow.
 When grading walkthrough prose against source evidence, use the [context-sensitive evidence rubric](results/2026-09-13-predictability/GRADER-CANDIDATE.md). Its [calibration result](results/2026-09-13-predictability/README.md) records remaining false positives; source adjudication determines correctness.

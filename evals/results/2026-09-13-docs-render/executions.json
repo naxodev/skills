@@ -1,0 +1,626 @@
+[
+  {
+    "id": "markdown-baseline-1",
+    "status": "completed",
+    "packetEntries": [
+      "README.md",
+      "skills",
+      "page.md",
+      "decision.md"
+    ],
+    "inputHashes": {
+      "README.md": "ab0ec3b38761f83f37eb9bdead261ae1545091179f1e3ba2fb99d51a1d5b60f4",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+      "page.md": "527579089c0f4829478c73105bd9d786103e2ce9bdae8f7c829880db277d578c",
+      "decision.md": "9624fda86224935fac89cf451692142edbe001a159a3255fced3de1fb2deb900"
+    },
+    "sessionID": "ses_f63ac9a31ffeILreWIH6UishR5",
+    "info": {
+      "id": "ses_f63ac9a31ffeILreWIH6UishR5",
+      "projectID": "0058b61d65964cded0279c521e3e0969a44ccee6",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 20465,
+        "output": 580,
+        "reasoning": 101,
+        "cache": {
+          "read": 100736,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329106384,
+        "updated": 1789329107115,
+        "idle": 1789329151316
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-baseline-1-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "markdown-candidate-1",
+    "status": "completed",
+    "packetEntries": [
+      "README.md",
+      "skills",
+      "page.md",
+      "decision.md"
+    ],
+    "inputHashes": {
+      "README.md": "ab0ec3b38761f83f37eb9bdead261ae1545091179f1e3ba2fb99d51a1d5b60f4",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+      "page.md": "527579089c0f4829478c73105bd9d786103e2ce9bdae8f7c829880db277d578c",
+      "decision.md": "9624fda86224935fac89cf451692142edbe001a159a3255fced3de1fb2deb900"
+    },
+    "sessionID": "ses_f63ac9a30ffejQsj16e9lYwOrM",
+    "info": {
+      "id": "ses_f63ac9a30ffejQsj16e9lYwOrM",
+      "projectID": "cf058d25c00a83c367f31e0a84576ac81095077b",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 18839,
+        "output": 645,
+        "reasoning": 94,
+        "cache": {
+          "read": 84992,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329106392,
+        "updated": 1789329107689,
+        "idle": 1789329148524
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-candidate-1-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "markdown-baseline-2",
+    "status": "completed",
+    "packetEntries": [
+      "README.md",
+      "skills",
+      "page.md",
+      "decision.md"
+    ],
+    "inputHashes": {
+      "README.md": "ab0ec3b38761f83f37eb9bdead261ae1545091179f1e3ba2fb99d51a1d5b60f4",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+      "page.md": "527579089c0f4829478c73105bd9d786103e2ce9bdae8f7c829880db277d578c",
+      "decision.md": "9624fda86224935fac89cf451692142edbe001a159a3255fced3de1fb2deb900"
+    },
+    "sessionID": "ses_f63ac9a1fffeG6wJpI7vwBOCM4",
+    "info": {
+      "id": "ses_f63ac9a1fffeG6wJpI7vwBOCM4",
+      "projectID": "b011ced34d162caccab2a09cd622bebecd0603a5",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 17944,
+        "output": 553,
+        "reasoning": 10,
+        "cache": {
+          "read": 83584,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329106401,
+        "updated": 1789329108332,
+        "idle": 1789329142745
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-baseline-2-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "markdown-candidate-2",
+    "status": "completed",
+    "packetEntries": [
+      "README.md",
+      "skills",
+      "page.md",
+      "decision.md"
+    ],
+    "inputHashes": {
+      "README.md": "ab0ec3b38761f83f37eb9bdead261ae1545091179f1e3ba2fb99d51a1d5b60f4",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+      "page.md": "527579089c0f4829478c73105bd9d786103e2ce9bdae8f7c829880db277d578c",
+      "decision.md": "9624fda86224935fac89cf451692142edbe001a159a3255fced3de1fb2deb900"
+    },
+    "sessionID": "ses_f63ac0a2cffelhOg2zLo4ejwQA",
+    "info": {
+      "id": "ses_f63ac0a2cffelhOg2zLo4ejwQA",
+      "projectID": "7d58f7291ca4d7ac36d1f378858f51fdf3a73425",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 18811,
+        "output": 711,
+        "reasoning": 73,
+        "cache": {
+          "read": 84992,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329143254,
+        "updated": 1789329143781,
+        "idle": 1789329181665
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-candidate-2-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "markdown-baseline-3",
+    "status": "completed",
+    "packetEntries": [
+      "README.md",
+      "skills",
+      "page.md",
+      "decision.md"
+    ],
+    "inputHashes": {
+      "README.md": "ab0ec3b38761f83f37eb9bdead261ae1545091179f1e3ba2fb99d51a1d5b60f4",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+      "page.md": "527579089c0f4829478c73105bd9d786103e2ce9bdae8f7c829880db277d578c",
+      "decision.md": "9624fda86224935fac89cf451692142edbe001a159a3255fced3de1fb2deb900"
+    },
+    "sessionID": "ses_f63abf2fbffeJAMNU1mR07oY2x",
+    "info": {
+      "id": "ses_f63abf2fbffeJAMNU1mR07oY2x",
+      "projectID": "0e1664fdd8a6ffde758519c641ca4de52542cb15",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 20434,
+        "output": 614,
+        "reasoning": 28,
+        "cache": {
+          "read": 100736,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329149190,
+        "updated": 1789329149733,
+        "idle": 1789329189400
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-baseline-3-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "markdown-candidate-3",
+    "status": "completed",
+    "packetEntries": [
+      "README.md",
+      "skills",
+      "page.md",
+      "decision.md"
+    ],
+    "inputHashes": {
+      "README.md": "ab0ec3b38761f83f37eb9bdead261ae1545091179f1e3ba2fb99d51a1d5b60f4",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+      "page.md": "527579089c0f4829478c73105bd9d786103e2ce9bdae8f7c829880db277d578c",
+      "decision.md": "9624fda86224935fac89cf451692142edbe001a159a3255fced3de1fb2deb900"
+    },
+    "sessionID": "ses_f63abe8e0ffeksJK0plKNlwYdO",
+    "info": {
+      "id": "ses_f63abe8e0ffeksJK0plKNlwYdO",
+      "projectID": "311e55b24dff977935dc6dacb273076dad3f56db",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 18778,
+        "output": 668,
+        "reasoning": 47,
+        "cache": {
+          "read": 84992,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329151777,
+        "updated": 1789329152294,
+        "idle": 1789329189543
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-candidate-3-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "mdx-baseline-1",
+    "status": "completed",
+    "packetEntries": [
+      "RetentionToggle.tsx",
+      "contract.md",
+      "README.md",
+      "package.json",
+      "page.mdx",
+      "skills"
+    ],
+    "inputHashes": {
+      "RetentionToggle.tsx": "52170babb29ece472c127404d60d4dd5182bb2ba19dbe94af652cafb020df0fa",
+      "contract.md": "94405c30ed2766e10979af7f9d970b68516409a522b7a75776cd51e87c4ec34f",
+      "README.md": "a12ed2fe8c3e76f6c5d4f4f7e2ffed4b62c92151b822ba80ef2d49a14137f851",
+      "package.json": "a005addd98f85d010fc6c61579748b4960f9da025a0c0940f4ab0606625709fb",
+      "page.mdx": "d65eb78fdd0f3dc6fb8f6930b2782dbd6bbe140bf1842f688138ab959e15e140",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63ab7225ffeUBPBkMH2tyTroX",
+    "info": {
+      "id": "ses_f63ab7225ffeUBPBkMH2tyTroX",
+      "projectID": "09d4f490dfe25d47444440d911be66a1fc60d98a",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 27510,
+        "output": 1002,
+        "reasoning": 78,
+        "cache": {
+          "read": 103936,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329182172,
+        "updated": 1789329182736,
+        "idle": 1789329234719
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-baseline-1-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "mdx-candidate-1",
+    "status": "completed",
+    "packetEntries": [
+      "RetentionToggle.tsx",
+      "contract.md",
+      "README.md",
+      "package.json",
+      "page.mdx",
+      "skills"
+    ],
+    "inputHashes": {
+      "RetentionToggle.tsx": "52170babb29ece472c127404d60d4dd5182bb2ba19dbe94af652cafb020df0fa",
+      "contract.md": "94405c30ed2766e10979af7f9d970b68516409a522b7a75776cd51e87c4ec34f",
+      "README.md": "a12ed2fe8c3e76f6c5d4f4f7e2ffed4b62c92151b822ba80ef2d49a14137f851",
+      "package.json": "a005addd98f85d010fc6c61579748b4960f9da025a0c0940f4ab0606625709fb",
+      "page.mdx": "d65eb78fdd0f3dc6fb8f6930b2782dbd6bbe140bf1842f688138ab959e15e140",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63ab53e9ffepTITAeo0EyfFXU",
+    "info": {
+      "id": "ses_f63ab53e9ffepTITAeo0EyfFXU",
+      "projectID": "335db80e30dccbb50d9f508370d9c165926d106e",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 20439,
+        "output": 692,
+        "reasoning": 35,
+        "cache": {
+          "read": 82816,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329189912,
+        "updated": 1789329190544,
+        "idle": 1789329231576
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-candidate-1-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "mdx-baseline-2",
+    "status": "completed",
+    "packetEntries": [
+      "RetentionToggle.tsx",
+      "contract.md",
+      "README.md",
+      "package.json",
+      "page.mdx",
+      "skills"
+    ],
+    "inputHashes": {
+      "RetentionToggle.tsx": "52170babb29ece472c127404d60d4dd5182bb2ba19dbe94af652cafb020df0fa",
+      "contract.md": "94405c30ed2766e10979af7f9d970b68516409a522b7a75776cd51e87c4ec34f",
+      "README.md": "a12ed2fe8c3e76f6c5d4f4f7e2ffed4b62c92151b822ba80ef2d49a14137f851",
+      "package.json": "a005addd98f85d010fc6c61579748b4960f9da025a0c0940f4ab0606625709fb",
+      "page.mdx": "d65eb78fdd0f3dc6fb8f6930b2782dbd6bbe140bf1842f688138ab959e15e140",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63ab5329ffenjpXDER18d771Y",
+    "info": {
+      "id": "ses_f63ab5329ffenjpXDER18d771Y",
+      "projectID": "4f0b0a54ede265828be42e1dad209a0601d17757",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 19544,
+        "output": 709,
+        "reasoning": 52,
+        "cache": {
+          "read": 65152,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329190103,
+        "updated": 1789329191251,
+        "idle": 1789329228833
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-baseline-2-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "mdx-candidate-2",
+    "status": "completed",
+    "packetEntries": [
+      "RetentionToggle.tsx",
+      "contract.md",
+      "README.md",
+      "package.json",
+      "page.mdx",
+      "skills"
+    ],
+    "inputHashes": {
+      "RetentionToggle.tsx": "52170babb29ece472c127404d60d4dd5182bb2ba19dbe94af652cafb020df0fa",
+      "contract.md": "94405c30ed2766e10979af7f9d970b68516409a522b7a75776cd51e87c4ec34f",
+      "README.md": "a12ed2fe8c3e76f6c5d4f4f7e2ffed4b62c92151b822ba80ef2d49a14137f851",
+      "package.json": "a005addd98f85d010fc6c61579748b4960f9da025a0c0940f4ab0606625709fb",
+      "page.mdx": "d65eb78fdd0f3dc6fb8f6930b2782dbd6bbe140bf1842f688138ab959e15e140",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63aaba1fffedz4e2wgaoOzU4x",
+    "info": {
+      "id": "ses_f63aaba1fffedz4e2wgaoOzU4x",
+      "projectID": "548ea92b1239b40623dfca601d76305ade274bca",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 18441,
+        "output": 966,
+        "reasoning": 46,
+        "cache": {
+          "read": 84736,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329229284,
+        "updated": 1789329229819,
+        "idle": 1789329280016
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-candidate-2-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "mdx-baseline-3",
+    "status": "completed",
+    "packetEntries": [
+      "RetentionToggle.tsx",
+      "contract.md",
+      "README.md",
+      "package.json",
+      "page.mdx",
+      "skills"
+    ],
+    "inputHashes": {
+      "RetentionToggle.tsx": "52170babb29ece472c127404d60d4dd5182bb2ba19dbe94af652cafb020df0fa",
+      "contract.md": "94405c30ed2766e10979af7f9d970b68516409a522b7a75776cd51e87c4ec34f",
+      "README.md": "a12ed2fe8c3e76f6c5d4f4f7e2ffed4b62c92151b822ba80ef2d49a14137f851",
+      "package.json": "a005addd98f85d010fc6c61579748b4960f9da025a0c0940f4ab0606625709fb",
+      "page.mdx": "d65eb78fdd0f3dc6fb8f6930b2782dbd6bbe140bf1842f688138ab959e15e140",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63aaaf86ffewlc1aAqJvz6bwJ",
+    "info": {
+      "id": "ses_f63aaaf86ffewlc1aAqJvz6bwJ",
+      "projectID": "f3952a1162dc6ca78a2fc4637e549aeef3e49e73",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 17498,
+        "output": 682,
+        "reasoning": 96,
+        "cache": {
+          "read": 46336,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329231996,
+        "updated": 1789329232560,
+        "idle": 1789329264493
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-baseline-3-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  },
+  {
+    "id": "mdx-candidate-3",
+    "status": "completed",
+    "packetEntries": [
+      "RetentionToggle.tsx",
+      "contract.md",
+      "README.md",
+      "package.json",
+      "page.mdx",
+      "skills"
+    ],
+    "inputHashes": {
+      "RetentionToggle.tsx": "52170babb29ece472c127404d60d4dd5182bb2ba19dbe94af652cafb020df0fa",
+      "contract.md": "94405c30ed2766e10979af7f9d970b68516409a522b7a75776cd51e87c4ec34f",
+      "README.md": "a12ed2fe8c3e76f6c5d4f4f7e2ffed4b62c92151b822ba80ef2d49a14137f851",
+      "package.json": "a005addd98f85d010fc6c61579748b4960f9da025a0c0940f4ab0606625709fb",
+      "page.mdx": "d65eb78fdd0f3dc6fb8f6930b2782dbd6bbe140bf1842f688138ab959e15e140",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63aaa31bffeoR6l9JvKbrb6e6",
+    "info": {
+      "id": "ses_f63aaa31bffeoR6l9JvKbrb6e6",
+      "projectID": "5b6bfece6cf64f48568d221b8bd1bef83a684316",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 21283,
+        "output": 942,
+        "reasoning": 136,
+        "cache": {
+          "read": 104192,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329235173,
+        "updated": 1789329235689,
+        "idle": 1789329294229
+      },
+      "title": "offline documentation verification",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-candidate-3-20260913"
+      }
+    },
+    "inputsUnchanged": true
+  }
+]

@@ -1,0 +1,137 @@
+{
+  "frozenAt": "2026-09-13T19:51:45.812Z",
+  "baseline": "9ea67e23",
+  "model": {
+    "providerID": "openai",
+    "id": "gpt-6-astra",
+    "variant": "medium"
+  },
+  "hashes": {
+    "mdx/RetentionToggle.tsx": "52170babb29ece472c127404d60d4dd5182bb2ba19dbe94af652cafb020df0fa",
+    "mdx/contract.md": "94405c30ed2766e10979af7f9d970b68516409a522b7a75776cd51e87c4ec34f",
+    "mdx/README.md": "a12ed2fe8c3e76f6c5d4f4f7e2ffed4b62c92151b822ba80ef2d49a14137f851",
+    "mdx/package.json": "a005addd98f85d010fc6c61579748b4960f9da025a0c0940f4ab0606625709fb",
+    "mdx/page.mdx": "d65eb78fdd0f3dc6fb8f6930b2782dbd6bbe140bf1842f688138ab959e15e140",
+    "candidate/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+    "candidate/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+    "candidate/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+    "markdown/README.md": "ab0ec3b38761f83f37eb9bdead261ae1545091179f1e3ba2fb99d51a1d5b60f4",
+    "markdown/page.md": "527579089c0f4829478c73105bd9d786103e2ce9bdae8f7c829880db277d578c",
+    "markdown/decision.md": "9624fda86224935fac89cf451692142edbe001a159a3255fced3de1fb2deb900",
+    "runtime.txt": "19ac0ab68c2f8bfcd84014e8a49fc6db2a68ae6f41a89bf01eea33bf90dc02d6",
+    "baseline/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+    "baseline/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+    "baseline/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+    "PLAN.md": "68966059b13bf1273b51bf75c1b3f15c4b92c586dcf6bf2c2e87c7c4e514078d"
+  },
+  "trials": [
+    {
+      "id": "markdown-baseline-1",
+      "fixture": "markdown",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-baseline-1-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.md, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.md",
+      "promptSha256": "dac406ec2399a9d2df60648f685824ff1f55df96722690d7d1e3b7fd7e0df689"
+    },
+    {
+      "id": "markdown-candidate-1",
+      "fixture": "markdown",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-candidate-1-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.md, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.md",
+      "promptSha256": "dac406ec2399a9d2df60648f685824ff1f55df96722690d7d1e3b7fd7e0df689"
+    },
+    {
+      "id": "markdown-baseline-2",
+      "fixture": "markdown",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-baseline-2-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.md, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.md",
+      "promptSha256": "dac406ec2399a9d2df60648f685824ff1f55df96722690d7d1e3b7fd7e0df689"
+    },
+    {
+      "id": "markdown-candidate-2",
+      "fixture": "markdown",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-candidate-2-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.md, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.md",
+      "promptSha256": "dac406ec2399a9d2df60648f685824ff1f55df96722690d7d1e3b7fd7e0df689"
+    },
+    {
+      "id": "markdown-baseline-3",
+      "fixture": "markdown",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-baseline-3-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.md, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.md",
+      "promptSha256": "dac406ec2399a9d2df60648f685824ff1f55df96722690d7d1e3b7fd7e0df689"
+    },
+    {
+      "id": "markdown-candidate-3",
+      "fixture": "markdown",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-markdown-candidate-3-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.md, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.md",
+      "promptSha256": "dac406ec2399a9d2df60648f685824ff1f55df96722690d7d1e3b7fd7e0df689"
+    },
+    {
+      "id": "mdx-baseline-1",
+      "fixture": "mdx",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-baseline-1-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.mdx, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.mdx",
+      "promptSha256": "6067401ae350244d657d6e9cfe943a0e129f990da1b4fab26db65c9b9fe995b7"
+    },
+    {
+      "id": "mdx-candidate-1",
+      "fixture": "mdx",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-candidate-1-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.mdx, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.mdx",
+      "promptSha256": "6067401ae350244d657d6e9cfe943a0e129f990da1b4fab26db65c9b9fe995b7"
+    },
+    {
+      "id": "mdx-baseline-2",
+      "fixture": "mdx",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-baseline-2-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.mdx, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.mdx",
+      "promptSha256": "6067401ae350244d657d6e9cfe943a0e129f990da1b4fab26db65c9b9fe995b7"
+    },
+    {
+      "id": "mdx-candidate-2",
+      "fixture": "mdx",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-candidate-2-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.mdx, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.mdx",
+      "promptSha256": "6067401ae350244d657d6e9cfe943a0e129f990da1b4fab26db65c9b9fe995b7"
+    },
+    {
+      "id": "mdx-baseline-3",
+      "fixture": "mdx",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-baseline-3-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.mdx, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.mdx",
+      "promptSha256": "6067401ae350244d657d6e9cfe943a0e129f990da1b4fab26db65c9b9fe995b7"
+    },
+    {
+      "id": "mdx-candidate-3",
+      "fixture": "mdx",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/render-model-mdx-candidate-3-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and its applicable local reference files, not an installed skill. Perform step 5 verification only of the existing page.mdx, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged. Do not draft a new page, use other skills, delegate, or read files outside this workspace. You may run installed local commands.",
+      "output": "page.mdx",
+      "promptSha256": "6067401ae350244d657d6e9cfe943a0e129f990da1b4fab26db65c9b9fe995b7"
+    }
+  ]
+}

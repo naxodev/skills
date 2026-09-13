@@ -96,9 +96,19 @@ AI-written docs.
 
 5.  **Verify before claiming complete** (this is non-negotiable):
 
-    1.  **Run the configured docs build and checks.** If none exist,
-        mark the build not applicable and inspect the rendered Markdown
-        or MDX with the available viewer.
+    1.  **Inspect project build and preview scripts; run configured checks.**
+        Review rendered output with the project's renderer. Without one,
+        discover an available viewer suited to the page before declaring
+        rendering blocked. For plain Markdown, an installed terminal viewer
+        can suffice: for example, `command -v glow`, then `glow <file>`;
+        confirm options with `--help` when needed. Inspect the actual output,
+        not just the command's exit status or raw source. State the review's
+        scope: terminal Markdown does not verify site CSS, MDX components,
+        or interaction behavior. MDX custom components need the project's
+        configured renderer. If a suitable renderer is unavailable, report
+        rendering untested with the attempted discovery and missing capability;
+        use existing tools rather than installing dependencies for this check.
+        A missing docs build makes the build not applicable, not rendering.
     2.  **Follow procedural examples in order.** Run runnable snippets
         from the reader's stated starting context in a clean copy, without
         hidden setup, and compare actual results to the promised outcome. For

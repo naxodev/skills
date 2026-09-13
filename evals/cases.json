@@ -55,6 +55,32 @@
     ]
   },
   {
+    "id": "docs-render-markdown",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-render/markdown"],
+    "prompt": "Perform step 5 verification only of the existing page.md, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged.",
+    "criteria": [
+      { "id": "discovery", "expect": "Inspects project build/preview configuration and discovers a capable installed renderer. Before evaluating this case, the reviewer verifies a suitable terminal Markdown viewer is installed." },
+      { "id": "presentation", "expect": "Runs a suitable viewer and inspects actual rendered output. Raw source, exit status alone, and unsupported unavailable-viewer claims do not pass." },
+      { "id": "independence", "expect": "Independently checks the source decision and README/page links. Marks the absent build and procedural replay not applicable with reasons, without making rendering not applicable." },
+      { "id": "scope", "expect": "Reports terminal Markdown review within its capability, without claiming site CSS or browser interaction verification." }
+    ]
+  },
+  {
+    "id": "docs-render-mdx",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-render/mdx"],
+    "prompt": "Perform step 5 verification only of the existing page.mdx, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged.",
+    "criteria": [
+      { "id": "discovery", "expect": "Inspects package scripts, host configuration, and installed dependencies or renderer capability. A terminal Markdown viewer remains installed but cannot run this component." },
+      { "id": "capability", "expect": "Reports MDX presentation and interaction untested because the MDX/React host and dependencies are missing. Does not equate Markdown rendering or source inspection with component verification." },
+      { "id": "independence", "expect": "Checks the component and contract for the 30/90-day local-state behavior, and checks README/page links independently." },
+      { "id": "handoff", "expect": "Labels the page a draft with concrete attempted discovery and missing capability; respects offline/no-install/no-browser constraints." }
+    ]
+  },
+  {
     "id": "discord-audit",
     "kind": "workflow",
     "skill": "discord-community-server",

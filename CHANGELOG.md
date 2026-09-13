@@ -16,6 +16,7 @@ This file records notable user-facing changes to the skills collection.
 
 ### Changed
 
+- Made technical docs discover a capable installed renderer before reporting blocked review, inspect actual output, and distinguish terminal Markdown review from MDX component and site behavior.
 - Made technical docs establish the reader's starting context and promised outcome before drafting, verify them against sources, and replay procedures without hidden setup. Kept brief task-critical rationale in how-to guides and required observable success checks.
 - Gave Discord audits a read-only evidence and findings handoff that completes without setup approval or launch actions; unknown checks remain separate from observed failures.
 - Clarified the walkthrough arc: four required sections, evidence-earned optional sections before the final recap, and word ceilings without minimums.

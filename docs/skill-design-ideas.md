@@ -94,6 +94,8 @@ Reference and explanation define a question or mental-model distinction rather t
 The baseline already supplied the required prerequisites and success checks. This adoption clarifies the process and removes contradictory rationale advice; it does not demonstrate uplift.
 Only one explanation per arm completed rendered review. The remaining authors handed off drafts without discovering the available viewer.
 
+**Adopted renderer clarification:** step 5 now discovers a capable installed viewer before declaring rendering blocked and requires inspection of actual output. Terminal Markdown review has an explicit capability boundary; custom MDX needs the project's renderer. In the [twelve-session verification-only comparison](../evals/results/2026-09-13-docs-render/README.md), both arms reviewed Markdown in 3/3 runs and correctly left MDX rendering untested in 3/3. The candidate checked installed MDX renderer capabilities in 3/3 runs versus 1/3 baseline runs. This fixes the documented discovery gap without claiming Markdown completion uplift or full-drafting reliability.
+
 **Measure:** missing prerequisites and questions a fresh reader must ask to follow the page.
 
 ### Support all four quadrants with equal precision

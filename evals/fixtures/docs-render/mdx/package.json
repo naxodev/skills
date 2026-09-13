@@ -1,0 +1,5 @@
+{
+  "name": "retention-docs-snapshot",
+  "private": true,
+  "dependencies": { "react": "19.1.0", "@mdx-js/react": "3.1.0" }
+}
