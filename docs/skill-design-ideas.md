@@ -83,11 +83,16 @@ The branch preserves permission boundaries and separates supplied role preview, 
 
 ## Technical docs: design around reader outcomes
 
-### Write a reader contract before drafting
+### Write a reader contract before drafting — adopted
 
-Record the reader's starting knowledge, prerequisites, intended outcome, and evidence that the outcome happened.
-Then choose the Diátaxis quadrant. Quadrant choice is useful, but it does not by itself establish the reader's starting point.
-Keep this contract in drafting notes unless part of it belongs in the page's prerequisites or verification section.
+The first workflow step now establishes the reader's starting knowledge, context, and promised outcome alongside the Diátaxis quadrant.
+The evidence step verifies prerequisites, and final verification checks the outcome from the stated context without hidden setup.
+The contract stays in drafting notes; actionable prerequisites and success guidance belong on the page.
+Reference and explanation define a question or mental-model distinction rather than inheriting a runnable recipe.
+
+**Evidence limit:** a [twelve-session comparison](../evals/results/2026-09-13-docs-reader/README.md) passed all six fresh-copy procedural replays and all six conceptual source judgments in both arms.
+The baseline already supplied the required prerequisites and success checks. This adoption clarifies the process and removes contradictory rationale advice; it does not demonstrate uplift.
+Only one explanation per arm completed rendered review. The remaining authors handed off drafts without discovering the available viewer.
 
 **Measure:** missing prerequisites and questions a fresh reader must ask to follow the page.
 
@@ -100,7 +105,8 @@ Add short branch-specific outlines only where evaluations reveal repeated failur
 - Reference: exact contracts, defaults, errors, and version scope.
 - Explanation: a question, a causal model, evidence, and the boundaries of that model.
 
-Allow short rationale that helps a reader choose the correct action. A useful how-to need not remove every sentence containing “why.”
+**Adopted clarification:** short, source-backed rationale that helps a reader choose or perform a step belongs in a how-to.
+Both the skill and style guide now reserve extended conceptual background for a linked explanation.
 
 **Measure:** whether readers can use a page for its intended purpose without needing unrelated exposition.
 

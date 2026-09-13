@@ -1,0 +1,45 @@
+{
+  "id": "docs-concept-baseline-1",
+  "sessionID": "ses_f63e45d18ffePeQUFkSgH0RFhm",
+  "model": {
+    "id": "gpt-6-astra",
+    "providerID": "openai",
+    "variant": "medium"
+  },
+  "agent": "build",
+  "exactLocalReads": {
+    "SKILL.md": true,
+    "STYLE.md": true
+  },
+  "installedSkillCalls": 0,
+  "immutableInputsUnchanged": true,
+  "criteria": {
+    "reasoning": "passed",
+    "quadrant": "passed",
+    "applicability": "passed: code, build, sidebar not applicable with reasons",
+    "reader-fit": "passed"
+  },
+  "source": "operations.md:3-8 (unchanged decision record)",
+  "readerEvidence": "Explains current chat coordination versus later tracker history/follow-up, relates continuity to cleanup and staff change, and makes no retention or response-time guarantee. No setup list or runnable procedure.",
+  "authorRender": "untested: author handed off a draft; available Glow was not discovered",
+  "authorNavigation": "passed: shell checks verified local links and README entry point",
+  "buildSidebarLive": "not applicable: fixture has no docs build, sidebar, or live service",
+  "authorHandoff": "Saved [explanation.md](explanation.md) and linked it from [README.md](README.md).\n\nThe explanation covers the separation between live coordination and durable history, continuity through staff changes, and the decision’s limits.\n\n**Verification**\n- **Passed:** Claims checked against `operations.md`; practical implications identified as such.\n- **Passed:** Local links and the README entry point resolve. No unresolved `VERIFY` markers remain.\n- **Passed:** Local style and AI-failure-mode review.\n- **Passed:** Decision record matches its original content. Skill files remain unchanged.\n- **Not applicable:** Docs build, type-check, lint, and sidebar checks; none are configured. No procedural examples require execution.\n- **Untested:** Rendered Markdown review; no offline viewer was available in the supplied workspace.\n\nThe page remains a **draft pending rendered review**, as required by the local skill.",
+  "commandEvidence": [
+    {
+      "shellCall": 1,
+      "command": "python3 - <<'PY' ... (full command archived)",
+      "output": [
+        "PASS: README.md: local links resolve; no VERIFY markers",
+        "PASS: explanation.md: local links resolve; no VERIFY markers",
+        "PASS: README entry point links to explanation.md",
+        "PASS: decision record matches original content",
+        "Command exited with code 0."
+      ]
+    }
+  ],
+  "replay": null,
+  "reviewerNavigation": "passed",
+  "reviewerRenderCommand": "passed; output archived for owner inspection",
+  "archive": "raw/docs-concept-baseline-1/transcript.md; raw/docs-concept-baseline-1/export.json; raw/docs-concept-baseline-1/workspace; raw/docs-concept-baseline-1/reviewer-render.json"
+}

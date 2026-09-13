@@ -1,0 +1,116 @@
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { join, resolve } from 'node:path';
+import { spawn } from 'node:child_process';
+import { isDeepStrictEqual } from 'node:util';
+
+const root = process.cwd();
+const out = resolve('evals/results/2026-09-13-docs-reader');
+const temp = '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode';
+const archive = join(temp, 'docs-reader-evidence-20260913');
+const raw = resolve('.evals/docs-reader');
+const model = { providerID: 'openai', id: 'gpt-6-astra', variant: 'medium' };
+const skillPath = 'skills/writing-technical-docs';
+const text = (p: string) => readFileSync(p, 'utf8');
+const hash = (s: string) => new Bun.CryptoHasher('sha256').update(s).digest('hex');
+const json = (p: string, value: unknown) => writeFileSync(p, JSON.stringify(value, null, 2) + '\n');
+async function command(args: string[], cwd = root, timeout = 900_000): Promise<string> {
+  return await new Promise((accept, reject) => {
+    const child = spawn(args[0]!, args.slice(1), { cwd, timeout });
+    let stdout = ''; let stderr = '';
+    child.stdout.on('data', chunk => { stdout += String(chunk); });
+    child.stderr.on('data', chunk => { stderr += String(chunk); });
+    child.on('error', reject);
+    child.on('close', code => code === 0 ? accept(stdout) : reject(new Error(JSON.stringify({ code, stdout, stderr }))));
+  });
+}
+const api = (method: string, path: string, data: unknown, cwd: string) => command(['opencode2', 'api', method, path, ...(data === undefined ? [] : ['--data', JSON.stringify(data)])], cwd);
+type Trial = { id: string; arm: string; fixture: string; work: string; prompt: string; output: string };
+type Part = { type: string; text?: string; name?: string; state?: unknown };
+type Export = { data: { info: { model: typeof model; agent: string; location: { directory: string }; outcome: string }; messages: { type: string; content?: Part[] }[] } };
+function files(dir: string): string[] {
+  return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(join(dir, e.name)).map(f => `${e.name}/${f}`) : [e.name]);
+}
+if (process.argv[2] === 'freeze') {
+  if (existsSync(join(out, 'freeze.json'))) throw new Error('Already frozen');
+  if (!existsSync(join(archive, 'probe.json'))) throw new Error('Run the deterministic probe first');
+  mkdirSync(raw, { recursive: true });
+  for (const arm of ['baseline', 'candidate']) {
+    mkdirSync(join(archive, arm), { recursive: true });
+    for (const file of readdirSync(skillPath)) writeFileSync(join(archive, arm, file), arm === 'baseline' ? await command(['jj', 'file', 'show', '-r', '640ac4aa', `${skillPath}/${file}`]) : text(`${skillPath}/${file}`));
+  }
+  cpSync('evals/fixtures/docs-reader', join(archive, 'docs-reader-start'), { recursive: true });
+  mkdirSync(join(archive, 'docs-concept'), { recursive: true });
+  cpSync('evals/fixtures/operations.md', join(archive, 'docs-concept/operations.md'));
+  writeFileSync(join(archive, 'docs-concept/README.md'), '# Incident documentation\n\nThe decision record is [operations.md](operations.md). This offline workspace\nhas no code, docs build, or sidebar. Pages use plain Markdown. Link new pages\nfrom this README.\n');
+  const trials: Trial[] = [];
+  for (const fixture of ['docs-reader-start', 'docs-concept']) {
+    const task = fixture === 'docs-reader-start'
+      ? "Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification."
+      : 'Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification.';
+    const prompt = `Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. ${task} Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.`;
+    for (let repeat = 1; repeat <= 3; repeat++) for (const arm of ['baseline', 'candidate']) {
+      const id = `${fixture}-${arm}-${repeat}`;
+      trials.push({ id, fixture, arm, work: join(temp, `reader-model-${id}-20260913`), prompt, output: fixture === 'docs-reader-start' ? 'guide.md' : 'explanation.md' });
+    }
+  }
+  cpSync('evals/cases.json', join(archive, 'reviewer-cases.json'));
+  cpSync(join(out, 'PLAN.md'), join(archive, 'PLAN.md'));
+  const hashes = Object.fromEntries(files(archive).filter(f => !f.startsWith('raw/') && !f.startsWith('runs/')).map(f => [f, hash(text(join(archive, f)))]));
+  json(join(out, 'freeze.json'), { frozenAt: new Date().toISOString(), baseline: '640ac4aa', model, hashes, trials: trials.map(t => ({ ...t, promptSha256: hash(t.prompt) })) });
+  cpSync(join(out, 'freeze.json'), join(archive, 'freeze.json'));
+}
+if (process.argv[2] === 'run') {
+  const frozen = JSON.parse(text(join(out, 'freeze.json'))) as { trials: Trial[]; hashes: Record<string, string> };
+  if (existsSync(join(out, 'executions.json'))) throw new Error('Execution already started; recover owned sessions instead of resampling');
+  const executions: Record<string, unknown>[] = []; json(join(out, 'executions.json'), executions);
+  async function run(t: Trial) {
+    const record: Record<string, unknown> = { id: t.id, status: 'unrun' }; executions.push(record);
+    const save = () => json(join(out, 'executions.json'), executions);
+    const dest = join(raw, t.id); const published = join(out, 'runs', t.id);
+    mkdirSync(dest, { recursive: true }); mkdirSync(published, { recursive: true });
+    let session = '';
+    try {
+      for (const [key, expected] of Object.entries(frozen.hashes)) if (hash(text(join(archive, key))) !== expected) throw new Error('Frozen input mismatch');
+      await command(['jj', 'git', 'clone', root, t.work]);
+      for (const file of readdirSync(t.work)) rmSync(join(t.work, file), { recursive: true, force: true });
+      cpSync(join(archive, t.arm), join(t.work, skillPath), { recursive: true });
+      cpSync(join(archive, t.fixture), t.work, { recursive: true });
+      record.packetEntries = readdirSync(t.work);
+      const immutable = Object.fromEntries(files(t.work).filter(f => f !== 'README.md').map(f => [f, hash(text(join(t.work, f)))]));
+      record.inputHashes = immutable;
+      session = (JSON.parse(await api('post', '/api/session', { title: 'offline reader documentation', agent: 'build', model, location: { directory: t.work } }, t.work)) as { data: { id: string } }).data.id;
+      record.sessionID = session; record.status = 'started'; save();
+      await api('post', `/api/session/${session}/prompt`, { text: t.prompt }, t.work);
+      await api('post', `/api/session/${session}/wait`, undefined, t.work);
+      const exported = await api('get', `/api/session/${session}/export`, undefined, t.work);
+      writeFileSync(join(dest, 'export.json'), exported);
+      const { data } = JSON.parse(exported) as Export;
+      record.info = data.info;
+      const visible = data.messages.filter(m => m.type === 'assistant').map(m => ({ type: m.type, content: (m.content ?? []).filter(c => ['text', 'tool'].includes(c.type)) }));
+      writeFileSync(join(dest, 'transcript.md'), `# Visible transcript\n\n## User prompt\n\n${t.prompt}\n\n## Assistant text and tool results\n\n\`\`\`json\n${JSON.stringify(visible, null, 2)}\n\`\`\`\n`);
+      if (data.info.location.directory !== t.work || data.info.agent !== 'build' || !isDeepStrictEqual(data.info.model, model)) throw new Error('Session identity mismatch');
+      for (const [file, expected] of Object.entries(immutable)) if (hash(text(join(t.work, file))) !== expected) throw new Error(`Input changed: ${file}`);
+      record.inputsUnchanged = true;
+      if (data.info.outcome !== 'succeeded') throw new Error(`Session outcome ${data.info.outcome}`);
+      cpSync(join(t.work, t.output), join(published, t.output));
+      cpSync(join(t.work, 'README.md'), join(published, 'README.md'));
+      cpSync(t.work, join(dest, 'workspace'), { recursive: true });
+      record.status = 'completed';
+    } catch (error) {
+      record.status = 'failed'; record.error = String(error);
+      if (session) {
+        await api('post', `/api/session/${session}/interrupt`, undefined, t.work).catch(() => undefined);
+        const exported = await api('get', `/api/session/${session}/export`, undefined, t.work).catch(() => '');
+        if (exported) writeFileSync(join(dest, 'failure-export.json'), exported);
+      }
+      if (existsSync(t.work)) cpSync(t.work, join(dest, 'workspace'), { recursive: true });
+    }
+    save(); cpSync(dest, join(archive, 'raw', t.id), { recursive: true });
+    cpSync(published, join(archive, 'runs', t.id), { recursive: true });
+    rmSync(t.work, { recursive: true, force: true });
+    console.log(JSON.stringify({ id: t.id, status: record.status, error: record.error }));
+  }
+  const queue = [...frozen.trials];
+  await Promise.all(Array.from({ length: 3 }, async () => { while (queue.length) await run(queue.shift()!); }));
+  cpSync(join(out, 'executions.json'), join(archive, 'executions.json'));
+}

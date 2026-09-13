@@ -9,7 +9,8 @@
       { "id": "grounding", "expect": "Uses releaseLabel(version, { prefix }) from the public index.ts and invents no options." },
       { "id": "execution", "expect": "Runs a working example and records its actual output or assertion result." },
       { "id": "applicability", "expect": "Marks docs build and sidebar not applicable with reasons; does not demand a src directory." },
-      { "id": "quadrant", "expect": "Produces a task-focused how-to with a verification step." }
+      { "id": "quadrant", "expect": "Produces a task-focused how-to with a verification step." },
+      { "id": "reader-fit", "expect": "States the relevant package context and Bun requirement without unrelated setup; gives a check and expected prefixed label that establish the requested result." }
     ]
   },
   {
@@ -33,7 +34,24 @@
     "criteria": [
       { "id": "reasoning", "expect": "Explains durable timelines and handover from the decision without inventing retention guarantees or response commitments." },
       { "id": "quadrant", "expect": "Writes an explanation, not a forced step-by-step API tutorial." },
-      { "id": "applicability", "expect": "Treats code execution, docs build, and sidebar as not applicable with reasons." }
+      { "id": "applicability", "expect": "Treats code execution, docs build, and sidebar as not applicable with reasons." },
+      { "id": "reader-fit", "expect": "Helps the reader distinguish live chat coordination from durable tracker timelines and handover, without a setup checklist, runnable procedure, or unsupported guarantees." }
+    ]
+  },
+  {
+    "id": "docs-reader-start",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-reader"],
+    "prompt": "Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification.",
+    "criteria": [
+      { "id": "grounding", "expect": "Uses card.ts and the README contract with configs/release.json, preserving the supplied release prefix/version; invents no options, links, setup, or external service." },
+      { "id": "reader-fit", "expect": "Establishes Bun and the workspace root, creates the initially absent release config from the example, and requires no hidden setup when replayed in a fresh copy." },
+      { "id": "outcome", "expect": "Writes generated/release.txt containing release-2.4.0 and a newline; includes a runnable verification command and expected observable success that checks the saved artifact." },
+      { "id": "rationale", "expect": "Briefly explains that --write saves the artifact while default dry-run output does not establish saved success." },
+      { "id": "execution", "expect": "Actually executes the documented workflow and compares the saved result, with truthful verification statuses." },
+      { "id": "applicability", "expect": "Marks absent build, sidebar, and live checks not applicable with reasons; inspects plain Markdown and its entry point." },
+      { "id": "quadrant", "expect": "Produces one task-focused how-to, without extended conceptual background or visible drafting contracts." }
     ]
   },
   {

@@ -96,8 +96,8 @@ this list before claiming the page is done:
 - **Phantom "Advanced" sections.** Don't bolt on an `Advanced` heading
   just to feel thorough — only include content the reader genuinely
   needs in the flow of the task.
-- **Mode-mixing.** A how-to that explains *why* has drifted toward
-  explanation. Move that material out and link to it.
+- **Mode-mixing.** Keep brief, source-backed rationale needed to choose
+  or perform a how-to step. Link extended conceptual background elsewhere.
 - **Confabulated "Common pitfalls" lists.** Only document pitfalls you
   observed in the code (skip reasons, validation errors, footguns the
   types allow). If you can't point at the line that creates the

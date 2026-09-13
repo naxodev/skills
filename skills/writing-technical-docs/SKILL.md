@@ -45,7 +45,17 @@ AI-written docs.
     how-to and tutorial, ask: does the reader already know the domain? Yes
     → how-to. No → tutorial.
 
-**Complete when:** one quadrant is selected, and mixed reader needs have been split rather than blended into one page.
+    Before drafting, establish a **reader contract** in drafting notes:
+    the intended reader, assumed knowledge and starting state, and the
+    task or question with its success condition. Infer these from the
+    request and project; ask only when ambiguity materially changes the
+    instructions. A tutorial needs a learner start and observable lesson
+    outcome; a how-to needs a task start and result; reference needs an
+    exact question answered; explanation needs a mental model or
+    distinction the reader should understand. The latter two need no
+    runnable recipe. These notes require no separate file or page template.
+
+**Complete when:** one quadrant and a reader contract are established, and mixed reader needs have been split rather than blended into one page.
 
 2.  **Read the evidence before writing.** Match the source to the page:
 
@@ -60,17 +70,23 @@ AI-written docs.
       and runbooks. Establish the prerequisites and observable outcome.
 
     Read the project README and relevant sibling pages in every branch.
+    Check the reader's assumed starting context and promised outcome
+    against these sources. Verify which prerequisites actually apply,
+    including required runtime, working directory, setup, and configuration
+    where relevant; omit speculative or unrelated setup.
     Mark unresolved claims with a `VERIFY` comment in the document's
     native format, and resolve them before presenting a finished page.
 
-**Complete when:** each planned claim has a relevant source, and unresolved claims are marked `VERIFY` rather than stated as fact.
+**Complete when:** each planned claim, including the reader's starting context, required prerequisites, and promised outcome, has source support; unresolved claims are marked `VERIFY` rather than stated as fact.
 
 3.  **Apply the quadrant template.** For how-to guides — by far the most
     common request — see [HOW-TO-TEMPLATE.md](HOW-TO-TEMPLATE.md). Tutorials,
     reference, and explanation pages each have a different shape; do not
     use the how-to template for them.
+    Surface actionable prerequisites and instructions for recognizing
+    success on the page; keep the drafting contract in the notes.
 
-**Complete when:** the draft follows the selected quadrant's structure and uses `HOW-TO-TEMPLATE.md` only for a how-to guide.
+**Complete when:** the draft serves the reader contract in the selected quadrant's structure, with actionable prerequisites and success guidance where relevant; `HOW-TO-TEMPLATE.md` is used only for a how-to guide.
 
 4.  **Apply the style rules.** Voice, headings, code blocks, linking, and
     things to omit are all in [STYLE.md](STYLE.md). The AI-specific failure
@@ -84,13 +100,17 @@ AI-written docs.
         mark the build not applicable and inspect the rendered Markdown
         or MDX with the available viewer.
     2.  **Follow procedural examples in order.** Run runnable snippets
-        in a clean context and compare the outcome to the page. For
+        from the reader's stated starting context in a clean copy, without
+        hidden setup, and compare actual results to the promised outcome. For
         live-service or credential-dependent steps, report the blocked
         check as untested. Verify independent parts where possible.
     3.  **Check claims against their sources.** Recheck local examples
         against current exports and usage, external examples against
         versioned official docs, and conceptual claims against decisions
-        or observed behavior. Resolve or remove every `VERIFY` marker.
+        or observed behavior. Check that reference answers the intended
+        question and explanation supports the promised distinction, rather
+        than treating the draft's own claims as evidence. Resolve or remove
+        every `VERIFY` marker.
     4.  **Check navigation and links.** Verify local links and the page's
         entry point. Check sidebar registration when a sidebar exists;
         otherwise mark that check not applicable.
@@ -98,7 +118,7 @@ AI-written docs.
     Report each applicable check as passed, failed, or untested. Use
     not applicable only when the page or project does not need it.
 
-**Complete when:** all applicable checks pass, or the handoff identifies the blocked checks and labels the page a draft. Every not-applicable check has a reason, and the page contains no unresolved factual claim.
+**Complete when:** applicable checks establish the reader can reach the promised outcome from the stated context, or the handoff identifies failed or blocked checks and labels the page a draft. Every not-applicable check has a reason, and the page contains no unresolved factual claim.
 
 ## Anti-patterns (stop and revise if you catch yourself doing these)
 
@@ -111,8 +131,8 @@ AI-written docs.
   on the next API change.
 - **Phantom "Advanced" sections.** Don't bolt on a heading just to feel
   thorough — only include content the reader genuinely needs.
-- **Mode-mixing.** A how-to that explains *why* has drifted toward
-  explanation. Move that material out and link to it.
+- **Mode-mixing.** Keep brief, source-backed rationale needed to choose
+  or perform a how-to step. Link extended conceptual background elsewhere.
 - **Version-of-the-week phrasing.** "As of January 2026…" — pin to a
   package version if it matters, otherwise omit.
 

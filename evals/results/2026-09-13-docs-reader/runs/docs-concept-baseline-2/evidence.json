@@ -1,0 +1,63 @@
+{
+  "id": "docs-concept-baseline-2",
+  "sessionID": "ses_f63e44443ffeHVNm7X953mTO36",
+  "model": {
+    "id": "gpt-6-astra",
+    "providerID": "openai",
+    "variant": "medium"
+  },
+  "agent": "build",
+  "exactLocalReads": {
+    "SKILL.md": true,
+    "STYLE.md": true
+  },
+  "installedSkillCalls": 0,
+  "immutableInputsUnchanged": true,
+  "criteria": {
+    "reasoning": "passed",
+    "quadrant": "passed",
+    "applicability": "passed: code, build, sidebar not applicable with reasons",
+    "reader-fit": "passed"
+  },
+  "source": "operations.md:3-8 (unchanged decision record)",
+  "readerEvidence": "Explains current chat coordination versus later tracker history/follow-up, relates continuity to cleanup and staff change, and makes no retention or response-time guarantee. No setup list or runnable procedure.",
+  "authorRender": "passed: Glow commands returned rendered page and README",
+  "authorNavigation": "passed: shell checks verified local links and README entry point",
+  "buildSidebarLive": "not applicable: fixture has no docs build, sidebar, or live service",
+  "authorHandoff": "Saved [explanation.md](explanation.md) and linked it from [README.md](README.md).\n\nThe explanation covers why the tracker holds incident timelines and follow-up work, how chat supports coordination, and why the decision implies no retention or response-time guarantee.\n\n**Verification**\n- **Passed:** Claims checked against `operations.md`; rationale distinguished from practical implications.\n- **Passed:** Rendered both pages locally with Glow and inspected the output.\n- **Passed:** All four local links resolve, the README entry point exists, and no `VERIFY` markers remain.\n- **Not applicable:** Docs build, type-check, lint, and sidebar checks. This workspace has no code or configured checkers.\n- **Not applicable:** Runnable examples; the page contains none.\n\nUsed only workspace sources and the local skill. The decision record and skill files remain unchanged.",
+  "commandEvidence": [
+    {
+      "shellCall": 1,
+      "command": "command -v bun pandoc glow python3",
+      "output": [
+        "Command exited with code 1."
+      ]
+    },
+    {
+      "shellCall": 2,
+      "command": "glow -s ascii explanation.md",
+      "output": [
+        "Command exited with code 0."
+      ]
+    },
+    {
+      "shellCall": 3,
+      "command": "python3 -c 'from pathlib import Path; import re; root=Path.cwd(); files=[Path(\"README.md\") ... (full command archived)",
+      "output": [
+        "PASS: 4 local links, README entry point, and no unresolved VERIFY markers",
+        "Command exited with code 0."
+      ]
+    },
+    {
+      "shellCall": 4,
+      "command": "glow -s ascii README.md",
+      "output": [
+        "Command exited with code 0."
+      ]
+    }
+  ],
+  "replay": null,
+  "reviewerNavigation": "passed",
+  "reviewerRenderCommand": "passed; output archived for owner inspection",
+  "archive": "raw/docs-concept-baseline-2/transcript.md; raw/docs-concept-baseline-2/export.json; raw/docs-concept-baseline-2/workspace; raw/docs-concept-baseline-2/reviewer-render.json"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "docs-concept-candidate-2",
+  "sessionID": "ses_f63e372b7ffeo7DUPpheOLtU08",
+  "model": {
+    "id": "gpt-6-astra",
+    "providerID": "openai",
+    "variant": "medium"
+  },
+  "agent": "build",
+  "exactLocalReads": {
+    "SKILL.md": true,
+    "STYLE.md": true
+  },
+  "installedSkillCalls": 0,
+  "immutableInputsUnchanged": true,
+  "criteria": {
+    "reasoning": "passed",
+    "quadrant": "passed",
+    "applicability": "passed: code, build, sidebar not applicable with reasons",
+    "reader-fit": "passed"
+  },
+  "source": "operations.md:3-8 (unchanged decision record)",
+  "readerEvidence": "Explains current chat coordination versus later tracker history/follow-up, relates continuity to cleanup and staff change, and makes no retention or response-time guarantee. No setup list or runnable procedure.",
+  "authorRender": "untested: author handed off a draft; available Glow was not discovered",
+  "authorNavigation": "passed: shell checks verified local links and README entry point",
+  "buildSidebarLive": "not applicable: fixture has no docs build, sidebar, or live service",
+  "authorHandoff": "Saved [explanation.md](explanation.md) and added its entry point to [README.md](README.md).\n\nThe explanation covers why the tracker holds incident timelines and follow-up work, how chat supports live coordination, and why this decision adds no response-time or chat-retention guarantee.\n\n**Verification**\n- **Passed:** Claims checked against `operations.md`.\n- **Passed:** Local skill and style review; no unresolved `VERIFY` markers.\n- **Passed:** All local links resolve, including the README entry point.\n- **Passed:** Decision record matches its original content. Skill files were unchanged.\n- **Not applicable:** Docs build, type-check, lint, and sidebar checks; none are configured in this Markdown-only workspace.\n- **Not applicable:** Runnable examples; the explanation contains no procedures.\n- **Untested:** Rendered Markdown review. No offline viewer was available through the permitted tools.\n\nThe page remains a **draft pending rendered review**.",
+  "commandEvidence": [
+    {
+      "shellCall": 1,
+      "command": "python3 - <<'PY' ... (full command archived)",
+      "output": [
+        "PASS: README.md: local links resolve; no VERIFY markers",
+        "PASS: explanation.md: local links resolve; no VERIFY markers",
+        "PASS: README links to explanation.md",
+        "PASS: decision record matches original content",
+        "Command exited with code 0."
+      ]
+    }
+  ],
+  "replay": null,
+  "reviewerNavigation": "passed",
+  "reviewerRenderCommand": "passed; output archived for owner inspection",
+  "archive": "raw/docs-concept-candidate-2/transcript.md; raw/docs-concept-candidate-2/export.json; raw/docs-concept-candidate-2/workspace; raw/docs-concept-candidate-2/reviewer-render.json"
+}

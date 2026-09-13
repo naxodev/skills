@@ -52,7 +52,7 @@ When you want <X instead of default>, change step N to:
 <!-- 5. Verify — confirm it worked -->
 ## Verify
 
-How to confirm the change took effect (a log line, a test command, a UI cue).
+A runnable check or concrete UI action, with the expected observable result.
 
 <!-- 6. Next steps — links out, not new content -->
 ## Next steps
@@ -74,10 +74,11 @@ generated `llms.txt` files.
 **Lead.** One or two sentences. Do not include "In this guide, we will…" or
 any preamble. Drop straight into what the page accomplishes.
 
-**Before you start.** Skip this section when there is nothing non-obvious.
-Don't list "Node 18+" or "a code editor." Do list anything the reader needs
-to wire up beforehand (an API key, a configured engine, a sibling concept
-page they should read first).
+**Before you start.** Include only source-verified requirements the intended
+reader needs: working directory, setup, selected configuration, or a required
+runtime/version. Skip this section when none need stating. For credentials,
+name the required variable or access without exposing secret values. Link
+existing setup instructions where useful; omit generic equipment lists.
 
 **Steps.** One task per page. If you find yourself writing "Now, in a
 separate task, …" you have two pages, not one. Each step starts with an
@@ -87,8 +88,9 @@ imperative verb. Code snippets immediately follow the step they implement.
 not the whole example again. If a variation is rare or speculative, cut it
 — don't bolt on an "Advanced" section to feel thorough.
 
-**Verify.** How the reader knows it worked. A log line, a test command, a
-UI cue. This is the single section AI agents most often forget.
+**Verify.** Give a runnable check or concrete UI action and the expected
+observable outcome, so the reader can distinguish success from a command
+that merely exits. This is the single section AI agents most often forget.
 
 **Next steps.** Links only, no new content. Three categories:
 - Related how-to (sibling task)

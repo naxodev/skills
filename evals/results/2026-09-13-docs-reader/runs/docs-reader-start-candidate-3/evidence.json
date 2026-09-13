@@ -1,0 +1,90 @@
+{
+  "id": "docs-reader-start-candidate-3",
+  "sessionID": "ses_f63e5b4d4ffe17GYfd6H0A4Oyl",
+  "model": {
+    "id": "gpt-6-astra",
+    "providerID": "openai",
+    "variant": "medium"
+  },
+  "agent": "build",
+  "exactLocalReads": {
+    "SKILL.md": true,
+    "STYLE.md": true,
+    "HOW-TO-TEMPLATE.md": true
+  },
+  "installedSkillCalls": 0,
+  "immutableInputsUnchanged": true,
+  "criteria": {
+    "grounding": "passed",
+    "reader-fit": "passed",
+    "outcome": "passed",
+    "rationale": "passed",
+    "execution": "passed",
+    "applicability": "untested: author checked source and navigation, but did not inspect rendered Markdown",
+    "quadrant": "passed"
+  },
+  "source": "README.md:3-31; card.ts:6-29; release.example.json:1 (frozen fixture)",
+  "readerEvidence": "Before you start names Bun and the workspace root; recipe copies the absent release config, writes with --write, explains dry-run non-persistence, and verifies the saved label plus newline.",
+  "authorRender": "untested: author handed off a draft; available Glow was not discovered",
+  "authorNavigation": "passed: shell checks verified local links and README entry point",
+  "buildSidebarLive": "not applicable: fixture has no docs build, sidebar, or live service",
+  "authorHandoff": "Saved [guide.md](guide.md) and linked it from [README.md](README.md).\n\nThe guide covers the fresh-copy setup, release configuration, write command, and saved-card verification.\n\n**Verification**\n- **Passed:** Ran all three guide commands in order in a clean fixture inside the workspace using Bun 1.3.7.\n- **Passed:** Confirmed the saved file contains exactly `release-2.4.0` plus one newline.\n- **Passed:** Checked source claims, local links, the README entry point, and absence of unresolved `VERIFY` markers.\n- **Not applicable:** Docs build, type-check, lint, and sidebar checks; none are configured.\n- **Untested:** Rendered Markdown review. Bun’s Markdown API was unavailable, and no local Markdown renderer was found.\n\nThe guide remains a **draft pending rendered review**. The temporary fixture was removed. Only `guide.md` and `README.md` were changed.",
+  "commandEvidence": [
+    {
+      "shellCall": 1,
+      "command": "bun --version",
+      "output": [
+        "Command exited with code 0."
+      ]
+    },
+    {
+      "shellCall": 2,
+      "command": "bun -e 'import { mkdtempSync, mkdirSync, copyFileSync, readFileSync, existsSync, rmSync }  ... (full command archived)",
+      "output": [
+        "PASS: cp configs/release.example.json configs/release.json",
+        "PASS: bun card.ts generate --config configs/release.json --write",
+        "PASS: bun card.ts verify --config configs/release.json",
+        "PASS: exact artifact bytes",
+        "PASS: local links, entry point, and unresolved-marker check",
+        "Command exited with code 1."
+      ]
+    },
+    {
+      "shellCall": 3,
+      "command": "command -v pandoc cmark markdown",
+      "output": [
+        "Command exited with code 1."
+      ]
+    }
+  ],
+  "replay": {
+    "id": "docs-reader-start-candidate-3",
+    "startingContext": "Bun available; fresh fixture root containing card.ts and configs; no selected release config or generated card",
+    "missingSteps": [],
+    "observations": [
+      {
+        "command": "cp configs/release.example.json configs/release.json",
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": "bun card.ts generate --config configs/release.json --write",
+        "exit": 0,
+        "stdout": "wrote generated/release.txt: release-2.4.0\n",
+        "stderr": ""
+      },
+      {
+        "command": "bun card.ts verify --config configs/release.json",
+        "exit": 0,
+        "stdout": "verified generated/release.txt: release-2.4.0\n",
+        "stderr": ""
+      }
+    ],
+    "savedBytes": "release-2.4.0\n",
+    "outcome": "passed"
+  },
+  "reviewerNavigation": "passed",
+  "reviewerRenderCommand": "passed; output archived for owner inspection",
+  "archive": "raw/docs-reader-start-candidate-3/transcript.md; raw/docs-reader-start-candidate-3/export.json; raw/docs-reader-start-candidate-3/workspace; raw/docs-reader-start-candidate-3/reviewer-render.json"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "docs-concept-candidate-3",
+  "sessionID": "ses_f63e3529affebWVyYCps8mFonh",
+  "model": {
+    "id": "gpt-6-astra",
+    "providerID": "openai",
+    "variant": "medium"
+  },
+  "agent": "build",
+  "exactLocalReads": {
+    "SKILL.md": true,
+    "STYLE.md": true
+  },
+  "installedSkillCalls": 0,
+  "immutableInputsUnchanged": true,
+  "criteria": {
+    "reasoning": "passed",
+    "quadrant": "passed",
+    "applicability": "passed: code, build, sidebar not applicable with reasons",
+    "reader-fit": "passed"
+  },
+  "source": "operations.md:3-8 (unchanged decision record)",
+  "readerEvidence": "Explains current chat coordination versus later tracker history/follow-up, relates continuity to cleanup and staff change, and makes no retention or response-time guarantee. No setup list or runnable procedure.",
+  "authorRender": "passed: Glow commands returned rendered page and README",
+  "authorNavigation": "passed: shell checks verified local links and README entry point",
+  "buildSidebarLive": "not applicable: fixture has no docs build, sidebar, or live service",
+  "authorHandoff": "Created [explanation.md](explanation.md) and linked it from [README.md](README.md).\n\nThe explanation covers why the tracker holds incident timelines and follow-up work, while chat supports live coordination. It connects this separation to continuity across channel cleanup and staff changes.\n\n**Verification**\n- **Passed:** Claims checked against `operations.md`; interpretation is identified as such.\n- **Passed:** Local skill style and explanation-mode review.\n- **Passed:** All local links, README entry point, and absence of unresolved `VERIFY` markers.\n- **Passed:** Rendered Markdown inspected with `glow`. The initial Bun rendering attempt failed because this version lacks `Bun.markdown`.\n- **Not applicable:** Docs build, type-check, lint, and sidebar checks; none are configured.\n- **Not applicable:** Procedural verification; the page contains no runnable examples.\n\nThe decision record and local skill files remain unchanged. All work stayed offline.",
+  "commandEvidence": [
+    {
+      "shellCall": 1,
+      "command": "bun --eval 'import { existsSync, readFileSync } from \"node:fs\"; for (const file of [\"READM ... (full command archived)",
+      "output": [
+        "PASS link: README.md -> operations.md",
+        "PASS link: README.md -> explanation.md",
+        "Command exited with code 1."
+      ]
+    },
+    {
+      "shellCall": 2,
+      "command": "bun --eval 'import { existsSync, readFileSync } from \"node:fs\"; for (const file of [\"READM ... (full command archived)",
+      "output": [
+        "PASS link: README.md -> operations.md",
+        "PASS link: README.md -> explanation.md",
+        "PASS no unresolved markers: README.md",
+        "PASS link: explanation.md -> operations.md",
+        "PASS link: explanation.md -> operations.md",
+        "PASS no unresolved markers: explanation.md",
+        "Command exited with code 0."
+      ]
+    },
+    {
+      "shellCall": 3,
+      "command": "glow explanation.md",
+      "output": [
+        "Command exited with code 0."
+      ]
+    },
+    {
+      "shellCall": 4,
+      "command": "glow README.md",
+      "output": [
+        "Command exited with code 0."
+      ]
+    }
+  ],
+  "replay": null,
+  "reviewerNavigation": "passed",
+  "reviewerRenderCommand": "passed; output archived for owner inspection",
+  "archive": "raw/docs-concept-candidate-3/transcript.md; raw/docs-concept-candidate-3/export.json; raw/docs-concept-candidate-3/workspace; raw/docs-concept-candidate-3/reviewer-render.json"
+}

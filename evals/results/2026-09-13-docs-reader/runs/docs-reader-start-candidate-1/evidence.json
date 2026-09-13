@@ -1,0 +1,96 @@
+{
+  "id": "docs-reader-start-candidate-1",
+  "sessionID": "ses_f63e774e6ffd1c9uewonteHKkX",
+  "model": {
+    "id": "gpt-6-astra",
+    "providerID": "openai",
+    "variant": "medium"
+  },
+  "agent": "build",
+  "exactLocalReads": {
+    "SKILL.md": true,
+    "STYLE.md": true,
+    "HOW-TO-TEMPLATE.md": true
+  },
+  "installedSkillCalls": 0,
+  "immutableInputsUnchanged": true,
+  "criteria": {
+    "grounding": "passed",
+    "reader-fit": "passed",
+    "outcome": "passed",
+    "rationale": "passed",
+    "execution": "passed",
+    "applicability": "untested: author checked source and navigation, but did not inspect rendered Markdown",
+    "quadrant": "passed"
+  },
+  "source": "README.md:3-31; card.ts:6-29; release.example.json:1 (frozen fixture)",
+  "readerEvidence": "Before you start names Bun and the workspace root; recipe copies the absent release config, writes with --write, explains dry-run non-persistence, and verifies the saved label plus newline.",
+  "authorRender": "untested: author handed off a draft; available Glow was not discovered",
+  "authorNavigation": "passed: shell checks verified local links and README entry point",
+  "buildSidebarLive": "not applicable: fixture has no docs build, sidebar, or live service",
+  "authorHandoff": "Saved [guide.md](guide.md) and linked it from [README.md](README.md#generate-a-card).\n\nThe guide covers fresh-copy setup, selecting the release config, writing the card, and checking the saved result.\n\n**Verification**\n- **Passed:** Ran all three guide commands in order in a clean fixture inside this workspace using Bun 1.3.7.\n- **Passed:** Confirmed exact output: `release-2.4.0` followed by one newline.\n- **Passed:** CLI verification printed `verified generated/release.txt: release-2.4.0` and exited zero.\n- **Passed:** Checked source claims, local links, the README entry point, and local style rules. No unresolved `VERIFY` markers remain.\n- **Not applicable:** Docs build, type-check, lint, and sidebar checks; none are configured.\n- **Untested:** Rendered Markdown inspection. No offline renderer or viewer was available, so the guide remains a draft pending that check.\n\nRemoved the verification fixture. Only `guide.md` and `README.md` were changed.",
+  "commandEvidence": [
+    {
+      "shellCall": 1,
+      "command": "bun --version",
+      "output": [
+        "Command exited with code 0."
+      ]
+    },
+    {
+      "shellCall": 2,
+      "command": "bun -e 'import { mkdirSync, copyFileSync, readFileSync, existsSync, rmSync } from \"node:fs ... (full command archived)",
+      "output": [
+        "Command exited with code 1."
+      ]
+    },
+    {
+      "shellCall": 3,
+      "command": "bun -e 'import { mkdirSync, copyFileSync, readFileSync, existsSync, rmSync } from \"node:fs ... (full command archived)",
+      "output": [
+        "$ cp configs/release.example.json configs/release.json",
+        "exit: 0",
+        "$ bun card.ts generate --config configs/release.json --write",
+        "exit: 0",
+        "wrote generated/release.txt: release-2.4.0",
+        "$ bun card.ts verify --config configs/release.json",
+        "exit: 0",
+        "verified generated/release.txt: release-2.4.0",
+        "PASS: exact artifact content",
+        "PASS: local links, README entry point, and unresolved-marker check",
+        "Markdown renderer available: false",
+        "Command exited with code 0."
+      ]
+    }
+  ],
+  "replay": {
+    "id": "docs-reader-start-candidate-1",
+    "startingContext": "Bun available; fresh fixture root containing card.ts and configs; no selected release config or generated card",
+    "missingSteps": [],
+    "observations": [
+      {
+        "command": "cp configs/release.example.json configs/release.json",
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": "bun card.ts generate --config configs/release.json --write",
+        "exit": 0,
+        "stdout": "wrote generated/release.txt: release-2.4.0\n",
+        "stderr": ""
+      },
+      {
+        "command": "bun card.ts verify --config configs/release.json",
+        "exit": 0,
+        "stdout": "verified generated/release.txt: release-2.4.0\n",
+        "stderr": ""
+      }
+    ],
+    "savedBytes": "release-2.4.0\n",
+    "outcome": "passed"
+  },
+  "reviewerNavigation": "passed",
+  "reviewerRenderCommand": "passed; output archived for owner inspection",
+  "archive": "raw/docs-reader-start-candidate-1/transcript.md; raw/docs-reader-start-candidate-1/export.json; raw/docs-reader-start-candidate-1/workspace; raw/docs-reader-start-candidate-1/reviewer-render.json"
+}
