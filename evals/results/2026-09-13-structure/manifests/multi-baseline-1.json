@@ -1,0 +1,59 @@
+{
+  "title": "A queue that leaves room for the next send",
+  "eyebrow": "PR #108 · queue worker · feature",
+  "dek": "A configurable job-count limit turns an all-at-once drain into a bounded batch, leaving the remainder for later drains.",
+  "meta": "feat: bound queue batches",
+  "footer": "PR #108 · feat: bound queue batches",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The pending queue set the size of every send",
+      "content": "<p class=\"lead\">Before this change, the worker sent whatever the pending queue contained. Its <code>tick</code> function called <code>drain(pending)</code>, then passed the returned jobs to <code>send</code> at the configured <code>/jobs</code> endpoint. The drain removed every entry from the array with <code>pending.splice(0)</code>.</p><p>That made queue depth and batch size the same number. A short queue produced a short batch, but a larger backlog went into one send. There was no separate setting for how many jobs the worker should take at once. PR #108 introduces that setting at the point where queued work becomes a batch.</p>"
+    },
+    {
+      "eyebrow": "The gap",
+      "title": "A backlog should not dictate one batch",
+      "content": "<p>Consider a pending array containing 250 jobs. Previously, one tick removed all 250 and handed them to the send function. With the new default limit of 100, that tick takes the first 100 and leaves 150 pending. If no jobs arrive between later drains, two more drains take 100 and then 50.</p><p>You can now choose a per-send job count independently of the backlog. The distinction matters because a growing queue no longer forces an equally large batch. It is a count guarantee: the change does not establish how many bytes those 100 jobs occupy or how long they take to process.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "One limit, carried from startup to send",
+      "content": "<p>The configuration module reads <code>BATCH_LIMIT</code> from the environment, converts it to a number, and defaults to 100 when the variable is absent. It validates the result as the module loads:</p>{{CODE:0}}<p>The guard rejects values that are not positive integers before the worker can use them. Zero, negative numbers, fractions, and nonnumeric input cannot become the configured batch limit.</p><p>The queue operation applies that limit as the number of entries to remove:</p>{{CODE:1}}<p>The first argument still selects the beginning of the array. The second now limits removal, so the returned batch contains the first jobs and the remaining entries stay pending. We can see the split in the 250-job example:</p>{{DIAGRAM:0}}<p>The worker connects the setting to the drain call before sending its result:</p>{{CODE:2}}<p>This call is where the configuration becomes a per-send bound. The endpoint remains the destination, and <code>await</code> still waits for the send. The new behavior comes from selecting a bounded batch before that call.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "worker.ts",
+          "source": "import { endpoint, batchLimit } from './config';\nimport { drain } from './queue';\nexport async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}"
+        }
+      ],
+      "diagrams": [
+        "flowchart LR\n  A[250 pending jobs] --> B[Drain with limit 100]\n  B --> C[First 100 jobs]\n  C --> D[Send to /jobs]\n  B --> E[150 jobs remain pending]"
+      ]
+    },
+    {
+      "eyebrow": "The honest trade-offs",
+      "title": "The boundary is a job count",
+      "content": "<h3>Batch size is not a resource budget</h3><p>The author explicitly limits the guarantee to the number of jobs in each send. The implementation counts array entries; it does not measure job memory or processing time. A batch of 100 jobs can therefore vary in size and duration. Keeping those guarantees distinct prevents a configurable count from becoming an unsupported promise about resource use.</p><h3>Tenant scheduling needs information the queue lacks</h3><p>Per-tenant scheduling stays outside this change because the queue has no tenant key. The drain takes entries from the front rather than selecting work by tenant. The documented reason is a missing part of the queue's data model, not a claim that bounded batches provide tenant fairness.</p><p>No follow-up issue or priority order is documented. These boundaries explain the scope of this PR; they do not establish a roadmap for memory budgets or tenant scheduling.</p>"
+    },
+    {
+      "eyebrow": "What the diff looks like",
+      "title": "Three files carry the same constraint",
+      "content": "<p>The change follows the existing path from configuration through queue selection to sending. Each modified file owns one part of the limit's journey:</p><table><thead><tr><th>File</th><th>What it does</th></tr></thead><tbody><tr><td><code>config.ts</code></td><td>Defines the default batch limit and rejects invalid settings when the module loads.</td></tr><tr><td><code>queue.ts</code></td><td>Removes a limited prefix of the pending array so the remainder stays available for later drains.</td></tr><tr><td><code>worker.ts</code></td><td>Passes the configured limit into the drain whose result becomes the outgoing batch.</td></tr></tbody></table>"
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Take a batch, retain the backlog",
+      "content": "<p>PR #108 replaces an entire-queue drain with a configurable per-send limit, defaulting to 100 jobs. Startup validation requires a positive integer, the queue removes only that many entries from its front, and the worker sends the resulting batch. Remaining jobs stay pending for later drains. The result is a bound on job count per send, with no claim to bound memory, processing time, or tenant fairness.</p>"
+    }
+  ]
+}

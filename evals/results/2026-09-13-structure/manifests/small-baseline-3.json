@@ -1,0 +1,46 @@
+{
+  "title": "Refresh before the request leaves",
+  "eyebrow": "PR #42 · client requests · fix",
+  "dek": "Moving the expiry check ahead of dispatch makes credential refresh a prerequisite for the request that needs it.",
+  "meta": "fix: refresh credentials before dispatch",
+  "footer": "PR #42 · fix: refresh credentials before dispatch",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The refresh was already there",
+      "content": "<p class=\"lead\">The request function in <code>client.ts</code> already knew how to check credential expiry and refresh credentials. Before this change, it sent the payload, waited for a response, and only then checked whether the credentials had expired. The missing piece was the order of those operations.</p><p>The client exposes an expiry time through <code>expiresAt</code>. The function compares that value with the current time from <code>Date.now()</code> and calls <code>refresh()</code> when expiry has been reached. That check existed before PR #42, but its position meant it could not prepare credentials for the send that preceded it.</p>"
+    },
+    {
+      "eyebrow": "Why it matters",
+      "title": "The first expired request pays the cost",
+      "content": "<p>The author reports that the first request after expiry failed. Imagine credentials expiring between two calls: when you make the next request, the old function dispatches it before consulting the expiry time. A refresh after dispatch comes too late to help that request.</p><p>This is an ordering bug, rather than a missing refresh capability. Having a refresh call somewhere in the function is not enough; it must finish before the operation that depends on the credentials. The change targets that initial failure by moving preparation to the point where it can affect the outgoing request.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Make readiness come before dispatch",
+      "content": "<p>The expiry guard now runs at the start of the request function. These are the opening lines after the change:</p>{{CODE:0}}<p>The comparison includes equality: credentials whose expiry time equals the current time trigger refresh. The <code>await</code> is essential because it makes the function wait for refresh to complete before continuing. When the check finds credentials have not expired, execution proceeds directly to the send.</p><p>The remaining lines keep dispatch and response delivery together, after the guard:</p>{{CODE:1}}<p>The function still waits for <code>send(payload)</code> and returns its response. The meaningful change is the prerequisite: an expired client must finish refreshing before reaching this part of the function.</p><table><thead><tr><th>File</th><th>What it does</th></tr></thead><tbody><tr><td><code>client.ts</code></td><td>The request function places any needed credential refresh ahead of dispatch while retaining the response return.</td></tr></tbody></table>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();"
+        },
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "  const response = await client.send(payload);\n  return response;\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The honest trade-offs",
+      "title": "Waiting now, with a separate streaming path",
+      "content": "<h3>Refresh becomes part of the wait before sending</h3><p>When credentials have expired, the request now waits for refresh before dispatch. That ordering is the chosen cost of avoiding the initial failed request. The PR body also describes an extra clock read as acceptable, but the diff moves the existing <code>Date.now()</code> check. It shows one clock read before the change and one afterward, not an additional read.</p><h3>Streaming needs its own change</h3><p>The author says streaming requests remain on a separate path and need a follow-up. That separate path explains the boundary of this fix: changing the request function shown here does not establish the same ordering for streaming. The supplied diff contains no streaming implementation.</p>"
+    },
+    {
+      "eyebrow": "What's next",
+      "title": "Carry the ordering fix to streaming",
+      "content": "<p>Streaming is the documented follow-up. The PR identifies the separate path but supplies no follow-up issue number or priority. Its implementation will need separate work; this change establishes the refresh-before-dispatch order only in the function shown.</p><h3>The short version</h3><p>PR #42 moves an existing expiry check ahead of sending the payload and awaits refresh when needed. That gives the first request after expiry a chance to use refreshed credentials, addressing the failure the author reports. The response still comes from the same send operation, the diff adds no clock read, and streaming remains the named follow-up.</p>"
+    }
+  ]
+}

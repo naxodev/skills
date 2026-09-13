@@ -41,8 +41,7 @@ The current workflow always dispatches four reports and asks every file to appea
 For small changes, one evidence pass may be enough. For large changes, organize reports around behavior boundaries, then check file coverage separately.
 Choose the analysis budget using the number of distinct behaviors, not changed-line count alone.
 
-Keep a full walkthrough available when explicitly requested. Replace a fixed section quota with a required explanatory arc and a reading-time budget.
-Reconcile the small-PR arc with the mandatory closing summary so the instructions give one answer about the ending.
+**Adopted structure clarification:** keep a full walkthrough available when explicitly requested. `STYLE.md` now defines four distinct required sections, evidence-earned optional sections, and a final recap for every size. Word limits are ceilings without minimums. A [twelve-run synthesis component comparison](../evals/results/2026-09-13-structure/README.md) preserved a distinct final recap in 3/3 small candidates versus 1/3 baselines; multi-file baselines already passed. Full workflow evaluation remains unrun.
 
 **Measure:** time, tool calls, and unsupported claims for the same small and large PR fixtures.
 

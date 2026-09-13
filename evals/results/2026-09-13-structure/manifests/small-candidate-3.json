@@ -1,0 +1,41 @@
+{
+  "title": "Refresh before the request leaves",
+  "eyebrow": "PR #42 · client requests · fix",
+  "dek": "An expiry check moves ahead of dispatch so the first request after credentials expire can use refreshed credentials.",
+  "meta": "fix: refresh credentials before dispatch",
+  "footer": "PR #42 · fix: refresh credentials before dispatch",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The client already knew how to refresh",
+      "content": "<p class=\"lead\">The request function in <code>client.ts</code> already checked credential expiry and could refresh the client. Before this change, it sent the payload first, then compared <code>client.expiresAt</code> with the current time. If credentials had expired, it awaited <code>client.refresh()</code> before returning the response.</p><p>The missing piece was ordering. Refresh belonged to the request function, but it happened after the operation that needed valid credentials.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "The first expired request went out too soon",
+      "content": "<p>If you made a request just after credentials expired, the old function called <code>client.send(payload)</code> before checking their expiry. The author reports that this first request failed. A refresh after dispatch came too late to help the request already sent.</p><p>The correction is to make refresh a prerequisite for dispatch whenever the expiry check requires it. That puts the credential check at the point where it can affect the outgoing request.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Check, refresh, then send",
+      "content": "<p>The change moves the existing expiry guard to the start of <code>request</code>, ahead of the send. This is now the function's first operation:</p>{{CODE:0}}<p>The comparison includes credentials that expire exactly at the current time. When the condition holds, <code>await</code> makes dispatch wait for the refresh to finish. When it does not, execution proceeds directly to the send.</p><p>The rest of the function keeps its existing response flow:</p>{{CODE:1}}<p>The function still sends the supplied payload and returns the resulting response. The fix changes when it sends, rather than adding a retry after a failed attempt.</p><p>The PR body accepts what it calls an extra clock read to avoid the initial failure. The diff shows a narrower change: it moves the existing <code>Date.now()</code> check and adds no second read.</p><p>Streaming requests still need a follow-up because, according to the author, they use a separate path. This change covers the request function shown here; the supplied material gives no follow-up issue number or priority.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "  if (client.expiresAt <= Date.now()) await client.refresh();"
+        },
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "  const response = await client.send(payload);\n  return response;"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Make credentials ready before dispatch",
+      "content": "<p>PR #42 moves the expiry check and awaited refresh ahead of dispatch in <code>client.ts</code>. That addresses the reported first-request failure by refreshing expired credentials before sending the payload, while preserving the response flow. Streaming requests remain a documented follow-up on their separate path.</p>"
+    }
+  ]
+}

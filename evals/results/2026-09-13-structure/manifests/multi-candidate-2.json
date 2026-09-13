@@ -1,0 +1,46 @@
+{
+  "title": "A queue that leaves some work for later",
+  "eyebrow": "PR #108 · queue worker · feature",
+  "dek": "A startup-validated batch limit caps the number of jobs in each send and leaves the remainder queued for later drains.",
+  "meta": "feat: bound queue batches",
+  "footer": "PR #108 · feat: bound queue batches",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Every pending job went into one send",
+      "content": "<p class=\"lead\">The worker previously emptied the pending queue whenever it sent a batch. Its <code>tick</code> function called <code>drain</code>, then passed the returned jobs to <code>send</code> at the configured <code>/jobs</code> endpoint. The drain used <code>pending.splice(0)</code>, which removed every entry from the array.</p><p>That made the size of a send depend on the queue at that moment. If ten jobs were waiting, the worker sent ten. If 250 were waiting, it sent 250. There was no separate setting for how many jobs belonged in one batch.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "Queue length should not set batch size",
+      "content": "<p>PR #108 introduces a per-send job limit so one drain can leave work pending. With 250 jobs waiting and the new default of 100, the next send receives the first 100 jobs. The remaining 150 stay in the queue for later drains.</p><p>The guarantee concerns job count, not resource use. The author explicitly excludes bounds on job memory and processing time. A batch of 100 jobs can still contain large jobs or slow jobs; the new setting controls only how many enter a send.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "A validated limit reaches the drain",
+      "content": "<p>The limit starts in <code>config.ts</code>, where <code>BATCH_LIMIT</code> becomes a number and defaults to 100 when the environment variable is absent. The same module rejects values that are not positive integers:</p>{{CODE:0}}<p>This check runs when the configuration module loads, making an invalid setting a startup error. For example, zero and fractional values fail rather than reaching the worker as batch limits.</p><p>The queue applies that limit as the removal count in <code>splice</code>:</p>{{CODE:1}}<p>The drain still takes jobs from the front of the array. The second argument limits how many it removes, so the returned batch contains at most that many jobs and the rest remain pending.</p><p>The worker connects the configuration to each send. It imports <code>batchLimit</code> alongside <code>endpoint</code> and supplies it to <code>drain</code>:</p>{{CODE:2}}<p>The send receives the bounded drain result. Together, these three modified files carry the setting from startup validation to the point where jobs leave the queue.</p><p>Per-tenant scheduling remains out of scope because the queue has no tenant key. This change therefore limits each batch without choosing jobs by tenant.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "worker.ts",
+          "source": "export async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Bound the send, retain the remainder",
+      "content": "<p>PR #108 replaces whole-queue drains with batches of at most <code>BATCH_LIMIT</code> jobs, defaulting to 100. Startup validation requires a positive integer, and the worker passes that value into each drain. Jobs beyond the limit stay queued for later drains. You get a per-send job-count bound, not a memory or processing-time bound, and tenant-aware scheduling remains outside this change.</p>"
+    }
+  ]
+}

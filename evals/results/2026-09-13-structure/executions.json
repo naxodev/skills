@@ -1,0 +1,434 @@
+[
+  {
+    "id": "small-baseline-1",
+    "status": "completed",
+    "sessionID": "ses_f6431c27bffeexeV4VGKpTIUGd",
+    "info": {
+      "id": "ses_f6431c27bffeexeV4VGKpTIUGd",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 42098,
+        "output": 1563,
+        "reasoning": 155,
+        "cache": {
+          "read": 144640,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320379810,
+        "updated": 1789320381097,
+        "idle": 1789320491363
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-baseline-1-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/small-baseline-1/walkthrough.html\n"
+  },
+  {
+    "id": "small-candidate-1",
+    "status": "completed",
+    "sessionID": "ses_f6431c0bbffe7GOiiyPSpeT06M",
+    "info": {
+      "id": "ses_f6431c0bbffe7GOiiyPSpeT06M",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 26673,
+        "output": 1595,
+        "reasoning": 94,
+        "cache": {
+          "read": 143488,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320380269,
+        "updated": 1789320382184,
+        "idle": 1789320472471
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-candidate-1-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/small-candidate-1/walkthrough.html\n"
+  },
+  {
+    "id": "small-baseline-2",
+    "status": "completed",
+    "sessionID": "ses_f6431c1b6ffep7OOTTMElX6Q9Q",
+    "info": {
+      "id": "ses_f6431c1b6ffep7OOTTMElX6Q9Q",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 26998,
+        "output": 1907,
+        "reasoning": 169,
+        "cache": {
+          "read": 146432,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320380006,
+        "updated": 1789320382190,
+        "idle": 1789320492742
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-baseline-2-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/small-baseline-2/walkthrough.html\n"
+  },
+  {
+    "id": "small-candidate-2",
+    "status": "completed",
+    "sessionID": "ses_f64304e97ffe4U6mEMk9mKV208",
+    "info": {
+      "id": "ses_f64304e97ffe4U6mEMk9mKV208",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 26985,
+        "output": 1794,
+        "reasoning": 98,
+        "cache": {
+          "read": 175232,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320475014,
+        "updated": 1789320476467,
+        "idle": 1789320572683
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-candidate-2-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/small-candidate-2/walkthrough.html\n"
+  },
+  {
+    "id": "small-baseline-3",
+    "status": "completed",
+    "sessionID": "ses_f642fff14ffezl1VJyre8CM6A2",
+    "info": {
+      "id": "ses_f642fff14ffezl1VJyre8CM6A2",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 27212,
+        "output": 1935,
+        "reasoning": 115,
+        "cache": {
+          "read": 144256,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320495369,
+        "updated": 1789320496269,
+        "idle": 1789320603388
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-baseline-3-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/small-baseline-3/walkthrough.html\n"
+  },
+  {
+    "id": "small-candidate-3",
+    "status": "completed",
+    "sessionID": "ses_f642ffcf4ffeDdd1UZBP8NA0Oh",
+    "info": {
+      "id": "ses_f642ffcf4ffeDdd1UZBP8NA0Oh",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 26873,
+        "output": 1522,
+        "reasoning": 128,
+        "cache": {
+          "read": 144000,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320496038,
+        "updated": 1789320497517,
+        "idle": 1789320588185
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-candidate-3-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/small-candidate-3/walkthrough.html\n"
+  },
+  {
+    "id": "multi-baseline-1",
+    "status": "completed",
+    "sessionID": "ses_f642ec977ffeV5seGPLRLuI2Ub",
+    "info": {
+      "id": "ses_f642ec977ffeV5seGPLRLuI2Ub",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 26406,
+        "output": 2386,
+        "reasoning": 164,
+        "cache": {
+          "read": 176384,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320574635,
+        "updated": 1789320575491,
+        "idle": 1789320691664
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-baseline-1-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/multi-baseline-1/walkthrough.html\n"
+  },
+  {
+    "id": "multi-candidate-1",
+    "status": "completed",
+    "sessionID": "ses_f642e8beeffekT4jX4SLHW62PX",
+    "info": {
+      "id": "ses_f642e8beeffekT4jX4SLHW62PX",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 52090,
+        "output": 1766,
+        "reasoning": 62,
+        "cache": {
+          "read": 121728,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320590382,
+        "updated": 1789320591284,
+        "idle": 1789320684847
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-candidate-1-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/multi-candidate-1/walkthrough.html\n"
+  },
+  {
+    "id": "multi-baseline-2",
+    "status": "completed",
+    "sessionID": "ses_f642e4fdcffeRbll3SfVbi70PC",
+    "info": {
+      "id": "ses_f642e4fdcffeRbll3SfVbi70PC",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 28738,
+        "output": 2444,
+        "reasoning": 320,
+        "cache": {
+          "read": 148480,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320605759,
+        "updated": 1789320606589,
+        "idle": 1789320727758
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-baseline-2-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/multi-baseline-2/walkthrough.html\n"
+  },
+  {
+    "id": "multi-candidate-2",
+    "status": "completed",
+    "sessionID": "ses_f642d1375ffehN1faiTCBuLXn3",
+    "info": {
+      "id": "ses_f642d1375ffehN1faiTCBuLXn3",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 29057,
+        "output": 1799,
+        "reasoning": 126,
+        "cache": {
+          "read": 158208,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320686768,
+        "updated": 1789320687749,
+        "idle": 1789320786345
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-candidate-2-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/multi-candidate-2/walkthrough.html\n"
+  },
+  {
+    "id": "multi-baseline-3",
+    "status": "completed",
+    "sessionID": "ses_f642cf89dffeSrJaY4Yl6nFHKH",
+    "info": {
+      "id": "ses_f642cf89dffeSrJaY4Yl6nFHKH",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 41803,
+        "output": 2421,
+        "reasoning": 256,
+        "cache": {
+          "read": 176768,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320693629,
+        "updated": 1789320694594,
+        "idle": 1789320824709
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-baseline-3-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/multi-baseline-3/walkthrough.html\n"
+  },
+  {
+    "id": "multi-candidate-3",
+    "status": "completed",
+    "sessionID": "ses_f642c6bb4ffergeA7vJP7ELwFD",
+    "info": {
+      "id": "ses_f642c6bb4ffergeA7vJP7ELwFD",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 25672,
+        "output": 1781,
+        "reasoning": 140,
+        "cache": {
+          "read": 148480,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789320729777,
+        "updated": 1789320730792,
+        "idle": 1789320828848
+      },
+      "title": "structure synthesis component",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-candidate-3-20260913"
+      }
+    },
+    "build": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/walkthrough-structure-20260913/.evals/structure/multi-candidate-3/walkthrough.html\n"
+  }
+]

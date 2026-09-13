@@ -7,9 +7,9 @@ compatibility: Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bu
 
 # PR Walkthrough
 
-Produces an essay-shaped HTML walkthrough of a pull request. Output is a story, not a review: it explains where the system was, what gap or motivation prompted the change, what was built, what was deliberately not built, and what's next.
+Produces an essay-shaped HTML walkthrough of a pull request. Output is a story, not a review: it explains where the system was, what gap or motivation prompted the change, and what was built, with documented limitations and follow-ups where relevant.
 
-**Read [STYLE.md](STYLE.md) before writing.** The voice is specific and the section arc is fixed.
+**Read [STYLE.md](STYLE.md) before writing.** It defines the voice, required arc, and when optional sections earn their place.
 
 ## Workflow
 
@@ -27,7 +27,7 @@ gh pr view --json number --jq .number
 
 If that fails (no PR for current branch), ask the user.
 
-**Complete when:** the PR number is known; for a small PR, the existing pushback has been offered and the workflow proceeds only if the user insists (or stops for the requested short summary).
+**Complete when:** the PR number is known; for a small PR, the user has chosen the full walkthrough (including an earlier insistence) or the workflow stops for the requested short summary.
 
 ### 2 · Fetch PR data (deterministic)
 
@@ -83,7 +83,7 @@ Then combine the four reports into one JSON manifest matching this shape:
 }
 ```
 
-**Constraints:** the section arc, section counts, voice, and HTML rules (escaping, `<p class="lead">`, callout budget, diagram rules, key-code rules) all live in [STYLE.md](STYLE.md) — it is the single source of truth for the prose. Follow the arc unless you have a specific reason not to.
+**Constraints:** the section arc, section counts, voice, and HTML rules (escaping, `<p class="lead">`, callout budget, diagram rules, key-code rules) all live in [STYLE.md](STYLE.md) — it is the single source of truth for the prose.
 
 Code samples and diagrams are supplied as structured `code` / `diagrams` entries on each section, referenced from `content` via `{{CODE:i}}` / `{{DIAGRAM:i}}` placeholders — the build escapes, captions, and highlights them deterministically, and fails loudly on any placeholder/entry mismatch. Authoring rules in STYLE.md.
 
@@ -97,7 +97,7 @@ Code samples and diagrams are supplied as structured `code` / `diagrams` entries
 
 Write the manifest to `/tmp/pr-<N>-manifest.json`.
 
-**Complete when:** the through-line was used, the manifest contains the required grounded sections and fields, the reader-facing prose check in `STYLE.md` was applied, and `/tmp/pr-<N>-manifest.json` was written.
+**Complete when:** the through-line was used, the manifest contains the required grounded sections and fields, its structure satisfies the arc in `STYLE.md`, the reader-facing prose check was applied, and `/tmp/pr-<N>-manifest.json` was written.
 
 ### 5 · Generate narration audio (deterministic)
 
@@ -142,4 +142,4 @@ Tell the user the file path. It's a single self-contained HTML — audio is embe
 
 ## When the PR is small
 
-A typo fix doesn't need a walkthrough. Push back: "this PR doesn't have enough narrative weight for a walkthrough — do you want a short summary instead?" If they insist, use the small-PR arc from [STYLE.md](STYLE.md).
+A typo fix doesn't need a walkthrough. Offer: "this PR doesn't have enough narrative weight for a walkthrough — do you want a short summary instead?" If the user already insists, proceed without asking again. Use the small-PR arc from [STYLE.md](STYLE.md).
