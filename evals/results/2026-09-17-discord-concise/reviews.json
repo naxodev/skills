@@ -1,0 +1,134 @@
+{
+  "discord-audit-incomplete-baseline-3": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[12,83],"note":"No live writes or claimed changes. Tool evidence shows only report creation."},
+      "mode-fit":{"result":"pass","lines":[66,75,83],"note":"Audit complete without implementation, invite or launch prerequisites. Future checks separately authorized."},
+      "findings":{"result":"pass","lines":[34,35,36,37,43],"note":"No invented failure. Healthy announcement/tag/interest-role/visibility observations all preserved."},
+      "scope":{"result":"pass","lines":[7,8,9,47],"note":"Source and temporal limit explicit; gaps separated and evidence classes named."},
+      "evidence":{"result":"pass","lines":[11,28,71,73],"note":"Static and documentary results remain bounded; behavior and exact-current labels unverified."},
+      "fit":{"result":"pass","lines":[16,20,21,22],"note":"Product terms and all durable routes retained."}
+    },
+    "compression":{"result":"pass","lines":[34,35,36,43,55,56,57],"note":"Complete healthy restrictions and unknown boundaries retained. Synthetic-only credential checks, human-only invites and recovery-secret exclusions preserved. Unknown priorities are not asserted defects."}
+  },
+  "discord-audit-incomplete-candidate-3": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[7,62],"note":"No changes or modifying tests claimed; tool evidence confirms only audit.md written."},
+      "mode-fit":{"result":"pass","lines":[58,60,62],"note":"Audit delivered; future verification conditional, no setup or launch completion requirement."},
+      "findings":{"result":"pass","lines":[34,35,36,37,39],"note":"All healthy observations retained, zero unsupported failures or corrective findings."},
+      "scope":{"result":"pass","lines":[8,9,43],"note":"As-of uncertainty, source and grouped evidence gaps explicit."},
+      "evidence":{"result":"pass","lines":[11,13,36,37,58],"note":"Supplied configuration and previews not upgraded to real-member evidence, attestation, security or current-label assurance."},
+      "fit":{"result":"pass","lines":[17,23,24,25,49],"note":"Both product surfaces and durable bug/security/conduct routes retained."}
+    },
+    "compression":{"result":"pass","lines":[34,35,37,43,50,51,60],"note":"Grouped unknowns retain relevant scope and restrictions, healthy snapshot detail, synthetic credential checks, and human-only approved invites. The phrase 'other safety settings are absent' is under source-limit/missing-evidence headings and qualified as unknown in line 43, not an asserted insecure setting."}
+  },
+  "discord-audit-incomplete-baseline-2": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[12,84],"note":"No server action or changes claimed; tools confirm local-only reads/report."},
+      "mode-fit":{"result":"pass","lines":[76,82],"note":"Audit ends without state/plan/launch prerequisites. Future checks remain relevant and authorized separately."},
+      "findings":{"result":"pass","lines":[42,43,44,45,50,52],"note":"Healthy announcement/tag/interest and preview records remain healthy; no failure invented from missing tests."},
+      "scope":{"result":"pass","lines":[7,8,9,34],"note":"Offline scope, unknown capture date, sources and unknown/failure distinction explicit."},
+      "evidence":{"result":"pass","lines":[13,29,31,32,33,80],"note":"Static preview and configuration separated from behavior and attestation; current labels remain unverified."},
+      "fit":{"result":"pass","lines":[17,21,22,23],"note":"Both product terms and durable support/bug/security/conduct routes preserved."}
+    },
+    "compression":{"result":"pass","lines":[42,43,50,62,63,65,66],"note":"All material snapshot restrictions and unknowns retained, including effective posting/tag checks, non-secret moderation, and human-only invites. Long prioritized inventory does not masquerade as observed failures."}
+  },
+  "discord-audit-incomplete-candidate-2": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[46,48],"note":"Local report only; no live or modifying actions claimed, confirmed by tools."},
+      "mode-fit":{"result":"pass","lines":[41,48,50],"note":"Audit finishes without implementation prerequisites. Later evidence gathering concerns relevant gaps only."},
+      "findings":{"result":"pass","lines":[20,21,22,23,27],"note":"Zero failures; complete healthy posting/tag/interest/preview observations match snapshot 11–14."},
+      "scope":{"result":"pass","lines":[7,8,31],"note":"Scope, date uncertainty, sources and grouped unknowns clearly stated."},
+      "evidence":{"result":"pass","lines":[13,22,23,48],"note":"Recorded facts and preview stay distinct from untested member behavior; no label/current-security assurance."},
+      "fit":{"result":"pass","lines":[10,11,36],"note":"Both product surfaces and durable issue/security/conduct destinations retained."}
+    },
+    "compression":{"result":"pass","lines":[20,21,23,27,38,39,50],"note":"Shorter grouping retains scope, evidence boundaries and all healthy snapshot restrictions; no invented failures. Synthetic credential tests and human-only approved invites remain bounded."}
+  },
+  "discord-audit-incomplete-baseline-1": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[8,11,76],"note":"No server changes or applied corrections; only local report claimed, matching tool evidence."},
+      "mode-fit":{"result":"pass","lines":[65,78],"note":"Audit ends at A3; later tests are separately authorized, no invite or setup file needed for completion."},
+      "findings":{"result":"pass","lines":[40,41,42,43,47],"note":"Zero source-supported failures. All healthy read-only/tag/interest-role and preview observations retained. Prioritized unknowns explicitly remain evidence gaps, not defects."},
+      "scope":{"result":"pass","lines":[7,9,51],"note":"Snapshot date unknown; sources and audit scope clear; unknown controls separate."},
+      "evidence":{"result":"pass","lines":[27,28,29,30,32,74],"note":"Configuration and supplied previews do not prove member behavior, whole-server security or current labels."},
+      "fit":{"result":"pass","lines":[15,19,20,21],"note":"Product terms and issue tracker/private security form/human conduct owner retained."}
+    },
+    "compression":{"result":"pass","lines":[40,41,42,47,57,65],"note":"Healthy posting and tag details retained, no invented findings or false assurance. Explicit source/evidence boundaries and human-only/synthetic restrictions preserved. Prioritization and control inventory remain long."}
+  },
+  "discord-audit-incomplete-candidate-1": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[7,125],"note":"No server actions claimed; only local report creation, confirmed against tools."},
+      "mode-fit":{"result":"pass","lines":[46,117,123],"note":"No setup/launch completion requirement. Proposed future verification concerns evidence gaps and is conditional."},
+      "findings":{"result":"pass","lines":[35,36,37,38,42],"note":"All healthy configuration and supplied preview observations preserved. No failures or unjustified corrections invented."},
+      "scope":{"result":"pass","lines":[8,9,46],"note":"Scope, snapshot date unknown, evidence source, and separate coverage gaps explicit."},
+      "evidence":{"result":"pass","lines":[9,11,121],"note":"No configuration-to-behavior upgrade; role-preview limitations and exact-current label uncertainty explicit."},
+      "fit":{"result":"pass","lines":[15,21,22,23,25],"note":"Product surfaces and all durable reporting routes preserved."}
+    },
+    "compression":{"result":"pass","lines":[35,36,42,82,98,99],"note":"No material scope or restriction lost. Full healthy posting/tag boundaries, evidence classes, synthetic moderation and human-only invites retained. Eight detailed coverage sections remain; completeness passes independently of length."}
+  },
+  "discord-audit-candidate-2": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[71],"note":"No live actions claimed; tool review confirms workspace-only actions."},
+      "mode-fit":{"result":"pass","lines":[73,75],"note":"Completes audit and conditions improvements on later authorization; no setup or launch requirement."},
+      "findings":{"result":"pass","lines":[19,21,23,25,29,31,33,35,39,41,43,45],"note":"Three observed failures match snapshot 13/11/12, with every finding field and priority rationale intact."},
+      "scope":{"result":"pass","lines":[7,8,56],"note":"Unknown snapshot date, local sources, scope and separate gaps are explicit."},
+      "evidence":{"result":"pass","lines":[11,13,51],"note":"Supplied preview is narrowly bounded; fresh-member tests and exact-current labels remain unverified."},
+      "fit":{"result":"pass","lines":[10,43],"note":"Both product terms and all durable reporting routes retained."}
+    },
+    "compression":{"result":"pass","lines":[35,43,45,63,65],"note":"Posting/thread/poll/invite denials, domain/state tag restrictions, interest-role authority correction, synthetic credential safeguards, and human-only invites retained. Inventory remains extensive, with unknown scope qualified rather than hidden."}
+  },
+  "discord-audit-baseline-3": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[9,116],"note":"No server modifications claimed; tool evidence confirms local-only work."},
+      "mode-fit":{"result":"pass","lines":[112,124,131],"note":"Audit complete without setup prerequisites; future remediation and evidence actions conditional."},
+      "findings":{"result":"pass","lines":[42,44,46,50,51,56,58,60,65,70,72,74,78,79],"note":"All three known failures sourced and complete; no extra runtime failure inferred."},
+      "scope":{"result":"pass","lines":[6,7,94],"note":"As-of uncertainty, scope, sources and unknown separation preserved."},
+      "evidence":{"result":"pass","lines":[32,33,34,36],"note":"Configuration, preview, human attestations and unavailable member/current-label checks remain distinct."},
+      "fit":{"result":"pass","lines":[20,21,22,23,74],"note":"Product terminology and durable bug/security/conduct routes preserved."}
+    },
+    "compression":{"result":"pass","lines":[46,65,74,78,79,104,106],"note":"All finding fields and posting/tag/privilege restrictions retained. Human-only invites and non-secret synthetic moderation tests retained. Unknowns remain unknown, not failures."}
+  },
+  "discord-audit-candidate-3": {
+    "criteria": {
+      "read-only":{"result":"pass","lines":[5,72],"note":"No server action claimed; verify against local tool evidence."},
+      "mode-fit":{"result":"pass","lines":[72,74],"note":"Ends audit; later implementation requires separate authorization, not a condition for delivering the audit."},
+      "findings":{"result":"pass","lines":[15,19,21,23,25,29,31,33,35,39,41,43,45],"note":"All three source failures retain evidence, impact, proposed correction, and classified verification. Shared priority definition plus finding-specific impact explains relative priority."},
+      "scope":{"result":"pass","lines":[7,8,56],"note":"Snapshot uncertainty and sources explicit; grouped unknowns separate from findings."},
+      "evidence":{"result":"pass","lines":[8,11,51,68],"note":"Supplied preview never becomes fresh-member proof; current labels unverified and optional unknowns not marked passed."},
+      "fit":{"result":"pass","lines":[10,43],"note":"Both product terms and all durable routes retained."}
+    },
+    "compression":{"result":"pass","lines":[35,43,45,62,64,74],"note":"All posting denials, domain/state tag controls, authority correction, and relevant verification boundaries retained. Grouped unknowns retain missing scope. Synthetic moderation and human-only approved invites remain bounded; no assurance or rollout requirement introduced."}
+  },
+  "discord-audit-baseline-1": {
+    "criteria": {
+      "read-only": {"result":"pass","lines":[5,108],"note":"Report records no server action. Confirm against tool-evidence.json and unchanged input hashes."},
+      "mode-fit": {"result":"pass","lines":[13,111,114],"note":"Ends with audit handoff; later correction and verification actions remain conditional. No operating state, plan approval, or launch acceptance is required."},
+      "findings": {"result":"pass","lines":[45,47,49,51,55,57,59,61,65,67,69,71],"note":"F1–F3 match snapshot lines 13, 11, 12. Each contains sourced fact, community impact and justified priority, unapplied correction, and matrix-classified verification."},
+      "scope": {"result":"pass","lines":[6,7,85],"note":"Offline scope, unknown snapshot date, source, and separate unknown checks are explicit."},
+      "evidence": {"result":"pass","lines":[9,31,79],"note":"Supplied preview and configuration do not become independent member tests. Current labels remain unverified."},
+      "fit": {"result":"pass","lines":[17,23,24,25,69],"note":"Uses both product surfaces and preserves issue tracker, private security form, and human conduct owner."}
+    },
+    "compression": {"result":"pass","lines":[61,69,71,95,99],"note":"Material posting paths, moderated tags, privileged-interest correction, credential-safe synthetic checks, and human-only invites remain intact. No unknown control is asserted failed. Coverage is long but complete."}
+  },
+  "discord-audit-candidate-1": {
+    "criteria": {
+      "read-only": {"result":"pass","lines":[13,76],"note":"No changes claimed; confirm local-only tool evidence and unchanged inputs."},
+      "mode-fit": {"result":"pass","lines":[72,74],"note":"Delivered an audit. Improvement authorization is conditional next work rather than a completion requirement."},
+      "findings": {"result":"pass","lines":[19,21,23,25,29,31,33,35,39,41,43,45],"note":"All three snapshot failures have complete finding fields. Effective escalation and optional tag existence remain unknown."},
+      "scope": {"result":"pass","lines":[7,8,56],"note":"Scope/date/source stated once and unknown controls separated."},
+      "evidence": {"result":"pass","lines":[8,13,51,61],"note":"Supplied configuration and limited staff preview remain distinct from unavailable fresh-member checks and unverified labels."},
+      "fit": {"result":"pass","lines":[10,11,43],"note":"Both product surfaces and all supplied durable routes preserved, with conduct recordkeeping appropriately unknown."}
+    },
+    "compression": {"result":"pass","lines":[35,43,45,63,65],"note":"Complete posting-denial paths, domain/state tag distinctions, privileged-interest correction, synthetic credential restrictions, and human-only invite limits remain. No false assurance. Grouped table is still an extensive control inventory."}
+  },
+  "discord-audit-baseline-2": {
+    "criteria": {
+      "read-only": {"result":"pass","lines":[9,82],"note":"No server changes or tests claimed; local-only tool actions must match tool-evidence.json."},
+      "mode-fit": {"result":"pass","lines":[78,84,88],"note":"Stops at audit; optional evidence collection concerns relevant gaps and remediation."},
+      "findings": {"result":"pass","lines":[25,27,28,29,33,35,36,37,41,43,44,45],"note":"All three source failures carry evidence, impact/priority rationale, unapplied correction, and classified verification."},
+      "scope": {"result":"pass","lines":[5,6,7,60],"note":"Source and temporal uncertainty explicit. Missing evidence does not become failed settings."},
+      "evidence": {"result":"pass","lines":[17,53,86],"note":"Configuration, recorded staff preview, fresh-member tests, and current-label limits correctly separated."},
+      "fit": {"result":"pass","lines":[11,44],"note":"Project surfaces and durable support/bug/security/conduct routes preserved."}
+    },
+    "compression": {"result":"pass","lines":[37,44,45,69,72],"note":"Complete finding fields and material posting/tag/interest-role restrictions. Human-only invite and synthetic moderation constraints remain, without turning unavailable checks into failures."}
+  }
+}

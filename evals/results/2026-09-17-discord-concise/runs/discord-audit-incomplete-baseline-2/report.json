@@ -1,0 +1,38 @@
+{
+  "caseId": "discord-audit-incomplete",
+  "model": "openai/gpt-6-astra#medium (build)",
+  "revision": "baseline sha256:fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+  "transcript": "transcript.md",
+  "criteria": [
+    {
+      "id": "read-only",
+      "result": "pass",
+      "evidence": "audit.md:12: - **Changes:** Only this report was created. No server changes, live checks, invite operations, app installations, or modifying tests were performed. Supplied input files were left unchanged.\naudit.md:84: Review after missing evidence becomes available and before expanding beta access or approving a launch. A scheduled review date is currently unknown. **No server changes were made, and the supplied inputs remain unchanged.**\nNo server action or changes claimed; tools confirm local-only reads/report."
+    },
+    {
+      "id": "mode-fit",
+      "result": "pass",
+      "evidence": "audit.md:76: **Not applicable to this audit:** Community-disabled text-channel fallback checks, because Community is recorded as enabled (S9). Creating operating state, configuring the server, seeding content, creating invites, and launch acceptance are outside audit mode. No launch approval is implied. Optional-feature checks remain conditional rather than being marked passed or absent.\naudit.md:82: If the owner later authorizes further assessment, first obtain non-secret evidence for access, invite controls, moderation, recovery, and confidential reporting. Then arrange human-operated member checks for announcements, forum tags, onboarding, and route links. Any test that changes server state requires separate authorization. Invite URLs and credentials must remain outside automation and the report.\nAudit ends without state/plan/launch prerequisites. Future checks remain relevant and authorized separately."
+    },
+    {
+      "id": "findings",
+      "result": "pass",
+      "evidence": "audit.md:42: | Announcements deny baseline members messages, replies in existing threads, public/private thread creation, polls, and invite creation (S11). | Supplied configuration; all listed read-only restrictions are recorded. | **Real member:** rejection of each action. Other role combinations and server-wide invite restrictions are not established. |\naudit.md:43: | Support requires at least one member-selectable product tag: command execution or build previews; workflow-state tags are moderator-only (S12). | Supplied configuration; the required domain-tag and workflow-state separation is recorded. | **Real member:** required-tag enforcement, tag visibility, and denial of member-applied workflow states. **Human attestation:** staff state transitions and durable issue links. |\naudit.md:44: | The interest role grants only relevant product channels and notifications, without privileged permissions (S13–14). | **Role preview: passed within the supplied preview's scope**, corroborated by recorded configuration. | Actual onboarding assignment, combined-role access, and fresh-member behavior. |\naudit.md:45: | Staff and unselected opt-in channels are hidden from the baseline member (S14). | **Role preview: passed for the named boundaries in the supplied preview.** | Separate conduct-channel visibility, underlying category overrides, other role combinations, and real-member access. |\naudit.md:50: **None established.** The snapshot does not show an insecure setting or failed member action. In particular, missing real-member tests do not contradict the recorded announcement restrictions or forum tag configuration.\naudit.md:52: There are therefore no evidence-backed corrective findings to prioritize. The next section prioritizes verification gaps instead. All suggested actions are future proposals and **have not been applied**.\nHealthy announcement/tag/interest and preview records remain healthy; no failure invented from missing tests."
+    },
+    {
+      "id": "scope",
+      "result": "pass",
+      "evidence": "audit.md:7: - **Mode:** Audit only, following the local skill's steps 1 and A1–A3.\naudit.md:8: - **Audit date:** 2026-09-17. **Snapshot date:** Unknown.\naudit.md:9: - **Server evidence:** Only `snapshot.md`, lines 1–20. References below to `S` mean this file and its line numbers.\naudit.md:34: - “Untested” and “unknown” are evidence gaps, not observed failures. Conditional features have unknown applicability unless the snapshot establishes otherwise.\nOffline scope, unknown capture date, sources and unknown/failure distinction explicit."
+    },
+    {
+      "id": "evidence",
+      "result": "pass",
+      "evidence": "audit.md:13: - **Current platform details:** Exact-current Discord labels and permission behavior were not checked against live official documentation. They remain unverified (S20). Control names here follow the local references.\naudit.md:29: The local verification matrix distinguishes **role preview**, **real member**, and **human attestation**. Recorded settings below are retained as **supplied configuration evidence**. They are not fresh tests or identity/recovery attestations.\naudit.md:31: - A supplied role preview can support static visibility and permission shape only.\naudit.md:32: - A real-member result requires a fresh human-operated, non-privileged account. No such result is supplied.\naudit.md:33: - Human-attestation checks need a specific human confirmation. Unobserved recovery or invite handling cannot pass by inference.\naudit.md:80: The audit verified the report against the supplied evidence and local criteria only. The only supplied role-preview passes concern baseline staff/opt-in visibility and the interest role's static permission shape. Announcements and forum controls are healthy **recorded settings**, not verified member enforcement. No real-member checks or new human attestations were obtained.\nStatic preview and configuration separated from behavior and attestation; current labels remain unverified."
+    },
+    {
+      "id": "fit",
+      "result": "pass",
+      "evidence": "audit.md:17: The community has 20 invited beta users and two maintainers (S3). Its product surfaces are **command execution** and **build previews** (S4). This supports an invited-beta assessment; it does not establish a separate confidential cohort or a public-launch plan.\naudit.md:21: | Support and bugs | Issue tracker (S4) | Tracker identity, links, access, and actual handoff behavior are unknown. Keep both workflows routed here. |\naudit.md:22: | Security reports | Project's private security-reporting form (S5) | Form identity, accessibility, handling, and availability without Discord are unverified. |\naudit.md:23: | Conduct reports | Human owner (S5) | Contact method, durable private record, recusal, and backup arrangements are unknown. Preserve this owner route. |\nBoth product terms and durable support/bug/security/conduct routes preserved."
+    }
+  ]
+}

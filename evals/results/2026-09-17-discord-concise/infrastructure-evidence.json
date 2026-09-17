@@ -1,0 +1,182 @@
+[
+  {
+    "id": "discord-audit-incomplete-baseline-1",
+    "sessionID": "ses_f4e441f42ffeidnBRveWPSs4aV",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-1",
+    "sessionID": "ses_f4e441d2dffeWtcaKtJWA0Lo5C",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-candidate-3",
+    "sessionID": "ses_f4e442553ffebGgOacbLjKJHEs",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-baseline-2",
+    "sessionID": "ses_f4e4435d4ffePPR879zKXSNSra",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-baseline-3",
+    "sessionID": "ses_f4e4427d1ffejmE3jImYJdzwRQ",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-candidate-2",
+    "sessionID": "ses_f4e442802ffebhCsF88DvU6ymN",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-3",
+    "sessionID": "ses_f4e4411a6ffeX1Tv2m2d2XCFYy",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-2",
+    "sessionID": "ses_f4e441ac0ffeIyxbTfWKrsqP0h",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-2",
+    "sessionID": "ses_f4e4414b3ffecvEmU6jOTnjPcm",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-3",
+    "sessionID": "ses_f4e440f09ffe7h2RXZtmUDyVUo",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-baseline-1",
+    "sessionID": "ses_f4e4435e2ffeV4xCFmyJApy6Er",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  },
+  {
+    "id": "discord-audit-candidate-1",
+    "sessionID": "ses_f4e4435e4ffe703Haj1Sjb2Fpd",
+    "outcome": "interrupted",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "visibleParts": 0
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "discord-audit-baseline-1",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e4435e2ffeV4xCFmyJApy6Er",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-candidate-1",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e4435e4ffe703Haj1Sjb2Fpd",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-baseline-2",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e4435d4ffePPR879zKXSNSra",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-candidate-2",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e442802ffebhCsF88DvU6ymN",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-baseline-3",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e4427d1ffejmE3jImYJdzwRQ",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-candidate-3",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e442553ffebGgOacbLjKJHEs",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-1",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e441f42ffeidnBRveWPSs4aV",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-1",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e441d2dffeWtcaKtJWA0Lo5C",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-2",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e441ac0ffeIyxbTfWKrsqP0h",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-2",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e4414b3ffecvEmU6jOTnjPcm",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-3",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e4411a6ffeX1Tv2m2d2XCFYy",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-3",
+    "status": "failed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e440f09ffe7h2RXZtmUDyVUo",
+    "error": "Error: {\"code\":1,\"stdout\":\"\",\"stderr\":\"HTTP 404 Not Found\\n\"}"
+  }
+]

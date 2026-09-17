@@ -85,6 +85,17 @@ The branch preserves permission boundaries and separates supplied role preview, 
 
 **Measure:** fewer requests for irrelevant launch approvals and no claim that an audit applied changes.
 
+### Reduce audit reading load — adopted
+
+Audit findings now keep evidence, impact, priority rationale, unapplied correction, and verification together.
+The reader-facing report groups unknown checks by missing capability while retaining scope and limitations.
+Full matrices remain available when requested or needed to distinguish statuses.
+
+**Evidence:** a [twelve-audit comparison](../evals/results/2026-09-17-discord-concise/README.md) reduced median report length from 2,032 to 1,434 words (29.4%).
+All six candidate audits preserved the source criteria and evidence boundaries.
+One candidate remained longer than its paired baseline; detailed unknown-control inventories still occur.
+This measures report size and completeness as a page-usability proxy, not real user task time.
+
 ## Technical docs: design around reader outcomes
 
 ### Write a reader contract before drafting — adopted

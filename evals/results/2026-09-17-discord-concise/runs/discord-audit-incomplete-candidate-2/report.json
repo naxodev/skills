@@ -1,0 +1,38 @@
+{
+  "caseId": "discord-audit-incomplete",
+  "model": "openai/gpt-6-astra#medium (build)",
+  "revision": "candidate sha256:f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+  "transcript": "transcript.md",
+  "criteria": [
+    {
+      "id": "read-only",
+      "result": "pass",
+      "evidence": "audit.md:46: Only `audit.md` was created. No server changes were made. Supplied input files were left unchanged. No live services, other skills, delegation, or outside-workspace files were used.\naudit.md:48: This audit verifies the assessment against the supplied record, including its limited role-preview results. It does not certify the live server, fresh-member behavior, security readiness, or launch acceptance. No invite or credential was supplied, and none was requested or generated.\nLocal report only; no live or modifying actions claimed, confirmed by tools."
+    },
+    {
+      "id": "mode-fit",
+      "result": "pass",
+      "evidence": "audit.md:41: | Apps, bots, and webhooks | No integrations were approved (`snapshot.md:17`); this does not prove none are installed. Inventory and community-data access are unknown. If any exist, obtain **role-preview** evidence of narrow access and bot hierarchy, plus **human attestation** of approval, owner, minimum permissions, privacy/retention/deletion boundaries, removal path, bounded role assignment, release-only event filtering, secret-safe handling, and test cleanup. No integration installation or webhook test is required to finish this audit. |\naudit.md:48: This audit verifies the assessment against the supplied record, including its limited role-preview results. It does not certify the live server, fresh-member behavior, security readiness, or launch acceptance. No invite or credential was supplied, and none was requested or generated.\naudit.md:50: For a future authorized review, first obtain non-secret role/settings evidence and human attestations for safety, ownership, recovery, and invite handling. Then have a human perform the applicable fresh-member checks, including announcement restrictions, forum tags, onboarding, and durable routes. Any test invite must remain human-controlled and require separate approval. Review again when that evidence becomes available and before expanding the beta; no review date is currently recorded.\nAudit finishes without implementation prerequisites. Later evidence gathering concerns relevant gaps only."
+    },
+    {
+      "id": "findings",
+      "result": "pass",
+      "evidence": "audit.md:20: | Announcements deny baseline members messages, existing-thread replies, public/private thread creation, polls, and invite creation (`snapshot.md:11`). | The recorded read-only configuration covers the specified actions. | Effective enforcement and other role combinations need real-member checks. This is not a server-wide invite restriction result. |\naudit.md:21: | Support requires a member-selectable **command execution** or **build previews** tag; workflow-state tags are moderator-only (`snapshot.md:12`). | The recorded forum configuration matches the required domain-tag and staff-state separation. | Post creation, tag enforcement, and staff workflow were not tested. |\naudit.md:22: | Supplied baseline role preview hides staff and unselected opt-in channels (`snapshot.md:14`). | Passed within the supplied **role-preview** scope. | Does not establish separate conduct-channel visibility, private-cohort isolation, or fresh-member behavior. |\naudit.md:23: | The interest role grants only relevant product channels and notifications, with no privileged permissions; supplied preview confirms its shape (`snapshot.md:13–14`). | Passed within the supplied **role-preview** scope. | Does not prove onboarding assignment or combined-role access. |\naudit.md:27: **No observed failures.** The snapshot does not justify a corrective finding or a failure priority. Missing evidence is not proof of a missing or insecure control. No corrections were applied.\nZero failures; complete healthy posting/tag/interest/preview observations match snapshot 11–14."
+    },
+    {
+      "id": "scope",
+      "result": "pass",
+      "evidence": "audit.md:7: - **Mode:** Offline audit only. Report date: 2026-09-17. Snapshot date: unknown.\naudit.md:8: - **Server evidence:** Only `snapshot.md`, lines 3–20. No browser, account, live service, or fresh human test account was available.\naudit.md:31: The following groups cover the remaining applicable reference controls and verification matrix checks. All are **unknown or untested**, unless explicitly marked not applicable. They are verification gaps, not findings.\nScope, date uncertainty, sources and grouped unknowns clearly stated."
+    },
+    {
+      "id": "evidence",
+      "result": "pass",
+      "evidence": "audit.md:13: Recorded configuration is documentary evidence, not an independently inspected setting or a successful behavior test. Supplied role-preview results retain that evidence class. No fresh real-member result or operational human attestation is supplied. Exact-current Discord labels and platform behavior remain unverified because live official documentation is outside scope.\naudit.md:22: | Supplied baseline role preview hides staff and unselected opt-in channels (`snapshot.md:14`). | Passed within the supplied **role-preview** scope. | Does not establish separate conduct-channel visibility, private-cohort isolation, or fresh-member behavior. |\naudit.md:23: | The interest role grants only relevant product channels and notifications, with no privileged permissions; supplied preview confirms its shape (`snapshot.md:13–14`). | Passed within the supplied **role-preview** scope. | Does not prove onboarding assignment or combined-role access. |\naudit.md:48: This audit verifies the assessment against the supplied record, including its limited role-preview results. It does not certify the live server, fresh-member behavior, security readiness, or launch acceptance. No invite or credential was supplied, and none was requested or generated.\nRecorded facts and preview stay distinct from untested member behavior; no label/current-security assurance."
+    },
+    {
+      "id": "fit",
+      "result": "pass",
+      "evidence": "audit.md:10: - **Context:** 20 invited beta users and two maintainers. Product surfaces are **command execution** and **build previews**. General, announcements, support, and staff channels exist.\naudit.md:11: - **Reporting routes:** Support and bugs belong in the issue tracker. Security reports belong in the project's private security-reporting form. Conduct reports go to the human owner. Exact destinations, availability outside Discord, and a durable conduct-record system are unknown.\naudit.md:36: | Member experience and durable routing | Posting and tag behavior are explicitly untested (`snapshot.md:15`). Default-channel usefulness, forum guidelines, sanitized support templates, seed content, welcome/routing clarity, published links, voice, and opt-in behavior are unverified. Use a **real member** for these checks. Use **human attestation** for staff state transitions, durable issue links, private security routing, and test-content removal. Preserve the supplied support, bug, security, and conduct destinations. Feedback, decision, documentation, and release destinations are unknown. |\nBoth product surfaces and durable issue/security/conduct destinations retained."
+    }
+  ]
+}

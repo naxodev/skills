@@ -1,0 +1,638 @@
+[
+  {
+    "id": "discord-audit-baseline-1",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e4272ebffekZBxov9x9qqsz8",
+    "info": {
+      "id": "ses_f4e4272ebffekZBxov9x9qqsz8",
+      "projectID": "427a342b7070189463327192a1ac4f10af6ec8ff",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 25738,
+        "output": 3417,
+        "reasoning": 0,
+        "cache": {
+          "read": 78848,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688384789,
+        "updated": 1789688384912,
+        "idle": 1789688506250
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-baseline-1-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-candidate-1",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e4272f5ffe5gE3N54SixgS73",
+    "info": {
+      "id": "ses_f4e4272f5ffe5gE3N54SixgS73",
+      "projectID": "b34946d6c34de990fd687a3ecd076bf2bd1ac524",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 25052,
+        "output": 2767,
+        "reasoning": 0,
+        "cache": {
+          "read": 62848,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688384780,
+        "updated": 1789688384857,
+        "idle": 1789688484112
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-candidate-1-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-baseline-2",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e4272daffeULDcwjJEP7Fcz6",
+    "info": {
+      "id": "ses_f4e4272daffeULDcwjJEP7Fcz6",
+      "projectID": "a8dc71d98f39507c2da34d71c0704f97c799c1f0",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 23409,
+        "output": 3345,
+        "reasoning": 0,
+        "cache": {
+          "read": 64512,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688384818,
+        "updated": 1789688384953,
+        "idle": 1789688502859
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-baseline-2-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-candidate-2",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e40eceaffeDll22WnBXh6kR3",
+    "info": {
+      "id": "ses_f4e40eceaffeDll22WnBXh6kR3",
+      "projectID": "6337ded861653ca1533bd7bb1fd8e354736609ed",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 51462,
+        "output": 2508,
+        "reasoning": 53,
+        "cache": {
+          "read": 86912,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688484631,
+        "updated": 1789688484718,
+        "idle": 1789688585351
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-candidate-2-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-baseline-3",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e40a3cbffeq8g5u6cvFPZKfT",
+    "info": {
+      "id": "ses_f4e40a3cbffeq8g5u6cvFPZKfT",
+      "projectID": "15e5097e9bcfaf5324c481c41a40835b72abbf94",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 26246,
+        "output": 3812,
+        "reasoning": 46,
+        "cache": {
+          "read": 86656,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688503350,
+        "updated": 1789688503416,
+        "idle": 1789688636811
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-baseline-3-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-candidate-3",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e4096c7ffeR3drOZ8N3eHnvv",
+    "info": {
+      "id": "ses_f4e4096c7ffeR3drOZ8N3eHnvv",
+      "projectID": "1e1dd860577ce13d96f6be107e94b4ebe4279d7a",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 24533,
+        "output": 2341,
+        "reasoning": 21,
+        "cache": {
+          "read": 61824,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688506681,
+        "updated": 1789688506750,
+        "idle": 1789688593166
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-candidate-3-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-1",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e3f61bfffea3CmOi3Im4qFqD",
+    "info": {
+      "id": "ses_f4e3f61bfffea3CmOi3Im4qFqD",
+      "projectID": "68d9858626a7cb1acaa4bd14a1ea0c8d8dbbfb70",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 36708,
+        "output": 3065,
+        "reasoning": 15,
+        "cache": {
+          "read": 78720,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688585795,
+        "updated": 1789688585859,
+        "idle": 1789688693329
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-incomplete-baseline-1-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-1",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e3f433cffekzNohsDp64n0qi",
+    "info": {
+      "id": "ses_f4e3f433cffekzNohsDp64n0qi",
+      "projectID": "a15433af300a2e9fc2048df4ba4d2fd17265ef70",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 26679,
+        "output": 3224,
+        "reasoning": 57,
+        "cache": {
+          "read": 112640,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688593605,
+        "updated": 1789688593669,
+        "idle": 1789688705990
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-incomplete-candidate-1-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-2",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e3e9885ffe1PI4uI33R9MfYA",
+    "info": {
+      "id": "ses_f4e3e9885ffe1PI4uI33R9MfYA",
+      "projectID": "7546ee36ceeaf8913f27072653226c874cc89387",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 37295,
+        "output": 3362,
+        "reasoning": 53,
+        "cache": {
+          "read": 79104,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688637307,
+        "updated": 1789688637376,
+        "idle": 1789688754267
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-incomplete-baseline-2-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-2",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e3dbb85ffecm0OYhOPRvX63U",
+    "info": {
+      "id": "ses_f4e3dbb85ffecm0OYhOPRvX63U",
+      "projectID": "52d1b10aa03d89b6ca4ffd5c4f6053bcaecc37f7",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 44410,
+        "output": 2055,
+        "reasoning": 35,
+        "cache": {
+          "read": 43008,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688693884,
+        "updated": 1789688693962,
+        "idle": 1789688765982
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-incomplete-candidate-2-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-3",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209"
+    },
+    "sessionID": "ses_f4e3d8a7bffeKiaUvHO9R9wN0u",
+    "info": {
+      "id": "ses_f4e3d8a7bffeKiaUvHO9R9wN0u",
+      "projectID": "2a7fd397243803807e637738bda0830a0caa8e81",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 28429,
+        "output": 3141,
+        "reasoning": 19,
+        "cache": {
+          "read": 110720,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688706437,
+        "updated": 1789688706504,
+        "idle": 1789688819142
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-incomplete-baseline-3-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-3",
+    "status": "completed",
+    "packetEntries": [
+      "snapshot.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "snapshot.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e3ccd98ffeBsCyMDK1dv07gA",
+    "info": {
+      "id": "ses_f4e3ccd98ffeBsCyMDK1dv07gA",
+      "projectID": "e81642e155fdbee5fba8ab57aa1d5a24d7b3faca",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 44777,
+        "output": 2342,
+        "reasoning": 30,
+        "cache": {
+          "read": 59392,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789688754794,
+        "updated": 1789688754866,
+        "idle": 1789688836743
+      },
+      "title": "offline Discord audit",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/concise-model-discord-audit-incomplete-candidate-3-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "outputEntries": [
+      "snapshot.md",
+      "audit.md",
+      "skills"
+    ]
+  }
+]

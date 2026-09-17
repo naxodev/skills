@@ -1,0 +1,351 @@
+[
+  {
+    "id": "discord-audit-baseline-1",
+    "arm": "baseline",
+    "fixture": "discord-audit",
+    "words": 2020,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        61,
+        69,
+        71,
+        95,
+        99
+      ],
+      "note": "Material posting paths, moderated tags, privileged-interest correction, credential-safe synthetic checks, and human-only invites remain intact. No unknown control is asserted failed. Coverage is long but complete.",
+      "evidence": "audit.md:61: **Future verification:** Use **role preview** to inspect effective permissions, then a **real member** to confirm rejection of messages, replies in existing threads, public/private thread creation, polls, and invite creation in the read-only channel (`VERIFICATION.md:13`). The supplied evidence establishes message permission only; the other actions are untested.\naudit.md:69: **Proposed correction — not applied:** Require at least one member-selectable product-domain tag, using **command execution** and **build previews** where appropriate. Keep workflow-state tags moderator-only. Keep support and bugs in the issue tracker as the durable destination; forum guidance should direct users there and send security reports to the private security-reporting form. Request versions, runtime, expected and observed results, and a sanitized reproduction.\naudit.md:71: **Future verification:** A **real member** should see tags and guidelines, fail to create an untagged post, succeed with a domain tag, and be unable to apply moderator-only workflow-state tags (`VERIFICATION.md:17,75–76`). Obtain **human attestation** that staff can apply any planned states, link durable work, route security details privately, and remove test content (`VERIFICATION.md:77–79`). These tests remain unavailable.\naudit.md:95: | Native safety and moderation | **Unknown:** no verification level, minimum-age policy, moderator MFA, raid protection, content filtering, DM safety, AutoMod, alert routing, audit, or enforcement evidence (`7–20`). | Configuration evidence plus **human attestation:** safety actions, acting-account audit events, private non-credential alerts, and synthetic credential blocking without copying matched content into alerts. Never use real credentials for testing. |\naudit.md:99: | Invites and private cohort controls | Invited beta users are recorded (`3`), but expiry, use limits, approvals, revocation, member invite permissions, and any separate confidential cohort are **unknown**. No invite is supplied (`17`). | **Human attestation:** invite approval, bounds, human-only handling, role-assignment capability/manual fallback, persistence, existing-member handling, and revocation. **Real member:** member invite denial and new-cohort access if applicable. Do not assume invited beta means a separate private program exists. |"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-candidate-1",
+    "arm": "candidate",
+    "fixture": "discord-audit",
+    "words": 1626,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        35,
+        43,
+        45,
+        63,
+        65
+      ],
+      "note": "Complete posting-denial paths, domain/state tag distinctions, privileged-interest correction, synthetic credential restrictions, and human-only invite limits remain. No false assurance. Grouped table is still an extensive control inventory.",
+      "evidence": "audit.md:35: **Verification:** Use **role preview** for effective static permissions. Use a **real member** to confirm rejection of messages, existing-thread replies, public and private thread creation, polls, and invite creation under the intended read-only boundary. Check that approved operational roles retain intended posting access.\naudit.md:43: **Proposed correction:** Require at least one member-selectable product-surface tag, using command execution and build previews where suitable. Preserve useful existing domain tags if present. Reserve workflow-state tags for moderators. Keep support and bugs in the issue tracker as the authoritative destination; route security reports to the private security-reporting form and conduct reports to the human owner. Include versions, runtime, expected and observed results, and sanitized reproductions in forum guidance.\naudit.md:45: **Verification:** Use a **real member** to confirm that an untagged post is rejected, a valid domain-tagged post is accepted, guidelines are visible, and workflow-state tags cannot be applied by participants. Obtain **human attestation** that staff can advance any planned states, link durable work, route security reports privately, and remove test content. These tests require later authorization.\naudit.md:63: | Safety and moderation | **Unknown.** Verification level, minimum-age policy, moderator MFA, raid protection, explicit-content and DM safety, audit logging, enforcement permissions, escalation, appeals, recusal, and backup coverage are absent. AutoMod coverage for mention spam, suspected spam, abuse, credentials, and external invites is absent. Private non-credential alerts, credential blocking without matched-content alerts, revocation warnings, and tolerance for normal technical discussion are unverified. | **Role preview** for moderation permission boundaries; **human attestation** for settings and synthetic moderation tests. No synthetic messages or enforcement tests were sent. |\naudit.md:65: | Invites and cohort admission | **Unknown.** Approval history, expiry, use limits, temporary membership, member-created invites, role assignment, existing-member behavior, manual fallback, and post-onboarding revocation are absent. No invite is included (`snapshot.md:17`), which does not prove these controls passed. | **Human attestation** for invite settings, handling, consumption, reuse rejection, and existing-member checks; **real member** for first-new-member role assignment and denied invite creation. Invite handling remains human-only; no invite was created or inspected. |"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-baseline-2",
+    "arm": "baseline",
+    "fixture": "discord-audit",
+    "words": 2044,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        37,
+        44,
+        45,
+        69,
+        72
+      ],
+      "note": "Complete finding fields and material posting/tag/interest-role restrictions. Human-only invite and synthetic moderation constraints remain, without turning unavailable checks into failures.",
+      "evidence": "audit.md:37: - **Future verification:** **Role preview:** Check the static permission shape for baseline and relevant combined roles. **Real member:** Confirm announcements reject messages, existing-thread replies, public and private thread creation, polls, and invite creation. Verify authorized staff can still publish through **human attestation**. Only member-message permission is established as failing; other posting paths remain untested.\naudit.md:44: - **Proposed correction — not applied:** Require at least one member-selectable domain tag. Use command execution and build previews where suitable, preserving any useful existing taxonomy after review. Keep workflow-state tags moderator-only. Forum guidance should direct support and bugs to the issue tracker, security details to the private security-reporting form, and conduct reports to the human owner. Discord discussion must not replace these routes.\naudit.md:45: - **Future verification:** **Real member:** Confirm an untagged post is rejected, a domain-tagged post succeeds, guidelines are visible, and workflow-state tags cannot be applied by a participant. **Human attestation:** Confirm staff can advance any planned states, link durable work, route security details privately, and remove test content afterward. All behavioral checks remain untested.\naudit.md:69: | Native safety controls and AutoMod | No configuration evidence is supplied. | **Human attestation:** Verify verification level, age policy, moderator MFA, raid protection, content/DM safety, safety actions, and audit attribution. Use synthetic moderation checks: non-credential alerts stay private; credential-like matches are blocked with a revocation warning and are not copied to alerts. | Spam, abuse, raid, and credential-handling protections are unknown, not proven absent. |\naudit.md:72: | Invites and private-beta access | Twenty invited users are recorded, but no invite settings or attestations (`snapshot.md:3,17`). | **Role preview:** Inspect member invite permissions. **Real member:** Verify members cannot create invites where prohibited. **Human attestation:** Verify approval, expiry/use limits, appropriate persistence, and human-only handling. A separately authorized fresh-member test would require a human-handled short-lived, single-use invite and attested second-use rejection. | Existing invitation controls and join behavior are unknown. No invite creation is authorized here. |"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-candidate-2",
+    "arm": "candidate",
+    "fixture": "discord-audit",
+    "words": 1470,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        35,
+        43,
+        45,
+        63,
+        65
+      ],
+      "note": "Posting/thread/poll/invite denials, domain/state tag restrictions, interest-role authority correction, synthetic credential safeguards, and human-only invites retained. Inventory remains extensive, with unknown scope qualified rather than hidden.",
+      "evidence": "audit.md:35: **Verification:** use **role preview** for static permissions, then a **real member** to confirm rejection of messages, replies in existing threads, public and private thread creation, polls, and invite creation. Confirm that approved staff can still publish updates.\naudit.md:43: **Proposed correction, not applied:** require at least one member-selectable domain tag, using `command execution` and `build previews` where appropriate. Keep any workflow-state tags moderator-only. Make the forum's guidance preserve the issue tracker as the destination for support and bugs, the private security-reporting form for vulnerabilities, and the human owner for conduct reports.\naudit.md:45: **Verification:** a **real member** should be unable to create an untagged post, able to select an appropriate domain tag, and unable to apply moderator-only state tags. **Human attestation** should confirm that staff can advance any planned workflow states, link durable work, route security details privately, and remove synthetic test content.\naudit.md:63: | Moderation and safety — **human attestation / role preview** | Unknown: verification level, minimum-age policy, moderator MFA, raid protection, content filtering, direct-message safety, audit attribution, enforcement permissions, response commitments, escalation, appeals, conduct recusal, and backup coverage. AutoMod coverage for mentions, spam, abuse, credential-like strings, and unwanted invites is unknown. Synthetic tests would need to establish private non-credential alerts and credential blocking with a revocation warning and no copied match in alerts. |\naudit.md:65: | Private programs and invites — **real member / human attestation / role preview** | Invited beta users do not establish a confidential cohort. Applicability of private categories, start channels, feedback forums, and cohort roles is unknown. If present, isolation, combined-role access, read-only start behavior, and separation from global onboarding require testing. Existing invite approval, expiry, use bounds, temporary membership, role assignment capability, new/existing-member behavior, manual fallback, revocation, and human-only handling are unknown. Single-use test-invite consumption and second-use rejection have no attestation. Invite interaction must remain human-only. |"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-baseline-3",
+    "arm": "baseline",
+    "fixture": "discord-audit",
+    "words": 2279,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        46,
+        65,
+        74,
+        78,
+        79,
+        104,
+        106
+      ],
+      "note": "All finding fields and posting/tag/privilege restrictions retained. Human-only invites and non-secret synthetic moderation tests retained. Unknowns remain unknown, not failures.",
+      "evidence": "audit.md:46: **Proposed correction — not applied:** Remove Manage Roles from the interest role. Limit it to intended command execution or build previews channels and notifications. Review its other permissions and any self-assignment path. Keep privileged permissions in explicit staff roles and confidential access outside interest-role assignment. Do not substitute Administrator.\naudit.md:65: - **Real member:** Verify rejection of messages, replies in existing threads, public/private thread creation, polls, and invite creation, following the read-only-channel matrix.\naudit.md:74: **Proposed correction — not applied:** Require at least one member-selectable domain tag, using **Command execution** and **Build previews** where appropriate. Preserve useful existing domain tags after inventory. Keep any workflow-state tags, such as Resolved, moderator-only. Make the forum guidance direct support and bugs to the issue tracker and vulnerabilities to the private security-reporting form. Request versions, runtime, expected and observed results, and a sanitized reproduction.\naudit.md:78: - **Real member:** Confirm guidelines and tags are visible, a post cannot be created without a valid domain/purpose tag, and participants cannot apply moderator-only workflow states.\naudit.md:79: - **Human attestation:** Confirm staff can advance any planned states, link durable issue-tracker work, keep security details in the private route, and remove authorized test content afterward.\naudit.md:104: | Native safety and moderation | Verification level, age policy, moderator MFA, raid protections, explicit-content and DM safety settings, AutoMod coverage, alert destinations, audit events, and escalation/appeal ownership are unknown. | **Human attestation** of settings and authorized synthetic tests. Cover mention/suspected spam, abusive language, external invites, and credential-like strings. Credential matches must be blocked without copying matched content into alerts; non-credential alerts must remain private. No such test was run. |\naudit.md:106: | Invite controls and cohort assignment | Member-created invite permissions, approval history, expiry/use bounds, temporary membership, revocation, and cohort-role assignment are unknown. | **Real member** for member invite restrictions and new-member cohort access where applicable; **human attestation** for invite settings, second-use rejection, manual fallback, and existing-member handling. Any future invite requires separate approval and human-only UI/URL handling. |"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-candidate-3",
+    "arm": "candidate",
+    "fixture": "discord-audit",
+    "words": 1349,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        35,
+        43,
+        45,
+        62,
+        64,
+        74
+      ],
+      "note": "All posting denials, domain/state tag controls, authority correction, and relevant verification boundaries retained. Grouped unknowns retain missing scope. Synthetic moderation and human-only approved invites remain bounded; no assurance or rollout requirement introduced.",
+      "evidence": "audit.md:35: **Verification:** Use **role preview** to inspect static permissions and combinations. A **real member** must then be unable to send messages, reply in existing threads, create public or private threads, create polls, or create invites there. Authorized staff posting also needs confirmation. The snapshot proves only the recorded message-permission failure.\naudit.md:43: **Correction:** Require at least one member-selectable product-surface tag, using **command execution** and **build previews** where appropriate. Preserve useful existing domain tags. Keep workflow-state tags moderator-only. State that support and bugs belong in the issue tracker; redirect security reports to the private security-reporting form and conduct reports to the human owner. Discord discussion must not replace those routes.\naudit.md:45: **Verification:** A **real member** must see tags and guidelines, fail to create an untagged post, succeed with an appropriate domain tag, and be unable to apply moderator-only states. **Human attestation** should confirm staff state changes, durable issue links, private security routing, and removal of any test content. No forum lifecycle test was performed.\naudit.md:62: | Moderation and safety | Verification level, minimum-age policy, moderator MFA, raid protection, explicit-content and DM safety, audit logs, enforcement, and appeal ownership are unknown. AutoMod coverage for mentions, spam, abuse, credentials, and external invites is unknown. Credential blocking without copied alert content and private non-credential alerts need synthetic checks. | Human attestation; role preview for staff boundaries |\naudit.md:64: | Private cohorts and invites | Invited beta users do not establish a separate confidential cohort. Private categories, start channels, feedback surfaces, relationship roles, combined-role boundaries, and public/private feedback separation have unknown applicability. Invite approval, expiry/use limits, reuse rejection, temporary membership, role-assignment capability, first-new-member and existing-member behavior, manual fallback, and revocation are untested. No invite handling occurred. | Role preview; real member for access and new-member assignment; human attestation for invite handling and settings |\naudit.md:74: If the owner later authorizes improvement work, address finding 1 first, then findings 2 and 3. Obtain non-secret configuration evidence and human attestations for the gaps. Schedule fresh human-member checks when access is available, and review the result after corrections and before expanding beta access. Any future invite interaction must remain human-only and require explicit approval. The audit ends here; implementation and launch acceptance require separate authorization."
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-1",
+    "arm": "baseline",
+    "fixture": "discord-audit-incomplete",
+    "words": 1841,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        40,
+        41,
+        42,
+        47,
+        57,
+        65
+      ],
+      "note": "Healthy posting and tag details retained, no invented findings or false assurance. Explicit source/evidence boundaries and human-only/synthetic restrictions preserved. Prioritization and control inventory remain long.",
+      "evidence": "audit.md:40: | Announcements deny baseline messages, existing-thread replies, public/private thread creation, polls, and invite creation. | `snapshot.md:11` | Recorded configuration; matches the listed read-only restrictions. | Real-member enforcement and combined-role access are untested. This is not a server-wide invite restriction. |\naudit.md:41: | Support requires a member-selectable domain tag: command execution or build previews. Workflow-state tags are moderator-only. | `snapshot.md:12` | Recorded configuration; matches the forum tag invariant. | Posting without a tag and attempts to apply state tags were not tested. |\naudit.md:42: | The interest role grants relevant product channels and notifications without privileged permissions. | `snapshot.md:13–14` | Supplied role preview; **passed for the recorded static permission shape**. | Onboarding assignment and combinations with other roles are untested. |\naudit.md:47: **None established.** Missing observations are verification gaps, not proof of insecure settings. No corrective server change is justified as a confirmed defect by this snapshot, and no correction was applied.\naudit.md:57: | Safety configuration and AutoMod — unknown/untested | AutoMod behavior was not observed (`snapshot.md:16`); other safety settings are absent. | High: spam, abuse, and credential protection cannot be assessed. | **Human attestation:** confirm verification level, age policy, moderator MFA, raid controls, explicit-content filtering, DM safety, safety actions, and audit attribution. Check mention/suspected spam, abuse, external invites, and credential rules. Use only synthetic matches; credentials must be blocked with a revocation warning and no matched-content alert. Non-credential alerts should reach a private moderation channel. |\naudit.md:65: | Invite governance — unknown | Invited users exist; no invite settings or approval history supplied (`snapshot.md:3,17`). | High before further invitations: expiry, use limits, assignment, and ownership are unverified. | **Human attestation:** confirm approval, bounded expiry/uses, human-only handling, persistent-membership settings where needed, low-privilege assignment/manual fallback, and revocation of completed cohort invites. A future test would also need human-attested second-use rejection. No invite is needed for this audit. |"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-1",
+    "arm": "candidate",
+    "fixture": "discord-audit-incomplete",
+    "words": 1897,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        35,
+        36,
+        42,
+        82,
+        98,
+        99
+      ],
+      "note": "No material scope or restriction lost. Full healthy posting/tag boundaries, evidence classes, synthetic moderation and human-only invites retained. Eight detailed coverage sections remain; completeness passes independently of length.",
+      "evidence": "audit.md:35: | Announcements deny baseline messages, existing-thread replies, public/private thread creation, polls, and invite creation. | `snapshot.md:11`; supplied configuration | The recorded deny set matches the read-only baseline. Effective enforcement and combined-role access are untested. |\naudit.md:36: | Support requires a member-selectable command execution or build previews tag; workflow-state tags are moderator-only. | `snapshot.md:12`; supplied configuration | The recorded taxonomy and state separation meet the forum invariants. Posting and tag enforcement are untested. |\naudit.md:42: **None supported by the evidence.** There is no observed failure requiring a corrective finding or priority. The support forum's existence does not demonstrate that support or bugs bypass the issue tracker. Unobserved controls do not demonstrate missing or disabled controls.\naudit.md:82: - **Human attestation needed:** intended timeouts/bans/report handling work and audit events identify the acting account. Synthetic non-credential matches for mention spam, suspected spam, abusive language, and unwanted external invites should alert privately. Synthetic credential-like matches should be blocked with a revocation warning and no matched content copied into alerts. Check that rules permit normal technical discussion.\naudit.md:98: - **Human attestation needed:** explicit invite approval, ownership, bounded expiry/use count, human-only handling, temporary membership policy, completed-cohort revocation, and a scheduled post-cohort review. Attestation of a fresh-account test must cover a short-lived single-use invite and rejection of its second use.\naudit.md:99: - **If a separate private cohort exists:** use **role preview** for category-level baseline denial, explicit access/operational roles, combined-role safety, read-only start permissions, and authorized posting/pinning. Use **real member** checks for baseline invisibility, cohort visibility, and first-new-member access-role assignment when available. Use **human attestation** for current role-assignment capability, manual fallback, and verified existing-member behavior. Confirm confidential access stays out of self-assigned interests/global onboarding and relationship roles remain staff-assigned."
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-2",
+    "arm": "baseline",
+    "fixture": "discord-audit-incomplete",
+    "words": 2057,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        42,
+        43,
+        50,
+        62,
+        63,
+        65,
+        66
+      ],
+      "note": "All material snapshot restrictions and unknowns retained, including effective posting/tag checks, non-secret moderation, and human-only invites. Long prioritized inventory does not masquerade as observed failures.",
+      "evidence": "audit.md:42: | Announcements deny baseline members messages, replies in existing threads, public/private thread creation, polls, and invite creation (S11). | Supplied configuration; all listed read-only restrictions are recorded. | **Real member:** rejection of each action. Other role combinations and server-wide invite restrictions are not established. |\naudit.md:43: | Support requires at least one member-selectable product tag: command execution or build previews; workflow-state tags are moderator-only (S12). | Supplied configuration; the required domain-tag and workflow-state separation is recorded. | **Real member:** required-tag enforcement, tag visibility, and denial of member-applied workflow states. **Human attestation:** staff state transitions and durable issue links. |\naudit.md:50: **None established.** The snapshot does not show an insecure setting or failed member action. In particular, missing real-member tests do not contradict the recorded announcement restrictions or forum tag configuration.\naudit.md:62: | Invite controls (S11 covers announcements only; S17 contains no invite) | **High — unknown server-wide.** The invited beta increases the relevance of controlled entry. No supplied URL says nothing about active invites or their limits. | **Real member:** inability to create invites across all member-visible surfaces where policy forbids it. **Human attestation:** approval, owner, expiry, use limits, persistent-membership setting where needed, revocation, and human-only handling. Any later test invite needs explicit approval and human operation; a consumed single-use invite must reject reuse. |\naudit.md:63: | Native safety and AutoMod (S16) | **High — unobserved.** Missing evidence does not mean controls are disabled. | **Human attestation:** verification level, moderator MFA, raid protection, explicit-content and DM safety settings; synthetic tests for mention spam, suspected spam, abusive language, credential-like strings, and unwanted external invites. Confirm non-credential alerts remain private; credential matches are blocked with a revocation warning and without copying matched content into alerts. Confirm audit events identify actors. |\naudit.md:65: | Announcements and other read-only surfaces (S11, S15) | **Medium — configuration recorded; enforcement untested.** Rules, release-feed, or private start-channel existence is unknown. | **Real member:** reject messages, existing-thread replies, both thread types, polls, and invites in every applicable read-only channel. **Role preview:** check additional role combinations and approved staff posting/pinning access where relevant. |\naudit.md:66: | Support forum lifecycle (S12, S15) | **Medium — configuration recorded; enforcement untested.** No posting or tag test was performed. | **Real member:** tags/guidelines visible; untagged posting rejected; product-tagged posting accepted; workflow-state selection denied. **Human attestation:** staff advances state, links support/bugs to the issue tracker, and removes authorized test content afterward. |"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-2",
+    "arm": "candidate",
+    "fixture": "discord-audit-incomplete",
+    "words": 1172,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        20,
+        21,
+        23,
+        27,
+        38,
+        39,
+        50
+      ],
+      "note": "Shorter grouping retains scope, evidence boundaries and all healthy snapshot restrictions; no invented failures. Synthetic credential tests and human-only approved invites remain bounded.",
+      "evidence": "audit.md:20: | Announcements deny baseline members messages, existing-thread replies, public/private thread creation, polls, and invite creation (`snapshot.md:11`). | The recorded read-only configuration covers the specified actions. | Effective enforcement and other role combinations need real-member checks. This is not a server-wide invite restriction result. |\naudit.md:21: | Support requires a member-selectable **command execution** or **build previews** tag; workflow-state tags are moderator-only (`snapshot.md:12`). | The recorded forum configuration matches the required domain-tag and staff-state separation. | Post creation, tag enforcement, and staff workflow were not tested. |\naudit.md:23: | The interest role grants only relevant product channels and notifications, with no privileged permissions; supplied preview confirms its shape (`snapshot.md:13–14`). | Passed within the supplied **role-preview** scope. | Does not prove onboarding assignment or combined-role access. |\naudit.md:27: **No observed failures.** The snapshot does not justify a corrective finding or a failure priority. Missing evidence is not proof of a missing or insecure control. No corrections were applied.\naudit.md:38: | Safety and moderation | AutoMod behavior was not observed (`snapshot.md:16`); configuration, verification level, minimum-age policy, moderator MFA, raid protection, explicit-content filtering, and DM safety are unknown. Obtain non-secret configuration evidence and **human attestation** for synthetic mention/spam, abuse, credential, and external-invite tests. Verify private non-credential alerts; credential matches must be blocked without copying matched content into alerts. Safety actions, audit attribution, escalation, appeals, and conduct recusal/backup ownership also need attestation. |\naudit.md:39: | Invites and confidential cohorts | Invited beta membership does not establish a separate confidential cohort or an approved launch policy. Invite approval, expiry, use limits, reuse rejection, temporary membership, revocation, and human-only handling need **human attestation** without URLs. Server-wide member invite denial needs a **real member**. If private program areas exist, check category/start/forum isolation, read-only start permissions, staff-only relationship roles, and exclusion from self-service onboarding using **role preview** and **real-member** evidence. Check first-new-member assignment with a real member; attest existing-member behavior and manual fallback. Applicability of these cohort-specific checks is unknown. |\naudit.md:50: For a future authorized review, first obtain non-secret role/settings evidence and human attestations for safety, ownership, recovery, and invite handling. Then have a human perform the applicable fresh-member checks, including announcement restrictions, forum tags, onboarding, and durable routes. Any test invite must remain human-controlled and require separate approval. Review again when that evidence becomes available and before expanding the beta; no review date is currently recorded."
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-3",
+    "arm": "baseline",
+    "fixture": "discord-audit-incomplete",
+    "words": 1869,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        34,
+        35,
+        36,
+        43,
+        55,
+        56,
+        57
+      ],
+      "note": "Complete healthy restrictions and unknown boundaries retained. Synthetic-only credential checks, human-only invites and recovery-secret exclusions preserved. Unknown priorities are not asserted defects.",
+      "evidence": "audit.md:34: | Announcements deny baseline members messages, existing-thread replies, public/private thread creation, polls, and invites | `snapshot.md:11` | Supplied configuration; healthy read-only permission shape | All six rejection behaviors remain untested as a real member. Other roles and role combinations are unknown. |\naudit.md:35: | Support requires a member-selectable command execution or build previews tag; workflow-state tags are moderator-only | `snapshot.md:12` | Supplied configuration; matches forum taxonomy and workflow-state controls | Actual required-tag enforcement and restriction of workflow-state tags remain untested. |\naudit.md:36: | Interest role grants only relevant product channels and notifications, without privileges | `snapshot.md:13–14` | Supplied configuration and supplied role preview; static check passed within this scope | Does not prove onboarding answers assign only that role or that combined roles remain safe. |\naudit.md:43: **None supported by the available evidence.** Missing observations are recorded below as gaps, not insecure settings. No corrective server change is justified as an established finding from this snapshot alone.\naudit.md:55: | **Invites and cohort boundaries:** Invited beta users are stated, but approval, expiry, uses, revocation, temporary membership, assignment, and server-wide invite restrictions are absent (`snapshot.md:3,11,17`). Separate confidential cohort areas are not established. | Announcement-only denial does not prove invite restriction throughout the server. Cohort-specific applicability remains unknown. | **Human attestation:** Review non-secret invite settings and human-only handling; check assignment capability/manual fallback and existing-member behavior if applicable. **Real member:** Verify server-wide member invite denial under the launch policy, and baseline/cohort visibility and first-new-member assignment if a private cohort exists. Any new test invite requires separate explicit approval and human-only handling. |\naudit.md:56: | **Moderation and safety:** AutoMod behavior is explicitly unobserved; verification level, moderator MFA, raid protection, content filtering, DM safety, audit events, and escalation are absent (`snapshot.md:16`). | High verification priority before expanding access. Spam protection and secret-safe moderation cannot be assumed. | **Human attestation:** Confirm controls and moderator actions. With separate authorization, use synthetic values to check mention spam, suspected spam, abusive language, unwanted invites, and credential-like strings. Credential matches must be blocked with a revocation warning and no matched-content alert; non-credential alerts must stay private. Verify audit attribution. |\naudit.md:57: | **Recovery and conduct coverage:** Recovery was not observed; human owner is the conduct recipient (`snapshot.md:5,16`). Successor, backup Admin, owner MFA, non-shared accounts, durable conduct intake, and recusal are unknown. | High verification priority: two maintainers do not prove operational recovery or independent conduct handling. | **Human attestation:** Confirm a human owner and successor, owner MFA, recovery material outside automation, second-human recovery, no shared account, narrow durable conduct intake, and recusal/backup. **Role preview:** Check backup Admin hierarchy and separation from unrelated private work. Never inspect recovery secrets. |"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-3",
+    "arm": "candidate",
+    "fixture": "discord-audit-incomplete",
+    "words": 1398,
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "compression": {
+      "result": "pass",
+      "lines": [
+        34,
+        35,
+        37,
+        43,
+        50,
+        51,
+        60
+      ],
+      "note": "Grouped unknowns retain relevant scope and restrictions, healthy snapshot detail, synthetic credential checks, and human-only approved invites. The phrase 'other safety settings are absent' is under source-limit/missing-evidence headings and qualified as unknown in line 43, not an asserted insecure setting.",
+      "evidence": "audit.md:34: | Announcements deny baseline members messages, replies in existing threads, public and private thread creation, polls, and invite creation (line 11). | The recorded denial set matches the read-only control. It does not prove effective behavior or server-wide invite restrictions. |\naudit.md:35: | Support requires a member-selectable **command execution** or **build previews** tag; workflow-state tags are moderator-only (line 12). | The recorded forum design uses the project's domain terms and separates purpose from workflow state. Posting and tag enforcement are explicitly untested (line 15). |\naudit.md:37: | Interest role grants only relevant product channels and notifications, without privileged permissions; supplied preview confirms this shape (lines 13–14). | **Passed in supplied role preview only** for the interest-role permission shape. Onboarding assignment and combined-role effects are untested. |\naudit.md:43: These groups cover the remaining applicable local controls. Unless otherwise stated, settings are **unknown** and behavior is **untested**. The named evidence classes describe future verification, not work performed in this audit.\naudit.md:50: | **Moderation and safety.** AutoMod behavior was not observed (line 16); other safety settings are absent. | **Human attestation:** verification level, minimum-age policy, moderator MFA, raid controls, content filtering, DM safety, moderation actions, actor-attributed audit events, escalation, appeals, and conduct recusal/backup. Verify mention spam, suspected spam, abusive language, external invites, and credential-like rules. Future synthetic checks should prove non-credential alerts stay private and credential-like matches are blocked with a revocation warning, without copying matched content to alerts. No synthetic tests ran here. |\naudit.md:51: | **Invites and confidential cohorts.** Users are invited, but no invite settings or private-program model are supplied (lines 3, 17). | **Human attestation:** explicit invite approval, expiry/use limits, persistent membership settings, human-only handling, and revocation after cohort onboarding. Any future single-use test invite needs approval and human handling, with second-use rejection attested. Whether cohort roles or confidential areas exist is **unknown**, not a demonstrated requirement to add them. If present, use **role preview** for private-category and read-only start permissions; **real-member** checks for baseline/cohort visibility and first-new-member access assignment; **human attestation** for optional role-assignment capability, existing-member behavior, and manual fallback. |\naudit.md:60: If further verification is authorized later, first obtain a redacted permissions/settings inventory and human attestations for ownership, recovery, moderation, and invite handling. Then use a fresh human-operated non-privileged account to test member boundaries, screening, forum enforcement, and reporting routes. Any test invite requires separate explicit approval and human-only handling. Current official documentation is needed before relying on exact UI labels or behavior."
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n"
+  }
+]

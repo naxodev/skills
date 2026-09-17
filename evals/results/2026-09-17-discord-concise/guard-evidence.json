@@ -1,0 +1,41 @@
+{
+  "frontmatter-discovery-guards": {
+    "baseline": "bab3a97cd1b18c382334aa25a05b5561285af87641624bb6bbae1b5a7f640778",
+    "candidate": "bab3a97cd1b18c382334aa25a05b5561285af87641624bb6bbae1b5a7f640778",
+    "identical": true
+  },
+  "setup-2-through-8-and-handoff": {
+    "baseline": "b2d921dc9403b55ea83ba610164e5734a812efafdb785160ccf050f56d4f425f",
+    "candidate": "b2d921dc9403b55ea83ba610164e5734a812efafdb785160ccf050f56d4f425f",
+    "identical": true
+  },
+  "audit-handoff-and-exclusions-pointer": {
+    "baseline": "c81a44005524adab0c5dd293d746206d5d4e33d4775d2cf394fab24589a65046",
+    "candidate": "c81a44005524adab0c5dd293d746206d5d4e33d4775d2cf394fab24589a65046",
+    "identical": true
+  },
+  "REFERENCE.md": {
+    "baseline": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+    "candidate": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+    "identical": true
+  },
+  "OPERATIONS.md": {
+    "baseline": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+    "candidate": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+    "identical": true
+  },
+  "STATE-TEMPLATE.md": {
+    "baseline": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+    "candidate": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+    "identical": true
+  },
+  "VERIFICATION.md": {
+    "baseline": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+    "candidate": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+    "identical": true
+  },
+  "prompt": {
+    "identicalToPrior": true,
+    "sha256": "5b479082ad230023a00762212684f0403e763bc56ba0b8b0596f322b9e831ead"
+  }
+}

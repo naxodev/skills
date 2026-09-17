@@ -54,8 +54,6 @@ Record the audit scope, as-of date (or unknown snapshot date), and evidence sour
 
 Assess only the supplied snapshot or authorized read-only observations. Separate observed failures from unknown or unavailable checks; missing evidence does not establish an insecure setting. Keep exact-current labels unverified when current official documentation is unavailable or outside scope.
 
-Keep full control coverage in assessment notes; the reader-facing report defaults to a brief scope and evidence summary, stated once. Group untested checks that share a missing capability into compact coverage statements that name the applicable scope and limitation. Expand to a full control matrix when requested or when grouping would obscure different statuses.
-
 **Complete when:** each in-scope assessment has a source and evidence class, or an explicit unknown, unavailable, or not-applicable status with a reason.
 
 ### A2. Write the audit findings
@@ -68,8 +66,6 @@ For each observed failure, record:
 - A verification method using the existing matrix's role-preview, real-member, or human-attestation distinction
 
 Preserve the project's terms and durable bug, security, and conduct routes in proposed corrections. Report healthy observations and evidence limits without inventing findings to fill the report.
-
-Keep each failure's evidence, impact and priority rationale, unapplied correction, and verification method together in one finding. Refer to that finding instead of repeating it across summaries, tables, and action lists. When no failures are observed, report the healthy snapshot observations and grouped unknowns with their evidence limits.
 
 **Complete when:** every finding has evidence, impact, a justified priority, an unapplied correction, and a matching verification method; unknown checks are separate from failures.
 

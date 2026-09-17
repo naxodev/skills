@@ -1,0 +1,77 @@
+{
+  "baseline": {
+    "median": 2032,
+    "min": 1841,
+    "max": 2279,
+    "words": [
+      2020,
+      2044,
+      2279,
+      1841,
+      2057,
+      1869
+    ]
+  },
+  "candidate": {
+    "median": 1434,
+    "min": 1172,
+    "max": 1897,
+    "words": [
+      1626,
+      1470,
+      1349,
+      1897,
+      1172,
+      1398
+    ]
+  },
+  "reduction": 0.2942913385826772,
+  "candidateSourcePass": true,
+  "adopt": true,
+  "fixtures": {
+    "discord-audit": {
+      "baseline": {
+        "median": 2044,
+        "min": 2020,
+        "max": 2279,
+        "words": [
+          2020,
+          2044,
+          2279
+        ]
+      },
+      "candidate": {
+        "median": 1470,
+        "min": 1349,
+        "max": 1626,
+        "words": [
+          1626,
+          1470,
+          1349
+        ]
+      }
+    },
+    "discord-audit-incomplete": {
+      "baseline": {
+        "median": 1869,
+        "min": 1841,
+        "max": 2057,
+        "words": [
+          1841,
+          2057,
+          1869
+        ]
+      },
+      "candidate": {
+        "median": 1398,
+        "min": 1172,
+        "max": 1897,
+        "words": [
+          1897,
+          1172,
+          1398
+        ]
+      }
+    }
+  }
+}

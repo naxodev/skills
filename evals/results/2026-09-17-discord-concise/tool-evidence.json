@@ -1,0 +1,823 @@
+[
+  {
+    "id": "discord-audit-baseline-1",
+    "exactReads": {
+      "SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-candidate-1",
+    "exactReads": {
+      "SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-baseline-2",
+    "exactReads": {
+      "SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-candidate-2",
+    "exactReads": {
+      "SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      },
+      {
+        "name": "read",
+        "status": "error",
+        "input": {
+          "path": "audit.md",
+          "offset": 85,
+          "limit": 30
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "audit.md"
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-baseline-3",
+    "exactReads": {
+      "SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "audit.md",
+          "offset": 125,
+          "limit": 60
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-candidate-3",
+    "exactReads": {
+      "SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-1",
+    "exactReads": {
+      "SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "audit.md",
+          "offset": 1,
+          "limit": 130
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-1",
+    "exactReads": {
+      "SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      },
+      {
+        "name": "read",
+        "status": "error",
+        "input": {
+          "path": "audit.md",
+          "offset": 127,
+          "limit": 60
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "audit.md",
+          "offset": 105,
+          "limit": 30
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-2",
+    "exactReads": {
+      "SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "audit.md",
+          "offset": 1,
+          "limit": 160
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-2",
+    "exactReads": {
+      "SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-3",
+    "exactReads": {
+      "SKILL.md": "fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      },
+      {
+        "name": "read",
+        "status": "error",
+        "input": {
+          "path": "audit.md",
+          "offset": 85,
+          "limit": 35
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "audit.md"
+        }
+      }
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-3",
+    "exactReads": {
+      "SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+      "REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae"
+    },
+    "calls": [
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "."
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/SKILL.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "snapshot.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/REFERENCE.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/OPERATIONS.md"
+        }
+      },
+      {
+        "name": "read",
+        "status": "completed",
+        "input": {
+          "path": "skills/discord-community-server/VERIFICATION.md"
+        }
+      },
+      {
+        "name": "patch",
+        "status": "completed",
+        "input": {
+          "targets": [
+            "*** Add File: audit.md"
+          ]
+        }
+      }
+    ]
+  }
+]

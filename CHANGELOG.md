@@ -17,6 +17,7 @@ This file records notable user-facing changes to the skills collection.
 
 ### Changed
 
+- Made Discord audit reports keep complete finding fields together and group checks with shared evidence limits. A twelve-audit comparison retained source coverage while reducing median report length by 29.4%.
 - Scoped technical docs style to the selected quadrant: tutorial learning checkpoints, precise reference contracts, purpose-specific titles and voice, labeled code notation, and optional endings backed by real links.
 - Scaled walkthrough code evidence to the source: up to four contiguous diff excerpts and after-change code blocks, with one sufficient block preferred for simple changes and no minimum quota.
 - Made technical docs discover a capable installed renderer before reporting blocked review, inspect actual output, and distinguish terminal Markdown review from MDX component and site behavior.
