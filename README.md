@@ -23,9 +23,9 @@ Add `-a <agent>` to target a specific agent, e.g. `-a opencode` or `-a claude-co
 
 | Skill | Use it for | Output | Invocation |
 | --- | --- | --- | --- |
-| [`discord-community-server`](skills/discord-community-server) | Plan, audit, improve, or launch a product community | Operating plan, approved configuration changes, and verification report | Automatic when relevant |
-| [`pr-walkthrough`](skills/pr-walkthrough) | Explain the motivation and mechanics of a PR | One self-contained HTML file, with optional narration | Explicit request |
-| [`writing-technical-docs`](skills/writing-technical-docs) | Write or improve how-to guides, tutorials, reference, and explanations | Documentation grounded in source or authoritative evidence, with verification results | Automatic when relevant |
+| [`discord-community-server`](skills/discord-community-server) | Plan, audit, improve, or launch a product community | Read-only audit with evidence and limits, or operating plan and approved configuration with verification | Automatic when relevant |
+| [`pr-walkthrough`](skills/pr-walkthrough) | Explain the motivation and mechanics of a PR | Self-contained HTML with a consistent four-part arc and final recap, with optional audio | Explicit request |
+| [`writing-technical-docs`](skills/writing-technical-docs) | Write or improve how-to guides, tutorials, reference, and explanations | Reader-focused documentation in one quadrant, grounded in evidence and verified against its promised outcome | Automatic when relevant |
 
 Automatic invocation depends on the host agent. The walkthrough disables implicit invocation in its Claude and Codex metadata.
 
@@ -68,7 +68,7 @@ To run metadata and catalog validation alone, use `bash scripts/validate.sh`.
 Run `bun run sample` to rebuild the sample HTML. No audio synthesis is needed.
 For instruction changes, follow the [behavior evaluation guide](evals/README.md). Those evaluations require fresh agent sessions and evidence-based review; CI does not claim a model behavior pass rate.
 
-The experimental [narrative audit command](evals/protocols/AUDIT-TOOL.md) prepares text-field coverage and applies source-linked audit edits to a separate manifest.
+The experimental [narrative audit command](evals/protocols/AUDIT-TOOL.md) prepares text-field coverage and applies source-linked audit edits to a separate manifest. It is not part of the default walkthrough workflow.
 
 ## Contributing
 

@@ -4,28 +4,24 @@ This file records notable user-facing changes to the skills collection.
 
 ## Unreleased
 
+## 0.9.0 - 2026-09-17
+
+Prepared locally; not published. The 0.8.0 entry below retains its original preparation date.
+
 ### Added
 
-- Evaluated six current-instruction offline PR walkthroughs with 24 native reports, source review, text-only audio no-ops, and identical independent rebuilds. Recorded tiny-diff report-shape failures and installed-instruction path deviations; corrected the initial general-agent preflight with a real build-agent capability check.
-- Recorded a nine-run PR walkthrough evidence experiment, including failed candidate patches and per-run findings.
-- Added a cache-unit conflict fixture and a frozen three-stage walkthrough evaluation protocol, with a twelve-trial comparison and recorded factual and prose-quality defects.
-- Added a lock-cleanup fixture, explicit guarantee and reader-facing criteria, and a counterexample/replay protocol with recorded first-pass and quotation-repair results.
-- Added a source-linked final narrative audit protocol and local `audit` command, with masked before/after reviews comparing two audit models on identical saved drafts.
-- Prepared a same-model final-audit experiment with retry, transaction, and cache fixtures, deterministic probes, and title-only control defects. Recorded external grader authentication failures and unrun model counts.
-- Completed audit-stage evaluation with a frozen Grok grader screen, parent-adjudicated controls, nine paired drafts, six control audits, and thirty masked grades. Recorded seeded-title repairs, unnecessary control edits, grading disagreements, measured costs/growth, and remaining source-level uncertainty.
-- Recorded a bounded walkthrough predictability comparison: adopted an evaluation-only rubric that reduced spurious findings, and rejected a skill rule that did not improve correct-control preservation. Retained all 36 session results and source-based decisions.
+- Added an experimental local [narrative audit command](evals/protocols/AUDIT-TOOL.md) for source-linked edits to a separate walkthrough manifest. It is not part of the default workflow.
+- Expanded [evaluation tooling and evidence](evals/README.md) with frozen fixtures, isolated sessions, source-based review, and independent replay. Detailed experiment results, rejected candidates, and verification limits remain in the linked history.
 
 ### Changed
 
-- Made Discord audit reports keep complete finding fields together and group checks with shared evidence limits. A twelve-audit comparison retained source coverage while reducing median report length by 29.4%.
-- Scoped technical docs style to the selected quadrant: tutorial learning checkpoints, precise reference contracts, purpose-specific titles and voice, labeled code notation, and optional endings backed by real links.
-- Scaled walkthrough code evidence to the source: up to four contiguous diff excerpts and after-change code blocks, with one sufficient block preferred for simple changes and no minimum quota.
-- Made technical docs discover a capable installed renderer before reporting blocked review, inspect actual output, and distinguish terminal Markdown review from MDX component and site behavior.
-- Made technical docs establish the reader's starting context and promised outcome before drafting, verify them against sources, and replay procedures without hidden setup. Kept brief task-critical rationale in how-to guides and required observable success checks.
-- Gave Discord audits a read-only evidence and findings handoff that completes without setup approval or launch actions; unknown checks remain separate from observed failures.
-- Clarified the walkthrough arc: four required sections, evidence-earned optional sections before the final recap, and word ceilings without minimums.
-- Clarified evaluation isolation, exact skill-version checks, and reporting of skipped workflow steps after observing rubric leakage in an excluded setup run.
-- Added reader-facing walkthrough style rules after an isolated writer comparison: preserve meaningful qualifications while keeping internal review IDs and drafting instructions out of the essay.
+- PR walkthroughs now require a four-part arc ending in a recap. Optional sections need distinct evidence. Code excerpts scale to the source, with no minimum quota; the reader-facing narrative preserves qualifications without internal review instructions.
+- Discord audits now finish with a read-only findings handoff, without setup or launch approval. Findings keep source, impact, priority, unapplied correction, and verification together. Shorter reports group shared limits and distinguish unknown checks from observed failures.
+- Technical docs now establish reader prerequisites and promised outcomes, replay procedures from a fresh start, and apply style within the selected quadrant. Verification discovers a capable renderer, inspects its output, and states the limits of terminal Markdown review.
+
+### Fixed
+
+- Labeled the how-to template's incomplete structural illustration and verification placeholder so they cannot be mistaken for a verified runnable guide.
 
 ## 0.8.0 - 2026-09-07
 

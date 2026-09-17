@@ -1,0 +1,123 @@
+[
+  {
+    "args": [
+      "bun",
+      "install",
+      "--frozen-lockfile"
+    ],
+    "code": 0,
+    "stdout": "bun install v1.3.7 (ba426210)\n\nChecked 157 installs across 158 packages (no changes) [51.00ms]\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "bun",
+      "install",
+      "--frozen-lockfile",
+      "--cwd",
+      "skills/pr-walkthrough/scripts"
+    ],
+    "code": 0,
+    "stdout": "bun install v1.3.7 (ba426210)\n\nChecked 211 installs across 236 packages (no changes) [85.00ms]\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "bun",
+      "run",
+      "check"
+    ],
+    "code": 0,
+    "stdout": "bun test v1.3.7 (ba426210)\nValid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-NKGgbX/discord-community-server\nValid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-NKGgbX/pr-walkthrough\nValid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-NKGgbX/writing-technical-docs\nCatalog, local Markdown links, and skill metadata passed.\nValidating marketplace manifest: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917/.claude-plugin/marketplace.json\n\n✔ Validation passed\n",
+    "stderr": "$ bun run typecheck && bun run lint && bun run test && bun run validate\n$ tsc --noEmit\n$ eslint .\n$ bun test scripts skills/pr-walkthrough/scripts\n\nscripts/catalog.test.ts:\n(pass) a consistent catalog with resolvable resources passes [15.95ms]\n(pass) adding a skill without updating the catalog is rejected [4.50ms]\n(pass) renames must update frontmatter and bundled references [3.14ms]\n(pass) a removed skill cannot remain advertised in either catalog [2.51ms]\n(pass) a release cannot publish mismatched plugin versions [2.98ms]\n(pass) portable validation cannot hide an invalid invocation flag [3.50ms]\n\nscripts/narrative-audit.test.ts:\n(pass) preparation covers visible summaries and body while leaving code outside the edit boundary [0.97ms]\n(pass) a supported correction changes only its addressed text field [0.50ms]\n(pass) an audit cannot be applied to a different revision of the narrative [0.23ms]\n(pass) a declared review cannot skip a field or hide a duplicate: omitted [0.08ms]\n(pass) a declared review cannot skip a field or hide a duplicate: duplicated [0.03ms]\n(pass) invented and noncontiguous quotes fail instead of becoming evidence [0.41ms]\n(pass) upstream approval alone cannot stand in for primary evidence [0.07ms]\n(pass) numeric observations must match and JSON Pointer escaping preserves source keys [0.16ms]\n(pass) an edit cannot use an unrelated finding as authorization [0.06ms]\n(pass) evidence pointers address JSON values rather than array implementation properties [0.13ms]\n(pass) code and diagram evidence cannot be dropped during prose correction [0.16ms]\n(pass) audits cannot change code or arbitrary object paths: /sections/0/code/0/source [0.01ms]\n(pass) audits cannot change code or arbitrary object paths: /__proto__/polluted\n(pass) a pass preserves the original bytes and cannot conceal requested changes\n(pass) blocked audits cannot produce a corrected document [0.13ms]\n(pass) the CLI prepares fields and applies edits to a separate output file [87.63ms]\n(pass) the CLI preserves inputs and an existing output when validation fails [83.76ms]\n\nscripts/evals.test.ts:\n(pass) each evaluation has unique, checkable criteria and available fixture evidence [0.20ms]\n(pass) an untested criterion cannot become a passing evaluation [0.17ms]\n(pass) a claimed pass without evidence or with omitted criteria is rejected [0.05ms]\n(pass) a fully recorded reviewer assessment is accepted [0.03ms]\n\nskills/pr-walkthrough/scripts/chunk-narration.test.mjs:\n(pass) every chunk stays inside the budget [2.13ms]\n(pass) chunks concatenate back to the original words [0.45ms]\n(pass) a single sentence longer than the budget is broken up, not truncated [0.12ms]\n(pass) text that already fits is left as one chunk [0.06ms]\n\nskills/pr-walkthrough/scripts/pipeline.test.mjs:\n(pass) a text-only walkthrough is readable without audio and escapes its plain-text title [40.10ms]\n(pass) code copied from a PR remains visible text rather than executable HTML [112.41ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:1}} [66.51ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: <p>No reference</p> [61.97ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:0}}{{CODE:0}} [64.26ms]\n(pass) a missing audio sidecar produces the same text document [83.93ms]\n(pass) failed audio preflight removes old narration before the next build [658.00ms]\n(pass) text-only manifests skip the audio toolchain and discard earlier clips [77.05ms]\n(pass) fetch passes shell syntax literally to gh without running it [510.66ms]\n\n 40 pass\n 0 fail\n 241 expect() calls\nRan 40 tests across 5 files. [2.13s]\n$ bash scripts/validate.sh\n"
+  },
+  {
+    "args": [
+      "bunx",
+      "tsc",
+      "--noEmit",
+      "--strict",
+      "--target",
+      "ESNext",
+      "--module",
+      "ESNext",
+      "--moduleResolution",
+      "bundler",
+      "--types",
+      "bun",
+      "--skipLibCheck",
+      "evals/results/2026-09-17-release/run.ts",
+      "evals/results/2026-09-17-release/collect.ts",
+      "evals/results/2026-09-17-release/verify.ts"
+    ],
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "claude",
+      "plugin",
+      "validate",
+      ".",
+      "--strict"
+    ],
+    "code": 0,
+    "stdout": "Validating marketplace manifest: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917/.claude-plugin/marketplace.json\n\n✔ Validation passed\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "bash",
+      "scripts/validate.sh"
+    ],
+    "code": 0,
+    "stdout": "Valid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-6U8QxB/discord-community-server\nValid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-6U8QxB/pr-walkthrough\nValid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-6U8QxB/writing-technical-docs\nCatalog, local Markdown links, and skill metadata passed.\nValidating marketplace manifest: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917/.claude-plugin/marketplace.json\n\n✔ Validation passed\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "bun",
+      "run",
+      "check"
+    ],
+    "code": 0,
+    "stdout": "bun test v1.3.7 (ba426210)\nValid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-9OKwjc/discord-community-server\nValid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-9OKwjc/pr-walkthrough\nValid skill: /var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/skills-validation-9OKwjc/writing-technical-docs\nCatalog, local Markdown links, and skill metadata passed.\nValidating marketplace manifest: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917/.claude-plugin/marketplace.json\n\n✔ Validation passed\n",
+    "stderr": "$ bun run typecheck && bun run lint && bun run test && bun run validate\n$ tsc --noEmit\n$ eslint .\n$ bun test scripts skills/pr-walkthrough/scripts\n\nscripts/catalog.test.ts:\n(pass) a consistent catalog with resolvable resources passes [14.26ms]\n(pass) adding a skill without updating the catalog is rejected [5.05ms]\n(pass) renames must update frontmatter and bundled references [3.24ms]\n(pass) a removed skill cannot remain advertised in either catalog [2.20ms]\n(pass) a release cannot publish mismatched plugin versions [2.68ms]\n(pass) portable validation cannot hide an invalid invocation flag [3.36ms]\n\nscripts/narrative-audit.test.ts:\n(pass) preparation covers visible summaries and body while leaving code outside the edit boundary [0.51ms]\n(pass) a supported correction changes only its addressed text field [0.66ms]\n(pass) an audit cannot be applied to a different revision of the narrative [0.57ms]\n(pass) a declared review cannot skip a field or hide a duplicate: omitted [0.04ms]\n(pass) a declared review cannot skip a field or hide a duplicate: duplicated [0.03ms]\n(pass) invented and noncontiguous quotes fail instead of becoming evidence [0.33ms]\n(pass) upstream approval alone cannot stand in for primary evidence [0.07ms]\n(pass) numeric observations must match and JSON Pointer escaping preserves source keys [0.13ms]\n(pass) an edit cannot use an unrelated finding as authorization [0.06ms]\n(pass) evidence pointers address JSON values rather than array implementation properties [0.12ms]\n(pass) code and diagram evidence cannot be dropped during prose correction [0.17ms]\n(pass) audits cannot change code or arbitrary object paths: /sections/0/code/0/source [0.04ms]\n(pass) audits cannot change code or arbitrary object paths: /__proto__/polluted\n(pass) a pass preserves the original bytes and cannot conceal requested changes [0.09ms]\n(pass) blocked audits cannot produce a corrected document [0.04ms]\n(pass) the CLI prepares fields and applies edits to a separate output file [82.27ms]\n(pass) the CLI preserves inputs and an existing output when validation fails [78.76ms]\n\nscripts/evals.test.ts:\n(pass) each evaluation has unique, checkable criteria and available fixture evidence [0.23ms]\n(pass) an untested criterion cannot become a passing evaluation [0.15ms]\n(pass) a claimed pass without evidence or with omitted criteria is rejected [0.05ms]\n(pass) a fully recorded reviewer assessment is accepted [0.03ms]\n\nskills/pr-walkthrough/scripts/chunk-narration.test.mjs:\n(pass) every chunk stays inside the budget [2.05ms]\n(pass) chunks concatenate back to the original words [0.28ms]\n(pass) a single sentence longer than the budget is broken up, not truncated [0.14ms]\n(pass) text that already fits is left as one chunk [0.03ms]\n\nskills/pr-walkthrough/scripts/pipeline.test.mjs:\n(pass) a text-only walkthrough is readable without audio and escapes its plain-text title [38.64ms]\n(pass) code copied from a PR remains visible text rather than executable HTML [106.26ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:1}} [60.20ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: <p>No reference</p> [60.11ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:0}}{{CODE:0}} [60.15ms]\n(pass) a missing audio sidecar produces the same text document [68.38ms]\n(pass) failed audio preflight removes old narration before the next build [641.98ms]\n(pass) text-only manifests skip the audio toolchain and discard earlier clips [71.69ms]\n(pass) fetch passes shell syntax literally to gh without running it [503.47ms]\n\n 40 pass\n 0 fail\n 241 expect() calls\nRan 40 tests across 5 files. [2.02s]\n$ bash scripts/validate.sh\n"
+  },
+  {
+    "args": [
+      "bunx",
+      "tsc",
+      "--noEmit",
+      "--strict",
+      "--target",
+      "ESNext",
+      "--module",
+      "ESNext",
+      "--moduleResolution",
+      "bundler",
+      "--types",
+      "bun",
+      "--skipLibCheck",
+      "evals/results/2026-09-17-release/run.ts",
+      "evals/results/2026-09-17-release/collect.ts",
+      "evals/results/2026-09-17-release/verify.ts"
+    ],
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "claude",
+      "plugin",
+      "validate",
+      ".claude-plugin/plugin.json",
+      "--strict"
+    ],
+    "code": 0,
+    "stdout": "Validating plugin manifest: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917/.claude-plugin/plugin.json\n\n✔ Validation passed\n",
+    "stderr": ""
+  }
+]

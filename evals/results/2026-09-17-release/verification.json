@@ -1,0 +1,81 @@
+{
+  "docs": {
+    "guideSha256": "27ddd0a76e5950a51d965a73ffc8544c68259abbb4a7f04cefad9532f7e5c4d3",
+    "commands": [
+      "cp configs/release.example.json configs/release.json",
+      "bun card.ts generate --config configs/release.json --write",
+      "bun card.ts verify --config configs/release.json"
+    ],
+    "artifact": "release-2.4.0\n"
+  },
+  "pr": {
+    "manifestSha256": "a89a2b232304ace5cbf672ce23c87099cf84d5b9371cbbd5a41234a1c7133ffb",
+    "htmlSha256": "ab57dfe7cc808c68da27af9685eaefa09683d968fbeb32ebd9c472549a834433",
+    "rebuiltSha256": "ab57dfe7cc808c68da27af9685eaefa09683d968fbeb32ebd9c472549a834433",
+    "sections": 4,
+    "codeBlocks": 1
+  },
+  "logs": [
+    {
+      "args": [
+        "sh",
+        "-c",
+        "cp configs/release.example.json configs/release.json"
+      ],
+      "cwd": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-evidence-20260917/independent-docs-replay",
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "sh",
+        "-c",
+        "bun card.ts generate --config configs/release.json --write"
+      ],
+      "cwd": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-evidence-20260917/independent-docs-replay",
+      "code": 0,
+      "stdout": "wrote generated/release.txt: release-2.4.0\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "sh",
+        "-c",
+        "bun card.ts verify --config configs/release.json"
+      ],
+      "cwd": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-evidence-20260917/independent-docs-replay",
+      "code": 0,
+      "stdout": "verified generated/release.txt: release-2.4.0\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "glow",
+        "-w",
+        "100",
+        "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917/evals/results/2026-09-17-release/runs/docs-reader-start/guide.md"
+      ],
+      "cwd": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "code": 0,
+      "stdout": "\n  # Generate the local release card                                                               \n                                                                                                  \n  Generate the release team's saved card at generated/release.txt from a fresh                    \n  copy of this workspace, then verify its complete content.                                       \n                                                                                                  \n  ## Before you start                                                                             \n                                                                                                  \n  • Have Bun installed and available as bun in your shell. This workspace has                     \n  no package dependencies or installation step and runs offline.                                  \n  • Open a shell in the workspace root: the directory containing card.ts and                      \n  configs/. Run every command below there. Config and output paths resolve                        \n  against your current working directory.                                                         \n                                                                                                  \n  ## Steps                                                                                        \n                                                                                                  \n  1. **Create the release config.** A fresh copy does not contain the selected                    \n  configs/release.json file. Copy the supplied example without changing its                       \n  prefix or version. Use this release config, not configs/preview.json.                           \n    cp configs/release.example.json configs/release.json                                          \n                                                                                                  \n  2. **Write the release card.** Pass the config explicitly; there is no default.                 \n  Include --write to save the file. Without it, the command only prints a                         \n  dry-run message and creates no artifact.                                                        \n    bun card.ts generate --config configs/release.json --write                                    \n  Expect:                                                                                         \n    wrote generated/release.txt: release-2.4.0                                                    \n  The command creates the output directory if needed and writes the card,                         \n  replacing any existing file at that path.                                                       \n                                                                                                  \n  ## Verify                                                                                       \n                                                                                                  \n  Check the saved file against the selected release config:                                       \n                                                                                                  \n    bun card.ts verify --config configs/release.json                                              \n                                                                                                  \n  Expect exit code 0 and:                                                                         \n                                                                                                  \n    verified generated/release.txt: release-2.4.0                                                 \n                                                                                                  \n  The saved file must contain exactly release-2.4.0 followed by a newline.                        \n  Verification reads the file and compares its complete content; a missing or                     \n  different card fails with a nonzero exit code. If verification fails, confirm                   \n  you are in the workspace root, check the release config against the supplied                    \n  example, and repeat the write and verification commands.                                        \n\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "node",
+        "skills/pr-walkthrough/scripts/build.mjs",
+        "--manifest",
+        "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917/evals/results/2026-09-17-release/runs/pr-grounding-quality/pr-42-manifest.json",
+        "--audio",
+        "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-evidence-20260917/absent-audio.json",
+        "--output",
+        "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-evidence-20260917/pr-42-rebuilt.html"
+      ],
+      "cwd": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "code": 0,
+      "stdout": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-evidence-20260917/pr-42-rebuilt.html\n",
+      "stderr": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-evidence-20260917/absent-audio.json') — emitting text-only HTML\n"
+    }
+  ]
+}

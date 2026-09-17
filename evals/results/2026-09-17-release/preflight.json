@@ -1,0 +1,31 @@
+{
+  "session": {
+    "id": "ses_f4e2ef755ffe7jOkEBfrr8ylc1",
+    "projectID": "191f768fb172df9b06b135347b9553b676234636",
+    "agent": "build",
+    "model": {
+      "id": "gpt-6-astra",
+      "providerID": "openai",
+      "variant": "medium"
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1789689661674,
+      "updated": 1789689661674
+    },
+    "title": "neutral API endpoint preflight",
+    "location": {
+      "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+    }
+  },
+  "endpoints": "create/wait/export succeeded without a model prompt"
+}

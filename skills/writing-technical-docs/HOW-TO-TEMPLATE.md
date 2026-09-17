@@ -99,9 +99,14 @@ Possible categories:
 - Reference (the exact API shape)
 - Understanding (the conceptual page that explains *why*)
 
-## Worked example
+## Structural illustration
 
-The following page (lightly trimmed) is a model how-to in this style:
+The following incomplete page illustrates structure, not a runnable guide.
+The `@example/engine` package and adapter syntax are illustrative, not verified
+API reference. Provider credential configuration, an engine request invocation,
+and real local links are omitted. Before publishing a finished guide, replace
+these omissions with project-backed prerequisites, source-verified syntax and
+links, and a concrete verification action with its expected result.
 
 ````mdx
 ---
@@ -110,6 +115,10 @@ description: How to swap the Engine's LLM adapter — Gemini, OpenAI, Anthropic,
 ---
 
 import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+{/* Incomplete structural illustration: package and adapter syntax are unverified.
+    Supply provider credential configuration, an engine request invocation,
+    and real local links before treating this page as a runnable guide. */}
 
 The reference engine talks to the model through a TanStack AI text adapter.
 Swapping providers is a single field on `EngineConfig.adapter` — the prompt
@@ -152,8 +161,8 @@ builder, response parser, and retry policy are all provider-agnostic.
 
 ## Verify
 
-Send a request through the engine and confirm a non-empty
-`response.userMessage` comes back.
+{/* Replace this placeholder with a source-verified request command or UI action
+    and its expected result. */}
 
 ## Next steps
 
@@ -161,7 +170,7 @@ Send a request through the engine and confirm a non-empty
 - [The Engine](/understanding/engine) — what happens after the adapter returns
 ````
 
-Note what the example *omits*: marketing copy, a "Conclusion" section, a
+The illustration also omits marketing copy, a "Conclusion" section, a
 duplicate code block before each step explaining what the code does, and
 any mention of why TanStack AI was chosen (that's an explanation, not a
 how-to).

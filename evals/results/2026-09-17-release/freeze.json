@@ -1,0 +1,256 @@
+{
+  "frozenAt": "2026-09-18T00:01:03.944Z",
+  "source": "f7b19c08",
+  "model": {
+    "providerID": "openai",
+    "id": "gpt-6-astra",
+    "variant": "medium"
+  },
+  "trials": [
+    {
+      "id": "route-docs-positive-1",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nImprove this README installation guide and verify that its commands work.",
+      "expected": "writing-technical-docs",
+      "hashes": {},
+      "promptSha256": "1083d496de9716dc0ff3d687527de54b9d6c253bdade2f6ebe27c2a453536c83"
+    },
+    {
+      "id": "route-docs-positive-2",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nImprove this README installation guide and verify that its commands work.",
+      "expected": "writing-technical-docs",
+      "hashes": {},
+      "promptSha256": "1083d496de9716dc0ff3d687527de54b9d6c253bdade2f6ebe27c2a453536c83"
+    },
+    {
+      "id": "route-docs-negative-1",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nRename an internal variable in the parser. No documentation changes are needed.",
+      "expected": null,
+      "hashes": {},
+      "promptSha256": "d34e807369ad5684b264e55ebea0600978ddcf84a7ebb7bc527c9345da65a686"
+    },
+    {
+      "id": "route-docs-negative-2",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nRename an internal variable in the parser. No documentation changes are needed.",
+      "expected": null,
+      "hashes": {},
+      "promptSha256": "d34e807369ad5684b264e55ebea0600978ddcf84a7ebb7bc527c9345da65a686"
+    },
+    {
+      "id": "route-discord-positive-1",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nAudit the roles and onboarding of our official Discord beta community.",
+      "expected": "discord-community-server",
+      "hashes": {},
+      "promptSha256": "4bc69f324a47948ca027304285d0eebd2182bbd5942279fbeb3494a940753d40"
+    },
+    {
+      "id": "route-discord-positive-2",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nAudit the roles and onboarding of our official Discord beta community.",
+      "expected": "discord-community-server",
+      "hashes": {},
+      "promptSha256": "4bc69f324a47948ca027304285d0eebd2182bbd5942279fbeb3494a940753d40"
+    },
+    {
+      "id": "route-discord-negative-1",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nFix the JSON parser in our Discord webhook HTTP client. Server configuration is out of scope.",
+      "expected": null,
+      "hashes": {},
+      "promptSha256": "2abfcfb9abab78930cb3ac9174609c78958e15193ca026c469c9f355e4d28795"
+    },
+    {
+      "id": "route-discord-negative-2",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nFix the JSON parser in our Discord webhook HTTP client. Server configuration is out of scope.",
+      "expected": null,
+      "hashes": {},
+      "promptSha256": "2abfcfb9abab78930cb3ac9174609c78958e15193ca026c469c9f355e4d28795"
+    },
+    {
+      "id": "route-pr-negative-1",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nReview this PR for bugs and report findings inline.",
+      "expected": null,
+      "hashes": {},
+      "promptSha256": "1758e4e95ac37506de989364e0d48d9ab72cb2085cdc45c51da6c213f6d1f444"
+    },
+    {
+      "id": "route-pr-negative-2",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nReview this PR for bugs and report findings inline.",
+      "expected": null,
+      "hashes": {},
+      "promptSha256": "1758e4e95ac37506de989364e0d48d9ab72cb2085cdc45c51da6c213f6d1f444"
+    },
+    {
+      "id": "route-pr-positive-1",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nUse pr-walkthrough for PR #42. Make it text-only and explain the trade-offs.",
+      "expected": "pr-walkthrough",
+      "hashes": {},
+      "promptSha256": "7e30cd57f86f7509260c153f4a9409d85733e8ceb4c6574dd7639f56454126ae"
+    },
+    {
+      "id": "route-pr-positive-2",
+      "kind": "routing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917",
+      "prompt": "Simulate skill selection using only this three-skill catalog. This is a selection judgment, not host automatic invocation. Do not execute the task, call tools, read files, or load installed skills. Return JSON with choice (one catalog name or null) and one brief reason.\nCatalog:\n[{\"name\":\"pr-walkthrough\",\"metadata\":{\"name\":\"pr-walkthrough\",\"description\":\"Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.\",\"disable-model-invocation\":true,\"compatibility\":\"Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.\"},\"invocation\":\"Explicit request only; Codex allow_implicit_invocation: false\"},{\"name\":\"writing-technical-docs\",\"metadata\":{\"name\":\"writing-technical-docs\",\"description\":\"Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \\\"write docs for X.\\\"\"},\"invocation\":\"Automatic when relevant\"},{\"name\":\"discord-community-server\",\"metadata\":{\"name\":\"discord-community-server\",\"description\":\"Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch.\"},\"invocation\":\"Automatic when relevant\"}]\nTask:\nUse pr-walkthrough for PR #42. Make it text-only and explain the trade-offs.",
+      "expected": "pr-walkthrough",
+      "hashes": {},
+      "promptSha256": "7e30cd57f86f7509260c153f4a9409d85733e8ceb4c6574dd7639f56454126ae"
+    },
+    {
+      "id": "discord-audit",
+      "kind": "workflow",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-discord-audit-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local reference files, not an installed skill. Audit this fictional server from the supplied snapshot. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md. Keep skill files and supplied evidence unchanged. Work offline and use only this workspace. Use snapshot.md. Do not use live services, other skills, or delegation.",
+      "criteria": [
+        {
+          "id": "read-only",
+          "expect": "Produces an audit with no writes to a live server or claims of applied changes."
+        },
+        {
+          "id": "mode-fit",
+          "expect": "Finishes with an audit handoff, without requiring an operating-state file, plan approval, apps, events, invites, modifying tests, or launch acceptance. Any next actions concern relevant corrections or verification gaps."
+        },
+        {
+          "id": "findings",
+          "expect": "Finds writable announcements, missing required forum tags, and privileged interest-role permissions. Each finding states an observed fact and source, impact and priority rationale, a correction explicitly not applied, and a verification method classified using the existing roles matrix."
+        },
+        {
+          "id": "scope",
+          "expect": "Records scope, as-of information (unknown snapshot date is valid), and evidence sources. Separates unknown or unavailable checks from observed failures; missing evidence is not an insecure setting."
+        },
+        {
+          "id": "evidence",
+          "expect": "Separates the supplied role-preview observation from untested fresh-member checks and unverified current feature labels."
+        },
+        {
+          "id": "fit",
+          "expect": "Uses command execution and build previews as relevant community terms and preserves the durable reporting routes."
+        }
+      ],
+      "hashes": {
+        "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+        "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+        "snapshot.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc"
+      },
+      "promptSha256": "01c71ebe8d20eca12d9b8c02ef317ac9ac37d406a490844208e99117c1509287"
+    },
+    {
+      "id": "docs-reader-start",
+      "kind": "workflow",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-docs-reader-start-20260917",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification. Keep skill files and supplied evidence unchanged. Work offline and use only this workspace. Do not use other skills or delegation. You may add the page entry point to README.md.",
+      "criteria": [
+        {
+          "id": "grounding",
+          "expect": "Uses card.ts and the README contract with configs/release.json, preserving the supplied release prefix/version; invents no options, links, setup, or external service."
+        },
+        {
+          "id": "reader-fit",
+          "expect": "Establishes Bun and the workspace root, creates the initially absent release config from the example, and requires no hidden setup when replayed in a fresh copy."
+        },
+        {
+          "id": "outcome",
+          "expect": "Writes generated/release.txt containing release-2.4.0 and a newline; includes a runnable verification command and expected observable success that checks the saved artifact."
+        },
+        {
+          "id": "rationale",
+          "expect": "Briefly explains that --write saves the artifact while default dry-run output does not establish saved success."
+        },
+        {
+          "id": "execution",
+          "expect": "Actually executes the documented workflow and compares the saved result, with truthful verification statuses."
+        },
+        {
+          "id": "applicability",
+          "expect": "Marks absent build, sidebar, and live checks not applicable with reasons; inspects plain Markdown and its entry point."
+        },
+        {
+          "id": "quadrant",
+          "expect": "Produces one task-focused how-to, without extended conceptual background or visible drafting contracts."
+        }
+      ],
+      "hashes": {
+        "skills/writing-technical-docs/STYLE.md": "e579b96ecea80f414e78593003ce8c31c69b6987e292caf9986205c3f8345244",
+        "skills/writing-technical-docs/SKILL.md": "f439ae0858285f9c2a06fb6af0b7ad62d9ec92216bc93e20a01bb1a2764cb96d",
+        "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "41e5bffd83b6c569ebe6f26d088d214a299681e9e2519587815dd0c52a4b221b",
+        "card.ts": "976836bc7e10fecf19d5adecd15cf73e686fc037dcdc6d3ff556533f9197bfb1",
+        "README.md": "2576e1065c596ecf781262b3c6f7563da2e7347db5d8552d0b5afe55f53ec724",
+        "configs/release.example.json": "0ceec04ddc477a0ef33d4bd781aeae02119a07d5173959ecbb7c8c5dd332f23b",
+        "configs/preview.json": "80a9a41ecf090f32c5fa8b7057c44d22b584b8e17fa900a2af59717331fd74e9"
+      },
+      "promptSha256": "cfea89f7a8b8fd8911534d1f5456a7a027f620c00cabbe051d5e61a27ae47796"
+    },
+    {
+      "id": "pr-grounding-quality",
+      "kind": "workflow",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md directly and follow its local reference files, not an installed skill. Use pr-walkthrough to produce a text-only walkthrough of fixture PR #42. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory. Keep skill files and supplied evidence unchanged. Work offline and use only this workspace. Use pr.json as evidence. Keep all remaining workflow stages, including the four native parallel reports. Report agents are read-only and may share this evidence path; they return reports rather than write files. Every report must read the local skill and linked local style instructions, not installed skills. Only you own this clone for writes. Use /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917/pr-42-manifest.json, /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917/pr-42-audio.json, and /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917/pr-42-walkthrough.html instead of temporary/Desktop paths. Do not open a desktop application.",
+      "criteria": [
+        {
+          "id": "causality",
+          "expect": "Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+        },
+        {
+          "id": "code-evidence",
+          "expect": "Returns the smallest sufficient set of up to four contiguous verbatim diff excerpts with matching file context and diff signs. Shows source-faithful after-change code explaining refresh before dispatch, with one self-contained block preferred; neither report excerpts nor rendered blocks split or repeat code merely to meet a quota. Two blocks can pass when distinct explanations justify them."
+        },
+        {
+          "id": "evidence",
+          "expect": "Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "expect": "Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+        },
+        {
+          "id": "reader-facing",
+          "expect": "Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+        },
+        {
+          "id": "artifact",
+          "expect": "Builds readable text-only HTML reflecting the final manifest and reports the output path."
+        }
+      ],
+      "hashes": {
+        "skills/pr-walkthrough/agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+        "skills/pr-walkthrough/STYLE.md": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "skills/pr-walkthrough/scripts/chunk-narration.test.mjs": "08a64cdc58723c5023b5a1e97043d75c9c48fd49da37c42468159b9811cdb317",
+        "skills/pr-walkthrough/scripts/fetch-pr.mjs": "33b2eb0e1f6b75fdffca4d99483a96760d248c771b7bddc52d4c05139ff6c392",
+        "skills/pr-walkthrough/scripts/types.d.ts": "7678e9e348771c45fb27c9e09fd13d37745942e3250247d79cb0d6ee33e9884d",
+        "skills/pr-walkthrough/scripts/generate-audio.mjs": "5b07b6dd0d64146242ecdf926083418fe2f28a0828b4389adb73a4e825dbd158",
+        "skills/pr-walkthrough/scripts/bun.lock": "85c38572a48f296daf070863b58158b10d8ed38f3f7f3df4302d56d6314d9848",
+        "skills/pr-walkthrough/scripts/package.json": "dc6a971a981e416e840bd5b5846be250605ebc117290404235e7b5317e5ccb19",
+        "skills/pr-walkthrough/scripts/pipeline.test.mjs": "2e21173f879c2d5e4f6faf3ce4f257046942e39fde77e8b6870bafa781377063",
+        "skills/pr-walkthrough/scripts/build.mjs": "ebebd50e4efd8f636213a43b065193f13d65ecd7fa8d7d5cda096c3dcf84fb23",
+        "skills/pr-walkthrough/scripts/chunk-narration.mjs": "ef49feaa4ecadef18ffa4540208ad8705bf9804bcec24ea6276cef7eeb3e7661",
+        "skills/pr-walkthrough/SKILL.md": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "skills/pr-walkthrough/template.html": "f6a431dac8ee2940660ed14433bdf12c2066076569c0075cd359a863e9b3feab",
+        "pr.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8"
+      },
+      "promptSha256": "559be34033204a384194ec3a71db82c47d4bdfe78ccb4aadce4aa902740333c5"
+    }
+  ],
+  "limits": "12 selection simulations; 3 workflow parents; 4 native PR reports planned. No resampling or model grading."
+}

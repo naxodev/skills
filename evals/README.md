@@ -54,6 +54,8 @@ The PR case supplies the fetched JSON directly; it evaluates analysis and render
 See [cases.json](cases.json) for prompts and criteria. Run artifacts under `.evals/` are ignored by version control.
 When sharing a result, include the case, model, revision, attempts, criterion outcomes, and evidence locations.
 
+- [0.9.0 release preparation](results/2026-09-17-release/README.md): bounded cross-skill selection simulation and offline workflow smoke, with frozen inputs, source review, independent replay, and explicit coverage limits.
+
 - [PR walkthrough evidence experiment](results/2026-09-07-pr-grounding/README.md): baseline and two prompt revisions, three runs each. Neither revision improved the evidence criterion; both were reverted.
 - [Independently verified walkthroughs](results/2026-09-07-verified-walkthrough/README.md): actual extractor, verifier, and writer sessions improved conflict handling on two fixtures, with remaining factual and prose-quality defects.
 - [Counterexamples and reader-facing prose](results/2026-09-08-challenged-walkthrough/README.md): an isolated writer comparison supported focused style changes; probes did not reliably preserve guarantees in the final narrative.
