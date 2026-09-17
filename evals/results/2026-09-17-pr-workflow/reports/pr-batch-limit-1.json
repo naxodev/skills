@@ -1,0 +1,294 @@
+[
+  {
+    "identity": {
+      "id": "ses_f502357b7ffelLHs3cSQpR9EBn",
+      "parentID": "ses_f50242f41ffe10FI0sfPdW1Epj",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "general",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 13522,
+        "output": 414,
+        "reasoning": 0,
+        "cache": {
+          "read": 12672,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656869002,
+        "updated": 1789656869005,
+        "idle": 1789656886675
+      },
+      "title": "Before report for walkthrough",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+      }
+    },
+    "charter": [
+      "You are a subagent spawned by another session.\nRead-only offline report agent named before. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json as sole PR evidence. No writes, network, GitHub, or delegation. What was state before PR and gap/motivation? Use diff and author framing, no speculation. Return 200–400 words grounded in evidence, report only."
+    ],
+    "reads": [
+      {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json",
+        "time": {
+          "created": 1789656872057,
+          "ran": 1789656873639,
+          "completed": 1789656873657
+        },
+        "sourceText": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json, lines 1-8\n1: {\n2:   \"number\": 108,\n3:   \"title\": \"feat: bound queue batches\",\n4:   \"body\": \"The worker previously drained the entire pending queue into each send. Add a configurable batch limit, defaulting to 100, so each send receives at most that many jobs. Leave remaining jobs queued for later drains. Validate the setting at startup. This bounds batch size, not job memory or processing time. Per-tenant scheduling is out of scope because the queue currently has no tenant key. No alternatives or follow-up issues are documented.\",\n5:   \"commits\": [{ \"messageHeadline\": \"feat: bound queue batches\" }],\n6:   \"files\": [{ \"path\": \"config.ts\", \"status\": \"modified\" }, { \"path\": \"queue.ts\", \"status\": \"modified\" }, { \"path\": \"worker.ts\", \"status\": \"modified\" }],\n7:   \"diff\": \"diff --git a/config.ts b/config.ts\\n--- a/config.ts\\n+++ b/config.ts\\n@@ -1 +1,5 @@\\n export const endpoint = '/jobs';\\n+export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\\n+if (!Number.isInteger(batchLimit) || batchLimit < 1) {\\n+  throw new Error('BATCH_LIMIT must be a positive integer');\\n+}\\ndiff --git a/queue.ts b/queue.ts\\n--- a/queue.ts\\n+++ b/queue.ts\\n@@ -1,3 +1,3 @@\\n-export function drain(pending) {\\n-  return pending.splice(0);\\n+export function drain(pending, limit) {\\n+  return pending.splice(0, limit);\\n }\\ndiff --git a/worker.ts b/worker.ts\\n--- a/worker.ts\\n+++ b/worker.ts\\n@@ -1,5 +1,5 @@\\n-import { endpoint } from './config';\\n+import { endpoint, batchLimit } from './config';\\n import { drain } from './queue';\\n export async function tick(pending, send) {\\n-  await send(endpoint, drain(pending));\\n+  await send(endpoint, drain(pending, batchLimit));\\n }\\n\"\n8: }",
+        "recoveredSha256": "c170226f035482893cb274f8411b7b59deaa898523f547f61664b3859f4aa051",
+        "matchesFixture": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "read",
+        "time": {
+          "created": 1789656872057,
+          "ran": 1789656873639,
+          "completed": 1789656873657
+        },
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json"
+        },
+        "status": "completed"
+      }
+    ],
+    "returnedText": [
+      "## State before the PR\n\nBefore PR #108, “feat: bound queue batches,” each worker tick drained the entire pending queue into one send. The previous `queue.ts` implementation accepted only `pending` and returned `pending.splice(0)`. That operation removed every queued job and returned them as the batch.\n\nIn `worker.ts`, `tick(pending, send)` called `await send(endpoint, drain(pending))`. There was no batch-size argument between the worker and the queue. The configuration shown in the diff contained only `endpoint = '/jobs'`; it provided no batch-limit setting or validation for one. The author’s description confirms this behavior: “The worker previously drained the entire pending queue into each send.”\n\n## Gap and motivation\n\nThe documented gap was the absence of a configurable cap on the number of jobs included in each send. Batch size followed the full pending queue rather than a configured maximum. The stated motivation was to bound each send while leaving excess jobs queued for later drains.\n\nThe diff directly addresses that gap across the three modified files. `config.ts` introduces `BATCH_LIMIT`, defaults it to `100`, and rejects values that are not positive integers. `queue.ts` changes the drain operation to `pending.splice(0, limit)`, removing only the selected prefix. `worker.ts` imports the configured limit and passes it to `drain`.\n\nThe author explicitly limits the intended benefit to **batch size**, not job memory or processing time. The evidence therefore does not establish a memory, latency, or throughput problem as the reason for this change. Per-tenant scheduling is also explicitly outside the scope because the queue currently has no tenant key. No alternatives or follow-up issues are documented."
+    ]
+  },
+  {
+    "identity": {
+      "id": "ses_f502357a5ffe9OK3eIdDvO9drN",
+      "parentID": "ses_f50242f41ffe10FI0sfPdW1Epj",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "general",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 13566,
+        "output": 746,
+        "reasoning": 0,
+        "cache": {
+          "read": 12672,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656868994,
+        "updated": 1789656868999,
+        "idle": 1789656895308
+      },
+      "title": "Diff tour for walkthrough",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+      }
+    },
+    "charter": [
+      "You are a subagent spawned by another session.\nRead-only offline report agent named diff-tour. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json as sole PR evidence. No writes, network, GitHub, or delegation. Walk each changed file in 2–4 narrative sentences, group new vs modified, identify central logic. Also return table-ready list with one-sentence summary per file and verbatim 2–4 load-bearing diff hunks trimmed to essential lines with explanations. Report only."
+    ],
+    "reads": [
+      {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json",
+        "time": {
+          "created": 1789656871529,
+          "ran": 1789656873104,
+          "completed": 1789656873109
+        },
+        "sourceText": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json, lines 1-8\n1: {\n2:   \"number\": 108,\n3:   \"title\": \"feat: bound queue batches\",\n4:   \"body\": \"The worker previously drained the entire pending queue into each send. Add a configurable batch limit, defaulting to 100, so each send receives at most that many jobs. Leave remaining jobs queued for later drains. Validate the setting at startup. This bounds batch size, not job memory or processing time. Per-tenant scheduling is out of scope because the queue currently has no tenant key. No alternatives or follow-up issues are documented.\",\n5:   \"commits\": [{ \"messageHeadline\": \"feat: bound queue batches\" }],\n6:   \"files\": [{ \"path\": \"config.ts\", \"status\": \"modified\" }, { \"path\": \"queue.ts\", \"status\": \"modified\" }, { \"path\": \"worker.ts\", \"status\": \"modified\" }],\n7:   \"diff\": \"diff --git a/config.ts b/config.ts\\n--- a/config.ts\\n+++ b/config.ts\\n@@ -1 +1,5 @@\\n export const endpoint = '/jobs';\\n+export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\\n+if (!Number.isInteger(batchLimit) || batchLimit < 1) {\\n+  throw new Error('BATCH_LIMIT must be a positive integer');\\n+}\\ndiff --git a/queue.ts b/queue.ts\\n--- a/queue.ts\\n+++ b/queue.ts\\n@@ -1,3 +1,3 @@\\n-export function drain(pending) {\\n-  return pending.splice(0);\\n+export function drain(pending, limit) {\\n+  return pending.splice(0, limit);\\n }\\ndiff --git a/worker.ts b/worker.ts\\n--- a/worker.ts\\n+++ b/worker.ts\\n@@ -1,5 +1,5 @@\\n-import { endpoint } from './config';\\n+import { endpoint, batchLimit } from './config';\\n import { drain } from './queue';\\n export async function tick(pending, send) {\\n-  await send(endpoint, drain(pending));\\n+  await send(endpoint, drain(pending, batchLimit));\\n }\\n\"\n8: }",
+        "recoveredSha256": "c170226f035482893cb274f8411b7b59deaa898523f547f61664b3859f4aa051",
+        "matchesFixture": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "read",
+        "time": {
+          "created": 1789656871529,
+          "ran": 1789656873104,
+          "completed": 1789656873109
+        },
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json"
+        },
+        "status": "completed"
+      }
+    ],
+    "returnedText": [
+      "## PR #108: `feat: bound queue batches`\n\nThe central logic is in `queue.ts`: `drain` removes at most `limit` jobs instead of emptying the queue. Configuration supplies a validated limit, and the worker passes it into each drain.\n\n### New files\n\nNone.\n\n### Modified files\n\n**`config.ts`**  \nAdds `batchLimit`, read from `BATCH_LIMIT` with a default of `100`. The module converts the value to a number and throws if it is not a positive integer, validating the setting when configuration loads.\n\n**`queue.ts`**  \nChanges `drain(pending)` to `drain(pending, limit)` and uses that limit as the removal count in `splice`. This is the behavioral core: each drain takes jobs from the front of the queue and leaves any excess jobs queued.\n\n**`worker.ts`**  \nImports `batchLimit` alongside the existing endpoint and supplies it to `drain` during each tick. The worker still awaits one send per tick; the change bounds how many jobs that send receives.\n\n### Table-ready file summary\n\n| File | Status | Summary |\n|---|---|---|\n| `config.ts` | Modified | Reads `BATCH_LIMIT`, defaults it to `100`, and rejects values that are not positive integers. |\n| `queue.ts` | Modified | Limits each drain to the requested number of jobs while retaining the remaining queue entries. |\n| `worker.ts` | Modified | Passes the configured batch limit into the drain used for each send. |\n\n### Load-bearing diff hunks\n\n#### 1. Establish and validate the configured limit — `config.ts`\n\n```diff\n@@ -1 +1,5 @@\n export const endpoint = '/jobs';\n+export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\n+if (!Number.isInteger(batchLimit) || batchLimit < 1) {\n+  throw new Error('BATCH_LIMIT must be a positive integer');\n+}\n```\n\nThe default makes bounded batches apply without additional configuration. Validation rejects zero, negative, fractional, and nonnumeric values before the worker can use them.\n\n#### 2. Bound queue removal — `queue.ts`\n\n```diff\n@@ -1,3 +1,3 @@\n-export function drain(pending) {\n-  return pending.splice(0);\n+export function drain(pending, limit) {\n+  return pending.splice(0, limit);\n }\n```\n\nThe second `splice` argument changes the operation from removing all pending jobs to removing at most the supplied count. Remaining jobs stay in the original array for later drains.\n\n#### 3. Connect configuration to execution — `worker.ts`\n\n```diff\n@@ -1,5 +1,5 @@\n-import { endpoint } from './config';\n+import { endpoint, batchLimit } from './config';\n import { drain } from './queue';\n export async function tick(pending, send) {\n-  await send(endpoint, drain(pending));\n+  await send(endpoint, drain(pending, batchLimit));\n }\n```\n\nThis connects the validated setting to the worker’s send path. As the PR body states, it bounds batch size, not job memory or processing time.\n\n**Evidence:** This report uses only `work/pr.json`. That evidence includes no tests or execution results."
+    ]
+  },
+  {
+    "identity": {
+      "id": "ses_f502357a4ffe4UvCe4G4wiMRP3",
+      "parentID": "ses_f50242f41ffe10FI0sfPdW1Epj",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "general",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 11616,
+        "output": 369,
+        "reasoning": 0,
+        "cache": {
+          "read": 14592,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656869043,
+        "updated": 1789656869048,
+        "idle": 1789656884829
+      },
+      "title": "Tradeoffs report for walkthrough",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+      }
+    },
+    "charter": [
+      "You are a subagent spawned by another session.\nRead-only offline report agent named tradeoffs. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json as sole PR evidence. No writes, network, GitHub, or delegation. List documented limitations, edge cases, known gaps from PR body, comments and tests in supplied diff only. Capture each choice AND documented reason, state if reason absent. Do not invent. Report only."
+    ],
+    "reads": [
+      {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json",
+        "time": {
+          "created": 1789656871777,
+          "ran": 1789656873357,
+          "completed": 1789656873368
+        },
+        "sourceText": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json, lines 1-8\n1: {\n2:   \"number\": 108,\n3:   \"title\": \"feat: bound queue batches\",\n4:   \"body\": \"The worker previously drained the entire pending queue into each send. Add a configurable batch limit, defaulting to 100, so each send receives at most that many jobs. Leave remaining jobs queued for later drains. Validate the setting at startup. This bounds batch size, not job memory or processing time. Per-tenant scheduling is out of scope because the queue currently has no tenant key. No alternatives or follow-up issues are documented.\",\n5:   \"commits\": [{ \"messageHeadline\": \"feat: bound queue batches\" }],\n6:   \"files\": [{ \"path\": \"config.ts\", \"status\": \"modified\" }, { \"path\": \"queue.ts\", \"status\": \"modified\" }, { \"path\": \"worker.ts\", \"status\": \"modified\" }],\n7:   \"diff\": \"diff --git a/config.ts b/config.ts\\n--- a/config.ts\\n+++ b/config.ts\\n@@ -1 +1,5 @@\\n export const endpoint = '/jobs';\\n+export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\\n+if (!Number.isInteger(batchLimit) || batchLimit < 1) {\\n+  throw new Error('BATCH_LIMIT must be a positive integer');\\n+}\\ndiff --git a/queue.ts b/queue.ts\\n--- a/queue.ts\\n+++ b/queue.ts\\n@@ -1,3 +1,3 @@\\n-export function drain(pending) {\\n-  return pending.splice(0);\\n+export function drain(pending, limit) {\\n+  return pending.splice(0, limit);\\n }\\ndiff --git a/worker.ts b/worker.ts\\n--- a/worker.ts\\n+++ b/worker.ts\\n@@ -1,5 +1,5 @@\\n-import { endpoint } from './config';\\n+import { endpoint, batchLimit } from './config';\\n import { drain } from './queue';\\n export async function tick(pending, send) {\\n-  await send(endpoint, drain(pending));\\n+  await send(endpoint, drain(pending, batchLimit));\\n }\\n\"\n8: }",
+        "recoveredSha256": "c170226f035482893cb274f8411b7b59deaa898523f547f61664b3859f4aa051",
+        "matchesFixture": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "read",
+        "time": {
+          "created": 1789656871777,
+          "ran": 1789656873357,
+          "completed": 1789656873368
+        },
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json"
+        },
+        "status": "completed"
+      }
+    ],
+    "returnedText": [
+      "## Documented choices and limitations\n\n| Choice or limitation | Documented reason | Evidence |\n|---|---|---|\n| Cap each send at a configurable number of jobs instead of draining the entire queue. | Bound the number of jobs in each send. | PR body; `queue.ts` and `worker.ts` diff. |\n| Default the batch limit to **100**. | No reason documented for choosing 100. | PR body; `config.ts` diff. |\n| Leave excess jobs queued for later drains. | Preserve remaining jobs while limiting each send. | PR body; `queue.ts` changes to `pending.splice(0, limit)`. |\n| Validate the setting at startup; reject values that are not positive integers. | No explicit reason documented for startup validation or the positive-integer restriction. | PR body; `config.ts` validation and error message. |\n| Bound batch size, **not job memory or processing time**. | No reason documented for leaving memory and processing time unbounded. | Explicit limitation in the PR body. |\n| Exclude per-tenant scheduling. | The queue currently has no tenant key. | Explicit scope decision in the PR body. |\n\n## Evidence gaps\n\n- The PR body explicitly states that no alternatives or follow-up issues are documented.\n- The supplied diff contains no comments or tests. It therefore provides no comment- or test-documented edge cases or additional rationale.\n- No PR review comments are supplied in `work/pr.json`."
+    ]
+  },
+  {
+    "identity": {
+      "id": "ses_f5023576fffeUJDgK47XSa7qST",
+      "parentID": "ses_f50242f41ffe10FI0sfPdW1Epj",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "general",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 13508,
+        "output": 71,
+        "reasoning": 37,
+        "cache": {
+          "read": 12672,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656869155,
+        "updated": 1789656869159,
+        "idle": 1789656878222
+      },
+      "title": "Alternatives report for walkthrough",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+      }
+    },
+    "charter": [
+      "You are a subagent spawned by another session.\nRead-only offline report agent named alternatives. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json as sole PR evidence including embedded commits. No writes, network, GitHub, or delegation. Identify documented considered/rejected approaches and reasons. If none, return 'none documented'. Do not invent. Report only."
+    ],
+    "reads": [
+      {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json",
+        "time": {
+          "created": 1789656872311,
+          "ran": 1789656873920,
+          "completed": 1789656873947
+        },
+        "sourceText": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json, lines 1-8\n1: {\n2:   \"number\": 108,\n3:   \"title\": \"feat: bound queue batches\",\n4:   \"body\": \"The worker previously drained the entire pending queue into each send. Add a configurable batch limit, defaulting to 100, so each send receives at most that many jobs. Leave remaining jobs queued for later drains. Validate the setting at startup. This bounds batch size, not job memory or processing time. Per-tenant scheduling is out of scope because the queue currently has no tenant key. No alternatives or follow-up issues are documented.\",\n5:   \"commits\": [{ \"messageHeadline\": \"feat: bound queue batches\" }],\n6:   \"files\": [{ \"path\": \"config.ts\", \"status\": \"modified\" }, { \"path\": \"queue.ts\", \"status\": \"modified\" }, { \"path\": \"worker.ts\", \"status\": \"modified\" }],\n7:   \"diff\": \"diff --git a/config.ts b/config.ts\\n--- a/config.ts\\n+++ b/config.ts\\n@@ -1 +1,5 @@\\n export const endpoint = '/jobs';\\n+export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\\n+if (!Number.isInteger(batchLimit) || batchLimit < 1) {\\n+  throw new Error('BATCH_LIMIT must be a positive integer');\\n+}\\ndiff --git a/queue.ts b/queue.ts\\n--- a/queue.ts\\n+++ b/queue.ts\\n@@ -1,3 +1,3 @@\\n-export function drain(pending) {\\n-  return pending.splice(0);\\n+export function drain(pending, limit) {\\n+  return pending.splice(0, limit);\\n }\\ndiff --git a/worker.ts b/worker.ts\\n--- a/worker.ts\\n+++ b/worker.ts\\n@@ -1,5 +1,5 @@\\n-import { endpoint } from './config';\\n+import { endpoint, batchLimit } from './config';\\n import { drain } from './queue';\\n export async function tick(pending, send) {\\n-  await send(endpoint, drain(pending));\\n+  await send(endpoint, drain(pending, batchLimit));\\n }\\n\"\n8: }",
+        "recoveredSha256": "c170226f035482893cb274f8411b7b59deaa898523f547f61664b3859f4aa051",
+        "matchesFixture": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "read",
+        "time": {
+          "created": 1789656872311,
+          "ran": 1789656873920,
+          "completed": 1789656873947
+        },
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json"
+        },
+        "status": "completed"
+      }
+    ],
+    "returnedText": [
+      "none documented"
+    ]
+  }
+]

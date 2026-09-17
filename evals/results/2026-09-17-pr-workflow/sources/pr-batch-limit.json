@@ -1,0 +1,8 @@
+{
+  "number": 108,
+  "title": "feat: bound queue batches",
+  "body": "The worker previously drained the entire pending queue into each send. Add a configurable batch limit, defaulting to 100, so each send receives at most that many jobs. Leave remaining jobs queued for later drains. Validate the setting at startup. This bounds batch size, not job memory or processing time. Per-tenant scheduling is out of scope because the queue currently has no tenant key. No alternatives or follow-up issues are documented.",
+  "commits": [{ "messageHeadline": "feat: bound queue batches" }],
+  "files": [{ "path": "config.ts", "status": "modified" }, { "path": "queue.ts", "status": "modified" }, { "path": "worker.ts", "status": "modified" }],
+  "diff": "diff --git a/config.ts b/config.ts\n--- a/config.ts\n+++ b/config.ts\n@@ -1 +1,5 @@\n export const endpoint = '/jobs';\n+export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\n+if (!Number.isInteger(batchLimit) || batchLimit < 1) {\n+  throw new Error('BATCH_LIMIT must be a positive integer');\n+}\ndiff --git a/queue.ts b/queue.ts\n--- a/queue.ts\n+++ b/queue.ts\n@@ -1,3 +1,3 @@\n-export function drain(pending) {\n-  return pending.splice(0);\n+export function drain(pending, limit) {\n+  return pending.splice(0, limit);\n }\ndiff --git a/worker.ts b/worker.ts\n--- a/worker.ts\n+++ b/worker.ts\n@@ -1,5 +1,5 @@\n-import { endpoint } from './config';\n+import { endpoint, batchLimit } from './config';\n import { drain } from './queue';\n export async function tick(pending, send) {\n-  await send(endpoint, drain(pending));\n+  await send(endpoint, drain(pending, batchLimit));\n }\n"
+}

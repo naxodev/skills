@@ -41,11 +41,11 @@ The current workflow always dispatches four reports and asks every file to appea
 For small changes, one evidence pass may be enough. For large changes, organize reports around behavior boundaries, then check file coverage separately.
 Choose the analysis budget using the number of distinct behaviors, not changed-line count alone.
 
-**Adopted structure clarification:** keep a full walkthrough available when explicitly requested. `STYLE.md` now defines four distinct required sections, evidence-earned optional sections, and a final recap for every size. Word limits are ceilings without minimums. A [twelve-run synthesis component comparison](../evals/results/2026-09-13-structure/README.md) preserved a distinct final recap in 3/3 small candidates versus 1/3 baselines; multi-file baselines already passed. Full workflow evaluation remains unrun.
+**Adopted structure clarification:** keep a full walkthrough available when explicitly requested. `STYLE.md` now defines four distinct required sections, evidence-earned optional sections, and a final recap for every size. Word limits are ceilings without minimums. A [twelve-run synthesis component comparison](../evals/results/2026-09-13-structure/README.md) preserved a distinct final recap in 3/3 small candidates versus 1/3 baselines; multi-file baselines already passed. That component study left full workflow evaluation unrun; the follow-up below exercises it.
 
 **Measure:** time, tool calls, and unsupported claims for the same small and large PR fixtures.
 
-**Full-workflow status:** the [current-instruction preflight](../evals/results/2026-09-17-pr-workflow/README.md) confirmed the selected Astra model but found no native dispatch tool in the evaluator session. Six parents and 24 independent reports remain unrun. The full-workflow gap remains open; no supplied-report substitute or skill change was made.
+**Full-workflow status:** [six current-instruction offline executions](../evals/results/2026-09-17-pr-workflow/README.md) completed with 24 native reports, actual text-only audio no-ops, and independently identical HTML rebuilds. All artifacts passed source review. Small runs adapted the impossible 2–4 distinct-hunk request; two runs loaded installed instructions outside the local-only path. This closes the observed execution gap on these fixtures, not full compliance or general reliability. The initial general-agent capability inference was corrected by testing a real build parent. No skill change was made.
 
 ### Make the audience an input
 

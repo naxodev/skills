@@ -1,0 +1,41 @@
+{
+  "title": "Refresh before the request leaves",
+  "eyebrow": "PR #42 · client credentials · fix",
+  "dek": "An ordering change makes expired-credential refresh happen before dispatch in the request function, while streaming awaits a follow-up.",
+  "meta": "fix: refresh credentials before dispatch",
+  "footer": "PR #42 · fix: refresh credentials before dispatch",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The request went first",
+      "content": "<p class=\"lead\">The request function in <code>client.ts</code> already knew how to check credential expiry and wait for a refresh. Before this change, it sent the payload first. Only after <code>client.send(payload)</code> resolved did it compare the expiry time with the current clock, refresh if necessary, and return the response.</p><p>The missing piece was the order of those operations. A refresh after dispatch could not change the credentials used for the request that had already left. The existing refresh capability was available, but it came too late for that send.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "The first request after expiry paid the cost",
+      "content": "<p>The author reports that the first request after credential expiry failed because dispatch came before refresh. Consider calling the function just after the expiry time: the old sequence would attempt the send before reaching its expiry check. The diff supports that timing problem, though the fixture contains no test or execution trace demonstrating the reported failure.</p><p>The intended correction is concrete: when the expiry check says credentials have expired, finish refreshing before sending this payload. Refreshing afterward cannot protect the request that prompted the check.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Make refresh a prerequisite for dispatch",
+      "content": "<p>The change moves the existing expiry guard to the start of <code>request</code>. These opening lines show the new position:</p>{{CODE:0}}<p>The comparison is unchanged: an expiry time equal to or earlier than the current clock triggers refresh. The <code>await</code> makes the function wait for that refresh to resolve before continuing. When the condition is false, execution proceeds directly to dispatch.</p><p>The rest of the function retains its send-and-return sequence, now after the guard:</p>{{CODE:1}}<p>This is the important dependency: dispatch follows any required refresh. The single modified file, <code>client.ts</code>, changes when that existing work happens; the response still comes from the awaited send.</p><p>The author accepts what the PR body calls an extra clock read to avoid the initial failed request. The supplied diff, however, shows one <code>Date.now()</code> call both before and after the change. It demonstrates a moved clock read, not an additional one.</p><p>Streaming remains unfinished work. The author says streaming requests use a separate path and need a follow-up. That path is absent from the supplied diff, and the body gives no reason for deferring it. The correction shown here therefore explains the request function, without establishing a fix for streaming.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();"
+        },
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "  const response = await client.send(payload);\n  return response;\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "The same refresh, at the useful time",
+      "content": "<p>PR #42 moves the awaited credential refresh ahead of dispatch in <code>client.ts</code>. It addresses the author's reported first-request failure by checking expiry before sending, rather than refreshing after the send has resolved. The expiry condition and response return stay the same. Streaming still needs the documented follow-up; the supplied fixture shows the ordering fix but provides no tests establishing its runtime result.</p>"
+    }
+  ]
+}

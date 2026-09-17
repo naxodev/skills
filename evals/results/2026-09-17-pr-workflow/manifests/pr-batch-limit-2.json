@@ -1,0 +1,46 @@
+{
+  "title": "A batch need not be the whole queue",
+  "eyebrow": "PR #108 · queue worker · feature",
+  "dek": "A validated batch limit caps each send while leaving the remaining jobs queued for later drains.",
+  "meta": "feat: bound queue batches",
+  "footer": "PR #108 · feat: bound queue batches",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Each tick took everything waiting",
+      "content": "<p class=\"lead\">The worker previously treated the pending queue as one batch. On each tick, it drained the queue and sent the returned jobs to <code>/jobs</code>. The drain used <code>pending.splice(0)</code>, which removed every entry from the array. The number of waiting jobs therefore determined the size of the next send.</p><p>The three files divided that work into configuration, queue removal, and sending. <code>config.ts</code> supplied the endpoint, <code>queue.ts</code> supplied the drain function, and <code>worker.ts</code> connected them. None of the supplied pre-change code set a batch limit.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "A larger backlog meant a larger send",
+      "content": "<p>If you had 250 jobs waiting, the old drain would hand all 250 to one send. There was no way to ask it for only the first 100 and retain the other 150. The PR introduces that boundary: each send receives at most the configured number of jobs, and later drains can take the remainder.</p><p>The boundary counts jobs, not their cost. The author explicitly limits the promise to batch size; it does not bound job memory or processing time. A batch of 100 jobs is therefore a count limit, not a resource budget.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "One limit, passed through to the drain",
+      "content": "<p>The limit starts in configuration, where <code>BATCH_LIMIT</code> becomes a number and defaults to 100 when unset. The module checks the value as it loads, implementing the requested startup validation.</p>{{CODE:0}}<p>The integer check and lower bound reject settings such as <code>0</code>, <code>2.5</code>, or a value that cannot convert to a number. Instead of letting those values govern queue removal, configuration throws an explicit error.</p><p>The queue function enforces the limit by giving <code>splice</code> a removal count. This is the central behavior change.</p>{{CODE:1}}<p>The drain still takes jobs from the front of the array, but it removes at most <code>limit</code> entries. With 250 jobs and a limit of 100, it returns the first 100 and leaves 150 in the original queue. If fewer jobs remain than the limit, it returns those jobs.</p><p>The worker supplies the configured limit at its existing drain call.</p>{{CODE:2}}<p>Each tick still makes one send; it does not loop through the remaining batches. The three modified files form the complete path from the setting to bounded removal. The supplied fixture includes no tests or test results, so these examples describe the diff's behavior rather than reported test outcomes.</p><p>Per-tenant scheduling remains outside the change because the queue has no tenant key. The worker applies a single batch limit to the pending queue; it does not select jobs by tenant.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "worker.ts",
+          "source": "import { endpoint, batchLimit } from './config';\nimport { drain } from './queue';\nexport async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Take a bounded batch and retain the rest",
+      "content": "<p>PR #108 replaces whole-queue sends with a configurable job-count limit, defaulting to 100. Configuration rejects values that are not positive integers, and the worker passes the validated value to a drain that leaves excess jobs queued. You can now bound the number of jobs in each send, while memory, processing time, and per-tenant scheduling remain outside that guarantee.</p>"
+    }
+  ]
+}

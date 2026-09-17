@@ -6,7 +6,7 @@ This file records notable user-facing changes to the skills collection.
 
 ### Added
 
-- Recorded a blocked current-instruction PR walkthrough preflight: the evaluator lacks native dispatch, leaving all six parents and 24 reports unrun.
+- Evaluated six current-instruction offline PR walkthroughs with 24 native reports, source review, text-only audio no-ops, and identical independent rebuilds. Recorded tiny-diff report-shape failures and installed-instruction path deviations; corrected the initial general-agent preflight with a real build-agent capability check.
 - Recorded a nine-run PR walkthrough evidence experiment, including failed candidate patches and per-run findings.
 - Added a cache-unit conflict fixture and a frozen three-stage walkthrough evaluation protocol, with a twelve-trial comparison and recorded factual and prose-quality defects.
 - Added a lock-cleanup fixture, explicit guarantee and reader-facing criteria, and a counterexample/replay protocol with recorded first-pass and quotation-repair results.

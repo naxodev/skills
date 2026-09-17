@@ -1,0 +1,150 @@
+{
+  "parents": {
+    "planned": 6,
+    "started": 0,
+    "completed": 0,
+    "unrun": 6
+  },
+  "reports": {
+    "planned": 24,
+    "started": 0,
+    "completed": 0,
+    "unrun": 24
+  },
+  "blockedStage": "native-dispatch preflight",
+  "evidence": "preflight-tools.json",
+  "criteria": {
+    "pr-batch-limit": [
+      {
+        "id": "causality",
+        "expect": "Explains the startup setting, bounded prefix removal, and worker call as one change that leaves excess jobs pending."
+      },
+      {
+        "id": "evidence",
+        "expect": "Preserves the default 100 and positive-integer validation. Distinguishes batch count from memory or processing-time guarantees. Names the missing tenant key as the documented scheduling limitation. Invents no alternatives, follow-up issues, priorities, or measured benefits."
+      },
+      {
+        "id": "artifact",
+        "expect": "Builds readable text-only HTML from a manifest and reports the actual file path."
+      },
+      {
+        "id": "proportion",
+        "expect": "Uses 4–11 sections with distinct setting, gap/motivation, implementation, and recap sections in that order; setting is first and recap last. Each optional section before the recap adds a distinct explanation grounded in supplied material. Stays within 1800 words without padding to a minimum."
+      }
+    ],
+    "pr-grounding-quality": [
+      {
+        "id": "causality",
+        "expect": "Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+      },
+      {
+        "id": "evidence",
+        "expect": "Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+      },
+      {
+        "id": "guarantees",
+        "expect": "Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+      },
+      {
+        "id": "reader-facing",
+        "expect": "Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+      },
+      {
+        "id": "artifact",
+        "expect": "Builds readable text-only HTML reflecting the final manifest and reports the output path."
+      }
+    ]
+  },
+  "workflowCriteria": [
+    "exact-local-instructions-and-location",
+    "four-native-parallel-reports",
+    "report-charters-and-source-path",
+    "reports-complete-before-synthesis",
+    "through-line-and-required-arc",
+    "source-grounded-title-dek-footer-recap-code",
+    "code-hunks-and-word-ceiling",
+    "text-only-audio-noop-and-stale-removal",
+    "build-with-audio-argument",
+    "real-path-handoff-without-open",
+    "independent-rebuild",
+    "browser-review"
+  ],
+  "allWorkflowStatuses": "untested",
+  "trials": [
+    {
+      "id": "pr-batch-limit-1",
+      "status": "unrun",
+      "criteria": {
+        "causality": "untested",
+        "evidence": "untested",
+        "artifact": "untested",
+        "proportion": "untested"
+      },
+      "workflow": "all untested",
+      "evidence": "preflight-tools.json; no trial launched"
+    },
+    {
+      "id": "pr-batch-limit-2",
+      "status": "unrun",
+      "criteria": {
+        "causality": "untested",
+        "evidence": "untested",
+        "artifact": "untested",
+        "proportion": "untested"
+      },
+      "workflow": "all untested",
+      "evidence": "preflight-tools.json; no trial launched"
+    },
+    {
+      "id": "pr-batch-limit-3",
+      "status": "unrun",
+      "criteria": {
+        "causality": "untested",
+        "evidence": "untested",
+        "artifact": "untested",
+        "proportion": "untested"
+      },
+      "workflow": "all untested",
+      "evidence": "preflight-tools.json; no trial launched"
+    },
+    {
+      "id": "pr-grounding-quality-1",
+      "status": "unrun",
+      "criteria": {
+        "causality": "untested",
+        "evidence": "untested",
+        "guarantees": "untested",
+        "reader-facing": "untested",
+        "artifact": "untested"
+      },
+      "workflow": "all untested",
+      "evidence": "preflight-tools.json; no trial launched"
+    },
+    {
+      "id": "pr-grounding-quality-2",
+      "status": "unrun",
+      "criteria": {
+        "causality": "untested",
+        "evidence": "untested",
+        "guarantees": "untested",
+        "reader-facing": "untested",
+        "artifact": "untested"
+      },
+      "workflow": "all untested",
+      "evidence": "preflight-tools.json; no trial launched"
+    },
+    {
+      "id": "pr-grounding-quality-3",
+      "status": "unrun",
+      "criteria": {
+        "causality": "untested",
+        "evidence": "untested",
+        "guarantees": "untested",
+        "reader-facing": "untested",
+        "artifact": "untested"
+      },
+      "workflow": "all untested",
+      "evidence": "preflight-tools.json; no trial launched"
+    }
+  ]
+}

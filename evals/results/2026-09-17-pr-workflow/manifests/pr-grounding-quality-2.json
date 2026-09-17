@@ -1,0 +1,41 @@
+{
+  "title": "Refresh before the request leaves",
+  "eyebrow": "PR #42 · client credentials · fix",
+  "dek": "An expiry check moves ahead of dispatch so credential refresh can serve the request that needs it.",
+  "meta": "fix: refresh credentials before dispatch",
+  "footer": "PR #42 · fix: refresh credentials before dispatch",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The client already knew how to refresh",
+      "content": "<p class=\"lead\">The request helper in <code>client.ts</code> already checked whether credentials had expired. It compared the client's expiry timestamp with the current time and awaited a refresh when needed. But it did that work after sending the payload.</p><p>Before this change, <code>request(client, payload)</code> awaited <code>client.send(payload)</code>, checked expiry, and then returned the response. The missing piece was not a refresh operation. It was placing that operation where it could prepare credentials for the current request.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "The first expired request went first",
+      "content": "<p>The author reports that the first request after credential expiry failed because refresh happened after dispatch. Imagine calling the helper just after the expiry timestamp: the old order sent your payload before checking whether the credentials needed renewal. A refresh after that send could not prepare credentials for it.</p><p>The shown helper also had no retry or error handler. If the send rejected, execution would stop before reaching the refresh check. The fixture supplies no runtime results or tests, so the reported failure comes from the author's account; the diff directly establishes the ordering problem.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Make refresh a prerequisite for dispatch",
+      "content": "<p>The patch moves the existing expiry check to the start of the request helper. Its condition and refresh call stay the same:</p>{{CODE:0}}<p>The comparison includes credentials that expire exactly at the observed time. When it matches, <code>await</code> makes the helper wait for refresh to finish before continuing. If refresh rejects, the helper does not reach dispatch.</p><p>The next lines retain the send-and-return behavior:</p>{{CODE:1}}<p>These lines now run after the expiry check and any required refresh. Credentials that have not yet expired proceed directly to the send. The single modified file, <code>client.ts</code>, changes this sequence without introducing another refresh operation.</p><p>The author accepts an extra clock read to avoid the initial failed request. The supplied diff, however, relocates the existing <code>Date.now()</code> call; it shows one call before and after the patch. We can establish the earlier check from this code, but not an increase in clock reads.</p><p>Streaming remains a documented gap because it uses a separate request path. The author calls for a follow-up, but the fixture includes neither that path nor a proposed implementation. This patch therefore explains the corrected helper, not a streaming fix.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  // …\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "  const response = await client.send(payload);\n  return response;"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "The same check, in time to help",
+      "content": "<p>PR #42 moves the awaited credential refresh before dispatch in <code>client.ts</code>. That order addresses the author's reported first-request failure by checking expiry before the payload leaves. The change preserves the existing expiry condition and response return. Streaming still needs its separate follow-up, and the supplied fixture contains no test results verifying the fix.</p>"
+    }
+  ]
+}
