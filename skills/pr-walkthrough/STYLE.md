@@ -76,7 +76,7 @@ Multi-line code goes in the section's `code` array, not in `content`. Reference 
 
 ### The key code
 
-The document should include 2–4 code blocks total showing the most load-bearing code from the PR. Rules:
+Use up to 4 code blocks total, enough to explain the central mechanism of a code change. Prefer one self-contained, load-bearing block for a simple change. Split only when distinct explanations need separate blocks, never to fill a quota. Content-only PRs may omit code. Rules:
 
 - Show the code as it exists AFTER the PR — never raw diff hunks with `+`/`-` markers.
 - Trim each block to its essential lines; elide the rest with a `// …` comment. Max ~20 lines per block.

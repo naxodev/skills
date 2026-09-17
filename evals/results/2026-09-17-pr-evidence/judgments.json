@@ -1,0 +1,71 @@
+{
+  "pr-grounding-quality-1": {
+    "criteria": {
+      "causality": { "result": "pass", "evidence": "manifests/pr-grounding-quality-1.json sections[1]: 'The author reports that the first request after expiry failed.' Section 2 explains moving refresh before dispatch, matching sources/pr.json." },
+      "code-evidence": { "result": "pass", "evidence": "reports/pr-grounding-quality-1.json: one contiguous verbatim client.ts excerpt covers the complete changed hunk. The manifest renders the complete five-line after-state request function once, introduced and explained. It shows the condition, awaited refresh, send, and return without fragmentation." },
+      "evidence": { "result": "pass", "evidence": "Section 2: 'This diff establishes a reordered check, not an added clock read.' It attributes the extra-read claim to the author and states that the streaming path is absent from the diff." },
+      "guarantees": { "result": "pass", "evidence": "Section 1: 'without assuming whether the failed send returned a response or threw an exception.' The one-Date.now observation explicitly concerns the shown function, not exact runtime calls. No request-success promise; the title and recap describe the ordering fix against the author's report." },
+      "reader-facing": { "result": "pass", "evidence": "The title 'Refresh before the request leaves' leads through four distinct beats and ends with 'Put credential preparation first'. Title, dek, footer, prose, recap, and code contain no internal review labels or drafting directions." },
+      "artifact": { "result": "pass", "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest." }
+    },
+    "reportShape": { "result": "pass", "evidence": "Four named reports returned. Before report meets 200–400 words; diff-tour has three narrative sentences, file grouping and summary, and one complete verbatim excerpt. Tradeoffs distinguish absent deferral rationale and the clock-read conflict. Alternatives says 'none documented'. The diff-tour states author causality more strongly than the final article, which restores attribution." },
+    "throughLine": { "result": "untested", "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately." }
+  },
+  "pr-grounding-quality-2": {
+    "criteria": {
+      "causality": { "result": "pass", "evidence": "manifests/pr-grounding-quality-2.json sections[1]: 'The author reports that the first request after expiry failed because refresh happened after dispatch.' The implementation makes refresh a prerequisite for dispatch, matching sources/pr.json." },
+      "code-evidence": { "result": "pass", "evidence": "reports/pr-grounding-quality-2.json returns one contiguous verbatim client.ts hunk. The final manifest uses one complete five-line after-state function, introduced as the mechanism and explained after the block. No repeated or quota-split code." },
+      "evidence": { "result": "pass", "evidence": "Section 2: 'it establishes a reordered check rather than an increased read count.' The extra-read claim is attributed, and 'That path is absent from the diff' keeps streaming implementation unknown." },
+      "guarantees": { "result": "pass", "evidence": "Section 1 says the code 'does not show whether an authentication failure throws or returns a response'. Section 2 limits the clock count to the visible diff and states that no tests establish the runtime fix. No exact per-call or request-success guarantee." },
+      "reader-facing": { "result": "pass", "evidence": "Four distinct setting, gap, implementation, and final recap sections explain one ordering change. 'The same check, at the useful moment' recaps that story. All reader-facing fields and code were inspected; no review IDs or writing-process leaks." },
+      "artifact": { "result": "pass", "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest." }
+    },
+    "reportShape": { "result": "pass", "evidence": "Before report meets 200–400 words. Diff-tour gives four narrative sentences for client.ts, new/modified grouping, table-ready summary, and one exact explained excerpt. Tradeoffs retain unknown reasons and source conflict; alternatives says 'none documented'." },
+    "throughLine": { "result": "untested", "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately." }
+  },
+  "pr-grounding-quality-3": {
+    "criteria": {
+      "causality": { "result": "pass", "evidence": "manifests/pr-grounding-quality-3.json sections[1]: 'The author reports that the first request after expiry failed because dispatch came before refresh.' The implementation places the existing check before send, matching sources/pr.json." },
+      "code-evidence": { "result": "pass", "evidence": "reports/pr-grounding-quality-3.json returns one exact client.ts excerpt spanning the entire hunk. The manifest shows the complete five-line after-state request function once. Introduction and explanation cover condition, awaited refresh, dispatch, and unchanged return without artificial fragmentation." },
+      "evidence": { "result": "pass", "evidence": "Section 2: 'The shown change moves one Date.now() call rather than adding another'. Streaming uses a separate path according to the author; 'That path is not shown here'." },
+      "guarantees": { "result": "pass", "evidence": "Section 1 leaves send's failure representation unknown. Section 2 says the function waits for refresh 'to resolve' before send. The source-expression observation is scoped to the shown change, not exact runtime calls; title/dek/recap do not promise request success." },
+      "reader-facing": { "result": "pass", "evidence": "The four distinct explanatory sections culminate in 'The same check, at the useful moment'. All reader-facing fields and code retain one ordering story without internal reviewer material." },
+      "artifact": { "result": "pass", "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest." }
+    },
+    "reportShape": { "result": "pass", "evidence": "Before report meets 200–400 words. Diff-tour has four narrative sentences, correct file grouping and summary, and one exact explained excerpt. Tradeoffs supply the source conflict and missing streaming rationale; alternatives says 'none documented'." },
+    "throughLine": { "result": "untested", "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately." }
+  },
+  "pr-batch-limit-2": {
+    "criteria": {
+      "causality": { "result": "pass", "evidence": "manifests/pr-batch-limit-2.json sections[2] connects initialization validation, prefix removal, and the exact worker call. 'Jobs beyond the limit stay in the same pending queue' matches sources/pr-batch-limit.json." },
+      "code-evidence": { "result": "pass", "evidence": "The actual parent deliveries in reports/pr-batch-limit-2.json contain three contiguous verbatim diff excerpts. Config and worker paths are explicit; the recovered narrative tour identifies the bounded drain as queue.ts. The manifest renders two exact after-state blocks for validation and removal, with the worker import explained and its call inline. All central code is covered without quota fragmentation. The child's interrupted partial output is preserved separately, not counted as a completed returned excerpt." },
+      "evidence": { "result": "pass", "evidence": "Default 100, Number conversion, positive-integer validation, and retained jobs are explicit. Section 2: 'The bound counts jobs, not their memory use or processing time.' It preserves the missing tenant key and invents no alternatives, plans, priorities, or measured benefits." },
+      "artifact": { "result": "pass", "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest." },
+      "proportion": { "result": "pass", "evidence": "Four distinct setting, concrete gap, implementation, and final recap sections stay on one batch-count story. The 250-job example is derived from the default limit. HTMLRewriter counts 475 words, below 1800; no optional padding." }
+    },
+    "reportShape": { "result": "pass", "evidence": "Final returned material is complete after native-parent self-correction. The host resumed the interrupted diff-tour with three excerpts but omitted the earlier narrative/table from the tool return. The parent requested those missing parts from the same child and received three sentences per file plus table summaries before writing. Before report is 251 words; tradeoffs and 'none documented' alternatives are complete. Initial report delivery failed shape; recovery and transport qualification are retained separately." },
+    "throughLine": { "result": "untested", "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately." }
+  },
+  "pr-batch-limit-3": {
+    "criteria": {
+      "causality": { "result": "pass", "evidence": "manifests/pr-batch-limit-3.json sections[2] explains config.ts validation, queue.ts prefix removal, and worker.ts passing the limit. 'the remaining jobs stay queued without a separate requeue step' matches sources/pr-batch-limit.json." },
+      "code-evidence": { "result": "pass", "evidence": "reports/pr-batch-limit-3.json returns three exact contiguous excerpts with explicit matching file headings. The manifest renders three complete after-state blocks for configuration, drain, and caller. Each block supports a distinct explanation, with all source lines intact and no quota-driven splitting or repetition." },
+      "evidence": { "result": "pass", "evidence": "Default 100 and positive-integer startup validation are explicit, including the source-derived empty-string-to-zero case. Section 1: 'a job count, not a memory or processing-time budget'. The missing tenant key explains the scheduling limit; no invented alternatives or follow-up plans. One tick's single send is scoped to the shown function." },
+      "artifact": { "result": "pass", "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest." },
+      "proportion": { "result": "pass", "evidence": "Four distinct explanatory sections end with 'Send a bounded batch and leave the rest queued'. The implementation follows one configuration-to-removal-to-send chain. HTMLRewriter counts 506 words, below 1800; no unsupported optional sections." }
+    },
+    "reportShape": { "result": "pass", "evidence": "Before report is 265 words. Diff-tour gives three narrative sentences per changed file, correct new/modified grouping, table-ready summaries, and three verbatim explained excerpts. Tradeoffs distinguish documented reasons from absent rationale; alternatives says 'none documented'." },
+    "throughLine": { "result": "untested", "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately." }
+  },
+  "pr-batch-limit-1": {
+    "criteria": {
+      "causality": { "result": "pass", "evidence": "manifests/pr-batch-limit-1.json sections[2] connects config.ts startup validation to queue.ts splice(0, limit) and the worker's configured drain call. 'Jobs beyond that count stay in the same array for later drains' matches sources/pr-batch-limit.json." },
+      "code-evidence": { "result": "pass", "evidence": "reports/pr-batch-limit-1.json returns three exact contiguous excerpts with matching file headers for config.ts, queue.ts, and worker.ts. The manifest renders two source-faithful blocks for validation and removal, plus the exact worker call inline with its import explained. These distinct blocks supply the central mechanism without requiring a third block for a one-line integration." },
+      "evidence": { "result": "pass", "evidence": "Default 100 and positive-integer validation are explicit. Section 1: 'a limit on batch size, not on job memory or processing time'. Section 2 names the missing tenant key. No invented alternatives, follow-up plans, priorities, or measurements; the 250-job example is a source-derived illustration." },
+      "artifact": { "result": "pass", "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest." },
+      "proportion": { "result": "pass", "evidence": "Four distinct sections explain prior whole-queue behavior, a concrete missing limit, the implementation chain, and a final 'Send a bounded batch and keep the rest queued' recap. No optional padding; HTMLRewriter count in executions.json is below 1800 words." }
+    },
+    "reportShape": { "result": "pass", "evidence": "Before report meets 200–400 words. Diff-tour supplies three narrative sentences per changed file, new/modified grouping, one-sentence table summaries, and three explained verbatim excerpts. Tradeoffs retain missing rationale for 100 and resource scope, plus the documented tenant-key reason. Alternatives says 'none documented'." },
+    "throughLine": { "result": "untested", "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately." }
+  }
+}

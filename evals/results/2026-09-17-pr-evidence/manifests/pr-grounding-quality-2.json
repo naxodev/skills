@@ -1,0 +1,36 @@
+{
+  "title": "Refresh before the request leaves",
+  "eyebrow": "PR #42 · Request credentials · Fix",
+  "dek": "An existing expiry check moves ahead of dispatch to address the first failed request after credentials expire.",
+  "meta": "fix: refresh credentials before dispatch",
+  "footer": "PR #42 · fix: refresh credentials before dispatch",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The check came after the send",
+      "content": "<p class=\"lead\">The request function in <code>client.ts</code> already knew how to check credential expiry and refresh credentials. Before this change, it first awaited <code>client.send(payload)</code>. Only after that call completed did it compare <code>client.expiresAt</code> with the current time and await a refresh if needed.</p><p>The missing piece was ordering. The function placed credential maintenance after the operation that needed those credentials. Its expiry check could not protect the request it had just sent.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "The first request arrived too soon",
+      "content": "<p>The author reports that the first request after expiry failed because refresh happened after dispatch. If you called the function with credentials whose expiry timestamp had already passed, it still sent your payload before checking them. The supplied code shows that sequence, but does not show whether an authentication failure throws or returns a response.</p><p>The desired change is concrete: when the expiry check finds expired credentials, finish refreshing them before sending the payload. Refreshing afterward comes too late for that first attempt.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Make refresh a prerequisite for dispatch",
+      "content": "<p>The only changed file, <code>client.ts</code>, moves the existing conditional refresh ahead of the send. The complete function after the change shows the mechanism:</p>{{CODE:0}}<p>The comparison treats a timestamp equal to the current time as expired, just as before. When that condition holds, <code>await</code> makes the function wait for refresh to complete before dispatch. Otherwise it proceeds directly to the send. The function still returns the response from <code>client.send(payload)</code>.</p><p>The author accepts a clock-read cost to avoid the initial failed request, describing it as an extra read. The visible diff contains one <code>Date.now()</code> call in both versions, so it establishes a reordered check rather than an increased read count.</p><p>Streaming requests remain a documented follow-up because they use a separate path, according to the author. That path is absent from the diff, and the supplied material gives no reason for deferring its change. No tests or test results accompany this fixture; the code establishes the new order, without providing runtime confirmation of the fix.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "The same check, at the useful moment",
+      "content": "<p>PR #42 moves credential refresh from after dispatch to before it in the request function. An expired-credential check now makes dispatch wait for refresh, addressing the ordering behind the author's reported first-request failure. The change reuses the existing condition and refresh operation; streaming requests still need their separate follow-up.</p>"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Source-scaled evidence conformance
+
+Run only the current candidate: three fresh `pr-grounding-quality` parents and three fresh `pr-batch-limit` parents. This is conformance to the revised evidence contract, not a paired effect estimate. Historical results are context only.
+
+Each parent uses native `build`, `openai/gpt-6-astra#medium`, its own sibling jj clone, and four actual parallel read-only report children. At most two parents run concurrently. Wait up to 15 minutes per parent; archive errors and interrupt stale owned sessions. No semantic feedback, prompt changes, or semantic reruns. At most one zero-token infrastructure retry is allowed. No extra smoke or baseline sessions.
+
+Freeze skill, style, scripts, source fixtures, plan, and exact prompts before the first model response. Preserve original case criteria. Inspect actual parent and child exports, local reads, source hashes, model defaults, four starts before any completion, all reports before manifest writing, and child read-only behavior. Installed instruction loads qualify attribution and remain recorded.
+
+The task replaces only GitHub fetching with a local fixture. Text-only audio generation must run, remove a seeded stale sidecar, and build with `--audio`. Independently rebuild each artifact and compare bytes. Preserve real handoffs before deleting disposable clones. Inspect public text and tool transcripts only; private through-line process is untested when not observable.
+
+Source review checks contiguous verbatim diff excerpts after removing fence wrappers only, matching file paths, at most four excerpts, sufficient mechanism coverage, and no quota-driven repeats. Final code must match after-state source, with suitable self-contained fragments and visible elision permitted. One block is preferred for the tiny fixture; two are not automatically a failure if they explain distinct things. Review four explanatory beats, final recap, runtime guarantees versus source expression counts, author conflicts and unknown streaming code, batch count versus memory/time, limitations, alternatives, and reader-facing prose. Use HTMLRewriter for prose counts. No model grader.
+
+Isolation retains root TypeScript/ESLint configurations, frozen root and nested dependencies, and skill builder tests. Remove other skills, evals, examples, docs, release history, and repository history from agent-reachable working files. A fixture-specific `check` uses retained type-check, lint, and builder tests; catalog validation depends on deliberately hidden catalog files and is excluded only in trial clones. This harness adaptation does not edit the tested skill. Prompts require local-file instruction sources for parents and children without hinting at code counts or scoring.
+
+Publish six manifests, all 24 reports with actual reads, frozen inputs, execution observations, source judgments, and failures. Archive raw exports and handoff artifacts outside the repository. Live GitHub, browser rendering, audio synthesis/playback, automatic invocation, and no-code rendering remain unrun unless actually exercised.

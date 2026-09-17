@@ -47,6 +47,8 @@ Choose the analysis budget using the number of distinct behaviors, not changed-l
 
 **Full-workflow status:** [six current-instruction offline executions](../evals/results/2026-09-17-pr-workflow/README.md) completed with 24 native reports, actual text-only audio no-ops, and independently identical HTML rebuilds. All artifacts passed source review. Small runs adapted the impossible 2–4 distinct-hunk request; two runs loaded installed instructions outside the local-only path. This closes the observed execution gap on these fixtures, not full compliance or general reliability. The initial general-agent capability inference was corrected by testing a real build parent. No skill change was made.
 
+**Adopted source-scaled evidence:** the diff-tour now requests up to four contiguous verbatim excerpts, rather than two to four full hunks. One excerpt is sufficient when it explains the central mechanism. Rendered code likewise uses the smallest sufficient set, with one self-contained block preferred for simple changes. This removes the tiny-diff quota without removing central code evidence. The [current-candidate conformance report](../evals/results/2026-09-17-pr-evidence/README.md) records six source-grounded artifacts, with one complete code block in all three tiny walkthroughs and one interrupted report recovered by its native parent. It is not a paired improvement estimate.
+
 ### Make the audience an input
 
 A maintainer needs mechanism and consequences. A new contributor needs domain context. A stakeholder needs user-visible effects.

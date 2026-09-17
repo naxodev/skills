@@ -1,0 +1,41 @@
+{
+  "title": "A limit for each send",
+  "eyebrow": "PR #108 · queue worker · feature",
+  "dek": "A configurable job-count limit turns a whole-queue drain into a bounded batch, leaving the remaining jobs queued.",
+  "meta": "feat: bound queue batches",
+  "footer": "PR #108 · feat: bound queue batches",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Every pending job went into one send",
+      "content": "<p class=\"lead\">The worker sent every pending job whenever it drained the queue. In <code>worker.ts</code>, the <code>tick</code> function asked the queue helper for jobs, sent them to <code>/jobs</code>, and awaited the send. The helper used <code>pending.splice(0)</code>, which removed and returned the entire array from its first element onward.</p><p>The queue length therefore determined the batch size. If 250 jobs were waiting, that drain selected all 250 for one send. The configuration supplied the endpoint, but no setting limited how many jobs the worker selected.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "One send needed a job-count ceiling",
+      "content": "<p>The missing control was a maximum number of jobs per send. PR #108 introduces that control with a default of 100. With 250 jobs pending, the first drain now selects 100 and leaves 150 queued. If no new jobs arrive, two later drains select 100 and then 50.</p><p>This is a limit on batch size, not on job memory or processing time. The author explicitly keeps those resource bounds outside the guarantee. You can control the number of jobs passed to a send, but that count alone does not bound how large or expensive those jobs are.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Validate the setting, then take only that many jobs",
+      "content": "<p>The limit starts in <code>config.ts</code>. The new <code>BATCH_LIMIT</code> environment setting becomes a number, defaults to 100 when absent, and must pass startup validation:</p>{{CODE:0}}<p>The guard rejects zero, negative numbers, fractions, and values that do not convert to an integer. An invalid setting throws rather than letting the worker start with an unusable limit.</p><p>The queue helper applies the count directly when it removes jobs:</p>{{CODE:1}}<p>The second argument to <code>splice</code> caps how many jobs leave the front of the queue. Jobs beyond that count stay in the same array for later drains; when fewer jobs remain, the helper returns only those available.</p><p>In <code>worker.ts</code>, the worker now imports <code>batchLimit</code> alongside <code>endpoint</code> and calls <code>await send(endpoint, drain(pending, batchLimit))</code>. That connects the validated setting to each send. The three modified files divide the work between configuration, queue selection, and the worker call.</p><p>Per-tenant scheduling remains outside this change because the queue has no tenant key. The selection rule still takes jobs from the front; it does not divide the batch among tenants.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Send a bounded batch and keep the rest queued",
+      "content": "<p>PR #108 replaces whole-queue selection with a configurable maximum per send. <code>BATCH_LIMIT</code> defaults to 100 and must be a positive integer at startup. The worker passes that limit to the queue helper, which removes at most that many jobs and retains the rest for later drains. The guarantee covers job count; memory, processing time, and per-tenant scheduling remain outside its scope.</p>"
+    }
+  ]
+}
