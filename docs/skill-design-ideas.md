@@ -45,6 +45,8 @@ Choose the analysis budget using the number of distinct behaviors, not changed-l
 
 **Measure:** time, tool calls, and unsupported claims for the same small and large PR fixtures.
 
+**Full-workflow status:** the [current-instruction preflight](../evals/results/2026-09-17-pr-workflow/README.md) confirmed the selected Astra model but found no native dispatch tool in the evaluator session. Six parents and 24 independent reports remain unrun. The full-workflow gap remains open; no supplied-report substitute or skill change was made.
+
 ### Make the audience an input
 
 A maintainer needs mechanism and consequences. A new contributor needs domain context. A stakeholder needs user-visible effects.

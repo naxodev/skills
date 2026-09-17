@@ -1,0 +1,144 @@
+{
+  "session": {
+    "id": "ses_f50331a2dffeYyK6WwewKWB6JZ",
+    "parentID": "ses_f864918dfffex0NdnoZodyI3Ja",
+    "agent": "general",
+    "model": {
+      "id": "gpt-6-astra",
+      "providerID": "openai",
+      "variant": "medium"
+    },
+    "location": {
+      "directory": "/Users/nachovazquez/work/1-projects/naxodev/skills"
+    }
+  },
+  "tools": [
+    {
+      "messageID": "msg_0afcd07eb0019DHyJ3QlgF0kGu",
+      "time": {
+        "created": 1789655846591,
+        "ran": 1789655847117,
+        "completed": 1789655847151
+      },
+      "name": "execute",
+      "state": {
+        "status": "completed",
+        "input": {
+          "code": "return await search({query:'subagent',limit:30});"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"items\": [\n    {\n      \"path\": \"tools.opencode.models\",\n      \"description\": \"Search the models available to use. Use this to turn a model name the user mentions into an exact reference before running a subagent on it. Check your own provider first.\",\n      \"signature\": \"tools.opencode.models(input: {\\n  /** Text to search for in model names and IDs. */\\n  query?: string,\\n  /** Provider ID or name to filter by. Try your own provider first. */\\n  provider?: string,\\n  /** Include older versions of each model family. By default only the newest version is listed. */\\n  all?: boolean,\\n  /** Maximum number of models to return. Defaults to 20. @integer @minimum 1 @maximum 100 */\\n  limit?: number,\\n  /** Number of models to skip, for paging through results. @integer @minimum 0 */\\n  offset?: number,\\n}): Promise<{\\n  /** Matching models grouped by provider. Your own provider comes first. */\\n  providers: Array<{\\n      id: string,\\n      name: string,\\n      /** Newest first. */\\n      models: Array<{\\n          /** providerID/modelID */\\n          id: string,\\n          name: string,\\n          /** Release date as a Unix timestamp in milliseconds, or 0 when unknown. */\\n          released: number,\\n          variants: Array<string>,\\n          /** Pricing in USD per million tokens. */\\n          cost: Array<{\\n              tier?: {\\n                type: \\\"context\\\",\\n                /** @integer */\\n                size: number,\\n              },\\n              input: number,\\n              output: number,\\n              cache: {\\n                read: number,\\n                write: number,\\n              },\\n            }>,\\n          status: \\\"alpha\\\" | \\\"beta\\\" | \\\"deprecated\\\" | \\\"active\\\",\\n        }>,\\n    }>,\\n  /** Number of matching models across all pages. @integer */\\n  total: number,\\n  /** Offset of the next page, or null on the last page. */\\n  next: number | null,\\n}>\"\n    }\n  ],\n  \"remaining\": 0,\n  \"next\": null\n}"
+          }
+        ],
+        "metadata": {
+          "toolCalls": [
+            {
+              "tool": "search",
+              "status": "completed",
+              "input": {
+                "query": "subagent",
+                "limit": 30
+              }
+            }
+          ],
+          "truncated": false
+        }
+      }
+    },
+    {
+      "messageID": "msg_0afcd37de001jHyyXTAHw8GZmf",
+      "time": {
+        "created": 1789655863555,
+        "ran": 1789655863691,
+        "completed": 1789655863719
+      },
+      "name": "execute",
+      "state": {
+        "status": "completed",
+        "input": {
+          "code": "return {catalog: await search({namespace:'opencode',limit:100}), models: await tools.opencode.models({provider:'openai',query:'astra'})};"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"catalog\": {\n    \"items\": [\n      {\n        \"path\": \"tools.opencode.models\",\n        \"description\": \"Search the models available to use. Use this to turn a model name the user mentions into an exact reference before running a subagent on it. Check your own provider first.\",\n        \"signature\": \"tools.opencode.models(input: {\\n  /** Text to search for in model names and IDs. */\\n  query?: string,\\n  /** Provider ID or name to filter by. Try your own provider first. */\\n  provider?: string,\\n  /** Include older versions of each model family. By default only the newest version is listed. */\\n  all?: boolean,\\n  /** Maximum number of models to return. Defaults to 20. @integer @minimum 1 @maximum 100 */\\n  limit?: number,\\n  /** Number of models to skip, for paging through results. @integer @minimum 0 */\\n  offset?: number,\\n}): Promise<{\\n  /** Matching models grouped by provider. Your own provider comes first. */\\n  providers: Array<{\\n      id: string,\\n      name: string,\\n      /** Newest first. */\\n      models: Array<{\\n          /** providerID/modelID */\\n          id: string,\\n          name: string,\\n          /** Release date as a Unix timestamp in milliseconds, or 0 when unknown. */\\n          released: number,\\n          variants: Array<string>,\\n          /** Pricing in USD per million tokens. */\\n          cost: Array<{\\n              tier?: {\\n                type: \\\"context\\\",\\n                /** @integer */\\n                size: number,\\n              },\\n              input: number,\\n              output: number,\\n              cache: {\\n                read: number,\\n                write: number,\\n              },\\n            }>,\\n          status: \\\"alpha\\\" | \\\"beta\\\" | \\\"deprecated\\\" | \\\"active\\\",\\n        }>,\\n    }>,\\n  /** Number of matching models across all pages. @integer */\\n  total: number,\\n  /** Offset of the next page, or null on the last page. */\\n  next: number | null,\\n}>\"\n      },\n      {\n        \"path\": \"tools.opencode.session_move\",\n        \"description\": \"Move a session to another directory, or omit sessionID to move the current session. The current session moves at the next safe boundary; do not run destination-dependent tools in the same execute call.\",\n        \"signature\": \"tools.opencode.session_move(input: {\\n  /** Omit to move the current session. @pattern ^ses */\\n  sessionID?: string,\\n  /** Destination directory, relative to the target session's directory or absolute. Supports ~. @minLength 1 */\\n  directory: string,\\n}): Promise<{\\n  /** @pattern ^ses */\\n  sessionID: string,\\n  directory: string,\\n}>\"\n      },\n      {\n        \"path\": \"tools.opencode.session_rename\",\n        \"description\": \"Rename a session, or omit sessionID to rename the current session. Use a short, specific title that summarizes the work being done.\",\n        \"signature\": \"tools.opencode.session_rename(input: {\\n  /** Omit to rename the current session. @pattern ^ses */\\n  sessionID?: string,\\n  /** New session title. @minLength 1 */\\n  title: string,\\n}): Promise<{\\n  /** @pattern ^ses */\\n  sessionID: string,\\n  title: string,\\n}>\"\n      }\n    ],\n    \"remaining\": 0,\n    \"next\": null\n  },\n  \"models\": {\n    \"providers\": [\n      {\n        \"id\": \"openai\",\n        \"name\": \"OpenAI\",\n        \"models\": [\n          {\n            \"id\": \"openai/gpt-6-astra\",\n            \"name\": \"GPT-6 Astra\",\n            \"released\": 1788480000000,\n            \"variants\": [\n              \"low\",\n              \"medium\",\n              \"high\",\n              \"xhigh\",\n              \"max\"\n            ],\n            \"cost\": [],\n            \"status\": \"active\"\n          }\n        ]\n      }\n    ],\n    \"total\": 1,\n    \"next\": null\n  }\n}"
+          }
+        ],
+        "metadata": {
+          "toolCalls": [
+            {
+              "tool": "search",
+              "status": "completed",
+              "input": {
+                "namespace": "opencode",
+                "limit": 100
+              }
+            },
+            {
+              "tool": "opencode.models",
+              "status": "completed",
+              "input": {
+                "provider": "openai",
+                "query": "astra"
+              }
+            }
+          ],
+          "truncated": false
+        }
+      }
+    },
+    {
+      "messageID": "msg_0afce107c001ymWQ8OmqD411Vv",
+      "time": {
+        "created": 1789655918112,
+        "ran": 1789655918269,
+        "completed": 1789655918294
+      },
+      "name": "execute",
+      "state": {
+        "status": "completed",
+        "input": {
+          "code": "return {task: await search({query:'task',namespace:'opencode',limit:100}),dispatch:await search({query:'dispatch',limit:100}),agent:await search({query:'subagent',limit:100})};"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"task\": {\n    \"items\": [],\n    \"remaining\": 0,\n    \"next\": null\n  },\n  \"dispatch\": {\n    \"items\": [],\n    \"remaining\": 0,\n    \"next\": null\n  },\n  \"agent\": {\n    \"items\": [\n      {\n        \"path\": \"tools.opencode.models\",\n        \"description\": \"Search the models available to use. Use this to turn a model name the user mentions into an exact reference before running a subagent on it. Check your own provider first.\",\n        \"signature\": \"tools.opencode.models(input: {\\n  /** Text to search for in model names and IDs. */\\n  query?: string,\\n  /** Provider ID or name to filter by. Try your own provider first. */\\n  provider?: string,\\n  /** Include older versions of each model family. By default only the newest version is listed. */\\n  all?: boolean,\\n  /** Maximum number of models to return. Defaults to 20. @integer @minimum 1 @maximum 100 */\\n  limit?: number,\\n  /** Number of models to skip, for paging through results. @integer @minimum 0 */\\n  offset?: number,\\n}): Promise<{\\n  /** Matching models grouped by provider. Your own provider comes first. */\\n  providers: Array<{\\n      id: string,\\n      name: string,\\n      /** Newest first. */\\n      models: Array<{\\n          /** providerID/modelID */\\n          id: string,\\n          name: string,\\n          /** Release date as a Unix timestamp in milliseconds, or 0 when unknown. */\\n          released: number,\\n          variants: Array<string>,\\n          /** Pricing in USD per million tokens. */\\n          cost: Array<{\\n              tier?: {\\n                type: \\\"context\\\",\\n                /** @integer */\\n                size: number,\\n              },\\n              input: number,\\n              output: number,\\n              cache: {\\n                read: number,\\n                write: number,\\n              },\\n            }>,\\n          status: \\\"alpha\\\" | \\\"beta\\\" | \\\"deprecated\\\" | \\\"active\\\",\\n        }>,\\n    }>,\\n  /** Number of matching models across all pages. @integer */\\n  total: number,\\n  /** Offset of the next page, or null on the last page. */\\n  next: number | null,\\n}>\"\n      }\n    ],\n    \"remaining\": 0,\n    \"next\": null\n  }\n}"
+          }
+        ],
+        "metadata": {
+          "toolCalls": [
+            {
+              "tool": "search",
+              "status": "completed",
+              "input": {
+                "query": "task",
+                "namespace": "opencode",
+                "limit": 100
+              }
+            },
+            {
+              "tool": "search",
+              "status": "completed",
+              "input": {
+                "query": "dispatch",
+                "limit": 100
+              }
+            },
+            {
+              "tool": "search",
+              "status": "completed",
+              "input": {
+                "query": "subagent",
+                "limit": 100
+              }
+            }
+          ],
+          "truncated": false
+        }
+      }
+    }
+  ]
+}
