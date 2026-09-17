@@ -104,10 +104,9 @@ Only one explanation per arm completed rendered review. The remaining authors ha
 
 **Measure:** missing prerequisites and questions a fresh reader must ask to follow the page.
 
-### Support all four quadrants with equal precision
+### Support all four quadrants with equal precision — adopted
 
-The current skill has a detailed how-to template, while the other quadrants rely on general guidance.
-Add short branch-specific outlines only where evaluations reveal repeated failures:
+The workflow now gives compact branch shapes and scopes shared style to the chosen reader need:
 
 - Tutorials: a controlled starting state, a learning sequence, and a visible result.
 - Reference: exact contracts, defaults, errors, and version scope.
@@ -115,6 +114,8 @@ Add short branch-specific outlines only where evaluations reveal repeated failur
 
 **Adopted clarification:** short, source-backed rationale that helps a reader choose or perform a step belongs in a how-to.
 Both the skill and style guide now reserve extended conceptual background for a linked explanation.
+
+**Tutorial/reference follow-up:** the [twelve-session quadrant comparison](../evals/results/2026-09-17-docs-quadrants/README.md) completed both previously untested drafting branches. All reader outcomes and independent replays passed in both arms. The baseline already produced usable lessons and precise lookup contracts, so there is no measured reader-outcome uplift. Two baseline reference authors omitted clean-copy execution; those remain workflow failures. This adoption removes explicit style contradictions rather than repairing a demonstrated reader failure. Explanation's compact outline, how-to, live APIs, browser rendering, and automatic routing were not rerun.
 
 **Measure:** whether readers can use a page for its intended purpose without needing unrelated exposition.
 

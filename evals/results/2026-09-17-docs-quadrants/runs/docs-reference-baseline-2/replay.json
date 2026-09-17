@@ -1,0 +1,15 @@
+{
+  "id": "docs-reference-baseline-2",
+  "status": "passed",
+  "startingContext": "Fresh four-file fixture, Bun available, package-root working directory",
+  "notationExcluded": "Import/signature sections are lookup notation, not runnable examples",
+  "observations": [
+    {
+      "action": "Execute the published example unchanged via Bun --eval from the stated package root",
+      "source": "import { releaseLabel } from './index.ts';\n\nconsole.assert(releaseLabel(' 2.4.0 ') === 'v2.4.0');\nconsole.assert(releaseLabel('2.4.0', { prefix: 'Release ' }) === 'Release 2.4.0');\nconsole.assert(releaseLabel('2.4.0', { prefix: '' }) === '2.4.0');\n",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

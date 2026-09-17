@@ -54,7 +54,7 @@ When you want <X instead of default>, change step N to:
 
 A runnable check or concrete UI action, with the expected observable result.
 
-<!-- 6. Next steps — links out, not new content -->
+<!-- 6. Optional next steps — existing relevant links, not new content -->
 ## Next steps
 
 - [Related how-to](/guides/<area>/<page>)
@@ -92,7 +92,9 @@ not the whole example again. If a variation is rare or speculative, cut it
 observable outcome, so the reader can distinguish success from a command
 that merely exits. This is the single section AI agents most often forget.
 
-**Next steps.** Links only, no new content. Three categories:
+**Next steps.** Optional links to existing relevant docs, no new content.
+Omit this section when the task is complete and no useful destination exists.
+Possible categories:
 - Related how-to (sibling task)
 - Reference (the exact API shape)
 - Understanding (the conceptual page that explains *why*)

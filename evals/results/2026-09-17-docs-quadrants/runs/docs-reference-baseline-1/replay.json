@@ -1,0 +1,57 @@
+{
+  "id": "docs-reference-baseline-1",
+  "status": "passed",
+  "startingContext": "Fresh four-file fixture, Bun available, package-root working directory",
+  "notationExcluded": "Import/signature sections are lookup notation, not runnable examples",
+  "observations": [
+    {
+      "action": "Execute the published example unchanged via Bun --eval from the stated package root",
+      "source": "import { releaseLabel } from './index.ts';\n\nreleaseLabel(' 2.4.0 ');                       // 'v2.4.0'\nreleaseLabel('2.4.0', { prefix: 'Release ' }); // 'Release 2.4.0'\nreleaseLabel('2.4.0', { prefix: '' });         // '2.4.0'\nreleaseLabel('2.4.0', { prefix: undefined });  // 'v2.4.0'\nreleaseLabel(' nightly build ');              // 'vnightly build'\nreleaseLabel('v2.4.0');                       // 'vv2.4.0'\nreleaseLabel(' \\t\\n ');                      // throws Error: version must not be blank\n",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "1 | /** Format a release label for display. Blank versions are rejected. */\n2 | export function releaseLabel(version: string, options: { prefix?: string } = {}): string {\n3 |   if (!version.trim()) throw new Error('version must not be blank');\n                                     ^\nerror: version must not be blank\n      at releaseLabel (/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-reference-replay-ch1qbt/release-label.ts:3:34)\n      at /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-reference-replay-ch1qbt/[eval]:9:1\n      at loadAndEvaluateModule (2:1)\n\nBun v1.3.7 (macOS arm64)\n"
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel(' 2.4.0 ')",
+      "actual": "\"v2.4.0\"",
+      "expected": "\"v2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('2.4.0', { prefix: 'Release ' })",
+      "actual": "\"Release 2.4.0\"",
+      "expected": "\"Release 2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('2.4.0', { prefix: '' })",
+      "actual": "\"2.4.0\"",
+      "expected": "\"2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('2.4.0', { prefix: undefined })",
+      "actual": "\"v2.4.0\"",
+      "expected": "\"v2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel(' nightly build ')",
+      "actual": "\"vnightly build\"",
+      "expected": "\"vnightly build\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('v2.4.0')",
+      "actual": "\"vv2.4.0\"",
+      "expected": "\"vv2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel(' \\t\\n ')",
+      "actual": "Error: version must not be blank",
+      "expected": "Error: version must not be blank"
+    }
+  ]
+}

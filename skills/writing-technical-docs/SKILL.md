@@ -79,10 +79,21 @@ AI-written docs.
 
 **Complete when:** each planned claim, including the reader's starting context, required prerequisites, and promised outcome, has source support; unresolved claims are marked `VERIFY` rather than stated as fact.
 
-3.  **Apply the quadrant template.** For how-to guides — by far the most
-    common request — see [HOW-TO-TEMPLATE.md](HOW-TO-TEMPLATE.md). Tutorials,
-    reference, and explanation pages each have a different shape; do not
-    use the how-to template for them.
+3.  **Apply the quadrant's shape.**
+
+    - **Tutorial:** establish a controlled learner start, then a learning
+      sequence with executable actions and observable checkpoints. Explain
+      what each result teaches; choose one path rather than asking novices
+      to choose among task variations.
+    - **How-to:** use [HOW-TO-TEMPLATE.md](HOW-TO-TEMPLATE.md) for an
+      established task, including brief rationale needed to perform it.
+    - **Reference:** organize for quick lookup. Document the exact accepted
+      arguments, optional/default behavior, returns, errors, and meaningful
+      effects with source support. Use signatures, type tables, and examples
+      where they answer the lookup question; no setup walkthrough is required.
+    - **Explanation:** lead with the question or distinction, then build
+      the causal structure and mental model from the evidence.
+
     Surface actionable prerequisites and instructions for recognizing
     success on the page; keep the drafting contract in the notes.
 
@@ -134,8 +145,9 @@ AI-written docs.
 
 - **Inventing options.** If a code example uses a value the source doesn't
   accept, the rest of the page is suspect. Re-read the type.
-- **Restating type definitions as prose.** If a reader can get the same
-  information by hovering the symbol, the prose is filler.
+- **Restatement without lookup value.** Keep precise reference contracts;
+  cut prose that merely repeats an adjacent signature without clarifying
+  accepted values, behavior, or effects.
 - **Sycophantic preamble.** "X's elegant design lets you…" — delete.
 - **Cross-page duplication.** Link instead of copying. Duplication rots
   on the next API change.

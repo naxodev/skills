@@ -1,0 +1,449 @@
+{
+  "method": "Manual source/page/visible-transcript review; independent fresh-copy replays; conservative clean-copy workflow adjudication",
+  "summary": [
+    {
+      "case": "docs-tutorial",
+      "arm": "baseline",
+      "attempts": 3,
+      "readerPasses": 3,
+      "fullWorkflowPasses": 3,
+      "criteria": {
+        "learning": 3,
+        "replay": 3,
+        "grounding": 3,
+        "verification": 3
+      }
+    },
+    {
+      "case": "docs-tutorial",
+      "arm": "candidate",
+      "attempts": 3,
+      "readerPasses": 3,
+      "fullWorkflowPasses": 3,
+      "criteria": {
+        "learning": 3,
+        "replay": 3,
+        "grounding": 3,
+        "verification": 3
+      }
+    },
+    {
+      "case": "docs-reference",
+      "arm": "baseline",
+      "attempts": 3,
+      "readerPasses": 3,
+      "fullWorkflowPasses": 1,
+      "criteria": {
+        "lookup": 3,
+        "contract": 3,
+        "grounding": 3,
+        "verification": 1
+      }
+    },
+    {
+      "case": "docs-reference",
+      "arm": "candidate",
+      "attempts": 3,
+      "readerPasses": 3,
+      "fullWorkflowPasses": 3,
+      "criteria": {
+        "lookup": 3,
+        "contract": 3,
+        "grounding": 3,
+        "verification": 3
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "docs-tutorial-baseline-1",
+      "arm": "baseline",
+      "case": "docs-tutorial",
+      "sessionID": "ses_f4ed394b2ffen54MslXilXUSau",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "learning",
+          "status": "passed",
+          "evidence": "Page lines 9–17 establish the start; lines 19–73 teach default then custom prefix. Visible transcript lines 117–121 record both checkpoints and the Build exercise; lines 123–197 contain rendered output. See runs/docs-tutorial-baseline-1/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-1/transcript.md."
+        },
+        {
+          "id": "replay",
+          "status": "passed",
+          "evidence": "Page lines 9–17 establish the start; lines 19–73 teach default then custom prefix. Visible transcript lines 117–121 record both checkpoints and the Build exercise; lines 123–197 contain rendered output. See runs/docs-tutorial-baseline-1/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-1/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 9–17 establish the start; lines 19–73 teach default then custom prefix. Visible transcript lines 117–121 record both checkpoints and the Build exercise; lines 123–197 contain rendered output. See runs/docs-tutorial-baseline-1/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-1/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 9–17 establish the start; lines 19–73 teach default then custom prefix. Visible transcript lines 117–121 record both checkpoints and the Build exercise; lines 123–197 contain rendered output. See runs/docs-tutorial-baseline-1/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-1/transcript.md."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-tutorial-candidate-1",
+      "arm": "candidate",
+      "case": "docs-tutorial",
+      "sessionID": "ses_f4ed394b2ffdXiiek3czAuUVxT",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "learning",
+          "status": "passed",
+          "evidence": "Page lines 7–17 establish the start; lines 45 and 73 explain observations. Transcript lines 124–128 record clean-copy checkpoints/navigation; lines 130–220 contain page and README rendering. See runs/docs-tutorial-candidate-1/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-1/transcript.md."
+        },
+        {
+          "id": "replay",
+          "status": "passed",
+          "evidence": "Page lines 7–17 establish the start; lines 45 and 73 explain observations. Transcript lines 124–128 record clean-copy checkpoints/navigation; lines 130–220 contain page and README rendering. See runs/docs-tutorial-candidate-1/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-1/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 7–17 establish the start; lines 45 and 73 explain observations. Transcript lines 124–128 record clean-copy checkpoints/navigation; lines 130–220 contain page and README rendering. See runs/docs-tutorial-candidate-1/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-1/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 7–17 establish the start; lines 45 and 73 explain observations. Transcript lines 124–128 record clean-copy checkpoints/navigation; lines 130–220 contain page and README rendering. See runs/docs-tutorial-candidate-1/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-1/transcript.md."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-tutorial-baseline-2",
+      "arm": "baseline",
+      "case": "docs-tutorial",
+      "sessionID": "ses_f4ed394b2ffcWDr5MoGkUoZJn4",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "learning",
+          "status": "passed",
+          "evidence": "Page lines 9–14 establish the start; lines 44–45 and 78–79 explain the two observations. Transcript lines 123–126 record both checkpoints and Build practice; lines 129–227 contain page and README rendering. See runs/docs-tutorial-baseline-2/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-2/transcript.md."
+        },
+        {
+          "id": "replay",
+          "status": "passed",
+          "evidence": "Page lines 9–14 establish the start; lines 44–45 and 78–79 explain the two observations. Transcript lines 123–126 record both checkpoints and Build practice; lines 129–227 contain page and README rendering. See runs/docs-tutorial-baseline-2/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-2/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 9–14 establish the start; lines 44–45 and 78–79 explain the two observations. Transcript lines 123–126 record both checkpoints and Build practice; lines 129–227 contain page and README rendering. See runs/docs-tutorial-baseline-2/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-2/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 9–14 establish the start; lines 44–45 and 78–79 explain the two observations. Transcript lines 123–126 record both checkpoints and Build practice; lines 129–227 contain page and README rendering. See runs/docs-tutorial-baseline-2/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-2/transcript.md."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-tutorial-candidate-2",
+      "arm": "candidate",
+      "case": "docs-tutorial",
+      "sessionID": "ses_f4ed252c6ffeUcdYZxovtOzGUe",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "learning",
+          "status": "passed",
+          "evidence": "Page lines 8–22 establish the start; lines 51 and 80 explain the default and custom prefix. Transcript lines 117–192 contain rendered output; lines 204–209 record ordered clean-copy execution and navigation. See runs/docs-tutorial-candidate-2/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-2/transcript.md."
+        },
+        {
+          "id": "replay",
+          "status": "passed",
+          "evidence": "Page lines 8–22 establish the start; lines 51 and 80 explain the default and custom prefix. Transcript lines 117–192 contain rendered output; lines 204–209 record ordered clean-copy execution and navigation. See runs/docs-tutorial-candidate-2/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-2/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 8–22 establish the start; lines 51 and 80 explain the default and custom prefix. Transcript lines 117–192 contain rendered output; lines 204–209 record ordered clean-copy execution and navigation. See runs/docs-tutorial-candidate-2/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-2/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 8–22 establish the start; lines 51 and 80 explain the default and custom prefix. Transcript lines 117–192 contain rendered output; lines 204–209 record ordered clean-copy execution and navigation. See runs/docs-tutorial-candidate-2/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-2/transcript.md."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-tutorial-baseline-3",
+      "arm": "baseline",
+      "case": "docs-tutorial",
+      "sessionID": "ses_f4ed252b5ffe2wYtis62nJ6M6g",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "learning",
+          "status": "passed",
+          "evidence": "Page lines 9–11 establish the start; lines 33 and 57 give observable labels and explain the changed input. Transcript lines 118–121 record both labels and Preview practice; lines 123–188 contain rendered output. See runs/docs-tutorial-baseline-3/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-3/transcript.md."
+        },
+        {
+          "id": "replay",
+          "status": "passed",
+          "evidence": "Page lines 9–11 establish the start; lines 33 and 57 give observable labels and explain the changed input. Transcript lines 118–121 record both labels and Preview practice; lines 123–188 contain rendered output. See runs/docs-tutorial-baseline-3/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-3/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 9–11 establish the start; lines 33 and 57 give observable labels and explain the changed input. Transcript lines 118–121 record both labels and Preview practice; lines 123–188 contain rendered output. See runs/docs-tutorial-baseline-3/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-3/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 9–11 establish the start; lines 33 and 57 give observable labels and explain the changed input. Transcript lines 118–121 record both labels and Preview practice; lines 123–188 contain rendered output. See runs/docs-tutorial-baseline-3/tutorial.md, replay.json, and archived runs/docs-tutorial-baseline-3/transcript.md."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-tutorial-candidate-3",
+      "arm": "candidate",
+      "case": "docs-tutorial",
+      "sessionID": "ses_f4ed1dcc1ffePTrEPA8ysCNLmP",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "learning",
+          "status": "passed",
+          "evidence": "Page lines 8–22 establish the start, including an unused filename; lines 53–54 and 84–85 explain observations. Transcript lines 117–120 record clean-copy checkpoints; lines 132–210 contain rendered output. See runs/docs-tutorial-candidate-3/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-3/transcript.md."
+        },
+        {
+          "id": "replay",
+          "status": "passed",
+          "evidence": "Page lines 8–22 establish the start, including an unused filename; lines 53–54 and 84–85 explain observations. Transcript lines 117–120 record clean-copy checkpoints; lines 132–210 contain rendered output. See runs/docs-tutorial-candidate-3/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-3/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 8–22 establish the start, including an unused filename; lines 53–54 and 84–85 explain observations. Transcript lines 117–120 record clean-copy checkpoints; lines 132–210 contain rendered output. See runs/docs-tutorial-candidate-3/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-3/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 8–22 establish the start, including an unused filename; lines 53–54 and 84–85 explain observations. Transcript lines 117–120 record clean-copy checkpoints; lines 132–210 contain rendered output. See runs/docs-tutorial-candidate-3/tutorial.md, replay.json, and archived runs/docs-tutorial-candidate-3/transcript.md."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-reference-baseline-1",
+      "arm": "baseline",
+      "case": "docs-reference",
+      "sessionID": "ses_f4ed1127affeuoLe5kGAH3m1Jo",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "failed",
+      "criteria": [
+        {
+          "id": "lookup",
+          "status": "passed",
+          "evidence": "Page lines 14–43 provide scoped signature, exact defaults, empty prefix, trim and unconditional blank-version error. Transcript lines 153–154 record successful contract probes after two failed commands; lines 166–233 contain rendering. Author probes ran in the drafting workspace, not a clean secondary copy. See runs/docs-reference-baseline-1/reference.md, replay.json, and archived runs/docs-reference-baseline-1/transcript.md."
+        },
+        {
+          "id": "contract",
+          "status": "passed",
+          "evidence": "Page lines 14–43 provide scoped signature, exact defaults, empty prefix, trim and unconditional blank-version error. Transcript lines 153–154 record successful contract probes after two failed commands; lines 166–233 contain rendering. Author probes ran in the drafting workspace, not a clean secondary copy. See runs/docs-reference-baseline-1/reference.md, replay.json, and archived runs/docs-reference-baseline-1/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 14–43 provide scoped signature, exact defaults, empty prefix, trim and unconditional blank-version error. Transcript lines 153–154 record successful contract probes after two failed commands; lines 166–233 contain rendering. Author probes ran in the drafting workspace, not a clean secondary copy. See runs/docs-reference-baseline-1/reference.md, replay.json, and archived runs/docs-reference-baseline-1/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "failed",
+          "evidence": "Page lines 14–43 provide scoped signature, exact defaults, empty prefix, trim and unconditional blank-version error. Transcript lines 153–154 record successful contract probes after two failed commands; lines 166–233 contain rendering. Author probes ran in the drafting workspace, not a clean secondary copy. See runs/docs-reference-baseline-1/reference.md, replay.json, and archived runs/docs-reference-baseline-1/transcript.md.",
+          "reason": "Step 5 requires runnable snippets in a clean copy. The author used its drafting workspace. The independent reviewer's later fresh-copy pass does not repair author workflow compliance."
+        }
+      ],
+      "qualifications": [
+        "Two author verification commands failed before a successful corrected probe."
+      ]
+    },
+    {
+      "id": "docs-reference-candidate-1",
+      "arm": "candidate",
+      "case": "docs-reference",
+      "sessionID": "ses_f4ed0ecd3ffe8breY5iC0lIZZe",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "lookup",
+          "status": "passed",
+          "evidence": "Page lines 15–38 give exact types/defaults, empty prefix, effects, error ordering and runtime/type distinction. Transcript lines 117–195 contain rendering; lines 207–210 record clean-copy example and source probes. See runs/docs-reference-candidate-1/reference.md, replay.json, and archived runs/docs-reference-candidate-1/transcript.md."
+        },
+        {
+          "id": "contract",
+          "status": "passed",
+          "evidence": "Page lines 15–38 give exact types/defaults, empty prefix, effects, error ordering and runtime/type distinction. Transcript lines 117–195 contain rendering; lines 207–210 record clean-copy example and source probes. See runs/docs-reference-candidate-1/reference.md, replay.json, and archived runs/docs-reference-candidate-1/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 15–38 give exact types/defaults, empty prefix, effects, error ordering and runtime/type distinction. Transcript lines 117–195 contain rendering; lines 207–210 record clean-copy example and source probes. See runs/docs-reference-candidate-1/reference.md, replay.json, and archived runs/docs-reference-candidate-1/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 15–38 give exact types/defaults, empty prefix, effects, error ordering and runtime/type distinction. Transcript lines 117–195 contain rendering; lines 207–210 record clean-copy example and source probes. See runs/docs-reference-candidate-1/reference.md, replay.json, and archived runs/docs-reference-candidate-1/transcript.md."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-reference-baseline-2",
+      "arm": "baseline",
+      "case": "docs-reference",
+      "sessionID": "ses_f4ed076ddffe6KqzL6rOz4xc7f",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "lookup",
+          "status": "passed",
+          "evidence": "Page lines 25–51 give exact defaults, empty prefix, null/runtime distinction and the blank-version invariant. Transcript line 207 records 9 output cases, 4 errors and clean-copy snippets; lines 128–195 contain rendering. See runs/docs-reference-baseline-2/reference.md, replay.json, and archived runs/docs-reference-baseline-2/transcript.md."
+        },
+        {
+          "id": "contract",
+          "status": "passed",
+          "evidence": "Page lines 25–51 give exact defaults, empty prefix, null/runtime distinction and the blank-version invariant. Transcript line 207 records 9 output cases, 4 errors and clean-copy snippets; lines 128–195 contain rendering. See runs/docs-reference-baseline-2/reference.md, replay.json, and archived runs/docs-reference-baseline-2/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 25–51 give exact defaults, empty prefix, null/runtime distinction and the blank-version invariant. Transcript line 207 records 9 output cases, 4 errors and clean-copy snippets; lines 128–195 contain rendering. See runs/docs-reference-baseline-2/reference.md, replay.json, and archived runs/docs-reference-baseline-2/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 25–51 give exact defaults, empty prefix, null/runtime distinction and the blank-version invariant. Transcript line 207 records 9 output cases, 4 errors and clean-copy snippets; lines 128–195 contain rendering. See runs/docs-reference-baseline-2/reference.md, replay.json, and archived runs/docs-reference-baseline-2/transcript.md."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-reference-candidate-2",
+      "arm": "candidate",
+      "case": "docs-reference",
+      "sessionID": "ses_f4ecf5f41ffeXpeBqBLy71rw0r",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "lookup",
+          "status": "passed",
+          "evidence": "Page lines 19–47 document exact contract and error ordering; lines 51–71 explicitly scope lookup expressions. Transcript line 156 records all ten table calls after fixing a probe parser; lines 178–259 contain rendering. No runnable recipe is promised. See runs/docs-reference-candidate-2/reference.md, replay.json, and archived runs/docs-reference-candidate-2/transcript.md."
+        },
+        {
+          "id": "contract",
+          "status": "passed",
+          "evidence": "Page lines 19–47 document exact contract and error ordering; lines 51–71 explicitly scope lookup expressions. Transcript line 156 records all ten table calls after fixing a probe parser; lines 178–259 contain rendering. No runnable recipe is promised. See runs/docs-reference-candidate-2/reference.md, replay.json, and archived runs/docs-reference-candidate-2/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 19–47 document exact contract and error ordering; lines 51–71 explicitly scope lookup expressions. Transcript line 156 records all ten table calls after fixing a probe parser; lines 178–259 contain rendering. No runnable recipe is promised. See runs/docs-reference-candidate-2/reference.md, replay.json, and archived runs/docs-reference-candidate-2/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 19–47 document exact contract and error ordering; lines 51–71 explicitly scope lookup expressions. Transcript line 156 records all ten table calls after fixing a probe parser; lines 178–259 contain rendering. No runnable recipe is promised. See runs/docs-reference-candidate-2/reference.md, replay.json, and archived runs/docs-reference-candidate-2/transcript.md."
+        }
+      ],
+      "qualifications": [
+        "An initial lookup-table parser failed and was corrected. Ad hoc Markdown lint first failed line lengths, then passed with MD013 excluded and non-table lengths checked separately; no project lint configuration existed."
+      ]
+    },
+    {
+      "id": "docs-reference-baseline-3",
+      "arm": "baseline",
+      "case": "docs-reference",
+      "sessionID": "ses_f4ecf5c6effeXJt0MfbmfXjWdw",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "failed",
+      "criteria": [
+        {
+          "id": "lookup",
+          "status": "passed",
+          "evidence": "Page lines 25–43 give defaults, empty prefix, trim, null/runtime distinction and unconditional blank-version error. Transcript line 116 records contract/snippet checks; lines 128–205 contain rendering. Author snippets ran with cwd: process.cwd(), not a clean secondary copy. See runs/docs-reference-baseline-3/reference.md, replay.json, and archived runs/docs-reference-baseline-3/transcript.md."
+        },
+        {
+          "id": "contract",
+          "status": "passed",
+          "evidence": "Page lines 25–43 give defaults, empty prefix, trim, null/runtime distinction and unconditional blank-version error. Transcript line 116 records contract/snippet checks; lines 128–205 contain rendering. Author snippets ran with cwd: process.cwd(), not a clean secondary copy. See runs/docs-reference-baseline-3/reference.md, replay.json, and archived runs/docs-reference-baseline-3/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 25–43 give defaults, empty prefix, trim, null/runtime distinction and unconditional blank-version error. Transcript line 116 records contract/snippet checks; lines 128–205 contain rendering. Author snippets ran with cwd: process.cwd(), not a clean secondary copy. See runs/docs-reference-baseline-3/reference.md, replay.json, and archived runs/docs-reference-baseline-3/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "failed",
+          "evidence": "Page lines 25–43 give defaults, empty prefix, trim, null/runtime distinction and unconditional blank-version error. Transcript line 116 records contract/snippet checks; lines 128–205 contain rendering. Author snippets ran with cwd: process.cwd(), not a clean secondary copy. See runs/docs-reference-baseline-3/reference.md, replay.json, and archived runs/docs-reference-baseline-3/transcript.md.",
+          "reason": "Step 5 requires runnable snippets in a clean copy. The author used its drafting workspace. The independent reviewer's later fresh-copy pass does not repair author workflow compliance."
+        }
+      ],
+      "qualifications": []
+    },
+    {
+      "id": "docs-reference-candidate-3",
+      "arm": "candidate",
+      "case": "docs-reference",
+      "sessionID": "ses_f4ecf1049ffe1mbPoiT6jgSVYA",
+      "readerOutcome": "passed",
+      "independentReplay": "passed",
+      "fullWorkflow": "passed",
+      "criteria": [
+        {
+          "id": "lookup",
+          "status": "passed",
+          "evidence": "Page lines 15–31 give exact defaults, empty prefix, effects, type/runtime distinction and error ordering. Transcript lines 116–118 record clean-copy output and source probes; lines 120–187 contain rendering. See runs/docs-reference-candidate-3/reference.md, replay.json, and archived runs/docs-reference-candidate-3/transcript.md."
+        },
+        {
+          "id": "contract",
+          "status": "passed",
+          "evidence": "Page lines 15–31 give exact defaults, empty prefix, effects, type/runtime distinction and error ordering. Transcript lines 116–118 record clean-copy output and source probes; lines 120–187 contain rendering. See runs/docs-reference-candidate-3/reference.md, replay.json, and archived runs/docs-reference-candidate-3/transcript.md."
+        },
+        {
+          "id": "grounding",
+          "status": "passed",
+          "evidence": "Page lines 15–31 give exact defaults, empty prefix, effects, type/runtime distinction and error ordering. Transcript lines 116–118 record clean-copy output and source probes; lines 120–187 contain rendering. See runs/docs-reference-candidate-3/reference.md, replay.json, and archived runs/docs-reference-candidate-3/transcript.md."
+        },
+        {
+          "id": "verification",
+          "status": "passed",
+          "evidence": "Page lines 15–31 give exact defaults, empty prefix, effects, type/runtime distinction and error ordering. Transcript lines 116–118 record clean-copy output and source probes; lines 120–187 contain rendering. See runs/docs-reference-candidate-3/reference.md, replay.json, and archived runs/docs-reference-candidate-3/transcript.md."
+        }
+      ],
+      "qualifications": []
+    }
+  ]
+}

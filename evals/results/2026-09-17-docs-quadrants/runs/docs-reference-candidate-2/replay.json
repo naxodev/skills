@@ -1,0 +1,75 @@
+{
+  "id": "docs-reference-candidate-2",
+  "status": "passed",
+  "startingContext": "Fresh four-file fixture, Bun available, package-root working directory",
+  "notationExcluded": "Import/signature sections are lookup notation, not runnable examples",
+  "observations": [
+    {
+      "action": "Execute the published example unchanged via Bun --eval from the stated package root",
+      "source": "import { releaseLabel } from './index.ts';\n",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel(' 2.4.0 ')",
+      "actual": "\"v2.4.0\"",
+      "expected": "\"v2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('2.4.0', undefined)",
+      "actual": "\"v2.4.0\"",
+      "expected": "\"v2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('2.4.0', {})",
+      "actual": "\"v2.4.0\"",
+      "expected": "\"v2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('2.4.0', { prefix: undefined })",
+      "actual": "\"v2.4.0\"",
+      "expected": "\"v2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('2.4.0', { prefix: 'Release ' })",
+      "actual": "\"Release 2.4.0\"",
+      "expected": "\"Release 2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('2.4.0', { prefix: '' })",
+      "actual": "\"2.4.0\"",
+      "expected": "\"2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('v2.4.0')",
+      "actual": "\"vv2.4.0\"",
+      "expected": "\"vv2.4.0\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel(' next build ')",
+      "actual": "\"vnext build\"",
+      "expected": "\"vnext build\""
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel('')",
+      "actual": "Error: version must not be blank",
+      "expected": "Error: version must not be blank"
+    },
+    {
+      "action": "Observe the documented return/error without changing the expression",
+      "expression": "releaseLabel(' \\t\\n ')",
+      "actual": "Error: version must not be blank",
+      "expected": "Error: version must not be blank"
+    }
+  ]
+}

@@ -1,0 +1,530 @@
+[
+  {
+    "id": "docs-tutorial-baseline-1",
+    "status": "completed",
+    "sessionID": "ses_f4ed394b2ffen54MslXilXUSau",
+    "info": {
+      "id": "ses_f4ed394b2ffen54MslXilXUSau",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 20814,
+        "output": 1910,
+        "reasoning": 90,
+        "cache": {
+          "read": 124928,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789678873464,
+        "updated": 1789678875021,
+        "idle": 1789678953188
+      },
+      "title": "Documentation quadrant docs-tutorial-baseline-1",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-tutorial-baseline-1-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-tutorial-candidate-1",
+    "status": "completed",
+    "sessionID": "ses_f4ed394b2ffdXiiek3czAuUVxT",
+    "info": {
+      "id": "ses_f4ed394b2ffdXiiek3czAuUVxT",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 21412,
+        "output": 1949,
+        "reasoning": 127,
+        "cache": {
+          "read": 106752,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789678873461,
+        "updated": 1789678874940,
+        "idle": 1789678952393
+      },
+      "title": "Documentation quadrant docs-tutorial-candidate-1",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-tutorial-candidate-1-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-tutorial-baseline-2",
+    "status": "completed",
+    "sessionID": "ses_f4ed394b2ffcWDr5MoGkUoZJn4",
+    "info": {
+      "id": "ses_f4ed394b2ffcWDr5MoGkUoZJn4",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 32279,
+        "output": 2492,
+        "reasoning": 281,
+        "cache": {
+          "read": 114944,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789678873457,
+        "updated": 1789678875026,
+        "idle": 1789678981513
+      },
+      "title": "Documentation quadrant docs-tutorial-baseline-2",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-tutorial-baseline-2-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-tutorial-candidate-2",
+    "status": "completed",
+    "sessionID": "ses_f4ed252c6ffeUcdYZxovtOzGUe",
+    "info": {
+      "id": "ses_f4ed252c6ffeUcdYZxovtOzGUe",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 21317,
+        "output": 1762,
+        "reasoning": 96,
+        "cache": {
+          "read": 126208,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789678955885,
+        "updated": 1789678956589,
+        "idle": 1789679039788
+      },
+      "title": "Documentation quadrant docs-tutorial-candidate-2",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-tutorial-candidate-2-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-tutorial-baseline-3",
+    "status": "completed",
+    "sessionID": "ses_f4ed252b5ffe2wYtis62nJ6M6g",
+    "info": {
+      "id": "ses_f4ed252b5ffe2wYtis62nJ6M6g",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 23087,
+        "output": 1728,
+        "reasoning": 108,
+        "cache": {
+          "read": 123008,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789678955915,
+        "updated": 1789678957114,
+        "idle": 1789679030197
+      },
+      "title": "Documentation quadrant docs-tutorial-baseline-3",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-tutorial-baseline-3-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-tutorial-candidate-3",
+    "status": "completed",
+    "sessionID": "ses_f4ed1dcc1ffePTrEPA8ysCNLmP",
+    "info": {
+      "id": "ses_f4ed1dcc1ffePTrEPA8ysCNLmP",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 23622,
+        "output": 1892,
+        "reasoning": 136,
+        "cache": {
+          "read": 166784,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789678986074,
+        "updated": 1789678986916,
+        "idle": 1789679077139
+      },
+      "title": "Documentation quadrant docs-tutorial-candidate-3",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-tutorial-candidate-3-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-reference-baseline-1",
+    "status": "completed",
+    "sessionID": "ses_f4ed1127affeuoLe5kGAH3m1Jo",
+    "info": {
+      "id": "ses_f4ed1127affeuoLe5kGAH3m1Jo",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 22221,
+        "output": 2513,
+        "reasoning": 103,
+        "cache": {
+          "read": 146432,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789679037862,
+        "updated": 1789679038757,
+        "idle": 1789679139851
+      },
+      "title": "Documentation quadrant docs-reference-baseline-1",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-reference-baseline-1-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-reference-candidate-1",
+    "status": "completed",
+    "sessionID": "ses_f4ed0ecd3ffe8breY5iC0lIZZe",
+    "info": {
+      "id": "ses_f4ed0ecd3ffe8breY5iC0lIZZe",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 21766,
+        "output": 2129,
+        "reasoning": 178,
+        "cache": {
+          "read": 125824,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789679047503,
+        "updated": 1789679048208,
+        "idle": 1789679142899
+      },
+      "title": "Documentation quadrant docs-reference-candidate-1",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-reference-candidate-1-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-reference-baseline-2",
+    "status": "completed",
+    "sessionID": "ses_f4ed076ddffe6KqzL6rOz4xc7f",
+    "info": {
+      "id": "ses_f4ed076ddffe6KqzL6rOz4xc7f",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 21502,
+        "output": 1969,
+        "reasoning": 108,
+        "cache": {
+          "read": 125440,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789679077703,
+        "updated": 1789679078421,
+        "idle": 1789679159798
+      },
+      "title": "Documentation quadrant docs-reference-baseline-2",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-reference-baseline-2-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-reference-candidate-2",
+    "status": "completed",
+    "sessionID": "ses_f4ecf5f41ffeXpeBqBLy71rw0r",
+    "info": {
+      "id": "ses_f4ecf5f41ffeXpeBqBLy71rw0r",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 25233,
+        "output": 2471,
+        "reasoning": 191,
+        "cache": {
+          "read": 126208,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789679149291,
+        "updated": 1789679150207,
+        "idle": 1789679253013
+      },
+      "title": "Documentation quadrant docs-reference-candidate-2",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-reference-candidate-2-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-reference-baseline-3",
+    "status": "completed",
+    "sessionID": "ses_f4ecf5c6effeXJt0MfbmfXjWdw",
+    "info": {
+      "id": "ses_f4ecf5c6effeXJt0MfbmfXjWdw",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 44697,
+        "output": 1850,
+        "reasoning": 12,
+        "cache": {
+          "read": 103040,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789679150261,
+        "updated": 1789679151132,
+        "idle": 1789679226370
+      },
+      "title": "Documentation quadrant docs-reference-baseline-3",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-reference-baseline-3-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  },
+  {
+    "id": "docs-reference-candidate-3",
+    "status": "completed",
+    "sessionID": "ses_f4ecf1049ffe1mbPoiT6jgSVYA",
+    "info": {
+      "id": "ses_f4ecf1049ffe1mbPoiT6jgSVYA",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 23437,
+        "output": 2037,
+        "reasoning": 107,
+        "cache": {
+          "read": 123648,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789679169535,
+        "updated": 1789679170696,
+        "idle": 1789679251348
+      },
+      "title": "Documentation quadrant docs-reference-candidate-3",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/quadrants-docs-reference-candidate-3-20260917"
+      }
+    },
+    "changedInputs": [],
+    "readmePreserved": true
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "docs-tutorial-baseline-2",
+  "status": "passed",
+  "startingContext": "Fresh four-file fixture; Bun available; terminal in fixture root; no installed dependencies or pre-created example",
+  "observations": [
+    {
+      "action": "Save first-label.ts",
+      "source": "import { releaseLabel } from './index.ts';\n\nconsole.log(releaseLabel(' 2.4.0 '));\n"
+    },
+    {
+      "command": "bun run first-label.ts",
+      "exit": 0,
+      "stdout": "v2.4.0\n",
+      "stderr": ""
+    },
+    {
+      "action": "Save first-label.ts",
+      "source": "import { releaseLabel } from './index.ts';\n\nconsole.log(releaseLabel(' 2.4.0 ', { prefix: 'Release ' }));\n"
+    },
+    {
+      "command": "bun run first-label.ts",
+      "exit": 0,
+      "stdout": "Release 2.4.0\n",
+      "stderr": ""
+    },
+    {
+      "action": "Follow the page's Build-prefix practice",
+      "stdout": "Build 2.4.0\n",
+      "exit": 0
+    }
+  ]
+}
