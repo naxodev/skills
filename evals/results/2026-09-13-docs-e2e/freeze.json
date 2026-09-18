@@ -1,0 +1,140 @@
+{
+  "frozenAt": "2026-09-13T20:05:18.311Z",
+  "baseline": "9ea67e23",
+  "candidate": "9b131265",
+  "model": {
+    "providerID": "openai",
+    "id": "gpt-6-astra",
+    "variant": "medium"
+  },
+  "agent": "build",
+  "concurrency": 3,
+  "timeoutMs": 900000,
+  "hashes": {
+    "candidate/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+    "candidate/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+    "candidate/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+    "docs-concept/operations.md": "82f15b7031a426d2d4741ec815de0d98ff33626ce3384895a8dc5a19425dff2a",
+    "docs-concept/README.md": "dfc3bf33fdfa9791c88d19d4c7ac6ea393f60ee9e29dc26d226a0dc2ba9b10b9",
+    "docs-reader-start/card.ts": "976836bc7e10fecf19d5adecd15cf73e686fc037dcdc6d3ff556533f9197bfb1",
+    "docs-reader-start/README.md": "2576e1065c596ecf781262b3c6f7563da2e7347db5d8552d0b5afe55f53ec724",
+    "docs-reader-start/configs/release.example.json": "0ceec04ddc477a0ef33d4bd781aeae02119a07d5173959ecbb7c8c5dd332f23b",
+    "docs-reader-start/configs/preview.json": "80a9a41ecf090f32c5fa8b7057c44d22b584b8e17fa900a2af59717331fd74e9",
+    "runtime.txt": "fc83e01de28cb3e96cb58a7986e5091ccdc4b97382a58feb42e1e9dbff6f7228",
+    "baseline/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+    "baseline/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+    "baseline/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b",
+    "PLAN.md": "7bd44762f804b249fde448c978541ee68a0736554981c6a6bac04d9a934ffbc0",
+    "executed-run.ts": "6aaa1f123110ea42bbcf12aa597b08efac6e3c36459f5dc4d4d69658f67c4106"
+  },
+  "trials": [
+    {
+      "id": "docs-reader-start-baseline-1",
+      "fixture": "docs-reader-start",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-baseline-1-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "guide.md",
+      "promptSha256": "42bff5d31df00152f3510c7bb2bc89417305571dae835ee3d6afb41663dffec8"
+    },
+    {
+      "id": "docs-reader-start-candidate-1",
+      "fixture": "docs-reader-start",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-candidate-1-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "guide.md",
+      "promptSha256": "42bff5d31df00152f3510c7bb2bc89417305571dae835ee3d6afb41663dffec8"
+    },
+    {
+      "id": "docs-reader-start-baseline-2",
+      "fixture": "docs-reader-start",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-baseline-2-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "guide.md",
+      "promptSha256": "42bff5d31df00152f3510c7bb2bc89417305571dae835ee3d6afb41663dffec8"
+    },
+    {
+      "id": "docs-reader-start-candidate-2",
+      "fixture": "docs-reader-start",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-candidate-2-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "guide.md",
+      "promptSha256": "42bff5d31df00152f3510c7bb2bc89417305571dae835ee3d6afb41663dffec8"
+    },
+    {
+      "id": "docs-reader-start-baseline-3",
+      "fixture": "docs-reader-start",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-baseline-3-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "guide.md",
+      "promptSha256": "42bff5d31df00152f3510c7bb2bc89417305571dae835ee3d6afb41663dffec8"
+    },
+    {
+      "id": "docs-reader-start-candidate-3",
+      "fixture": "docs-reader-start",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-candidate-3-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "guide.md",
+      "promptSha256": "42bff5d31df00152f3510c7bb2bc89417305571dae835ee3d6afb41663dffec8"
+    },
+    {
+      "id": "docs-concept-baseline-1",
+      "fixture": "docs-concept",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-baseline-1-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "explanation.md",
+      "promptSha256": "bec03bc41eb84baeeb59badc4a13a9ad0d1946c366bd6ec7cca12b56b22d220b"
+    },
+    {
+      "id": "docs-concept-candidate-1",
+      "fixture": "docs-concept",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-candidate-1-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "explanation.md",
+      "promptSha256": "bec03bc41eb84baeeb59badc4a13a9ad0d1946c366bd6ec7cca12b56b22d220b"
+    },
+    {
+      "id": "docs-concept-baseline-2",
+      "fixture": "docs-concept",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-baseline-2-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "explanation.md",
+      "promptSha256": "bec03bc41eb84baeeb59badc4a13a9ad0d1946c366bd6ec7cca12b56b22d220b"
+    },
+    {
+      "id": "docs-concept-candidate-2",
+      "fixture": "docs-concept",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-candidate-2-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "explanation.md",
+      "promptSha256": "bec03bc41eb84baeeb59badc4a13a9ad0d1946c366bd6ec7cca12b56b22d220b"
+    },
+    {
+      "id": "docs-concept-baseline-3",
+      "fixture": "docs-concept",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-baseline-3-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "explanation.md",
+      "promptSha256": "bec03bc41eb84baeeb59badc4a13a9ad0d1946c366bd6ec7cca12b56b22d220b"
+    },
+    {
+      "id": "docs-concept-candidate-3",
+      "fixture": "docs-concept",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-candidate-3-20260913",
+      "prompt": "Read skills/writing-technical-docs/SKILL.md directly and follow its local reference files, not an installed skill. Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification. Work offline using the supplied source files and the local skill. You may run local fixture commands as part of verification and update the README entry point. Keep the implementation, decision record, and skill files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "output": "explanation.md",
+      "promptSha256": "bec03bc41eb84baeeb59badc4a13a9ad0d1946c366bd6ec7cca12b56b22d220b"
+    }
+  ]
+}

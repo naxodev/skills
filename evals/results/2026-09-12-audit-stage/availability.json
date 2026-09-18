@@ -1,0 +1,46 @@
+[
+  {
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "attempt": 1,
+    "label": "25ff8cad-2b4a-4b84-bb93-9377d2908ab7",
+    "sessionID": "ses_f6a3990d2ffeoauQnhd2tmrQ51",
+    "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-25ff8cad-2b4a-4b84-bb93-9377d2908ab7",
+    "elapsedMs": 5349,
+    "error": null,
+    "info": {
+      "id": "ses_f6a3990d2ffeoauQnhd2tmrQ51",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "grok-4.6",
+        "providerID": "xai",
+        "variant": "high"
+      },
+      "cost": 0.026624,
+      "tokens": {
+        "input": 13103,
+        "output": 1,
+        "reasoning": 26,
+        "cache": {
+          "read": 512,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789219204937,
+        "updated": 1789219205733,
+        "idle": 1789219210210
+      },
+      "title": "availability check",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-25ff8cad-2b4a-4b84-bb93-9377d2908ab7"
+      }
+    },
+    "rawSha256": "28b27fbe3edfc288acddebdab47a0b835a393d30b9650a2828c5ec1b2661fa7a"
+  }
+]

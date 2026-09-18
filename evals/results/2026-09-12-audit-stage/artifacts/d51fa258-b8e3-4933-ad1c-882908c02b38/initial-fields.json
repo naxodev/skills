@@ -1,0 +1,70 @@
+[
+  {
+    "pointer": "/title",
+    "value": "Post-write invalidation eliminates all stale reads"
+  },
+  {
+    "pointer": "/eyebrow",
+    "value": "Moss Catalog"
+  },
+  {
+    "pointer": "/dek",
+    "value": "Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward."
+  },
+  {
+    "pointer": "/meta",
+    "value": "Deterministic modeled examples"
+  },
+  {
+    "pointer": "/footer",
+    "value": "The model uses one shared Map, without a generation check for readers."
+  },
+  {
+    "pointer": "/sections/0/eyebrow",
+    "value": "The setting"
+  },
+  {
+    "pointer": "/sections/0/title",
+    "value": "Early deletion left a window for stale fills"
+  },
+  {
+    "pointer": "/sections/0/content",
+    "value": "<p class=\"lead\">The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.</p>"
+  },
+  {
+    "pointer": "/sections/1/eyebrow",
+    "value": "The change"
+  },
+  {
+    "pointer": "/sections/1/title",
+    "value": "Delete only after the write fulfills"
+  },
+  {
+    "pointer": "/sections/1/content",
+    "value": "<p>The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.</p>"
+  },
+  {
+    "pointer": "/sections/2/eyebrow",
+    "value": "The boundary"
+  },
+  {
+    "pointer": "/sections/2/title",
+    "value": "An older snapshot can arrive after deletion"
+  },
+  {
+    "pointer": "/sections/2/content",
+    "value": "<p>The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.</p>"
+  },
+  {
+    "pointer": "/sections/3/eyebrow",
+    "value": "The short version"
+  },
+  {
+    "pointer": "/sections/3/title",
+    "value": "Close one cache-fill window"
+  },
+  {
+    "pointer": "/sections/3/content",
+    "value": "<p>Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.</p>"
+  }
+]

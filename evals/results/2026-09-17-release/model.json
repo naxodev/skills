@@ -1,0 +1,86 @@
+{
+  "id": "gpt-6-astra",
+  "modelID": "gpt-6-astra",
+  "providerID": "openai",
+  "family": "gpt-astra",
+  "name": "GPT-6 Astra",
+  "package": "@opencode/ai/providers/openai",
+  "transport": "websocket",
+  "settings": {
+    "baseURL": "https://chatgpt.com/backend-api/codex"
+  },
+  "capabilities": {
+    "tools": true,
+    "input": [
+      "text",
+      "image",
+      "pdf"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "variants": [
+    {
+      "id": "low",
+      "settings": {
+        "reasoningEffort": "low",
+        "reasoningSummary": "auto",
+        "include": [
+          "reasoning.encrypted_content"
+        ]
+      }
+    },
+    {
+      "id": "medium",
+      "settings": {
+        "reasoningEffort": "medium",
+        "reasoningSummary": "auto",
+        "include": [
+          "reasoning.encrypted_content"
+        ]
+      }
+    },
+    {
+      "id": "high",
+      "settings": {
+        "reasoningEffort": "high",
+        "reasoningSummary": "auto",
+        "include": [
+          "reasoning.encrypted_content"
+        ]
+      }
+    },
+    {
+      "id": "xhigh",
+      "settings": {
+        "reasoningEffort": "xhigh",
+        "reasoningSummary": "auto",
+        "include": [
+          "reasoning.encrypted_content"
+        ]
+      }
+    },
+    {
+      "id": "max",
+      "settings": {
+        "reasoningEffort": "max",
+        "reasoningSummary": "auto",
+        "include": [
+          "reasoning.encrypted_content"
+        ]
+      }
+    }
+  ],
+  "time": {
+    "released": 1788480000000
+  },
+  "cost": [],
+  "status": "active",
+  "enabled": true,
+  "limit": {
+    "context": 1050000,
+    "input": 922000,
+    "output": 128000
+  }
+}

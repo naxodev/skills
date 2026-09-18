@@ -1,0 +1,18 @@
+{
+  "accepted": true,
+  "admittedAt": "2026-09-12T14:03:42.146Z",
+  "authority": "parent source-level adjudication",
+  "parentDecision": "PARENT-ADJUDICATION.md",
+  "modelAcceptance": "initial 0/3; revised model omissions/prose disputed; not model artifact acceptance",
+  "parentFactualAcceptance": "3/3",
+  "editorialStatus": "optional concerns remain separate from factual acceptance",
+  "sha256": {
+    "PARENT-ADJUDICATION.md": "8bb45b58ff061af4f409b468d43a50edc5ad69a10409de9865df7fe8db0c3de0",
+    "controls/retry-correct.json": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134",
+    "controls/retry-flawed.json": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d",
+    "controls/transaction-correct.json": "ce14afd0b32374ef6fe7daec5a2709101d23c30499b79085b3ccc97db2243054",
+    "controls/transaction-flawed.json": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb",
+    "controls/cache-correct.json": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef",
+    "controls/cache-flawed.json": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec"
+  }
+}

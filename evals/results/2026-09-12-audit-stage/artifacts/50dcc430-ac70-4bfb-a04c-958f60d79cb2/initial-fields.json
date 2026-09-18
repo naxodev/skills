@@ -1,0 +1,70 @@
+[
+  {
+    "pointer": "/title",
+    "value": "Payment now commits before publication is attempted"
+  },
+  {
+    "pointer": "/eyebrow",
+    "value": "Lantern Ledger"
+  },
+  {
+    "pointer": "/dek",
+    "value": "A failed commit now prevents publication, while publication failure leaves a committed payment intact."
+  },
+  {
+    "pointer": "/meta",
+    "value": "Deterministic modeled examples"
+  },
+  {
+    "pointer": "/footer",
+    "value": "The supplied code has no durable outbox or delivery deduplication."
+  },
+  {
+    "pointer": "/sections/0/eyebrow",
+    "value": "The setting"
+  },
+  {
+    "pointer": "/sections/0/title",
+    "value": "Publication used to precede commit"
+  },
+  {
+    "pointer": "/sections/0/content",
+    "value": "<p class=\"lead\">The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.</p>"
+  },
+  {
+    "pointer": "/sections/1/eyebrow",
+    "value": "The change"
+  },
+  {
+    "pointer": "/sections/1/title",
+    "value": "Wait for the transaction to fulfill"
+  },
+  {
+    "pointer": "/sections/1/content",
+    "value": "<p>The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.</p>"
+  },
+  {
+    "pointer": "/sections/2/eyebrow",
+    "value": "The boundary"
+  },
+  {
+    "pointer": "/sections/2/title",
+    "value": "The database cannot roll back publication failures"
+  },
+  {
+    "pointer": "/sections/2/content",
+    "value": "<p>The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.</p>"
+  },
+  {
+    "pointer": "/sections/3/eyebrow",
+    "value": "The short version"
+  },
+  {
+    "pointer": "/sections/3/title",
+    "value": "Commit first, with a remaining delivery gap"
+  },
+  {
+    "pointer": "/sections/3/content",
+    "value": "<p>The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.</p>"
+  }
+]

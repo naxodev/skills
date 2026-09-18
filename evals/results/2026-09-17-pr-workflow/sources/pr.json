@@ -1,0 +1,8 @@
+{
+  "number": 42,
+  "title": "fix: refresh credentials before dispatch",
+  "body": "The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch. Streaming requests remain on a separate path and need a follow-up. The extra clock read is accepted to avoid the initial failed request.",
+  "commits": [{ "messageHeadline": "fix: refresh credentials before dispatch" }],
+  "files": [{ "path": "client.ts", "status": "modified" }],
+  "diff": "diff --git a/client.ts b/client.ts\n--- a/client.ts\n+++ b/client.ts\n@@ -1,5 +1,5 @@\n export async function request(client, payload) {\n+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;\n }\n"
+}

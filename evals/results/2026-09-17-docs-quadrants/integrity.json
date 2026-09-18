@@ -1,0 +1,434 @@
+[
+  {
+    "id": "docs-tutorial-baseline-1",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-tutorial-candidate-1",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-tutorial-baseline-2",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-tutorial-candidate-2",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-tutorial-baseline-3",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-tutorial-candidate-3",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-reference-baseline-1",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-reference-candidate-1",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-reference-baseline-2",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-reference-candidate-2",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-reference-baseline-3",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  },
+  {
+    "id": "docs-reference-candidate-3",
+    "reads": [
+      {
+        "file": "skills/writing-technical-docs/SKILL.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "skills/writing-technical-docs/STYLE.md",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "package.json",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "index.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "release-label.ts",
+        "status": "exact frozen content read"
+      },
+      {
+        "file": "README.md",
+        "status": "exact frozen content read"
+      }
+    ],
+    "toolNames": [
+      "read",
+      "shell",
+      "patch"
+    ],
+    "installedSkillsLoaded": false,
+    "historyConsulted": false
+  }
+]

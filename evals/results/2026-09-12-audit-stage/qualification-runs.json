@@ -1,0 +1,266 @@
+[
+  {
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "attempt": 1,
+    "label": "78cf910d-7943-4630-a5c6-1bfbf6e08139",
+    "sessionID": "ses_f6a3900ecffeLeKzJGkui5g0aq",
+    "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-78cf910d-7943-4630-a5c6-1bfbf6e08139",
+    "elapsedMs": 16721,
+    "error": null,
+    "info": {
+      "id": "ses_f6a3900ecffeLeKzJGkui5g0aq",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "grok-4.6",
+        "providerID": "xai",
+        "variant": "high"
+      },
+      "cost": 0.032208,
+      "tokens": {
+        "input": 13309,
+        "output": 146,
+        "reasoning": 743,
+        "cache": {
+          "read": 512,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789219241789,
+        "updated": 1789219242786,
+        "idle": 1789219258433
+      },
+      "title": "availability check",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-78cf910d-7943-4630-a5c6-1bfbf6e08139"
+      }
+    },
+    "rawSha256": "db51d79b97b2fbeebfcd8c075eba5a0b07086d6c0fc11882b7fc320faff224cf"
+  },
+  {
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "attempt": 2,
+    "label": "8f1c107f-2037-4737-9864-463d2a520004",
+    "sessionID": "ses_f6a38bd9cffetDxcSCyKkrfwMM",
+    "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-8f1c107f-2037-4737-9864-463d2a520004",
+    "elapsedMs": 9122,
+    "error": null,
+    "info": {
+      "id": "ses_f6a38bd9cffetDxcSCyKkrfwMM",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "grok-4.6",
+        "providerID": "xai",
+        "variant": "high"
+      },
+      "cost": 0.029382,
+      "tokens": {
+        "input": 13279,
+        "output": 145,
+        "reasoning": 283,
+        "cache": {
+          "read": 512,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789219259017,
+        "updated": 1789219260172,
+        "idle": 1789219268074
+      },
+      "title": "availability check",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-8f1c107f-2037-4737-9864-463d2a520004"
+      }
+    },
+    "rawSha256": "33a21ee8555b87a9772d37674f76b7067871376e743468b7d60f93ba483c2d6f"
+  },
+  {
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "attempt": 3,
+    "label": "c10e5024-2a90-4185-88ed-18dca05a43fb",
+    "sessionID": "ses_f6a389867ffeTUlgCdt2ccMa5f",
+    "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-c10e5024-2a90-4185-88ed-18dca05a43fb",
+    "elapsedMs": 7808,
+    "error": null,
+    "info": {
+      "id": "ses_f6a389867ffeTUlgCdt2ccMa5f",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "grok-4.6",
+        "providerID": "xai",
+        "variant": "high"
+      },
+      "cost": 0.029196,
+      "tokens": {
+        "input": 13303,
+        "output": 113,
+        "reasoning": 276,
+        "cache": {
+          "read": 512,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789219268535,
+        "updated": 1789219269408,
+        "idle": 1789219276272
+      },
+      "title": "availability check",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-c10e5024-2a90-4185-88ed-18dca05a43fb"
+      }
+    },
+    "rawSha256": "a6b40faf5958911263ce86e9e81d61fc9374d3b864110b66e062ee1a61f031f8"
+  },
+  {
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "attempt": 4,
+    "label": "16a6e6d3-2107-4ac5-9008-0755ca32f973",
+    "sessionID": "ses_f6a387851ffeyzjm7jqVM2fii2",
+    "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-16a6e6d3-2107-4ac5-9008-0755ca32f973",
+    "elapsedMs": 8332,
+    "error": null,
+    "info": {
+      "id": "ses_f6a387851ffeyzjm7jqVM2fii2",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "grok-4.6",
+        "providerID": "xai",
+        "variant": "high"
+      },
+      "cost": 0.029022,
+      "tokens": {
+        "input": 13124,
+        "output": 118,
+        "reasoning": 291,
+        "cache": {
+          "read": 640,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789219276748,
+        "updated": 1789219277684,
+        "idle": 1789219285009
+      },
+      "title": "availability check",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-16a6e6d3-2107-4ac5-9008-0755ca32f973"
+      }
+    },
+    "rawSha256": "e86606ff0abda9f6f93f99c3ccc264e7161943f0c71145afa43cff014e2b0fa3"
+  },
+  {
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "attempt": 5,
+    "label": "c328958c-c7d7-4a0c-9c24-a3277b58201f",
+    "sessionID": "ses_f6a385651fferUJsN6pGkfrgFd",
+    "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-c328958c-c7d7-4a0c-9c24-a3277b58201f",
+    "elapsedMs": 8775,
+    "error": null,
+    "info": {
+      "id": "ses_f6a385651fferUJsN6pGkfrgFd",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "grok-4.6",
+        "providerID": "xai",
+        "variant": "high"
+      },
+      "cost": 0.029554,
+      "tokens": {
+        "input": 13326,
+        "output": 144,
+        "reasoning": 297,
+        "cache": {
+          "read": 512,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789219285454,
+        "updated": 1789219286382,
+        "idle": 1789219294151
+      },
+      "title": "availability check",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-c328958c-c7d7-4a0c-9c24-a3277b58201f"
+      }
+    },
+    "rawSha256": "698b24bce185a8dadc9bde4175c39918e8bcebbc5243b1031c0dd9e8e9029ad6"
+  },
+  {
+    "model": {
+      "providerID": "xai",
+      "id": "grok-4.6",
+      "variant": "high"
+    },
+    "attempt": 6,
+    "label": "8f065741-2c21-4b2a-8691-abef3135fedf",
+    "sessionID": "ses_f6a38328dffeHUxbXamr32mMFn",
+    "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-8f065741-2c21-4b2a-8691-abef3135fedf",
+    "elapsedMs": 8798,
+    "error": null,
+    "info": {
+      "id": "ses_f6a38328dffeHUxbXamr32mMFn",
+      "projectID": "global",
+      "agent": "build",
+      "model": {
+        "id": "grok-4.6",
+        "providerID": "xai",
+        "variant": "high"
+      },
+      "cost": 0.029184,
+      "tokens": {
+        "input": 13285,
+        "output": 127,
+        "reasoning": 266,
+        "cache": {
+          "read": 512,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789219294608,
+        "updated": 1789219295587,
+        "idle": 1789219303331
+      },
+      "title": "availability check",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-screen-8f065741-2c21-4b2a-8691-abef3135fedf"
+      }
+    },
+    "rawSha256": "8c9041478f0b9ab5c87bf69479d4fa5737fe715d30ad2830584784e5e1014bbb"
+  }
+]

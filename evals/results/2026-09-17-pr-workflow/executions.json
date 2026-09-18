@@ -1,0 +1,2371 @@
+[
+  {
+    "id": "pr-grounding-quality-1",
+    "parent": {
+      "id": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 32811,
+        "output": 2391,
+        "reasoning": 85,
+        "cache": {
+          "read": 194816,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656625376,
+        "updated": 1789656627097,
+        "idle": 1789656770249
+      },
+      "title": "Walkthrough workflow pr-grounding-quality-1",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f5026408dffeQ8m3H0Xi1tOW5k",
+        "parentID": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11411,
+          "output": 594,
+          "reasoning": 0,
+          "cache": {
+            "read": 14592,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656678292,
+          "updated": 1789656678297,
+          "idle": 1789656700261
+        },
+        "title": "Diff tour report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f5026408dffdLqC1bUvEf5p44U",
+        "parentID": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11345,
+          "output": 385,
+          "reasoning": 0,
+          "cache": {
+            "read": 14592,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656678299,
+          "updated": 1789656678302,
+          "idle": 1789656695155
+        },
+        "title": "Tradeoffs evidence report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f50264078ffemBa5BT7etqsKhW",
+        "parentID": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13271,
+          "output": 69,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656678381,
+          "updated": 1789656678387,
+          "idle": 1789656684806
+        },
+        "title": "Alternatives evidence report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f5026408effe5STd4v2dH6BO4f",
+        "parentID": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11343,
+          "output": 415,
+          "reasoning": 0,
+          "cache": {
+            "read": 14592,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656678304,
+          "updated": 1789656678307,
+          "idle": 1789656695634
+        },
+        "title": "Before state report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "frozenSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "frozenSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656678229,
+          "ran": 1789656678234,
+          "completed": 1789656695637
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before state report",
+          "prompt": "Read-only offline report agent 'before'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json. No writes, no network, no GitHub. Return 200–400 words on prior code state and gap motivating PR, grounded only in fixture diff/body. Distinguish author assertions from diff evidence; do not speculate."
+        },
+        "metadata": {
+          "sessionID": "ses_f5026408effe5STd4v2dH6BO4f",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656678236,
+          "ran": 1789656678241,
+          "completed": 1789656700265
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour report",
+          "prompt": "Read-only offline report agent 'diff-tour'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json. No writes/network/GitHub. Walk each changed file in 2–4 narrative sentences grouped new/modified, plus table-ready file list with one-sentence summary. Return verbatim 2–4 load-bearing trimmed hunks with explanations if evidence supports it; fixture has only one hunk, so report that honestly and provide distinct essential excerpts without inventing code. Identify central logic."
+        },
+        "metadata": {
+          "sessionID": "ses_f5026408dffeQ8m3H0Xi1tOW5k",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656678244,
+          "ran": 1789656678250,
+          "completed": 1789656695161
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs evidence report",
+          "prompt": "Read-only offline report agent 'tradeoffs'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json. No writes/network/GitHub. Return documented limitations, edge cases, known gaps from body/diff comments/tests. For each capture choice AND stated reason; explicitly distinguish unavailable reasons and author claims from code evidence. Do not invent."
+        },
+        "metadata": {
+          "sessionID": "ses_f5026408dffdLqC1bUvEf5p44U",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656678252,
+          "ran": 1789656678275,
+          "completed": 1789656684809
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives evidence report",
+          "prompt": "Read-only offline report agent 'alternatives'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json. No writes/network/GitHub. Examine supplied body, commits, diff for approaches explicitly considered and rejected. Use only local fixture; do not fetch linked issues. If none documented return 'none documented'. Do not mistake previous buggy order for a documented rejected alternative."
+        },
+        "metadata": {
+          "sessionID": "ses_f50264078ffemBa5BT7etqsKhW",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789656700261,
+      1789656695155,
+      1789656684806,
+      1789656695634
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789656717970,
+      "ran": 1789656741280,
+      "completed": 1789656741288
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789656747272,
+          "ran": 1789656747279,
+          "completed": 1789656747361
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-42-manifest.json --output work/pr-42-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789656747282,
+          "ran": 1789656747293,
+          "completed": 1789656748098
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test && bun run validate\n$ tsc --noEmit\nVersion 5.9.3\ntsc: The TypeScript Compiler - Version 5.9.3\n\nCOMMON COMMANDS\n\n  tsc\n  Compiles the current project (tsconfig.json in the working directory.)\n\n  tsc \n[Full output retained in visible export.]\nr for all emitted files.\n\n--removeComments\nDisable emitting comments.\ntype: boolean\ndefault: false\n\n--strict\nEnable all strict type-checking options.\ntype: boolean\ndefault: false\n\n--types\nSpecify type package names to be included without being referenced in a source file.\n\n--esModuleInterop\nEmit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility.\ntype: boolean\ndefault: false\n\nYou can learn about all of the compiler options at https://aka.ms/tsc\n\nerror: script \"typecheck\" exited with code 1\nerror: script \"check\" exited with code 1\n\nCommand exited with code 1.",
+        "fullOutputSha256": "a1573c13f19f12c47571871ab0717dc0de2b4c1576a614f2f82de5fe952311d9"
+      },
+      {
+        "time": {
+          "created": 1789656753581,
+          "ran": 1789656753586,
+          "completed": 1789656753834
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-42-manifest.json --audio work/pr-42-audio.json --output work/pr-42-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr-42-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "0a39725f9fcb5b5a1fe6f0fa66c818eb3d515d98163bbebefea9413284430247"
+      },
+      {
+        "time": {
+          "created": 1789656753588,
+          "ran": 1789656753606,
+          "completed": 1789656754152
+        },
+        "input": {
+          "command": "bun run lint",
+          "timeout": 120000
+        },
+        "output": "$ eslint .\n\nOops! Something went wrong! :(\n\nESLint: 9.39.5\n\nESLint couldn't find an eslint.config.(js|mjs|cjs) file.\n\nFrom ESLint v9.0.0, the default configuration file is now eslint.config.js.\nIf you are using a .eslintrc.* file, please follow the migration guide\nto update your configuration file to the new format:\n\nhttps://eslint.org/docs/latest/use/configure/migration-guide\n\nIf you still have problems after following the migration guide, please stop by\nhttps://eslint.org/chat/help to chat with the team.\n\n\nCommand exited with code 2.",
+        "fullOutputSha256": "1ce3ac8f4b1c01a086bcb65fb310244ada4ee8f234c330876dac66132b8416bf"
+      },
+      {
+        "time": {
+          "created": 1789656759325,
+          "ran": 1789656762570,
+          "completed": 1789656762638
+        },
+        "input": {
+          "command": "bun -e 'import {readFileSync, realpathSync, existsSync} from \"node:fs\"; const p=\"work/pr-42-walkthrough.html\"; const h=readFileSync(p,\"utf8\"); const m=JSON.parse(readFileSync(\"work/pr-42-manifest.json\",\"utf8\")); if(m.sections.length!==4 || /\\{\\{(?:CODE|DIAGRAM):/.test(h) || /<audio\\b/i.test(h) || /<(?:script|link)\\b[^>]*(?:src|href)=[\"\\x27]https?:/i.test(h) || existsSync(\"work/pr-42-audio.json\")) throw new Error(\"Artifact verification failed\"); console.log(\"Verified: four sections, resolved code blocks, no audio, no remote script/style dependencies.\"); console.log(realpathSync(p));'"
+        },
+        "output": "Verified: four sections, resolved code blocks, no audio, no remote script/style dependencies.\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "069a4e7448f21980f072cd21c7f5887d562522a71d4433348a46399ff307dc35"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "The four reports agree: the fix moves refresh before dispatch. The author mentions an “extra clock read,” but the diff shows one before and after. I’ll preserve that distinction and the documented streaming follow-up in the four-section walkthrough.\n",
+      "Created the full text-only walkthrough using the local skill, linked style instructions, and all four parallel reports.\n\n[Walkthrough HTML](work/pr-42-walkthrough.html)\n\nReal path:\n```text\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr-42-walkthrough.html\n```\n\nVerified the build, four-section structure, resolved code blocks, and absence of audio or remote script/style dependencies. No network sources or desktop applications were opened.\n\nRepository checks were blocked: `bun run check` found no TypeScript configuration; `bun run lint` found no ESLint configuration."
+    ],
+    "artifact": {
+      "manifestSha256": "db47fd4b17980a2459abd93c0ddadeabb005cfd547e8f5159590b3a55f1e5c64",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "The request went first"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "The first request after expiry paid the cost"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Make refresh a prerequisite for dispatch"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "The same refresh, at the useful time"
+        }
+      ],
+      "words": 505,
+      "codeBlocks": 2,
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "ae0d5b8fe040a564a06f6942f8c1214fb370ff26efc4183fed9a1a38b1141cbf",
+      "rebuiltHTMLSha256": "ae0d5b8fe040a564a06f6942f8c1214fb370ff26efc4183fed9a1a38b1141cbf",
+      "identicalRebuild": true
+    }
+  },
+  {
+    "id": "pr-grounding-quality-2",
+    "parent": {
+      "id": "ses_f50270f54ffeN3A6wIZbrP6mor",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 52397,
+        "output": 2459,
+        "reasoning": 94,
+        "cache": {
+          "read": 201856,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656625372,
+        "updated": 1789656627085,
+        "idle": 1789656775458
+      },
+      "title": "Walkthrough workflow pr-grounding-quality-2",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f5026381dffevLwAqLqNUs3epj",
+        "parentID": "ses_f50270f54ffeN3A6wIZbrP6mor",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13299,
+          "output": 448,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656680445,
+          "updated": 1789656680449,
+          "idle": 1789656698833
+        },
+        "title": "Report prior credential behavior",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f5026381dffdw629sPEpKlf6vf",
+        "parentID": "ses_f50270f54ffeN3A6wIZbrP6mor",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13317,
+          "output": 405,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656680451,
+          "updated": 1789656680455,
+          "idle": 1789656697873
+        },
+        "title": "Report credential diff tour",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f5026381dffc4jqbfJVw2DtepK",
+        "parentID": "ses_f50270f54ffeN3A6wIZbrP6mor",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13291,
+          "output": 268,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656680457,
+          "updated": 1789656680460,
+          "idle": 1789656693423
+        },
+        "title": "Report documented credential tradeoffs",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f502637a9ffejv7vsXSaDvdFWX",
+        "parentID": "ses_f50270f54ffeN3A6wIZbrP6mor",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13265,
+          "output": 137,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656680573,
+          "updated": 1789656680578,
+          "idle": 1789656690865
+        },
+        "title": "Report documented credential alternatives",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "frozenSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "frozenSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656680396,
+          "ran": 1789656680400,
+          "completed": 1789656698836
+        },
+        "input": {
+          "agent": "general",
+          "description": "Report prior credential behavior",
+          "prompt": "Read-only offline report; do not write files or use network/GitHub. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917/work/pr.json. Act as 'before' report for local pr-walkthrough skill: state before PR, gap/bug and author framing, no speculation. Return 200–400 words grounded only in this evidence. Distinguish author claims from diff evidence. Return report, no files."
+        },
+        "metadata": {
+          "sessionID": "ses_f5026381dffevLwAqLqNUs3epj",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656680402,
+          "ran": 1789656680407,
+          "completed": 1789656697878
+        },
+        "input": {
+          "agent": "general",
+          "description": "Report credential diff tour",
+          "prompt": "Read-only offline report; no writes or network/GitHub. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917/work/pr.json. Act as 'diff-tour': each changed file 2–4 narrative sentences, grouped new vs modified, central logic, table-ready one-sentence summary per file. Return verbatim 2–4 most load-bearing trimmed hunks paired with explanations if supported; if single tiny hunk, explicitly report that rather than fabricate more. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f5026381dffdw629sPEpKlf6vf",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656680410,
+          "ran": 1789656680413,
+          "completed": 1789656693426
+        },
+        "input": {
+          "agent": "general",
+          "description": "Report documented credential tradeoffs",
+          "prompt": "Read-only offline report; no writes or network/GitHub. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917/work/pr.json. Act as 'tradeoffs': documented limitations, edge cases, known gaps only from PR body, diff comments, tests. Each choice AND reason; mark reasons not supplied. Distinguish author's extra clock read claim from diff showing moved identical condition. No invented issues. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f5026381dffc4jqbfJVw2DtepK",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656680414,
+          "ran": 1789656680528,
+          "completed": 1789656690868
+        },
+        "input": {
+          "agent": "general",
+          "description": "Report documented credential alternatives",
+          "prompt": "Read-only offline report; no writes or network/GitHub. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917/work/pr.json. Act as 'alternatives': rejected approaches only from supplied PR body, commits, issue text or code comments. Do not fetch anything. If none documented return 'none documented' and evidence scope. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502637a9ffejv7vsXSaDvdFWX",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789656698833,
+      1789656697873,
+      1789656693423,
+      1789656690865
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789656719385,
+      "ran": 1789656746387,
+      "completed": 1789656746393
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789656752125,
+          "ran": 1789656752131,
+          "completed": 1789656752184
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-42-manifest.json --output work/pr-42-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789656752134,
+          "ran": 1789656752177,
+          "completed": 1789656752632
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test && bun run validate\n$ tsc --noEmit\nVersion 5.9.3\ntsc: The TypeScript Compiler - Version 5.9.3\n\nCOMMON COMMANDS\n\n  tsc\n  Compiles the current project (tsconfig.json in the working directory.)\n\n  tsc \n[Full output retained in visible export.]\nr for all emitted files.\n\n--removeComments\nDisable emitting comments.\ntype: boolean\ndefault: false\n\n--strict\nEnable all strict type-checking options.\ntype: boolean\ndefault: false\n\n--types\nSpecify type package names to be included without being referenced in a source file.\n\n--esModuleInterop\nEmit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility.\ntype: boolean\ndefault: false\n\nYou can learn about all of the compiler options at https://aka.ms/tsc\n\nerror: script \"typecheck\" exited with code 1\nerror: script \"check\" exited with code 1\n\nCommand exited with code 1.",
+        "fullOutputSha256": "a1573c13f19f12c47571871ab0717dc0de2b4c1576a614f2f82de5fe952311d9"
+      },
+      {
+        "time": {
+          "created": 1789656758625,
+          "ran": 1789656758632,
+          "completed": 1789656758866
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-42-manifest.json --audio work/pr-42-audio.json --output work/pr-42-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917/work/pr-42-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "ebcd3365ee5220d071ad2b3795e5c9f6d1285aeb1ad420284f0097730d2455e4"
+      },
+      {
+        "time": {
+          "created": 1789656758633,
+          "ran": 1789656758647,
+          "completed": 1789656759209
+        },
+        "input": {
+          "command": "bun run lint",
+          "timeout": 120000
+        },
+        "output": "$ eslint .\n\nOops! Something went wrong! :(\n\nESLint: 9.39.5\n\nESLint couldn't find an eslint.config.(js|mjs|cjs) file.\n\nFrom ESLint v9.0.0, the default configuration file is now eslint.config.js.\nIf you are using a .eslintrc.* file, please follow the migration guide\nto update your configuration file to the new format:\n\nhttps://eslint.org/docs/latest/use/configure/migration-guide\n\nIf you still have problems after following the migration guide, please stop by\nhttps://eslint.org/chat/help to chat with the team.\n\n\nCommand exited with code 2.",
+        "fullOutputSha256": "1ce3ac8f4b1c01a086bcb65fb310244ada4ee8f234c330876dac66132b8416bf"
+      },
+      {
+        "time": {
+          "created": 1789656762790,
+          "ran": 1789656767891,
+          "completed": 1789656767947
+        },
+        "input": {
+          "command": "bun -e 'import {readFileSync, existsSync, realpathSync} from \"node:fs\"; const p=\"work/pr-42-walkthrough.html\"; const html=readFileSync(p,\"utf8\"); const m=JSON.parse(readFileSync(\"work/pr-42-manifest.json\",\"utf8\")); if(m.sections.length!==4 || /\\{\\{(?:CODE|DIAGRAM):/.test(html) || /<audio\\b/i.test(html) || existsSync(\"work/pr-42-audio.json\") || /<(?:script|link)[^>]+(?:src|href)=[\"\\x27]https?:/i.test(html)) throw new Error(\"Artifact verification failed\"); for(const s of m.sections) if(!html.includes(s.title)) throw new Error(\"Missing section\"); console.log(\"Verified: four sections, expanded code, no audio or external script/style dependencies.\"); console.log(realpathSync(p));'"
+        },
+        "output": "Verified: four sections, expanded code, no audio or external script/style dependencies.\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "4c68c5e03030c78ceacecc18fedfad07d64cfc97121f5e45f0b8980614d3c279"
+      }
+    ],
+    "otherTools": [
+      {
+        "name": "glob",
+        "input": {
+          "pattern": "**/AGENTS.md",
+          "path": "skills"
+        }
+      }
+    ],
+    "parentVisibleText": [
+      "All four reports returned. The diff moves an existing clock read; it does not add one, as the PR body suggests. I’ll preserve that distinction and the documented streaming follow-up in the four-section walkthrough.",
+      "Created the full text-only walkthrough:\n\n[**pr-42-walkthrough.html**](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-2-20260917/work/pr-42-walkthrough.html)\n\nCompleted all four parallel reports, synthesized the four-section walkthrough, and ran the audio and build stages. Verified the HTML contains all sections, expanded code blocks, and no audio or external script/style dependencies.\n\nRepository checks were blocked: `bun run check` failed because this fixture lacks `tsconfig.json`; lint failed because it lacks an ESLint configuration. No network sources or desktop applications were opened."
+    ],
+    "artifact": {
+      "manifestSha256": "b368e09f8a72060ffcd0ad829c4d88fc33a820877a4862842a46a1742e83d2eb",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "The client already knew how to refresh"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "The first expired request went first"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Make refresh a prerequisite for dispatch"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "The same check, in time to help"
+        }
+      ],
+      "words": 486,
+      "codeBlocks": 2,
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "b0b5289eaafa69807bc7ac19fd66f565c66607a30791ffed18f0164b20ee6f9c",
+      "rebuiltHTMLSha256": "b0b5289eaafa69807bc7ac19fd66f565c66607a30791ffed18f0164b20ee6f9c",
+      "identicalRebuild": true
+    }
+  },
+  {
+    "id": "pr-grounding-quality-3",
+    "parent": {
+      "id": "ses_f50242f3dffewbOHzA6qRYM2IO",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 32393,
+        "output": 2453,
+        "reasoning": 26,
+        "cache": {
+          "read": 195328,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656813827,
+        "updated": 1789656815243,
+        "idle": 1789656968850
+      },
+      "title": "Walkthrough workflow pr-grounding-quality-3",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f502352d3ffehzlZDLZNsnyLG4",
+        "parentID": "ses_f50242f3dffewbOHzA6qRYM2IO",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13309,
+          "output": 432,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656870247,
+          "updated": 1789656870253,
+          "idle": 1789656887757
+        },
+        "title": "Before report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f502352c6ffeTRAfQ7UZQTd54K",
+        "parentID": "ses_f50242f3dffewbOHzA6qRYM2IO",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 34502,
+          "output": 533,
+          "reasoning": 32,
+          "cache": {
+            "read": 25728,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656870238,
+          "updated": 1789656870244,
+          "idle": 1789656900752
+        },
+        "title": "Diff tour fixture report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f5023523fffeLBhn0whooqQimt",
+        "parentID": "ses_f50242f3dffewbOHzA6qRYM2IO",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13293,
+          "output": 146,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656870405,
+          "updated": 1789656870410,
+          "idle": 1789656880112
+        },
+        "title": "Alternatives fixture report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f502352b3ffeLYOTp1qRvc7YEx",
+        "parentID": "ses_f50242f3dffewbOHzA6qRYM2IO",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13301,
+          "output": 444,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656870359,
+          "updated": 1789656870363,
+          "idle": 1789656889194
+        },
+        "title": "Tradeoffs fixture report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "frozenSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "frozenSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656870180,
+          "ran": 1789656870185,
+          "completed": 1789656887760
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report for fixture",
+          "prompt": "Read-only report agent: do not write files, call network, or use GitHub. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917/work/pr.json as sole PR evidence. You are the before agent for local pr-walkthrough workflow. Explain state before PR and documented bug/motivation, using diff and body; no speculation. Return 200–400 words grounded in this tiny fixture (clearly distinguish reported behavior from visible code). Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502352d3ffehzlZDLZNsnyLG4",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656870189,
+          "ran": 1789656870194,
+          "completed": 1789656900755
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour fixture report",
+          "prompt": "Read-only report agent: no writes, network, or GitHub. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917/work/pr.json. Act as diff-tour for pr-walkthrough: describe each changed file in 2–4 narrative sentences grouped new vs modified; return table-ready file list with one sentence per file. Return verbatim 2–4 load-bearing diff excerpts trimmed to essential lines with explanation (tiny diff: split meaningful excerpts if needed; never fabricate lines). Identify central logic. Reports only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502352c6ffeTRAfQ7UZQTd54K",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656870197,
+          "ran": 1789656870214,
+          "completed": 1789656889196
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs fixture report",
+          "prompt": "Read-only report agent: no writes, no network/GitHub. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917/work/pr.json as sole evidence. Act as tradeoffs agent for pr-walkthrough. Return documented limitations, edge cases, known gaps from PR body and diff comments/tests. Capture each choice AND documented reason; explicitly identify missing reasons instead of inventing. Distinguish author claims from code evidence. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502352b3ffeLYOTp1qRvc7YEx",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656870216,
+          "ran": 1789656870320,
+          "completed": 1789656880115
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives fixture report",
+          "prompt": "Read-only report agent: do not write, use network, or call GitHub. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917/work/pr.json. Act as alternatives agent for pr-walkthrough: examine supplied body, commits, diff for documented considered/rejected approaches. Offline fixture replaces external evidence; never fetch linked issues. Do not invent. If none documented return 'none documented' with concise source explanation. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f5023523fffeLBhn0whooqQimt",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789656887757,
+      1789656900752,
+      1789656880112,
+      1789656889194
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789656913149,
+      "ran": 1789656941034,
+      "completed": 1789656941041
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789656945800,
+          "ran": 1789656945807,
+          "completed": 1789656945948
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-42-manifest.json --output work/pr-42-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789656945810,
+          "ran": 1789656945820,
+          "completed": 1789656946364
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test && bun run validate\n$ tsc --noEmit\nVersion 5.9.3\ntsc: The TypeScript Compiler - Version 5.9.3\n\nCOMMON COMMANDS\n\n  tsc\n  Compiles the current project (tsconfig.json in the working directory.)\n\n  tsc \n[Full output retained in visible export.]\nr for all emitted files.\n\n--removeComments\nDisable emitting comments.\ntype: boolean\ndefault: false\n\n--strict\nEnable all strict type-checking options.\ntype: boolean\ndefault: false\n\n--types\nSpecify type package names to be included without being referenced in a source file.\n\n--esModuleInterop\nEmit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility.\ntype: boolean\ndefault: false\n\nYou can learn about all of the compiler options at https://aka.ms/tsc\n\nerror: script \"typecheck\" exited with code 1\nerror: script \"check\" exited with code 1\n\nCommand exited with code 1.",
+        "fullOutputSha256": "a1573c13f19f12c47571871ab0717dc0de2b4c1576a614f2f82de5fe952311d9"
+      },
+      {
+        "time": {
+          "created": 1789656951282,
+          "ran": 1789656951290,
+          "completed": 1789656951583
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-42-manifest.json --audio work/pr-42-audio.json --output work/pr-42-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917/work/pr-42-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "b7e667b2e5ccaa5691e292ac9ae99b34fa2b5625dd3784be163c8a8614aea361"
+      },
+      {
+        "time": {
+          "created": 1789656951295,
+          "ran": 1789656951317,
+          "completed": 1789656951940
+        },
+        "input": {
+          "command": "bun run lint",
+          "timeout": 120000
+        },
+        "output": "$ eslint .\n\nOops! Something went wrong! :(\n\nESLint: 9.39.5\n\nESLint couldn't find an eslint.config.(js|mjs|cjs) file.\n\nFrom ESLint v9.0.0, the default configuration file is now eslint.config.js.\nIf you are using a .eslintrc.* file, please follow the migration guide\nto update your configuration file to the new format:\n\nhttps://eslint.org/docs/latest/use/configure/migration-guide\n\nIf you still have problems after following the migration guide, please stop by\nhttps://eslint.org/chat/help to chat with the team.\n\n\nCommand exited with code 2.",
+        "fullOutputSha256": "1ce3ac8f4b1c01a086bcb65fb310244ada4ee8f234c330876dac66132b8416bf"
+      },
+      {
+        "time": {
+          "created": 1789656954459,
+          "ran": 1789656962102,
+          "completed": 1789656962153
+        },
+        "input": {
+          "command": "node --input-type=module -e 'import {readFileSync,realpathSync,existsSync} from \"node:fs\"; import assert from \"node:assert/strict\"; const p=\"work/pr-42-walkthrough.html\"; const html=readFileSync(p,\"utf8\"); const m=JSON.parse(readFileSync(\"work/pr-42-manifest.json\",\"utf8\")); assert.equal(m.sections.length,4); assert.equal(m.sections.reduce((n,s)=>n+(s.code?.length||0),0),2); assert.equal((html.match(/class=\"lead\"/g)||[]).length,1); assert(!/\\{\\{(?:CODE|DIAGRAM):\\d+\\}\\}/.test(html)); assert(!/<audio\\b/.test(html)); assert(!existsSync(\"work/pr-42-audio.json\")); assert(!/<(?:script|link)[^>]+(?:src|href)=[\"\\x27]https?:/i.test(html)); console.log(\"Verified: four sections, two code blocks, one lead paragraph, no unresolved placeholders, no audio or external script/style dependencies.\"); console.log(realpathSync(p));'"
+        },
+        "output": "Verified: four sections, two code blocks, one lead paragraph, no unresolved placeholders, no audio or external script/style dependencies.\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "4595a9b809546a1c753b06831d4e433b95863e4c23bdbbe71dd66dec8d35d749"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "All four reports returned. The diff moves the clock check; it does not add one, despite the PR body’s wording. The walkthrough will preserve that distinction and the documented streaming follow-up.",
+      "Created the full text-only walkthrough:\n\n[**pr-42-walkthrough.html**](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-3-20260917/work/pr-42-walkthrough.html)\n\nAll four parallel reports completed. The HTML build and structural checks passed. The audio stage used its documented text-only fallback. No network sources or desktop applications were opened.\n\nRepository checks were blocked: this fixture lacks both `tsconfig.json` and an ESLint configuration."
+    ],
+    "artifact": {
+      "manifestSha256": "1bb9152ccbd808c60824f3038ecccd0ac293208045b125276b43bd7c167529db",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "The expiry check came after the send"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "The first request reached dispatch too soon"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Wait for fresh credentials, then send"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "Make refresh a prerequisite"
+        }
+      ],
+      "words": 478,
+      "codeBlocks": 2,
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "346156291e0f1c876511c85e546859070a56d58458084244f2bfba62731f195d",
+      "rebuiltHTMLSha256": "346156291e0f1c876511c85e546859070a56d58458084244f2bfba62731f195d",
+      "identicalRebuild": true
+    }
+  },
+  {
+    "id": "pr-batch-limit-1",
+    "parent": {
+      "id": "ses_f50242f41ffe10FI0sfPdW1Epj",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 31271,
+        "output": 2418,
+        "reasoning": 38,
+        "cache": {
+          "read": 190592,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656813834,
+        "updated": 1789656815909,
+        "idle": 1789656968947
+      },
+      "title": "Walkthrough workflow pr-batch-limit-1",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f502357b7ffelLHs3cSQpR9EBn",
+        "parentID": "ses_f50242f41ffe10FI0sfPdW1Epj",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13522,
+          "output": 414,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656869002,
+          "updated": 1789656869005,
+          "idle": 1789656886675
+        },
+        "title": "Before report for walkthrough",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f502357a5ffe9OK3eIdDvO9drN",
+        "parentID": "ses_f50242f41ffe10FI0sfPdW1Epj",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13566,
+          "output": 746,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656868994,
+          "updated": 1789656868999,
+          "idle": 1789656895308
+        },
+        "title": "Diff tour for walkthrough",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f502357a4ffe4UvCe4G4wiMRP3",
+        "parentID": "ses_f50242f41ffe10FI0sfPdW1Epj",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11616,
+          "output": 369,
+          "reasoning": 0,
+          "cache": {
+            "read": 14592,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656869043,
+          "updated": 1789656869048,
+          "idle": 1789656884829
+        },
+        "title": "Tradeoffs report for walkthrough",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f5023576fffeUJDgK47XSa7qST",
+        "parentID": "ses_f50242f41ffe10FI0sfPdW1Epj",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13508,
+          "output": 71,
+          "reasoning": 37,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656869155,
+          "updated": 1789656869159,
+          "idle": 1789656878222
+        },
+        "title": "Alternatives report for walkthrough",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "frozenSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "frozenSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656868921,
+          "ran": 1789656868927,
+          "completed": 1789656886678
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report for walkthrough",
+          "prompt": "Read-only offline report agent named before. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json as sole PR evidence. No writes, network, GitHub, or delegation. What was state before PR and gap/motivation? Use diff and author framing, no speculation. Return 200–400 words grounded in evidence, report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502357b7ffelLHs3cSQpR9EBn",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656868930,
+          "ran": 1789656868940,
+          "completed": 1789656895312
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour for walkthrough",
+          "prompt": "Read-only offline report agent named diff-tour. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json as sole PR evidence. No writes, network, GitHub, or delegation. Walk each changed file in 2–4 narrative sentences, group new vs modified, identify central logic. Also return table-ready list with one-sentence summary per file and verbatim 2–4 load-bearing diff hunks trimmed to essential lines with explanations. Report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502357a5ffe9OK3eIdDvO9drN",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656868942,
+          "ran": 1789656868948,
+          "completed": 1789656884832
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs report for walkthrough",
+          "prompt": "Read-only offline report agent named tradeoffs. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json as sole PR evidence. No writes, network, GitHub, or delegation. List documented limitations, edge cases, known gaps from PR body, comments and tests in supplied diff only. Capture each choice AND documented reason, state if reason absent. Do not invent. Report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502357a4ffe4UvCe4G4wiMRP3",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789656868951,
+          "ran": 1789656868990,
+          "completed": 1789656878227
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives report for walkthrough",
+          "prompt": "Read-only offline report agent named alternatives. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr.json as sole PR evidence including embedded commits. No writes, network, GitHub, or delegation. Identify documented considered/rejected approaches and reasons. If none, return 'none documented'. Do not invent. Report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f5023576fffeUJDgK47XSa7qST",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789656886675,
+      1789656895308,
+      1789656884829,
+      1789656878222
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789656904562,
+      "ran": 1789656938410,
+      "completed": 1789656938422
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789656943093,
+          "ran": 1789656943101,
+          "completed": 1789656943163
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-108-manifest.json --output work/pr-108-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789656943104,
+          "ran": 1789656943121,
+          "completed": 1789656943806
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test && bun run validate\n$ tsc --noEmit\nVersion 5.9.3\ntsc: The TypeScript Compiler - Version 5.9.3\n\nCOMMON COMMANDS\n\n  tsc\n  Compiles the current project (tsconfig.json in the working directory.)\n\n  tsc \n[Full output retained in visible export.]\nr for all emitted files.\n\n--removeComments\nDisable emitting comments.\ntype: boolean\ndefault: false\n\n--strict\nEnable all strict type-checking options.\ntype: boolean\ndefault: false\n\n--types\nSpecify type package names to be included without being referenced in a source file.\n\n--esModuleInterop\nEmit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility.\ntype: boolean\ndefault: false\n\nYou can learn about all of the compiler options at https://aka.ms/tsc\n\nerror: script \"typecheck\" exited with code 1\nerror: script \"check\" exited with code 1\n\nCommand exited with code 1.",
+        "fullOutputSha256": "a1573c13f19f12c47571871ab0717dc0de2b4c1576a614f2f82de5fe952311d9"
+      },
+      {
+        "time": {
+          "created": 1789656950699,
+          "ran": 1789656950707,
+          "completed": 1789656951014
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-108-manifest.json --audio work/pr-108-audio.json --output work/pr-108-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr-108-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr-108-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "1551e37aec5d6603b6484c516b11a4e5e7d1cc57eb49f1242b9c862dbd619728"
+      },
+      {
+        "time": {
+          "created": 1789656950711,
+          "ran": 1789656950721,
+          "completed": 1789656951387
+        },
+        "input": {
+          "command": "bun run lint",
+          "timeout": 120000
+        },
+        "output": "$ eslint .\n\nOops! Something went wrong! :(\n\nESLint: 9.39.5\n\nESLint couldn't find an eslint.config.(js|mjs|cjs) file.\n\nFrom ESLint v9.0.0, the default configuration file is now eslint.config.js.\nIf you are using a .eslintrc.* file, please follow the migration guide\nto update your configuration file to the new format:\n\nhttps://eslint.org/docs/latest/use/configure/migration-guide\n\nIf you still have problems after following the migration guide, please stop by\nhttps://eslint.org/chat/help to chat with the team.\n\n\nCommand exited with code 2.",
+        "fullOutputSha256": "1ce3ac8f4b1c01a086bcb65fb310244ada4ee8f234c330876dac66132b8416bf"
+      },
+      {
+        "time": {
+          "created": 1789656957518,
+          "ran": 1789656959825,
+          "completed": 1789656959889
+        },
+        "input": {
+          "command": "bun -e 'import { readFileSync, realpathSync, existsSync } from \"node:fs\"; const p = \"work/pr-108-walkthrough.html\"; const html = readFileSync(p, \"utf8\"); const m = JSON.parse(readFileSync(\"work/pr-108-manifest.json\", \"utf8\")); if (m.sections.length !== 4 || (html.match(/<h2\\b/g) ?? []).length !== 4 || /\\{\\{(?:CODE|DIAGRAM):\\d+\\}\\}/.test(html) || /<audio\\b/i.test(html) || existsSync(\"work/pr-108-audio.json\")) throw new Error(\"Artifact validation failed\"); console.log(\"Verified four sections, resolved placeholders, and text-only output.\"); console.log(realpathSync(p));'"
+        },
+        "output": "Verified four sections, resolved placeholders, and text-only output.\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr-108-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "2ec86120f8971049191746d36fb4ca2f1b006831f4e403843eee0c326d282dc3"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "All four reports returned. The walkthrough will explain the batch cap, startup validation, and documented limits in four sections.\n\n",
+      "Created the full text-only walkthrough:\n\n[pr-108-walkthrough.html](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-1-20260917/work/pr-108-walkthrough.html)\n\nAll four read-only reports ran in parallel. The HTML build passed, and verification confirmed four sections, resolved code placeholders, and no audio. No network sources or desktop applications were opened.\n\nRepository checks were blocked: this fixture lacks `tsconfig.json` and an ESLint configuration."
+    ],
+    "artifact": {
+      "manifestSha256": "3a3fca048930b4418ae84609fa68d6c5ea604755059cc0163e0965602fb22a21",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "Each tick took the whole queue"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "Queue length decided the size of a send"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Validate the limit, then take only that many"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "One send gets a batch; the queue keeps the rest"
+        }
+      ],
+      "words": 490,
+      "codeBlocks": 3,
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "5e1c909315913d1a706256a6a061fbf405ebf5e3919b5a6414aaeac0098f9a4c",
+      "rebuiltHTMLSha256": "5e1c909315913d1a706256a6a061fbf405ebf5e3919b5a6414aaeac0098f9a4c",
+      "identicalRebuild": true
+    }
+  },
+  {
+    "id": "pr-batch-limit-2",
+    "parent": {
+      "id": "ses_f50211767ffemZy6Ajh8SXMqPX",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 38872,
+        "output": 2777,
+        "reasoning": 96,
+        "cache": {
+          "read": 280064,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789657016525,
+        "updated": 1789657018055,
+        "idle": 1789657191244
+      },
+      "title": "Walkthrough workflow pr-batch-limit-2",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f502045b3ffdnufOtzTso6rVr3",
+        "parentID": "ses_f50211767ffemZy6Ajh8SXMqPX",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11648,
+          "output": 738,
+          "reasoning": 0,
+          "cache": {
+            "read": 14592,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789657070194,
+          "updated": 1789657070198,
+          "idle": 1789657099256
+        },
+        "title": "Diff tour PR 108",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f502045b3ffe2bcomY455190PJ",
+        "parentID": "ses_f50211767ffemZy6Ajh8SXMqPX",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11592,
+          "output": 401,
+          "reasoning": 0,
+          "cache": {
+            "read": 14592,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789657070187,
+          "updated": 1789657070192,
+          "idle": 1789657089032
+        },
+        "title": "Before report PR 108",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f502045b3ffcK1lrqcNtK17Yfi",
+        "parentID": "ses_f50211767ffemZy6Ajh8SXMqPX",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13527,
+          "output": 475,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789657070200,
+          "updated": 1789657070203,
+          "idle": 1789657092413
+        },
+        "title": "Tradeoffs report PR 108",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f50204547ffehyxQgyUNos9bXJ",
+        "parentID": "ses_f50211767ffemZy6Ajh8SXMqPX",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13519,
+          "output": 74,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789657070310,
+          "updated": 1789657070315,
+          "idle": 1789657078635
+        },
+        "title": "Alternatives report PR 108",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "frozenSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "frozenSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789657070132,
+          "ran": 1789657070138,
+          "completed": 1789657089035
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report PR 108",
+          "prompt": "Read-only offline report agent 'before'. Read only evidence /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917/work/pr.json. No network, GitHub, writes, or other agents. Return 200–400 words describing prior code state and gap/motivation, grounded solely in fixture body/diff. Do not speculate. Return report in response."
+        },
+        "metadata": {
+          "sessionID": "ses_f502045b3ffe2bcomY455190PJ",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789657070140,
+          "ran": 1789657070145,
+          "completed": 1789657099267
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour PR 108",
+          "prompt": "Read-only offline report agent 'diff-tour'. Read evidence /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917/work/pr.json. No network, GitHub, writes, or other agents. Walk each changed file in 2–4 narrative sentences, group new vs modified, identify central logic. Return table-ready file list with one-sentence summary per file. Also return verbatim 2–4 load-bearing diff hunks trimmed to essential lines with explanations. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502045b3ffdnufOtzTso6rVr3",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789657070147,
+          "ran": 1789657070151,
+          "completed": 1789657092416
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs report PR 108",
+          "prompt": "Read-only offline report agent 'tradeoffs'. Read evidence /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917/work/pr.json. No network, GitHub, writes, or other agents. List documented limitations, edge cases, known gaps from body, diff comments, tests. Capture choice AND documented reason; identify absent reasons instead of inventing them. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f502045b3ffcK1lrqcNtK17Yfi",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789657070153,
+          "ran": 1789657070259,
+          "completed": 1789657078638
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives report PR 108",
+          "prompt": "Read-only offline report agent 'alternatives'. Read evidence /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917/work/pr.json. No network, GitHub, writes, or other agents. Identify documented considered/rejected alternatives from supplied body, commits, diff. Do not invent. If absent state 'none documented' and return. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f50204547ffehyxQgyUNos9bXJ",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789657099256,
+      1789657089032,
+      1789657092413,
+      1789657078635
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789657130396,
+      "ran": 1789657163188,
+      "completed": 1789657163204
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789657121374,
+          "ran": 1789657121393,
+          "completed": 1789657122253
+        },
+        "input": {
+          "command": "bun run check"
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test && bun run validate\n$ tsc --noEmit\nVersion 5.9.3\ntsc: The TypeScript Compiler - Version 5.9.3\n\nCOMMON COMMANDS\n\n  tsc\n  Compiles the current project (tsconfig.json in the working directory.)\n\n  tsc \n[Full output retained in visible export.]\nr for all emitted files.\n\n--removeComments\nDisable emitting comments.\ntype: boolean\ndefault: false\n\n--strict\nEnable all strict type-checking options.\ntype: boolean\ndefault: false\n\n--types\nSpecify type package names to be included without being referenced in a source file.\n\n--esModuleInterop\nEmit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility.\ntype: boolean\ndefault: false\n\nYou can learn about all of the compiler options at https://aka.ms/tsc\n\nerror: script \"typecheck\" exited with code 1\nerror: script \"check\" exited with code 1\n\nCommand exited with code 1.",
+        "fullOutputSha256": "a1573c13f19f12c47571871ab0717dc0de2b4c1576a614f2f82de5fe952311d9"
+      },
+      {
+        "time": {
+          "created": 1789657168133,
+          "ran": 1789657168139,
+          "completed": 1789657168197
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-108-manifest.json --output work/pr-108-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789657168143,
+          "ran": 1789657168182,
+          "completed": 1789657168795
+        },
+        "input": {
+          "command": "bun run lint"
+        },
+        "output": "$ eslint .\n\nOops! Something went wrong! :(\n\nESLint: 9.39.5\n\nESLint couldn't find an eslint.config.(js|mjs|cjs) file.\n\nFrom ESLint v9.0.0, the default configuration file is now eslint.config.js.\nIf you are using a .eslintrc.* file, please follow the migration guide\nto update your configuration file to the new format:\n\nhttps://eslint.org/docs/latest/use/configure/migration-guide\n\nIf you still have problems after following the migration guide, please stop by\nhttps://eslint.org/chat/help to chat with the team.\n\n\nCommand exited with code 2.",
+        "fullOutputSha256": "1ce3ac8f4b1c01a086bcb65fb310244ada4ee8f234c330876dac66132b8416bf"
+      },
+      {
+        "time": {
+          "created": 1789657170901,
+          "ran": 1789657172156,
+          "completed": 1789657172406
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-108-manifest.json --audio work/pr-108-audio.json --output work/pr-108-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917/work/pr-108-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917/work/pr-108-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "199e4519cf3b85e0a7f4d9744c4c34c589474c54025211898c7288508b488128"
+      },
+      {
+        "time": {
+          "created": 1789657175995,
+          "ran": 1789657184545,
+          "completed": 1789657184599
+        },
+        "input": {
+          "command": "bun -e 'import {readFileSync, existsSync, realpathSync} from \"node:fs\"; const path=\"work/pr-108-walkthrough.html\"; const html=readFileSync(path,\"utf8\"); const m=JSON.parse(readFileSync(\"work/pr-108-manifest.json\",\"utf8\")); if(m.sections.length!==4 || /\\{\\{(?:CODE|DIAGRAM):/.test(html) || /<audio\\b|data:audio\\//.test(html) || existsSync(\"work/pr-108-audio.json\")) throw Error(\"Output validation failed\"); if((html.match(/<p class=\"lead\">/g)||[]).length!==1) throw Error(\"Drop-cap validation failed\"); if(/<(?:script|link|img)\\b[^>]*(?:src|href)=[\"\\x27]https?:/i.test(html)) throw Error(\"External asset detected\"); console.log(\"Verified: four sections, one lead paragraph, resolved code placeholders, no audio or external assets.\"); console.log(realpathSync(path)); const body=html.slice(html.indexOf(\"<body\")); console.log(body.replace(/<script\\b[^>]*>[\\s\\S]*?<\\/script>/gi, \"\").replace(/<style\\b[^>]*>[\\s\\S]*?<\\/style>/gi, \"\").replace(/<[^>]+>/g,\" \").replace(/\\s+/g,\" \").trim());'"
+        },
+        "output": "Verified: four sections, one lead paragraph, resolved code placeholders, no audio or external assets.\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917/work/pr-108-walkthrough.html\nlight PR #108 ·\n[Full output retained in visible export.]\ne the change because the queue has no tenant key. The worker applies a single batch limit to the pending queue; it does not select jobs by tenant. 4 · The short version Take a bounded batch and retain the rest PR #108 replaces whole-queue sends with a configurable job-count limit, defaulting to 100. Configuration rejects values that are not positive integers, and the worker passes the validated value to a drain that leaves excess jobs queued. You can now bound the number of jobs in each send, while memory, processing time, and per-tenant scheduling remain outside that guarantee. PR #108 · feat: bound queue batches\n\nCommand exited with code 0.",
+        "fullOutputSha256": "63a16df8a331bfd5c9f59a068867db7eeaa6a3049919e0f0ab352ef0c11ee9ed"
+      }
+    ],
+    "otherTools": [
+      {
+        "name": "skill",
+        "input": {
+          "id": "writing-technical-docs"
+        }
+      }
+    ],
+    "parentVisibleText": [
+      "All four reports are complete. The change caps jobs per send and leaves the remainder queued; memory and processing time remain unbounded. I’ll use the four-section small-PR arc with three code excerpts.\n\n",
+      "Created the full text-only walkthrough:\n\n[**pr-108-walkthrough.html**](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-2-20260917/work/pr-108-walkthrough.html)\n\nAll four parallel reports completed. The deterministic build passed, and the HTML contains four sections and three code excerpts, with no audio or external assets. No network sources or desktop applications were opened.\n\nRepository checks were blocked: `bun run check` failed because the fixture lacks TypeScript configuration. A separate lint run failed because ESLint configuration is also missing. Visual rendering was not tested."
+    ],
+    "artifact": {
+      "manifestSha256": "ceb08fa2205eeae174cd853b0a3ef648b87de2105e59d70ad6a6cf4c4d52b661",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "Each tick took everything waiting"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "A larger backlog meant a larger send"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "One limit, passed through to the drain"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "Take a bounded batch and retain the rest"
+        }
+      ],
+      "words": 537,
+      "codeBlocks": 3,
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "7cef77ea7d6c8f6660b6a4c4ebffc685251b1d36d728f1a5e7c176e2da191c30",
+      "rebuiltHTMLSha256": "7cef77ea7d6c8f6660b6a4c4ebffc685251b1d36d728f1a5e7c176e2da191c30",
+      "identicalRebuild": true
+    }
+  },
+  {
+    "id": "pr-batch-limit-3",
+    "parent": {
+      "id": "ses_f50211768ffe44rPWvM67D6UXR",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 58969,
+        "output": 2651,
+        "reasoning": 56,
+        "cache": {
+          "read": 176000,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789657016518,
+        "updated": 1789657017967,
+        "idle": 1789657175612
+      },
+      "title": "Walkthrough workflow pr-batch-limit-3",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f50204266ffd26mRDmDYEUwN8K",
+        "parentID": "ses_f50211768ffe44rPWvM67D6UXR",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13526,
+          "output": 503,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789657071035,
+          "updated": 1789657071039,
+          "idle": 1789657090794
+        },
+        "title": "Tradeoffs report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f5020425fffeXxH4BbdnbENpB8",
+        "parentID": "ses_f50211768ffe44rPWvM67D6UXR",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11606,
+          "output": 122,
+          "reasoning": 0,
+          "cache": {
+            "read": 14592,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789657071052,
+          "updated": 1789657071056,
+          "idle": 1789657080620
+        },
+        "title": "Alternatives report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f50204267ffe62mKgvC1025oXu",
+        "parentID": "ses_f50211768ffe44rPWvM67D6UXR",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11594,
+          "output": 418,
+          "reasoning": 0,
+          "cache": {
+            "read": 14592,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789657071041,
+          "updated": 1789657071045,
+          "idle": 1789657090393
+        },
+        "title": "Before report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f50204266ffeAjt8q0FrOZhLF3",
+        "parentID": "ses_f50211768ffe44rPWvM67D6UXR",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13564,
+          "output": 718,
+          "reasoning": 0,
+          "cache": {
+            "read": 12672,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789657071047,
+          "updated": 1789657071050,
+          "idle": 1789657098398
+        },
+        "title": "Diff tour for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "frozenSha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "frozenSha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789657070976,
+          "ran": 1789657070983,
+          "completed": 1789657090395
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report for fixture",
+          "prompt": "Read-only offline report agent 'before'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917/work/pr.json. No network, GitHub, file writes or VCS changes. Return 200-400 words explaining code before PR #108 and gap/motivation. Ground all claims in fixture body and diff; no speculation. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f50204267ffe62mKgvC1025oXu",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789657070985,
+          "ran": 1789657070989,
+          "completed": 1789657098401
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour for fixture",
+          "prompt": "Read-only offline report agent 'diff-tour'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917/work/pr.json. No network, GitHub, file writes or VCS changes. Walk each changed file in 2-4 narrative sentences, grouping new versus modified; identify central logic. Return table-ready list with one-sentence summary per file. Also return verbatim 2-4 load-bearing diff hunks trimmed to essential lines and short explanations. Report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f50204266ffeAjt8q0FrOZhLF3",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789657070992,
+          "ran": 1789657070996,
+          "completed": 1789657090797
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs report for fixture",
+          "prompt": "Read-only offline report agent 'tradeoffs'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917/work/pr.json. No network, GitHub, file writes or VCS changes. Identify documented limitations, edge cases, known gaps from body/diff comments/tests; capture each choice AND its documented reason; explicitly distinguish absent reasons. No invented tradeoffs. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f50204266ffd26mRDmDYEUwN8K",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789657070998,
+          "ran": 1789657071004,
+          "completed": 1789657080623
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives report for fixture",
+          "prompt": "Read-only offline report agent 'alternatives'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917/work/pr.json. No network, GitHub, file writes or VCS changes. Use only supplied PR body, commits, diff and any supplied issue text to identify considered/rejected alternatives. Do not invent. If absent state 'none documented'. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f5020425fffeXxH4BbdnbENpB8",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789657090794,
+      1789657080620,
+      1789657090393,
+      1789657098398
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789657111163,
+      "ran": 1789657147027,
+      "completed": 1789657147035
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789657152266,
+          "ran": 1789657152275,
+          "completed": 1789657152334
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-108-manifest.json --output work/pr-108-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789657152279,
+          "ran": 1789657152294,
+          "completed": 1789657153007
+        },
+        "input": {
+          "command": "bun run check"
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test && bun run validate\n$ tsc --noEmit\nVersion 5.9.3\ntsc: The TypeScript Compiler - Version 5.9.3\n\nCOMMON COMMANDS\n\n  tsc\n  Compiles the current project (tsconfig.json in the working directory.)\n\n  tsc \n[Full output retained in visible export.]\nr for all emitted files.\n\n--removeComments\nDisable emitting comments.\ntype: boolean\ndefault: false\n\n--strict\nEnable all strict type-checking options.\ntype: boolean\ndefault: false\n\n--types\nSpecify type package names to be included without being referenced in a source file.\n\n--esModuleInterop\nEmit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility.\ntype: boolean\ndefault: false\n\nYou can learn about all of the compiler options at https://aka.ms/tsc\n\nerror: script \"typecheck\" exited with code 1\nerror: script \"check\" exited with code 1\n\nCommand exited with code 1.",
+        "fullOutputSha256": "a1573c13f19f12c47571871ab0717dc0de2b4c1576a614f2f82de5fe952311d9"
+      },
+      {
+        "time": {
+          "created": 1789657157400,
+          "ran": 1789657157419,
+          "completed": 1789657157713
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-108-manifest.json --audio work/pr-108-audio.json --output work/pr-108-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917/work/pr-108-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917/work/pr-108-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "8fff12a4665fca7a282c80ec5e506cbcab45d121d0eaaca370f2bc74953d33b4"
+      },
+      {
+        "time": {
+          "created": 1789657157424,
+          "ran": 1789657157443,
+          "completed": 1789657158171
+        },
+        "input": {
+          "command": "bun run lint"
+        },
+        "output": "$ eslint .\n\nOops! Something went wrong! :(\n\nESLint: 9.39.5\n\nESLint couldn't find an eslint.config.(js|mjs|cjs) file.\n\nFrom ESLint v9.0.0, the default configuration file is now eslint.config.js.\nIf you are using a .eslintrc.* file, please follow the migration guide\nto update your configuration file to the new format:\n\nhttps://eslint.org/docs/latest/use/configure/migration-guide\n\nIf you still have problems after following the migration guide, please stop by\nhttps://eslint.org/chat/help to chat with the team.\n\n\nCommand exited with code 2.",
+        "fullOutputSha256": "1ce3ac8f4b1c01a086bcb65fb310244ada4ee8f234c330876dac66132b8416bf"
+      },
+      {
+        "time": {
+          "created": 1789657160423,
+          "ran": 1789657167300,
+          "completed": 1789657167367
+        },
+        "input": {
+          "command": "bun -e 'import {readFileSync, existsSync, realpathSync} from \"node:fs\"; const p=\"work/pr-108-walkthrough.html\"; const h=readFileSync(p,\"utf8\"); const m=JSON.parse(readFileSync(\"work/pr-108-manifest.json\",\"utf8\")); if(m.sections.length!==4 || (h.match(/<p class=\"lead\">/g)||[]).length!==1 || /\\{\\{(?:CODE|DIAGRAM):\\d+\\}\\}/.test(h) || /<audio\\b/i.test(h) || existsSync(\"work/pr-108-audio.json\") || /<(?:script|link)[^>]+(?:src|href)=\"https?:/i.test(h)) throw Error(\"Artifact validation failed\"); console.log(JSON.stringify({path:realpathSync(p),bytes:Buffer.byteLength(h),sections:m.sections.length,codeBlocks:m.sections.reduce((n,s)=>n+(s.code?.length??0),0),textOnly:true,selfContained:true},null,2));'"
+        },
+        "output": "{\n  \"path\": \"/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917/work/pr-108-walkthrough.html\",\n  \"bytes\": 24287,\n  \"sections\": 4,\n  \"codeBlocks\": 3,\n  \"textOnly\": true,\n  \"selfContained\": true\n}\n\nCommand exited with code 0.",
+        "fullOutputSha256": "748471c0ce6690a1d6ae677fe29d3ce3ccea9ac35aaa9daa4f347e2225955fac"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "All four reports returned. The change caps each send’s job count and preserves the queue remainder. I’ll use the four-section small-PR arc, with the memory, processing-time, and tenant-scheduling limits explained alongside the implementation.",
+      "Created the [text-only walkthrough](work/pr-108-walkthrough.html).\n\nReal path:\n```text\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-batch-limit-3-20260917/work/pr-108-walkthrough.html\n```\n\n- Completed all four parallel, read-only reports using the fixture.\n- Built and verified self-contained HTML with four sections and three code excerpts.\n- Ran the audio stage; it correctly skipped narration and removed the stale sidecar.\n- Used no network sources and opened no desktop application.\n\nRepository checks were blocked: `bun run check` failed because this fixture lacks `tsconfig.json`. Lint also failed because it lacks an ESLint configuration. The walkthrough build and artifact checks passed."
+    ],
+    "artifact": {
+      "manifestSha256": "2ba32b5d81d7dfd28776659667a5e0647e4de10caf7440fa85d072417a507536",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "Each tick took everything waiting"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "One send could absorb the entire backlog"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Set the bound where jobs leave the queue"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "Send a bounded batch; retain the rest"
+        }
+      ],
+      "words": 552,
+      "codeBlocks": 3,
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "621c9a2b0546dfd5078435601ef66e412e06dc0b9e8121b1271f95a55df854c2",
+      "rebuiltHTMLSha256": "621c9a2b0546dfd5078435601ef66e412e06dc0b9e8121b1271f95a55df854c2",
+      "identicalRebuild": true
+    }
+  }
+]

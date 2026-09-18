@@ -1,0 +1,15 @@
+{
+  "id": "docs-reference-candidate-3",
+  "status": "passed",
+  "startingContext": "Fresh four-file fixture, Bun available, package-root working directory",
+  "notationExcluded": "Import/signature sections are lookup notation, not runnable examples",
+  "observations": [
+    {
+      "action": "Execute the published example unchanged via Bun --eval from the stated package root",
+      "source": "import { releaseLabel } from './index.ts';\n\nconsole.log(releaseLabel(' 2.4.0 '));\nconsole.log(releaseLabel('2.4.0', { prefix: 'Release ' }));\nconsole.log(releaseLabel('2.4.0', { prefix: '' }));\nconsole.log(releaseLabel(' nightly build '));\n\ntry {\n  releaseLabel(' \\t\\n ');\n} catch (error) {\n  if (!(error instanceof Error)) throw error;\n  console.log(error.message);\n}\n",
+      "exit": 0,
+      "stdout": "v2.4.0\nRelease 2.4.0\n2.4.0\nvnightly build\nversion must not be blank\n",
+      "stderr": ""
+    }
+  ]
+}

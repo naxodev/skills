@@ -1,0 +1,71 @@
+{
+  "observations": [
+    [
+      "default",
+      "v2.4.0",
+      "v2.4.0"
+    ],
+    [
+      "custom",
+      "Release 2.4.0",
+      "Release 2.4.0"
+    ],
+    [
+      "empty prefix",
+      "2.4.0",
+      "2.4.0"
+    ],
+    [
+      "trimmed",
+      "v2.4.0",
+      "v2.4.0"
+    ],
+    [
+      "undefined options",
+      "v2.4.0",
+      "v2.4.0"
+    ],
+    [
+      "empty options",
+      "v2.4.0",
+      "v2.4.0"
+    ],
+    [
+      "undefined prefix",
+      "v2.4.0",
+      "v2.4.0"
+    ],
+    [
+      "prefix preserved",
+      " x 2.4.0",
+      " x 2.4.0"
+    ],
+    [
+      "no semver validation",
+      "vlabel",
+      "vlabel"
+    ],
+    [
+      "blank {\"version\":\"\",\"prefix\":\"\"}",
+      "Error: version must not be blank",
+      "Error: version must not be blank"
+    ],
+    [
+      "blank {\"version\":\"\",\"prefix\":\"Release \"}",
+      "Error: version must not be blank",
+      "Error: version must not be blank"
+    ],
+    [
+      "blank {\"version\":\" \\t\\n\",\"prefix\":\"\"}",
+      "Error: version must not be blank",
+      "Error: version must not be blank"
+    ],
+    [
+      "blank {\"version\":\" \\t\\n\",\"prefix\":\"Release \"}",
+      "Error: version must not be blank",
+      "Error: version must not be blank"
+    ]
+  ],
+  "bun": "1.3.7\n",
+  "renderer": "glow version 3.0.0\n"
+}

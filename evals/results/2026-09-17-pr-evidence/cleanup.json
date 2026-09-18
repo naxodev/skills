@@ -1,0 +1,90 @@
+{
+  "at": "2026-09-17T17:41:35.640Z",
+  "archive": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-evidence-20260917",
+  "clones": [
+    {
+      "id": "pr-grounding-quality-1",
+      "clone": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917",
+      "handoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr-42-walkthrough.html",
+      "savedHandoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-evidence-20260917/runs/pr-grounding-quality-1/artifacts/pr-42-walkthrough.html",
+      "sha256": "b0b2abc12eaf2d5dcfb8b92087375aa213fcc24e6519d7a154af20fef3072582",
+      "sessions": [
+        "ses_f4f9b8fb2ffeAtvWQYaWjzH4Ex",
+        "ses_f4f9a9225ffe2wZAv8i1a0eBlc",
+        "ses_f4f9a9253ffezdCT5IRUgQNFQa",
+        "ses_f4f9a9259ffehZHAiUfYlQZ6g2",
+        "ses_f4f9a925affexYRDGUKbGsWP7G"
+      ]
+    },
+    {
+      "id": "pr-grounding-quality-2",
+      "clone": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917",
+      "handoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917/work/pr-42-walkthrough.html",
+      "savedHandoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-evidence-20260917/runs/pr-grounding-quality-2/artifacts/pr-42-walkthrough.html",
+      "sha256": "267603d4e42e8e1398326768351d25119a13467b5d784db997056e647fe804a7",
+      "sessions": [
+        "ses_f4f9b8fc3ffesQzblAaHR5JOY5",
+        "ses_f4f9aa077ffe4I3Dc4DHRsdMbR",
+        "ses_f4f9aa082ffeDJPoWFCdVOwNY5",
+        "ses_f4f9aa081ffeWVgTCUr1Is5uJF",
+        "ses_f4f9aa081ffdLenuM5rFoEvAKo"
+      ]
+    },
+    {
+      "id": "pr-grounding-quality-3",
+      "clone": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917",
+      "handoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr-42-walkthrough.html",
+      "savedHandoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-evidence-20260917/runs/pr-grounding-quality-3/artifacts/pr-42-walkthrough.html",
+      "sha256": "283129151e8ba0a1b9b56a2dc56f1573c46ea275ddb264c790a856e1f0fc6552",
+      "sessions": [
+        "ses_f4f9857e1ffeQLkMcZGYNghPWk",
+        "ses_f4f974527ffeSReu26eLFVRM36",
+        "ses_f4f9745bfffe8A6Tgv6Z2uHTMH",
+        "ses_f4f9745bfffd8oBIz4xxFN6RML",
+        "ses_f4f9745bfffcEqDVbaplUEXmA0"
+      ]
+    },
+    {
+      "id": "pr-batch-limit-1",
+      "clone": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917",
+      "handoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917/work/pr-108-walkthrough.html",
+      "savedHandoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-evidence-20260917/runs/pr-batch-limit-1/artifacts/pr-108-walkthrough.html",
+      "sha256": "d599082a97f26b60b3b61104beb47c7845ae64d0e2610b6a730d3fffde67abd8",
+      "sessions": [
+        "ses_f4f9857e2ffe8gIV7zULHHO848",
+        "ses_f4f97692affeGAAkdevXYNKo22",
+        "ses_f4f97693effe2qMkHBkujoL0kN",
+        "ses_f4f97693effdI35mDwNOGNhMxD",
+        "ses_f4f97693fffe9ZeIQhFyLyQb0U"
+      ]
+    },
+    {
+      "id": "pr-batch-limit-2",
+      "clone": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917",
+      "handoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917/work/pr-108-walkthrough.html",
+      "savedHandoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-evidence-20260917/runs/pr-batch-limit-2/artifacts/pr-108-walkthrough.html",
+      "sha256": "c159852bda00bd5dbe92831dbc8e00ec316b987fcfb455c7795e3dc9afef15a0",
+      "sessions": [
+        "ses_f4f94e49dffeunPC3YCGYH5nYn",
+        "ses_f4f94141cffeJd4t4VQxpzvkfU",
+        "ses_f4f94141bffe5DVWvnpTvuvwb8",
+        "ses_f4f94141bffdHFFfsCBHy88Zp3",
+        "ses_f4f94141dffeYR0pZFPBP3Md9c"
+      ]
+    },
+    {
+      "id": "pr-batch-limit-3",
+      "clone": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917",
+      "handoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917/work/pr-108-walkthrough.html",
+      "savedHandoff": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-evidence-20260917/runs/pr-batch-limit-3/artifacts/pr-108-walkthrough.html",
+      "sha256": "76a91c608e50c058857405fed9b7119060e55f42a38aca9a061156e8ecafe9c6",
+      "sessions": [
+        "ses_f4f94e49effeTIynGalQJtQ1xz",
+        "ses_f4f940128ffegzTTuaK4GQr982",
+        "ses_f4f940130ffd436MDMWlhSmNnZ",
+        "ses_f4f940130ffeV27oQY0YOFjsyC",
+        "ses_f4f940131ffemPBaFKCodgpXUm"
+      ]
+    }
+  ]
+}

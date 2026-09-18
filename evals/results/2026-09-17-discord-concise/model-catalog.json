@@ -1,0 +1,13 @@
+{
+  "id": "gpt-6-astra",
+  "providerID": "openai",
+  "enabled": true,
+  "status": "active",
+  "variants": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+  ]
+}

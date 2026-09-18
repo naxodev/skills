@@ -1,0 +1,6 @@
+{
+  "name": "release-label-fixture",
+  "private": true,
+  "type": "module",
+  "exports": "./index.ts"
+}

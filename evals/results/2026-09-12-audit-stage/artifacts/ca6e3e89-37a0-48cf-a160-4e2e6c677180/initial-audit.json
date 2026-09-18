@@ -1,0 +1,102 @@
+{
+  "inputSha256": "ec071285494423d68dfadf321c71aebb9f745cb5800a8850582ce568dfb7665b",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/dek",
+      "problem": "The summary says exponential delays space attempts without preserving the body's distinction between requested delays and actual elapsed time. The source supplies only requested milliseconds, and the probe uses immediate sleep promises.",
+      "evidence": [
+        { "file": "source", "pointer": "/contracts/2", "quote": "Delays are requested milliseconds, not measured wall-clock durations." },
+        { "file": "probe", "pointer": "/assumptions", "quote": "Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement." }
+      ]
+    },
+    {
+      "id": "A2",
+      "pointer": "/sections/0/content",
+      "problem": "The old-path description places another attempt after every requested sleep with budget remaining. Invoking sleep does not establish that it completes successfully; rejection propagates and prevents the next send.",
+      "evidence": [
+        { "file": "source", "pointer": "/before", "quote": "if (attempt === retries) throw error;\n      await sleep(10);" },
+        { "file": "source", "pointer": "/contracts/2", "quote": "sleep returns a promise; rejection propagates." },
+        { "file": "probe", "pointer": "/results/before/sleepFailure", "value": { "calls": 1, "effects": 0, "delays": [10], "result": null, "error": "sleep-failed" } }
+      ]
+    },
+    {
+      "id": "A3",
+      "pointer": "/sections/1/title",
+      "problem": "The heading unconditionally says permanent failures got another attempt. The old loop retries only with budget remaining and after sleep fulfills. The modeled permanent-failure example establishes one such case, not an unconditional outcome.",
+      "evidence": [
+        { "file": "source", "pointer": "/before", "quote": "if (attempt === retries) throw error;\n      await sleep(10);" },
+        { "file": "source", "pointer": "/contracts/2", "quote": "sleep returns a promise; rejection propagates." },
+        { "file": "probe", "pointer": "/results/before/permanent/calls", "value": 2 }
+      ]
+    },
+    {
+      "id": "A4",
+      "pointer": "/sections/1/content",
+      "problem": "The changed function does not return the permanent error as a result. It throws that error, rejecting its returned promise. The probe separately records a null result and the permanent error. The classification is carried by the send rejection; the inputs do not establish that the caller itself classifies failures.",
+      "evidence": [
+        { "file": "source", "pointer": "/after", "quote": "if (!error.retryable || attempt === retries) throw error;" },
+        { "file": "source", "pointer": "/contracts/0", "quote": "send returns a promise and rejects with an object containing a boolean retryable property." },
+        { "file": "probe", "pointer": "/results/after/permanent", "value": { "calls": 1, "effects": 0, "delays": [], "result": null, "error": "permanent" } }
+      ]
+    },
+    {
+      "id": "A5",
+      "pointer": "/sections/3/content",
+      "problem": "The recap states that separate calls have no lock or cross-call exclusion as an implementation fact. The contract says none is supplied, and the shown wrapper contains none; the implementation and shared state of send remain unshown. The concurrent probe records modeled effects, not the absence of locking in an actual delivery implementation.",
+      "evidence": [
+        { "file": "source", "pointer": "/contracts/3", "quote": "Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied." },
+        { "file": "probe", "pointer": "/assumptions", "quote": "Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement." },
+        { "file": "probe", "pointer": "/results/after/concurrentCalls", "value": [{ "calls": 1, "effects": 1, "delays": [], "result": "delivered", "error": null }, { "calls": 1, "effects": 1, "delays": [], "result": "delivered", "error": null }] }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/dek",
+      "findingIds": ["A1"],
+      "value": "A retryability check stops retries after permanent failures, while exponential backoff increases requested delays before later attempts. These requests do not establish elapsed time. Neither change guarantees exactly-once delivery."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "findingIds": ["A2"],
+      "value": "<p class=\"lead\">Cedar Relay wraps an asynchronous <code>send</code> operation in a retry loop. You supply a nonnegative integer, <code>retries</code>, which counts extra attempts: a budget of two permits at most three sends. A successful send returns immediately. Previously, every send rejection with budget remaining triggered a requested 10-millisecond sleep. Another attempt followed only if that sleep fulfilled; a sleep rejection propagated instead.</p>"
+    },
+    {
+      "pointer": "/sections/1/title",
+      "findingIds": ["A3"],
+      "value": "Permanent failures could still get another attempt"
+    },
+    {
+      "pointer": "/sections/1/content",
+      "findingIds": ["A4"],
+      "value": "<p>The old loop ignored the rejection object's boolean <code>retryable</code> property. In the supplied permanent-failure scenario, it sends twice and reaches a modeled success after the first rejection. The changed loop instead rejects with the permanent error after one send, without sleeping. The send rejection's failure classification now controls retry eligibility, alongside the remaining budget.</p>"
+    },
+    {
+      "pointer": "/sections/3/content",
+      "findingIds": ["A5"],
+      "value": "<p>The change filters retries and increases their requested spacing. The author's exactly-once claim does not follow: a send can commit remotely and then reject. The duplicate probe models that sequence and records two effects in both versions. No deduplication or idempotency contract prevents repetition. Separate calls also retain independent counters. The shown loop adds no lock, and no cross-call delivery exclusion is supplied by the contracts. The concurrent probe records two modeled effects; the underlying send implementation and its shared state are not shown. The improvement is a more selective retry policy, not a guarantee of one remote effect.</p>"
+    }
+  ],
+  "blockers": []
+}

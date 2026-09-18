@@ -1,0 +1,118 @@
+{
+  "frozenAt": "2026-09-13T17:26:14.557Z",
+  "baseline": "c9b5afa3",
+  "model": {
+    "providerID": "openai",
+    "id": "gpt-6-astra",
+    "variant": "medium"
+  },
+  "hashes": {
+    "baseline/STYLE.md": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+    "baseline/SKILL.md": "550815a6c6cd43d7d1ed2084e0abe6bea57413c52a30352a5dcf760c82e713f9",
+    "candidate/STYLE.md": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+    "candidate/SKILL.md": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+    "small/reports.json": "a1b6cb14b4a0a1569f9c020a227aed8a7d0a47cc4fcf1565d08647d311157219",
+    "small/pr.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+    "multi/reports.json": "559b183f90af03ad2f5b8882918712340f5544dde2a53a6a8be317385506ae08",
+    "multi/pr.json": "c170226f035482893cb274f8411b7b59deaa898523f547f61664b3859f4aa051",
+    "PLAN.md": "782986784f3312439364ea9d2d6340eaa7d853038011b18a103249187e258191"
+  },
+  "trials": [
+    {
+      "id": "small-baseline-1",
+      "fixture": "small",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-baseline-1-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "small-candidate-1",
+      "fixture": "small",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-candidate-1-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "small-baseline-2",
+      "fixture": "small",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-baseline-2-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "small-candidate-2",
+      "fixture": "small",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-candidate-2-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "small-baseline-3",
+      "fixture": "small",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-baseline-3-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "small-candidate-3",
+      "fixture": "small",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-small-candidate-3-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "multi-baseline-1",
+      "fixture": "multi",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-baseline-1-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "multi-candidate-1",
+      "fixture": "multi",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-candidate-1-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "multi-baseline-2",
+      "fixture": "multi",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-baseline-2-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "multi-candidate-2",
+      "fixture": "multi",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-candidate-2-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "multi-baseline-3",
+      "fixture": "multi",
+      "arm": "baseline",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-baseline-3-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    },
+    {
+      "id": "multi-candidate-3",
+      "fixture": "multi",
+      "arm": "candidate",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/structure-multi-candidate-3-20260913",
+      "prompt": "Read skills/pr-walkthrough/SKILL.md and its local STYLE.md directly, not an installed skill. Use step 4 with pr.json and reports.json, which supply the original PR and the four completed evidence reports. Produce a text-only manifest and run the supplied build script, saving manifest.json and walkthrough.html in this directory. This is a synthesis component evaluation: fetching and four-agent dispatch are already supplied, so do not repeat them. I want a full walkthrough even if this PR is small. Keep all input files unchanged. Do not invoke other skills, delegate, or use GitHub. Use the local manifest schema and build instructions; override only their output paths to this directory.",
+      "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919"
+    }
+  ]
+}

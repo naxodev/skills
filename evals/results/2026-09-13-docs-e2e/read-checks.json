@@ -1,0 +1,428 @@
+[
+  {
+    "id": "docs-reader-start-baseline-1",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true,
+      "HOW-TO-TEMPLATE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "read",
+      "read",
+      "shell",
+      "patch",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md",
+      "skills/writing-technical-docs/STYLE.md",
+      "README.md",
+      "card.ts",
+      "configs/release.example.json",
+      "configs/preview.json"
+    ]
+  },
+  {
+    "id": "docs-reader-start-candidate-1",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true,
+      "HOW-TO-TEMPLATE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "read",
+      "read",
+      "shell",
+      "patch",
+      "shell",
+      "patch",
+      "shell",
+      "shell",
+      "shell",
+      "patch"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md",
+      "skills/writing-technical-docs/STYLE.md",
+      "README.md",
+      "card.ts",
+      "configs",
+      "configs/release.example.json",
+      "configs/preview.json"
+    ]
+  },
+  {
+    "id": "docs-reader-start-baseline-2",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true,
+      "HOW-TO-TEMPLATE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "glob",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "patch",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md",
+      "skills/writing-technical-docs/STYLE.md",
+      "README.md",
+      "card.ts",
+      "configs/release.example.json",
+      "configs/preview.json"
+    ]
+  },
+  {
+    "id": "docs-reader-start-candidate-2",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true,
+      "HOW-TO-TEMPLATE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "read",
+      "read",
+      "shell",
+      "patch",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "README.md",
+      "card.ts",
+      "configs",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md",
+      "skills/writing-technical-docs/STYLE.md",
+      "configs/release.example.json",
+      "configs/preview.json"
+    ]
+  },
+  {
+    "id": "docs-reader-start-baseline-3",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true,
+      "HOW-TO-TEMPLATE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "read",
+      "read",
+      "shell",
+      "patch",
+      "shell",
+      "shell"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md",
+      "skills/writing-technical-docs/STYLE.md",
+      "README.md",
+      "card.ts",
+      "configs",
+      "configs/release.example.json",
+      "configs/preview.json"
+    ]
+  },
+  {
+    "id": "docs-reader-start-candidate-3",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true,
+      "HOW-TO-TEMPLATE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "read",
+      "read",
+      "shell",
+      "patch",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "shell",
+      "patch",
+      "shell"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md",
+      "skills/writing-technical-docs/STYLE.md",
+      "README.md",
+      "card.ts",
+      "configs",
+      "configs/release.example.json",
+      "configs/preview.json"
+    ]
+  },
+  {
+    "id": "docs-concept-baseline-1",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "patch",
+      "shell",
+      "shell",
+      "shell"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "operations.md",
+      "README.md",
+      "skills/writing-technical-docs/STYLE.md"
+    ]
+  },
+  {
+    "id": "docs-concept-candidate-1",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "shell",
+      "shell",
+      "patch",
+      "shell",
+      "shell",
+      "shell"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "operations.md",
+      "README.md",
+      "skills/writing-technical-docs/STYLE.md"
+    ]
+  },
+  {
+    "id": "docs-concept-baseline-2",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "shell",
+      "patch",
+      "shell",
+      "shell"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "operations.md",
+      "README.md",
+      "skills/writing-technical-docs/STYLE.md"
+    ]
+  },
+  {
+    "id": "docs-concept-candidate-2",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "shell",
+      "shell",
+      "patch",
+      "shell",
+      "shell",
+      "shell",
+      "patch"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "operations.md",
+      "README.md",
+      "skills/writing-technical-docs/STYLE.md"
+    ]
+  },
+  {
+    "id": "docs-concept-baseline-3",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "read",
+      "patch",
+      "shell",
+      "read"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "operations.md",
+      "README.md",
+      "skills/writing-technical-docs/STYLE.md",
+      "explanation.md"
+    ]
+  },
+  {
+    "id": "docs-concept-candidate-3",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "exactPrompt": true,
+    "toolNames": [
+      "read",
+      "read",
+      "read",
+      "read",
+      "read",
+      "glob",
+      "shell",
+      "patch",
+      "shell",
+      "shell",
+      "shell",
+      "read"
+    ],
+    "installedSkillCalls": [],
+    "readPaths": [
+      ".",
+      "skills/writing-technical-docs/SKILL.md",
+      "operations.md",
+      "README.md",
+      "skills/writing-technical-docs/STYLE.md",
+      "operations.md"
+    ]
+  }
+]

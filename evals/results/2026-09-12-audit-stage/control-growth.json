@@ -1,0 +1,666 @@
+[
+  {
+    "fixture": "retry",
+    "changed": [
+      "/meta",
+      "/sections/1/content"
+    ],
+    "initialBytes": 1693,
+    "revisedBytes": 1667,
+    "byteGrowth": -26,
+    "relativeGrowth": -0.01535735380980508,
+    "initial": [
+      {
+        "pointer": "/title",
+        "text": "Retry only retryable failures, within a fixed budget",
+        "codepoints": 52,
+        "words": 8
+      },
+      {
+        "pointer": "/eyebrow",
+        "text": "Cedar Relay",
+        "codepoints": 11,
+        "words": 2
+      },
+      {
+        "pointer": "/dek",
+        "text": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+        "codepoints": 131,
+        "words": 15
+      },
+      {
+        "pointer": "/meta",
+        "text": "Fictional source change and deterministic modeled examples",
+        "codepoints": 58,
+        "words": 7
+      },
+      {
+        "pointer": "/footer",
+        "text": "A rejected acknowledgment can still follow a committed remote effect.",
+        "codepoints": 69,
+        "words": 10
+      },
+      {
+        "pointer": "/sections/0/eyebrow",
+        "text": "The setting",
+        "codepoints": 11,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/0/title",
+        "text": "The old loop retried every rejection",
+        "codepoints": 36,
+        "words": 6
+      },
+      {
+        "pointer": "/sections/0/content",
+        "text": "\nThe old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.",
+        "codepoints": 123,
+        "words": 19
+      },
+      {
+        "pointer": "/sections/1/eyebrow",
+        "text": "The change",
+        "codepoints": 10,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/1/title",
+        "text": "Classify failures before waiting",
+        "codepoints": 32,
+        "words": 4
+      },
+      {
+        "pointer": "/sections/1/content",
+        "text": "\nThe changed loop stops on a non-retryable error. Otherwise it requests delays of 10, 20, then 40 milliseconds as the attempt index increases. A budget of two retries permits up to three sends. A rejected sleep prevents the next send.",
+        "codepoints": 234,
+        "words": 40
+      },
+      {
+        "pointer": "/sections/2/eyebrow",
+        "text": "The boundary",
+        "codepoints": 12,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/2/title",
+        "text": "A retry can duplicate a remote effect",
+        "codepoints": 37,
+        "words": 7
+      },
+      {
+        "pointer": "/sections/2/content",
+        "text": "\nThe author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.",
+        "codepoints": 249,
+        "words": 34
+      },
+      {
+        "pointer": "/sections/3/eyebrow",
+        "text": "The short version",
+        "codepoints": 17,
+        "words": 3
+      },
+      {
+        "pointer": "/sections/3/title",
+        "text": "Fewer retries for permanent failures",
+        "codepoints": 36,
+        "words": 5
+      },
+      {
+        "pointer": "/sections/3/content",
+        "text": "\nThe change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.",
+        "codepoints": 146,
+        "words": 20
+      }
+    ],
+    "revised": [
+      {
+        "pointer": "/title",
+        "text": "Retry only retryable failures, within a fixed budget",
+        "codepoints": 52,
+        "words": 8
+      },
+      {
+        "pointer": "/eyebrow",
+        "text": "Cedar Relay",
+        "codepoints": 11,
+        "words": 2
+      },
+      {
+        "pointer": "/dek",
+        "text": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+        "codepoints": 131,
+        "words": 15
+      },
+      {
+        "pointer": "/meta",
+        "text": "Deterministic modeled examples",
+        "codepoints": 30,
+        "words": 3
+      },
+      {
+        "pointer": "/footer",
+        "text": "A rejected acknowledgment can still follow a committed remote effect.",
+        "codepoints": 69,
+        "words": 10
+      },
+      {
+        "pointer": "/sections/0/eyebrow",
+        "text": "The setting",
+        "codepoints": 11,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/0/title",
+        "text": "The old loop retried every rejection",
+        "codepoints": 36,
+        "words": 6
+      },
+      {
+        "pointer": "/sections/0/content",
+        "text": "\nThe old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.",
+        "codepoints": 123,
+        "words": 19
+      },
+      {
+        "pointer": "/sections/1/eyebrow",
+        "text": "The change",
+        "codepoints": 10,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/1/title",
+        "text": "Classify failures before waiting",
+        "codepoints": 32,
+        "words": 4
+      },
+      {
+        "pointer": "/sections/1/content",
+        "text": "\nThe changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.",
+        "codepoints": 236,
+        "words": 40
+      },
+      {
+        "pointer": "/sections/2/eyebrow",
+        "text": "The boundary",
+        "codepoints": 12,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/2/title",
+        "text": "A retry can duplicate a remote effect",
+        "codepoints": 37,
+        "words": 7
+      },
+      {
+        "pointer": "/sections/2/content",
+        "text": "\nThe author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.",
+        "codepoints": 249,
+        "words": 34
+      },
+      {
+        "pointer": "/sections/3/eyebrow",
+        "text": "The short version",
+        "codepoints": 17,
+        "words": 3
+      },
+      {
+        "pointer": "/sections/3/title",
+        "text": "Fewer retries for permanent failures",
+        "codepoints": 36,
+        "words": 5
+      },
+      {
+        "pointer": "/sections/3/content",
+        "text": "\nThe change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.",
+        "codepoints": 146,
+        "words": 20
+      }
+    ],
+    "renderedCode": [],
+    "auditEdits": "not run; these are pre-writer control revisions",
+    "needlessEdits": "not measured; no audit ran"
+  },
+  {
+    "fixture": "transaction",
+    "changed": [
+      "/meta"
+    ],
+    "initialBytes": 1760,
+    "revisedBytes": 1732,
+    "byteGrowth": -28,
+    "relativeGrowth": -0.015909090909090907,
+    "initial": [
+      {
+        "pointer": "/title",
+        "text": "Publish only after the payment transaction commits",
+        "codepoints": 50,
+        "words": 7
+      },
+      {
+        "pointer": "/eyebrow",
+        "text": "Lantern Ledger",
+        "codepoints": 14,
+        "words": 2
+      },
+      {
+        "pointer": "/dek",
+        "text": "A failed commit now prevents publication, while publication failure leaves a committed payment intact.",
+        "codepoints": 102,
+        "words": 14
+      },
+      {
+        "pointer": "/meta",
+        "text": "Fictional source change and deterministic modeled examples",
+        "codepoints": 58,
+        "words": 7
+      },
+      {
+        "pointer": "/footer",
+        "text": "The supplied code has no durable outbox or delivery deduplication.",
+        "codepoints": 66,
+        "words": 10
+      },
+      {
+        "pointer": "/sections/0/eyebrow",
+        "text": "The setting",
+        "codepoints": 11,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/0/title",
+        "text": "Publication used to precede commit",
+        "codepoints": 34,
+        "words": 5
+      },
+      {
+        "pointer": "/sections/0/content",
+        "text": "\nThe old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.",
+        "codepoints": 176,
+        "words": 26
+      },
+      {
+        "pointer": "/sections/1/eyebrow",
+        "text": "The change",
+        "codepoints": 10,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/1/title",
+        "text": "Wait for the transaction to fulfill",
+        "codepoints": 35,
+        "words": 6
+      },
+      {
+        "pointer": "/sections/1/content",
+        "text": "\nThe changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.",
+        "codepoints": 148,
+        "words": 20
+      },
+      {
+        "pointer": "/sections/2/eyebrow",
+        "text": "The boundary",
+        "codepoints": 12,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/2/title",
+        "text": "The database cannot roll back publication failures",
+        "codepoints": 50,
+        "words": 7
+      },
+      {
+        "pointer": "/sections/2/content",
+        "text": "\nThe author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.",
+        "codepoints": 372,
+        "words": 53
+      },
+      {
+        "pointer": "/sections/3/eyebrow",
+        "text": "The short version",
+        "codepoints": 17,
+        "words": 3
+      },
+      {
+        "pointer": "/sections/3/title",
+        "text": "Commit first, with a remaining delivery gap",
+        "codepoints": 43,
+        "words": 7
+      },
+      {
+        "pointer": "/sections/3/content",
+        "text": "\nThe change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.",
+        "codepoints": 133,
+        "words": 20
+      }
+    ],
+    "revised": [
+      {
+        "pointer": "/title",
+        "text": "Publish only after the payment transaction commits",
+        "codepoints": 50,
+        "words": 7
+      },
+      {
+        "pointer": "/eyebrow",
+        "text": "Lantern Ledger",
+        "codepoints": 14,
+        "words": 2
+      },
+      {
+        "pointer": "/dek",
+        "text": "A failed commit now prevents publication, while publication failure leaves a committed payment intact.",
+        "codepoints": 102,
+        "words": 14
+      },
+      {
+        "pointer": "/meta",
+        "text": "Deterministic modeled examples",
+        "codepoints": 30,
+        "words": 3
+      },
+      {
+        "pointer": "/footer",
+        "text": "The supplied code has no durable outbox or delivery deduplication.",
+        "codepoints": 66,
+        "words": 10
+      },
+      {
+        "pointer": "/sections/0/eyebrow",
+        "text": "The setting",
+        "codepoints": 11,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/0/title",
+        "text": "Publication used to precede commit",
+        "codepoints": 34,
+        "words": 5
+      },
+      {
+        "pointer": "/sections/0/content",
+        "text": "\nThe old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.",
+        "codepoints": 176,
+        "words": 26
+      },
+      {
+        "pointer": "/sections/1/eyebrow",
+        "text": "The change",
+        "codepoints": 10,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/1/title",
+        "text": "Wait for the transaction to fulfill",
+        "codepoints": 35,
+        "words": 6
+      },
+      {
+        "pointer": "/sections/1/content",
+        "text": "\nThe changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.",
+        "codepoints": 148,
+        "words": 20
+      },
+      {
+        "pointer": "/sections/2/eyebrow",
+        "text": "The boundary",
+        "codepoints": 12,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/2/title",
+        "text": "The database cannot roll back publication failures",
+        "codepoints": 50,
+        "words": 7
+      },
+      {
+        "pointer": "/sections/2/content",
+        "text": "\nThe author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.",
+        "codepoints": 372,
+        "words": 53
+      },
+      {
+        "pointer": "/sections/3/eyebrow",
+        "text": "The short version",
+        "codepoints": 17,
+        "words": 3
+      },
+      {
+        "pointer": "/sections/3/title",
+        "text": "Commit first, with a remaining delivery gap",
+        "codepoints": 43,
+        "words": 7
+      },
+      {
+        "pointer": "/sections/3/content",
+        "text": "\nThe change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.",
+        "codepoints": 133,
+        "words": 20
+      }
+    ],
+    "renderedCode": [],
+    "auditEdits": "not run; these are pre-writer control revisions",
+    "needlessEdits": "not measured; no audit ran"
+  },
+  {
+    "fixture": "cache",
+    "changed": [
+      "/meta"
+    ],
+    "initialBytes": 1850,
+    "revisedBytes": 1822,
+    "byteGrowth": -28,
+    "relativeGrowth": -0.015135135135135135,
+    "initial": [
+      {
+        "pointer": "/title",
+        "text": "Invalidate after a successful write, with a remaining reader race",
+        "codepoints": 65,
+        "words": 10
+      },
+      {
+        "pointer": "/eyebrow",
+        "text": "Moss Catalog",
+        "codepoints": 12,
+        "words": 2
+      },
+      {
+        "pointer": "/dek",
+        "text": "Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.",
+        "codepoints": 133,
+        "words": 20
+      },
+      {
+        "pointer": "/meta",
+        "text": "Fictional source change and deterministic modeled examples",
+        "codepoints": 58,
+        "words": 7
+      },
+      {
+        "pointer": "/footer",
+        "text": "The model uses one shared Map, without a generation check for readers.",
+        "codepoints": 70,
+        "words": 12
+      },
+      {
+        "pointer": "/sections/0/eyebrow",
+        "text": "The setting",
+        "codepoints": 11,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/0/title",
+        "text": "Early deletion left a window for stale fills",
+        "codepoints": 44,
+        "words": 8
+      },
+      {
+        "pointer": "/sections/0/content",
+        "text": "\nThe old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.",
+        "codepoints": 149,
+        "words": 26
+      },
+      {
+        "pointer": "/sections/1/eyebrow",
+        "text": "The change",
+        "codepoints": 10,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/1/title",
+        "text": "Delete only after the write fulfills",
+        "codepoints": 36,
+        "words": 6
+      },
+      {
+        "pointer": "/sections/1/content",
+        "text": "\nThe changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.",
+        "codepoints": 240,
+        "words": 41
+      },
+      {
+        "pointer": "/sections/2/eyebrow",
+        "text": "The boundary",
+        "codepoints": 12,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/2/title",
+        "text": "An older snapshot can arrive after deletion",
+        "codepoints": 43,
+        "words": 7
+      },
+      {
+        "pointer": "/sections/2/content",
+        "text": "\nThe author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.",
+        "codepoints": 314,
+        "words": 48
+      },
+      {
+        "pointer": "/sections/3/eyebrow",
+        "text": "The short version",
+        "codepoints": 17,
+        "words": 3
+      },
+      {
+        "pointer": "/sections/3/title",
+        "text": "Close one cache-fill window",
+        "codepoints": 27,
+        "words": 4
+      },
+      {
+        "pointer": "/sections/3/content",
+        "text": "\nMoving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.",
+        "codepoints": 180,
+        "words": 29
+      }
+    ],
+    "revised": [
+      {
+        "pointer": "/title",
+        "text": "Invalidate after a successful write, with a remaining reader race",
+        "codepoints": 65,
+        "words": 10
+      },
+      {
+        "pointer": "/eyebrow",
+        "text": "Moss Catalog",
+        "codepoints": 12,
+        "words": 2
+      },
+      {
+        "pointer": "/dek",
+        "text": "Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.",
+        "codepoints": 133,
+        "words": 20
+      },
+      {
+        "pointer": "/meta",
+        "text": "Deterministic modeled examples",
+        "codepoints": 30,
+        "words": 3
+      },
+      {
+        "pointer": "/footer",
+        "text": "The model uses one shared Map, without a generation check for readers.",
+        "codepoints": 70,
+        "words": 12
+      },
+      {
+        "pointer": "/sections/0/eyebrow",
+        "text": "The setting",
+        "codepoints": 11,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/0/title",
+        "text": "Early deletion left a window for stale fills",
+        "codepoints": 44,
+        "words": 8
+      },
+      {
+        "pointer": "/sections/0/content",
+        "text": "\nThe old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.",
+        "codepoints": 149,
+        "words": 26
+      },
+      {
+        "pointer": "/sections/1/eyebrow",
+        "text": "The change",
+        "codepoints": 10,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/1/title",
+        "text": "Delete only after the write fulfills",
+        "codepoints": 36,
+        "words": 6
+      },
+      {
+        "pointer": "/sections/1/content",
+        "text": "\nThe changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.",
+        "codepoints": 240,
+        "words": 41
+      },
+      {
+        "pointer": "/sections/2/eyebrow",
+        "text": "The boundary",
+        "codepoints": 12,
+        "words": 2
+      },
+      {
+        "pointer": "/sections/2/title",
+        "text": "An older snapshot can arrive after deletion",
+        "codepoints": 43,
+        "words": 7
+      },
+      {
+        "pointer": "/sections/2/content",
+        "text": "\nThe author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.",
+        "codepoints": 314,
+        "words": 48
+      },
+      {
+        "pointer": "/sections/3/eyebrow",
+        "text": "The short version",
+        "codepoints": 17,
+        "words": 3
+      },
+      {
+        "pointer": "/sections/3/title",
+        "text": "Close one cache-fill window",
+        "codepoints": 27,
+        "words": 4
+      },
+      {
+        "pointer": "/sections/3/content",
+        "text": "\nMoving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.",
+        "codepoints": 180,
+        "words": 29
+      }
+    ],
+    "renderedCode": [],
+    "auditEdits": "not run; these are pre-writer control revisions",
+    "needlessEdits": "not measured; no audit ran"
+  }
+]

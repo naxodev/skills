@@ -1,0 +1,2472 @@
+[
+  {
+    "id": "pr-grounding-quality-1",
+    "parent": {
+      "id": "ses_f4f9b8fb2ffeAtvWQYaWjzH4Ex",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 60782,
+        "output": 2559,
+        "reasoning": 43,
+        "cache": {
+          "read": 195328,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789665767732,
+        "updated": 1789665769221,
+        "idle": 1789665934785
+      },
+      "title": "Walkthrough evidence pr-grounding-quality-1",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f4f9a9259ffehZHAiUfYlQZ6g2",
+        "parentID": "ses_f4f9b8fb2ffeAtvWQYaWjzH4Ex",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 32925,
+          "output": 349,
+          "reasoning": 0,
+          "cache": {
+            "read": 14720,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789665832433,
+          "updated": 1789665832439,
+          "idle": 1789665853406
+        },
+        "title": "Diff tour for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9a9225ffe2wZAv8i1a0eBlc",
+        "parentID": "ses_f4f9b8fb2ffeAtvWQYaWjzH4Ex",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19270,
+          "output": 86,
+          "reasoning": 0,
+          "cache": {
+            "read": 28288,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789665832556,
+          "updated": 1789665832561,
+          "idle": 1789665844955
+        },
+        "title": "Alternatives report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9a925affexYRDGUKbGsWP7G",
+        "parentID": "ses_f4f9b8fb2ffeAtvWQYaWjzH4Ex",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 17338,
+          "output": 415,
+          "reasoning": 0,
+          "cache": {
+            "read": 30208,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789665832425,
+          "updated": 1789665832430,
+          "idle": 1789665852768
+        },
+        "title": "Before report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9a9253ffezdCT5IRUgQNFQa",
+        "parentID": "ses_f4f9b8fb2ffeAtvWQYaWjzH4Ex",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 17344,
+          "output": 366,
+          "reasoning": 0,
+          "cache": {
+            "read": 30208,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789665832442,
+          "updated": 1789665832445,
+          "idle": 1789665852375
+        },
+        "title": "Tradeoffs report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "frozenSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "frozenSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "parentReadPaths": [
+      "skills/pr-walkthrough/SKILL.md",
+      "skills/pr-walkthrough/STYLE.md",
+      "work/pr.json",
+      "package.json",
+      ".",
+      "skills/pr-walkthrough/scripts/generate-audio.mjs",
+      "skills/pr-walkthrough/scripts/build.mjs",
+      "work",
+      "work/pr-42-audio.json"
+    ],
+    "errors": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789665832345,
+          "ran": 1789665832348,
+          "completed": 1789665852770
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report for fixture",
+          "prompt": "Read-only report agent named before. Use only local-file instructions. Read skills/pr-walkthrough/SKILL.md and STYLE.md at /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/skills/pr-walkthrough/. Evidence is /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr.json replacing step 2 fetch. No installed skills/guides, network, GitHub, repository history, file writes, or additional agents. Return before report: state before PR and documented gap/motivation, grounded only in evidence. 200–400 words; distinguish author statements from diff observations. Return report, do not write."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9a925affexYRDGUKbGsWP7G",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789665832349,
+          "ran": 1789665832353,
+          "completed": 1789665853408
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour for fixture",
+          "prompt": "Read-only report agent named diff-tour. Use only local-file instructions. Read skills/pr-walkthrough/SKILL.md and STYLE.md at /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/skills/pr-walkthrough/. Evidence is /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr.json replacing step 2 fetch. No installed skills/guides, network, GitHub, repository history, file writes, or additional agents. Return diff-tour report: each changed file in 2–4 narrative sentences grouped new/modified, table-ready one-sentence summary per file, and smallest sufficient set of up to 4 contiguous verbatim diff excerpts with context and explanation. One hunk suffices here; do not split or repeat. Return report, do not write."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9a9259ffehZHAiUfYlQZ6g2",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789665832354,
+          "ran": 1789665832360,
+          "completed": 1789665852377
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs report for fixture",
+          "prompt": "Read-only report agent named tradeoffs. Use only local-file instructions. Read skills/pr-walkthrough/SKILL.md and STYLE.md at /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/skills/pr-walkthrough/. Evidence is /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr.json replacing step 2 fetch. No installed skills/guides, network, GitHub, repository history, file writes, or additional agents. Return tradeoffs report: documented limitations, edge cases, known gaps from body/diff comments/tests. Capture choice AND reason; explicitly identify absent reasons rather than invent. Return report, do not write."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9a9253ffezdCT5IRUgQNFQa",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789665832362,
+          "ran": 1789665832406,
+          "completed": 1789665844957
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives report for fixture",
+          "prompt": "Read-only report agent named alternatives. Use only local-file instructions. Read skills/pr-walkthrough/SKILL.md and STYLE.md at /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/skills/pr-walkthrough/. Evidence is /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr.json replacing step 2 fetch. No installed skills/guides, network, GitHub, repository history, file writes, or additional agents. Return alternatives report: approaches considered and rejected using only supplied body, commit metadata and diff. Do not invent. If none documented state 'none documented' and return. Return report, do not write."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9a9225ffe2wZAv8i1a0eBlc",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789665853406,
+      1789665844955,
+      1789665852768,
+      1789665852375
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789665875494,
+      "ran": 1789665902126,
+      "completed": 1789665902133
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789665907068,
+          "ran": 1789665907073,
+          "completed": 1789665907141
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-42-manifest.json --output work/pr-42-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789665907076,
+          "ran": 1789665907083,
+          "completed": 1789665915870
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test\n$ tsc --noEmit\n$ eslint .\n$ bun test skills/pr-walkthrough/scripts\nbun test v1.3.7 (ba426210)\n\nskills/pr-walkthrough/scripts/chunk-narration.test.mjs:\n(pass) every chunk stays inside the budget [2.31ms]\n(pass) chunks concatenate back to the original words [0.38ms]\n(pass) a single sentence longer than the budget is broken up, not truncated [0.06ms]\n(pass) text that already fits is left as one chunk [0.15ms]\n\nskills/pr-walkthrough/scripts/pipeline.test.mjs:\n(pass) a text-only walkthrough is readable without audio and escapes its plain-text title [39.10ms]\n(pass) code copied from a PR remains visible text rather than executable HTML [115.68ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:1}} [62.30ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: <p>No reference</p> [64.16ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:0}}{{CODE:0}} [63.15ms]\n(pass) a missing audio sidecar produces the same text document [82.17ms]\n(pass) failed audio preflight removes old narration before the next build [382.46ms]\n(pass) text-only manifests skip the audio toolchain and discard earlier clips [73.15ms]\n(pass) fetch passes shell syntax literally to gh without running it [468.86ms]\n\n 13 pass\n 0 fail\n 43 expect() calls\nRan 13 tests across 2 files. [4.85s]\n\nCommand exited with code 0.",
+        "fullOutputSha256": "9cb5b592b910374529f08d4a39caedc62f4ef47e597a89a6ed6fe4dc14619eda"
+      },
+      {
+        "time": {
+          "created": 1789665918361,
+          "ran": 1789665919692,
+          "completed": 1789665919904
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-42-manifest.json --audio work/pr-42-audio.json --output work/pr-42-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr-42-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "73895f7e2a3e8caa6ecb40448efa93df48018d733bed1de7d5d2032d5bc6dad5"
+      },
+      {
+        "time": {
+          "created": 1789665922386,
+          "ran": 1789665927689,
+          "completed": 1789665927746
+        },
+        "input": {
+          "command": "bun -e 'import { readFileSync, realpathSync, existsSync } from \"node:fs\"; const p=\"work/pr-42-walkthrough.html\"; const h=readFileSync(p,\"utf8\"); const m=JSON.parse(readFileSync(\"work/pr-42-manifest.json\",\"utf8\")); if(m.sections.length!==4 || /\\{\\{(?:CODE|DIAGRAM):/.test(h) || /<audio\\b/i.test(h) || existsSync(\"work/pr-42-audio.json\")) throw new Error(\"Output verification failed\"); for(const s of m.sections) if(!h.includes(s.title)) throw new Error(\"Missing section\"); console.log(`Verified four-section text-only HTML (${h.length} characters): ${realpathSync(p)}`);'"
+        },
+        "output": "Verified four-section text-only HTML (19310 characters): /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "2b5031f7b8d07335bafeb5d48a7b10aa91634d9b39cef243452871db5fa61ea6"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "The four reports are complete. The diff moves the existing clock check; I’ll attribute the claimed “extra clock read” to the author and include the streaming follow-up.\n\n",
+      "Created the full text-only walkthrough:\n\n[**pr-42-walkthrough.html**](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-1-20260917/work/pr-42-walkthrough.html)\n\nIncludes all four required sections, the post-change code, and the documented streaming follow-up. All four read-only report agents completed using local evidence.\n\nVerified the HTML output. `bun run check` passed: type-check, lint, and all 13 tests. No desktop application was opened."
+    ],
+    "artifact": {
+      "manifestSha256": "f1334101e8193fa365f54d3cdcc3cf45e3b489aa4835e1666c238ea07546b7b3",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "The refresh came after the send"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "The first request reached the check too late"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Wait for refresh, then dispatch"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "Put credential preparation first"
+        }
+      ],
+      "words": 429,
+      "codeBlocks": 1,
+      "codeSources": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+          "contiguousAfterState": true
+        }
+      ],
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "b0b2abc12eaf2d5dcfb8b92087375aa213fcc24e6519d7a154af20fef3072582",
+      "rebuiltHTMLSha256": "b0b2abc12eaf2d5dcfb8b92087375aa213fcc24e6519d7a154af20fef3072582",
+      "identicalRebuild": true,
+      "handoffExists": true
+    }
+  },
+  {
+    "id": "pr-grounding-quality-2",
+    "parent": {
+      "id": "ses_f4f9b8fc3ffesQzblAaHR5JOY5",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 32073,
+        "output": 2372,
+        "reasoning": 63,
+        "cache": {
+          "read": 224256,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789665767725,
+        "updated": 1789665769291,
+        "idle": 1789665936580
+      },
+      "title": "Walkthrough evidence pr-grounding-quality-2",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f4f9aa081ffeWVgTCUr1Is5uJF",
+        "parentID": "ses_f4f9b8fc3ffesQzblAaHR5JOY5",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19463,
+          "output": 430,
+          "reasoning": 0,
+          "cache": {
+            "read": 46720,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789665828770,
+          "updated": 1789665828773,
+          "idle": 1789665850864
+        },
+        "title": "Diff tour report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9aa077ffe4I3Dc4DHRsdMbR",
+        "parentID": "ses_f4f9b8fc3ffesQzblAaHR5JOY5",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19331,
+          "output": 74,
+          "reasoning": 0,
+          "cache": {
+            "read": 46720,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789665828810,
+          "updated": 1789665828813,
+          "idle": 1789665843994
+        },
+        "title": "Alternatives evidence report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9aa081ffdLenuM5rFoEvAKo",
+        "parentID": "ses_f4f9b8fc3ffesQzblAaHR5JOY5",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19367,
+          "output": 380,
+          "reasoning": 0,
+          "cache": {
+            "read": 46720,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789665828763,
+          "updated": 1789665828767,
+          "idle": 1789665851817
+        },
+        "title": "Tradeoffs evidence report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9aa082ffeDJPoWFCdVOwNY5",
+        "parentID": "ses_f4f9b8fc3ffesQzblAaHR5JOY5",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 31999,
+          "output": 434,
+          "reasoning": 0,
+          "cache": {
+            "read": 34048,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789665828806,
+          "updated": 1789665828809,
+          "idle": 1789665856157
+        },
+        "title": "Before state report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "frozenSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "frozenSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "parentReadPaths": [
+      "skills/pr-walkthrough/SKILL.md",
+      "skills/pr-walkthrough/STYLE.md",
+      "work/pr.json",
+      "package.json",
+      ".",
+      "skills/pr-walkthrough/scripts/generate-audio.mjs",
+      "skills/pr-walkthrough/scripts/build.mjs",
+      "work",
+      "work/pr-42-audio.json"
+    ],
+    "errors": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789665828705,
+          "ran": 1789665828713,
+          "completed": 1789665856159
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before state report",
+          "prompt": "Read-only report agent 'before' for fixture PR #42. Read local skills/pr-walkthrough/SKILL.md and STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917, then work/pr.json there. Use only local-file instructions and this evidence; no installed skills/guides, repository history, GitHub, network, or file writes. Return report, not a file. Charter: explain state before PR and gap/motivation from diff/body, no speculation, 200–400 words. Distinguish author statements from visible code."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9aa082ffeDJPoWFCdVOwNY5",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789665828716,
+          "ran": 1789665828721,
+          "completed": 1789665850866
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour report",
+          "prompt": "Read-only report agent 'diff-tour' for fixture PR #42. Read local skills/pr-walkthrough/SKILL.md and STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917, then work/pr.json there. Use only local-file instructions and this evidence; no installed skills/guides, repository history, GitHub, network, or file writes. Return report, not a file. Charter: each changed file 2–4 narrative sentences, group new vs modified; central logic; table-ready file list with one-sentence summary each. Return smallest sufficient set (up to 4) of contiguous verbatim diff excerpts preserving signs/context, with explanation. One excerpt is enough for single hunk. Ground claims."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9aa081ffeWVgTCUr1Is5uJF",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789665828723,
+          "ran": 1789665828729,
+          "completed": 1789665851819
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs evidence report",
+          "prompt": "Read-only report agent 'tradeoffs' for fixture PR #42. Read local skills/pr-walkthrough/SKILL.md and STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917, then work/pr.json there. Use only local-file instructions and this evidence; no installed skills/guides, repository history, GitHub, network, or file writes. Return report, not a file. Charter: documented limitations, edge cases, known gaps from body, diff comments, tests. For each capture choice AND reason; mark absent reasons rather than inventing. Distinguish author claims and visible code."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9aa081ffdLenuM5rFoEvAKo",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789665828731,
+          "ran": 1789665828741,
+          "completed": 1789665843997
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives evidence report",
+          "prompt": "Read-only report agent 'alternatives' for fixture PR #42. Read local skills/pr-walkthrough/SKILL.md and STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917, then work/pr.json there. Use only local-file instructions and this evidence; no installed skills/guides, repository history, GitHub, network, or file writes. Return report, not a file. Charter: considered and rejected approaches from supplied body, included commits/comments/issue text only. Do not invent. If absent say 'none documented' and return."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9aa077ffe4I3Dc4DHRsdMbR",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789665850864,
+      1789665843994,
+      1789665851817,
+      1789665856157
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789665872622,
+      "ran": 1789665899086,
+      "completed": 1789665899142
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789665906058,
+          "ran": 1789665906089,
+          "completed": 1789665906437
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-42-manifest.json --output work/pr-42-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789665906091,
+          "ran": 1789665906121,
+          "completed": 1789665914882
+        },
+        "input": {
+          "command": "bun run check"
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test\n$ tsc --noEmit\n$ eslint .\n$ bun test skills/pr-walkthrough/scripts\nbun test v1.3.7 (ba426210)\n\nskills/pr-walkthrough/scripts/chunk-narration.test.mjs:\n(pass) every chunk stays inside the budget [2.16ms]\n(pass) chunks concatenate back to the original words [0.36ms]\n(pass) a single sentence longer than the budget is broken up, not truncated [0.11ms]\n(pass) text that already fits is left as one chunk [0.08ms]\n\nskills/pr-walkthrough/scripts/pipeline.test.mjs:\n(pass) a text-only walkthrough is readable without audio and escapes its plain-text title [42.09ms]\n(pass) code copied from a PR remains visible text rather than executable HTML [114.52ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:1}} [66.75ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: <p>No reference</p> [63.00ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:0}}{{CODE:0}} [66.21ms]\n(pass) a missing audio sidecar produces the same text document [74.64ms]\n(pass) failed audio preflight removes old narration before the next build [714.76ms]\n(pass) text-only manifests skip the audio toolchain and discard earlier clips [72.39ms]\n(pass) fetch passes shell syntax literally to gh without running it [1122.91ms]\n\n 13 pass\n 0 fail\n 43 expect() calls\nRan 13 tests across 2 files. [5.09s]\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d53d32f636813743f7da79a175ccc257c442da92a11913f6a63ceb5a6d3eac9e"
+      },
+      {
+        "time": {
+          "created": 1789665917891,
+          "ran": 1789665919129,
+          "completed": 1789665919342
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-42-manifest.json --audio work/pr-42-audio.json --output work/pr-42-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917/work/pr-42-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "dd0d9ba465d0fd37c74c42a2a90d4c6f388998d029455d1d4ec8210044ba354c"
+      },
+      {
+        "time": {
+          "created": 1789665924502,
+          "ran": 1789665928782,
+          "completed": 1789665928833
+        },
+        "input": {
+          "command": "bun -e 'import {readFileSync, realpathSync, existsSync} from \"node:fs\"; const p=\"work/pr-42-walkthrough.html\"; const html=readFileSync(p,\"utf8\"); if ((html.match(/<h2\\b/g)||[]).length!==4 || html.includes(\"{{CODE:\") || /<audio\\b/.test(html) || existsSync(\"work/pr-42-audio.json\")) throw new Error(\"Walkthrough verification failed\"); console.log(realpathSync(p)); console.log(\"Verified: four sections, resolved code block, no audio or stale sidecar.\");'"
+        },
+        "output": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917/work/pr-42-walkthrough.html\nVerified: four sections, resolved code block, no audio or stale sidecar.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "6d5e2ccfa50453d03638d2865f6580b7c0c7c55b7d0c63610e74a3edceffce39"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "All four reports agree: the fix moves the existing expiry check before dispatch. The author mentions an extra clock read, but the diff shows one before and after; the walkthrough will preserve that distinction.\n",
+      "Created the full text-only walkthrough:\n\n[pr-42-walkthrough.html](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-2-20260917/work/pr-42-walkthrough.html)\n\n- Used the local skill, linked style instructions, and all four parallel reports.\n- Included the four-section narrative, post-change code, and documented streaming follow-up.\n- Ran the audio stage in text-only mode, which removed the stale sidecar.\n- Verified the HTML build and `bun run check`: type-check, lint, and all 13 tests passed."
+    ],
+    "artifact": {
+      "manifestSha256": "7de0d1bf9d9520f93a6c3dfa3cc3d07b811aa719a74759c3a42db4a0e1c2578b",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "The check came after the send"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "The first request arrived too soon"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Make refresh a prerequisite for dispatch"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "The same check, at the useful moment"
+        }
+      ],
+      "words": 444,
+      "codeBlocks": 1,
+      "codeSources": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+          "contiguousAfterState": true
+        }
+      ],
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "267603d4e42e8e1398326768351d25119a13467b5d784db997056e647fe804a7",
+      "rebuiltHTMLSha256": "267603d4e42e8e1398326768351d25119a13467b5d784db997056e647fe804a7",
+      "identicalRebuild": true,
+      "handoffExists": true
+    }
+  },
+  {
+    "id": "pr-grounding-quality-3",
+    "parent": {
+      "id": "ses_f4f9857e1ffeQLkMcZGYNghPWk",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 58803,
+        "output": 2546,
+        "reasoning": 39,
+        "cache": {
+          "read": 194048,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789665978448,
+        "updated": 1789665979936,
+        "idle": 1789666150546
+      },
+      "title": "Walkthrough evidence pr-grounding-quality-3",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f4f974527ffeSReu26eLFVRM36",
+        "parentID": "ses_f4f9857e1ffeQLkMcZGYNghPWk",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19335,
+          "output": 86,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666048816,
+          "updated": 1789666048821,
+          "idle": 1789666063454
+        },
+        "title": "Alternatives report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9745bfffcEqDVbaplUEXmA0",
+        "parentID": "ses_f4f9857e1ffeQLkMcZGYNghPWk",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19350,
+          "output": 268,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666048610,
+          "updated": 1789666048615,
+          "idle": 1789666067736
+        },
+        "title": "Tradeoffs report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9745bfffe8A6Tgv6Z2uHTMH",
+        "parentID": "ses_f4f9857e1ffeQLkMcZGYNghPWk",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 17258,
+          "output": 367,
+          "reasoning": 0,
+          "cache": {
+            "read": 30336,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666048624,
+          "updated": 1789666048626,
+          "idle": 1789666070285
+        },
+        "title": "Before report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f9745bfffd8oBIz4xxFN6RML",
+        "parentID": "ses_f4f9857e1ffeQLkMcZGYNghPWk",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 34806,
+          "output": 410,
+          "reasoning": 0,
+          "cache": {
+            "read": 12800,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666048618,
+          "updated": 1789666048622,
+          "idle": 1789666075851
+        },
+        "title": "Diff tour for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "frozenSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "frozenSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "parentReadPaths": [
+      "skills/pr-walkthrough/SKILL.md",
+      "skills/pr-walkthrough/STYLE.md",
+      "work/pr.json",
+      ".",
+      "package.json",
+      "skills/pr-walkthrough/scripts/generate-audio.mjs",
+      "skills/pr-walkthrough/scripts/build.mjs",
+      "work",
+      "work/pr-42-audio.json"
+    ],
+    "errors": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666048538,
+          "ran": 1789666048549,
+          "completed": 1789666070288
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report for fixture",
+          "prompt": "Read-only report agent 'before'. Use ONLY local-file instruction sources; do not load any installed skills/guides, consult repository history, access network/GitHub, or write files. Read local skills/pr-walkthrough/SKILL.md and skills/pr-walkthrough/STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917. Evidence path: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr.json (replaces fetch). Return the before report: state before PR, gap/motivation from body/diff. Requested 200–400 words; avoid unsupported speculation or padding. Return report only, no files. User insists on full small-PR text-only walkthrough."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9745bfffe8A6Tgv6Z2uHTMH",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666048553,
+          "ran": 1789666048564,
+          "completed": 1789666075853
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour for fixture",
+          "prompt": "Read-only report agent 'diff-tour'. Use ONLY local-file instruction sources; do not load installed skills/guides, consult repository history, access network/GitHub, or write files. Read local skills/pr-walkthrough/SKILL.md and STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917. Evidence: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr.json. Return diff-tour report: 2–4 narrative sentences per changed file grouped new/modified, table-ready one-sentence file summary, and smallest sufficient set of up to 4 contiguous verbatim diff excerpts with context and explanation. One excerpt enough for one hunk. Explain central logic. Return only report, no files."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9745bfffd8oBIz4xxFN6RML",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666048566,
+          "ran": 1789666048572,
+          "completed": 1789666067738
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs report for fixture",
+          "prompt": "Read-only report agent 'tradeoffs'. Use ONLY local-file instruction sources; no installed skills/guides, repository history, network/GitHub, or file writes. Read local skills/pr-walkthrough/SKILL.md and STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917. Evidence: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr.json. Return documented limitations/edge cases/known gaps only from body, diff comments, supplied tests. Capture choice AND reason and distinguish author framing from diff evidence. No invented rationale. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f9745bfffcEqDVbaplUEXmA0",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666048709,
+          "ran": 1789666048719,
+          "completed": 1789666063478
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives report for fixture",
+          "prompt": "Read-only report agent 'alternatives'. Use ONLY local-file instruction sources; no installed skills/guides, repository history, network/GitHub, or writes. Read local skills/pr-walkthrough/SKILL.md and STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917. Evidence: /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr.json. Report documented considered/rejected alternatives using ONLY supplied body/commit messages/comments/issue text. Do not fetch missing sources. If none, return 'none documented'. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f974527ffeSReu26eLFVRM36",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789666063454,
+      1789666067736,
+      1789666070285,
+      1789666075851
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789666090062,
+      "ran": 1789666116661,
+      "completed": 1789666116668
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789666121263,
+          "ran": 1789666121269,
+          "completed": 1789666121325
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-42-manifest.json --output work/pr-42-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789666121272,
+          "ran": 1789666121292,
+          "completed": 1789666127630
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test\n$ tsc --noEmit\n$ eslint .\n$ bun test skills/pr-walkthrough/scripts\nbun test v1.3.7 (ba426210)\n\nskills/pr-walkthrough/scripts/chunk-narration.test.mjs:\n(pass) every chunk stays inside the budget [1.98ms]\n(pass) chunks concatenate back to the original words [0.34ms]\n(pass) a single sentence longer than the budget is broken up, not truncated [0.14ms]\n(pass) text that already fits is left as one chunk [0.09ms]\n\nskills/pr-walkthrough/scripts/pipeline.test.mjs:\n(pass) a text-only walkthrough is readable without audio and escapes its plain-text title [49.64ms]\n(pass) code copied from a PR remains visible text rather than executable HTML [125.04ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:1}} [63.73ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: <p>No reference</p> [64.90ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:0}}{{CODE:0}} [64.06ms]\n(pass) a missing audio sidecar produces the same text document [72.49ms]\n(pass) failed audio preflight removes old narration before the next build [393.47ms]\n(pass) text-only manifests skip the audio toolchain and discard earlier clips [126.98ms]\n(pass) fetch passes shell syntax literally to gh without running it [533.39ms]\n\n 13 pass\n 0 fail\n 43 expect() calls\nRan 13 tests across 2 files. [3.71s]\n\nCommand exited with code 0.",
+        "fullOutputSha256": "a564a90dbecba5e2a8bae9f378da75e7b5cb6220b2952c1653190de8037da277"
+      },
+      {
+        "time": {
+          "created": 1789666131660,
+          "ran": 1789666133039,
+          "completed": 1789666133348
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-42-manifest.json --audio work/pr-42-audio.json --output work/pr-42-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr-42-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "71a7a702e2ed9275b014914868e2b868b2d11a5850f69b7a440a5642bb44a570"
+      },
+      {
+        "time": {
+          "created": 1789666138655,
+          "ran": 1789666144171,
+          "completed": 1789666144219
+        },
+        "input": {
+          "command": "bun -e 'import {readFileSync,realpathSync,existsSync} from \"node:fs\"; const p=\"work/pr-42-walkthrough.html\"; const h=readFileSync(p,\"utf8\"); if ((h.match(/<h2\\b/g)||[]).length!==4 || /\\{\\{(?:CODE|DIAGRAM):/.test(h) || /<audio\\b/.test(h) || /<(?:script|link)\\b[^>]*(?:src|href)=[\"\\x27]https?:/i.test(h) || existsSync(\"work/pr-42-audio.json\")) throw new Error(\"Artifact verification failed\"); console.log(\"Verified: four sections, expanded code, no audio or remote script/styles, no stale sidecar.\"); console.log(realpathSync(p));'"
+        },
+        "output": "Verified: four sections, expanded code, no audio or remote script/styles, no stale sidecar.\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr-42-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "a6bc38f38317140eb4a0ab7c4433689ea7fb5287c0bd41c909fea92e2788d13b"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "All four reports are complete. The diff moves the existing expiry check before dispatch. The author mentions an extra clock read, but the diff shows one call in each version; the walkthrough will preserve that distinction.",
+      "Created the full, four-section text-only walkthrough:\n\n[**pr-42-walkthrough.html**](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-grounding-quality-3-20260917/work/pr-42-walkthrough.html)\n\nAll four parallel reports completed using local evidence. The HTML build and artifact checks passed. `bun run check` passed type-check, lint, and all 13 tests.\n\nNo desktop application was opened."
+    ],
+    "artifact": {
+      "manifestSha256": "b788890b2d6c3f33472c347ca1092307594d8ef3f2424370e283066ad5776180",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "The refresh was already there"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "The first request reached the check too late"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Make dispatch wait for refresh"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "The same check, at the useful moment"
+        }
+      ],
+      "words": 450,
+      "codeBlocks": 1,
+      "codeSources": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+          "contiguousAfterState": true
+        }
+      ],
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "283129151e8ba0a1b9b56a2dc56f1573c46ea275ddb264c790a856e1f0fc6552",
+      "rebuiltHTMLSha256": "283129151e8ba0a1b9b56a2dc56f1573c46ea275ddb264c790a856e1f0fc6552",
+      "identicalRebuild": true,
+      "handoffExists": true
+    }
+  },
+  {
+    "id": "pr-batch-limit-1",
+    "parent": {
+      "id": "ses_f4f9857e2ffe8gIV7zULHHO848",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 32345,
+        "output": 2422,
+        "reasoning": 40,
+        "cache": {
+          "read": 197888,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789665978454,
+        "updated": 1789665979886,
+        "idle": 1789666164852
+      },
+      "title": "Walkthrough evidence pr-batch-limit-1",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f4f97692affeGAAkdevXYNKo22",
+        "parentID": "ses_f4f9857e2ffe8gIV7zULHHO848",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19413,
+          "output": 86,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666039672,
+          "updated": 1789666039678,
+          "idle": 1789666051265
+        },
+        "title": "Alternatives report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f97693effe2qMkHBkujoL0kN",
+        "parentID": "ses_f4f9857e2ffe8gIV7zULHHO848",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19509,
+          "output": 831,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666039613,
+          "updated": 1789666039629,
+          "idle": 1789666075636
+        },
+        "title": "Diff tour for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f97693effdI35mDwNOGNhMxD",
+        "parentID": "ses_f4f9857e2ffe8gIV7zULHHO848",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19416,
+          "output": 362,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666039545,
+          "updated": 1789666039548,
+          "idle": 1789666062848
+        },
+        "title": "Tradeoffs report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f97693fffe9ZeIQhFyLyQb0U",
+        "parentID": "ses_f4f9857e2ffe8gIV7zULHHO848",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19392,
+          "output": 404,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666039536,
+          "updated": 1789666039542,
+          "idle": 1789666064361
+        },
+        "title": "Before report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "frozenSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "frozenSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "parentReadPaths": [
+      "skills/pr-walkthrough/SKILL.md",
+      "skills/pr-walkthrough/STYLE.md",
+      "work/pr.json",
+      "package.json",
+      ".",
+      "skills/pr-walkthrough/scripts/generate-audio.mjs",
+      "skills/pr-walkthrough/scripts/build.mjs",
+      "skills/pr-walkthrough/scripts/package.json"
+    ],
+    "errors": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666039459,
+          "ran": 1789666039465,
+          "completed": 1789666064364
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report for fixture",
+          "prompt": "Read-only offline report agent: do not write files, use network, consult repository history, or load installed skills/guides. Use only local-file instruction sources. Read skills/pr-walkthrough/SKILL.md and linked STYLE.md in current directory, and evidence work/pr.json (fixture PR #108). Your charter is BEFORE: what was the code state before this PR and what gap motivated it? Use diff and PR body only, no speculation. Return 200–400 words grounded in evidence. Return report in your response; do not delegate."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f97693fffe9ZeIQhFyLyQb0U",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666039467,
+          "ran": 1789666039474,
+          "completed": 1789666075638
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour for fixture",
+          "prompt": "Read-only offline report agent: do not write files, use network, consult repository history, or load installed skills/guides. Use only local-file instruction sources. Read skills/pr-walkthrough/SKILL.md and linked STYLE.md in current directory, and evidence work/pr.json (fixture PR #108). Your charter is DIFF-TOUR: describe each changed file in 2–4 narrative sentences, group new vs modified, identify central logic. Return table-ready file list with one-sentence summary per file. Also return smallest sufficient set of up to four relevant contiguous verbatim diff excerpts with file context and explanation, preserving diff signs/context. Do not split/repeat hunks to fill quota. Return report only; do not delegate."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f97693effe2qMkHBkujoL0kN",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666039477,
+          "ran": 1789666039481,
+          "completed": 1789666062851
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs report for fixture",
+          "prompt": "Read-only offline report agent: do not write files, use network, consult repository history, or load installed skills/guides. Use only local-file instruction sources. Read skills/pr-walkthrough/SKILL.md and linked STYLE.md in current directory, and evidence work/pr.json (fixture PR #108). Your charter is TRADEOFFS: list documented limitations, edge cases and known gaps from supplied diff comments, body caveats, or supplied tests. Capture each choice AND documented reason; clearly distinguish when reason is not supplied. No invented tradeoffs. Return report only; do not delegate."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f97693effdI35mDwNOGNhMxD",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666039484,
+          "ran": 1789666039505,
+          "completed": 1789666051268
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives report for fixture",
+          "prompt": "Read-only offline report agent: do not write files, use network, consult repository history, or load installed skills/guides. Use only local-file instruction sources. Read skills/pr-walkthrough/SKILL.md and linked STYLE.md in current directory, and evidence work/pr.json (fixture PR #108). Your charter is ALTERNATIVES: find considered/rejected approaches in supplied PR body, supplied commit messages, comments, or supplied linked issue text only. Do not fetch anything or consult history. If none documented, state 'none documented' and return. Return report only; do not delegate."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f97692affeGAAkdevXYNKo22",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789666051265,
+      1789666075636,
+      1789666062848,
+      1789666064361
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789666097577,
+      "ran": 1789666125184,
+      "completed": 1789666125189
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789666130561,
+          "ran": 1789666130569,
+          "completed": 1789666130656
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-108-manifest.json --output work/pr-108-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789666130572,
+          "ran": 1789666130629,
+          "completed": 1789666143275
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test\n$ tsc --noEmit\n$ eslint .\n$ bun test skills/pr-walkthrough/scripts\nbun test v1.3.7 (ba426210)\n\nskills/pr-walkthrough/scripts/chunk-narration.test.mjs:\n(pass) every chunk stays inside the budget [2.34ms]\n(pass) chunks concatenate back to the original words [0.30ms]\n(pass) a single sentence longer than the budget is broken up, not truncated [0.18ms]\n(pass) text that already fits is left as one chunk [0.04ms]\n\nskills/pr-walkthrough/scripts/pipeline.test.mjs:\n(pass) a text-only walkthrough is readable without audio and escapes its plain-text title [76.65ms]\n(pass) code copied from a PR remains visible text rather than executable HTML [129.00ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:1}} [66.14ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: <p>No reference</p> [64.02ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:0}}{{CODE:0}} [65.31ms]\n(pass) a missing audio sidecar produces the same text document [71.99ms]\n(pass) failed audio preflight removes old narration before the next build [391.53ms]\n(pass) text-only manifests skip the audio toolchain and discard earlier clips [71.48ms]\n(pass) fetch passes shell syntax literally to gh without running it [511.76ms]\n\n 13 pass\n 0 fail\n 43 expect() calls\nRan 13 tests across 2 files. [3.85s]\n\nCommand exited with code 0.",
+        "fullOutputSha256": "e0c6359fdfe6b2b9a5a0aa96e1ebb0ec662b84d29e5b66a6f300e52d2cd2ae58"
+      },
+      {
+        "time": {
+          "created": 1789666148902,
+          "ran": 1789666150231,
+          "completed": 1789666150476
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-108-manifest.json --audio work/pr-108-audio.json --output work/pr-108-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917/work/pr-108-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917/work/pr-108-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "fa6794d9f8d590427bc1c88caf262dbe3b0667074019ef4d2bce15bc8a5e1ee6"
+      },
+      {
+        "time": {
+          "created": 1789666152665,
+          "ran": 1789666157687,
+          "completed": 1789666157756
+        },
+        "input": {
+          "command": "bun -e 'import { readFileSync, realpathSync, statSync } from \"node:fs\"; const path = \"work/pr-108-walkthrough.html\"; const html = readFileSync(path, \"utf8\"); if (/<audio\\b/.test(html) || /\\{\\{(?:CODE|DIAGRAM):\\d+\\}\\}/.test(html)) throw new Error(\"Unexpected audio or unresolved placeholder\"); if ((html.match(/<p class=\"lead\">/g) ?? []).length !== 1) throw new Error(\"Expected one lead paragraph\"); console.log(JSON.stringify({path: realpathSync(path), bytes: statSync(path).size, textOnly: true, placeholdersResolved: true}));'"
+        },
+        "output": "{\"path\":\"/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917/work/pr-108-walkthrough.html\",\"bytes\":20991,\"textOnly\":true,\"placeholdersResolved\":true}\n\nCommand exited with code 0.",
+        "fullOutputSha256": "80e7b43efb5831f3816c45480db56bf089b251a940ce4eea090589a9af197a1f"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "The reports agree: this PR caps jobs per send and leaves the rest queued. I’ll use the four-section small-PR arc, including the documented limits.\n",
+      "Created the full text-only walkthrough:\n\n[**Open PR #108 walkthrough**](work/pr-108-walkthrough.html)\n\nReal path:\n```text\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-1-20260917/work/pr-108-walkthrough.html\n```\n\nCompleted all four parallel reports using local evidence. The audio stage took its documented text-only fallback, and the HTML build succeeded.\n\nVerified: type-check, lint, and all 13 tests passed. No network sources or desktop applications were opened."
+    ],
+    "artifact": {
+      "manifestSha256": "9359595fff0557e4d52023285fdae1738d35cdeafa693afedf90fc05d068076a",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "Every pending job went into one send"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "One send needed a job-count ceiling"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Validate the setting, then take only that many jobs"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "Send a bounded batch and keep the rest queued"
+        }
+      ],
+      "words": 492,
+      "codeBlocks": 2,
+      "codeSources": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}",
+          "contiguousAfterState": true
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}",
+          "contiguousAfterState": true
+        }
+      ],
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "d599082a97f26b60b3b61104beb47c7845ae64d0e2610b6a730d3fffde67abd8",
+      "rebuiltHTMLSha256": "d599082a97f26b60b3b61104beb47c7845ae64d0e2610b6a730d3fffde67abd8",
+      "identicalRebuild": true,
+      "handoffExists": true
+    }
+  },
+  {
+    "id": "pr-batch-limit-2",
+    "parent": {
+      "id": "ses_f4f94e49dffeunPC3YCGYH5nYn",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 31943,
+        "output": 2433,
+        "reasoning": 47,
+        "cache": {
+          "read": 246400,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789666204557,
+        "updated": 1789666206289,
+        "idle": 1789666395265
+      },
+      "title": "Walkthrough evidence pr-batch-limit-2",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f4f94141bffe5DVWvnpTvuvwb8",
+        "parentID": "ses_f4f94e49dffeunPC3YCGYH5nYn",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19365,
+          "output": 354,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666257948,
+          "updated": 1789666257952,
+          "idle": 1789666283778
+        },
+        "title": "Tradeoffs report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f94141bffdHFFfsCBHy88Zp3",
+        "parentID": "ses_f4f94e49dffeunPC3YCGYH5nYn",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19350,
+          "output": 86,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666257942,
+          "updated": 1789666257945,
+          "idle": 1789666272242
+        },
+        "title": "Alternatives report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f94141dffeYR0pZFPBP3Md9c",
+        "parentID": "ses_f4f94e49dffeunPC3YCGYH5nYn",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19368,
+          "output": 392,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666257929,
+          "updated": 1789666257935,
+          "idle": 1789666278575
+        },
+        "title": "Before report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f94141cffeJd4t4VQxpzvkfU",
+        "parentID": "ses_f4f94e49dffeunPC3YCGYH5nYn",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 16764,
+          "output": 695,
+          "reasoning": 0,
+          "cache": {
+            "read": 51200,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666257938,
+          "updated": 1789666306001,
+          "idle": 1789666319801
+        },
+        "title": "Diff tour for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "frozenSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "frozenSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "parentReadPaths": [
+      "skills/pr-walkthrough/SKILL.md",
+      "skills/pr-walkthrough/STYLE.md",
+      "work/pr.json",
+      "package.json",
+      ".",
+      "skills/pr-walkthrough/scripts/generate-audio.mjs",
+      "skills/pr-walkthrough/scripts/build.mjs",
+      "work",
+      "work/pr-108-audio.json"
+    ],
+    "errors": [
+      {
+        "sessionID": "ses_f4f94141cffeJd4t4VQxpzvkfU",
+        "id": "msg_0b06c0f46001cwTmIdcjmZrjYS",
+        "time": {
+          "created": 1789666269378,
+          "streamed": 1789666283488,
+          "completed": 1789666283623
+        },
+        "error": {
+          "type": "provider.transport",
+          "message": "WebSocket inbound queue overflow"
+        },
+        "retry": {
+          "attempt": 2,
+          "at": 1789666285691,
+          "error": {
+            "type": "provider.transport",
+            "message": "WebSocket inbound queue overflow"
+          }
+        },
+        "finish": "error"
+      }
+    ],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666257851,
+          "ran": 1789666257866,
+          "completed": 1789666278580
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report for fixture",
+          "prompt": "Read-only report agent named before. Use ONLY local-file instruction sources. Read skills/pr-walkthrough/SKILL.md and its linked STYLE.md in current directory. Evidence is work/pr.json (fixture PR #108), replacing step 2 fetch only. No installed skills/guides, network, GitHub, repository history, writes, or further delegation. Return 200-400 words: state before PR, gap/motivation, grounded exclusively in fixture body/diff. Return report directly, no files."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f94141dffeYR0pZFPBP3Md9c",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666257868,
+          "ran": 1789666257873,
+          "completed": 1789666300468
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour for fixture",
+          "prompt": "Read-only report agent named diff-tour. Use ONLY local-file instruction sources. Read skills/pr-walkthrough/SKILL.md and linked STYLE.md. Evidence work/pr.json is fixture PR #108 replacing fetch only. No installed skills/guides, network, GitHub, repository history, writes, or further delegation. Walk each changed file in 2-4 narrative sentences, grouped new vs modified. Return table-ready file list with one-sentence summary per file. Identify central logic and return smallest sufficient set of up to four contiguous verbatim diff excerpts with file context and explanation, preserving signs/context. Report directly, no files."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f94141cffeJd4t4VQxpzvkfU",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666257875,
+          "ran": 1789666257881,
+          "completed": 1789666283780
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs report for fixture",
+          "prompt": "Read-only report agent named tradeoffs. Use ONLY local-file instruction sources. Read skills/pr-walkthrough/SKILL.md and linked STYLE.md. Evidence work/pr.json fixture PR #108 replaces fetch only. No installed skills/guides, network, GitHub, repository history, writes, or further delegation. Report documented limitations, edge cases, known gaps from body, diff comments, tests if supplied. Capture choice AND documented reason; explicitly distinguish absent reasons, do not invent. Return report, no files."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f94141bffe5DVWvnpTvuvwb8",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666257883,
+          "ran": 1789666257887,
+          "completed": 1789666272245
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives report for fixture",
+          "prompt": "Read-only report agent named alternatives. Use ONLY local-file instruction sources. Read skills/pr-walkthrough/SKILL.md and linked STYLE.md. Evidence work/pr.json fixture PR #108 replaces fetch only; commits embedded in fixture may be read. No installed skills/guides, network, GitHub, repository history, writes, or further delegation. Report alternatives considered/rejected and documented reasons from supplied evidence only. If none, return 'none documented'. Return report directly, no files."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f94141bffdHFFfsCBHy88Zp3",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666305474,
+          "ran": 1789666305989,
+          "completed": 1789666319809
+        },
+        "input": {
+          "agent": "general",
+          "sessionID": "ses_f4f94141cffeJd4t4VQxpzvkfU",
+          "description": "Complete file tour report",
+          "prompt": "Your returned report contains excerpts but omits required narrative file tour and table-ready list. Return those missing parts: each changed file in 2–4 narrative sentences grouped new vs modified, plus one-sentence table summary per file. Same local-only read-only constraints."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f94141cffeJd4t4VQxpzvkfU",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789666283778,
+      1789666272242,
+      1789666278575,
+      1789666319801
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789666334326,
+      "ran": 1789666366104,
+      "completed": 1789666366122
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789666370491,
+          "ran": 1789666370500,
+          "completed": 1789666370576
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-108-manifest.json --output work/pr-108-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789666370502,
+          "ran": 1789666370526,
+          "completed": 1789666376887
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test\n$ tsc --noEmit\n$ eslint .\n$ bun test skills/pr-walkthrough/scripts\nbun test v1.3.7 (ba426210)\n\nskills/pr-walkthrough/scripts/chunk-narration.test.mjs:\n(pass) every chunk stays inside the budget [2.49ms]\n(pass) chunks concatenate back to the original words [0.31ms]\n(pass) a single sentence longer than the budget is broken up, not truncated [0.14ms]\n(pass) text that already fits is left as one chunk [0.01ms]\n\nskills/pr-walkthrough/scripts/pipeline.test.mjs:\n(pass) a text-only walkthrough is readable without audio and escapes its plain-text title [35.48ms]\n(pass) code copied from a PR remains visible text rather than executable HTML [106.64ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:1}} [61.17ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: <p>No reference</p> [62.46ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:0}}{{CODE:0}} [62.47ms]\n(pass) a missing audio sidecar produces the same text document [71.79ms]\n(pass) failed audio preflight removes old narration before the next build [406.64ms]\n(pass) text-only manifests skip the audio toolchain and discard earlier clips [83.93ms]\n(pass) fetch passes shell syntax literally to gh without running it [474.20ms]\n\n 13 pass\n 0 fail\n 43 expect() calls\nRan 13 tests across 2 files. [3.45s]\n\nCommand exited with code 0.",
+        "fullOutputSha256": "ac668f521dde5b2cdadb56f2405118dd141ea8021834e8663fc2705401ecf178"
+      },
+      {
+        "time": {
+          "created": 1789666379548,
+          "ran": 1789666380812,
+          "completed": 1789666381040
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-108-manifest.json --audio work/pr-108-audio.json --output work/pr-108-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917/work/pr-108-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917/work/pr-108-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "ae46155bdbb7e3a3ccec2ea77ff43ff52d23a09237d3a28cbaf84cebfe4584cb"
+      },
+      {
+        "time": {
+          "created": 1789666383384,
+          "ran": 1789666388856,
+          "completed": 1789666388919
+        },
+        "input": {
+          "command": "bun -e 'import { realpathSync, readFileSync, existsSync } from \"node:fs\"; const p = \"work/pr-108-walkthrough.html\"; const html = readFileSync(p, \"utf8\"); if (!html.includes(\"One queue, smaller sends\") || !html.includes(\"pending.splice\") || /<audio\\b/.test(html) || /\\{\\{(?:CODE|DIAGRAM):/.test(html) || existsSync(\"work/pr-108-audio.json\")) throw new Error(\"Artifact verification failed\"); console.log(realpathSync(p)); console.log(\"Verified text-only HTML, code content, resolved placeholders, and absent audio sidecar.\");'"
+        },
+        "output": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917/work/pr-108-walkthrough.html\nVerified text-only HTML, code content, resolved placeholders, and absent audio sidecar.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "66dd5105941f18d2aa6653abea471660d2314689d23ffb40391ba25504a87144"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "The four reports support a four-section walkthrough: a validated job-count limit replaces whole-queue drains. The fixture also documents memory, processing-time, and tenant-scheduling limits.\n\n",
+      "Created the full text-only walkthrough:\n\n[**pr-108-walkthrough.html**](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-2-20260917/work/pr-108-walkthrough.html)\n\nUsed the local skill, linked style instructions, fixture evidence, and all four parallel reports. The audio stage completed with the expected text-only fallback.\n\nVerified the HTML build and `bun run check`: type-check, lint, and all 13 tests passed."
+    ],
+    "artifact": {
+      "manifestSha256": "acecafabc951eb2260a002e7d50f1a71996020f07efcac401fc5b31e2b00d703",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "Every pending job went into one send"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "A long queue needed more than one drain"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Validate the limit, then take the front of the queue"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "A ceiling on each batch, with the remainder retained"
+        }
+      ],
+      "words": 475,
+      "codeBlocks": 2,
+      "codeSources": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}",
+          "contiguousAfterState": true
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}",
+          "contiguousAfterState": true
+        }
+      ],
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "c159852bda00bd5dbe92831dbc8e00ec316b987fcfb455c7795e3dc9afef15a0",
+      "rebuiltHTMLSha256": "c159852bda00bd5dbe92831dbc8e00ec316b987fcfb455c7795e3dc9afef15a0",
+      "identicalRebuild": true,
+      "handoffExists": true
+    }
+  },
+  {
+    "id": "pr-batch-limit-3",
+    "parent": {
+      "id": "ses_f4f94e49effeTIynGalQJtQ1xz",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 59355,
+        "output": 2661,
+        "reasoning": 50,
+        "cache": {
+          "read": 199936,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789666204563,
+        "updated": 1789666206130,
+        "idle": 1789666386662
+      },
+      "title": "Walkthrough evidence pr-batch-limit-3",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917"
+      }
+    },
+    "children": [
+      {
+        "id": "ses_f4f940130ffeV27oQY0YOFjsyC",
+        "parentID": "ses_f4f94e49effeTIynGalQJtQ1xz",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19569,
+          "output": 785,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666262776,
+          "updated": 1789666262779,
+          "idle": 1789666295138
+        },
+        "title": "Diff tour for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f940128ffegzTTuaK4GQr982",
+        "parentID": "ses_f4f94e49effeTIynGalQJtQ1xz",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19518,
+          "output": 86,
+          "reasoning": 0,
+          "cache": {
+            "read": 28160,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666262865,
+          "updated": 1789666262872,
+          "idle": 1789666275875
+        },
+        "title": "Alternatives report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f940131ffemPBaFKCodgpXUm",
+        "parentID": "ses_f4f94e49effeTIynGalQJtQ1xz",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 17565,
+          "output": 420,
+          "reasoning": 0,
+          "cache": {
+            "read": 30080,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666262770,
+          "updated": 1789666262774,
+          "idle": 1789666284420
+        },
+        "title": "Before report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917"
+        }
+      },
+      {
+        "id": "ses_f4f940130ffd436MDMWlhSmNnZ",
+        "parentID": "ses_f4f94e49effeTIynGalQJtQ1xz",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 17595,
+          "output": 418,
+          "reasoning": 0,
+          "cache": {
+            "read": 30080,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789666262821,
+          "updated": 1789666262827,
+          "idle": 1789666285571
+        },
+        "title": "Tradeoffs report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917"
+        }
+      }
+    ],
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "actualReadSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "frozenSha256": "cf50d1018856c74fd6c93eb8a1f4c2c6cadb395d7d65ffbc32f5c70219194a3a",
+        "matches": true
+      },
+      {
+        "file": "STYLE.md",
+        "actualReadSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "frozenSha256": "a4dd5d7673ed39835583ded090f3a4b494eb5b0a1c7e64927f556d6e14507efd",
+        "matches": true
+      }
+    ],
+    "sourceDrift": [],
+    "parentReadPaths": [
+      "skills/pr-walkthrough/SKILL.md",
+      "skills/pr-walkthrough/STYLE.md",
+      "work/pr.json",
+      "package.json",
+      ".",
+      "skills/pr-walkthrough/scripts/generate-audio.mjs",
+      "skills/pr-walkthrough/scripts/build.mjs",
+      "work",
+      "work/pr-108-audio.json"
+    ],
+    "errors": [],
+    "dispatches": [
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666262709,
+          "ran": 1789666262714,
+          "completed": 1789666284423
+        },
+        "input": {
+          "agent": "general",
+          "description": "Before report for fixture",
+          "prompt": "Read-only report agent: do not write files. Use local-file instruction sources only; do not load installed skills/guides, consult repository history, call GitHub, or use any network. Read local skills/pr-walkthrough/SKILL.md and linked STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917. Evidence is that directory's work/pr.json, replacing fetch only. Your charter is BEFORE: explain pre-PR code state and documented motivation, 200–400 words, no speculation. Return report, do not write it."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f940131ffemPBaFKCodgpXUm",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666262717,
+          "ran": 1789666262722,
+          "completed": 1789666295141
+        },
+        "input": {
+          "agent": "general",
+          "description": "Diff tour for fixture",
+          "prompt": "Read-only report agent: do not write files. Use local-file instruction sources only; do not load installed skills/guides, consult repository history, call GitHub, or use any network. Read local skills/pr-walkthrough/SKILL.md and linked STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917. Evidence is that directory's work/pr.json, replacing fetch only. Your charter is DIFF-TOUR: explain each changed file in 2–4 narrative sentences grouped new vs modified, provide table-ready one-sentence summaries, identify central logic, return up to four smallest sufficient contiguous verbatim diff excerpts with context and explanation. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f940130ffeV27oQY0YOFjsyC",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666262725,
+          "ran": 1789666262730,
+          "completed": 1789666285574
+        },
+        "input": {
+          "agent": "general",
+          "description": "Tradeoffs report for fixture",
+          "prompt": "Read-only report agent: do not write files. Use local-file instruction sources only; do not load installed skills/guides, consult repository history, call GitHub, or use any network. Read local skills/pr-walkthrough/SKILL.md and linked STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917. Evidence is that directory's work/pr.json, replacing fetch only. Your charter is TRADEOFFS: documented limitations, edge cases, known gaps from body, diff comments, supplied tests. Capture choice AND documented reason; distinguish absent reasons from inferred ones. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f940130ffd436MDMWlhSmNnZ",
+          "status": "completed",
+          "truncated": false
+        }
+      },
+      {
+        "name": "subagent",
+        "time": {
+          "created": 1789666262732,
+          "ran": 1789666262738,
+          "completed": 1789666275877
+        },
+        "input": {
+          "agent": "general",
+          "description": "Alternatives report for fixture",
+          "prompt": "Read-only report agent: do not write files. Use local-file instruction sources only; do not load installed skills/guides, consult repository history, call GitHub, or use any network. Read local skills/pr-walkthrough/SKILL.md and linked STYLE.md in /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917. Evidence is that directory's work/pr.json, replacing fetch only. Your charter is ALTERNATIVES: identify documented approaches considered and rejected using supplied body, supplied commits, comments only. Do not fetch other evidence. If none, return 'none documented'. Return report only."
+        },
+        "metadata": {
+          "sessionID": "ses_f4f940128ffegzTTuaK4GQr982",
+          "status": "completed",
+          "truncated": false
+        }
+      }
+    ],
+    "childCompletionTimes": [
+      1789666295138,
+      1789666275875,
+      1789666284420,
+      1789666285571
+    ],
+    "firstArtifactWriteTime": {
+      "created": 1789666315190,
+      "ran": 1789666349554,
+      "completed": 1789666349558
+    },
+    "shellCalls": [
+      {
+        "time": {
+          "created": 1789666357692,
+          "ran": 1789666357698,
+          "completed": 1789666357758
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/generate-audio.mjs --manifest work/pr-108-manifest.json --output work/pr-108-audio.json"
+        },
+        "output": "generate-audio: manifest has no narration — skipping audio, walkthrough will be text-only.\n\nCommand exited with code 0.",
+        "fullOutputSha256": "d632bfc3d949dbb33f43496c8cf1c64854e05fed56a24889eb05da499d4823e3"
+      },
+      {
+        "time": {
+          "created": 1789666357700,
+          "ran": 1789666357724,
+          "completed": 1789666365897
+        },
+        "input": {
+          "command": "bun run check",
+          "timeout": 120000
+        },
+        "output": "$ bun run typecheck && bun run lint && bun run test\n$ tsc --noEmit\n$ eslint .\n$ bun test skills/pr-walkthrough/scripts\nbun test v1.3.7 (ba426210)\n\nskills/pr-walkthrough/scripts/chunk-narration.test.mjs:\n(pass) every chunk stays inside the budget [3.05ms]\n(pass) chunks concatenate back to the original words [0.36ms]\n(pass) a single sentence longer than the budget is broken up, not truncated [0.17ms]\n(pass) text that already fits is left as one chunk [0.03ms]\n\nskills/pr-walkthrough/scripts/pipeline.test.mjs:\n(pass) a text-only walkthrough is readable without audio and escapes its plain-text title [46.46ms]\n(pass) code copied from a PR remains visible text rather than executable HTML [123.37ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:1}} [68.84ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: <p>No reference</p> [65.37ms]\n(pass) a placeholder mismatch fails rather than dropping evidence: {{CODE:0}}{{CODE:0}} [63.14ms]\n(pass) a missing audio sidecar produces the same text document [76.24ms]\n(pass) failed audio preflight removes old narration before the next build [411.92ms]\n(pass) text-only manifests skip the audio toolchain and discard earlier clips [77.24ms]\n(pass) fetch passes shell syntax literally to gh without running it [496.63ms]\n\n 13 pass\n 0 fail\n 43 expect() calls\nRan 13 tests across 2 files. [5.36s]\n\nCommand exited with code 0.",
+        "fullOutputSha256": "abd139618672516b993fe07e4b9fdf51422b8e1d9dccb0cfcac9551eabbe3956"
+      },
+      {
+        "time": {
+          "created": 1789666369637,
+          "ran": 1789666371001,
+          "completed": 1789666371384
+        },
+        "input": {
+          "command": "node skills/pr-walkthrough/scripts/build.mjs --manifest work/pr-108-manifest.json --audio work/pr-108-audio.json --output work/pr-108-walkthrough.html"
+        },
+        "output": "build: could not read audio sidecar (ENOENT: no such file or directory, open '/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917/work/pr-108-audio.json') — emitting text-only HTML\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917/work/pr-108-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "295377d62451e6b89deda04676ddc3a30eeee4353a03d5b9ac5c82717973eb69"
+      },
+      {
+        "time": {
+          "created": 1789666374667,
+          "ran": 1789666380029,
+          "completed": 1789666380094
+        },
+        "input": {
+          "command": "bun -e 'import {readFileSync, realpathSync, existsSync} from \"node:fs\"; const p=\"work/pr-108-walkthrough.html\"; const html=readFileSync(p,\"utf8\"); if ((html.match(/<h2\\b/g)||[]).length!==4) throw new Error(\"Expected four sections\"); if (/<audio\\b|\\{\\{CODE:|\\{\\{DIAGRAM:|<script[^>]+src=/i.test(html)) throw new Error(\"Unexpected audio, placeholder, or external script\"); if(existsSync(\"work/pr-108-audio.json\")) throw new Error(\"Unexpected audio sidecar\"); console.log(\"Verified four sections, resolved placeholders, text-only output, and no external scripts.\"); console.log(realpathSync(p));'"
+        },
+        "output": "Verified four sections, resolved placeholders, text-only output, and no external scripts.\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917/work/pr-108-walkthrough.html\n\nCommand exited with code 0.",
+        "fullOutputSha256": "1b93b85fed97ae83c00d4650f7550baf3c49112bf9168706fd24bc8fee7815aa"
+      }
+    ],
+    "otherTools": [],
+    "parentVisibleText": [
+      "The four reports agree: the change limits jobs per send and leaves the remainder queued. I’ll use the four-section small-PR arc and include both documented scope limits.\n",
+      "Created the full text-only walkthrough:\n\n[pr-108-walkthrough.html](/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-evidence-pr-batch-limit-3-20260917/work/pr-108-walkthrough.html)\n\nUsed the local skill, linked style instructions, and all four parallel reports. The HTML build succeeded. `bun run check` passed: type-check, lint, and 13 tests."
+    ],
+    "artifact": {
+      "manifestSha256": "de8d4692de928a5104a59db7d96e74f4e09039b3e6235b09630a57c05adbe757",
+      "sections": 4,
+      "sectionHeadings": [
+        {
+          "eyebrow": "The setting",
+          "title": "Every pending job left at once"
+        },
+        {
+          "eyebrow": "The gap / motivation",
+          "title": "A growing queue meant a growing batch"
+        },
+        {
+          "eyebrow": "What we built",
+          "title": "Configure the count, then retain the remainder"
+        },
+        {
+          "eyebrow": "The short version",
+          "title": "Send a bounded batch and leave the rest queued"
+        }
+      ],
+      "words": 506,
+      "codeBlocks": 3,
+      "codeSources": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const endpoint = '/jobs';\nexport const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}",
+          "contiguousAfterState": true
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}",
+          "contiguousAfterState": true
+        },
+        {
+          "lang": "ts",
+          "file": "worker.ts",
+          "source": "import { endpoint, batchLimit } from './config';\nimport { drain } from './queue';\nexport async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}",
+          "contiguousAfterState": true
+        }
+      ],
+      "narrationPresent": false,
+      "sidecarExists": false,
+      "reviewerBuildExit": 0,
+      "originalHTMLSha256": "76a91c608e50c058857405fed9b7119060e55f42a38aca9a061156e8ecafe9c6",
+      "rebuiltHTMLSha256": "76a91c608e50c058857405fed9b7119060e55f42a38aca9a061156e8ecafe9c6",
+      "identicalRebuild": true,
+      "handoffExists": true
+    }
+  }
+]

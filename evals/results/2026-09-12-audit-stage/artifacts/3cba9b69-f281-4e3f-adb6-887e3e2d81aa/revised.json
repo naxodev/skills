@@ -1,0 +1,41 @@
+{
+  "title": "Commit the payment before sending the notification",
+  "eyebrow": "Lantern Ledger · Change walkthrough",
+  "dek": "Moving publication past the commit prevents notifications for rolled-back payments, but leaves delivery as a separate operation.",
+  "meta": "Fictional component study · Source and in-memory probe results",
+  "footer": "Based on the supplied source and probes. No real database or process-kill simulation was performed.",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Two operations, one transaction boundary",
+      "content": "<p class=\"lead\">Lantern Ledger marks a payment as paid and publishes a notification. Previously, both calls ran inside the database transaction callback. The database commits staged writes only after that callback fulfills. Publication, however, is external: placing it inside the callback does not make the notification part of the database transaction.</p>"
+    },
+    {
+      "eyebrow": "The gap",
+      "title": "A notification could outlive a rollback",
+      "content": "<p>If publication succeeded and the commit then failed, the payment rolled back while its notification remained visible. The supplied probe records exactly that outcome: an unpaid record and one notification. A publication error after external delivery could produce the same mismatch, because rejecting the callback rolled back only the database writes.</p>"
+    },
+    {
+      "eyebrow": "The changed mechanism",
+      "title": "Wait for the commit, then publish",
+      "content": "<p>The changed function first awaits the transaction:</p>{{CODE:0}}<p>That await completes after commit, not merely after <code>markPaid</code>. A write or commit rejection exits the function before publication. In the supplied in-memory results, a failed commit now leaves zero notifications.</p><p>Publication follows outside the callback:</p>{{CODE:1}}<p>A publication rejection still rejects the function, but cannot undo the committed payment. The probes show both possibilities: rejection before delivery leaves zero notifications; rejection after delivery leaves one. The author describes payment and notification as atomic, but this code establishes ordering, not an all-or-nothing result.</p>",
+      "code": [
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "  await db.transaction(async (tx) => {\n    await tx.markPaid(id);\n  });"
+        },
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "  await publish(id);"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "A stronger order, not guaranteed delivery",
+      "content": "<p>Failed payment transactions no longer trigger publication. A process stop between commit and publication can still leave a paid record without a notification; no durable outbox or background retry is supplied. Retrying after uncertain delivery can duplicate notifications. Idempotent <code>markPaid</code> protects the payment write, not delivery: both versions produce two notifications under concurrent calls in the probe. These results support the ordering change, not exactly-once delivery or atomicity.</p>"
+    }
+  ]
+}

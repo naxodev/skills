@@ -1,0 +1,41 @@
+{
+  "title": "Before the first expired request leaves",
+  "eyebrow": "PR #42 · credentials · fix",
+  "dek": "An awaited credential refresh moves ahead of dispatch to address the first request failing after expiry.",
+  "meta": "fix: refresh credentials before dispatch",
+  "footer": "PR #42 · fix: refresh credentials before dispatch",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The expiry check came after the send",
+      "content": "<p class=\"lead\">The request function in <code>client.ts</code> already checked whether credentials had expired. It compared <code>client.expiresAt</code> with the current time and awaited <code>client.refresh()</code> when needed. The problem was where that check ran: after the function awaited <code>client.send(payload)</code>.</p><p>That order put credential maintenance behind the operation that needed the credentials. Once the send resolved, the function could check expiry, refresh, and return the saved response. A refresh at that point could not prepare credentials for the request already sent.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "The first request reached dispatch too soon",
+      "content": "<p>The author reports that the first request after expiry failed. If you called the function when the credential expiry time had already passed, the old order still sent your payload before reaching the expiry check. The existing refresh logic therefore came too late for that request.</p><p>The fix makes the check a prerequisite for dispatch. The supplied diff supports this ordering diagnosis, but it includes no tests or runtime results. It also does not show how <code>client.send()</code> represents a failed request, so we cannot assume that a failed send reached the old refresh step.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Wait for fresh credentials, then send",
+      "content": "<p>The only changed file is <code>client.ts</code>. Its request function now begins with the existing expiry condition:</p>{{CODE:0}}<p>The comparison includes credentials whose expiry time equals the sampled current time. When the condition holds, <code>await</code> makes the function wait for refresh completion before continuing. When it does not hold, execution proceeds directly to dispatch.</p><p>The send and return remain together immediately after that check:</p>{{CODE:1}}<p>The payload still goes to <code>client.send()</code>, and the function still returns its response. The change is the placement of the refresh, not a new dispatch mechanism. If refresh rejects, execution does not reach the send.</p><p>The author accepts a clock-read cost to avoid the initial failed request, describing it as an extra read. The shown diff contains one <code>Date.now()</code> call both before and after the change; it establishes a moved read, not an increased count.</p><p>Streaming requests remain a documented follow-up because they use a separate path. That path is absent from the diff, and the author gives no further reason for deferring it. The ordering change shown here therefore does not establish a streaming fix.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  // …\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "client.ts",
+          "source": "  const response = await client.send(payload);\n  return response;"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Make refresh a prerequisite",
+      "content": "<p>PR #42 moves the existing expiry check and awaited refresh ahead of request dispatch in <code>client.ts</code>. This addresses the ordering behind the author’s reported first-request failure after expiry while preserving the send and response return. The supplied evidence shows the control-flow change, not a tested outcome; streaming requests still need their separate follow-up.</p>"
+    }
+  ]
+}

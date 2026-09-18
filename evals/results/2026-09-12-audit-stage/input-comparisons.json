@@ -1,0 +1,206 @@
+[
+  {
+    "label": "e35fc47c-d9b7-4340-960f-4c12b305e908",
+    "inputs": [
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "byteIdentical": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "byteIdentical": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "byteIdentical": true
+      }
+    ],
+    "manifestSha256": "d42cf5a3dc07db2be4092a793611c58dea120e852ebc8f91f9c5febb92535619",
+    "fieldsCovered": 17,
+    "exactQuotes": true,
+    "semanticAcceptance": "see control-acceptance.json; mechanical coverage is not acceptance"
+  },
+  {
+    "label": "9ed5f86a-1100-4d6f-a976-0e2d2b40469a",
+    "inputs": [
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "byteIdentical": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "byteIdentical": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "byteIdentical": true
+      }
+    ],
+    "manifestSha256": "856cb553e6273832420effa868af46115cd53478ec034a5c355fdb70ecc6332e",
+    "fieldsCovered": 17,
+    "exactQuotes": true,
+    "semanticAcceptance": "see control-acceptance.json; mechanical coverage is not acceptance"
+  },
+  {
+    "label": "bb6f9fca-a7f1-44fe-b614-36f3e61d3a25",
+    "inputs": [
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "byteIdentical": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "byteIdentical": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "byteIdentical": true
+      }
+    ],
+    "manifestSha256": "cabe00b93e4755affea9a46e4045c6fc58dcae39ba4fb45fd6f1faacfe895b85",
+    "fieldsCovered": 17,
+    "exactQuotes": true,
+    "semanticAcceptance": "see control-acceptance.json; mechanical coverage is not acceptance"
+  },
+  {
+    "label": "f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db",
+    "inputs": [
+      {
+        "file": "source.json",
+        "sha256": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+        "byteIdentical": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "byteIdentical": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe.mjs",
+        "sha256": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+        "byteIdentical": true
+      }
+    ],
+    "manifestSha256": "3dd265e71272a51cdd4c8378454ed193fc54a94cca5214c61cbf255c9733b134",
+    "fieldsCovered": 17,
+    "exactQuotes": true,
+    "semanticAcceptance": "see control-acceptance.json; mechanical coverage is not acceptance"
+  },
+  {
+    "label": "33f79ff4-8f54-456a-a403-737b383d4988",
+    "inputs": [
+      {
+        "file": "source.json",
+        "sha256": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+        "byteIdentical": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "byteIdentical": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe.mjs",
+        "sha256": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+        "byteIdentical": true
+      }
+    ],
+    "manifestSha256": "ce14afd0b32374ef6fe7daec5a2709101d23c30499b79085b3ccc97db2243054",
+    "fieldsCovered": 17,
+    "exactQuotes": true,
+    "semanticAcceptance": "see control-acceptance.json; mechanical coverage is not acceptance"
+  },
+  {
+    "label": "aa1d754e-a1a2-449d-a509-c2e7fa474a08",
+    "inputs": [
+      {
+        "file": "source.json",
+        "sha256": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+        "byteIdentical": true
+      },
+      {
+        "file": "verification.json",
+        "sha256": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c",
+        "byteIdentical": true
+      },
+      {
+        "file": "functions.mjs",
+        "sha256": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe.mjs",
+        "sha256": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+        "byteIdentical": true
+      },
+      {
+        "file": "probe-results.json",
+        "sha256": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+        "byteIdentical": true
+      }
+    ],
+    "manifestSha256": "3642cce00b53e3e85797a9006a75037c7491755591aa8c7cbe2d8a9911b40fef",
+    "fieldsCovered": 17,
+    "exactQuotes": true,
+    "semanticAcceptance": "see control-acceptance.json; mechanical coverage is not acceptance"
+  }
+]

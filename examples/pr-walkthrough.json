@@ -1,0 +1,41 @@
+{
+  "title": "Refresh before the first request",
+  "eyebrow": "Fictional PR #42 · request lifecycle",
+  "dek": "Moving one guard changes which credentials the server sees on the first request after expiry.",
+  "meta": "Illustrative example based on evals/fixtures/pr.json",
+  "footer": "Fictional PR #42 · fix: refresh credentials before dispatch",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The request owned the refresh",
+      "content": "<p class=\"lead\">The client already knew when its credentials expired. Its request function could compare that deadline with the current time and ask for a refresh. Both operations lived in the same function as the call that sent the payload. The missing piece was their order.</p><p>Before this change, the function sent the request, checked the expiry time, and then refreshed credentials when needed. That sequence placed maintenance after the operation that depended on it. The refresh could prepare the client for later work, but it could not change the credentials already used by the request.</p>"
+    },
+    {
+      "eyebrow": "Why it matters",
+      "title": "The first request paid for the ordering",
+      "content": "<p>The fixture PR describes a specific failure: the first request after credential expiry failed. The client had the information and the refresh operation needed to avoid that failure, but it used them too late. A reader does not need a new authentication model to understand the bug. The request crossed the expiry boundary before its credentials were renewed.</p><p>That distinction matters because the change repairs the existing request path. It does not introduce a retry policy or a different credential store. The useful question is whether the request can reach the send operation before a required refresh has finished.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Make freshness a precondition of sending",
+      "content": "<p>The patch moves the expiry check above the send operation. When the credentials have expired, the function awaits the refresh before continuing. The payload and response flow remain visible in the same short function:</p>{{CODE:0}}<p>The important detail is the first await. Sending now follows successful completion of the required refresh. The comparison includes the expiry instant itself, so credentials whose deadline equals the current time take the refresh path.</p><p>This is the only changed file in the supplied diff. The code establishes the ordering directly; the fixture does not include a test run or performance measurement. Those results cannot be inferred from a short patch.</p>",
+      "code": [
+        {
+          "lang": "typescript",
+          "file": "client.ts",
+          "source": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The trade-off",
+      "title": "A check before dispatch",
+      "content": "<p>The PR body explicitly accepts an extra clock read to avoid the initial failed request. That is the author's stated cost. The supplied diff shows the check moving rather than a second check being added, so it does not independently establish an increase in clock reads. The visible change is where the existing check runs.</p><p>The source material records no rejected alternatives. It also provides no benchmark for the request path. The explanation can identify the accepted ordering and its purpose without turning either absence into an invented design debate or a numerical performance claim.</p>"
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "One ordering fixed, one path left to follow",
+      "content": "<p>The request function now refreshes expired credentials before sending the payload. The failure described in the PR came from doing those operations in the opposite order. Moving the guard makes the dependency explicit: the send operation waits for the credentials it needs.</p><p>Streaming requests remain on a separate path. The PR body names that path as follow-up work, and the supplied patch contains no streaming change. The next useful investigation is therefore the same ordering question in that path. This walkthrough makes no claim that the streaming behavior has already been fixed.</p>"
+    }
+  ]
+}

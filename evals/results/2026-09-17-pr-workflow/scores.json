@@ -1,0 +1,519 @@
+{
+  "method": "Manual source adjudication; mechanical observations are not semantic grades. Additional installed-skill reads qualify attribution for two trials.",
+  "criteria": {
+    "pr-batch-limit": [
+      {
+        "id": "causality",
+        "expect": "Explains the startup setting, bounded prefix removal, and worker call as one change that leaves excess jobs pending."
+      },
+      {
+        "id": "evidence",
+        "expect": "Preserves the default 100 and positive-integer validation. Distinguishes batch count from memory or processing-time guarantees. Names the missing tenant key as the documented scheduling limitation. Invents no alternatives, follow-up issues, priorities, or measured benefits."
+      },
+      {
+        "id": "artifact",
+        "expect": "Builds readable text-only HTML from a manifest and reports the actual file path."
+      },
+      {
+        "id": "proportion",
+        "expect": "Uses 4–11 sections with distinct setting, gap/motivation, implementation, and recap sections in that order; setting is first and recap last. Each optional section before the recap adds a distinct explanation grounded in supplied material. Stays within 1800 words without padding to a minimum."
+      }
+    ],
+    "pr-grounding-quality": [
+      {
+        "id": "causality",
+        "expect": "Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+      },
+      {
+        "id": "evidence",
+        "expect": "Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+      },
+      {
+        "id": "guarantees",
+        "expect": "Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+      },
+      {
+        "id": "reader-facing",
+        "expect": "Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+      },
+      {
+        "id": "artifact",
+        "expect": "Builds readable text-only HTML reflecting the final manifest and reports the output path."
+      }
+    ]
+  },
+  "counts": {
+    "parents": {
+      "planned": 6,
+      "started": 6,
+      "completed": 6,
+      "blocked": 0,
+      "unrun": 0
+    },
+    "nativeReports": {
+      "planned": 24,
+      "started": 24,
+      "completed": 24,
+      "blocked": 0,
+      "unrun": 0
+    },
+    "smokeParents": 1,
+    "smokeReports": 2,
+    "retries": 0
+  },
+  "trials": [
+    {
+      "id": "pr-grounding-quality-1",
+      "caseId": "pr-grounding-quality",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-1.json. sections[1]: \"The author reports that the first request after credential expiry failed\"; sections[2] moves the guard before send."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-1.json. sections[2]: \"It demonstrates a moved clock read, not an additional one\" and \"That path is absent from the supplied diff\"."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-1.json. sections[2] scopes the count to \"The supplied diff\"; recap says \"no tests establishing its runtime result\". The before report says send implementation and failure representation are unshown. No exact per-call count or request-success promise."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-1.json. Title \"Refresh before the request leaves\" and final recap explain the ordering story. No reviewer IDs, drafting directives, or approval labels in the title, dek, footer, prose, or code."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-1.json. executions.json records the actual --audio build, real-path handoff, and byte-identical independent rebuild."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Both actual local instruction reads hash-match the frozen files; no source drift."
+        },
+        {
+          "id": "local-only-route",
+          "result": "pass",
+          "evidence": "Parent and children used local evidence; no installed skill tool call observed."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four subagent calls started before the first child completed; all child completions precede manifest-write creation. Actual charters, inputs, models, and timing are retained."
+        },
+        {
+          "id": "report-shape",
+          "result": "fail",
+          "evidence": "One genuine source hunk plus two excerpts; not 2–4 distinct hunks. Before report meets 200–400 words; other named reports returned."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "pass",
+          "evidence": "Pre-write visible summary: The four reports agree: the fix moves refresh before dispatch. The author mentions an “extra clock read,” but the diff shows one before and after. I’ll preserve that distinction and the documented streaming follow-up in the four-section walkthrough.\n"
+        },
+        {
+          "id": "arc-and-focus",
+          "result": "pass",
+          "evidence": "Four distinct explanatory sections: setting, concrete gap, implementation, final recap. 505 HTMLRewriter-counted words, below 900. No invented optional sections; title/dek/footer/recap/code reviewed against source."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual generate-audio.mjs invocation exited 0 with no-narration warning. The seeded stale sidecar is absent. The command was executed, not skipped."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Actual build.mjs invocation includes --audio; missing sidecar gives text-only output. Independent output is byte-identical. Final path exists. No desktop open or live source fetch observed."
+        },
+        {
+          "id": "browser-and-audio-playback",
+          "result": "untested",
+          "evidence": "No browser or audio playback tool was used."
+        }
+      ]
+    },
+    {
+      "id": "pr-grounding-quality-2",
+      "caseId": "pr-grounding-quality",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-2.json. sections[1]: \"The author reports that the first request after credential expiry failed\"; implementation makes refresh a prerequisite."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-2.json. sections[2]: \"the supplied diff, however, relocates the existing Date.now() call\"; streaming implementation and proposed follow-up implementation remain absent."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-2.json. sections[2]: \"If refresh rejects, the helper does not reach dispatch\"; clock count is explicitly a diff observation, not a runtime guarantee. The before report leaves send internals unknown."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-2.json. Title \"Refresh before the request leaves\", code introductions, and final \"same check\" recap form one explanation without internal review material."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-2.json. executions.json records the actual --audio build, real-path handoff, and byte-identical independent rebuild."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Both actual local instruction reads hash-match the frozen files; no source drift."
+        },
+        {
+          "id": "local-only-route",
+          "result": "pass",
+          "evidence": "Parent and children used local evidence; no installed skill tool call observed."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four subagent calls started before the first child completed; all child completions precede manifest-write creation. Actual charters, inputs, models, and timing are retained."
+        },
+        {
+          "id": "report-shape",
+          "result": "fail",
+          "evidence": "Diff-tour explicitly returns one tiny hunk, not the requested 2–4. Before report meets 200–400 words; other named reports returned."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "A pre-write scope summary is visible, but no unambiguous private through-line sentence is preserved. Hidden reasoning was not inspected. Coherent final focus is reviewed separately."
+        },
+        {
+          "id": "arc-and-focus",
+          "result": "pass",
+          "evidence": "Four distinct explanatory sections: setting, concrete gap, implementation, final recap. 486 HTMLRewriter-counted words, below 900. No invented optional sections; title/dek/footer/recap/code reviewed against source."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual generate-audio.mjs invocation exited 0 with no-narration warning. The seeded stale sidecar is absent. The command was executed, not skipped."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Actual build.mjs invocation includes --audio; missing sidecar gives text-only output. Independent output is byte-identical. Final path exists. No desktop open or live source fetch observed."
+        },
+        {
+          "id": "browser-and-audio-playback",
+          "result": "untested",
+          "evidence": "No browser or audio playback tool was used."
+        }
+      ]
+    },
+    {
+      "id": "pr-grounding-quality-3",
+      "caseId": "pr-grounding-quality",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-3.json. sections[1]: \"The author reports that the first request after expiry failed\"; sections[2] explains refresh before send."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-3.json. sections[2]: \"it establishes a moved read, not an increased count\"; the absent streaming path does not establish a streaming fix."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-3.json. sections[1] does not assume a failed send reached the old refresh step; sections[2]: \"If refresh rejects, execution does not reach the send\". Title and dek are scoped by the article, not request-success promises."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-3.json. Title \"Before the first expired request leaves\" and recap \"Make refresh a prerequisite\" preserve the story without fact IDs, review directions, or drafting instructions."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "sources/pr.json; manifests/pr-grounding-quality-3.json. executions.json records the actual --audio build, real-path handoff, and byte-identical independent rebuild."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Both actual local instruction reads hash-match the frozen files; no source drift."
+        },
+        {
+          "id": "local-only-route",
+          "result": "fail",
+          "evidence": "Diff-tour child loaded installed pr-walkthrough and STYLE.md. installed-skill-check.json verifies matching body/style, but the path constraint was not preserved."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four subagent calls started before the first child completed; all child completions precede manifest-write creation. Actual charters, inputs, models, and timing are retained."
+        },
+        {
+          "id": "report-shape",
+          "result": "fail",
+          "evidence": "Diff-tour returns two contiguous excerpts from one hunk. This adapts rather than literally satisfies the requested hunk count. Before report meets 200–400 words."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "A pre-write scope summary is visible, but no unambiguous private through-line sentence is preserved. Hidden reasoning was not inspected. Coherent final focus is reviewed separately."
+        },
+        {
+          "id": "arc-and-focus",
+          "result": "pass",
+          "evidence": "Four distinct explanatory sections: setting, concrete gap, implementation, final recap. 478 HTMLRewriter-counted words, below 900. No invented optional sections; title/dek/footer/recap/code reviewed against source."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual generate-audio.mjs invocation exited 0 with no-narration warning. The seeded stale sidecar is absent. The command was executed, not skipped."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Actual build.mjs invocation includes --audio; missing sidecar gives text-only output. Independent output is byte-identical. Final path exists. No desktop open or live source fetch observed."
+        },
+        {
+          "id": "browser-and-audio-playback",
+          "result": "untested",
+          "evidence": "No browser or audio playback tool was used."
+        }
+      ]
+    },
+    {
+      "id": "pr-batch-limit-1",
+      "caseId": "pr-batch-limit",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-1.json. sections[2] follows config.ts validation → queue.ts splice prefix → worker.ts configured drain; \"the tick does not loop through the remaining queue\"."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-1.json. Default 100 and positive-integer rejection are explicit. Recap: \"not bounded memory, processing time, or tenant-aware scheduling\". Missing tenant key is the reason; no invented alternatives or plans."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-1.json. executions.json records the actual --audio build, real-path handoff, and byte-identical independent rebuild."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-1.json. Four explanatory beats in order, with final \"One send gets a batch; the queue keeps the rest\" recap. The 250/100/150 example is source-derived, not a benchmark. No optional padding."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Both actual local instruction reads hash-match the frozen files; no source drift."
+        },
+        {
+          "id": "local-only-route",
+          "result": "pass",
+          "evidence": "Parent and children used local evidence; no installed skill tool call observed."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four subagent calls started before the first child completed; all child completions precede manifest-write creation. Actual charters, inputs, models, and timing are retained."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Before report is 200–400 words; diff-tour covers all three files in 2–4 sentences each, summaries and three verbatim hunks; limitations distinguish absent reasons; alternatives says none documented."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "A pre-write scope summary is visible, but no unambiguous private through-line sentence is preserved. Hidden reasoning was not inspected. Coherent final focus is reviewed separately."
+        },
+        {
+          "id": "arc-and-focus",
+          "result": "pass",
+          "evidence": "Four distinct explanatory sections: setting, concrete gap, implementation, final recap. 490 HTMLRewriter-counted words, below 1800. No invented optional sections; title/dek/footer/recap/code reviewed against source."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual generate-audio.mjs invocation exited 0 with no-narration warning. The seeded stale sidecar is absent. The command was executed, not skipped."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Actual build.mjs invocation includes --audio; missing sidecar gives text-only output. Independent output is byte-identical. Final path exists. No desktop open or live source fetch observed."
+        },
+        {
+          "id": "browser-and-audio-playback",
+          "result": "untested",
+          "evidence": "No browser or audio playback tool was used."
+        }
+      ]
+    },
+    {
+      "id": "pr-batch-limit-2",
+      "caseId": "pr-batch-limit",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-2.json. sections[2]: \"The three modified files form the complete path from the setting to bounded removal\"; the worker supplies the configured limit, leaving excess queued."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-2.json. Default 100, Number conversion, integer check, and lower bound appear in prose and exact code. sections[1]: \"a count limit, not a resource budget\". Missing tenant key explains scope; no fabricated follow-ups."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-2.json. executions.json records the actual --audio build, real-path handoff, and byte-identical independent rebuild."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-2.json. Four distinct beats end with \"Take a bounded batch and retain the rest\". Configuration, prefix removal, and caller explain one behavior. No optional sections or minimum-length padding."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Both actual local instruction reads hash-match the frozen files; no source drift."
+        },
+        {
+          "id": "local-only-route",
+          "result": "fail",
+          "evidence": "Parent loaded installed writing-technical-docs and its STYLE.md. Retain as an additional-instruction qualification, not a pure local-only result."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four subagent calls started before the first child completed; all child completions precede manifest-write creation. Actual charters, inputs, models, and timing are retained."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Before report is 200–400 words; diff-tour covers all three files in 2–4 sentences each, summaries and three verbatim hunks; limitations distinguish absent reasons; alternatives says none documented."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "pass",
+          "evidence": "Pre-write visible summary: All four reports are complete. The change caps jobs per send and leaves the remainder queued; memory and processing time remain unbounded. I’ll use the four-section small-PR arc with three code excerpts.\n\n"
+        },
+        {
+          "id": "arc-and-focus",
+          "result": "pass",
+          "evidence": "Four distinct explanatory sections: setting, concrete gap, implementation, final recap. 537 HTMLRewriter-counted words, below 1800. No invented optional sections; title/dek/footer/recap/code reviewed against source."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual generate-audio.mjs invocation exited 0 with no-narration warning. The seeded stale sidecar is absent. The command was executed, not skipped."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Actual build.mjs invocation includes --audio; missing sidecar gives text-only output. Independent output is byte-identical. Final path exists. No desktop open or live source fetch observed."
+        },
+        {
+          "id": "browser-and-audio-playback",
+          "result": "untested",
+          "evidence": "No browser or audio playback tool was used."
+        }
+      ]
+    },
+    {
+      "id": "pr-batch-limit-3",
+      "caseId": "pr-batch-limit",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-3.json. sections[2]: \"the three modified files carry the setting from startup validation to bounded removal and then to the outgoing send\"; later drains handle the remainder."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-3.json. Default 100 and invalid positive-integer cases appear beside source code. Recap: \"The guarantee stops at batch size\". Tenant scheduling is excluded because the queue has no tenant key; no invented plans or measured outcomes."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-3.json. executions.json records the actual --audio build, real-path handoff, and byte-identical independent rebuild."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "sources/pr-batch-limit.json; manifests/pr-batch-limit-3.json. Four distinct sections finish with \"Send a bounded batch; retain the rest\". Three introduced and explained code excerpts support the single configuration-to-drain story."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Both actual local instruction reads hash-match the frozen files; no source drift."
+        },
+        {
+          "id": "local-only-route",
+          "result": "pass",
+          "evidence": "Parent and children used local evidence; no installed skill tool call observed."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four subagent calls started before the first child completed; all child completions precede manifest-write creation. Actual charters, inputs, models, and timing are retained."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Before report is 200–400 words; diff-tour covers all three files in 2–4 sentences each, summaries and three verbatim hunks; limitations distinguish absent reasons; alternatives says none documented."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "pass",
+          "evidence": "Pre-write visible summary: All four reports returned. The change caps each send’s job count and preserves the queue remainder. I’ll use the four-section small-PR arc, with the memory, processing-time, and tenant-scheduling limits explained alongside the implementation."
+        },
+        {
+          "id": "arc-and-focus",
+          "result": "pass",
+          "evidence": "Four distinct explanatory sections: setting, concrete gap, implementation, final recap. 552 HTMLRewriter-counted words, below 1800. No invented optional sections; title/dek/footer/recap/code reviewed against source."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual generate-audio.mjs invocation exited 0 with no-narration warning. The seeded stale sidecar is absent. The command was executed, not skipped."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Actual build.mjs invocation includes --audio; missing sidecar gives text-only output. Independent output is byte-identical. Final path exists. No desktop open or live source fetch observed."
+        },
+        {
+          "id": "browser-and-audio-playback",
+          "result": "untested",
+          "evidence": "No browser or audio playback tool was used."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "inputSha256": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/title",
+      "problem": "The title guarantees exactly-once delivery. The supplied contract allows a rejected send after a committed effect and supplies no deduplication guarantee. The modeled changed-loop example records two effects, contradicting the title under its assumptions. The body already states this limitation correctly.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/contracts/1",
+          "quote": "A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/duplicate/effects",
+          "value": 2
+        },
+        {
+          "file": "probe",
+          "pointer": "/assumptions",
+          "quote": "Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement."
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "pointer": "/sections/0/title",
+      "problem": "The old loop did not retry every rejection: the final allowed send rejection is thrown, and a rejected sleep also exits without another send. The supported distinction is that the old loop did not classify send failures before deciding whether to retry.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/before",
+          "quote": "if (attempt === retries) throw error;\n      await sleep(10);"
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/2",
+          "quote": "sleep returns a promise; rejection propagates."
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "pointer": "/sections/0/content",
+      "problem": "Saying retries continued until the budget ran out omits two earlier exits: a successful send returns, and a sleep rejection propagates. The budget is an upper limit rather than a required number of retries.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/before",
+          "quote": "return await send();"
+        },
+        {
+          "file": "source",
+          "pointer": "/before",
+          "quote": "if (attempt === retries) throw error;\n      await sleep(10);"
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/before/sleepFailure",
+          "value": {
+            "calls": 1,
+            "effects": 0,
+            "delays": [10],
+            "result": null,
+            "error": "sleep-failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "pointer": "/sections/1/content",
+      "problem": "The 10-then-20 delay sequence before a final send is conditional, not implied by a two-retry budget alone. A successful send returns immediately. The second delay requires a second retryable rejection, and reaching the third send requires both sleeps to resolve. The existing upper bound and sleep-rejection statement are supported.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "return await send();"
+        },
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "if (!error.retryable || attempt === retries) throw error;\n      await sleep(10 * 2 ** attempt);"
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/2",
+          "quote": "sleep returns a promise; rejection propagates. Delays are requested milliseconds, not measured wall-clock durations."
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/title",
+      "findingIds": ["A1"],
+      "value": "Retry filtering does not guarantee exactly-once delivery"
+    },
+    {
+      "pointer": "/sections/0/title",
+      "findingIds": ["A2"],
+      "value": "The old loop retried without classifying failures"
+    },
+    {
+      "pointer": "/sections/0/content",
+      "findingIds": ["A3"],
+      "value": "<p class=\"lead\">The old loop retried rejected sends while retry budget remained and the intervening sleep resolved. A successful send returned immediately. It requested a ten-millisecond delay between attempts.</p>"
+    },
+    {
+      "pointer": "/sections/1/content",
+      "findingIds": ["A4"],
+      "value": "<p>The changed loop stops on a non-retryable error and returns immediately on success. With a budget of two retries, if the first two sends reject with retryable errors, the loop requests delays of 10 then 20 milliseconds, reaching the third send only if both sleeps resolve. This permits up to three sends. A rejected sleep prevents the next send.</p>"
+    }
+  ],
+  "blockers": []
+}

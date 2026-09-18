@@ -1,0 +1,76 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The changed mechanism",
+      "status": "nonfactual",
+      "rationale": "Section label only. It names the excerpt's topic and does not assert a testable fact about transaction, publish, markPaid, or the probes. Source title/body likewise frame a change, but that does not make the eyebrow itself a supported or contradicted claim."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Wait for the commit, then publish",
+      "status": "supported",
+      "rationale": "source.json after and functions.mjs after await db.transaction(...) and only then await publish(id). Contract 1: the transaction promise fulfills after commit, not when the callback's markPaid await returns. Probe after.none.events is [begin, write, commit, publish], matching that order. The title describes that sequence; it does not claim all-or-nothing delivery."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "<p>The changed function first awaits the transaction:</p>{{CODE:0}}<p>That await completes after commit, not merely after <code>markPaid</code>. A write or commit rejection exits the function before publication. In the supplied in-memory results, a failed commit now leaves zero notifications.</p><p>Publication follows outside the callback:</p>{{CODE:1}}<p>A publication rejection still rejects the function, but cannot undo the committed payment. The probes show both possibilities: rejection before delivery leaves zero notifications; rejection after delivery leaves one. The author describes payment and notification as atomic, but this code establishes ordering, not an all-or-nothing result.</p>",
+      "status": "supported",
+      "rationale": "Each asserted sentence matches source.json after, functions.mjs after, contracts 1–2, source.json body, and probe-results.json. Outer await db.transaction is first; contract 1 says that promise fulfills after commit, not after markPaid. Write and commit rejections throw from transaction, so after never reaches publish; after.write and after.commit both have notifications 0. The in-memory qualifier matches probe-results.json assumptions and after.commit.notifications === 0 (before.commit is 1). await publish(id) sits outside the callback. await publish rejects the function while leaving paid true (after.publish-before and after.publish-after). Those same traces are notifications 0 and 1. source.json body attributes atomicity to the author; after.publish-before is paid true with zero notifications, so the code is commit-then-publish order, not all-or-nothing. Omissions and extra failure modes are listed separately; they do not falsify these sentences."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "A process can stop between the two awaits, with no durable outbox, background retry, or cross-call lock.",
+      "contract": "source.json contracts[3]: 'A process can stop between awaited operations. No durable outbox, background retry, or cross-call lock is supplied.'",
+      "conflicting_or_incomplete_claim": "The content enumerates write rejection, commit rejection, and publication rejection as the ways the function exits or fails after the change. Adjacent text says the result is ordering, not all-or-nothing, illustrated only with publish rejection (caller still sees a rejected function). A stop after commit and before publish also leaves a committed payment without a notification, but the process never returns that error, and nothing in the supplied contracts retries or records the publish. Probe-results.json assumptions state there is no process-kill simulation, so this gap is contract-only, not probe-contradicted.",
+      "why_material": "A reader can think the only post-commit hole is a catchable publish rejection. That misses an unrepaired dual-write stop between the awaits."
+    },
+    {
+      "limitation": "markPaid idempotency does not deduplicate publish; overlapping calls can notify twice.",
+      "contract": "source.json contracts[2]: 'markPaid is idempotent for a given id. Neither transaction nor publish supplies a delivery deduplication guarantee.'",
+      "probe": "probe.mjs asserts result.concurrent.notifications === 2 for both before and after. probe-results.json after.concurrent.notifications is 2.",
+      "conflicting_or_incomplete_claim": "The content cites probes for commit-failure and publish-rejection counts, and it denies all-or-nothing atomicity, but it never states that two overlapping after calls still yield two notifications. The concurrent probe is in the same result object as the traces it does cite.",
+      "why_material": "While the change did not introduce duplicate publish, the excerpt's atomicity correction is incomplete if the reader never learns that one id can still notify more than once. Severity is lower than the process-stop gap because this behavior is unchanged from before."
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "quote": "Wait for the commit, then publish",
+        "verdict": "pass",
+        "note": "Describes after's control flow. Does not promise atomic delivery. Not cancelled by omitted crash/outbox limits, which are listed separately."
+      },
+      {
+        "quote": "That await completes after commit, not merely after markPaid.",
+        "verdict": "pass",
+        "note": "Matches contract 1 and after.none event order."
+      },
+      {
+        "quote": "A write or commit rejection exits the function before publication. In the supplied in-memory results, a failed commit now leaves zero notifications.",
+        "verdict": "pass",
+        "note": "Structural claim is true of after(); the notification count is scoped to supplied in-memory results rather than a universal guarantee."
+      },
+      {
+        "quote": "A publication rejection still rejects the function, but cannot undo the committed payment. The probes show both possibilities: rejection before delivery leaves zero notifications; rejection after delivery leaves one.",
+        "verdict": "pass",
+        "note": "Matches contract 2 and after.publish-before / after.publish-after. The next sentence treats those traces as possibilities, not a proof of every runtime."
+      },
+      {
+        "quote": "The author describes payment and notification as atomic, but this code establishes ordering, not an all-or-nothing result.",
+        "verdict": "pass",
+        "note": "Natural attribution to source.json body, then a correct contrast with after's commit-then-publish shape."
+      }
+    ],
+    "overall_note": "Written claims are accurate and, where they rest on probes, scoped. Missing process-stop/outbox and publish-dedup limits are recorded under missing_material_limitations rather than treated as false sentences. A qualification elsewhere was not used to rescue any false title; the title is independently supported."
+  },
+  "unresolved_uncertainty": [
+    "Whether omitting contracts[3] (process stop, no outbox/retry/lock) should fail reader-facing prose instead of sitting only under missing_material_limitations. The failure-mode list reads as write/commit/publish rejections; that taxonomy is incomplete, but no sentence states those are the only failures.",
+    "Whether after.concurrent double-publish is in scope for this excerpt. The section is the changed commit-then-publish path; duplicate notify exists in before as well. Included as a limitation because the excerpt argues against atomicity and already cites probe results.",
+    "probe-results.json does not simulate process kill. Any claim about crash-between-awaits is contract-supported only; that boundary is noted, not filled by inference."
+  ]
+}

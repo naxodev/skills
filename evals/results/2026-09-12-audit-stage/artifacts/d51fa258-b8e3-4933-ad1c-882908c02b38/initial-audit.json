@@ -1,0 +1,80 @@
+{
+  "inputSha256": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/title",
+      "problem": "The title guarantees elimination of all stale reads. The unchanged reader can cache a snapshot captured before the write after the update has completed its deletion. Under the supplied snapshot and shared-Map contracts, the modeled late-snapshot example leaves the stored value new but returns and caches old, and the next read also returns old. The fill-during-write example also returns old to its overlapping reader even though deletion clears that cache fill. These modeled counterexamples refute the title's guarantee and agree with the narrower body and recap; they are not production measurements.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/contracts/2",
+          "quote": "db.read captures a snapshot when invoked, but its promise may fulfill after a later write commits."
+        },
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "  await db.write(key, value);\n  cache.delete(key);"
+        },
+        {
+          "file": "source",
+          "pointer": "/unchanged",
+          "quote": "  const value = await db.read(key);\n  cache.set(key, value);\n  return value;"
+        },
+        {
+          "file": "probe",
+          "pointer": "/assumptions",
+          "quote": "Explicit promise gates schedule snapshot capture, write commit, and cache fill. One process and one Map; no wall-clock timing."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/lateSnapshot",
+          "value": {
+            "stored": "new",
+            "overlappingRead": "old",
+            "cached": "old",
+            "nextRead": "old"
+          }
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/fillDuringWrite",
+          "value": {
+            "stored": "new",
+            "overlappingRead": "old",
+            "cached": null,
+            "nextRead": "new"
+          }
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/title",
+      "findingIds": ["A1"],
+      "value": "Post-write invalidation closes one stale-fill window"
+    }
+  ],
+  "blockers": []
+}

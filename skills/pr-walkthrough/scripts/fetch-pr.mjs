@@ -8,7 +8,7 @@
  *
  * Prints the output file path on stdout on success.
  */
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -24,19 +24,20 @@ const prArg = args[0];
 const outIdx = args.indexOf('--out');
 const outArg = outIdx >= 0 ? args[outIdx + 1] : null;
 
-function sh(cmd) {
-  return execSync(cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+/** @param {string[]} args */
+function gh(args) {
+  return execFileSync('gh', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 }
 
 // Verify gh is available and authenticated.
 try {
-  sh('gh --version');
+  gh(['--version']);
 } catch {
   console.error('gh CLI not found. Install: brew install gh');
   process.exit(2);
 }
 try {
-  sh('gh auth status');
+  gh(['auth', 'status']);
 } catch {
   console.error('gh not authenticated. Run: gh auth login');
   process.exit(2);
@@ -68,19 +69,19 @@ const fields = [
 
 let view;
 try {
-  view = JSON.parse(sh(`gh pr view ${JSON.stringify(prArg)} --json ${fields}`));
+  view = JSON.parse(gh(['pr', 'view', prArg, '--json', fields]));
 } catch (err) {
   console.error(`gh pr view failed for "${prArg}":`);
-  console.error(err.stderr?.toString() ?? err.message);
+  console.error(err instanceof Error ? err.message : String(err));
   process.exit(1);
 }
 
 let diff = '';
 try {
-  diff = sh(`gh pr diff ${JSON.stringify(prArg)}`);
+  diff = gh(['pr', 'diff', prArg]);
 } catch (err) {
   console.error(`gh pr diff failed for "${prArg}":`);
-  console.error(err.stderr?.toString() ?? err.message);
+  console.error(err instanceof Error ? err.message : String(err));
   process.exit(1);
 }
 

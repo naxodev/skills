@@ -1,0 +1,29 @@
+{
+  "title": "Retry only retryable failures, within a fixed budget",
+  "eyebrow": "Cedar Relay",
+  "dek": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+  "meta": "Deterministic modeled examples",
+  "footer": "A rejected acknowledgment can still follow a committed remote effect.",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The old loop retried every rejection",
+      "content": "<p class=\"lead\">The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.</p>"
+    },
+    {
+      "eyebrow": "The change",
+      "title": "Classify failures before waiting",
+      "content": "<p>The changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.</p>"
+    },
+    {
+      "eyebrow": "The boundary",
+      "title": "A retry can duplicate a remote effect",
+      "content": "<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>"
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Fewer retries for permanent failures",
+      "content": "<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>"
+    }
+  ]
+}

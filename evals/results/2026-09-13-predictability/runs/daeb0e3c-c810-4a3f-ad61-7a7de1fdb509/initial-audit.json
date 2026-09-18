@@ -1,0 +1,74 @@
+{
+  "inputSha256": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title", "/eyebrow", "/dek", "/meta", "/footer",
+    "/sections/0/eyebrow", "/sections/0/title", "/sections/0/content",
+    "/sections/1/eyebrow", "/sections/1/title", "/sections/1/content",
+    "/sections/2/eyebrow", "/sections/2/title", "/sections/2/content",
+    "/sections/3/eyebrow", "/sections/3/title", "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/title",
+      "problem": "The title guarantees exactly-once delivery. The supplied contract explicitly lacks deduplication or idempotency and allows rejection after a committed effect. The modeled example records two effects, contradicting the title under its assumptions. The body correctly rejects this guarantee, but does not repair the title.",
+      "evidence": [
+        { "file": "source", "pointer": "/contracts/1", "quote": "A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract." },
+        { "file": "probe", "pointer": "/results/after/duplicate/effects", "value": 2 }
+      ]
+    },
+    {
+      "id": "A2",
+      "pointer": "/sections/0/title",
+      "problem": "The old loop did not retry every rejection. It threw on budget exhaustion, and a rejected sleep prevented another send. What it lacked was filtering by the send error's retryable property.",
+      "evidence": [
+        { "file": "source", "pointer": "/before", "quote": "if (attempt === retries) throw error;\n      await sleep(10);" },
+        { "file": "source", "pointer": "/contracts/2", "quote": "sleep returns a promise; rejection propagates." }
+      ]
+    },
+    {
+      "id": "A3",
+      "pointer": "/sections/0/content",
+      "problem": "The paragraph describes retries continuing until the budget ran out, omitting successful completion and sleep rejection as earlier exits. A sleep request alone did not ensure another send.",
+      "evidence": [
+        { "file": "source", "pointer": "/before", "quote": "return await send();" },
+        { "file": "source", "pointer": "/before", "quote": "if (attempt === retries) throw error;\n      await sleep(10);" },
+        { "file": "probe", "pointer": "/results/before/sleepFailure", "value": { "calls": 1, "effects": 0, "delays": [10], "result": null, "error": "sleep-failed" } }
+      ]
+    },
+    {
+      "id": "A4",
+      "pointer": "/sections/1/content",
+      "problem": "The two-retry description states a 10-then-20 delay sequence before a final send without conditioning it on the first two sends rejecting retryably and both sleeps fulfilling. Its sleep-rejection qualification is correct, but successful earlier sends also return immediately. The sequence is a possible exhausted path, not the consequence of merely having a two-retry budget.",
+      "evidence": [
+        { "file": "source", "pointer": "/after", "quote": "return await send();" },
+        { "file": "source", "pointer": "/after", "quote": "if (!error.retryable || attempt === retries) throw error;\n      await sleep(10 * 2 ** attempt);" },
+        { "file": "probe", "pointer": "/results/after/exhausted", "value": { "calls": 3, "effects": 0, "delays": [10, 20], "result": null, "error": "transient" } }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/title",
+      "findingIds": ["A1"],
+      "value": "Retry filtering does not guarantee exactly-once delivery"
+    },
+    {
+      "pointer": "/sections/0/title",
+      "findingIds": ["A2"],
+      "value": "The old loop did not classify send failures"
+    },
+    {
+      "pointer": "/sections/0/content",
+      "findingIds": ["A3"],
+      "value": "<p class=\"lead\">The old loop returned when a send fulfilled. After a rejected send, it threw if the retry budget was exhausted; otherwise, it requested a ten-millisecond delay without checking the error's retryable property. Another send followed only if that sleep fulfilled. A rejected sleep propagated and stopped the loop.</p>"
+    },
+    {
+      "pointer": "/sections/1/content",
+      "findingIds": ["A4"],
+      "value": "<p>The changed loop stops on a non-retryable error and returns when a send fulfills. With a budget of two retries, it permits up to three sends. If the first two sends both reject with retryable errors and their sleeps fulfill, it requests delays of 10 then 20 milliseconds before the second and third sends. A rejected sleep prevents the next send. If the third send rejects, its error propagates without another delay.</p>"
+    }
+  ],
+  "blockers": []
+}

@@ -1,0 +1,1 @@
+**Factual editing.** Preserve supported prose. Change only demonstrably false or misleading claims, and state limits where their omission would change the reader's understanding of the mechanism or result. Keep necessary scope in titles and summaries. Add a caveat only when it resolves a material misunderstanding, not merely to list unshown mechanisms.

@@ -1,0 +1,53 @@
+{
+  "id": "968c0b6c-482e-473b-9dc2-a50adbb11f36",
+  "sessionID": "ses_f64ba2450ffehpD3rYgIbRGNYw",
+  "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-968c0b6c-482e-473b-9dc2-a50adbb11f36",
+  "attempts": [
+    {
+      "phase": "initial",
+      "startedAt": "2026-09-13T14:57:21.893Z",
+      "elapsedMs": 207147,
+      "info": {
+        "id": "ses_f64ba2450ffehpD3rYgIbRGNYw",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "grok-4.6",
+          "providerID": "xai",
+          "variant": "high"
+        },
+        "cost": 0.19302399999999997,
+        "tokens": {
+          "input": 46558,
+          "output": 3455,
+          "reasoning": 9911,
+          "cache": {
+            "read": 39424,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789311441880,
+          "updated": 1789311443070,
+          "idle": 1789311648944
+        },
+        "title": "component judgment",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-968c0b6c-482e-473b-9dc2-a50adbb11f36"
+        }
+      },
+      "rawSha256": "0b1ae5272ce3b988f4d7280b735003c859abae3427987f7a94abcfbb61695592",
+      "promptSha256": "cd95365e0e5a93b33e4373731f77c5c6615c5e8fa17125e8b797cfc908264f87"
+    }
+  ],
+  "inputHashes": {
+    "probe.mjs": "c26dd83340e8617ce483ee515910ccf3ccdb9685d266968f8a12fc466cd68adb",
+    "source.json": "c5091c195632d4168d60d8d18d715b655916fc0eb4c01e3fb82859e0c2b4a555",
+    "probe-results.json": "b1dd11b21634dc95b099c053fb9405de6dfdf9c33a5bd8e43de23ceb9a9ebd06",
+    "fields.json": "e2385989f202dcb6179d95275f4a68a1d55b01184f063edf0ea317eea938fc26",
+    "functions.mjs": "873fc9b94a4753519a01746186e9a7d5547f84fcb8e58cbb0d808381254a6882",
+    "manifest.json": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb",
+    "verification.json": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c"
+  }
+}

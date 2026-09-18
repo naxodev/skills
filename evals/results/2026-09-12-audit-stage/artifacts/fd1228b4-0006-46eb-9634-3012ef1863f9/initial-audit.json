@@ -1,0 +1,109 @@
+{
+  "inputSha256": "a49060a072a9955854e8050ecb90cded6974ad36a9bf5d6db35332322384788f",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/dek",
+      "problem": "Saying exponential delays space out further attempts asserts elapsed-time behavior. The contract establishes requested milliseconds only, and the modeled sleep promises resolve immediately. The summary should preserve the body's distinction between requested delays and elapsed time.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/contracts/2",
+          "quote": "Delays are requested milliseconds, not measured wall-clock durations."
+        },
+        {
+          "file": "probe",
+          "pointer": "/assumptions",
+          "quote": "Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement."
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "pointer": "/sections/1/content",
+      "problem": "The updated async function rejects with the permanent error rather than returning it as a successful result. The probe records an error and a null result. The paragraph also attributes classification to the caller, although the contract only says the send rejection carries retryable. Its statement that the old implementation waits should describe the sleep request rather than imply measured waiting in the immediate-sleep model.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "if (!error.retryable || attempt === retries) throw error;"
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/0",
+          "quote": "send returns a promise and rejects with an object containing a boolean retryable property."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/permanent",
+          "value": { "calls": 1, "effects": 0, "delays": [], "result": null, "error": "permanent" }
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/before/permanent",
+          "value": { "calls": 2, "effects": 0, "delays": [10], "result": "delivered", "error": null }
+        },
+        {
+          "file": "probe",
+          "pointer": "/assumptions",
+          "quote": "Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement."
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "pointer": "/sections/3/content",
+      "problem": "The recap drops the qualification that increased delays are requests. It also turns the absence of a supplied lock into an absolute statement that separate calls share no lock. The supplied contract establishes no shared retry counter and no supplied cross-call exclusion; it does not establish all internal state of an unshown send implementation.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/contracts/2",
+          "quote": "Delays are requested milliseconds, not measured wall-clock durations."
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/3",
+          "quote": "Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied."
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/dek",
+      "findingIds": ["A1"],
+      "value": "A retryability check stops retries after permanent failures, while the loop requests exponentially increasing delays before further attempts. Neither change guarantees exactly-once delivery."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "findingIds": ["A2"],
+      "value": "<p>Send errors carry a boolean <code>retryable</code> property, but the old loop ignored it. In the supplied permanent-failure probe, the first send rejects with <code>retryable: false</code>. The old implementation requests a 10-millisecond sleep and sends again after that promise resolves; the new implementation rejects with that error after one call, without requesting sleep. The modeled sleep resolves immediately.</p><p>This removes the extra attempt for a failure marked as permanent. The supplied contract does not identify who sets that classification. It does not establish whether a rejected send already changed the remote system.</p>"
+    },
+    {
+      "pointer": "/sections/3/content",
+      "findingIds": ["A3"],
+      "value": "<p>The change filters failures and increases requested retry delays within the existing budget. The author's exactly-once claim exceeds that mechanism: a remote effect can commit before a send rejects, and the duplicate probe records two effects in both implementations. There is no deduplication or idempotency contract. Separate calls share no retry counter, and no lock or cross-call delivery exclusion is supplied. The concurrent probe records an effect from each modeled call; it does not establish the internal state of an unshown send implementation.</p>"
+    }
+  ],
+  "blockers": []
+}

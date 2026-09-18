@@ -12,6 +12,7 @@ import { TextSplitterStream } from 'kokoro-js';
 // Sentence-internal pause points, in the order we're willing to cut at.
 const CLAUSE_BOUNDARY = /(?<=[,;:—–])\s+/;
 
+/** @param {string} text */
 function splitSentences(text) {
   const splitter = new TextSplitterStream();
   splitter.push(text);
@@ -19,6 +20,9 @@ function splitSentences(text) {
 }
 
 // Break one over-long sentence into pieces that each fit the budget.
+/** @param {string} sentence
+ * @param {number} budget
+ */
 function splitLongSentence(sentence, budget) {
   const pieces = [];
   for (const clause of sentence.split(CLAUSE_BOUNDARY)) {
@@ -54,6 +58,7 @@ export function chunkNarration(text, budget) {
 
   // Re-pack adjacent pieces: fewer, fuller chunks mean fewer seams and more
   // natural prosody than synthesizing one short sentence at a time.
+  /** @type {string[]} */
   const chunks = [];
   for (const piece of pieces) {
     if (!piece) continue;

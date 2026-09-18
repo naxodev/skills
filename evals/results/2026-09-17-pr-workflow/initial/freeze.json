@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-09-17T14:40:57.073Z",
+  "base": "ba48b5c1",
+  "model": "openai/gpt-6-astra",
+  "variant": "medium",
+  "agent": "build",
+  "preflightAlreadyObserved": true,
+  "trialsStarted": 0,
+  "sha256": {
+    "AGENTS.md": "4d8cf179209b3f86c490d9731ed722a7029253a550f296602ee552c642664462",
+    "package.json": "0e702eaa5492f5a7e09992a34df4c0e0b11cd0a976b7692aa1c4ad1607b00e05",
+    "bun.lock": "2024e552b20751cb523ea401268d5f16c81edca922f06b26c621df8482167fe5",
+    "evals/cases.json": "4d63877a507a267746b07efd4b2e99923ce67c931e72f5252e6a60886185debf",
+    "evals/fixtures/pr.json": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+    "evals/fixtures/pr-batch-limit.json": "c170226f035482893cb274f8411b7b59deaa898523f547f61664b3859f4aa051",
+    "evals/results/2026-09-17-pr-workflow/PLAN.md": "19b60babb649d4c83940b7756f7fe3c50f66d5caf03b27b2b063a33dec21081e",
+    "skills/pr-walkthrough/agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+    "skills/pr-walkthrough/STYLE.md": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46",
+    "skills/pr-walkthrough/scripts/chunk-narration.test.mjs": "08a64cdc58723c5023b5a1e97043d75c9c48fd49da37c42468159b9811cdb317",
+    "skills/pr-walkthrough/scripts/fetch-pr.mjs": "33b2eb0e1f6b75fdffca4d99483a96760d248c771b7bddc52d4c05139ff6c392",
+    "skills/pr-walkthrough/scripts/types.d.ts": "7678e9e348771c45fb27c9e09fd13d37745942e3250247d79cb0d6ee33e9884d",
+    "skills/pr-walkthrough/scripts/generate-audio.mjs": "5b07b6dd0d64146242ecdf926083418fe2f28a0828b4389adb73a4e825dbd158",
+    "skills/pr-walkthrough/scripts/bun.lock": "85c38572a48f296daf070863b58158b10d8ed38f3f7f3df4302d56d6314d9848",
+    "skills/pr-walkthrough/scripts/package.json": "dc6a971a981e416e840bd5b5846be250605ebc117290404235e7b5317e5ccb19",
+    "skills/pr-walkthrough/scripts/pipeline.test.mjs": "2e21173f879c2d5e4f6faf3ce4f257046942e39fde77e8b6870bafa781377063",
+    "skills/pr-walkthrough/scripts/build.mjs": "ebebd50e4efd8f636213a43b065193f13d65ecd7fa8d7d5cda096c3dcf84fb23",
+    "skills/pr-walkthrough/scripts/chunk-narration.mjs": "ef49feaa4ecadef18ffa4540208ad8705bf9804bcec24ea6276cef7eeb3e7661",
+    "skills/pr-walkthrough/SKILL.md": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17",
+    "skills/pr-walkthrough/template.html": "f6a431dac8ee2940660ed14433bdf12c2066076569c0075cd359a863e9b3feab"
+  }
+}

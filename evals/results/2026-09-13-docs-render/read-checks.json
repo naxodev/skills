@@ -1,0 +1,99 @@
+[
+  {
+    "id": "markdown-baseline-1",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "markdown-candidate-1",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "markdown-baseline-2",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "markdown-candidate-2",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "markdown-baseline-3",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "markdown-candidate-3",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "mdx-baseline-1",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "mdx-candidate-1",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "mdx-baseline-2",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true,
+      "HOW-TO-TEMPLATE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "mdx-candidate-2",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "mdx-baseline-3",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  },
+  {
+    "id": "mdx-candidate-3",
+    "exactReads": {
+      "SKILL.md": true,
+      "STYLE.md": true
+    },
+    "installedSkillCalls": []
+  }
+]

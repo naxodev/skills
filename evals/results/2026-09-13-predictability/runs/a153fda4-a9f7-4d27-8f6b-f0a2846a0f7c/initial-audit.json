@@ -1,0 +1,75 @@
+{
+  "inputSha256": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/title",
+      "problem": "The title asserts atomic commitment of payment and notification. The changed function instead awaits a committed transaction before invoking an external publish operation. Publication can reject without a notification after the payment has committed, and a process can stop between operations. The modeled publish-before failure illustrates the first gap under the probe's assumptions; it is not a production measurement. The atomicity claim also contradicts the body's and recap's explicit qualifications.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "  await db.transaction(async (tx) => {\n    await tx.markPaid(id);\n  });\n  await publish(id);"
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/0",
+          "quote": "It fulfills with undefined after commit."
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/1",
+          "quote": "publish is an external operation outside the database transaction. Its rejection may happen before or after an externally visible notification."
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/3",
+          "quote": "A process can stop between awaited operations. No durable outbox, background retry, or cross-call lock is supplied."
+        },
+        {
+          "file": "probe",
+          "pointer": "/assumptions",
+          "quote": "In-memory staged transaction and external notification counter; no actual database or process-kill simulation."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/publish-before",
+          "value": {
+            "paid": true,
+            "notifications": 0,
+            "events": ["begin", "write", "commit", "publish"],
+            "errors": ["publish-before"]
+          }
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/title",
+      "findingIds": ["A1"],
+      "value": "Payment now commits before publication, with a remaining delivery gap"
+    }
+  ],
+  "blockers": []
+}

@@ -1,0 +1,316 @@
+{
+  "info": {
+    "id": "ses_f6a28fa66ffe5AUfi56Ev6oq1d",
+    "projectID": "global",
+    "agent": "build",
+    "model": {
+      "id": "grok-4.6",
+      "providerID": "xai",
+      "variant": "high"
+    },
+    "cost": 0.23849199999999998,
+    "tokens": {
+      "input": 46082,
+      "output": 3781,
+      "reasoning": 15391,
+      "cache": {
+        "read": 62592,
+        "write": 0
+      }
+    },
+    "outcome": "succeeded",
+    "time": {
+      "created": 1789220292025,
+      "updated": 1789220293077,
+      "idle": 1789220630412
+    },
+    "title": "component trial",
+    "location": {
+      "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db"
+    }
+  },
+  "visible": [
+    {
+      "type": "text",
+      "text": "I'll read the supplied inputs first and review every listed field against those contracts and probes."
+    },
+    {
+      "type": "tool",
+      "name": "glob",
+      "state": {
+        "status": "completed",
+        "input": {
+          "pattern": "**/*"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/verification.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/manifest.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/store/git_target\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/store/extra/f2a52b31c7722e893d160d19f5b88470651fe26dd07e7e07972bf82d8a4f76ad20722d917498ffa246e4d48451cbe05535a65ae46d8af54aa39ce8f05c58a32d\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/store/extra/heads/f607a255048104d6b25dabc079b611d3daf9f3f2223058fa82e95ae1b7127e52f4b91ea301ec6e2954493a9093e5de7c3111653501edd40b57c051f811884a68\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/store/extra/f607a255048104d6b25dabc079b611d3daf9f3f2223058fa82e95ae1b7127e52f4b91ea301ec6e2954493a9093e5de7c3111653501edd40b57c051f811884a68\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/store/extra/482ae5a29fbe856c7272f2071b8b0f0359ee2d89ff392b8a900643fbd0836eccd067b8bf41909e206c90d45d6e7d8b6686b93ecaee5fe1a9060d87b672101310\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/store/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/submodule_store/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/index/segments/3403a8578732c0657ee69655eabc2d32a5c70b28ddca61f6d0671ca3007fe2d23e8732d227e85b37e1d29017a74835ae07448a267fe503bfada76ddd2ee4032e\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/index/segments/d27ad326963b75736b636adad9fb812eb3f2871e0efb4bc7db37d4b701a4282911eaaee91bed3a759e940769b667be1ed66f2d7f2f41ac3906b87ab7eec19c3a\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/index/segments/69f4e71753aec78e80c98f6ca8428345de9504d0ed8f547c21f733569428e8c09b88706a525953f56d620c71d9abd7d04be84fc6f0bd07534f4ac5f7f1fccedd\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/index/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/index/op_links/f3ee85a00103e5dbbbf8d885f2cede85d262611cf7be087141f69828ebc51dabc8dc29c3d815c487cfb52ca7d0b73f90cc8a64af85856ceb307f3fc6b5e46d64\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/index/op_links/17903f51db5e4154ebb8f53e9771d42ff262ed03f9500f758ba748c48017253abad1a88cd2a97f4331c70426ad424a8643c3412a5ffcba61c8af649afb1661ed\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/index/op_links/00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/index/op_links/375c1a6be4a4699b4b3c62949f1a013287f620a1a164fce554f34c82727ee7535add5b7c535c079ba8945199f80b0f635132097a2b664dca4c0e85934c54b2a8\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_heads/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_heads/heads/375c1a6be4a4699b4b3c62949f1a013287f620a1a164fce554f34c82727ee7535add5b7c535c079ba8945199f80b0f635132097a2b664dca4c0e85934c54b2a8\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/workspace_store/index\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_store/views/96ce651cc6703fd11f5ad5311c065edbd7e40f8a4cb7e8833face7aec398bfa94566e3b15f986be509b605cd96b09c75bde8a7e087cd0e1915503b7e9a59f724\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_store/views/5c731fc1f37774597b10292a8ef78d4d512dd95f655ed5547ba01e7663d298403aa855e157ed3086dfcf8b8ffa9aacb4dab73e4f3916ff0c17c7aaf6289b0896\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_store/views/460b6ddd051223efcba7ee1466b94818e88d8e4c21202716dd39db5d17fb1a06126e5a89d863846db30092ba0e1058b8ff5b4a1afc257646389eecfe55a34efe\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_store/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_store/operations/f3ee85a00103e5dbbbf8d885f2cede85d262611cf7be087141f69828ebc51dabc8dc29c3d815c487cfb52ca7d0b73f90cc8a64af85856ceb307f3fc6b5e46d64\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_store/operations/17903f51db5e4154ebb8f53e9771d42ff262ed03f9500f758ba748c48017253abad1a88cd2a97f4331c70426ad424a8643c3412a5ffcba61c8af649afb1661ed\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/repo/op_store/operations/375c1a6be4a4699b4b3c62949f1a013287f620a1a164fce554f34c82727ee7535add5b7c535c079ba8945199f80b0f635132097a2b664dca4c0e85934c54b2a8\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/working_copy/tree_state\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/working_copy/type\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/working_copy/checkout\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/.jj/.gitignore\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/functions.mjs\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/STYLE.md\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/MANIFEST.md\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/fields.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/probe-results.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/source.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/probe.mjs"
+          }
+        ],
+        "metadata": {
+          "count": 38,
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220297280,
+        "ran": 1789220297314,
+        "completed": 1789220297352
+      }
+    },
+    {
+      "type": "text",
+      "text": "Reading the listed source files next so every field can be checked against the contracts and probe results."
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/manifest.json"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/manifest.json, lines 1-29\n1: {\n2:   \"title\": \"Retry only retryable failures, within a fixed budget\",\n3:   \"eyebrow\": \"Cedar Relay\",\n4:   \"dek\": \"Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.\",\n5:   \"meta\": \"Deterministic modeled examples\",\n6:   \"footer\": \"A rejected acknowledgment can still follow a committed remote effect.\",\n7:   \"sections\": [\n8:     {\n9:       \"eyebrow\": \"The setting\",\n10:       \"title\": \"The old loop retried every rejection\",\n11:       \"content\": \"<p class=\\\"lead\\\">The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.</p>\"\n12:     },\n13:     {\n14:       \"eyebrow\": \"The change\",\n15:       \"title\": \"Classify failures before waiting\",\n16:       \"content\": \"<p>The changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.</p>\"\n17:     },\n18:     {\n19:       \"eyebrow\": \"The boundary\",\n20:       \"title\": \"A retry can duplicate a remote effect\",\n21:       \"content\": \"<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>\"\n22:     },\n23:     {\n24:       \"eyebrow\": \"The short version\",\n25:       \"title\": \"Fewer retries for permanent failures\",\n26:       \"content\": \"<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>\"\n27:     }\n28:   ]\n29: }"
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220303049,
+        "ran": 1789220303916,
+        "completed": 1789220303930
+      }
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/fields.json"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/fields.json, lines 1-70\n1: [\n2:   {\n3:     \"pointer\": \"/title\",\n4:     \"value\": \"Retry only retryable failures, within a fixed budget\"\n5:   },\n6:   {\n7:     \"pointer\": \"/eyebrow\",\n8:     \"value\": \"Cedar Relay\"\n9:   },\n10:   {\n11:     \"pointer\": \"/dek\",\n12:     \"value\": \"Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.\"\n13:   },\n14:   {\n15:     \"pointer\": \"/meta\",\n16:     \"value\": \"Deterministic modeled examples\"\n17:   },\n18:   {\n19:     \"pointer\": \"/footer\",\n20:     \"value\": \"A rejected acknowledgment can still follow a committed remote effect.\"\n21:   },\n22:   {\n23:     \"pointer\": \"/sections/0/eyebrow\",\n24:     \"value\": \"The setting\"\n25:   },\n26:   {\n27:     \"pointer\": \"/sections/0/title\",\n28:     \"value\": \"The old loop retried every rejection\"\n29:   },\n30:   {\n31:     \"pointer\": \"/sections/0/content\",\n32:     \"value\": \"<p class=\\\"lead\\\">The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.</p>\"\n33:   },\n34:   {\n35:     \"pointer\": \"/sections/1/eyebrow\",\n36:     \"value\": \"The change\"\n37:   },\n38:   {\n39:     \"pointer\": \"/sections/1/title\",\n40:     \"value\": \"Classify failures before waiting\"\n41:   },\n42:   {\n43:     \"pointer\": \"/sections/1/content\",\n44:     \"value\": \"<p>The changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.</p>\"\n45:   },\n46:   {\n47:     \"pointer\": \"/sections/2/eyebrow\",\n48:     \"value\": \"The boundary\"\n49:   },\n50:   {\n51:     \"pointer\": \"/sections/2/title\",\n52:     \"value\": \"A retry can duplicate a remote effect\"\n53:   },\n54:   {\n55:     \"pointer\": \"/sections/2/content\",\n56:     \"value\": \"<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>\"\n57:   },\n58:   {\n59:     \"pointer\": \"/sections/3/eyebrow\",\n60:     \"value\": \"The short version\"\n61:   },\n62:   {\n63:     \"pointer\": \"/sections/3/title\",\n64:     \"value\": \"Fewer retries for permanent failures\"\n65:   },\n66:   {\n67:     \"pointer\": \"/sections/3/content\",\n68:     \"value\": \"<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>\"\n69:   }\n70: ]"
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220303923,
+        "ran": 1789220304811,
+        "completed": 1789220304829
+      }
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/source.json"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/source.json, lines 1-13\n1: {\n2:   \"title\": \"Cedar Relay: filter retries and increase delays\",\n3:   \"body\": \"The author says this avoids retrying permanent failures and makes delivery exactly once.\",\n4:   \"contracts\": [\n5:     \"retries is a nonnegative integer. send returns a promise and rejects with an object containing a boolean retryable property.\",\n6:     \"A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract.\",\n7:     \"sleep returns a promise; rejection propagates. Delays are requested milliseconds, not measured wall-clock durations.\",\n8:     \"Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.\"\n9:   ],\n10:   \"before\": \"export async function before(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    } catch (error) {\\n      if (attempt === retries) throw error;\\n      await sleep(10);\\n    }\\n  }\\n}\",\n11:   \"after\": \"export async function after(send, sleep, retries) {\\n  for (let attempt = 0; attempt <= retries; attempt++) {\\n    try {\\n      return await send();\\n    } catch (error) {\\n      if (!error.retryable || attempt === retries) throw error;\\n      await sleep(10 * 2 ** attempt);\\n    }\\n  }\\n}\",\n12:   \"unchanged\": \"none\"\n13: }"
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220304822,
+        "ran": 1789220305759,
+        "completed": 1789220305771
+      }
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/functions.mjs"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/functions.mjs, lines 1-21\n1: export async function before(send, sleep, retries) {\n2:   for (let attempt = 0; attempt <= retries; attempt++) {\n3:     try {\n4:       return await send();\n5:     } catch (error) {\n6:       if (attempt === retries) throw error;\n7:       await sleep(10);\n8:     }\n9:   }\n10: }\n11: \n12: export async function after(send, sleep, retries) {\n13:   for (let attempt = 0; attempt <= retries; attempt++) {\n14:     try {\n15:       return await send();\n16:     } catch (error) {\n17:       if (!error.retryable || attempt === retries) throw error;\n18:       await sleep(10 * 2 ** attempt);\n19:     }\n20:   }\n21: }"
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220305764,
+        "ran": 1789220306730,
+        "completed": 1789220306742
+      }
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/probe.mjs"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/probe.mjs, lines 1-50\n1: import assert from 'node:assert/strict';\n2: import { before, after } from './functions.mjs';\n3: \n4: async function scenario(fn, outcomes, retries, sleepRejects = false) {\n5:   const trace = { calls: 0, effects: 0, delays: [], result: null, error: null };\n6:   try {\n7:     trace.result = await fn(async () => {\n8:       const outcome = outcomes[trace.calls++];\n9:       assert.ok(outcome, 'the supplied retry budget must bound send calls');\n10:       if (outcome.effect) trace.effects++;\n11:       if (outcome.error) throw outcome.error;\n12:       return 'delivered';\n13:     }, async (delay) => {\n14:       trace.delays.push(delay);\n15:       if (sleepRejects) throw { label: 'sleep-failed' };\n16:     }, retries);\n17:   } catch (error) {\n18:     trace.error = error.label;\n19:   }\n20:   return trace;\n21: }\n22: const transient = { label: 'transient', retryable: true };\n23: const permanent = { label: 'permanent', retryable: false };\n24: const results = {};\n25: for (const [name, fn] of Object.entries({ before, after })) {\n26:   results[name] = {\n27:     permanent: await scenario(fn, [{ error: permanent }, {}], 2),\n28:     exhausted: await scenario(fn, Array(3).fill({ error: transient }), 2),\n29:     zeroBudget: await scenario(fn, [{ error: transient }], 0),\n30:     duplicate: await scenario(fn, [{ effect: true, error: transient }, { effect: true }], 2),\n31:     sleepFailure: await scenario(fn, [{ error: transient }], 2, true),\n32:     concurrentCalls: await Promise.all([1, 2].map(() => scenario(fn, [{ effect: true }], 2))),\n33:   };\n34: }\n35: assert.equal(results.before.permanent.calls, 2);\n36: assert.equal(results.after.permanent.calls, 1);\n37: assert.equal(results.after.permanent.error, 'permanent');\n38: assert.deepEqual(results.before.exhausted.delays, [10, 10]);\n39: assert.deepEqual(results.after.exhausted.delays, [10, 20]);\n40: for (const result of Object.values(results)) {\n41:   assert.equal(result.exhausted.calls, 3, 'retries counts extra attempts, not all attempts');\n42:   assert.equal(result.exhausted.error, 'transient');\n43:   assert.equal(result.zeroBudget.calls, 1);\n44:   assert.deepEqual(result.zeroBudget.delays, []);\n45:   assert.equal(result.duplicate.effects, 2, 'a lost acknowledgment permits duplicate side effects');\n46:   assert.equal(result.sleepFailure.calls, 1, 'a rejected sleep prevents another send');\n47:   assert.equal(result.sleepFailure.error, 'sleep-failed');\n48:   assert.equal(result.concurrentCalls.reduce((sum, item) => sum + item.effects, 0), 2);\n49: }\n50: console.log(JSON.stringify({ assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.', results }, null, 2));"
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220306735,
+        "ran": 1789220307600,
+        "completed": 1789220307613
+      }
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/probe-results.json"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/probe-results.json, lines 1-127\n1: {\n2:   \"assumptions\": \"Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.\",\n3:   \"results\": {\n4:     \"before\": {\n5:       \"permanent\": {\n6:         \"calls\": 2,\n7:         \"effects\": 0,\n8:         \"delays\": [\n9:           10\n10:         ],\n11:         \"result\": \"delivered\",\n12:         \"error\": null\n13:       },\n14:       \"exhausted\": {\n15:         \"calls\": 3,\n16:         \"effects\": 0,\n17:         \"delays\": [\n18:           10,\n19:           10\n20:         ],\n21:         \"result\": null,\n22:         \"error\": \"transient\"\n23:       },\n24:       \"zeroBudget\": {\n25:         \"calls\": 1,\n26:         \"effects\": 0,\n27:         \"delays\": [],\n28:         \"result\": null,\n29:         \"error\": \"transient\"\n30:       },\n31:       \"duplicate\": {\n32:         \"calls\": 2,\n33:         \"effects\": 2,\n34:         \"delays\": [\n35:           10\n36:         ],\n37:         \"result\": \"delivered\",\n38:         \"error\": null\n39:       },\n40:       \"sleepFailure\": {\n41:         \"calls\": 1,\n42:         \"effects\": 0,\n43:         \"delays\": [\n44:           10\n45:         ],\n46:         \"result\": null,\n47:         \"error\": \"sleep-failed\"\n48:       },\n49:       \"concurrentCalls\": [\n50:         {\n51:           \"calls\": 1,\n52:           \"effects\": 1,\n53:           \"delays\": [],\n54:           \"result\": \"delivered\",\n55:           \"error\": null\n56:         },\n57:         {\n58:           \"calls\": 1,\n59:           \"effects\": 1,\n60:           \"delays\": [],\n61:           \"result\": \"delivered\",\n62:           \"error\": null\n63:         }\n64:       ]\n65:     },\n66:     \"after\": {\n67:       \"permanent\": {\n68:         \"calls\": 1,\n69:         \"effects\": 0,\n70:         \"delays\": [],\n71:         \"result\": null,\n72:         \"error\": \"permanent\"\n73:       },\n74:       \"exhausted\": {\n75:         \"calls\": 3,\n76:         \"effects\": 0,\n77:         \"delays\": [\n78:           10,\n79:           20\n80:         ],\n81:         \"result\": null,\n82:         \"error\": \"transient\"\n83:       },\n84:       \"zeroBudget\": {\n85:         \"calls\": 1,\n86:         \"effects\": 0,\n87:         \"delays\": [],\n88:         \"result\": null,\n89:         \"error\": \"transient\"\n90:       },\n91:       \"duplicate\": {\n92:         \"calls\": 2,\n93:         \"effects\": 2,\n94:         \"delays\": [\n95:           10\n96:         ],\n97:         \"result\": \"delivered\",\n98:         \"error\": null\n99:       },\n100:       \"sleepFailure\": {\n101:         \"calls\": 1,\n102:         \"effects\": 0,\n103:         \"delays\": [\n104:           10\n105:         ],\n106:         \"result\": null,\n107:         \"error\": \"sleep-failed\"\n108:       },\n109:       \"concurrentCalls\": [\n110:         {\n111:           \"calls\": 1,\n112:           \"effects\": 1,\n113:           \"delays\": [],\n114:           \"result\": \"delivered\",\n115:           \"error\": null\n116:         },\n117:         {\n118:           \"calls\": 1,\n119:           \"effects\": 1,\n120:           \"delays\": [],\n121:           \"result\": \"delivered\",\n122:           \"error\": null\n123:         }\n124:       ]\n125:     }\n126:   }\n127: }"
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220307605,
+        "ran": 1789220308547,
+        "completed": 1789220308560
+      }
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/verification.json"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/verification.json, lines 1-4\n1: {\n2:   \"status\": \"none\",\n3:   \"findings\": []\n4: }"
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220308553,
+        "ran": 1789220309524,
+        "completed": 1789220309548
+      }
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/STYLE.md"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/STYLE.md, lines 1-163\n1: # Voice & prose rules for PR walkthroughs\n2: \n3: ## Focus\n4: \n5: Write the through-line before any section: one sentence naming the single story this PR tells. It never appears in the output — it is the knife. Every section must advance it; material that is true but off the line goes in the bin, however interesting.\n6: \n7: - **One new concept per section.** A reader holds about four things at once. A section that introduces the validation contract AND the theming strategy AND the fallback policy teaches none of them — split or cut.\n8: - **One idea per paragraph, stated in its first sentence.** The rest of the paragraph earns that sentence.\n9: - **End sentences on the new information.** Readers place emphasis where a sentence lands: \"the build fails loudly\" beats \"loud failure is what the build produces.\"\n10: - **The reader has not seen the diff.** Name a thing before leaning on it — a flag, acronym, or internal name used before its introduction costs the reader a re-read.\n11: - **Before shipping, delete the weakest section.** If the essay survives, it was padding. Repeat until it doesn't.\n12: \n13: ## The arc — a menu, not a checklist (6–9 sections)\n14: \n15: Four beats are mandatory: the setting, the gap, what we built, the short version. Everything else is on the menu and must earn its place via the through-line. Beats 1–3 are one story — give each its own section only when each carries distinct weight; otherwise merge them.\n16: \n17: 1. **The setting** — what the system was before this PR. Anchor the reader. Use `<p class=\"lead\">` here.\n18: 2. **The gap / the bug nobody saw** — what was missing or wrong, with a concrete example, not an abstraction.\n19: 3. **Why it matters** — the user-visible or operational cost. Translate technical correctness into \"what does this cost a developer.\"\n20: 4. **The mechanic, briefly** — explain the underlying domain concept the PR touches (Go build tags, ESM/CJS interop, JIT compilation, whatever). Plain language. Imagine the reader is sharp but new to the area. This section is the natural home for a diagram; if the concept has structure — a flow, a lifecycle, a before/after shape — draw it rather than describing it in prose.\n21: 5. **What we built** — the chosen approach in narrative form. Algorithm shape, where it plugs in. NOT a file-by-file dump yet. Include the one or two most load-bearing code hunks here, each introduced and explained (see \"The key code\").\n22: 6. **The honest trade-offs** — what the PR does NOT do, and why. Each trade-off gets the choice AND the reason. Use `<h3>` sub-headings inside this section.\n23: 7. **Alternatives considered** — what was rejected and why. One short paragraph per alternative. If none are documented in the materials, omit this section entirely; don't fabricate.\n24: 8. **What the diff looks like** — file-by-file tour, usually as a 2-column table. Each row: file name (with status: \"new\" / \"modified\") + one narrative sentence.\n25: 9. **A note on the test strategy** — optional. Only if tests are unusually structured (real-fs integration tests, fuzz, golden files, etc.). Skip for vanilla unit-test PRs.\n26: 10. **What's next** — open follow-ups, known issues filed, the priority order. Tie back to \"trade-offs\" — these are usually the same items.\n27: 11. **The short version** — one paragraph for skimmers, at the END. Never at the top.\n28: \n29: For small PRs (single-file refactors), collapse to 5 sections: setting → why → what we built → trade-offs → what's next. For sprawling PRs the hard ceiling is 11, but reaching it means the through-line is probably carrying two stories — cut before you stack.\n30: \n31: ## Voice\n32: \n33: - **Reader-facing.** Keep internal fact IDs, approval labels, reviewer directions, and drafting instructions in analysis artifacts. Use identifiers from the actual source when they help explain the program. Check the title, subtitle, sections, recap, and narration for leaked review material before handing off.\n34: - **Natural attribution.** Translate evidence notes into prose: use \"The author reports…\" or \"The diff shows…\" where attribution matters. Preserve the meaning of important qualifications without copying reviewer wording or repeating the same caveat throughout the essay.\n35: - **Essay-shaped.** Long paragraphs over short bullets. Bullets only when the items are genuinely parallel and don't carry their own narrative.\n36: - **Second person + first-person plural.** \"You might ask.\" \"We rejected this path.\" Avoid passive (\"it was rejected\") — it's a tell of AI-generated prose.\n37: - **Concrete > abstract.** Show the file, the constraint comment, the failure mode. A reader who can picture a real case beats one with a vague principle.\n38: - **Honest about gaps.** Trust comes from saying \"we did not handle X\" before the reader asks. Hiding limitations is a worse failure mode than having them.\n39: - **No marketing.** Don't write \"we're excited to introduce\" or \"leverages tree-sitter\" or \"robustly handles\". Just say what it does.\n40: - **No emoji.** Not in headings, not in tables, not as status icons.\n41: - **No hedging boilerplate.** \"Of course, there are several considerations to keep in mind…\" is dead weight. Cut it.\n42: \n43: ## Section headings\n44: \n45: The build script renders each `<h2>` as:\n46: \n47: ```\n48: N · The eyebrow   ← small accent\n49: The title here    ← big bold\n50: ```\n51: \n52: So the `eyebrow` field is the short chapter label (\"The setting\", \"The mechanic, briefly\") and `title` is the actual H2 line (\"Where we were before this PR\", \"What we're actually parsing\"). They should NOT repeat each other.\n53: \n54: ## Drop-cap\n55: \n56: The first paragraph of section 1, and only that paragraph, gets `<p class=\"lead\">…</p>`. The CSS turns the first letter into a 3.2rem drop-cap. Don't use it anywhere else; the doc loses its visual anchor if there are multiple.\n57: \n58: ## Code blocks\n59: \n60: Multi-line code goes in the section's `code` array, not in `content`. Reference it from prose with a `{{CODE:i}}` placeholder (0-indexed, matching array order). Never hand-write `<pre><code>` — it gets no syntax highlighting and the build warns. Write `source` as raw code, exactly as it reads in an editor — no HTML entity escaping; the build owns escaping and highlighting.\n61: \n62: ```json\n63: {\n64:   \"lang\": \"go\",\n65:   \"file\": \"signal_unix.go\",\n66:   \"source\": \"//go:build unix\\n\\npackage signal\"\n67: }\n68: ```\n69: \n70: - `lang` is a Shiki language id (`ts`, `go`, `py`, `rust`, `bash`, `json`, …). An unknown id degrades to plain text with a build warning.\n71: - `file` renders as a small caption above the block. Set it whenever the code comes from a specific file — it replaces the old `// file:` first-line comment convention.\n72: - Inline code is unchanged: `<code>process.platform</code>`, `<code>foo_linux.go</code>` in prose. You must still escape `<`, `>`, `&` there — `content` is authored HTML the build does not touch.\n73: - To *mention* placeholder syntax in prose without expanding it, entity-escape the braces: `<code>&#123;&#123;CODE:0&#125;&#125;</code>`. A literal placeholder in `content` is treated as a reference and must resolve to an entry.\n74: \n75: ### The key code\n76: \n77: The document should include 2–4 code blocks total showing the most load-bearing code from the PR. Rules:\n78: \n79: - Show the code as it exists AFTER the PR — never raw diff hunks with `+`/`-` markers.\n80: - Trim each block to its essential lines; elide the rest with a `// …` comment. Max ~20 lines per block.\n81: - Introduce the block in prose, show it, then explain what the reader should notice. Never drop a block without commentary.\n82: \n83: ## Diagrams (mermaid)\n84: \n85: Diagram source goes in the section's `diagrams` array, not in `content`. Reference it from prose with a `{{DIAGRAM:i}}` placeholder (0-indexed, matching array order). Write it as raw mermaid — no entity escaping; the build owns escaping.\n86: \n87: ```json\n88: {\n89:   \"diagrams\": [\n90:     \"flowchart LR\\n  A[fetch-pr.mjs] --> B[JSON dump]\"\n91:   ]\n92: }\n93: ```\n94: \n95: Referenced in `content` as `<p>{{DIAGRAM:0}}</p>`.\n96: \n97: When a diagram earns its place: only when it carries structure prose can't — flow, hierarchy, sequence, state. A two-node arrow is prose, not a diagram.\n98: \n99: Budget: 1–3 diagrams per document. Keep each small — roughly 12 nodes or fewer; a diagram that needs a legend is two diagrams.\n100: \n101: Prefer `flowchart` and `sequenceDiagram`.\n102: \n103: Every diagram needs a narration description in the manifest — the listener can't see it.\n104: \n105: Rendering note: diagrams are themed to the document's palette and follow the light/dark toggle. If the mermaid package isn't installed at build time, readers see the diagram source as text — so the source itself should be tidy and readable.\n106: \n107: ## Tables (file tour)\n108: \n109: The canonical \"what the diff looks like\" table:\n110: \n111: ```html\n112: <table>\n113:   <thead>\n114:     <tr><th>File</th><th>What it does</th></tr>\n115:   </thead>\n116:   <tbody>\n117:     <tr>\n118:       <td><code>file.ts</code> (new)</td>\n119:       <td>One narrative sentence — what role this file plays, not a diff of its lines.</td>\n120:     </tr>\n121:   </tbody>\n122: </table>\n123: ```\n124: \n125: Mark new files with `(new)`. Don't mark modified ones. Don't add a \"lines changed\" column — irrelevant to the narrative.\n126: \n127: ## Callouts\n128: \n129: ```html\n130: <div class=\"callout\">\n131:   <p><strong>Worth saying out loud:</strong> the body of the aside.</p>\n132: </div>\n133: ```\n134: \n135: Max 1–2 in the entire document. They're for asides the reader needs but that break the flow. Don't use as a status badge.\n136: \n137: ## Blockquotes\n138: \n139: `<blockquote>` is styled with a left rule and italic body. Use it for direct quotes from a spec, an RFC, or another doc — never to highlight your own prose.\n140: \n141: ## Length\n142: \n143: Word-count ceilings, not goals — the reader's attention is the budget, and a walkthrough that finishes at the bottom of its band beats one that fills it:\n144: - Small PR walkthrough: 500–900 words\n145: - Typical: 1100–1800 words\n146: - Large / multi-feature: up to 2400 words\n147: \n148: If you're pushing 2400, you have multiple stories — pick the strongest one and let the rest go.\n149: \n150: ## Forbidden patterns\n151: \n152: - Lists of acceptance criteria with checkboxes (✅) — looks like a generated test report\n153: - \"Pros and cons\" headings — essay voice doesn't use those\n154: - Tables with status emoji (🟢, ⚠️, ❌)\n155: - \"TL;DR\" at the top — the recap goes at the bottom; the *first* section is the setup\n156: - Quoting the PR body verbatim — paraphrase, integrate\n157: - Inventing alternatives or trade-offs not in the materials — research-driven, not imagined\n158: - \"We hope you find this useful\" / \"thanks for reading\" / any sign-off\n159: - Throat-clearing — a section that opens by announcing what it will discuss instead of discussing it (\"In this section we will look at…\")\n160: \n161: ## When in doubt\n162: \n163: Ask: would a reader who is sharp but new to this area understand WHY we did this, after one read? If no, find the one paragraph that's the bottleneck and rewrite it. If yes, ask the inverse: what did you include that the through-line doesn't need? Cut that, then you're done."
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220309534,
+        "ran": 1789220310439,
+        "completed": 1789220310462
+      }
+    },
+    {
+      "type": "tool",
+      "name": "read",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/MANIFEST.md"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/MANIFEST.md, lines 1-26\n1: # Manifest shape\n2: \n3: The local builder consumes this JSON shape. The schema summary follows the builder's header and the skill's manifest contract.\n4: \n5: ```json\n6: {\n7:   \"title\": \"Page heading\",\n8:   \"eyebrow\": \"Small label above the heading\",\n9:   \"dek\": \"Subtitle paragraph\",\n10:   \"meta\": \"Small metadata line\",\n11:   \"footer\": \"Footer text\",\n12:   \"sections\": [\n13:     {\n14:       \"eyebrow\": \"Chapter label\",\n15:       \"title\": \"Section heading\",\n16:       \"content\": \"<p>Authored HTML.</p>\"\n17:     }\n18:   ]\n19: }\n20: ```\n21: \n22: Every displayed field above is a string except sections, which is a nonempty array. Use the section count in the writing request.\n23: Optional section code entries use `{ \"lang\": \"js\", \"source\": \"raw code\", \"file\": \"file.mjs\" }`.\n24: Refer to them with `{{CODE:0}}` in content. Optional diagrams are an array of raw Mermaid strings, referenced with `{{DIAGRAM:0}}`.\n25: Optional narrationIntro and section narration fields are plain strings; narration does not need an audio file.\n26: The builder escapes plain text fields and code entries. Escape inline code inside content yourself, including `<`, `>`, and `&`."
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220310449,
+        "ran": 1789220310566,
+        "completed": 1789220310572
+      }
+    },
+    {
+      "type": "text",
+      "text": "I have the contracts, functions, and probe results. Next I’ll score every listed field and write `grade.json`."
+    },
+    {
+      "type": "tool",
+      "name": "write",
+      "state": {
+        "status": "completed",
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-f298cd5a-5977-4fc3-8ec5-1ae1aa7f92db/grade.json",
+          "content": "{\n  \"fields\": [\n    {\n      \"pointer\": \"/title\",\n      \"quote\": \"Retry only retryable failures, within a fixed budget\",\n      \"status\": \"supported\",\n      \"rationale\": \"after throws when !error.retryable or attempt === retries, and otherwise loops while attempt <= retries. Probe after.permanent.calls is 1 with error permanent; after.exhausted.calls is 3 when retries is 2. Contract: retries is a nonnegative integer.\"\n    },\n    {\n      \"pointer\": \"/eyebrow\",\n      \"quote\": \"Cedar Relay\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.title begins with 'Cedar Relay: filter retries and increase delays'.\"\n    },\n    {\n      \"pointer\": \"/dek\",\n      \"quote\": \"Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after checks !error.retryable before sleep; after.permanent is 1 call, delays [], error permanent. after uses sleep(10 * 2 ** attempt); after.exhausted.delays is [10, 20]. Contract: delays are requested milliseconds; a send rejection may happen after the remote side effect commits; there is no deduplication or idempotency contract. after.duplicate.effects is 2.\"\n    },\n    {\n      \"pointer\": \"/meta\",\n      \"quote\": \"Deterministic modeled examples\",\n      \"status\": \"supported\",\n      \"rationale\": \"probe-results.assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.' The field names that modeled, deterministic character. It does not restate the immediate-sleep or no-production-measurement clauses.\"\n    },\n    {\n      \"pointer\": \"/footer\",\n      \"quote\": \"A rejected acknowledgment can still follow a committed remote effect.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Contract: 'A send rejection may happen after the remote side effect commits.' Probe duplicate outcomes pair effect: true with a retryable error, then a second effect; after.duplicate.effects is 2. Probe comment: 'a lost acknowledgment permits duplicate side effects.' Modal 'can' matches contract 'may'.\"\n    },\n    {\n      \"pointer\": \"/sections/0/eyebrow\",\n      \"quote\": \"The setting\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Chapter label only. Not a truth-apt claim about the source, functions, or probes.\"\n    },\n    {\n      \"pointer\": \"/sections/0/title\",\n      \"quote\": \"The old loop retried every rejection\",\n      \"status\": \"supported\",\n      \"rationale\": \"before catch retries unless attempt === retries; it does not read error.retryable. before.permanent.calls is 2 after a permanent rejection (then result delivered). before.exhausted.calls is 3 with error transient.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.\",\n      \"status\": \"supported\",\n      \"rationale\": \"before sleeps only when attempt !== retries, then continues the loop. before.exhausted: calls 3, delays [10, 10] for retries 2. before always calls sleep(10). Contract: delays are requested milliseconds, not measured wall-clock durations.\"\n    },\n    {\n      \"pointer\": \"/sections/1/eyebrow\",\n      \"quote\": \"The change\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Chapter label only. Not a truth-apt claim about the source, functions, or probes.\"\n    },\n    {\n      \"pointer\": \"/sections/1/title\",\n      \"quote\": \"Classify failures before waiting\",\n      \"status\": \"supported\",\n      \"rationale\": \"after evaluates !error.retryable || attempt === retries and throws before await sleep(10 * 2 ** attempt). after.permanent.delays is []; after.exhausted.delays is [10, 20] only on retryable failures.\"\n    },\n    {\n      \"pointer\": \"/sections/1/content\",\n      \"quote\": \"The changed loop stops on a non-retryable error. With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends. A rejected sleep prevents the next send.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after.permanent: calls 1, error permanent, delays []. For retries 2, sleep(10 * 2 ** attempt) yields 10 then 20; after.exhausted.delays is [10, 20] and calls is 3. Probe assert: 'retries counts extra attempts, not all attempts.' The three-send clause is scoped to that budget. after.sleepFailure: calls 1, error sleep-failed; contract: sleep rejection propagates. Probe assert: 'a rejected sleep prevents another send.'\"\n    },\n    {\n      \"pointer\": \"/sections/2/eyebrow\",\n      \"quote\": \"The boundary\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Chapter label only. Not a truth-apt claim about the source, functions, or probes.\"\n    },\n    {\n      \"pointer\": \"/sections/2/title\",\n      \"quote\": \"A retry can duplicate a remote effect\",\n      \"status\": \"supported\",\n      \"rationale\": \"Contract: a send rejection may happen after the remote side effect commits; no deduplication or idempotency. after.duplicate.effects is 2 (and before.duplicate.effects is 2). Probe assert: 'a lost acknowledgment permits duplicate side effects.' Modal 'can' is scoped.\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.\",\n      \"status\": \"supported\",\n      \"rationale\": \"source.body: the author says this 'makes delivery exactly once.' Contract: send rejection may happen after the remote side effect commits; no deduplication or idempotency. after.duplicate.effects is 2. Contract: separate calls share no retry counter; no lock or cross-call delivery exclusion. after.concurrentCalls is two traces with effects 1 each (sum 2). Probe assert sums concurrent effects to 2.\"\n    },\n    {\n      \"pointer\": \"/sections/3/eyebrow\",\n      \"quote\": \"The short version\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Chapter label only. Not a truth-apt claim about the source, functions, or probes.\"\n    },\n    {\n      \"pointer\": \"/sections/3/title\",\n      \"quote\": \"Fewer retries for permanent failures\",\n      \"status\": \"supported\",\n      \"rationale\": \"after throws on !error.retryable without sleeping. after.permanent.calls is 1 versus before.permanent.calls 2. Retryable exhausted path still uses 3 calls in both functions.\"\n    },\n    {\n      \"pointer\": \"/sections/3/content\",\n      \"quote\": \"The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after adds the retryable check and sleep(10 * 2 ** attempt) versus before's sleep(10). after.exhausted.delays [10, 20] versus before [10, 10]. Loop bound is attempt <= retries inside one call. Contract: separate calls share no retry counter; no deduplication or idempotency. after.duplicate.effects is 2; concurrentCalls sums to 2 effects.\"\n    }\n  ],\n  \"observed_contradictions\": [],\n  \"missing_material_limitations\": [\n    {\n      \"limitation\": \"Requested delays are not measured wall-clock durations; modeled sleeps resolve immediately, with no timing or production measurement.\",\n      \"evidence\": \"Contract: 'Delays are requested milliseconds, not measured wall-clock durations.' probe-results.assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.' Prose uses 'requested' and /meta says 'Deterministic modeled examples' but never states the wall-clock negative or immediate-sleep modeling.\"\n    },\n    {\n      \"limitation\": \"Sleep-rejection abort, the extra-attempt budget, lost-ack duplicate effects, and lack of cross-call exclusion already hold for before as well as after.\",\n      \"evidence\": \"before.sleepFailure and after.sleepFailure both have calls 1 and error sleep-failed. Both exhausted paths have calls 3. Both duplicate paths have effects 2. Both concurrentCalls sums are 2. source.unchanged is 'none', but those probe results are unchanged. The change section presents sleep abort and 'up to three sends' without saying they preexisted. The short version only carves out delivery and duplicate effects.\"\n    }\n  ],\n  \"attribution_errors\": [],\n  \"reviewer_language_leakage\": [\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"the supplied contract\",\n      \"rationale\": \"Reviewer/audit diction. The sentence is a rebuttal of the author against 'the supplied contract' rather than a description of send/sleep behavior.\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The modeled lost-acknowledgment example records two effects.\",\n      \"rationale\": \"Echoes probe commentary ('a lost acknowledgment permits duplicate side effects') and modeled-harness framing. A reader-facing account would name the send rejecting after a committed effect without the probe's example label.\"\n    }\n  ],\n  \"code_diagram_errors\": [],\n  \"prose\": {\n    \"rating\": \"uncertain\",\n    \"quotes\": [\n      {\n        \"quote\": \"Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.\",\n        \"note\": \"Clear, concrete, and scoped. Uses contract language ('requested', no deduplication guarantee) without turning a probe row into a universal delivery promise.\"\n      },\n      {\n        \"quote\": \"With a budget of two retries, retryable failures request delays of 10 then 20 milliseconds before the final send. This permits up to three sends.\",\n        \"note\": \"Example-scoped to retries 2; matches after.exhausted. Does not treat that passing case as a guarantee for every budget.\"\n      },\n      {\n        \"quote\": \"The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits.\",\n        \"note\": \"Factually aligned with source.body versus the rejection-after-commit contract, but the rebuttal plus 'supplied contract' reads as reviewer voice. That keeps the reader-facing rating from a clean pass.\"\n      },\n      {\n        \"quote\": \"It bounds send attempts per invocation, not successful delivery or duplicate effects.\",\n        \"note\": \"States the bound and what it does not guarantee. Passing duplicate/exhausted rows are not converted into a delivery guarantee.\"\n      }\n    ]\n  },\n  \"unresolved_uncertainty\": [\n    \"No field is marked contradicted. Residual uncertainty is classification, not a suspected hidden contradiction.\",\n    \"Whether /meta 'Deterministic modeled examples' should instead be nonfactual document chrome. Scored supported because it matches probe-results.assumptions; it is not a claim about runtime send/sleep behavior.\",\n    \"Whether 'The author describes exactly-once delivery' is a precise paraphrase of source.body 'makes delivery exactly once'. Meaning is the same; wording is softer. Not scored as an attribution error.\",\n    \"Whether placing unchanged sleep-abort and three-send-budget facts in the change section is an attribution error. Treated as a missing limitation (unchanged before/after behavior not labeled), not a false speaker attribution.\",\n    \"Whether contract 3's wall-clock negative is fully covered by the adjective 'requested'. Listed as missing because the probe also assumes immediate sleeps and no production measurement, which /meta does not spell out.\",\n    \"Section eyebrows scored nonfactual as labels. If labels were out of factual scope entirely, those four rows would be omitted rather than nonfactual.\"\n  ]\n}\n"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Created file successfully: grade.json"
+          }
+        ],
+        "metadata": {
+          "truncated": false
+        }
+      },
+      "time": {
+        "created": 1789220622408,
+        "ran": 1789220622435,
+        "completed": 1789220622445
+      }
+    },
+    {
+      "type": "text",
+      "text": "Review saved in `grade.json`. No field is contradicted.\n\n**Fields:** 13 supported, 4 nonfactual (section eyebrows). None unsupported or contradicted.\n\n**Supported claims** match `after` (`!error.retryable` before sleep, `sleep(10 * 2 ** attempt)`), `before` (`sleep(10)`, no retryable check), contracts (requested delays, reject-after-commit, no shared budget), and probe rows (`after.permanent.calls === 1`, exhausted delays `[10, 20]`, duplicate `effects === 2`, sleepFailure `calls === 1`).\n\n**Missing limitations:** wall-clock vs requested delays / immediate modeled sleeps are not stated beyond “requested”; sleep abort, extra-attempt budget, duplicates, and no cross-call exclusion already hold in `before`.\n\n**Leakage:** “the supplied contract” and “modeled lost-acknowledgment example”. No attribution errors. No code/diagram errors.\n\n**Prose:** uncertain. Dek and recap are scoped; section 2 reads as a reviewer rebuttal."
+    }
+  ]
+}

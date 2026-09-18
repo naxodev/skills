@@ -1,0 +1,127 @@
+{
+  "assumptions": "Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.",
+  "results": {
+    "before": {
+      "permanent": {
+        "calls": 2,
+        "effects": 0,
+        "delays": [
+          10
+        ],
+        "result": "delivered",
+        "error": null
+      },
+      "exhausted": {
+        "calls": 3,
+        "effects": 0,
+        "delays": [
+          10,
+          10
+        ],
+        "result": null,
+        "error": "transient"
+      },
+      "zeroBudget": {
+        "calls": 1,
+        "effects": 0,
+        "delays": [],
+        "result": null,
+        "error": "transient"
+      },
+      "duplicate": {
+        "calls": 2,
+        "effects": 2,
+        "delays": [
+          10
+        ],
+        "result": "delivered",
+        "error": null
+      },
+      "sleepFailure": {
+        "calls": 1,
+        "effects": 0,
+        "delays": [
+          10
+        ],
+        "result": null,
+        "error": "sleep-failed"
+      },
+      "concurrentCalls": [
+        {
+          "calls": 1,
+          "effects": 1,
+          "delays": [],
+          "result": "delivered",
+          "error": null
+        },
+        {
+          "calls": 1,
+          "effects": 1,
+          "delays": [],
+          "result": "delivered",
+          "error": null
+        }
+      ]
+    },
+    "after": {
+      "permanent": {
+        "calls": 1,
+        "effects": 0,
+        "delays": [],
+        "result": null,
+        "error": "permanent"
+      },
+      "exhausted": {
+        "calls": 3,
+        "effects": 0,
+        "delays": [
+          10,
+          20
+        ],
+        "result": null,
+        "error": "transient"
+      },
+      "zeroBudget": {
+        "calls": 1,
+        "effects": 0,
+        "delays": [],
+        "result": null,
+        "error": "transient"
+      },
+      "duplicate": {
+        "calls": 2,
+        "effects": 2,
+        "delays": [
+          10
+        ],
+        "result": "delivered",
+        "error": null
+      },
+      "sleepFailure": {
+        "calls": 1,
+        "effects": 0,
+        "delays": [
+          10
+        ],
+        "result": null,
+        "error": "sleep-failed"
+      },
+      "concurrentCalls": [
+        {
+          "calls": 1,
+          "effects": 1,
+          "delays": [],
+          "result": "delivered",
+          "error": null
+        },
+        {
+          "calls": 1,
+          "effects": 1,
+          "delays": [],
+          "result": "delivered",
+          "error": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,294 @@
+[
+  {
+    "identity": {
+      "id": "ses_f5026408dffeQ8m3H0Xi1tOW5k",
+      "parentID": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "general",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 11411,
+        "output": 594,
+        "reasoning": 0,
+        "cache": {
+          "read": 14592,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656678292,
+        "updated": 1789656678297,
+        "idle": 1789656700261
+      },
+      "title": "Diff tour report",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+      }
+    },
+    "charter": [
+      "You are a subagent spawned by another session.\nRead-only offline report agent 'diff-tour'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json. No writes/network/GitHub. Walk each changed file in 2–4 narrative sentences grouped new/modified, plus table-ready file list with one-sentence summary. Return verbatim 2–4 load-bearing trimmed hunks with explanations if evidence supports it; fixture has only one hunk, so report that honestly and provide distinct essential excerpts without inventing code. Identify central logic."
+    ],
+    "reads": [
+      {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json",
+        "time": {
+          "created": 1789656680858,
+          "ran": 1789656682462,
+          "completed": 1789656682465
+        },
+        "sourceText": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json, lines 1-8\n1: {\n2:   \"number\": 42,\n3:   \"title\": \"fix: refresh credentials before dispatch\",\n4:   \"body\": \"The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch. Streaming requests remain on a separate path and need a follow-up. The extra clock read is accepted to avoid the initial failed request.\",\n5:   \"commits\": [{ \"messageHeadline\": \"fix: refresh credentials before dispatch\" }],\n6:   \"files\": [{ \"path\": \"client.ts\", \"status\": \"modified\" }],\n7:   \"diff\": \"diff --git a/client.ts b/client.ts\\n--- a/client.ts\\n+++ b/client.ts\\n@@ -1,5 +1,5 @@\\n export async function request(client, payload) {\\n+  if (client.expiresAt <= Date.now()) await client.refresh();\\n   const response = await client.send(payload);\\n-  if (client.expiresAt <= Date.now()) await client.refresh();\\n   return response;\\n }\\n\"\n8: }",
+        "recoveredSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "matchesFixture": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "read",
+        "time": {
+          "created": 1789656680858,
+          "ran": 1789656682462,
+          "completed": 1789656682465
+        },
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json"
+        },
+        "status": "completed"
+      }
+    ],
+    "returnedText": [
+      "## File walkthrough\n\n### New files\n\nNone.\n\n### Modified files\n\n**`client.ts`** — The `request` function now checks credential expiry and awaits any required refresh before calling `client.send(payload)`. Previously, it dispatched the request before refreshing, which the PR description identifies as the cause of the first request failing after expiry. The response return is unchanged. The description says streaming requests use a separate path and need a follow-up; that path is not shown in this fixture.\n\n## Table-ready file list\n\n| Change | File | Summary |\n|---|---|---|\n| Modified | `client.ts` | Move the awaited credential refresh before dispatch so expired credentials are refreshed before sending the request. |\n\n## Central logic and evidence\n\nThe central logic is the ordering inside `request`: **check expiry → await refresh if expired → send → return response**. The comparison includes equality, so credentials that expire at the current clock value trigger refresh.\n\nThe fixture contains **one diff hunk**, so it cannot support 2–4 distinct hunks. Here is the complete load-bearing hunk, followed by two distinct essential excerpts from it.\n\n### Only supplied hunk — refresh moves before dispatch\n\n```diff\n@@ -1,5 +1,5 @@\n export async function request(client, payload) {\n+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;\n }\n```\n\nThe same expiry check moves from after `client.send` to before it. Because the refresh is awaited, dispatch waits for refresh to complete.\n\n### Essential excerpt 1 — new pre-dispatch ordering\n\n```diff\n+  if (client.expiresAt <= Date.now()) await client.refresh();\n   const response = await client.send(payload);\n```\n\nThis establishes the dependency that addresses the reported failure: an expired credential must be refreshed before the request is sent.\n\n### Essential excerpt 2 — old post-dispatch check removed\n\n```diff\n-  if (client.expiresAt <= Date.now()) await client.refresh();\n   return response;\n```\n\nThe post-dispatch refresh is removed, while returning the response remains unchanged. This is a relocation of the check, not an additional refresh check.\n\n**Evidence limit:** The PR description accepts an “extra clock read,” but the supplied diff shows one `Date.now()` call before and after the change. The fixture supports a change in timing, not an increase in clock-read count. No tests or streaming implementation are included."
+    ]
+  },
+  {
+    "identity": {
+      "id": "ses_f5026408dffdLqC1bUvEf5p44U",
+      "parentID": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "general",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 11345,
+        "output": 385,
+        "reasoning": 0,
+        "cache": {
+          "read": 14592,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656678299,
+        "updated": 1789656678302,
+        "idle": 1789656695155
+      },
+      "title": "Tradeoffs evidence report",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+      }
+    },
+    "charter": [
+      "You are a subagent spawned by another session.\nRead-only offline report agent 'tradeoffs'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json. No writes/network/GitHub. Return documented limitations, edge cases, known gaps from body/diff comments/tests. For each capture choice AND stated reason; explicitly distinguish unavailable reasons and author claims from code evidence. Do not invent."
+    ],
+    "reads": [
+      {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json",
+        "time": {
+          "created": 1789656681047,
+          "ran": 1789656682937,
+          "completed": 1789656682941
+        },
+        "sourceText": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json, lines 1-8\n1: {\n2:   \"number\": 42,\n3:   \"title\": \"fix: refresh credentials before dispatch\",\n4:   \"body\": \"The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch. Streaming requests remain on a separate path and need a follow-up. The extra clock read is accepted to avoid the initial failed request.\",\n5:   \"commits\": [{ \"messageHeadline\": \"fix: refresh credentials before dispatch\" }],\n6:   \"files\": [{ \"path\": \"client.ts\", \"status\": \"modified\" }],\n7:   \"diff\": \"diff --git a/client.ts b/client.ts\\n--- a/client.ts\\n+++ b/client.ts\\n@@ -1,5 +1,5 @@\\n export async function request(client, payload) {\\n+  if (client.expiresAt <= Date.now()) await client.refresh();\\n   const response = await client.send(payload);\\n-  if (client.expiresAt <= Date.now()) await client.refresh();\\n   return response;\\n }\\n\"\n8: }",
+        "recoveredSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "matchesFixture": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "read",
+        "time": {
+          "created": 1789656681047,
+          "ran": 1789656682937,
+          "completed": 1789656682941
+        },
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json"
+        },
+        "status": "completed"
+      }
+    ],
+    "returnedText": [
+      "## Documented choices and gaps\n\n| Choice or limitation | Stated reason | Evidence and qualification |\n|---|---|---|\n| Refresh expired credentials **before dispatch**, rather than afterward. | The author says the first request after expiry failed because refresh happened after dispatch. | **Code evidence:** the diff moves the awaited `client.refresh()` before `client.send(payload)`. **Author claim:** the reported failure and its cause are not independently verified by tests in the supplied data. |\n| Leave streaming requests on a separate path, requiring a follow-up. | **Unavailable.** The body identifies the separate path but does not explain why streaming support is deferred. | **Author claim / known gap:** streaming needs follow-up. The supplied diff contains no streaming implementation, so its behavior cannot be checked. |\n| Accept an “extra clock read.” | To avoid the initial failed request. | **Author-stated tradeoff.** The shown function contains one `Date.now()` call both before and after the change. The diff supports moving the clock read, but does **not** substantiate an additional clock read. |\n\n## Edge case visible in code\n\n- **Exact expiry:** `expiresAt <= Date.now()` triggers refresh when expiry equals the current time, as well as when it has passed. This condition is unchanged. **Reason for the inclusive boundary:** unavailable.\n\n## Evidence limits\n\nThe supplied JSON includes the PR body and one function diff. It includes **no tests or diff comments**. No additional documented limitations, test coverage, or reasons can be established from this material."
+    ]
+  },
+  {
+    "identity": {
+      "id": "ses_f50264078ffemBa5BT7etqsKhW",
+      "parentID": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "general",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 13271,
+        "output": 69,
+        "reasoning": 0,
+        "cache": {
+          "read": 12672,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656678381,
+        "updated": 1789656678387,
+        "idle": 1789656684806
+      },
+      "title": "Alternatives evidence report",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+      }
+    },
+    "charter": [
+      "You are a subagent spawned by another session.\nRead-only offline report agent 'alternatives'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json. No writes/network/GitHub. Examine supplied body, commits, diff for approaches explicitly considered and rejected. Use only local fixture; do not fetch linked issues. If none documented return 'none documented'. Do not mistake previous buggy order for a documented rejected alternative."
+    ],
+    "reads": [
+      {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json",
+        "time": {
+          "created": 1789656680983,
+          "ran": 1789656682600,
+          "completed": 1789656682605
+        },
+        "sourceText": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json, lines 1-8\n1: {\n2:   \"number\": 42,\n3:   \"title\": \"fix: refresh credentials before dispatch\",\n4:   \"body\": \"The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch. Streaming requests remain on a separate path and need a follow-up. The extra clock read is accepted to avoid the initial failed request.\",\n5:   \"commits\": [{ \"messageHeadline\": \"fix: refresh credentials before dispatch\" }],\n6:   \"files\": [{ \"path\": \"client.ts\", \"status\": \"modified\" }],\n7:   \"diff\": \"diff --git a/client.ts b/client.ts\\n--- a/client.ts\\n+++ b/client.ts\\n@@ -1,5 +1,5 @@\\n export async function request(client, payload) {\\n+  if (client.expiresAt <= Date.now()) await client.refresh();\\n   const response = await client.send(payload);\\n-  if (client.expiresAt <= Date.now()) await client.refresh();\\n   return response;\\n }\\n\"\n8: }",
+        "recoveredSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "matchesFixture": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "read",
+        "time": {
+          "created": 1789656680983,
+          "ran": 1789656682600,
+          "completed": 1789656682605
+        },
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json"
+        },
+        "status": "completed"
+      }
+    ],
+    "returnedText": [
+      "none documented"
+    ]
+  },
+  {
+    "identity": {
+      "id": "ses_f5026408effe5STd4v2dH6BO4f",
+      "parentID": "ses_f50270f54ffdIj3PQNkWZ1i43O",
+      "projectID": "191f768fb172df9b06b135347b9553b676234636",
+      "agent": "general",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 11343,
+        "output": 415,
+        "reasoning": 0,
+        "cache": {
+          "read": 14592,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789656678304,
+        "updated": 1789656678307,
+        "idle": 1789656695634
+      },
+      "title": "Before state report",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ],
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917"
+      }
+    },
+    "charter": [
+      "You are a subagent spawned by another session.\nRead-only offline report agent 'before'. Read /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json. No writes, no network, no GitHub. Return 200–400 words on prior code state and gap motivating PR, grounded only in fixture diff/body. Distinguish author assertions from diff evidence; do not speculate."
+    ],
+    "reads": [
+      {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json",
+        "time": {
+          "created": 1789656681380,
+          "ran": 1789656682977,
+          "completed": 1789656682979
+        },
+        "sourceText": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json, lines 1-8\n1: {\n2:   \"number\": 42,\n3:   \"title\": \"fix: refresh credentials before dispatch\",\n4:   \"body\": \"The first request after expiry failed because credentials were refreshed after dispatch. Move the refresh before dispatch. Streaming requests remain on a separate path and need a follow-up. The extra clock read is accepted to avoid the initial failed request.\",\n5:   \"commits\": [{ \"messageHeadline\": \"fix: refresh credentials before dispatch\" }],\n6:   \"files\": [{ \"path\": \"client.ts\", \"status\": \"modified\" }],\n7:   \"diff\": \"diff --git a/client.ts b/client.ts\\n--- a/client.ts\\n+++ b/client.ts\\n@@ -1,5 +1,5 @@\\n export async function request(client, payload) {\\n+  if (client.expiresAt <= Date.now()) await client.refresh();\\n   const response = await client.send(payload);\\n-  if (client.expiresAt <= Date.now()) await client.refresh();\\n   return response;\\n }\\n\"\n8: }",
+        "recoveredSha256": "50f4887db40b51c55ecc2bc73a03ba8b7bb67834f276ac330921dc347e4a0dc8",
+        "matchesFixture": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "read",
+        "time": {
+          "created": 1789656681380,
+          "ran": 1789656682977,
+          "completed": 1789656682979
+        },
+        "input": {
+          "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-pr-grounding-quality-1-20260917/work/pr.json"
+        },
+        "status": "completed"
+      }
+    ],
+    "returnedText": [
+      "## Prior state\n\nThe fixture shows one modified file, `client.ts`, containing an asynchronous `request(client, payload)` function. Before this PR, the function awaited `client.send(payload)` before checking whether `client.expiresAt <= Date.now()`. If that condition held, it awaited `client.refresh()`, then returned the response.\n\nThis ordering is direct diff evidence. The refresh could not affect the credentials used for the send that had already occurred. The expiry check also happened only after `client.send(payload)` resolved. The fixture does not show how `send` handles an expired credential, so it does not establish whether a failed request returned an error response or rejected.\n\n## Gap motivating the PR\n\nThe author states that “the first request after expiry failed because credentials were refreshed after dispatch.” The old ordering supports the stated timing problem: this function did not refresh expired credentials before dispatch. However, the reported failure itself is an author assertion. The fixture includes no test, execution trace, or implementation of `send` or `refresh` that independently demonstrates it.\n\nThe diff moves the existing expiry check and awaited refresh immediately before `client.send(payload)`. It preserves the comparison, refresh call, send call, and response return. The demonstrated change is therefore the ordering of those operations.\n\n## Scope and evidence limits\n\nThe author says streaming requests use a separate path and require a follow-up. No streaming implementation appears in the supplied diff, so that scope limitation rests on the PR body.\n\nThe author also describes an accepted “extra clock read.” The visible before-and-after code contains one `Date.now()` call in each version. The diff demonstrates a relocated clock read, not an additional one. No broader context is supplied to reconcile that wording."
+    ]
+  }
+]

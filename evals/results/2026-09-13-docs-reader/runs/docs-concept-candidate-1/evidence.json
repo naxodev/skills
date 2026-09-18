@@ -1,0 +1,44 @@
+{
+  "id": "docs-concept-candidate-1",
+  "sessionID": "ses_f63e449d4ffe1eFipG7RTMSr5i",
+  "model": {
+    "id": "gpt-6-astra",
+    "providerID": "openai",
+    "variant": "medium"
+  },
+  "agent": "build",
+  "exactLocalReads": {
+    "SKILL.md": true,
+    "STYLE.md": true
+  },
+  "installedSkillCalls": 0,
+  "immutableInputsUnchanged": true,
+  "criteria": {
+    "reasoning": "passed",
+    "quadrant": "passed",
+    "applicability": "passed: code, build, sidebar not applicable with reasons",
+    "reader-fit": "passed"
+  },
+  "source": "operations.md:3-8 (unchanged decision record)",
+  "readerEvidence": "Explains current chat coordination versus later tracker history/follow-up, relates continuity to cleanup and staff change, and makes no retention or response-time guarantee. No setup list or runnable procedure.",
+  "authorRender": "untested: author handed off a draft; available Glow was not discovered",
+  "authorNavigation": "passed: shell checks verified local links and README entry point",
+  "buildSidebarLive": "not applicable: fixture has no docs build, sidebar, or live service",
+  "authorHandoff": "Saved [explanation.md](explanation.md) and added its entry point to [README.md](README.md).\n\nThe explanation covers:\n- Chat for live coordination; the tracker for timelines and follow-up work.\n- Continuity through channel cleanup and staff changes.\n- The distinction between record location and response-time or retention guarantees.\n\n**Verification**\n- **Passed:** Claims checked against `operations.md`; the staffing implication is explicitly identified as an inference.\n- **Passed:** Local links resolve, the README links to the page, and no `VERIFY` markers remain.\n- **Passed:** Reviewed against the local skill’s explanation guidance and style rules.\n- **Not applicable:** Build, type-check, lint, and sidebar checks. None are configured in this Markdown-only workspace.\n- **Not applicable:** Procedural testing; the page contains no runnable instructions.\n- **Untested:** Rendered Markdown inspection; no offline viewer was available. The page remains a draft pending that check.\n\nThe decision record and skill files remain unchanged.",
+  "commandEvidence": [
+    {
+      "shellCall": 1,
+      "command": "python3 - <<'PY' ... (full command archived)",
+      "output": [
+        "PASS: README.md: local links resolve; no VERIFY markers",
+        "PASS: explanation.md: local links resolve; no VERIFY markers",
+        "PASS: README entry point links to explanation.md",
+        "Command exited with code 0."
+      ]
+    }
+  ],
+  "replay": null,
+  "reviewerNavigation": "passed",
+  "reviewerRenderCommand": "passed; output archived for owner inspection",
+  "archive": "raw/docs-concept-candidate-1/transcript.md; raw/docs-concept-candidate-1/export.json; raw/docs-concept-candidate-1/workspace; raw/docs-concept-candidate-1/reviewer-render.json"
+}

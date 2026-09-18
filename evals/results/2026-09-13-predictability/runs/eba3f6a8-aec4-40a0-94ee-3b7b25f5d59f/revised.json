@@ -1,0 +1,29 @@
+{
+  "title": "Post-write invalidation closes one stale-fill window",
+  "eyebrow": "Moss Catalog",
+  "dek": "Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.",
+  "meta": "Deterministic modeled examples",
+  "footer": "The model uses one shared Map, without a generation check for readers.",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Early deletion left a window for stale fills",
+      "content": "<p class=\"lead\">The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.</p>"
+    },
+    {
+      "eyebrow": "The change",
+      "title": "Delete only after the write fulfills",
+      "content": "<p>The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.</p>"
+    },
+    {
+      "eyebrow": "The boundary",
+      "title": "An older snapshot can arrive after deletion",
+      "content": "<p>The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.</p>"
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Close one cache-fill window",
+      "content": "<p>Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.</p>"
+    }
+  ]
+}

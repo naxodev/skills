@@ -1,0 +1,3 @@
+## Context-sensitive evidence rubric
+
+Judge material omissions by whether they change the reader's causal understanding. Consider adjacent qualifications when interpreting a claim; a qualification elsewhere does not cancel a false title or summary. Judge labeled or visibly elided code fragments by fidelity to the source and the explanation, rather than standalone parseability. Natural attribution is reader-facing prose, not reviewer-language leakage. Support every factual allegation, including omissions and code defects, with a specific source or contract location and explain the conflicting claim. Separate optional wording improvements from factual defects.

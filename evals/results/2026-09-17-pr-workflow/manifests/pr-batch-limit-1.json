@@ -1,0 +1,46 @@
+{
+  "title": "A queue that leaves work for later",
+  "eyebrow": "PR #108 · queue worker · feature",
+  "dek": "A configurable job limit turns each whole-queue send into a bounded batch, leaving the rest for later drains.",
+  "meta": "feat: bound queue batches",
+  "footer": "PR #108 · feat: bound queue batches",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Each tick took the whole queue",
+      "content": "<p class=\"lead\">Before this change, the worker sent every pending job in a single batch. Each call to <code>tick</code> drained the queue, passed the returned jobs to <code>send</code>, and awaited that send to the configured <code>/jobs</code> endpoint.</p><p>The queue helper used <code>pending.splice(0)</code>, which removed everything from the front of the array onward. Configuration supplied the endpoint, but no batch limit. If you had 250 pending jobs, that tick handed all 250 to one send.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "Queue length decided the size of a send",
+      "content": "<p>The worker needed a ceiling on how many jobs each send received. PR #108 introduces a configurable limit with a default of 100. With 250 jobs queued, a drain at that default takes the first 100 and leaves 150. Two later drains can take 100 and then 50, assuming no new arrivals.</p><p>This is a limit on job count. As the author notes, it does not bound job memory or processing time. You can control how many jobs enter a batch without treating those jobs as equal-sized or equally expensive.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Validate the limit, then take only that many",
+      "content": "<p>The limit enters through <code>config.ts</code>, which reads the <code>BATCH_LIMIT</code> environment variable. The module converts it to a number and validates it when configuration loads at startup:</p>{{CODE:0}}<p>An absent setting selects 100. Zero, negative numbers, fractions, and nonnumeric values fail the positive-integer check and throw the stated error. The PR does not document why 100 was chosen.</p><p>The behavioral change sits in <code>queue.ts</code>. The helper now accepts the count and uses it as the second argument to <code>splice</code>:</p>{{CODE:1}}<p>The drain removes at most that many jobs from the front of the original array. It returns those jobs for sending and keeps excess entries in the same queue. When fewer jobs remain than the limit, it takes only those available.</p><p>The worker connects the validated setting to that helper in <code>worker.ts</code>:</p>{{CODE:2}}<p>Each tick still awaits one send. Passing <code>batchLimit</code> into the drain makes the configured ceiling apply to that send; the tick does not loop through the remaining queue.</p><p>Per-tenant scheduling remains outside this change because the queue has no tenant key. The supplied diff contains no tests, and the PR documents no follow-up issues.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "worker.ts",
+          "source": "import { endpoint, batchLimit } from './config';\nimport { drain } from './queue';\nexport async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "One send gets a batch; the queue keeps the rest",
+      "content": "<p>PR #108 replaces whole-queue drains with a configurable maximum of 100 jobs per send by default. Startup validation rejects invalid limits, the queue removes only the requested prefix, and the worker supplies the configured count. Remaining jobs wait for later drains. The guarantee is a bounded job count per batch, not bounded memory, processing time, or tenant-aware scheduling.</p>"
+    }
+  ]
+}

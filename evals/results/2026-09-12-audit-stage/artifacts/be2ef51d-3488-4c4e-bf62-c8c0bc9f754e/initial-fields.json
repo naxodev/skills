@@ -1,0 +1,70 @@
+[
+  {
+    "pointer": "/title",
+    "value": "Delete the cache entry after the write"
+  },
+  {
+    "pointer": "/eyebrow",
+    "value": "Moss Catalog · Change walkthrough"
+  },
+  {
+    "pointer": "/dek",
+    "value": "Moving invalidation clears stale fills completed during a write, but an older read can still refill the cache afterward."
+  },
+  {
+    "pointer": "/meta",
+    "value": "Fictional component study · One process, one shared Map"
+  },
+  {
+    "pointer": "/footer",
+    "value": "Based on the supplied source and deterministic probe results. No separate verification findings were supplied."
+  },
+  {
+    "pointer": "/sections/0/eyebrow",
+    "value": "The setting"
+  },
+  {
+    "pointer": "/sections/0/title",
+    "value": "A cache beside the database"
+  },
+  {
+    "pointer": "/sections/0/content",
+    "value": "<p class=\"lead\">Moss Catalog reads through a synchronous Map shared by readers and updates. A cache hit returns immediately. On a miss, the reader asks the database for a snapshot, then caches the result when its promise resolves.</p><p>The database commits a write before its promise fulfills; a rejected write leaves storage unchanged. Originally, the update deleted the cached entry before awaiting that write.</p>"
+  },
+  {
+    "pointer": "/sections/1/eyebrow",
+    "value": "The gap"
+  },
+  {
+    "pointer": "/sections/1/title",
+    "value": "An early deletion leaves room for an old fill"
+  },
+  {
+    "pointer": "/sections/1/content",
+    "value": "<p>Deleting first allows a reader to refill the cache while the write is pending. Start with <code>old</code> in storage: the update deletes the entry, a reader captures and caches <code>old</code>, and the write commits <code>new</code>. Nothing then removes the stale entry.</p><p>The supplied probe reproduces this order with explicit promise gates, rather than timing delays. Under the original update, both the overlapping reader and the next reader receive <code>old</code>.</p>"
+  },
+  {
+    "pointer": "/sections/2/eyebrow",
+    "value": "The changed mechanism"
+  },
+  {
+    "pointer": "/sections/2/title",
+    "value": "Commit first, then clear the entry"
+  },
+  {
+    "pointer": "/sections/2/content",
+    "value": "<p>The update now waits for a successful write before deleting the cache entry:</p>{{CODE:0}}<p>This deletion removes a stale fill completed during the write. In that probe, the overlapping reader still receives <code>old</code>, but the next read receives <code>new</code>. A rejected write skips deletion, preserving the existing cached value; both versions pass the sequential successful-write case.</p><p>The reader remains unchanged:</p>{{CODE:1}}<p>Notice the unconditional <code>cache.set</code> after the await. A snapshot captured before the write can resolve after the update finishes and put <code>old</code> back into the cache. The late-snapshot probe demonstrates this in both versions: storage contains <code>new</code>, yet the next read returns <code>old</code>.</p>"
+  },
+  {
+    "pointer": "/sections/3/eyebrow",
+    "value": "The short version"
+  },
+  {
+    "pointer": "/sections/3/title",
+    "value": "One stale-fill window closes"
+  },
+  {
+    "pointer": "/sections/3/content",
+    "value": "<p>Post-write invalidation clears entries filled before deletion and preserves the cache when a write fails. The author's broader claim that it removes stale reads, including concurrent readers, exceeds the evidence. In-flight snapshots remain unchecked, so this change does not guarantee fresh reads after an update completes.</p>"
+  }
+]

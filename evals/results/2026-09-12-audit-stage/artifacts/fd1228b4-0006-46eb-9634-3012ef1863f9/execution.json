@@ -1,0 +1,63 @@
+{
+  "label": "fd1228b4-0006-46eb-9634-3012ef1863f9",
+  "fixture": "retry",
+  "kind": "audit-main-3",
+  "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-fd1228b4-0006-46eb-9634-3012ef1863f9",
+  "evidence": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/fd1228b4-0006-46eb-9634-3012ef1863f9",
+  "model": {
+    "providerID": "openai",
+    "id": "gpt-6-astra",
+    "variant": "medium"
+  },
+  "sessionID": "ses_f6a0128c3ffearEqFt7ezvSQ4b",
+  "immutable": {
+    "probe.mjs": "9950bac74de9478dfcd52988e80163624f15bc19edd6af8efb7be42d613b1bbd",
+    "source.json": "574dfed4fd36ebec67e79cee963f68cec07b632d041d355030b25459836b9e8d",
+    "probe-results.json": "0477642316470d28d614b8d10eeb6f82ccf23fd3b9c59b27ee50a3407f7a1740",
+    "fields.json": "9c7a2ce6f8aeb9bedaabeee2a7bb39f75403d92d395d28b688d75b2d7acc7f9e",
+    "MANIFEST.md": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+    "STYLE.md": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52",
+    "functions.mjs": "01571be03861681f613ffdf33c5b82ffac5f76c3ecfd231416f758feede92cf0",
+    "manifest.json": "a49060a072a9955854e8050ecb90cded6974ad36a9bf5d6db35332322384788f",
+    "verification.json": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c"
+  },
+  "attempts": [
+    {
+      "phase": "initial",
+      "startedAt": "2026-09-12T14:21:41.606Z",
+      "elapsedMs": 91072,
+      "error": null,
+      "info": {
+        "id": "ses_f6a0128c3ffearEqFt7ezvSQ4b",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 21465,
+          "output": 2276,
+          "reasoning": 125,
+          "cache": {
+            "read": 75392,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789222901595,
+          "updated": 1789222902587,
+          "idle": 1789222992528
+        },
+        "title": "component trial",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-trial-fd1228b4-0006-46eb-9634-3012ef1863f9"
+        }
+      },
+      "rawSha256": "833ef620eaae55699b4da67d67f69a57aa9a02bd1ed42028bb2c62313cc0e7d3"
+    }
+  ]
+}

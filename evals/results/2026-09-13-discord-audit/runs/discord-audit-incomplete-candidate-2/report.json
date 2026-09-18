@@ -1,0 +1,38 @@
+{
+  "caseId": "discord-audit-incomplete",
+  "model": "openai/gpt-6-astra#medium (build)",
+  "revision": "candidate SKILL.md sha256:fada8317720c9820c1fd288eda2fd6ffc3abe86612c552703bab0f131802b209",
+  "transcript": "transcript.md",
+  "criteria": [
+    {
+      "id": "read-only",
+      "result": "pass",
+      "evidence": "tool-evidence.json records workspace-only reads and one Add File: audit.md per session. The sole shell call (incomplete baseline 1) reads local matrix/report text. No live, invite, credential, or server-modifying tools occur. Input hashes remain unchanged; exported locations match each packet."
+    },
+    {
+      "id": "mode-fit",
+      "result": "pass",
+      "evidence": "audit.md:7: - **Mode:** Audit only; local skill steps 1 and A1–A3. The report ends at the audit branch; follow-up concerns relevant evidence or later authorized corrections. No setup-state, plan approval, app/event/invite creation, or launch acceptance is required."
+    },
+    {
+      "id": "findings",
+      "result": "pass",
+      "evidence": "audit.md:47: **None established.** There is no evidence-backed correction to apply from this snapshot. In particular, it does not show writable announcements, untagged support posting, privileged interest roles, or exposed staff channels. Healthy announcement denies, product tags, and previewed interest role match snapshot lines 11–14. Unknown rows are not labeled observed failures."
+    },
+    {
+      "id": "scope",
+      "result": "pass",
+      "evidence": "audit.md:8: - **Report date:** 2026-09-13. **Snapshot date:** unknown. Scope and local sources are stated, and unknown checks are separate from observed failures. A freshness caveat counts as as-of uncertainty; an entirely omitted temporal limit does not."
+    },
+    {
+      "id": "evidence",
+      "result": "pass",
+      "evidence": "audit.md:5: **No observed control failures are established by the supplied snapshot. Verification is incomplete.** The recorded announcement restrictions, support tags, and interest-role permissions match the applicable local controls. The supplied role preview supports staff and opt-in visibility boundaries and the interest-role permission shape. These observations do not establish real-member enforcement or launch readiness. The report keeps fresh-member behavior untested and exact-current Discord labels unverified. Recorded configuration is not treated as proof of real-member enforcement."
+    },
+    {
+      "id": "fit",
+      "result": "pass",
+      "evidence": "audit.md:21: | Product language | **command execution** and **build previews** (`snapshot.md:4`) | Product name, package map, and documentation are not supplied. | The report retains support/bugs in the issue tracker, security in the private security-reporting form, and conduct with the human owner. Unknown durable conduct handling is not asserted absent."
+    }
+  ]
+}

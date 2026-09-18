@@ -1,0 +1,70 @@
+[
+  {
+    "pointer": "/title",
+    "value": "Cedar Relay retries only eligible failures"
+  },
+  {
+    "pointer": "/eyebrow",
+    "value": "Fictional change · Delivery retries"
+  },
+  {
+    "pointer": "/dek",
+    "value": "A retryability check stops permanent failures immediately, while exponential delays space later attempts. Neither change guarantees exactly-once delivery."
+  },
+  {
+    "pointer": "/meta",
+    "value": "Source-based walkthrough · Deterministic local probes"
+  },
+  {
+    "pointer": "/footer",
+    "value": "Based on the supplied source and modeled probes. No production timing measurements or verification findings were supplied."
+  },
+  {
+    "pointer": "/sections/0/eyebrow",
+    "value": "The setting"
+  },
+  {
+    "pointer": "/sections/0/title",
+    "value": "One send, then a bounded retry budget"
+  },
+  {
+    "pointer": "/sections/0/content",
+    "value": "<p class=\"lead\">Cedar Relay wraps an asynchronous <code>send</code> operation in a retry loop. You supply a nonnegative integer, <code>retries</code>, which counts extra attempts: a budget of two permits at most three sends. A successful send returns immediately. Previously, every rejection with budget remaining triggered a requested 10-millisecond sleep before another attempt.</p>"
+  },
+  {
+    "pointer": "/sections/1/eyebrow",
+    "value": "The gap"
+  },
+  {
+    "pointer": "/sections/1/title",
+    "value": "Permanent failures still got another attempt"
+  },
+  {
+    "pointer": "/sections/1/content",
+    "value": "<p>The old loop ignored the rejection object's boolean <code>retryable</code> property. In the supplied permanent-failure scenario, it sends twice and reaches a modeled success after the first rejection. The changed loop instead returns the permanent error after one send, without sleeping. This makes the caller's failure classification control whether another attempt is allowed.</p>"
+  },
+  {
+    "pointer": "/sections/2/eyebrow",
+    "value": "The mechanism"
+  },
+  {
+    "pointer": "/sections/2/title",
+    "value": "Check eligibility before increasing the delay"
+  },
+  {
+    "pointer": "/sections/2/content",
+    "value": "<p>The loop retains its original attempt boundary and success path:</p>{{CODE:0}}<p>Starting at zero preserves the initial send even when <code>retries</code> is zero. The catch block now decides whether to continue:</p>{{CODE:1}}<p>The guard rethrows a non-retryable error or the final attempt's error before sleeping. Otherwise, requested delays double: 10, 20, 40 milliseconds, and so on. With two retries exhausted, the probes record three sends and delays of 10 and 20, replacing 10 and 10. These are requested values; the probe resolves sleeps immediately and measures no elapsed time. A rejected sleep propagates and prevents another send.</p>"
+  },
+  {
+    "pointer": "/sections/3/eyebrow",
+    "value": "The short version"
+  },
+  {
+    "pointer": "/sections/3/title",
+    "value": "Selective retries, not exactly-once delivery"
+  },
+  {
+    "pointer": "/sections/3/content",
+    "value": "<p>The change filters retries and increases their requested spacing. The author's exactly-once claim does not follow: a send can commit remotely and then reject. The duplicate probe models that sequence and records two effects in both versions. No deduplication or idempotency contract prevents repetition. Separate calls also retain independent counters, with no lock or cross-call exclusion; the concurrent probe records two effects. The improvement is a more selective retry policy, not a guarantee of one remote effect.</p>"
+  }
+]

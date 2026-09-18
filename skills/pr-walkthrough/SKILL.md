@@ -2,14 +2,14 @@
 name: pr-walkthrough
 description: Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.
 disable-model-invocation: true
-compatibility: Requires Node.js; run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`.
+compatibility: Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support.
 ---
 
 # PR Walkthrough
 
-Produces an essay-shaped HTML walkthrough of a pull request. Output is a story, not a review: it explains where the system was, what gap or motivation prompted the change, what was built, what was deliberately not built, and what's next.
+Produces an essay-shaped HTML walkthrough of a pull request. Output is a story, not a review: it explains where the system was, what gap or motivation prompted the change, and what was built, with documented limitations and follow-ups where relevant.
 
-**Read [STYLE.md](STYLE.md) before writing.** The voice is specific and the section arc is fixed.
+**Read [STYLE.md](STYLE.md) before writing.** It defines the voice, required arc, and when optional sections earn their place.
 
 ## Workflow
 
@@ -27,7 +27,7 @@ gh pr view --json number --jq .number
 
 If that fails (no PR for current branch), ask the user.
 
-**Complete when:** the PR number is known; for a small PR, the existing pushback has been offered and the workflow proceeds only if the user insists (or stops for the requested short summary).
+**Complete when:** the PR number is known; for a small PR, the user has chosen the full walkthrough (including an earlier insistence) or the workflow stops for the requested short summary.
 
 ### 2 · Fetch PR data (deterministic)
 
@@ -46,7 +46,7 @@ Dispatch all four subagents in parallel — in Claude Code, four `Agent` tool ca
 | Agent | Charter |
 |---|---|
 | **before** | What was the state of the code before this PR? What gap, bug, or missing capability prompted it? Read the diff to see what files changed; read the PR body for the author's framing. Do not speculate beyond what's in the materials. Return 200-400 words. |
-| **diff-tour** | Walk through each changed file in 2-4 sentences each, in narrative form (not "adds X, removes Y"). Group new vs. modified. Identify the central piece of new logic, not just every line. Return as a table-ready file list with a one-sentence summary per file. Also return, verbatim, the 2-4 most load-bearing hunks of the diff — each trimmed to its essential lines and paired with a short explanation of what to notice — these feed the key-code blocks in the walkthrough. |
+| **diff-tour** | Walk through each changed file in 2-4 sentences each, in narrative form (not "adds X, removes Y"). Group new vs. modified. Identify the central piece of new logic, not just every line. Return as a table-ready file list with a one-sentence summary per file. Also return up to 4 relevant, contiguous, verbatim diff excerpts with file context and a short explanation of what to notice. An excerpt may be part of a hunk; preserve its context lines and diff signs. Choose the smallest sufficient set to explain the central mechanism; one excerpt is enough when it covers the change. Do not split or repeat a single hunk solely to meet a count. If no relevant code evidence exists, state that absence. These excerpts feed the walkthrough's key-code blocks. |
 | **tradeoffs** | List documented limitations, edge cases, known gaps. Sources: code comments in the diff matching "limitation", "TODO", "out of scope", "known issue", "gap"; the PR body's own caveats; tests that document weak behavior (e.g. "treats X as Y when we can't tell"). For each, capture the choice AND the reason. |
 | **alternatives** | What other approaches were considered and rejected? Sources: PR body, commit messages on the branch (`gh pr view --json commits`), linked issue text, code comments saying "considered X but". Do not invent. If none are documented, state "none documented" and return. |
 
@@ -83,7 +83,7 @@ Then combine the four reports into one JSON manifest matching this shape:
 }
 ```
 
-**Constraints:** the section arc, section counts, voice, and HTML rules (escaping, `<p class="lead">`, callout budget, diagram rules, key-code rules) all live in [STYLE.md](STYLE.md) — it is the single source of truth for the prose. Follow the arc unless you have a specific reason not to.
+**Constraints:** the section arc, section counts, voice, and HTML rules (escaping, `<p class="lead">`, callout budget, diagram rules, key-code rules) all live in [STYLE.md](STYLE.md) — it is the single source of truth for the prose.
 
 Code samples and diagrams are supplied as structured `code` / `diagrams` entries on each section, referenced from `content` via `{{CODE:i}}` / `{{DIAGRAM:i}}` placeholders — the build escapes, captions, and highlights them deterministically, and fails loudly on any placeholder/entry mismatch. Authoring rules in STYLE.md.
 
@@ -97,7 +97,7 @@ Code samples and diagrams are supplied as structured `code` / `diagrams` entries
 
 Write the manifest to `/tmp/pr-<N>-manifest.json`.
 
-**Complete when:** the through-line was used, the manifest contains the required grounded sections and fields, and `/tmp/pr-<N>-manifest.json` was written.
+**Complete when:** the through-line was used, the manifest contains the required grounded sections and fields, its structure satisfies the arc in `STYLE.md`, the reader-facing prose check was applied, and `/tmp/pr-<N>-manifest.json` was written.
 
 ### 5 · Generate narration audio (deterministic)
 
@@ -111,7 +111,7 @@ node scripts/generate-audio.mjs \
 Synthesizes each section's `narration` (and `narrationIntro`) with kokoro-js — a local, offline neural TTS — and encodes each clip to mono MP3 via ffmpeg, writing a sidecar JSON of base64 data-URIs. Notes:
 
 - **First run downloads the ~330 MB model** (cached afterward). Later runs load it in ~10–15s and synthesize a few seconds per section.
-- **Graceful fallback:** if kokoro-js isn't installed or ffmpeg is missing, the script prints a warning and exits 0 **without** writing the sidecar. The build then produces the plain text-only HTML. So it's safe to always run this step.
+- **Graceful fallback:** if the manifest has no narration, kokoro-js cannot load, or ffmpeg is unavailable, the script prints a warning and exits 0 without a sidecar. It removes any previous sidecar before processing, so a rerun cannot reuse old narration. The build then produces text-only HTML.
 - One-time setup on a fresh machine: `cd scripts && bun install` (installs kokoro-js). ffmpeg must be on PATH with libmp3lame.
 - `--voice` overrides the default (`af_heart`); kokoro-js's `tts.list_voices()` prints the options.
 
@@ -142,4 +142,4 @@ Tell the user the file path. It's a single self-contained HTML — audio is embe
 
 ## When the PR is small
 
-A typo fix doesn't need a walkthrough. Push back: "this PR doesn't have enough narrative weight for a walkthrough — do you want a short summary instead?" If they insist, use the small-PR arc from [STYLE.md](STYLE.md).
+A typo fix doesn't need a walkthrough. Offer: "this PR doesn't have enough narrative weight for a walkthrough — do you want a short summary instead?" If the user already insists, proceed without asking again. Use the small-PR arc from [STYLE.md](STYLE.md).

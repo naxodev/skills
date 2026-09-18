@@ -1,0 +1,177 @@
+{
+  "explanation": "Controller compared model objects by JSON key order. Recovered existing outputs with structural equality; no repeated model calls.",
+  "results": [
+    {
+      "id": "route-docs-positive-1",
+      "sessionID": "ses_f4e2ed95dffeaK9tlSadXudM0S",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": "writing-technical-docs",
+      "reason": "The task asks to improve a README installation guide, which directly matches this skill’s documentation scope.",
+      "expected": "writing-technical-docs",
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-docs-positive-2",
+      "sessionID": "ses_f4e2ed95cffeEqpXR2s9mAi2yP",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": "writing-technical-docs",
+      "reason": "The task asks to improve a README installation guide, which directly matches this skill’s documentation scope.",
+      "expected": "writing-technical-docs",
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-docs-negative-1",
+      "sessionID": "ses_f4e2ed95cffdrhbVDdv6IzhSv0",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": null,
+      "reason": "An internal parser variable rename does not match any skill in the catalog.",
+      "expected": null,
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-docs-negative-2",
+      "sessionID": "ses_f4e2eca5bffen3e2jbWhCWF7q3",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": null,
+      "reason": "Renaming an internal parser variable does not match any skill in the catalog.",
+      "expected": null,
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-discord-positive-1",
+      "sessionID": "ses_f4e2eca34ffeOzhSOFBT8MZaqx",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": "discord-community-server",
+      "reason": "The task directly matches auditing roles and onboarding for an official Discord community.",
+      "expected": "discord-community-server",
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-discord-positive-2",
+      "sessionID": "ses_f4e2ec4f9ffeVDE3Tx215xQVte",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": "discord-community-server",
+      "reason": "The task directly matches auditing roles and onboarding for an official Discord community server.",
+      "expected": "discord-community-server",
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-discord-negative-1",
+      "sessionID": "ses_f4e2ebdadffeQJ3qQI5ToLGr1t",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": null,
+      "reason": "Fixing a JSON parser in an HTTP client does not match any catalog skill; the Discord skill covers community server work.",
+      "expected": null,
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-discord-negative-2",
+      "sessionID": "ses_f4e2eb97bffe4ovneScQf1o2e7",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": null,
+      "reason": "Fixing an HTTP client's JSON parser does not match any catalog skill; Discord server configuration is explicitly out of scope.",
+      "expected": null,
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-pr-negative-1",
+      "sessionID": "ses_f4e2eb6c6ffeotE0loW1FwX42p",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": null,
+      "reason": "None of the catalog skills covers reviewing a PR for bugs and reporting inline findings.",
+      "expected": null,
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-pr-negative-2",
+      "sessionID": "ses_f4e2ead73ffe0UBLlRX5MXECM6",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": null,
+      "reason": "None of the catalog skills covers bug review with inline findings; pr-walkthrough produces a narrative walkthrough and requires an explicit request.",
+      "expected": null,
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-pr-positive-1",
+      "sessionID": "ses_f4e2ea865ffeIOt99NaYuvkedl",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": "pr-walkthrough",
+      "reason": "The task explicitly requests pr-walkthrough for PR #42, satisfying its explicit-only invocation rule; text-only output and trade-off explanations are task constraints.",
+      "expected": "pr-walkthrough",
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "route-pr-positive-2",
+      "sessionID": "ses_f4e2ea5c8ffexcKcjZe5APP0HR",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "choice": "pr-walkthrough",
+      "reason": "The task explicitly requests pr-walkthrough for PR #42, satisfying its explicit-only invocation rule; text-only output and trade-off explanations are task constraints.",
+      "expected": "pr-walkthrough",
+      "matches": true,
+      "toolCalls": 0
+    },
+    {
+      "id": "discord-audit",
+      "sessionID": "ses_f4e2e8ec6ffd8iPCSdzsXGHZQq",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "inputChanges": [],
+      "nativeChildren": 0,
+      "visibleExports": [
+        "ses_f4e2e8ec6ffd8iPCSdzsXGHZQq.visible.json"
+      ]
+    },
+    {
+      "id": "docs-reader-start",
+      "sessionID": "ses_f4e2e8ec6ffekFIRkbX8GteE0I",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "inputChanges": [
+        "README.md"
+      ],
+      "nativeChildren": 0,
+      "visibleExports": [
+        "ses_f4e2e8ec6ffekFIRkbX8GteE0I.visible.json"
+      ]
+    },
+    {
+      "id": "pr-grounding-quality",
+      "sessionID": "ses_f4e2d0e57ffe1PF7qm6g6BDjT6",
+      "identity": true,
+      "originalControllerStatus": "failed",
+      "inputChanges": [],
+      "nativeChildren": 4,
+      "visibleExports": [
+        "ses_f4e2c4ff6ffeuT210pmpIEaNhp.visible.json",
+        "ses_f4e2c4ff5ffe8iuwo43Byfto02.visible.json",
+        "ses_f4e2c4ff5ffdEBoL08Toy0Q884.visible.json",
+        "ses_f4e2c4ff4ffe2vk340L6yeH9h1.visible.json",
+        "ses_f4e2d0e57ffe1PF7qm6g6BDjT6.visible.json"
+      ]
+    }
+  ],
+  "finalTemplateSha256": "cead3a34f916182a577fdbdf792aa3ee7be736db7d20d7dc60ce57b51970377c"
+}

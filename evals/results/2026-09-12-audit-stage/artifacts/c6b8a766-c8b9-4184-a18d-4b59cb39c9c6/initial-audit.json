@@ -1,0 +1,96 @@
+{
+  "inputSha256": "d7887d6ec38f7fa98a036e674192fdd5d7e275430ea262d085cec78b1905dec0",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/dek",
+      "problem": "The statement that exponential delays spread out attempts asserts elapsed-time behavior. The contract specifies requested delays only, and the probe resolves sleep immediately. The check stops retries after a permanent rejection; it does not prevent the initial failure or a committed effect.",
+      "evidence": [
+        { "file": "source", "pointer": "/contracts/2", "quote": "Delays are requested milliseconds, not measured wall-clock durations." },
+        { "file": "probe", "pointer": "/assumptions", "quote": "Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement." },
+        { "file": "source", "pointer": "/after", "quote": "if (!error.retryable || attempt === retries) throw error;" }
+      ]
+    },
+    {
+      "id": "A2",
+      "pointer": "/sections/0/content",
+      "problem": "The description of the old loop places the wait before the exhaustion exception and says every rejection requests a wait. The old code checks exhaustion before invoking sleep. A further send also depends on sleep resolving successfully.",
+      "evidence": [
+        { "file": "source", "pointer": "/before", "quote": "if (attempt === retries) throw error;\n      await sleep(10);" },
+        { "file": "source", "pointer": "/contracts/2", "quote": "sleep returns a promise; rejection propagates." },
+        { "file": "probe", "pointer": "/results/before/sleepFailure", "value": { "calls": 1, "effects": 0, "delays": [10], "result": null, "error": "sleep-failed" } }
+      ]
+    },
+    {
+      "id": "A3",
+      "pointer": "/sections/1/content",
+      "problem": "The narrative attributes a prohibition on retrying to the error contract. The supplied contract specifies the boolean property but does not state that prohibition. Avoiding retries after permanent failures is the author's stated intent and the new code's behavior.",
+      "evidence": [
+        { "file": "source", "pointer": "/contracts/0", "quote": "send returns a promise and rejects with an object containing a boolean retryable property." },
+        { "file": "source", "pointer": "/body", "quote": "The author says this avoids retrying permanent failures and makes delivery exactly once." },
+        { "file": "source", "pointer": "/after", "quote": "if (!error.retryable || attempt === retries) throw error;" }
+      ]
+    },
+    {
+      "id": "A4",
+      "pointer": "/sections/3/content",
+      "problem": "The recap broadens the body's requested-delay qualification into a claim that waits increase. The source increases the requested delay for successive eligible retries; actual elapsed waits are not measured or guaranteed by the supplied contract.",
+      "evidence": [
+        { "file": "source", "pointer": "/after", "quote": "await sleep(10 * 2 ** attempt);" },
+        { "file": "source", "pointer": "/contracts/2", "quote": "Delays are requested milliseconds, not measured wall-clock durations." }
+      ]
+    },
+    {
+      "id": "A5",
+      "pointer": "/sections/3/content",
+      "problem": "The recap states categorically that separate calls share no lock. The supplied contract says no lock or cross-call exclusion is supplied, and the shown wrapper has none. That does not establish the internals of an unshown send implementation. The concurrent model records one effect per independent call, not the absence of all possible internal locking.",
+      "evidence": [
+        { "file": "source", "pointer": "/contracts/3", "quote": "Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied." },
+        { "file": "probe", "pointer": "/results/after/concurrentCalls", "value": [ { "calls": 1, "effects": 1, "delays": [], "result": "delivered", "error": null }, { "calls": 1, "effects": 1, "delays": [], "result": "delivered", "error": null } ] }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/dek",
+      "findingIds": ["A1"],
+      "value": "A retryability check stops retries after permanent failures, while eligible retries request exponentially increasing delays. Delivery can still produce duplicate effects."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "findingIds": ["A2"],
+      "value": "<p class=\"lead\">Cedar Relay wraps an asynchronous delivery operation, <code>send</code>, with a bounded retry loop. You supply <code>retries</code> as a nonnegative integer and <code>sleep</code> as an asynchronous wait. A successful send returns immediately; a rejection enters the retry path.</p><p>The budget counts extra attempts. With two retries, the loop can call <code>send</code> three times. Previously, the loop ignored retryability. It propagated a rejection immediately if the budget was exhausted. Otherwise, it requested a 10-millisecond wait and tried again only after <code>sleep</code> resolved successfully.</p>"
+    },
+    {
+      "pointer": "/sections/1/content",
+      "findingIds": ["A3"],
+      "value": "<p>Send errors already carry a boolean <code>retryable</code> property, but the old loop ignored it. In the supplied permanent-failure probe, the first send rejects with <code>retryable: false</code>. The old implementation waits and makes a second call, which the model allows to succeed. The new implementation stops after one call and propagates the permanent error.</p><p>This removes an attempt in line with the author's stated intent to avoid retrying permanent failures. It does not establish the author's claimed exactly-once delivery guarantee.</p>"
+    },
+    {
+      "pointer": "/sections/3/content",
+      "findingIds": ["A4", "A5"],
+      "value": "<p>The change filters failures and requests increasing delays for successive eligible retries within the existing budget. These are requested delays, not measured elapsed waits. A rejection can still follow a committed remote effect: the duplicate probe records two effects after a retry. There is no deduplication or idempotency contract. Separate calls share no retry counter, and the supplied wrapper provides no lock or cross-call delivery exclusion. The concurrent probe records an effect from each modeled call; it does not establish how an unshown delivery implementation coordinates calls. Retry policy improves, but exactly-once delivery remains unsupported.</p>"
+    }
+  ],
+  "blockers": []
+}

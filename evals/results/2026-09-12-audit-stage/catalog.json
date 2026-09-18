@@ -1,0 +1,220 @@
+[
+  {
+    "id": "grok-4.6",
+    "modelID": "grok-4.6",
+    "providerID": "xai",
+    "family": "grok",
+    "name": "Grok 4.6",
+    "package": "aisdk:@ai-sdk/xai",
+    "capabilities": {
+      "tools": true,
+      "input": [
+        "text",
+        "image",
+        "pdf"
+      ],
+      "output": [
+        "text"
+      ],
+      "responsesWebsockets": true
+    },
+    "variants": [
+      {
+        "id": "low",
+        "settings": {
+          "reasoningEffort": "low"
+        }
+      },
+      {
+        "id": "medium",
+        "settings": {
+          "reasoningEffort": "medium"
+        }
+      },
+      {
+        "id": "high",
+        "settings": {
+          "reasoningEffort": "high"
+        }
+      },
+      {
+        "id": "xhigh",
+        "settings": {
+          "reasoningEffort": "xhigh"
+        }
+      }
+    ],
+    "time": {
+      "released": 1786492800000
+    },
+    "cost": [
+      {
+        "input": 2,
+        "output": 6,
+        "cache": {
+          "read": 0.5,
+          "write": 0
+        }
+      },
+      {
+        "tier": {
+          "type": "context",
+          "size": 200000
+        },
+        "input": 4,
+        "output": 12,
+        "cache": {
+          "read": 1,
+          "write": 0
+        }
+      },
+      {
+        "tier": {
+          "type": "context",
+          "size": 200000
+        },
+        "input": 4,
+        "output": 12,
+        "cache": {
+          "read": 1,
+          "write": 0
+        }
+      }
+    ],
+    "status": "active",
+    "enabled": true,
+    "limit": {
+      "context": 500000,
+      "output": 500000
+    }
+  },
+  {
+    "id": "grok-4.5",
+    "modelID": "grok-4.5",
+    "providerID": "xai",
+    "family": "grok",
+    "name": "Grok 4.5",
+    "package": "aisdk:@ai-sdk/xai",
+    "capabilities": {
+      "tools": true,
+      "input": [
+        "text",
+        "image",
+        "pdf"
+      ],
+      "output": [
+        "text"
+      ],
+      "responsesWebsockets": true
+    },
+    "variants": [
+      {
+        "id": "low",
+        "settings": {
+          "reasoningEffort": "low"
+        }
+      },
+      {
+        "id": "medium",
+        "settings": {
+          "reasoningEffort": "medium"
+        }
+      },
+      {
+        "id": "high",
+        "settings": {
+          "reasoningEffort": "high"
+        }
+      }
+    ],
+    "time": {
+      "released": 1783468800000
+    },
+    "cost": [
+      {
+        "input": 2,
+        "output": 6,
+        "cache": {
+          "read": 0.3,
+          "write": 0
+        }
+      },
+      {
+        "tier": {
+          "type": "context",
+          "size": 200000
+        },
+        "input": 4,
+        "output": 12,
+        "cache": {
+          "read": 0.6,
+          "write": 0
+        }
+      },
+      {
+        "tier": {
+          "type": "context",
+          "size": 200000
+        },
+        "input": 4,
+        "output": 12,
+        "cache": {
+          "read": 0.6,
+          "write": 0
+        }
+      }
+    ],
+    "status": "active",
+    "enabled": true,
+    "limit": {
+      "context": 500000,
+      "output": 500000
+    }
+  },
+  {
+    "id": "mimo-v2.5-free",
+    "modelID": "mimo-v2.5-free",
+    "providerID": "opencode",
+    "family": "mimo-v2.5-free",
+    "name": "MiMo V2.5 Free",
+    "compatibility": {
+      "reasoningField": "reasoning_content"
+    },
+    "package": "aisdk:@ai-sdk/openai-compatible",
+    "settings": {
+      "baseURL": "https://opencode.ai/zen/v1"
+    },
+    "capabilities": {
+      "tools": true,
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "variants": [],
+    "time": {
+      "released": 1776988800000
+    },
+    "cost": [
+      {
+        "input": 0,
+        "output": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    ],
+    "status": "active",
+    "enabled": true,
+    "limit": {
+      "context": 200000,
+      "output": 32000
+    }
+  }
+]

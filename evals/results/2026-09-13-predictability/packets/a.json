@@ -1,0 +1,9 @@
+{
+  "sections": [
+    {
+      "eyebrow": "The boundary",
+      "title": "A retry can duplicate a remote effect",
+      "content": "<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>"
+    }
+  ]
+}

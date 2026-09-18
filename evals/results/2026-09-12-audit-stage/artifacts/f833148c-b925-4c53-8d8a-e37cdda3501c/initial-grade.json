@@ -1,0 +1,192 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Invalidate after a successful write, with a remaining reader race",
+      "status": "supported",
+      "rationale": "after() awaits db.write then cache.delete; a thrown write skips deletion (probe-results after.failedWrite.cachedAfterUpdate is \"old\"). The remaining race is after.lateSnapshot: cached and nextRead are \"old\" after deletion. Probe assertion: an older snapshot can refill the cache after invalidation."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Moss Catalog",
+      "status": "nonfactual",
+      "rationale": "Catalog label. source.json title begins with the same name. It is not a claim about cache, write, or read behavior."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.",
+      "status": "supported",
+      "rationale": "after.fillDuringWrite: overlappingRead is \"old\", cached is null, nextRead is \"new\" (probe assertion: post-write deletion removes a cache fill that completed during the write). after.lateSnapshot: cached and nextRead are \"old\". \"Can\" matches the modeled lateSnapshot schedule, not a universal schedule claim."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Deterministic modeled examples",
+      "status": "supported",
+      "rationale": "probe.mjs schedules snapshot capture, write commit, and cache fill with explicit deferred gates. probe-results.assumptions: one process, one Map, no wall-clock timing. Sequential, failedWrite, fillDuringWrite, and lateSnapshot are those modeled runs."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "The model uses one shared Map, without a generation check for readers.",
+      "status": "supported",
+      "rationale": "Contract: cache is a synchronous Map; each read and update uses the same Map; no distributed cache is shown. Contract: read is unchanged; no generation check is supplied. functions.mjs read() only has/get/set on the passed Map. Probe assumptions: one process and one Map."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Section chapter label. Not a claim about program behavior."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Early deletion left a window for stale fills",
+      "status": "supported",
+      "rationale": "before() does cache.delete(key) then await db.write. before.fillDuringWrite: overlappingRead, cached, and nextRead are \"old\". The fill during the write remains after the write commits because before() does not delete again."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.",
+      "status": "supported",
+      "rationale": "before() is cache.delete then await db.write. In overlapping(..., false), the read starts after writerStarted and before releaseWriter, so stored is still \"old\"; read() misses, awaits db.read, then cache.set. before.fillDuringWrite.cached is \"old\". \"Could\" matches that modeled miss-during-wait path."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The change",
+      "status": "nonfactual",
+      "rationale": "Section chapter label. Not a claim about program behavior."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Delete only after the write fulfills",
+      "status": "supported",
+      "rationale": "after() awaits db.write then cache.delete. On rejection, delete does not run: after.failedWrite.cachedAfterUpdate is \"old\" while before.failedWrite.cachedAfterUpdate is null. Contract: rejection leaves the stored value unchanged (failedWrite.stored is \"old\")."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.",
+      "status": "supported",
+      "rationale": "after() deletes only after await db.write. after.fillDuringWrite.cached is null and nextRead is \"new\" after overlappingRead \"old\" (fill completed, then deleted). sequential() seeds cache with \"old\"; after.failedWrite.cachedAfterUpdate is \"old\". after.sequential.nextRead is \"new\". These are the modeled runs, not a proof of every interleaving."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Section chapter label. Not a claim about program behavior."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "An older snapshot can arrive after deletion",
+      "status": "supported",
+      "rationale": "Contract: db.read captures a snapshot when invoked; the promise may fulfill after a later write commits. overlapping(..., true) captures stored \"old\", awaits the after() write and cache.delete, then cache.set of that snapshot. after.lateSnapshot.cached and nextRead are \"old\"."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.",
+      "status": "supported",
+      "rationale": "source.body: invalidating after the write removes stale cache reads, including concurrent readers. Contract and functions.mjs: read is unchanged; no generation check or in-flight reader synchronization. lateSnapshot path matches the modeled reader; after.lateSnapshot.nextRead is \"old\". Factual support does not make the opening rebuttal reader-facing (see reviewerLanguageLeakage)."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Section chapter label. Not a claim about program behavior."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Close one cache-fill window",
+      "status": "supported",
+      "rationale": "Contrast of the two overlapping schedules: after.fillDuringWrite.nextRead is \"new\" (during-write fill deleted) while after.lateSnapshot.nextRead is \"old\" (late refill). \"One\" matches that split. Heading is a summary of those modeled windows, not a guarantee beyond them."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.",
+      "status": "supported",
+      "rationale": "before.fillDuringWrite.nextRead is \"old\"; after.fillDuringWrite.nextRead is \"new\" and cached is null. after.fillDuringWrite.overlappingRead remains \"old\" (stale result to that reader). after.lateSnapshot.cached and nextRead are \"old\" (late fill). See unresolvedUncertainty on what \"overlapping readers\" names besides that return value."
+    }
+  ],
+  "missingMaterialLimitations": [
+    {
+      "limitation": "Contract 4 also lists no cancellation and no TTL. Reader-facing text names generation check and in-flight reader synchronization, not cancellation or TTL.",
+      "whereOmitted": [
+        "/footer",
+        "/sections/2/content"
+      ]
+    },
+    {
+      "limitation": "Probe assumptions include explicit promise gates, one process, and no wall-clock timing. Body sections do not state the single-process or gated-scheduling bounds. /meta and /footer only cover deterministic examples and one shared Map.",
+      "whereOmitted": [
+        "/sections/0/content",
+        "/sections/1/content",
+        "/sections/2/content",
+        "/sections/3/content"
+      ]
+    },
+    {
+      "limitation": "Only two overlapping schedules are modeled (fillDuringWrite and lateSnapshot), plus sequential success and sequential failedWrite with a pre-seeded cache. Concurrent updates, multiple readers, and a failed write overlapped with a reader are not in probe-results.json.",
+      "whereOmitted": [
+        "/dek",
+        "/sections/1/content",
+        "/sections/3/content"
+      ]
+    },
+    {
+      "limitation": "Contract 2: db.write atomically commits before fulfillment. That commit-before-fulfillment rule is not stated; prose only says deletion follows a successful write.",
+      "whereOmitted": [
+        "/sections/1/content",
+        "/footer"
+      ]
+    }
+  ],
+  "attributionErrors": [],
+  "reviewerLanguageLeakage": [
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The author says concurrent stale reads are removed, but read is unchanged.",
+      "rationale": "Rebuttal couplet: author claim against a contract phrase. source.body already frames the author claim; \"but read is unchanged\" is review contrast, not a step in the modeled race. The lateSnapshot sentences after it carry the reader-facing evidence."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The change supplies no generation check or in-flight reader synchronization.",
+      "rationale": "Audit wording copied from contract 4 (\"No generation check, cancellation, TTL, or synchronization of in-flight readers is supplied\") rather than describing read() as it stands."
+    }
+  ],
+  "codeDiagramErrors": [],
+  "readerFacingProse": {
+    "rating": "uncertain",
+    "quotes": [
+      {
+        "rating": "pass",
+        "pointer": "/sections/0/content",
+        "quote": "The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait."
+      },
+      {
+        "rating": "pass",
+        "pointer": "/sections/3/content",
+        "quote": "Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills."
+      },
+      {
+        "rating": "fail",
+        "pointer": "/sections/2/content",
+        "quote": "The author says concurrent stale reads are removed, but read is unchanged."
+      },
+      {
+        "rating": "uncertain",
+        "pointer": "/sections/1/content",
+        "quote": "In the sequential example, the next read sees the new stored value."
+      }
+    ]
+  },
+  "unresolvedUncertainty": [
+    "No field is contradicted by source contracts, functions.mjs, probe.mjs, or probe-results.json. Uncertainty below is not a contradiction.",
+    "/sections/3/content \"overlapping readers\" may mean (a) overlappingRead remains \"old\" in fillDuringWrite and lateSnapshot, which is supported, or (b) a second persistent cache race besides late fills, which would sit awkwardly next to closing the during-write fill window.",
+    "/eyebrow \"Moss Catalog\" is graded nonfactual as a label. Treating it as supported from source.json title would not change any behavior claim.",
+    "Cancellation and TTL from contract 4 may be material omissions or may be folded into \"no generation check or in-flight reader synchronization.\" They are listed under missingMaterialLimitations, not as unsupported text.",
+    "/sections/1/content \"the sequential example\" is true of after.sequential.nextRead and before.sequential.nextRead, but the manifest includes no code or numeric example, so a reader of the page alone cannot see that run.",
+    "fillDuringWrite and lateSnapshot are two gated schedules. Prose that describes those windows is supported for those runs. It is not evidence for untested interleavings."
+  ],
+  "statusCounts": {
+    "supported": 12,
+    "contradicted": 0,
+    "unsupported": 0,
+    "nonfactual": 5
+  }
+}

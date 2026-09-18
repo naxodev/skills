@@ -1,0 +1,29 @@
+{
+  "title": "Payment and notification now commit atomically",
+  "eyebrow": "Lantern Ledger",
+  "dek": "A failed commit now prevents publication, while publication failure leaves a committed payment intact.",
+  "meta": "Fictional source change and deterministic modeled examples",
+  "footer": "The supplied code has no durable outbox or delivery deduplication.",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Publication used to precede commit",
+      "content": "<p class=\"lead\">The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.</p>"
+    },
+    {
+      "eyebrow": "The change",
+      "title": "Wait for the transaction to fulfill",
+      "content": "<p>The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.</p>"
+    },
+    {
+      "eyebrow": "The boundary",
+      "title": "The database cannot roll back publication failures",
+      "content": "<p>The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.</p>"
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Commit first, with a remaining delivery gap",
+      "content": "<p>The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.</p>"
+    }
+  ]
+}

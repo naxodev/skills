@@ -1,0 +1,242 @@
+[
+  {
+    "pair": 9,
+    "fixture": "retry",
+    "kind": "correct",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/99f33a43-2812-4025-ad92-f91b506da255/revised.json",
+    "opaque": "9b53c8bf-7714-4e28-8ef5-484e21591c33"
+  },
+  {
+    "pair": 7,
+    "fixture": "transaction",
+    "kind": "main-3",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/3cba9b69-f281-4e3f-adb6-887e3e2d81aa/revised.json",
+    "opaque": "a99ed592-43ae-470b-8ae5-e56d44a9f05e"
+  },
+  {
+    "pair": 10,
+    "fixture": "retry",
+    "kind": "flawed",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/ef7c4b35-6e83-46e0-81ee-47dd4a0a5f3d/revised.json",
+    "opaque": "6ba4826c-938c-4557-8db8-24087eedebe9"
+  },
+  {
+    "pair": 12,
+    "fixture": "transaction",
+    "kind": "flawed",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/0c9865a0-9520-46a7-87a7-6359550a259f/revised.json",
+    "opaque": "f03f8765-4a2d-494a-8a80-09d02586bb53"
+  },
+  {
+    "pair": 5,
+    "fixture": "cache",
+    "kind": "main-2",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/09a027d1-0ed4-4f85-9264-3242fa1316fb/initial-manifest.json",
+    "opaque": "4cb96125-18b5-4d4c-a329-f7ad83cfa900"
+  },
+  {
+    "pair": 13,
+    "fixture": "cache",
+    "kind": "correct",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/4649d208-ed1c-4bcf-a634-831bf6afa298/revised.json",
+    "opaque": "7baebb80-8dcc-4a11-8b1f-c9dec31b668e"
+  },
+  {
+    "pair": 2,
+    "fixture": "cache",
+    "kind": "main-1",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/f1e29745-e019-4438-b7f3-b9328c62f4ca/initial-manifest.json",
+    "opaque": "16c52b15-7787-4d7c-8c41-1d26e4941780"
+  },
+  {
+    "pair": 6,
+    "fixture": "retry",
+    "kind": "main-3",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/fd1228b4-0006-46eb-9634-3012ef1863f9/revised.json",
+    "opaque": "3b268c0b-ddb7-4ca5-b0d3-570fd91613f1"
+  },
+  {
+    "pair": 7,
+    "fixture": "transaction",
+    "kind": "main-3",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/03d6ccb4-72e2-4207-b33b-1774c49b3e54/initial-manifest.json",
+    "opaque": "192243d0-baa1-41de-a28d-1ff65d7fe27d"
+  },
+  {
+    "pair": 9,
+    "fixture": "retry",
+    "kind": "correct",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/controls/retry-correct.json",
+    "opaque": "29885a0d-fe30-473f-adf8-06e9b0129526"
+  },
+  {
+    "pair": 13,
+    "fixture": "cache",
+    "kind": "correct",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/controls/cache-correct.json",
+    "opaque": "d8cfd7ca-25eb-4dcc-b73b-938d8b0b7f14"
+  },
+  {
+    "pair": 4,
+    "fixture": "transaction",
+    "kind": "main-2",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/7f628bf5-0e7e-48d0-8a49-ec6175148cbf/initial-manifest.json",
+    "opaque": "4772ac8e-0c16-45df-ab93-3be30d16e835"
+  },
+  {
+    "pair": 3,
+    "fixture": "retry",
+    "kind": "main-2",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/c6b8a766-c8b9-4184-a18d-4b59cb39c9c6/revised.json",
+    "opaque": "6b9e65ce-ebba-4511-b6f0-bfb89f016e78"
+  },
+  {
+    "pair": 0,
+    "fixture": "retry",
+    "kind": "main-1",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/d626f3f8-6941-4566-a388-5a9f6993082d/initial-manifest.json",
+    "opaque": "a9556a73-220a-4883-a6e9-aebc2fc9d2c6"
+  },
+  {
+    "pair": 11,
+    "fixture": "transaction",
+    "kind": "correct",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/02d23ae2-7e7b-4c08-b29d-f09c0616ae5e/revised.json",
+    "opaque": "90573b7a-280a-464f-bfc3-86cb5ecc5560"
+  },
+  {
+    "pair": 1,
+    "fixture": "transaction",
+    "kind": "main-1",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/6b838483-4522-41f9-ae27-91f8cf88ce7d/initial-manifest.json",
+    "opaque": "98d4eb0b-1995-4726-b63f-6281bb00dc0e"
+  },
+  {
+    "pair": 1,
+    "fixture": "transaction",
+    "kind": "main-1",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/2a288cca-8e8d-4469-bb52-9f9f22be6035/revised.json",
+    "opaque": "09611a71-25cd-480b-8cf3-ecd00ce34143"
+  },
+  {
+    "pair": 6,
+    "fixture": "retry",
+    "kind": "main-3",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/565820d5-0074-4c19-baa5-7d4ed5a07626/initial-manifest.json",
+    "opaque": "559681cb-0527-4de2-be3f-152f8b3b1cff"
+  },
+  {
+    "pair": 3,
+    "fixture": "retry",
+    "kind": "main-2",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/b4d10dcc-a1b2-4619-b921-ba9b8a8c669f/initial-manifest.json",
+    "opaque": "8350b5c1-8de6-45b4-a4b5-3fd7df567c71"
+  },
+  {
+    "pair": 10,
+    "fixture": "retry",
+    "kind": "flawed",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/controls/retry-flawed.json",
+    "opaque": "dda674cc-af44-4fc2-8eee-5bd199deb1f2"
+  },
+  {
+    "pair": 4,
+    "fixture": "transaction",
+    "kind": "main-2",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/5bca2329-10d5-4630-bd18-a59f01ec1f73/revised.json",
+    "opaque": "586b3028-40fe-4b21-89df-00f703225fa7"
+  },
+  {
+    "pair": 14,
+    "fixture": "cache",
+    "kind": "flawed",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/controls/cache-flawed.json",
+    "opaque": "0d6b00d3-0d99-4313-9279-07c02323b235"
+  },
+  {
+    "pair": 2,
+    "fixture": "cache",
+    "kind": "main-1",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/076bc01c-15be-4393-833b-f2e57770f3e2/revised.json",
+    "opaque": "bf886051-cfd9-4c9e-ba79-78996c57486b"
+  },
+  {
+    "pair": 8,
+    "fixture": "cache",
+    "kind": "main-3",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/bfd0242f-ebd5-4440-a9a3-b0889f21e8da/revised.json",
+    "opaque": "593e060e-22de-4109-a093-49d24681913f"
+  },
+  {
+    "pair": 14,
+    "fixture": "cache",
+    "kind": "flawed",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/d51fa258-b8e3-4933-ad1c-882908c02b38/revised.json",
+    "opaque": "2c81e9b4-55d9-45f1-aeac-064f0189a891"
+  },
+  {
+    "pair": 12,
+    "fixture": "transaction",
+    "kind": "flawed",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/controls/transaction-flawed.json",
+    "opaque": "9331918c-ffa2-4cbb-80ca-47f0370a0d73"
+  },
+  {
+    "pair": 0,
+    "fixture": "retry",
+    "kind": "main-1",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/ca6e3e89-37a0-48cf-a160-4e2e6c677180/revised.json",
+    "opaque": "a946f3f2-492d-4c34-a09d-50093f6b5151"
+  },
+  {
+    "pair": 8,
+    "fixture": "cache",
+    "kind": "main-3",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/00dba4d6-070d-4af7-afb3-b2bb3e94aae6/initial-manifest.json",
+    "opaque": "9f96ee69-6529-4d00-a6e0-b36d6a8b61d0"
+  },
+  {
+    "pair": 11,
+    "fixture": "transaction",
+    "kind": "correct",
+    "stage": "original",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/controls/transaction-correct.json",
+    "opaque": "3b0c5f00-5f53-44dd-89ca-a4aa3f4c4c68"
+  },
+  {
+    "pair": 5,
+    "fixture": "cache",
+    "kind": "main-2",
+    "stage": "revised",
+    "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/audit-stage-resume-20260912/evals/results/2026-09-12-audit-stage/artifacts/be2ef51d-3488-4c4e-bf62-c8c0bc9f754e/revised.json",
+    "opaque": "d922755a-e8f2-47a0-a299-7ee7ff804f27"
+  }
+]

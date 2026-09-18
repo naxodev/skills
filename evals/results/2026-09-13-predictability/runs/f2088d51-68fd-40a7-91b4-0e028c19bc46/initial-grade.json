@@ -1,0 +1,83 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Organizational heading, not a testable proposition. Surrounding title and content concern retry duplication versus exactly-once delivery, but the eyebrow itself asserts nothing that source.contracts or probe-results.json can support or contradict."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "A retry can duplicate a remote effect",
+      "status": "supported",
+      "rationale": "Existential claim, not a universal guarantee. source.contracts[1] states a send rejection may happen after the remote side effect commits and supplies no deduplication or idempotency contract. probe.mjs duplicate uses [{ effect: true, error: transient }, { effect: true }] with retries=2. probe-results.json records before.duplicate.effects=2 and after.duplicate.effects=2. after still retries retryable errors, so a lost-ack retry can commit a second effect."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.",
+      "status": "supported",
+      "rationale": "Three claims, each grounded. (1) source.body: 'The author says this avoids retrying permanent failures and makes delivery exactly once.' (2) source.contracts[1]: 'A send rejection may happen after the remote side effect commits.' (3) probe-results.json duplicate.effects is 2 for before and after; probe.mjs names that case 'a lost acknowledgment permits duplicate side effects.' Final sentence matches source.contracts[3] ('Separate calls share no retry counter. No lock or cross-call delivery exclusion is supplied.') and probe-results.json concurrentCalls, where two separate invocations each record effects=1 (sum 2). No clause is contradicted."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "The after change does not prevent the two-effect lost-ack outcome.",
+      "evidence": "probe-results.json after.duplicate.effects is 2, same as before.duplicate.effects. after only adds error.retryable filtering and 10 * 2 ** attempt delays.",
+      "note": "The excerpt never names before versus after, so a reader is not told that filter-and-backoff leaves this duplication in place."
+    },
+    {
+      "limitation": "Duplication in after depends on a retryable post-commit error and remaining attempts.",
+      "evidence": "after throws when !error.retryable || attempt === retries. The duplicate probe uses transient (retryable: true). after.permanent.calls is 1 for a non-retryable error.",
+      "note": "A non-retryable rejection after commit would not retry in after, so it would not duplicate that way. The excerpt does not state this condition."
+    },
+    {
+      "limitation": "sleep rejection propagates and prevents another send.",
+      "evidence": "source.contracts[2]: 'sleep returns a promise; rejection propagates.' probe-results.json sleepFailure for before and after: calls=1, error='sleep-failed', delays=[10].",
+      "note": "Material to the retry path that produces duplication, but absent from the excerpt."
+    },
+    {
+      "limitation": "Modeled traces are not production or timing evidence.",
+      "evidence": "probe-results.json assumptions: 'Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement.' source.contracts[2]: delays are requested milliseconds, not measured wall-clock durations.",
+      "note": "Content already says 'modeled.' It does not state the no-timing / no-production bound. Title uses 'can,' so this is a residual hedge gap, not an overclaim."
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/0/content",
+      "quote": "the supplied contract",
+      "note": "Harness/packet diction. A reader-facing walkthrough would describe send's contract, not a 'supplied' evaluation input."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The modeled lost-acknowledgment example records two effects",
+      "note": "Points at the probe scenario and the trace.effects counter. 'Modeled' is a correct hedge; 'records two effects' is probe-output language rather than an explanation of delivery."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "pointer": "/sections/0/title",
+        "quote": "A retry can duplicate a remote effect",
+        "note": "Hedges with 'can.' Does not treat the duplicate probe as a universal guarantee."
+      },
+      {
+        "pointer": "/sections/0/content",
+        "quote": "The modeled lost-acknowledgment example records two effects.",
+        "note": "Reports the modeled example rather than claiming all retries duplicate. Passing examples are not generalized."
+      },
+      {
+        "pointer": "/sections/0/content",
+        "quote": "Separate invocations share no retry budget or exclusion mechanism.",
+        "note": "States a contract absence, not an overgeneralization from concurrentCalls. Clear and scoped."
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Whether sleep-rejection and the retryable-versus-permanent split are in scope for this excerpt. They are material to retry/delivery, but the saved section is only the duplicate-effect boundary.",
+    "No code or diagrams appear in the saved excerpt, so code/diagram accuracy of any unsaved walkthrough body cannot be judged from these inputs.",
+    "Eyebrow 'The boundary' has no propositional content; whether it was meant to name at-least-once versus exactly-once is not established by the supplied files."
+  ]
+}

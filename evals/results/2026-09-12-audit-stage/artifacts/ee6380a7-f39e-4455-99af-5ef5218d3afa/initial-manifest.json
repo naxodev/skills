@@ -1,0 +1,29 @@
+{
+  "title": "Retry only retryable failures, within a fixed budget",
+  "eyebrow": "Cedar Relay",
+  "dek": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+  "meta": "Deterministic modeled examples",
+  "footer": "A rejected acknowledgment can still follow a committed remote effect.",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "The old loop did not classify send failures",
+      "content": "<p class=\"lead\">The old loop retried rejected sends regardless of their retryable flag, while retry budget remained and sleep fulfilled. It requested a ten-millisecond delay before each retry. A successful send returned immediately; budget exhaustion or a rejected sleep ended the invocation with an error.</p>"
+    },
+    {
+      "eyebrow": "The change",
+      "title": "Classify failures before waiting",
+      "content": "<p>The changed loop stops on a non-retryable error and returns on a successful send. A budget of two retries permits up to three sends. If the first two sends reject with retryable errors and both sleeps fulfill, the loop requests 10 milliseconds before the second send and 20 milliseconds before the third. A rejected sleep prevents the next send. If the third send rejects, its error propagates without another delay or retry.</p>"
+    },
+    {
+      "eyebrow": "The boundary",
+      "title": "A retry can duplicate a remote effect",
+      "content": "<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>"
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "Fewer retries for permanent failures",
+      "content": "<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>"
+    }
+  ]
+}

@@ -1,13 +1,13 @@
 # Style rules
 
-These compound. None are individually load-bearing, but the cumulative
-effect is the difference between a page that feels professional and one
-that doesn't.
+Apply these rules to the reader need and quadrant selected in
+[SKILL.md](SKILL.md). Its quadrant table governs voice; its workflow governs
+page shape and verification.
 
 ## Voice & person
 
-- **Second person, imperative.** "Pass a `store` to `history`." Not "We
-  pass…" or "The user should pass…".
+- **Match the quadrant's voice.** Use second-person imperatives for how-to
+  instructions, not as a global rule for every page.
 - **Active voice.** "The engine validates the message." Not "The message
   is validated by the engine."
 - **Lead with the verb in steps.** "Configure the adapter" beats "To
@@ -17,19 +17,21 @@ that doesn't.
 
 ## Titles & headings
 
-- **Title is the task.** "Add a custom LLM provider" beats "Custom LLM
-  Providers." The sidebar entry can be shorter.
+- **Title names the reader need.** Name the task for a how-to, the learning
+  outcome for a tutorial, the lookup symbol or topic for reference, and the
+  concept or question for explanation. The sidebar entry can be shorter.
 - **Sentence case** for everything except the page `title:` frontmatter.
-- **Headings answer reader questions**, not section labels. "When to
-  enable history" beats "History configuration semantics."
+- **Headings support the page's purpose.** Questions help explanations;
+  stable labels such as parameters, returns, and errors help reference lookup.
 - **Avoid hierarchy past `###`.** If you need `####`, the section wants
   to be its own page.
 
 ## Code
 
-- **Minimum runnable.** Every snippet should compile/run after
-  `npm install` / `bun install` in a fresh project. Cut any line that
-  isn't load-bearing for the step.
+- **Distinguish runnable examples from notation.** Runnable examples need
+  the stated runtime, files, imports, and setup to work from the reader's
+  context. Label signatures, type shapes, and fragments as such; they need
+  accurate semantics, not an artificial execution wrapper.
 - **Real imports.** No `// ... your code here` placeholders inside
   imports. The imports are part of the answer.
 - **Pin the file path** on snippets where it isn't obvious:
@@ -40,16 +42,16 @@ that doesn't.
   `package.json` and the README use — bun, pnpm, npm, yarn).
 - **No emoji in code or output**, even if the docs site supports them in
   prose.
-- **Don't echo console output** unless the output is the point of the
-  step.
+- **Show output when it helps the reader check or understand a result**, 
+  especially at tutorial checkpoints.
 
 ## Linking
 
-- **Link the first mention** of every domain term to its Understanding
-  page.
+- **Link the first mention** of a domain term when an existing explanation
+  helps this reader. Verify the destination rather than inventing a route.
 - **Link reference symbols** to the auto-generated reference page, not
   to GitHub source. If the reference page doesn't exist yet, link to
-  the package README's relevant heading.
+  an existing relevant heading in the package README when available.
 - **Don't link the same target twice in one section.** Pick the first
   mention.
 - **Prefer relative routes** (`/guides/engine/...`) over absolute URLs
@@ -65,7 +67,9 @@ that doesn't.
 
 ## What to omit
 
-- **No "Conclusion" sections.** The page ends with `Next steps`.
+- **End when the reader need is met.** Add next-step links only to existing,
+  relevant docs. Reference and explanation can end with their complete answer;
+  no artificial `Next steps` section is required.
 - **No restating the obvious** in prose right above a code block
   ("Here is the code:"). Just show the code.
 - **No version-of-the-week phrasing** ("As of January 2026…"). Pin to
@@ -83,21 +87,20 @@ this list before claiming the page is done:
 - **Inventing options.** If you wrote `maxRetries: 'aggressive'` and the
   source only accepts a number, the rest of the page is also suspect.
   Re-read the type.
-- **Restating the type definition as prose.** If a reader can get the
-  same information by hovering the symbol, the prose is filler. Cut it
-  or replace it with a worked example.
+- **Restatement without lookup value.** Apply the reference-contract check
+  in [SKILL.md](SKILL.md); precision is useful, redundant paraphrase is not.
 - **Sycophantic preamble.** "The library's elegant design lets you…" —
   delete.
 - **Cross-page duplication.** If two pages now say the same thing, one
   of them is wrong as soon as the API changes. Link instead of copying.
-- **Over-eager error sections.** Don't list every possible error tag
-  unless the page is about error handling. Mention only errors a reader
-  will plausibly hit while following this page.
+- **Scope errors to the reader need.** Reference documents the exact
+  source-backed errors and their conditions. Procedural pages cover errors
+  readers can plausibly hit along the chosen path.
 - **Phantom "Advanced" sections.** Don't bolt on an `Advanced` heading
   just to feel thorough — only include content the reader genuinely
   needs in the flow of the task.
-- **Mode-mixing.** A how-to that explains *why* has drifted toward
-  explanation. Move that material out and link to it.
+- **Mode-mixing.** Keep brief, source-backed rationale needed to choose
+  or perform a how-to step. Link extended conceptual background elsewhere.
 - **Confabulated "Common pitfalls" lists.** Only document pitfalls you
   observed in the code (skip reasons, validation errors, footguns the
   types allow). If you can't point at the line that creates the

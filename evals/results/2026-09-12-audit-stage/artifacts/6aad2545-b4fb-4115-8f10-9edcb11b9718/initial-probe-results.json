@@ -1,0 +1,57 @@
+{
+  "assumptions": "Explicit promise gates schedule snapshot capture, write commit, and cache fill. One process and one Map; no wall-clock timing.",
+  "results": {
+    "before": {
+      "sequential": {
+        "stored": "new",
+        "cachedAfterUpdate": null,
+        "nextRead": "new",
+        "error": null
+      },
+      "failedWrite": {
+        "stored": "old",
+        "cachedAfterUpdate": null,
+        "nextRead": "old",
+        "error": "write"
+      },
+      "fillDuringWrite": {
+        "stored": "new",
+        "overlappingRead": "old",
+        "cached": "old",
+        "nextRead": "old"
+      },
+      "lateSnapshot": {
+        "stored": "new",
+        "overlappingRead": "old",
+        "cached": "old",
+        "nextRead": "old"
+      }
+    },
+    "after": {
+      "sequential": {
+        "stored": "new",
+        "cachedAfterUpdate": null,
+        "nextRead": "new",
+        "error": null
+      },
+      "failedWrite": {
+        "stored": "old",
+        "cachedAfterUpdate": "old",
+        "nextRead": "old",
+        "error": "write"
+      },
+      "fillDuringWrite": {
+        "stored": "new",
+        "overlappingRead": "old",
+        "cached": null,
+        "nextRead": "new"
+      },
+      "lateSnapshot": {
+        "stored": "new",
+        "overlappingRead": "old",
+        "cached": "old",
+        "nextRead": "old"
+      }
+    }
+  }
+}

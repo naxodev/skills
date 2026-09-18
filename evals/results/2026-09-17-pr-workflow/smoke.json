@@ -1,0 +1,334 @@
+{
+  "status": "native smoke passed",
+  "freeze": {
+    "at": "2026-09-17T14:46:44.738Z",
+    "amendmentSha256": "2b49dc6ca4523093a91952250e660fbd23e131a37b15e1ea1a1ad28680d9e6ee",
+    "promptSha256": "9a3a31cb0e7427f67108ffeb1fa6b148a9afb6bd053fb7b1337dea5258e57fcf",
+    "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917",
+    "agent": "build",
+    "model": {
+      "providerID": "openai",
+      "id": "gpt-6-astra",
+      "variant": "medium"
+    }
+  },
+  "prompt": "This is a neutral native-delegation capability check. Use your native subagent/task tool to launch two independent read-only report agents concurrently, before waiting for either. Give both the exact evidence path /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json. Ask the first to read and return the first field, and the second to read and return the second field. Agents must return their reports, not write files. Use their default models; report their real session identifiers if the tool supplies them. Do not implement delegation through shell, API calls, or controller-provided reports. If the native mechanism is absent, state the exact missing capability and stop. No other task, network evidence, historical files, or repository changes are needed.",
+  "parent": {
+    "id": "ses_f502a4cd3ffewbYj5pAgSEzS4Z",
+    "projectID": "191f768fb172df9b06b135347b9553b676234636",
+    "agent": "build",
+    "model": {
+      "id": "gpt-6-astra",
+      "providerID": "openai",
+      "variant": "medium"
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 29223,
+      "output": 587,
+      "reasoning": 38,
+      "cache": {
+        "read": 43904,
+        "write": 0
+      }
+    },
+    "outcome": "succeeded",
+    "time": {
+      "created": 1789656413017,
+      "updated": 1789656445833,
+      "idle": 1789656459991
+    },
+    "title": "Native build delegation smoke 20260917",
+    "permissions": [
+      {
+        "action": "*",
+        "resource": "*",
+        "effect": "allow"
+      }
+    ],
+    "location": {
+      "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917"
+    }
+  },
+  "dispatches": [
+    {
+      "type": "tool",
+      "name": "subagent",
+      "time": {
+        "created": 1789656430092,
+        "ran": 1789656434118,
+        "completed": 1789656434166
+      },
+      "state": {
+        "status": "completed",
+        "input": {
+          "agent": "general",
+          "description": "Read first evidence field",
+          "prompt": "Read-only report task. Read exactly /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json and return the first field (its key and value in file order). Return your report directly; do not write files or make repository changes. No other task, network evidence, or historical files are needed.",
+          "background": true
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The subagent is working in the background (sessionID: ses_f5029fa32ffe7BdbYxoQtNgUWi). You will be notified automatically when it finishes.\nDO NOT sleep, poll for progress, ask the subagent for status, or duplicate this subagent's work; avoid working with the same files or topics it is using.\nWork on non-overlapping tasks, or briefly tell the user what you launched and end your response."
+          }
+        ],
+        "metadata": {
+          "sessionID": "ses_f5029fa32ffe7BdbYxoQtNgUWi",
+          "status": "running",
+          "truncated": false
+        }
+      }
+    },
+    {
+      "type": "tool",
+      "name": "subagent",
+      "time": {
+        "created": 1789656436257,
+        "ran": 1789656439595,
+        "completed": 1789656439629
+      },
+      "state": {
+        "status": "completed",
+        "input": {
+          "agent": "general",
+          "description": "Read second evidence field",
+          "prompt": "Read-only report task. Read exactly /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json and return the second field (its key and value in file order). Return your report directly; do not write files or make repository changes. No other task, network evidence, or historical files are needed.",
+          "background": true
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The subagent is working in the background (sessionID: ses_f5029e4d1ffesE5k3i3j8fn1aW). You will be notified automatically when it finishes.\nDO NOT sleep, poll for progress, ask the subagent for status, or duplicate this subagent's work; avoid working with the same files or topics it is using.\nWork on non-overlapping tasks, or briefly tell the user what you launched and end your response."
+          }
+        ],
+        "metadata": {
+          "sessionID": "ses_f5029e4d1ffesE5k3i3j8fn1aW",
+          "status": "running",
+          "truncated": false
+        }
+      }
+    }
+  ],
+  "children": [
+    {
+      "identity": {
+        "id": "ses_f5029e4d1ffesE5k3i3j8fn1aW",
+        "parentID": "ses_f502a4cd3ffewbYj5pAgSEzS4Z",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 12590,
+          "output": 71,
+          "reasoning": 0,
+          "cache": {
+            "read": 12288,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656439622,
+          "updated": 1789656439627,
+          "idle": 1789656445830
+        },
+        "title": "Read second evidence field",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917"
+        }
+      },
+      "messages": [
+        {
+          "id": "msg_0afd61b4a0013E11FmMBM7gqYw",
+          "type": "user",
+          "time": {
+            "created": 1789656439638
+          },
+          "text": "You are a subagent spawned by another session.\nRead-only report task. Read exactly /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json and return the second field (its key and value in file order). Return your report directly; do not write files or make repository changes. No other task, network evidence, or historical files are needed.",
+          "content": []
+        },
+        {
+          "id": "msg_0afd61b5a001vJ70Mb4FD40AZw",
+          "type": "assistant",
+          "time": {
+            "created": 1789656442345,
+            "streamed": 1789656443955,
+            "completed": 1789656443975
+          },
+          "content": [
+            {
+              "type": "tool",
+              "name": "read",
+              "time": {
+                "created": 1789656442348,
+                "ran": 1789656443908,
+                "completed": 1789656443911
+              },
+              "state": {
+                "status": "completed",
+                "input": {
+                  "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json"
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json, lines 1-1\n1: {\"first\":\"fixed1\",\"second\":\"fixed2\"}"
+                  }
+                ],
+                "metadata": {
+                  "truncated": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "msg_0afd62c4f001dLXCgbR0YvFmbT",
+          "type": "assistant",
+          "time": {
+            "created": 1789656445473,
+            "streamed": 1789656445807,
+            "completed": 1789656445826
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "`\"second\": \"fixed2\"`"
+            }
+          ]
+        },
+        {
+          "id": "msg_0afd63386001gL4p8TeT4GVdPY",
+          "type": "idle",
+          "time": {
+            "created": 1789656445830
+          },
+          "content": []
+        }
+      ]
+    },
+    {
+      "identity": {
+        "id": "ses_f5029fa32ffe7BdbYxoQtNgUWi",
+        "parentID": "ses_f502a4cd3ffewbYj5pAgSEzS4Z",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 12580,
+          "output": 71,
+          "reasoning": 0,
+          "cache": {
+            "read": 12288,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789656434157,
+          "updated": 1789656434163,
+          "idle": 1789656442413
+        },
+        "title": "Read first evidence field",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917"
+        }
+      },
+      "messages": [
+        {
+          "id": "msg_0afd605f2001m03R07noOOgRat",
+          "type": "user",
+          "time": {
+            "created": 1789656434186
+          },
+          "text": "You are a subagent spawned by another session.\nRead-only report task. Read exactly /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json and return the first field (its key and value in file order). Return your report directly; do not write files or make repository changes. No other task, network evidence, or historical files are needed.",
+          "content": []
+        },
+        {
+          "id": "msg_0afd6060f001bsFsLXw4E25DE0",
+          "type": "assistant",
+          "time": {
+            "created": 1789656437154,
+            "streamed": 1789656438725,
+            "completed": 1789656438748
+          },
+          "content": [
+            {
+              "type": "tool",
+              "name": "read",
+              "time": {
+                "created": 1789656437158,
+                "ran": 1789656438667,
+                "completed": 1789656438676
+              },
+              "state": {
+                "status": "completed",
+                "input": {
+                  "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json"
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/pr-workflow-smoke-20260917/neutral.json, lines 1-1\n1: {\"first\":\"fixed1\",\"second\":\"fixed2\"}"
+                  }
+                ],
+                "metadata": {
+                  "truncated": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "msg_0afd617e6001AfVih4I6dyLfIM",
+          "type": "assistant",
+          "time": {
+            "created": 1789656442136,
+            "streamed": 1789656442386,
+            "completed": 1789656442409
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "`\"first\": \"fixed1\"`"
+            }
+          ]
+        },
+        {
+          "id": "msg_0afd6262d001Mo6MlsCwkSVYQ6",
+          "type": "idle",
+          "time": {
+            "created": 1789656442413
+          },
+          "content": []
+        }
+      ]
+    }
+  ],
+  "parallelStarts": true
+}

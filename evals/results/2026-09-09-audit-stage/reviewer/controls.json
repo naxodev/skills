@@ -1,0 +1,50 @@
+{
+  "retry": {
+    "corruptedTitle": "Retry filtering makes every delivery exactly once",
+    "manifest": {
+      "title": "Retry only retryable failures, within a fixed budget",
+      "eyebrow": "Cedar Relay",
+      "dek": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+      "meta": "Fictional source change and deterministic modeled examples",
+      "footer": "A rejected acknowledgment can still follow a committed remote effect.",
+      "sections": [
+        { "eyebrow": "The setting", "title": "The old loop retried every rejection", "content": "<p class=\"lead\">The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.</p>" },
+        { "eyebrow": "The change", "title": "Classify failures before waiting", "content": "<p>The changed loop stops on a non-retryable error. Otherwise it requests delays of 10, 20, then 40 milliseconds as the attempt index increases. A budget of two retries permits up to three sends. A rejected sleep prevents the next send.</p>" },
+        { "eyebrow": "The boundary", "title": "A retry can duplicate a remote effect", "content": "<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>" },
+        { "eyebrow": "The short version", "title": "Fewer retries for permanent failures", "content": "<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>" }
+      ]
+    }
+  },
+  "transaction": {
+    "corruptedTitle": "Payment and notification now commit atomically",
+    "manifest": {
+      "title": "Publish only after the payment transaction commits",
+      "eyebrow": "Lantern Ledger",
+      "dek": "A failed commit now prevents publication, while publication failure leaves a committed payment intact.",
+      "meta": "Fictional source change and deterministic modeled examples",
+      "footer": "The supplied code has no durable outbox or delivery deduplication.",
+      "sections": [
+        { "eyebrow": "The setting", "title": "Publication used to precede commit", "content": "<p class=\"lead\">The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.</p>" },
+        { "eyebrow": "The change", "title": "Wait for the transaction to fulfill", "content": "<p>The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.</p>" },
+        { "eyebrow": "The boundary", "title": "The database cannot roll back publication failures", "content": "<p>The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.</p>" },
+        { "eyebrow": "The short version", "title": "Commit first, with a remaining delivery gap", "content": "<p>The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.</p>" }
+      ]
+    }
+  },
+  "cache": {
+    "corruptedTitle": "Post-write invalidation eliminates all stale reads",
+    "manifest": {
+      "title": "Invalidate after a successful write, with a remaining reader race",
+      "eyebrow": "Moss Catalog",
+      "dek": "Post-write deletion removes cache fills that finish during the write, but an older in-flight snapshot can refill the cache afterward.",
+      "meta": "Fictional source change and deterministic modeled examples",
+      "footer": "The model uses one shared Map, without a generation check for readers.",
+      "sections": [
+        { "eyebrow": "The setting", "title": "Early deletion left a window for stale fills", "content": "<p class=\"lead\">The old update deleted the cached entry before awaiting the database write. A cache miss could read and cache the old stored value during that wait.</p>" },
+        { "eyebrow": "The change", "title": "Delete only after the write fulfills", "content": "<p>The changed update deletes after the write succeeds. It removes an old cache fill that completed during the write. A failed write leaves an existing cached entry in place. In the sequential example, the next read sees the new stored value.</p>" },
+        { "eyebrow": "The boundary", "title": "An older snapshot can arrive after deletion", "content": "<p>The author says concurrent stale reads are removed, but read is unchanged. The modeled reader captures the old database value, waits through the update and deletion, then caches that old value. A subsequent read returns the stale entry. The change supplies no generation check or in-flight reader synchronization.</p>" },
+        { "eyebrow": "The short version", "title": "Close one cache-fill window", "content": "<p>Moving deletion after a successful write closes the window for fills that finish during that write. It does not prevent stale results from overlapping readers or late cache fills.</p>" }
+      ]
+    }
+  }
+}

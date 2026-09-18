@@ -1,0 +1,170 @@
+[
+  {
+    "id": "discord-audit-baseline-1",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "fail",
+      "findings": "pass",
+      "scope": "fail",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 1,
+    "scoreOutput": "mode-fit: fail\nscope: fail\n",
+    "words": 3823
+  },
+  {
+    "id": "discord-audit-candidate-1",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n",
+    "words": 2365
+  },
+  {
+    "id": "discord-audit-baseline-2",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "fail",
+      "findings": "fail",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 1,
+    "scoreOutput": "mode-fit: fail\nfindings: fail\n",
+    "words": 3571
+  },
+  {
+    "id": "discord-audit-candidate-2",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n",
+    "words": 2310
+  },
+  {
+    "id": "discord-audit-baseline-3",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "fail",
+      "findings": "pass",
+      "scope": "fail",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 1,
+    "scoreOutput": "mode-fit: fail\nscope: fail\n",
+    "words": 3086
+  },
+  {
+    "id": "discord-audit-candidate-3",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n",
+    "words": 2504
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-1",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "fail",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 1,
+    "scoreOutput": "mode-fit: fail\n",
+    "words": 2924
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-1",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n",
+    "words": 2203
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-2",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "fail",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 1,
+    "scoreOutput": "mode-fit: fail\n",
+    "words": 3256
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-2",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n",
+    "words": 2287
+  },
+  {
+    "id": "discord-audit-incomplete-baseline-3",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "fail",
+      "findings": "pass",
+      "scope": "fail",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 1,
+    "scoreOutput": "mode-fit: fail\nscope: fail\n",
+    "words": 3228
+  },
+  {
+    "id": "discord-audit-incomplete-candidate-3",
+    "results": {
+      "read-only": "pass",
+      "mode-fit": "pass",
+      "findings": "pass",
+      "scope": "pass",
+      "evidence": "pass",
+      "fit": "pass"
+    },
+    "reportScoreExit": 0,
+    "scoreOutput": "discord-audit-incomplete: reviewer marked every criterion passed with evidence. This command validates the report, not the model's behavior.\n",
+    "words": 1718
+  }
+]

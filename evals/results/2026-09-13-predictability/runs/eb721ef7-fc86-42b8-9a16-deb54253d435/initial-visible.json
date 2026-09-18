@@ -1,0 +1,206 @@
+[
+  {
+    "type": "text",
+    "text": "I'll read the supplied review inputs first, then grade every listed field against the contracts, functions, and probe results."
+  },
+  {
+    "type": "tool",
+    "name": "glob",
+    "state": {
+      "status": "completed",
+      "input": {
+        "pattern": "*"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/verification.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/manifest.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/functions.mjs\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/fields.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/probe-results.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/source.json\n/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/probe.mjs"
+        }
+      ],
+      "metadata": {
+        "count": 7,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read directory /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435, entries 1-9\n.git/\n.jj/\nfields.json\nfunctions.mjs\nmanifest.json\nprobe-results.json\nprobe.mjs\nsource.json\nverification.json"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/manifest.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/manifest.json, lines 1-29\n1: {\n2:   \"title\": \"Payment and notification now commit atomically\",\n3:   \"eyebrow\": \"Lantern Ledger\",\n4:   \"dek\": \"A failed commit now prevents publication, while publication failure leaves a committed payment intact.\",\n5:   \"meta\": \"Deterministic modeled examples\",\n6:   \"footer\": \"The supplied code has no durable outbox or delivery deduplication.\",\n7:   \"sections\": [\n8:     {\n9:       \"eyebrow\": \"The setting\",\n10:       \"title\": \"Publication used to precede commit\",\n11:       \"content\": \"<p class=\\\"lead\\\">The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.</p>\"\n12:     },\n13:     {\n14:       \"eyebrow\": \"The change\",\n15:       \"title\": \"Wait for the transaction to fulfill\",\n16:       \"content\": \"<p>The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.</p>\"\n17:     },\n18:     {\n19:       \"eyebrow\": \"The boundary\",\n20:       \"title\": \"The database cannot roll back publication failures\",\n21:       \"content\": \"<p>The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.</p>\"\n22:     },\n23:     {\n24:       \"eyebrow\": \"The short version\",\n25:       \"title\": \"Commit first, with a remaining delivery gap\",\n26:       \"content\": \"<p>The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.</p>\"\n27:     }\n28:   ]\n29: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/fields.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/fields.json, lines 1-70\n1: [\n2:   {\n3:     \"pointer\": \"/title\",\n4:     \"value\": \"Payment and notification now commit atomically\"\n5:   },\n6:   {\n7:     \"pointer\": \"/eyebrow\",\n8:     \"value\": \"Lantern Ledger\"\n9:   },\n10:   {\n11:     \"pointer\": \"/dek\",\n12:     \"value\": \"A failed commit now prevents publication, while publication failure leaves a committed payment intact.\"\n13:   },\n14:   {\n15:     \"pointer\": \"/meta\",\n16:     \"value\": \"Deterministic modeled examples\"\n17:   },\n18:   {\n19:     \"pointer\": \"/footer\",\n20:     \"value\": \"The supplied code has no durable outbox or delivery deduplication.\"\n21:   },\n22:   {\n23:     \"pointer\": \"/sections/0/eyebrow\",\n24:     \"value\": \"The setting\"\n25:   },\n26:   {\n27:     \"pointer\": \"/sections/0/title\",\n28:     \"value\": \"Publication used to precede commit\"\n29:   },\n30:   {\n31:     \"pointer\": \"/sections/0/content\",\n32:     \"value\": \"<p class=\\\"lead\\\">The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.</p>\"\n33:   },\n34:   {\n35:     \"pointer\": \"/sections/1/eyebrow\",\n36:     \"value\": \"The change\"\n37:   },\n38:   {\n39:     \"pointer\": \"/sections/1/title\",\n40:     \"value\": \"Wait for the transaction to fulfill\"\n41:   },\n42:   {\n43:     \"pointer\": \"/sections/1/content\",\n44:     \"value\": \"<p>The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.</p>\"\n45:   },\n46:   {\n47:     \"pointer\": \"/sections/2/eyebrow\",\n48:     \"value\": \"The boundary\"\n49:   },\n50:   {\n51:     \"pointer\": \"/sections/2/title\",\n52:     \"value\": \"The database cannot roll back publication failures\"\n53:   },\n54:   {\n55:     \"pointer\": \"/sections/2/content\",\n56:     \"value\": \"<p>The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.</p>\"\n57:   },\n58:   {\n59:     \"pointer\": \"/sections/3/eyebrow\",\n60:     \"value\": \"The short version\"\n61:   },\n62:   {\n63:     \"pointer\": \"/sections/3/title\",\n64:     \"value\": \"Commit first, with a remaining delivery gap\"\n65:   },\n66:   {\n67:     \"pointer\": \"/sections/3/content\",\n68:     \"value\": \"<p>The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.</p>\"\n69:   }\n70: ]"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/source.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/source.json, lines 1-13\n1: {\n2:   \"title\": \"Lantern Ledger: publish after the payment transaction\",\n3:   \"body\": \"The author says moving publish prevents notifications for failed commits and makes payment and notification atomic.\",\n4:   \"contracts\": [\n5:     \"transaction invokes the callback once and commits its staged writes only after callback fulfillment. It fulfills with undefined after commit. Callback or commit rejection rolls back all staged writes.\",\n6:     \"publish is an external operation outside the database transaction. Its rejection may happen before or after an externally visible notification.\",\n7:     \"markPaid is idempotent for a given id. Neither transaction nor publish supplies a delivery deduplication guarantee.\",\n8:     \"A process can stop between awaited operations. No durable outbox, background retry, or cross-call lock is supplied.\"\n9:   ],\n10:   \"before\": \"export async function before(db, publish, id) {\\n  return db.transaction(async (tx) => {\\n    await tx.markPaid(id);\\n    await publish(id);\\n  });\\n}\",\n11:   \"after\": \"export async function after(db, publish, id) {\\n  await db.transaction(async (tx) => {\\n    await tx.markPaid(id);\\n  });\\n  await publish(id);\\n}\",\n12:   \"unchanged\": \"none\"\n13: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/functions.mjs"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/functions.mjs, lines 1-13\n1: export async function before(db, publish, id) {\n2:   return db.transaction(async (tx) => {\n3:     await tx.markPaid(id);\n4:     await publish(id);\n5:   });\n6: }\n7: \n8: export async function after(db, publish, id) {\n9:   await db.transaction(async (tx) => {\n10:     await tx.markPaid(id);\n11:   });\n12:   await publish(id);\n13: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/probe.mjs"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/probe.mjs, lines 1-60\n1: import assert from 'node:assert/strict';\n2: import { before, after } from './functions.mjs';\n3: \n4: async function scenario(fn, fault, concurrent = false) {\n5:   const trace = { paid: false, notifications: 0, events: [], errors: [] };\n6:   const db = {\n7:     async transaction(callback) {\n8:       let staged = false;\n9:       trace.events.push('begin');\n10:       try {\n11:         await callback({ async markPaid() {\n12:           if (fault === 'write') throw new Error('write');\n13:           staged = true;\n14:           trace.events.push('write');\n15:         } });\n16:         if (fault === 'commit') throw new Error('commit');\n17:         if (staged) trace.paid = true;\n18:         trace.events.push('commit');\n19:       } catch (error) {\n20:         trace.events.push('rollback');\n21:         throw error;\n22:       }\n23:     },\n24:   };\n25:   const publish = async () => {\n26:     trace.events.push('publish');\n27:     if (fault === 'publish-before') throw new Error('publish-before');\n28:     trace.notifications++;\n29:     if (fault === 'publish-after') throw new Error('publish-after');\n30:   };\n31:   const invoke = () => fn(db, publish, 'invoice-7').catch((error) => trace.errors.push(error.message));\n32:   if (concurrent) await Promise.all([invoke(), invoke()]);\n33:   else await invoke();\n34:   return trace;\n35: }\n36: const results = {};\n37: for (const [name, fn] of Object.entries({ before, after })) {\n38:   results[name] = {};\n39:   for (const fault of ['none', 'write', 'commit', 'publish-before', 'publish-after']) {\n40:     results[name][fault] = await scenario(fn, fault);\n41:   }\n42:   results[name].concurrent = await scenario(fn, 'none', true);\n43: }\n44: assert.equal(results.before.commit.notifications, 1, 'a notification can escape before a failed commit');\n45: assert.equal(results.after.commit.notifications, 0, 'a failed commit must prevent publish in the changed function');\n46: assert.equal(results.before['publish-before'].paid, false);\n47: assert.equal(results.after['publish-before'].paid, true, 'publication failure cannot undo an already committed payment');\n48: assert.equal(results.after['publish-before'].notifications, 0);\n49: assert.equal(results.after['publish-after'].paid, true);\n50: assert.equal(results.after['publish-after'].notifications, 1);\n51: assert.equal(results.before['publish-after'].paid, false);\n52: assert.equal(results.before['publish-after'].notifications, 1);\n53: assert.deepEqual(results.after.none.events, ['begin', 'write', 'commit', 'publish']);\n54: for (const result of Object.values(results)) {\n55:   assert.equal(result.write.notifications, 0);\n56:   assert.equal(result.write.paid, false);\n57:   assert.equal(result.commit.paid, false);\n58:   assert.equal(result.concurrent.notifications, 2, 'idempotent payment writes do not deduplicate external publication');\n59: }\n60: console.log(JSON.stringify({ assumptions: 'In-memory staged transaction and external notification counter; no actual database or process-kill simulation.', results }, null, 2));"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/probe-results.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/probe-results.json, lines 1-160\n1: {\n2:   \"assumptions\": \"In-memory staged transaction and external notification counter; no actual database or process-kill simulation.\",\n3:   \"results\": {\n4:     \"before\": {\n5:       \"none\": {\n6:         \"paid\": true,\n7:         \"notifications\": 1,\n8:         \"events\": [\n9:           \"begin\",\n10:           \"write\",\n11:           \"publish\",\n12:           \"commit\"\n13:         ],\n14:         \"errors\": []\n15:       },\n16:       \"write\": {\n17:         \"paid\": false,\n18:         \"notifications\": 0,\n19:         \"events\": [\n20:           \"begin\",\n21:           \"rollback\"\n22:         ],\n23:         \"errors\": [\n24:           \"write\"\n25:         ]\n26:       },\n27:       \"commit\": {\n28:         \"paid\": false,\n29:         \"notifications\": 1,\n30:         \"events\": [\n31:           \"begin\",\n32:           \"write\",\n33:           \"publish\",\n34:           \"rollback\"\n35:         ],\n36:         \"errors\": [\n37:           \"commit\"\n38:         ]\n39:       },\n40:       \"publish-before\": {\n41:         \"paid\": false,\n42:         \"notifications\": 0,\n43:         \"events\": [\n44:           \"begin\",\n45:           \"write\",\n46:           \"publish\",\n47:           \"rollback\"\n48:         ],\n49:         \"errors\": [\n50:           \"publish-before\"\n51:         ]\n52:       },\n53:       \"publish-after\": {\n54:         \"paid\": false,\n55:         \"notifications\": 1,\n56:         \"events\": [\n57:           \"begin\",\n58:           \"write\",\n59:           \"publish\",\n60:           \"rollback\"\n61:         ],\n62:         \"errors\": [\n63:           \"publish-after\"\n64:         ]\n65:       },\n66:       \"concurrent\": {\n67:         \"paid\": true,\n68:         \"notifications\": 2,\n69:         \"events\": [\n70:           \"begin\",\n71:           \"write\",\n72:           \"begin\",\n73:           \"write\",\n74:           \"publish\",\n75:           \"publish\",\n76:           \"commit\",\n77:           \"commit\"\n78:         ],\n79:         \"errors\": []\n80:       }\n81:     },\n82:     \"after\": {\n83:       \"none\": {\n84:         \"paid\": true,\n85:         \"notifications\": 1,\n86:         \"events\": [\n87:           \"begin\",\n88:           \"write\",\n89:           \"commit\",\n90:           \"publish\"\n91:         ],\n92:         \"errors\": []\n93:       },\n94:       \"write\": {\n95:         \"paid\": false,\n96:         \"notifications\": 0,\n97:         \"events\": [\n98:           \"begin\",\n99:           \"rollback\"\n100:         ],\n101:         \"errors\": [\n102:           \"write\"\n103:         ]\n104:       },\n105:       \"commit\": {\n106:         \"paid\": false,\n107:         \"notifications\": 0,\n108:         \"events\": [\n109:           \"begin\",\n110:           \"write\",\n111:           \"rollback\"\n112:         ],\n113:         \"errors\": [\n114:           \"commit\"\n115:         ]\n116:       },\n117:       \"publish-before\": {\n118:         \"paid\": true,\n119:         \"notifications\": 0,\n120:         \"events\": [\n121:           \"begin\",\n122:           \"write\",\n123:           \"commit\",\n124:           \"publish\"\n125:         ],\n126:         \"errors\": [\n127:           \"publish-before\"\n128:         ]\n129:       },\n130:       \"publish-after\": {\n131:         \"paid\": true,\n132:         \"notifications\": 1,\n133:         \"events\": [\n134:           \"begin\",\n135:           \"write\",\n136:           \"commit\",\n137:           \"publish\"\n138:         ],\n139:         \"errors\": [\n140:           \"publish-after\"\n141:         ]\n142:       },\n143:       \"concurrent\": {\n144:         \"paid\": true,\n145:         \"notifications\": 2,\n146:         \"events\": [\n147:           \"begin\",\n148:           \"write\",\n149:           \"begin\",\n150:           \"write\",\n151:           \"commit\",\n152:           \"commit\",\n153:           \"publish\",\n154:           \"publish\"\n155:         ],\n156:         \"errors\": []\n157:       }\n158:     }\n159:   }\n160: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "tool",
+    "name": "read",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/verification.json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Read file /private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/verification.json, lines 1-4\n1: {\n2:   \"status\": \"none\",\n3:   \"findings\": []\n4: }"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "text",
+    "text": "I have the contracts, functions, and probe results. Next I’ll grade every listed field and write `grade.json`."
+  },
+  {
+    "type": "tool",
+    "name": "write",
+    "state": {
+      "status": "completed",
+      "input": {
+        "path": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-eb721ef7-fc86-42b8-9a16-deb54253d435/grade.json",
+        "content": "{\n  \"fields\": [\n    {\n      \"pointer\": \"/title\",\n      \"quote\": \"Payment and notification now commit atomically\",\n      \"status\": \"contradicted\",\n      \"rationale\": \"The after function awaits db.transaction, then calls publish outside it. Contract: publish is an external operation outside the database transaction; its rejection may occur before or after a visible notification; a process can stop between awaited operations. Probe after.publish-before: paid true, notifications 0. Probe after.publish-after: paid true, notifications 1. Probe after.concurrent: notifications 2. Payment commit and notification are not one atomic commit. Source body reports the author claim that moving publish 'makes payment and notification atomic'; later sections of this same manifest rebut that claim.\"\n    },\n    {\n      \"pointer\": \"/eyebrow\",\n      \"quote\": \"Lantern Ledger\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"A proper name with no behavior claim. It matches the leading words of the source title 'Lantern Ledger: publish after the payment transaction', but it is not a statement the contracts or probes can confirm or deny.\"\n    },\n    {\n      \"pointer\": \"/dek\",\n      \"quote\": \"A failed commit now prevents publication, while publication failure leaves a committed payment intact.\",\n      \"status\": \"supported\",\n      \"rationale\": \"After control flow awaits the transaction before publish. Contract: callback or commit rejection rolls back staged writes; the transaction fulfills only after commit. Probe after.commit: paid false, notifications 0, events begin/write/rollback. Probe after.publish-before: paid true, notifications 0. Probe after.publish-after: paid true, notifications 1. Contrast probe before.commit: notifications 1 with rollback. These are modeled traces for this function, not a universal runtime guarantee.\"\n    },\n    {\n      \"pointer\": \"/meta\",\n      \"quote\": \"Deterministic modeled examples\",\n      \"status\": \"supported\",\n      \"rationale\": \"probe.mjs runs fixed in-memory faults with no nondeterminism. probe-results.json assumptions: 'In-memory staged transaction and external notification counter; no actual database or process-kill simulation.'\"\n    },\n    {\n      \"pointer\": \"/footer\",\n      \"quote\": \"The supplied code has no durable outbox or delivery deduplication.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Contract: 'No durable outbox, background retry, or cross-call lock is supplied.' Contract: 'Neither transaction nor publish supplies a delivery deduplication guarantee.' functions.mjs contains only markPaid inside a transaction and a later publish call.\"\n    },\n    {\n      \"pointer\": \"/sections/0/eyebrow\",\n      \"quote\": \"The setting\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section kicker. No empirical claim about the functions, contracts, or probes.\"\n    },\n    {\n      \"pointer\": \"/sections/0/title\",\n      \"quote\": \"Publication used to precede commit\",\n      \"status\": \"supported\",\n      \"rationale\": \"before() calls publish inside the transaction callback. Contract: the transaction commits staged writes only after callback fulfillment. Probe before.none.events: begin, write, publish, commit. Probe before.commit.events: begin, write, publish, rollback.\"\n    },\n    {\n      \"pointer\": \"/sections/0/content\",\n      \"quote\": \"The old callback marked the payment and published before the transaction committed. In the modeled commit failure, a notification escaped while the database write rolled back.\",\n      \"status\": \"supported\",\n      \"rationale\": \"before() awaits tx.markPaid(id) then publish(id) inside the callback. Probe before.commit: notifications 1, paid false, events begin/write/publish/rollback, errors ['commit']. The sentence labels the case as modeled, which matches probe-results assumptions.\"\n    },\n    {\n      \"pointer\": \"/sections/1/eyebrow\",\n      \"quote\": \"The change\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section kicker. No empirical claim.\"\n    },\n    {\n      \"pointer\": \"/sections/1/title\",\n      \"quote\": \"Wait for the transaction to fulfill\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() awaits db.transaction(...) before publish. Contract: the transaction 'fulfills with undefined after commit.'\"\n    },\n    {\n      \"pointer\": \"/sections/1/content\",\n      \"quote\": \"The changed function awaits the transaction before invoking publish. A write or commit rejection therefore prevents publication in that invocation.\",\n      \"status\": \"supported\",\n      \"rationale\": \"after() does not reach publish if the awaited transaction throws. Probe after.write: notifications 0, paid false. Probe after.commit: notifications 0, paid false. The phrase 'in that invocation' matches the per-call traces; it does not claim a cross-call or process-kill proof. Passing examples do not prove universal guarantees beyond this control flow plus the supplied transaction contract.\"\n    },\n    {\n      \"pointer\": \"/sections/2/eyebrow\",\n      \"quote\": \"The boundary\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section kicker. No empirical claim.\"\n    },\n    {\n      \"pointer\": \"/sections/2/title\",\n      \"quote\": \"The database cannot roll back publication failures\",\n      \"status\": \"supported\",\n      \"rationale\": \"Contract: publish is outside the database transaction; rejection may happen after a visible notification. After commit, after() cannot use transaction rollback to undo publish. Probe after.publish-before and after.publish-after both leave paid true. Probe before.publish-after still records notifications 1 with paid false: rollback does not retract a notification that already happened.\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The author calls payment and notification atomic, but publish remains an external operation. Its rejection after commit leaves the payment recorded. It may also have delivered a notification before rejecting. The contract allows a process to stop between operations and supplies no durable retry. Concurrent invocations can each publish despite idempotent payment writes.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Source body: the author says moving publish 'makes payment and notification atomic.' Contract: publish is external; rejection may be before or after a visible notification; markPaid is idempotent; neither transaction nor publish deduplicates delivery; a process can stop between awaited operations; no durable outbox, background retry, or cross-call lock. Probe after.publish-before: paid true, notifications 0. Probe after.publish-after: paid true, notifications 1. Probe after.concurrent: notifications 2. Probe asserts 'idempotent payment writes do not deduplicate external publication.' Process stop is a contract statement; the probe does not simulate a kill.\"\n    },\n    {\n      \"pointer\": \"/sections/3/eyebrow\",\n      \"quote\": \"The short version\",\n      \"status\": \"nonfactual\",\n      \"rationale\": \"Section kicker. No empirical claim.\"\n    },\n    {\n      \"pointer\": \"/sections/3/title\",\n      \"quote\": \"Commit first, with a remaining delivery gap\",\n      \"status\": \"supported\",\n      \"rationale\": \"after.none.events: begin, write, commit, publish. Remaining gap is the post-commit publish plus the contract gaps (process stop, no outbox/retry/dedup, concurrent double publish). Probe after.commit vs before.commit shows commit-first removes the pre-commit escape in that modeled invocation.\"\n    },\n    {\n      \"pointer\": \"/sections/3/content\",\n      \"quote\": \"The change prevents publication before a failed commit. It does not make the committed payment and the external notification atomic.\",\n      \"status\": \"supported\",\n      \"rationale\": \"Probe after.commit.notifications is 0; before.commit.notifications is 1. The second sentence matches after.publish-before, after.publish-after, after.concurrent, and the external-publish / process-stop / no-dedup contracts. The first sentence follows from after() awaiting a rejecting transaction before publish, scoped to that change, not to unmodeled process kills.\"\n    }\n  ],\n  \"missing_material_limitations\": [\n    {\n      \"limitation\": \"No cross-call lock\",\n      \"status\": \"omitted_by_name\",\n      \"rationale\": \"The fourth contract withholds a cross-call lock along with outbox and background retry. The manifest states concurrent double publication and 'no durable retry' / 'no durable outbox or delivery deduplication', but it never names the missing lock.\"\n    },\n    {\n      \"limitation\": \"Process stop is not in the probe\",\n      \"status\": \"stated_as_contract_only\",\n      \"rationale\": \"probe-results.json assumptions: no process-kill simulation. /sections/2/content attributes process stop to 'the contract', which is accurate, and does not present a kill trace. The limitation is not missing as a fact; the unprobed status is not labeled besides /meta 'modeled' and the word 'contract'.\"\n    },\n    {\n      \"limitation\": \"Sequential retry after publish-after\",\n      \"status\": \"partially_covered\",\n      \"rationale\": \"A caller that retries after() after a visible notification plus reject would hit idempotent markPaid and a second publish. The footer states no delivery deduplication. The body only models concurrent invocations, not a sequential retry.\"\n    }\n  ],\n  \"attribution_errors\": [\n    {\n      \"pointer\": \"/title\",\n      \"quote\": \"Payment and notification now commit atomically\",\n      \"rationale\": \"Source body attributes atomicity to the author as a claim: moving publish 'makes payment and notification atomic.' Source title is 'Lantern Ledger: publish after the payment transaction.' The manifest title states atomic commit in unattributed voice. /sections/2/content later attributes the atomicity claim to the author and rebuts it. Observed mismatch between title voice and source attribution; this review does not infer who wrote or edited the manifest.\"\n    }\n  ],\n  \"reviewer_language_leakage\": [\n    {\n      \"pointer\": \"/footer\",\n      \"quote\": \"The supplied code\",\n      \"rationale\": \"Harness phrasing for the input bundle, not reader-facing product language.\"\n    },\n    {\n      \"pointer\": \"/sections/2/content\",\n      \"quote\": \"The contract allows a process to stop between operations and supplies no durable retry.\",\n      \"rationale\": \"Names 'the contract' as an evaluation object from source.json. The underlying limitation is in the source contracts; the wording leaks review framing.\"\n    }\n  ],\n  \"code_diagram_errors\": [],\n  \"reader_facing_prose\": {\n    \"rating\": \"fail\",\n    \"quotes\": [\n      {\n        \"rating\": \"fail\",\n        \"pointer\": \"/title\",\n        \"quote\": \"Payment and notification now commit atomically\",\n        \"rationale\": \"Primary headline. Contradicted by after() placing publish after commit, by the external-publish and process-stop contracts, and by after.publish-before, after.publish-after, and after.concurrent. Passing modeled examples elsewhere do not make this headline true.\"\n      },\n      {\n        \"rating\": \"pass\",\n        \"pointer\": \"/dek\",\n        \"quote\": \"A failed commit now prevents publication, while publication failure leaves a committed payment intact.\",\n        \"rationale\": \"Matches after.commit versus after.publish-before and after.publish-after. Does not claim atomicity.\"\n      },\n      {\n        \"rating\": \"pass\",\n        \"pointer\": \"/sections/1/content\",\n        \"quote\": \"A write or commit rejection therefore prevents publication in that invocation.\",\n        \"rationale\": \"Scoped to one invocation and to write/commit rejection. Matches after.write and after.commit.\"\n      },\n      {\n        \"rating\": \"pass\",\n        \"pointer\": \"/sections/3/content\",\n        \"quote\": \"It does not make the committed payment and the external notification atomic.\",\n        \"rationale\": \"Correctly denies the atomicity claim that /title asserts.\"\n      },\n      {\n        \"rating\": \"pass\",\n        \"pointer\": \"/footer\",\n        \"quote\": \"The supplied code has no durable outbox or delivery deduplication.\",\n        \"rationale\": \"Matches the supplied contracts and functions. Reviewer wording does not make the limitation false.\"\n      }\n    ]\n  },\n  \"unresolved_uncertainty\": [\n    \"Process-stop effects are contract-stated and not traced in probe-results.json. /sections/2/content does not treat them as probed. This is not scored as a contradiction.\",\n    \"Whether 'The database cannot roll back publication failures' is slightly infelicitous (rollback applies to staged writes, not to a failure) is unresolved as wording quality. Factual status is supported in context: rollback cannot undo publish.\",\n    \"/eyebrow 'Lantern Ledger' is scored nonfactual as a name. It also matches the source title; that match is not a behavior proof.\",\n    \"Overall reader-facing rating is fail because /title is reader-facing and contradicted. Body sentences that deny atomicity are separately marked pass. This review does not infer whether the title was meant as a claim to rebut.\"\n  ],\n  \"notes\": [\n    \"Every fields.json pointer is scored from source.json, functions.mjs, probe.mjs, and probe-results.json only.\",\n    \"Passing modeled traces do not prove universal guarantees. Claims scoped to the changed function's control flow plus the supplied transaction contract are marked supported, not universal.\",\n    \"Observed contradictions are limited to /title atomic-commit wording versus after(), contracts, and probe after.publish-* / concurrent. Other fields are supported or nonfactual. Uncertainty is listed separately from those contradictions.\",\n    \"functions.mjs matches source before and after. unchanged is none. No code or diagram appears in the manifest fields.\"\n  ]\n}\n"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Created file successfully: grade.json"
+        }
+      ],
+      "metadata": {
+        "truncated": false
+      }
+    }
+  },
+  {
+    "type": "text",
+    "text": "Review saved in `grade.json`. Every `fields.json` pointer is scored.\n\n**Contradiction (separate from uncertainty):** `/title` — “Payment and notification now commit atomically”. `after()` publishes after commit. Probes show payment without notification (`publish-before`), notification after a committed payment (`publish-after`), and two publishes under concurrency.\n\n**Supported:** dek, meta, footer, setting/change/boundary/short-version titles and bodies. Failed commit blocks publish in that invocation; publish failure does not uncommit payment; they are not atomic.\n\n**Nonfactual:** brand and section kickers (`Lantern Ledger`, `The setting`, `The change`, `The boundary`, `The short version`).\n\n**Reader-facing prose: fail**, because of the title. Body quotes that deny atomicity pass.\n\n**Also flagged:** title states the source author’s atomicity claim without attribution; “the contract” / “the supplied code” leak review wording; no code/diagram errors. Process-stop is contract-only (not probed) and is listed as uncertainty, not as a contradiction."
+  }
+]

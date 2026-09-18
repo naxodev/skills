@@ -1,0 +1,14 @@
+{
+  "frozenAt": "2026-09-12T13:19:11.685Z",
+  "parent": "1c11e03c",
+  "hashes": {
+    "evals/results/2026-09-12-audit-stage/AMENDMENT.md": "90fc43e66b78eb0fd20088b3ceeb6d8db0fd29d040800df67d5101f392ff0286",
+    "evals/results/2026-09-12-audit-stage/QUALIFICATION.md": "d1c86251c658423144322cf9e487856578d21b07c7faa7d4c83a3ec8ce8fb032",
+    "evals/results/2026-09-12-audit-stage/qualification.ts": "7ef45afa13211bc08811049cd9a9a52d9ba070dec9448a875ede967ae3cf8201",
+    "evals/protocols/FINAL-NARRATIVE-AUDIT.md": "a85df6b657af8c6bb70ee49bcafc4356b5e3910aaabc0b497fb9a6cac3489919",
+    "evals/results/2026-09-09-audit-stage/PROTOCOL.md": "3e3e934146d51e12e7f98fd433886ccf662d084250989f0cd56f4e0ffec196f6",
+    "evals/results/2026-09-09-audit-stage/WRITER.md": "25d9de015f6e9a8af2e1653ce51a9cc924ea7eab584c5d17a3b7329c257bd24b",
+    "evals/results/2026-09-09-audit-stage/MANIFEST.md": "deba2ef1caddea838fef1e2e71edf76fd5db3fabf08b5da9199de7b3a3c5b9d3",
+    "evals/results/2026-09-09-audit-stage/reviewer/CRITERIA.md": "4eb39bf9fbea0c7ed81e790fe54c446390321b9c5a654cdc439bcef8664a0c9a"
+  }
+}

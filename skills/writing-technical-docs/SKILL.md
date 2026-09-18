@@ -45,30 +45,59 @@ AI-written docs.
     how-to and tutorial, ask: does the reader already know the domain? Yes
     → how-to. No → tutorial.
 
-**Complete when:** one quadrant is selected, and mixed reader needs have been split rather than blended into one page.
+    Before drafting, establish a **reader contract** in drafting notes:
+    the intended reader, assumed knowledge and starting state, and the
+    task or question with its success condition. Infer these from the
+    request and project; ask only when ambiguity materially changes the
+    instructions. A tutorial needs a learner start and observable lesson
+    outcome; a how-to needs a task start and result; reference needs an
+    exact question answered; explanation needs a mental model or
+    distinction the reader should understand. The latter two need no
+    runnable recipe. These notes require no separate file or page template.
 
-2.  **Read the API surface before writing.** Hallucinated APIs are the
-    dominant failure mode. Before typing a single code example, read:
+**Complete when:** one quadrant and a reader contract are established, and mixed reader needs have been split rather than blended into one page.
 
-    - The package's `src/index.ts` (or equivalent barrel). Anything not
-      re-exported is **internal** — do not document it as public.
-    - The signatures, JSDoc, and types of every symbol you mention.
-    - The package README (often the authoritative spec).
-    - Any sibling Understanding / concept page the new page should link to.
-    - At least one real usage site (test, example app, demo).
+2.  **Read the evidence before writing.** Match the source to the page:
 
-    If uncertain about a behavior after this, leave a
-    `{/* VERIFY: ... */}` comment and continue. Never invent a parameter,
-    return shape, or error tag from training memory.
+    - **Local APIs:** inspect package exports or documented entry points,
+      then the signatures, types, and at least one real usage site. Use
+      the actual layout; public APIs need not live in `src/` or a barrel.
+    - **External APIs:** read the provider's official reference for the
+      version in use. Verify each imported symbol, option, and example.
+    - **Conceptual pages:** read the project's decisions, domain terms,
+      and current behavior. Separate documented reasons from inference.
+    - **Operational pages:** inspect the relevant configuration, scripts,
+      and runbooks. Establish the prerequisites and observable outcome.
 
-**Complete when:** every public symbol and behavior planned for the page is grounded in current source, README, or usage, with unresolved claims marked `VERIFY` instead of invented.
+    Read the project README and relevant sibling pages in every branch.
+    Check the reader's assumed starting context and promised outcome
+    against these sources. Verify which prerequisites actually apply,
+    including required runtime, working directory, setup, and configuration
+    where relevant; omit speculative or unrelated setup.
+    Mark unresolved claims with a `VERIFY` comment in the document's
+    native format, and resolve them before presenting a finished page.
 
-3.  **Apply the quadrant template.** For how-to guides — by far the most
-    common request — see [HOW-TO-TEMPLATE.md](HOW-TO-TEMPLATE.md). Tutorials,
-    reference, and explanation pages each have a different shape; do not
-    use the how-to template for them.
+**Complete when:** each planned claim, including the reader's starting context, required prerequisites, and promised outcome, has source support; unresolved claims are marked `VERIFY` rather than stated as fact.
 
-**Complete when:** the draft follows the selected quadrant's structure and uses `HOW-TO-TEMPLATE.md` only for a how-to guide.
+3.  **Apply the quadrant's shape.**
+
+    - **Tutorial:** establish a controlled learner start, then a learning
+      sequence with executable actions and observable checkpoints. Explain
+      what each result teaches; choose one path rather than asking novices
+      to choose among task variations.
+    - **How-to:** use [HOW-TO-TEMPLATE.md](HOW-TO-TEMPLATE.md) for an
+      established task, including brief rationale needed to perform it.
+    - **Reference:** organize for quick lookup. Document the exact accepted
+      arguments, optional/default behavior, returns, errors, and meaningful
+      effects with source support. Use signatures, type tables, and examples
+      where they answer the lookup question; no setup walkthrough is required.
+    - **Explanation:** lead with the question or distinction, then build
+      the causal structure and mental model from the evidence.
+
+    Surface actionable prerequisites and instructions for recognizing
+    success on the page; keep the drafting contract in the notes.
+
+**Complete when:** the draft serves the reader contract in the selected quadrant's structure, with actionable prerequisites and success guidance where relevant; `HOW-TO-TEMPLATE.md` is used only for a how-to guide.
 
 4.  **Apply the style rules.** Voice, headings, code blocks, linking, and
     things to omit are all in [STYLE.md](STYLE.md). The AI-specific failure
@@ -78,38 +107,54 @@ AI-written docs.
 
 5.  **Verify before claiming complete** (this is non-negotiable):
 
-    1.  **Run the project's docs build** (e.g. `nx build docs`,
-        `npm run docs:build`). MDX errors are silent in editors and loud
-        in CI.
-    2.  **Follow the page yourself.** Open a fresh terminal, copy each
-        snippet in order, verify the described outcome happens. If a step
-        needs adapter keys or external services, state that and stop —
-        don't fake it.
-    3.  **Re-read every code snippet against the current source.** Types
-        change.
-    4.  **Check the sidebar.** New pages should appear without manual
-        registration if auto-sidebar is configured; if they don't, fix
-        the config in the same change.
-    5.  **Grep for the symbols you used.** If a function name doesn't
-        appear in `src/` exactly as written, it was hallucinated.
+    1.  **Inspect project build and preview scripts; run configured checks.**
+        Review rendered output with the project's renderer. Without one,
+        discover an available viewer suited to the page before declaring
+        rendering blocked. For plain Markdown, an installed terminal viewer
+        can suffice: for example, `command -v glow`, then `glow <file>`;
+        confirm options with `--help` when needed. Inspect the actual output,
+        not just the command's exit status or raw source. State the review's
+        scope: terminal Markdown does not verify site CSS, MDX components,
+        or interaction behavior. MDX custom components need the project's
+        configured renderer. If a suitable renderer is unavailable, report
+        rendering untested with the attempted discovery and missing capability;
+        use existing tools rather than installing dependencies for this check.
+        A missing docs build makes the build not applicable, not rendering.
+    2.  **Follow procedural examples in order.** Run runnable snippets
+        from the reader's stated starting context in a clean copy, without
+        hidden setup, and compare actual results to the promised outcome. For
+        live-service or credential-dependent steps, report the blocked
+        check as untested. Verify independent parts where possible.
+    3.  **Check claims against their sources.** Recheck local examples
+        against current exports and usage, external examples against
+        versioned official docs, and conceptual claims against decisions
+        or observed behavior. Check that reference answers the intended
+        question and explanation supports the promised distinction, rather
+        than treating the draft's own claims as evidence. Resolve or remove
+        every `VERIFY` marker.
+    4.  **Check navigation and links.** Verify local links and the page's
+        entry point. Check sidebar registration when a sidebar exists;
+        otherwise mark that check not applicable.
 
-    Only after all five: mark the task complete.
+    Report each applicable check as passed, failed, or untested. Use
+    not applicable only when the page or project does not need it.
 
-**Complete when:** all five verification substeps have passed, or any genuinely unavailable external-service check is explicitly reported without being claimed as passed.
+**Complete when:** applicable checks establish the reader can reach the promised outcome from the stated context, or the handoff identifies failed or blocked checks and labels the page a draft. Every not-applicable check has a reason, and the page contains no unresolved factual claim.
 
 ## Anti-patterns (stop and revise if you catch yourself doing these)
 
 - **Inventing options.** If a code example uses a value the source doesn't
   accept, the rest of the page is suspect. Re-read the type.
-- **Restating type definitions as prose.** If a reader can get the same
-  information by hovering the symbol, the prose is filler.
+- **Restatement without lookup value.** Keep precise reference contracts;
+  cut prose that merely repeats an adjacent signature without clarifying
+  accepted values, behavior, or effects.
 - **Sycophantic preamble.** "X's elegant design lets you…" — delete.
 - **Cross-page duplication.** Link instead of copying. Duplication rots
   on the next API change.
 - **Phantom "Advanced" sections.** Don't bolt on a heading just to feel
   thorough — only include content the reader genuinely needs.
-- **Mode-mixing.** A how-to that explains *why* has drifted toward
-  explanation. Move that material out and link to it.
+- **Mode-mixing.** Keep brief, source-backed rationale needed to choose
+  or perform a how-to step. Link extended conceptual background elsewhere.
 - **Version-of-the-week phrasing.** "As of January 2026…" — pin to a
   package version if it matters, otherwise omit.
 

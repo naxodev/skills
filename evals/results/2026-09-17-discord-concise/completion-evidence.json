@@ -1,0 +1,14 @@
+{
+  "activeCandidateSha256": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+  "completed": 12,
+  "immutableInputs": 12,
+  "onlyReportWrites": 12,
+  "ownedTrialClonesRemaining": 0,
+  "checks": {
+    "rootFrozenInstall": "passed",
+    "nestedFrozenInstall": "passed",
+    "bunRunCheck": "passed: type-check, lint, 40 tests, repository validation",
+    "strictEvaluationTypecheck": "passed",
+    "sourceReportValidators": "12/12 passed"
+  }
+}

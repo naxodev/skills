@@ -1,0 +1,28 @@
+[
+  {
+    "name": "pr-walkthrough",
+    "metadata": {
+      "name": "pr-walkthrough",
+      "description": "Generates a narrative HTML walkthrough of a pull request with optional embedded audio narration.",
+      "disable-model-invocation": true,
+      "compatibility": "Requires Node.js 22+ and authenticated GitHub CLI (`gh`); run `bun install` in `scripts/`; optional audio narration requires `ffmpeg` and `kokoro-js`. Requires an agent with subagent support."
+    },
+    "invocation": "Explicit request only; Codex allow_implicit_invocation: false"
+  },
+  {
+    "name": "writing-technical-docs",
+    "metadata": {
+      "name": "writing-technical-docs",
+      "description": "Opinionated playbook for writing technical documentation pages — anchored in the Diátaxis framework. Use when the user asks to write, draft, or improve a documentation page (how-to guide, tutorial, reference, explainer, README section, MDX file, docs site content), when filling stubs in a docs directory, or when the task is anything resembling \"write docs for X.\""
+    },
+    "invocation": "Automatic when relevant"
+  },
+  {
+    "name": "discord-community-server",
+    "metadata": {
+      "name": "discord-community-server",
+      "description": "Plans, configures, audits, or improves an official Discord community server for a software product or open-source project. Use when creating a Discord server, designing channels and roles, configuring Community, Onboarding, AutoMod, forums, events, invites, private cohorts, Server Guide resources, community assets, repository webhooks, or release notifications, evaluating Discord apps, or preparing a private community launch."
+    },
+    "invocation": "Automatic when relevant"
+  }
+]

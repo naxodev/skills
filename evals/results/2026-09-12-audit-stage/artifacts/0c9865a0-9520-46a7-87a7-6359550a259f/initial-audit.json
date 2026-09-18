@@ -1,0 +1,70 @@
+{
+  "inputSha256": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/title",
+      "problem": "The title claims atomic commitment of payment and notification. The changed function commits the transaction before invoking an external publish operation. Publication can reject without delivering a notification, leaving the payment committed. The supplied contract also permits a process stop between awaited operations without durable recovery. The title therefore repeats the author's unsupported atomicity claim and contradicts the qualified body and recap. The modeled publication failure illustrates this gap; it is not a production measurement.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "  await db.transaction(async (tx) => {\n    await tx.markPaid(id);\n  });\n  await publish(id);"
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/0",
+          "quote": "It fulfills with undefined after commit."
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/1",
+          "quote": "publish is an external operation outside the database transaction. Its rejection may happen before or after an externally visible notification."
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/3",
+          "quote": "A process can stop between awaited operations. No durable outbox, background retry, or cross-call lock is supplied."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/publish-before",
+          "value": {
+            "paid": true,
+            "notifications": 0,
+            "events": ["begin", "write", "commit", "publish"],
+            "errors": ["publish-before"]
+          }
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/title",
+      "findingIds": ["A1"],
+      "value": "Payment now commits before publication is attempted"
+    }
+  ],
+  "blockers": []
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Invalidate after the write, with a concurrency limit",
+  "eyebrow": "Moss Catalog · Component study",
+  "dek": "Moving cache deletion after a successful write clears fills completed during that write. An older read can still refill the cache afterward.",
+  "meta": "Fictional change · Source and supplied deterministic probes",
+  "footer": "Scope: one process, one shared synchronous Map, and the supplied database contracts.",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Reads keep their database result",
+      "content": "<p class=\"lead\">Moss Catalog serves reads from a shared cache. On a miss, it asks the database and caches the returned value. The read path stays unchanged:</p>{{CODE:0}}<p>The database captures a snapshot when <code>db.read</code> starts. Its promise can finish later, so the value cached after <code>await</code> may already be old.</p>",
+      "code": [
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "export async function read(db, cache, key) {\n  if (cache.has(key)) return cache.get(key);\n  const value = await db.read(key);\n  cache.set(key, value);\n  return value;\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The gap",
+      "title": "Deleting first leaves time to refill",
+      "content": "<p>The previous update deleted the cache entry before awaiting the write. While that write waited, a reader could miss the cache, fetch <code>old</code>, and cache it. The write then committed <code>new</code> without another deletion. Later readers still received <code>old</code>.</p><p>The supplied probe reproduces this order with explicit promise gates, rather than elapsed time. Both versions return <code>new</code> after a sequential successful update; the difference appears when reads overlap the write.</p>"
+    },
+    {
+      "eyebrow": "The changed mechanism",
+      "title": "Clear completed fills after commit",
+      "content": "<p>The update now waits for the database write before deleting the entry:</p>{{CODE:0}}<p>A successful write commits before its promise fulfills. Deletion therefore removes any cache fill completed during the pending write. In that probe, the overlapping reader still receives <code>old</code>, but the next read receives <code>new</code>.</p><p>If the write rejects, execution skips deletion. The database remains unchanged, and the failed-write probe retains its existing <code>old</code> cache entry. Previously, that entry was removed even though the write failed.</p>",
+      "code": [
+        {
+          "lang": "js",
+          "file": "functions.mjs",
+          "source": "export async function after(db, cache, key, value) {\n  await db.write(key, value);\n  cache.delete(key);\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "A narrower fix than all concurrent reads",
+      "content": "<p>Post-write deletion fixes stale fills that finish before invalidation. It does not support the author's broader claim of removing stale reads for concurrent readers. In the late-snapshot probe, a reader captures <code>old</code>, the update commits and deletes, then the reader finishes and caches <code>old</code>. The next read is stale in both versions. The unchanged reader has no generation check or coordination with updates. The supplied verification file records no findings; the concrete evidence is the source and these bounded probes.</p>"
+    }
+  ]
+}

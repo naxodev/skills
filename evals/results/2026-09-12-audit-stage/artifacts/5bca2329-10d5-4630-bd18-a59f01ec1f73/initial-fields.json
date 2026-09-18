@@ -1,0 +1,70 @@
+[
+  {
+    "pointer": "/title",
+    "value": "Publish after the payment commits"
+  },
+  {
+    "pointer": "/eyebrow",
+    "value": "Lantern Ledger · Component study"
+  },
+  {
+    "pointer": "/dek",
+    "value": "Moving a notification past the commit boundary prevents one false signal, but does not make payment and delivery atomic."
+  },
+  {
+    "pointer": "/meta",
+    "value": "Fictional change · Source and supplied in-memory probe results"
+  },
+  {
+    "pointer": "/footer",
+    "value": "Based on the supplied source and probes. No real database or process-kill simulation is included."
+  },
+  {
+    "pointer": "/sections/0/eyebrow",
+    "value": "The setting"
+  },
+  {
+    "pointer": "/sections/0/title",
+    "value": "Two operations, one transaction callback"
+  },
+  {
+    "pointer": "/sections/0/content",
+    "value": "<p class=\"lead\">Lantern Ledger marks a payment paid and publishes a notification. Originally, both awaited operations ran inside the database transaction callback. The database stages the payment write, then commits only after the callback fulfills.</p><p>That placement does not bring publication into the transaction. <code>publish</code> is an external operation: rolling back database writes cannot retract a notification that has already escaped.</p>"
+  },
+  {
+    "pointer": "/sections/1/eyebrow",
+    "value": "The gap"
+  },
+  {
+    "pointer": "/sections/1/title",
+    "value": "A notification could outlive a failed commit"
+  },
+  {
+    "pointer": "/sections/1/content",
+    "value": "<p>If publication succeeded and the later commit failed, the original function left the payment unpaid but sent one notification. The supplied probe records exactly that sequence: begin, write, publish, rollback.</p><p>Publication itself can also reject after producing a visible notification. In the original function, that rejection rolls back the payment while the notification remains. The author's atomicity claim therefore needs a narrower reading: changing the order can prevent publication after a failed commit, but cannot make the two operations succeed together.</p>"
+  },
+  {
+    "pointer": "/sections/2/eyebrow",
+    "value": "The mechanism"
+  },
+  {
+    "pointer": "/sections/2/title",
+    "value": "Await the commit before publishing"
+  },
+  {
+    "pointer": "/sections/2/content",
+    "value": "<p>The changed function waits for the transaction itself, rather than publishing inside its callback:</p>{{CODE:0}}<p>Under the supplied contract, that first await completes only after commit. A write or commit rejection exits before <code>publish</code>. Publication failure now leaves the payment committed.</p><p>The probe models the two possible publication failures explicitly:</p>{{CODE:1}}<p>The counter represents an externally visible notification. Recorded results leave the changed payment paid in both cases, with zero notifications before the increment and one afterward. These are in-memory observations; the supplied verification file records no separate findings.</p>"
+  },
+  {
+    "pointer": "/sections/3/eyebrow",
+    "value": "The short version"
+  },
+  {
+    "pointer": "/sections/3/title",
+    "value": "Commit first is an ordering guarantee"
+  },
+  {
+    "pointer": "/sections/3/content",
+    "value": "<p>The change prevents notifications for failed commits. It still allows a committed payment without a notification if publication fails or the process stops between operations. No durable outbox or background retry closes that gap. Retrying an ambiguous publication can duplicate delivery: <code>markPaid</code> is idempotent, but publication has no deduplication guarantee. The concurrent probe produces two notifications in both versions. Payment and notification remain separate outcomes.</p>"
+  }
+]

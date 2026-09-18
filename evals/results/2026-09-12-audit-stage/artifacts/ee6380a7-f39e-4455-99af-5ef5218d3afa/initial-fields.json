@@ -1,0 +1,70 @@
+[
+  {
+    "pointer": "/title",
+    "value": "Retry only retryable failures, within a fixed budget"
+  },
+  {
+    "pointer": "/eyebrow",
+    "value": "Cedar Relay"
+  },
+  {
+    "pointer": "/dek",
+    "value": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee."
+  },
+  {
+    "pointer": "/meta",
+    "value": "Deterministic modeled examples"
+  },
+  {
+    "pointer": "/footer",
+    "value": "A rejected acknowledgment can still follow a committed remote effect."
+  },
+  {
+    "pointer": "/sections/0/eyebrow",
+    "value": "The setting"
+  },
+  {
+    "pointer": "/sections/0/title",
+    "value": "The old loop did not classify send failures"
+  },
+  {
+    "pointer": "/sections/0/content",
+    "value": "<p class=\"lead\">The old loop retried rejected sends regardless of their retryable flag, while retry budget remained and sleep fulfilled. It requested a ten-millisecond delay before each retry. A successful send returned immediately; budget exhaustion or a rejected sleep ended the invocation with an error.</p>"
+  },
+  {
+    "pointer": "/sections/1/eyebrow",
+    "value": "The change"
+  },
+  {
+    "pointer": "/sections/1/title",
+    "value": "Classify failures before waiting"
+  },
+  {
+    "pointer": "/sections/1/content",
+    "value": "<p>The changed loop stops on a non-retryable error and returns on a successful send. A budget of two retries permits up to three sends. If the first two sends reject with retryable errors and both sleeps fulfill, the loop requests 10 milliseconds before the second send and 20 milliseconds before the third. A rejected sleep prevents the next send. If the third send rejects, its error propagates without another delay or retry.</p>"
+  },
+  {
+    "pointer": "/sections/2/eyebrow",
+    "value": "The boundary"
+  },
+  {
+    "pointer": "/sections/2/title",
+    "value": "A retry can duplicate a remote effect"
+  },
+  {
+    "pointer": "/sections/2/content",
+    "value": "<p>The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.</p>"
+  },
+  {
+    "pointer": "/sections/3/eyebrow",
+    "value": "The short version"
+  },
+  {
+    "pointer": "/sections/3/title",
+    "value": "Fewer retries for permanent failures"
+  },
+  {
+    "pointer": "/sections/3/content",
+    "value": "<p>The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.</p>"
+  }
+]

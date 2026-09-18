@@ -1,0 +1,654 @@
+{
+  "method": "Current-candidate conformance, manual source adjudication. Historical outputs are context, not a paired effect estimate. Mechanical source checks do not grade explanatory quality.",
+  "criteria": {
+    "pr-batch-limit": [
+      {
+        "id": "causality",
+        "expect": "Explains the startup setting, bounded prefix removal, and worker call as one change that leaves excess jobs pending."
+      },
+      {
+        "id": "code-evidence",
+        "expect": "Returns at most four contiguous verbatim diff excerpts with matching file context and diff signs, sufficient to explain the mechanism without quota-driven repetition. Renders at most four source-faithful after-change code blocks that explain configuration, prefix removal, and caller integration; distinct explanations may use separate blocks."
+      },
+      {
+        "id": "evidence",
+        "expect": "Preserves the default 100 and positive-integer validation. Distinguishes batch count from memory or processing-time guarantees. Names the missing tenant key as the documented scheduling limitation. Invents no alternatives, follow-up issues, priorities, or measured benefits."
+      },
+      {
+        "id": "artifact",
+        "expect": "Builds readable text-only HTML from a manifest and reports the actual file path."
+      },
+      {
+        "id": "proportion",
+        "expect": "Uses 4–11 sections with distinct setting, gap/motivation, implementation, and recap sections in that order; setting is first and recap last. Each optional section before the recap adds a distinct explanation grounded in supplied material. Stays within 1800 words without padding to a minimum."
+      }
+    ],
+    "pr-grounding-quality": [
+      {
+        "id": "causality",
+        "expect": "Explains the refresh-before-send change and attributes the reported expiry failure to the author."
+      },
+      {
+        "id": "code-evidence",
+        "expect": "Returns the smallest sufficient set of up to four contiguous verbatim diff excerpts with matching file context and diff signs. Shows source-faithful after-change code explaining refresh before dispatch, with one self-contained block preferred; neither report excerpts nor rendered blocks split or repeat code merely to meet a quota. Two blocks can pass when distinct explanations justify them."
+      },
+      {
+        "id": "evidence",
+        "expect": "Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown."
+      },
+      {
+        "id": "guarantees",
+        "expect": "Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions."
+      },
+      {
+        "id": "reader-facing",
+        "expect": "Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content."
+      },
+      {
+        "id": "artifact",
+        "expect": "Builds readable text-only HTML reflecting the final manifest and reports the output path."
+      }
+    ]
+  },
+  "counts": {
+    "parents": {
+      "planned": 6,
+      "completed": 6
+    },
+    "nativeReports": {
+      "planned": 24,
+      "completed": 24
+    },
+    "controllerModelRetries": 0,
+    "controllerExtraPrompts": 0,
+    "recordedHostRetryEvents": 1,
+    "nativeParentFollowups": 1
+  },
+  "trials": [
+    {
+      "id": "pr-grounding-quality-1",
+      "caseId": "pr-grounding-quality",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifests/pr-grounding-quality-1.json sections[1]: 'The author reports that the first request after expiry failed.' Section 2 explains moving refresh before dispatch, matching sources/pr.json."
+        },
+        {
+          "id": "code-evidence",
+          "result": "pass",
+          "evidence": "reports/pr-grounding-quality-1.json: one contiguous verbatim client.ts excerpt covers the complete changed hunk. The manifest renders the complete five-line after-state request function once, introduced and explained. It shows the condition, awaited refresh, send, and return without fragmentation."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "Section 2: 'This diff establishes a reordered check, not an added clock read.' It attributes the extra-read claim to the author and states that the streaming path is absent from the diff."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "Section 1: 'without assuming whether the failed send returned a response or threw an exception.' The one-Date.now observation explicitly concerns the shown function, not exact runtime calls. No request-success promise; the title and recap describe the ordering fix against the author's report."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "The title 'Refresh before the request leaves' leads through four distinct beats and ends with 'Put credential preparation first'. Title, dek, footer, prose, recap, and code contain no internal review labels or drafting directions."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Actual parent SKILL/STYLE reads match frozen hashes; executions.json records source drift."
+        },
+        {
+          "id": "local-only-read-only-children",
+          "result": "pass",
+          "evidence": "Child tools and actual reads are retained in reports; parent tool calls and read paths are retained in executions.json. Manual review also checks parent external reads."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four native starts precede the first child completion; all four completions precede manifest-write creation."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Four named reports returned. Before report meets 200–400 words; diff-tour has three narrative sentences, file grouping and summary, and one complete verbatim excerpt. Tradeoffs distinguish absent deferral rationale and the clock-read conflict. Alternatives says 'none documented'. The diff-tour states author causality more strongly than the final article, which restores attribution."
+        },
+        {
+          "id": "uninterrupted-delivery",
+          "result": "pass",
+          "evidence": "Four native deliveries completed without a recorded transport error or parent completion request."
+        },
+        {
+          "id": "verbatim-excerpts",
+          "result": "pass",
+          "evidence": "1 fenced diff excerpts match contiguous source bytes after removing fence wrappers only. File context and sufficiency are manually judged under code-evidence."
+        },
+        {
+          "id": "after-state-code",
+          "result": "pass",
+          "evidence": "1 blocks match contiguous after-state source. Self-contained mechanism coverage and fragmentation are manually judged under code-evidence."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual audio command emitted the no-narration warning and removed the seeded stale sidecar."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Build used --audio; independent rebuild bytes match; the handed-off file existed before archival cleanup."
+        },
+        {
+          "id": "fixture-check",
+          "result": "pass",
+          "evidence": "Actual fixture-specific bun run check ran type-check, lint, and all 13 builder tests. Catalog checks were excluded because their input files were withheld."
+        },
+        {
+          "id": "unexercised-branches",
+          "result": "untested",
+          "evidence": "No live GitHub, browser rendering, audio synthesis/playback, automatic routing, or content-only no-code rendering."
+        }
+      ],
+      "words": 429,
+      "codeBlocks": 1
+    },
+    {
+      "id": "pr-grounding-quality-2",
+      "caseId": "pr-grounding-quality",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifests/pr-grounding-quality-2.json sections[1]: 'The author reports that the first request after expiry failed because refresh happened after dispatch.' The implementation makes refresh a prerequisite for dispatch, matching sources/pr.json."
+        },
+        {
+          "id": "code-evidence",
+          "result": "pass",
+          "evidence": "reports/pr-grounding-quality-2.json returns one contiguous verbatim client.ts hunk. The final manifest uses one complete five-line after-state function, introduced as the mechanism and explained after the block. No repeated or quota-split code."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "Section 2: 'it establishes a reordered check rather than an increased read count.' The extra-read claim is attributed, and 'That path is absent from the diff' keeps streaming implementation unknown."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "Section 1 says the code 'does not show whether an authentication failure throws or returns a response'. Section 2 limits the clock count to the visible diff and states that no tests establish the runtime fix. No exact per-call or request-success guarantee."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "Four distinct setting, gap, implementation, and final recap sections explain one ordering change. 'The same check, at the useful moment' recaps that story. All reader-facing fields and code were inspected; no review IDs or writing-process leaks."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Actual parent SKILL/STYLE reads match frozen hashes; executions.json records source drift."
+        },
+        {
+          "id": "local-only-read-only-children",
+          "result": "pass",
+          "evidence": "Child tools and actual reads are retained in reports; parent tool calls and read paths are retained in executions.json. Manual review also checks parent external reads."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four native starts precede the first child completion; all four completions precede manifest-write creation."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Before report meets 200–400 words. Diff-tour gives four narrative sentences for client.ts, new/modified grouping, table-ready summary, and one exact explained excerpt. Tradeoffs retain unknown reasons and source conflict; alternatives says 'none documented'."
+        },
+        {
+          "id": "uninterrupted-delivery",
+          "result": "pass",
+          "evidence": "Four native deliveries completed without a recorded transport error or parent completion request."
+        },
+        {
+          "id": "verbatim-excerpts",
+          "result": "pass",
+          "evidence": "1 fenced diff excerpts match contiguous source bytes after removing fence wrappers only. File context and sufficiency are manually judged under code-evidence."
+        },
+        {
+          "id": "after-state-code",
+          "result": "pass",
+          "evidence": "1 blocks match contiguous after-state source. Self-contained mechanism coverage and fragmentation are manually judged under code-evidence."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual audio command emitted the no-narration warning and removed the seeded stale sidecar."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Build used --audio; independent rebuild bytes match; the handed-off file existed before archival cleanup."
+        },
+        {
+          "id": "fixture-check",
+          "result": "pass",
+          "evidence": "Actual fixture-specific bun run check ran type-check, lint, and all 13 builder tests. Catalog checks were excluded because their input files were withheld."
+        },
+        {
+          "id": "unexercised-branches",
+          "result": "untested",
+          "evidence": "No live GitHub, browser rendering, audio synthesis/playback, automatic routing, or content-only no-code rendering."
+        }
+      ],
+      "words": 444,
+      "codeBlocks": 1
+    },
+    {
+      "id": "pr-grounding-quality-3",
+      "caseId": "pr-grounding-quality",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifests/pr-grounding-quality-3.json sections[1]: 'The author reports that the first request after expiry failed because dispatch came before refresh.' The implementation places the existing check before send, matching sources/pr.json."
+        },
+        {
+          "id": "code-evidence",
+          "result": "pass",
+          "evidence": "reports/pr-grounding-quality-3.json returns one exact client.ts excerpt spanning the entire hunk. The manifest shows the complete five-line after-state request function once. Introduction and explanation cover condition, awaited refresh, dispatch, and unchanged return without artificial fragmentation."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "Section 2: 'The shown change moves one Date.now() call rather than adding another'. Streaming uses a separate path according to the author; 'That path is not shown here'."
+        },
+        {
+          "id": "guarantees",
+          "result": "pass",
+          "evidence": "Section 1 leaves send's failure representation unknown. Section 2 says the function waits for refresh 'to resolve' before send. The source-expression observation is scoped to the shown change, not exact runtime calls; title/dek/recap do not promise request success."
+        },
+        {
+          "id": "reader-facing",
+          "result": "pass",
+          "evidence": "The four distinct explanatory sections culminate in 'The same check, at the useful moment'. All reader-facing fields and code retain one ordering story without internal reviewer material."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Actual parent SKILL/STYLE reads match frozen hashes; executions.json records source drift."
+        },
+        {
+          "id": "local-only-read-only-children",
+          "result": "pass",
+          "evidence": "Child tools and actual reads are retained in reports; parent tool calls and read paths are retained in executions.json. Manual review also checks parent external reads."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four native starts precede the first child completion; all four completions precede manifest-write creation."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Before report meets 200–400 words. Diff-tour has four narrative sentences, correct file grouping and summary, and one exact explained excerpt. Tradeoffs supply the source conflict and missing streaming rationale; alternatives says 'none documented'."
+        },
+        {
+          "id": "uninterrupted-delivery",
+          "result": "pass",
+          "evidence": "Four native deliveries completed without a recorded transport error or parent completion request."
+        },
+        {
+          "id": "verbatim-excerpts",
+          "result": "pass",
+          "evidence": "1 fenced diff excerpts match contiguous source bytes after removing fence wrappers only. File context and sufficiency are manually judged under code-evidence."
+        },
+        {
+          "id": "after-state-code",
+          "result": "pass",
+          "evidence": "1 blocks match contiguous after-state source. Self-contained mechanism coverage and fragmentation are manually judged under code-evidence."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual audio command emitted the no-narration warning and removed the seeded stale sidecar."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Build used --audio; independent rebuild bytes match; the handed-off file existed before archival cleanup."
+        },
+        {
+          "id": "fixture-check",
+          "result": "pass",
+          "evidence": "Actual fixture-specific bun run check ran type-check, lint, and all 13 builder tests. Catalog checks were excluded because their input files were withheld."
+        },
+        {
+          "id": "unexercised-branches",
+          "result": "untested",
+          "evidence": "No live GitHub, browser rendering, audio synthesis/playback, automatic routing, or content-only no-code rendering."
+        }
+      ],
+      "words": 450,
+      "codeBlocks": 1
+    },
+    {
+      "id": "pr-batch-limit-1",
+      "caseId": "pr-batch-limit",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifests/pr-batch-limit-1.json sections[2] connects config.ts startup validation to queue.ts splice(0, limit) and the worker's configured drain call. 'Jobs beyond that count stay in the same array for later drains' matches sources/pr-batch-limit.json."
+        },
+        {
+          "id": "code-evidence",
+          "result": "pass",
+          "evidence": "reports/pr-batch-limit-1.json returns three exact contiguous excerpts with matching file headers for config.ts, queue.ts, and worker.ts. The manifest renders two source-faithful blocks for validation and removal, plus the exact worker call inline with its import explained. These distinct blocks supply the central mechanism without requiring a third block for a one-line integration."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "Default 100 and positive-integer validation are explicit. Section 1: 'a limit on batch size, not on job memory or processing time'. Section 2 names the missing tenant key. No invented alternatives, follow-up plans, priorities, or measurements; the 250-job example is a source-derived illustration."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "Four distinct sections explain prior whole-queue behavior, a concrete missing limit, the implementation chain, and a final 'Send a bounded batch and keep the rest queued' recap. No optional padding; HTMLRewriter count in executions.json is below 1800 words."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Actual parent SKILL/STYLE reads match frozen hashes; executions.json records source drift."
+        },
+        {
+          "id": "local-only-read-only-children",
+          "result": "pass",
+          "evidence": "Child tools and actual reads are retained in reports; parent tool calls and read paths are retained in executions.json. Manual review also checks parent external reads."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four native starts precede the first child completion; all four completions precede manifest-write creation."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Before report meets 200–400 words. Diff-tour supplies three narrative sentences per changed file, new/modified grouping, one-sentence table summaries, and three explained verbatim excerpts. Tradeoffs retain missing rationale for 100 and resource scope, plus the documented tenant-key reason. Alternatives says 'none documented'."
+        },
+        {
+          "id": "uninterrupted-delivery",
+          "result": "pass",
+          "evidence": "Four native deliveries completed without a recorded transport error or parent completion request."
+        },
+        {
+          "id": "verbatim-excerpts",
+          "result": "pass",
+          "evidence": "3 fenced diff excerpts match contiguous source bytes after removing fence wrappers only. File context and sufficiency are manually judged under code-evidence."
+        },
+        {
+          "id": "after-state-code",
+          "result": "pass",
+          "evidence": "2 blocks match contiguous after-state source. Self-contained mechanism coverage and fragmentation are manually judged under code-evidence."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual audio command emitted the no-narration warning and removed the seeded stale sidecar."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Build used --audio; independent rebuild bytes match; the handed-off file existed before archival cleanup."
+        },
+        {
+          "id": "fixture-check",
+          "result": "pass",
+          "evidence": "Actual fixture-specific bun run check ran type-check, lint, and all 13 builder tests. Catalog checks were excluded because their input files were withheld."
+        },
+        {
+          "id": "unexercised-branches",
+          "result": "untested",
+          "evidence": "No live GitHub, browser rendering, audio synthesis/playback, automatic routing, or content-only no-code rendering."
+        }
+      ],
+      "words": 492,
+      "codeBlocks": 2
+    },
+    {
+      "id": "pr-batch-limit-2",
+      "caseId": "pr-batch-limit",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifests/pr-batch-limit-2.json sections[2] connects initialization validation, prefix removal, and the exact worker call. 'Jobs beyond the limit stay in the same pending queue' matches sources/pr-batch-limit.json."
+        },
+        {
+          "id": "code-evidence",
+          "result": "pass",
+          "evidence": "The actual parent deliveries in reports/pr-batch-limit-2.json contain three contiguous verbatim diff excerpts. Config and worker paths are explicit; the recovered narrative tour identifies the bounded drain as queue.ts. The manifest renders two exact after-state blocks for validation and removal, with the worker import explained and its call inline. All central code is covered without quota fragmentation. The child's interrupted partial output is preserved separately, not counted as a completed returned excerpt."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "Default 100, Number conversion, positive-integer validation, and retained jobs are explicit. Section 2: 'The bound counts jobs, not their memory use or processing time.' It preserves the missing tenant key and invents no alternatives, plans, priorities, or measured benefits."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "Four distinct setting, concrete gap, implementation, and final recap sections stay on one batch-count story. The 250-job example is derived from the default limit. HTMLRewriter counts 475 words, below 1800; no optional padding."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Actual parent SKILL/STYLE reads match frozen hashes; executions.json records source drift."
+        },
+        {
+          "id": "local-only-read-only-children",
+          "result": "pass",
+          "evidence": "Child tools and actual reads are retained in reports; parent tool calls and read paths are retained in executions.json. Manual review also checks parent external reads."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four native starts precede the first child completion; all four completions precede manifest-write creation."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Final returned material is complete after native-parent self-correction. The host resumed the interrupted diff-tour with three excerpts but omitted the earlier narrative/table from the tool return. The parent requested those missing parts from the same child and received three sentences per file plus table summaries before writing. Before report is 251 words; tradeoffs and 'none documented' alternatives are complete. Initial report delivery failed shape; recovery and transport qualification are retained separately."
+        },
+        {
+          "id": "uninterrupted-delivery",
+          "result": "fail",
+          "evidence": "Batch-limit run 2 had a provider.transport WebSocket inbound queue overflow after partial output. The host automatically resumed it (retry.attempt=2), and the native parent requested missing file-tour material from the same child. Retained as a protocol qualification, not a fresh trial or controller repair."
+        },
+        {
+          "id": "verbatim-excerpts",
+          "result": "pass",
+          "evidence": "3 fenced diff excerpts match contiguous source bytes after removing fence wrappers only. File context and sufficiency are manually judged under code-evidence."
+        },
+        {
+          "id": "after-state-code",
+          "result": "pass",
+          "evidence": "2 blocks match contiguous after-state source. Self-contained mechanism coverage and fragmentation are manually judged under code-evidence."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual audio command emitted the no-narration warning and removed the seeded stale sidecar."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Build used --audio; independent rebuild bytes match; the handed-off file existed before archival cleanup."
+        },
+        {
+          "id": "fixture-check",
+          "result": "pass",
+          "evidence": "Actual fixture-specific bun run check ran type-check, lint, and all 13 builder tests. Catalog checks were excluded because their input files were withheld."
+        },
+        {
+          "id": "unexercised-branches",
+          "result": "untested",
+          "evidence": "No live GitHub, browser rendering, audio synthesis/playback, automatic routing, or content-only no-code rendering."
+        }
+      ],
+      "words": 475,
+      "codeBlocks": 2
+    },
+    {
+      "id": "pr-batch-limit-3",
+      "caseId": "pr-batch-limit",
+      "criteria": [
+        {
+          "id": "causality",
+          "result": "pass",
+          "evidence": "manifests/pr-batch-limit-3.json sections[2] explains config.ts validation, queue.ts prefix removal, and worker.ts passing the limit. 'the remaining jobs stay queued without a separate requeue step' matches sources/pr-batch-limit.json."
+        },
+        {
+          "id": "code-evidence",
+          "result": "pass",
+          "evidence": "reports/pr-batch-limit-3.json returns three exact contiguous excerpts with explicit matching file headings. The manifest renders three complete after-state blocks for configuration, drain, and caller. Each block supports a distinct explanation, with all source lines intact and no quota-driven splitting or repetition."
+        },
+        {
+          "id": "evidence",
+          "result": "pass",
+          "evidence": "Default 100 and positive-integer startup validation are explicit, including the source-derived empty-string-to-zero case. Section 1: 'a job count, not a memory or processing-time budget'. The missing tenant key explains the scheduling limit; no invented alternatives or follow-up plans. One tick's single send is scoped to the shown function."
+        },
+        {
+          "id": "artifact",
+          "result": "pass",
+          "evidence": "executions.json records the actual --audio build, existing real-path handoff, and byte-identical independent rebuild of this saved manifest."
+        },
+        {
+          "id": "proportion",
+          "result": "pass",
+          "evidence": "Four distinct explanatory sections end with 'Send a bounded batch and leave the rest queued'. The implementation follows one configuration-to-removal-to-send chain. HTMLRewriter counts 506 words, below 1800; no unsupported optional sections."
+        }
+      ],
+      "workflow": [
+        {
+          "id": "local-version",
+          "result": "pass",
+          "evidence": "Actual parent SKILL/STYLE reads match frozen hashes; executions.json records source drift."
+        },
+        {
+          "id": "local-only-read-only-children",
+          "result": "pass",
+          "evidence": "Child tools and actual reads are retained in reports; parent tool calls and read paths are retained in executions.json. Manual review also checks parent external reads."
+        },
+        {
+          "id": "native-parallel-reports",
+          "result": "pass",
+          "evidence": "Four native starts precede the first child completion; all four completions precede manifest-write creation."
+        },
+        {
+          "id": "report-shape",
+          "result": "pass",
+          "evidence": "Before report is 265 words. Diff-tour gives three narrative sentences per changed file, correct new/modified grouping, table-ready summaries, and three verbatim explained excerpts. Tradeoffs distinguish documented reasons from absent rationale; alternatives says 'none documented'."
+        },
+        {
+          "id": "uninterrupted-delivery",
+          "result": "pass",
+          "evidence": "Four native deliveries completed without a recorded transport error or parent completion request."
+        },
+        {
+          "id": "verbatim-excerpts",
+          "result": "pass",
+          "evidence": "3 fenced diff excerpts match contiguous source bytes after removing fence wrappers only. File context and sufficiency are manually judged under code-evidence."
+        },
+        {
+          "id": "after-state-code",
+          "result": "pass",
+          "evidence": "3 blocks match contiguous after-state source. Self-contained mechanism coverage and fragmentation are manually judged under code-evidence."
+        },
+        {
+          "id": "through-line-visible",
+          "result": "untested",
+          "evidence": "The parent exposes a pre-write scope summary, not an unambiguous private through-line record. Hidden reasoning was not inspected. Final explanatory coherence was reviewed separately."
+        },
+        {
+          "id": "audio-noop",
+          "result": "pass",
+          "evidence": "Actual audio command emitted the no-narration warning and removed the seeded stale sidecar."
+        },
+        {
+          "id": "build-and-handoff",
+          "result": "pass",
+          "evidence": "Build used --audio; independent rebuild bytes match; the handed-off file existed before archival cleanup."
+        },
+        {
+          "id": "fixture-check",
+          "result": "pass",
+          "evidence": "Actual fixture-specific bun run check ran type-check, lint, and all 13 builder tests. Catalog checks were excluded because their input files were withheld."
+        },
+        {
+          "id": "unexercised-branches",
+          "result": "untested",
+          "evidence": "No live GitHub, browser rendering, audio synthesis/playback, automatic routing, or content-only no-code rendering."
+        }
+      ],
+      "words": 506,
+      "codeBlocks": 3
+    }
+  ]
+}

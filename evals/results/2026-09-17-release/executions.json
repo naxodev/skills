@@ -1,0 +1,829 @@
+[
+  {
+    "id": "route-docs-positive-1",
+    "sessionID": "ses_f4e2ed95dffeaK9tlSadXudM0S",
+    "identities": [
+      {
+        "id": "ses_f4e2ed95dffeaK9tlSadXudM0S",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13191,
+          "output": 35,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689669326,
+          "updated": 1789689669546,
+          "idle": 1789689672947
+        },
+        "title": "Release smoke route-docs-positive-1",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-docs-positive-2",
+    "sessionID": "ses_f4e2ed95cffeEqpXR2s9mAi2yP",
+    "identities": [
+      {
+        "id": "ses_f4e2ed95cffeEqpXR2s9mAi2yP",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11144,
+          "output": 35,
+          "reasoning": 0,
+          "cache": {
+            "read": 2048,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689669316,
+          "updated": 1789689669550,
+          "idle": 1789689674292
+        },
+        "title": "Release smoke route-docs-positive-2",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-docs-negative-1",
+    "sessionID": "ses_f4e2ed95cffdrhbVDdv6IzhSv0",
+    "identities": [
+      {
+        "id": "ses_f4e2ed95cffdrhbVDdv6IzhSv0",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13191,
+          "output": 26,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689669321,
+          "updated": 1789689669499,
+          "idle": 1789689672904
+        },
+        "title": "Release smoke route-docs-negative-1",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-docs-negative-2",
+    "sessionID": "ses_f4e2eca5bffen3e2jbWhCWF7q3",
+    "identities": [
+      {
+        "id": "ses_f4e2eca5bffen3e2jbWhCWF7q3",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11145,
+          "output": 27,
+          "reasoning": 0,
+          "cache": {
+            "read": 2048,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689673153,
+          "updated": 1789689673255,
+          "idle": 1789689677259
+        },
+        "title": "Release smoke route-docs-negative-2",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-discord-positive-1",
+    "sessionID": "ses_f4e2eca34ffeOzhSOFBT8MZaqx",
+    "identities": [
+      {
+        "id": "ses_f4e2eca34ffeOzhSOFBT8MZaqx",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13190,
+          "output": 28,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689673220,
+          "updated": 1789689673299,
+          "idle": 1789689676177
+        },
+        "title": "Release smoke route-discord-positive-1",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-discord-positive-2",
+    "sessionID": "ses_f4e2ec4f9ffeVDE3Tx215xQVte",
+    "identities": [
+      {
+        "id": "ses_f4e2ec4f9ffeVDE3Tx215xQVte",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13190,
+          "output": 29,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689674535,
+          "updated": 1789689674665,
+          "idle": 1789689677954
+        },
+        "title": "Release smoke route-discord-positive-2",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-discord-negative-1",
+    "sessionID": "ses_f4e2ebdadffeQJ3qQI5ToLGr1t",
+    "identities": [
+      {
+        "id": "ses_f4e2ebdadffeQJ3qQI5ToLGr1t",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 11149,
+          "output": 36,
+          "reasoning": 0,
+          "cache": {
+            "read": 2048,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689676405,
+          "updated": 1789689676468,
+          "idle": 1789689680320
+        },
+        "title": "Release smoke route-discord-negative-1",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-discord-negative-2",
+    "sessionID": "ses_f4e2eb97bffe4ovneScQf1o2e7",
+    "identities": [
+      {
+        "id": "ses_f4e2eb97bffe4ovneScQf1o2e7",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13197,
+          "output": 35,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689677471,
+          "updated": 1789689677549,
+          "idle": 1789689682297
+        },
+        "title": "Release smoke route-discord-negative-2",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-pr-negative-1",
+    "sessionID": "ses_f4e2eb6c6ffeotE0loW1FwX42p",
+    "identities": [
+      {
+        "id": "ses_f4e2eb6c6ffeotE0loW1FwX42p",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13190,
+          "output": 28,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689678162,
+          "updated": 1789689678236,
+          "idle": 1789689681633
+        },
+        "title": "Release smoke route-pr-negative-1",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-pr-negative-2",
+    "sessionID": "ses_f4e2ead73ffe0UBLlRX5MXECM6",
+    "identities": [
+      {
+        "id": "ses_f4e2ead73ffe0UBLlRX5MXECM6",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13187,
+          "output": 38,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689680559,
+          "updated": 1789689680623,
+          "idle": 1789689684534
+        },
+        "title": "Release smoke route-pr-negative-2",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-pr-positive-1",
+    "sessionID": "ses_f4e2ea865ffeIOt99NaYuvkedl",
+    "identities": [
+      {
+        "id": "ses_f4e2ea865ffeIOt99NaYuvkedl",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13196,
+          "output": 46,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689681843,
+          "updated": 1789689681911,
+          "idle": 1789689685320
+        },
+        "title": "Release smoke route-pr-positive-1",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "route-pr-positive-2",
+    "sessionID": "ses_f4e2ea5c8ffexcKcjZe5APP0HR",
+    "identities": [
+      {
+        "id": "ses_f4e2ea5c8ffexcKcjZe5APP0HR",
+        "projectID": "191f768fb172df9b06b135347b9553b676234636",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 13198,
+          "output": 46,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689682513,
+          "updated": 1789689682579,
+          "idle": 1789689688149
+        },
+        "title": "Release smoke route-pr-positive-2",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-prep-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "discord-audit",
+    "sessionID": "ses_f4e2e8ec6ffd8iPCSdzsXGHZQq",
+    "identities": [
+      {
+        "id": "ses_f4e2e8ec6ffd8iPCSdzsXGHZQq",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 28449,
+          "output": 3084,
+          "reasoning": 38,
+          "cache": {
+            "read": 97536,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689688441,
+          "updated": 1789689689906,
+          "idle": 1789689803127
+        },
+        "title": "Release smoke discord-audit",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-discord-audit-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "docs-reader-start",
+    "sessionID": "ses_f4e2e8ec6ffekFIRkbX8GteE0I",
+    "identities": [
+      {
+        "id": "ses_f4e2e8ec6ffekFIRkbX8GteE0I",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 27568,
+          "output": 1805,
+          "reasoning": 100,
+          "cache": {
+            "read": 251008,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689688430,
+          "updated": 1789689689451,
+          "idle": 1789689786594
+        },
+        "title": "Release smoke docs-reader-start",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-docs-reader-start-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  },
+  {
+    "id": "pr-grounding-quality",
+    "sessionID": "ses_f4e2d0e57ffe1PF7qm6g6BDjT6",
+    "identities": [
+      {
+        "id": "ses_f4e2d0e57ffe1PF7qm6g6BDjT6",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 33024,
+          "output": 2682,
+          "reasoning": 50,
+          "cache": {
+            "read": 216576,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689786824,
+          "updated": 1789689788303,
+          "idle": 1789689946507
+        },
+        "title": "Release smoke pr-grounding-quality",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917"
+        }
+      },
+      {
+        "id": "ses_f4e2c4ff4ffe2vk340L6yeH9h1",
+        "parentID": "ses_f4e2d0e57ffe1PF7qm6g6BDjT6",
+        "projectID": "global",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19211,
+          "output": 204,
+          "reasoning": 0,
+          "cache": {
+            "read": 45696,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689835674,
+          "updated": 1789689835682,
+          "idle": 1789689854284
+        },
+        "title": "Alternatives fixture report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917"
+        }
+      },
+      {
+        "id": "ses_f4e2c4ff5ffe8iuwo43Byfto02",
+        "parentID": "ses_f4e2d0e57ffe1PF7qm6g6BDjT6",
+        "projectID": "global",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 17251,
+          "output": 514,
+          "reasoning": 0,
+          "cache": {
+            "read": 47744,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689835644,
+          "updated": 1789689835659,
+          "idle": 1789689861830
+        },
+        "title": "Diff tour fixture report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917"
+        }
+      },
+      {
+        "id": "ses_f4e2c4ff6ffeuT210pmpIEaNhp",
+        "parentID": "ses_f4e2d0e57ffe1PF7qm6g6BDjT6",
+        "projectID": "global",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 19203,
+          "output": 527,
+          "reasoning": 0,
+          "cache": {
+            "read": 45696,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689835582,
+          "updated": 1789689835587,
+          "idle": 1789689868333
+        },
+        "title": "Before report for fixture",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917"
+        }
+      },
+      {
+        "id": "ses_f4e2c4ff5ffdEBoL08Toy0Q884",
+        "parentID": "ses_f4e2d0e57ffe1PF7qm6g6BDjT6",
+        "projectID": "global",
+        "agent": "general",
+        "model": {
+          "id": "gpt-6-astra",
+          "providerID": "openai",
+          "variant": "medium"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 31479,
+          "output": 440,
+          "reasoning": 0,
+          "cache": {
+            "read": 33408,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789689835570,
+          "updated": 1789689835578,
+          "idle": 1789689860480
+        },
+        "title": "Tradeoffs fixture report",
+        "permissions": [
+          {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+          }
+        ],
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/release-smoke-pr-grounding-quality-20260917"
+        }
+      }
+    ],
+    "status": "failed",
+    "error": "Error: Outcome or identity mismatch"
+  }
+]

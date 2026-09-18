@@ -1,0 +1,53 @@
+{
+  "id": "2d61fc8d-d541-4a8f-a07d-3c2cee1dc933",
+  "sessionID": "ses_f64b9e18fffeDuwVFfQST48VTp",
+  "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-2d61fc8d-d541-4a8f-a07d-3c2cee1dc933",
+  "attempts": [
+    {
+      "phase": "initial",
+      "startedAt": "2026-09-13T14:57:38.976Z",
+      "elapsedMs": 284489,
+      "info": {
+        "id": "ses_f64b9e18fffeDuwVFfQST48VTp",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "grok-4.6",
+          "providerID": "xai",
+          "variant": "high"
+        },
+        "cost": 0.220502,
+        "tokens": {
+          "input": 50457,
+          "output": 3799,
+          "reasoning": 12943,
+          "cache": {
+            "read": 38272,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789311458962,
+          "updated": 1789311460108,
+          "idle": 1789311743371
+        },
+        "title": "component judgment",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-2d61fc8d-d541-4a8f-a07d-3c2cee1dc933"
+        }
+      },
+      "rawSha256": "60b72df5a9073d795f4b54bbd548e6c14157fabb85c0436b81b0e623747010f8",
+      "promptSha256": "e1f423e5dba76410da99e794cdcaa3b956f589f7d9888e606a6d945fbf66052b"
+    }
+  ],
+  "inputHashes": {
+    "probe.mjs": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+    "source.json": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+    "probe-results.json": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+    "fields.json": "abe1b4a7e31c3c12d8993c78afb79db818282328139d43d70a8a3ab3017e6a64",
+    "functions.mjs": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+    "manifest.json": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec",
+    "verification.json": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c"
+  }
+}

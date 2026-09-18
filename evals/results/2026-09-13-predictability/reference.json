@@ -1,0 +1,62 @@
+[
+  {
+    "id": "a",
+    "fixture": "retry",
+    "kind": "supported-attribution",
+    "path": "evals/results/2026-09-12-audit-stage/controls/retry-correct.json",
+    "section": 2,
+    "expected": false,
+    "reason": "The source body asserts exactly once; contracts 1 and 3 and duplicate probe support the explicit distinction. Natural attribution is permitted.",
+    "sha256": "c9bef631e55a36ffb4393d055ad27407af7df21e18285e324ebd0476709a6b49"
+  },
+  {
+    "id": "b",
+    "fixture": "transaction",
+    "kind": "supported-context",
+    "path": "evals/results/2026-09-12-audit-stage/artifacts/03d6ccb4-72e2-4207-b33b-1774c49b3e54/initial-manifest.json",
+    "section": 2,
+    "expected": false,
+    "reason": "The next sentence expressly excludes write or commit rejection before publication. Contract 0 and after function support successful continuation after commit. Parent review lines 24–26 accept the contextual reading.",
+    "sha256": "cf2d071bbafdf846eac10f1166b2e73b183ab6dc6c30a17bebd85c367bdafde1"
+  },
+  {
+    "id": "c",
+    "fixture": "retry",
+    "kind": "supported-fragment",
+    "path": "evals/results/2026-09-12-audit-stage/artifacts/565820d5-0074-4c19-baa5-7d4ed5a07626/initial-manifest.json",
+    "section": 2,
+    "expected": false,
+    "reason": "The visible elision and adjacent catch faithfully show the after function. All requested delays and sleep rejection match source and probes. Standalone parsing is not the artifact contract.",
+    "sha256": "5461b8530d9896bcb87e412cf833bba7dc5726604c3235005eba18f00a7a4fb6"
+  },
+  {
+    "id": "d",
+    "fixture": "retry",
+    "kind": "false-title",
+    "path": "evals/results/2026-09-12-audit-stage/controls/retry-flawed.json",
+    "section": -1,
+    "expected": true,
+    "reason": "Exactly once is refuted by the duplicate probe and rejection-after-effect contract.",
+    "sha256": "1bad2af05246ea7ce0fa8f6700a76deee54ac36eac5fa8ef12bdfeca3535662d"
+  },
+  {
+    "id": "e",
+    "fixture": "transaction",
+    "kind": "false-title",
+    "path": "evals/results/2026-09-12-audit-stage/controls/transaction-flawed.json",
+    "section": -1,
+    "expected": true,
+    "reason": "Atomicity is refuted by after.publish-before and external publication contract.",
+    "sha256": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb"
+  },
+  {
+    "id": "f",
+    "fixture": "cache",
+    "kind": "false-title",
+    "path": "evals/results/2026-09-12-audit-stage/controls/cache-flawed.json",
+    "section": -1,
+    "expected": true,
+    "reason": "All stale reads is refuted by lateSnapshot and unchanged read snapshot contract.",
+    "sha256": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec"
+  }
+]

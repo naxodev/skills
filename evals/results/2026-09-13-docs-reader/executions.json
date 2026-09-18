@@ -1,0 +1,212 @@
+[
+  {
+    "id": "docs-reader-start-baseline-1",
+    "status": "completed",
+    "sessionID": "ses_f63e774e6ffeHr5emPlcbkG9DN",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "grounding": "passed",
+      "reader-fit": "passed",
+      "outcome": "passed",
+      "rationale": "passed",
+      "execution": "passed",
+      "applicability": "untested: author checked source and navigation, but did not inspect rendered Markdown",
+      "quadrant": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "passed: no missing steps",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-reader-start-candidate-1",
+    "status": "completed",
+    "sessionID": "ses_f63e774e6ffd1c9uewonteHKkX",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "grounding": "passed",
+      "reader-fit": "passed",
+      "outcome": "passed",
+      "rationale": "passed",
+      "execution": "passed",
+      "applicability": "untested: author checked source and navigation, but did not inspect rendered Markdown",
+      "quadrant": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "passed: no missing steps",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-reader-start-baseline-2",
+    "status": "completed",
+    "sessionID": "ses_f63e774e7ffeWOqTS3i5iuJFKS",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "grounding": "passed",
+      "reader-fit": "passed",
+      "outcome": "passed",
+      "rationale": "passed",
+      "execution": "passed",
+      "applicability": "untested: author checked source and navigation, but did not inspect rendered Markdown",
+      "quadrant": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "passed: no missing steps",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-reader-start-candidate-2",
+    "status": "completed",
+    "sessionID": "ses_f63e60cb6ffev2m5POqLHf1p6k",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "grounding": "passed",
+      "reader-fit": "passed",
+      "outcome": "passed",
+      "rationale": "passed",
+      "execution": "passed",
+      "applicability": "untested: author checked source and navigation, but did not inspect rendered Markdown",
+      "quadrant": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "passed: no missing steps",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-reader-start-baseline-3",
+    "status": "completed",
+    "sessionID": "ses_f63e5fff9ffeRGKC04wklPr9A0",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "grounding": "passed",
+      "reader-fit": "passed",
+      "outcome": "passed",
+      "rationale": "passed",
+      "execution": "passed",
+      "applicability": "untested: author checked source and navigation, but did not inspect rendered Markdown",
+      "quadrant": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "passed: no missing steps",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-reader-start-candidate-3",
+    "status": "completed",
+    "sessionID": "ses_f63e5b4d4ffe17GYfd6H0A4Oyl",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "grounding": "passed",
+      "reader-fit": "passed",
+      "outcome": "passed",
+      "rationale": "passed",
+      "execution": "passed",
+      "applicability": "untested: author checked source and navigation, but did not inspect rendered Markdown",
+      "quadrant": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "passed: no missing steps",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-concept-baseline-1",
+    "status": "completed",
+    "sessionID": "ses_f63e45d18ffePeQUFkSgH0RFhm",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "reasoning": "passed",
+      "quadrant": "passed",
+      "applicability": "passed: code, build, sidebar not applicable with reasons",
+      "reader-fit": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "not applicable: conceptual distinction",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-concept-candidate-1",
+    "status": "completed",
+    "sessionID": "ses_f63e449d4ffe1eFipG7RTMSr5i",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "reasoning": "passed",
+      "quadrant": "passed",
+      "applicability": "passed: code, build, sidebar not applicable with reasons",
+      "reader-fit": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "not applicable: conceptual distinction",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-concept-baseline-2",
+    "status": "completed",
+    "sessionID": "ses_f63e44443ffeHVNm7X953mTO36",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "reasoning": "passed",
+      "quadrant": "passed",
+      "applicability": "passed: code, build, sidebar not applicable with reasons",
+      "reader-fit": "passed"
+    },
+    "authorRenderedReview": "passed",
+    "replay": "not applicable: conceptual distinction",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-concept-candidate-2",
+    "status": "completed",
+    "sessionID": "ses_f63e372b7ffeo7DUPpheOLtU08",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "reasoning": "passed",
+      "quadrant": "passed",
+      "applicability": "passed: code, build, sidebar not applicable with reasons",
+      "reader-fit": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "not applicable: conceptual distinction",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-concept-baseline-3",
+    "status": "completed",
+    "sessionID": "ses_f63e366adffeXfBL0RMIBc97IP",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "reasoning": "passed",
+      "quadrant": "passed",
+      "applicability": "passed: code, build, sidebar not applicable with reasons",
+      "reader-fit": "passed"
+    },
+    "authorRenderedReview": "untested",
+    "replay": "not applicable: conceptual distinction",
+    "cloneRemoved": true
+  },
+  {
+    "id": "docs-concept-candidate-3",
+    "status": "completed",
+    "sessionID": "ses_f63e3529affebWVyYCps8mFonh",
+    "exactReads": true,
+    "immutableInputsUnchanged": true,
+    "pageCriteria": {
+      "reasoning": "passed",
+      "quadrant": "passed",
+      "applicability": "passed: code, build, sidebar not applicable with reasons",
+      "reader-fit": "passed"
+    },
+    "authorRenderedReview": "passed",
+    "replay": "not applicable: conceptual distinction",
+    "cloneRemoved": true
+  }
+]

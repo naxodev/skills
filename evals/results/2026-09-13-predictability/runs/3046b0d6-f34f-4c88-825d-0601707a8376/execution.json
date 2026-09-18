@@ -1,0 +1,53 @@
+{
+  "id": "3046b0d6-f34f-4c88-825d-0601707a8376",
+  "sessionID": "ses_f64b8f862ffeYn5y5gBrc6cA9K",
+  "location": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-3046b0d6-f34f-4c88-825d-0601707a8376",
+  "attempts": [
+    {
+      "phase": "initial",
+      "startedAt": "2026-09-13T14:58:38.662Z",
+      "elapsedMs": 207170,
+      "info": {
+        "id": "ses_f64b8f862ffeYn5y5gBrc6cA9K",
+        "projectID": "global",
+        "agent": "build",
+        "model": {
+          "id": "grok-4.6",
+          "providerID": "xai",
+          "variant": "high"
+        },
+        "cost": 0.181718,
+        "tokens": {
+          "input": 46096,
+          "output": 3421,
+          "reasoning": 9676,
+          "cache": {
+            "read": 21888,
+            "write": 0
+          }
+        },
+        "outcome": "succeeded",
+        "time": {
+          "created": 1789311518652,
+          "updated": 1789311519615,
+          "idle": 1789311725737
+        },
+        "title": "component judgment",
+        "location": {
+          "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/predictability-3046b0d6-f34f-4c88-825d-0601707a8376"
+        }
+      },
+      "rawSha256": "817bb1e33589f125ab08a6915211b79bf0fc4085962e111bd763c2e4d99c464e",
+      "promptSha256": "cd95365e0e5a93b33e4373731f77c5c6615c5e8fa17125e8b797cfc908264f87"
+    }
+  ],
+  "inputHashes": {
+    "probe.mjs": "7c0232263da48498d553d359e3f739380a80fcdb2b29ca51c82bf8a955306822",
+    "source.json": "1a3a52362d595b8c6d82960ac1d9c32f94b1320c85c4a6a0801c7a421daa5804",
+    "probe-results.json": "83f2922033deca53b0975f72b8218f21b1926a81abe3b9ca97bf155e46b825a5",
+    "fields.json": "abe1b4a7e31c3c12d8993c78afb79db818282328139d43d70a8a3ab3017e6a64",
+    "functions.mjs": "376ad223884d53c09526620b32d2905b553eeeb36a545d51f7ded1b270aa248a",
+    "manifest.json": "b0e848a0571f721ac4da437f3cb6e659a8d8c0a1c39f69d89f1b1cbb1954fbec",
+    "verification.json": "816681dfdad8ce09157206c2f876b0434a805bf5afd5a48a2e73e1803a87099c"
+  }
+}

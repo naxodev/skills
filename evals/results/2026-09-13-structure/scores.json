@@ -1,0 +1,408 @@
+[
+  {
+    "id": "small-baseline-1",
+    "manifestSha256": "6305c2ce16ac2ce3eada85afc2016b9056923d67950d3a409e67b495f7cea4a0",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "550815a6c6cd43d7d1ed2084e0abe6bea57413c52a30352a5dcf760c82e713f9"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52"
+      }
+    ],
+    "sections": 6,
+    "headings": [
+      "The setting",
+      "The gap",
+      "What we built",
+      "The honest trade-offs",
+      "What's next",
+      "The short version"
+    ],
+    "words": 587,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": false,
+    "optionalReview": "The separate follow-up section repeats the streaming limitation already explained in trade-offs; it adds no distinct explanation.",
+    "supportedContent": true,
+    "sourceGrounds": "pr.json body and diff: moved expiry guard, awaited refresh before send, author-attributed extra clock read versus one moved check, separate streaming follow-up. No invented alternatives/issues/benchmarks.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "small-candidate-1",
+    "manifestSha256": "fa2420a592244498637ebc28c5dcd643a33ad0702eb858ff4e4e5388aeca4ceb",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46"
+      }
+    ],
+    "sections": 4,
+    "headings": [
+      "The setting",
+      "The gap / motivation",
+      "What we built",
+      "The short version"
+    ],
+    "words": 446,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": true,
+    "optionalReview": "Four sections; no optional section or invented menu item.",
+    "supportedContent": true,
+    "sourceGrounds": "pr.json body and diff: moved expiry guard, awaited refresh before send, author-attributed extra clock read versus one moved check, separate streaming follow-up. No invented alternatives/issues/benchmarks.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "small-baseline-2",
+    "manifestSha256": "033052552f08986ef10ee578abcefd1a1feb53bade7492c44c0d140a040fd926",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "550815a6c6cd43d7d1ed2084e0abe6bea57413c52a30352a5dcf760c82e713f9"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52"
+      }
+    ],
+    "sections": 5,
+    "headings": [
+      "The setting",
+      "The gap",
+      "What we built",
+      "The honest trade-offs",
+      "What's next"
+    ],
+    "words": 646,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": false,
+    "requiredContentReview": "Setting, gap, and implementation are distinct. The recap is an h3 within the final follow-up section, not its own section.",
+    "optionalSectionsEarned": false,
+    "optionalReview": "The separate follow-up section repeats the streaming limitation already explained in trade-offs; it adds no distinct explanation.",
+    "supportedContent": true,
+    "sourceGrounds": "pr.json body and diff: moved expiry guard, awaited refresh before send, author-attributed extra clock read versus one moved check, separate streaming follow-up. No invented alternatives/issues/benchmarks.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "small-candidate-2",
+    "manifestSha256": "cb4228205dff0135a2cd402262568f24cf47f63da6624f3735a5d9dace1c7752",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46"
+      }
+    ],
+    "sections": 4,
+    "headings": [
+      "The setting",
+      "The gap / motivation",
+      "What we built",
+      "The short version"
+    ],
+    "words": 446,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": true,
+    "optionalReview": "Four sections; no optional section or invented menu item.",
+    "supportedContent": true,
+    "sourceGrounds": "pr.json body and diff: moved expiry guard, awaited refresh before send, author-attributed extra clock read versus one moved check, separate streaming follow-up. No invented alternatives/issues/benchmarks.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "small-baseline-3",
+    "manifestSha256": "22dcc4be6a7aad236ce55a255dda4081280602b0a5d168c633ea249450f48668",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "550815a6c6cd43d7d1ed2084e0abe6bea57413c52a30352a5dcf760c82e713f9"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52"
+      }
+    ],
+    "sections": 5,
+    "headings": [
+      "The setting",
+      "Why it matters",
+      "What we built",
+      "The honest trade-offs",
+      "What's next"
+    ],
+    "words": 610,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": false,
+    "requiredContentReview": "Setting, gap, and implementation are distinct. The recap is an h3 within the final follow-up section, not its own section.",
+    "optionalSectionsEarned": false,
+    "optionalReview": "The separate follow-up section repeats the streaming limitation already explained in trade-offs; it adds no distinct explanation.",
+    "supportedContent": true,
+    "sourceGrounds": "pr.json body and diff: moved expiry guard, awaited refresh before send, author-attributed extra clock read versus one moved check, separate streaming follow-up. No invented alternatives/issues/benchmarks.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "small-candidate-3",
+    "manifestSha256": "65e3cab2f5622f0be3e58f3d8fecdde7460d19dfc8662fdd42f681571bfb0fc0",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46"
+      }
+    ],
+    "sections": 4,
+    "headings": [
+      "The setting",
+      "The gap / motivation",
+      "What we built",
+      "The short version"
+    ],
+    "words": 414,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": true,
+    "optionalReview": "Four sections; no optional section or invented menu item.",
+    "supportedContent": true,
+    "sourceGrounds": "pr.json body and diff: moved expiry guard, awaited refresh before send, author-attributed extra clock read versus one moved check, separate streaming follow-up. No invented alternatives/issues/benchmarks.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "multi-baseline-1",
+    "manifestSha256": "2f87c61b398856ecb24874b9f57ae5ba86be6dcb2bee57d3737d890e391871b0",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "550815a6c6cd43d7d1ed2084e0abe6bea57413c52a30352a5dcf760c82e713f9"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52"
+      }
+    ],
+    "sections": 6,
+    "headings": [
+      "The setting",
+      "The gap",
+      "What we built",
+      "The honest trade-offs",
+      "What the diff looks like",
+      "The short version"
+    ],
+    "words": 737,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": false,
+    "optionalReview": "The file-tour section repeats the three-file path and summaries already explained in implementation; it adds no distinct explanation.",
+    "supportedContent": true,
+    "sourceGrounds": "pr-batch-limit.json body and three hunks: default 100, positive integer startup validation, splice prefix, configured worker call, retained remainder, no memory/time guarantee, no tenant key. 250/100 examples follow from splice semantics; no runtime measurement or roadmap claim.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "multi-candidate-1",
+    "manifestSha256": "69b09946717a705cb49fa9ad94490c44641dd86bb71e6d38cd1a12e0929e5f54",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46"
+      }
+    ],
+    "sections": 4,
+    "headings": [
+      "The setting",
+      "The gap / motivation",
+      "What we built",
+      "The short version"
+    ],
+    "words": 515,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": true,
+    "optionalReview": "Four sections; no optional section or invented menu item.",
+    "supportedContent": true,
+    "sourceGrounds": "pr-batch-limit.json body and three hunks: default 100, positive integer startup validation, splice prefix, configured worker call, retained remainder, no memory/time guarantee, no tenant key. 250/100 examples follow from splice semantics; no runtime measurement or roadmap claim.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "multi-baseline-2",
+    "manifestSha256": "07e4939620776c317db95f1fbf272e66eb1d0a161d44c3c63c38e6cb1ddd258b",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "550815a6c6cd43d7d1ed2084e0abe6bea57413c52a30352a5dcf760c82e713f9"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52"
+      }
+    ],
+    "sections": 6,
+    "headings": [
+      "The setting",
+      "The gap",
+      "What we built",
+      "The honest trade-offs",
+      "What the diff looks like",
+      "The short version"
+    ],
+    "words": 794,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": false,
+    "optionalReview": "The file-tour section repeats the three-file path and summaries already explained in implementation; it adds no distinct explanation.",
+    "supportedContent": true,
+    "sourceGrounds": "pr-batch-limit.json body and three hunks: default 100, positive integer startup validation, splice prefix, configured worker call, retained remainder, no memory/time guarantee, no tenant key. 250/100 examples follow from splice semantics; no runtime measurement or roadmap claim.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "multi-candidate-2",
+    "manifestSha256": "c8a0bbd891542de0848389102798c2ed2d87a35ba6e54ae7dfeac907a064a977",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46"
+      }
+    ],
+    "sections": 4,
+    "headings": [
+      "The setting",
+      "The gap / motivation",
+      "What we built",
+      "The short version"
+    ],
+    "words": 482,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": true,
+    "optionalReview": "Four sections; no optional section or invented menu item.",
+    "supportedContent": true,
+    "sourceGrounds": "pr-batch-limit.json body and three hunks: default 100, positive integer startup validation, splice prefix, configured worker call, retained remainder, no memory/time guarantee, no tenant key. 250/100 examples follow from splice semantics; no runtime measurement or roadmap claim.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "multi-baseline-3",
+    "manifestSha256": "67d24cd0225b95c2fd61c74e41b2fe5c2e9fa1296385286e170a2cc305a22902",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "550815a6c6cd43d7d1ed2084e0abe6bea57413c52a30352a5dcf760c82e713f9"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "6d18da4bf5e77cf9675c6a1dba1f530dd382797eb0161a1468e57ebe71e8eb52"
+      }
+    ],
+    "sections": 6,
+    "headings": [
+      "The setting",
+      "The gap",
+      "What we built",
+      "The honest trade-offs",
+      "What the diff looks like",
+      "The short version"
+    ],
+    "words": 770,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": false,
+    "optionalReview": "The file-tour section repeats the three-file path and summaries already explained in implementation; it adds no distinct explanation.",
+    "supportedContent": true,
+    "sourceGrounds": "pr-batch-limit.json body and three hunks: default 100, positive integer startup validation, splice prefix, configured worker call, retained remainder, no memory/time guarantee, no tenant key. 250/100 examples follow from splice semantics; no runtime measurement or roadmap claim.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  },
+  {
+    "id": "multi-candidate-3",
+    "manifestSha256": "be86b4612b77bb23c0601572f89691dc3c5fc5c47cc8cc860842099ca7fd78bf",
+    "promptSha256": "63032ea1935c6a1bf46ce3115793af36154440f23dea549f8456dfe5c7533919",
+    "reads": [
+      {
+        "file": "SKILL.md",
+        "sha256": "c998f10968fc734f72e79d90196d9a30d56d38ffc1e5b3c9e826ae0b6833ca17"
+      },
+      {
+        "file": "STYLE.md",
+        "sha256": "cf9c71ad3e0532de5e631966f8dde97d5d1888fd4a4e4daa01129962956e2a46"
+      }
+    ],
+    "sections": 4,
+    "headings": [
+      "The setting",
+      "The gap / motivation",
+      "What we built",
+      "The short version"
+    ],
+    "words": 492,
+    "countCeiling": true,
+    "wordCeiling": true,
+    "requiredDistinctOrderAndFinalRecap": true,
+    "requiredContentReview": "Distinct source-grounded setup, motivation, and implementation precede a separate final recap.",
+    "optionalSectionsEarned": true,
+    "optionalReview": "Four sections; no optional section or invented menu item.",
+    "supportedContent": true,
+    "sourceGrounds": "pr-batch-limit.json body and three hunks: default 100, positive integer startup validation, splice prefix, configured worker call, retained remainder, no memory/time guarantee, no tenant key. 250/100 examples follow from splice semantics; no runtime measurement or roadmap claim.",
+    "modelBuildCalls": 1,
+    "reviewerBuild": "passed"
+  }
+]

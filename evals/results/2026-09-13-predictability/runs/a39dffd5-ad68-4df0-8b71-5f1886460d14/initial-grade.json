@@ -1,0 +1,122 @@
+{
+  "fields": [
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The changed mechanism",
+      "status": "nonfactual",
+      "rationale": "Section kicker only. It names the excerpt’s topic and does not assert a testable fact about source.json contracts, before/after, or probe-results.json."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Keep the bound, filter the error, double the delay",
+      "status": "supported",
+      "rationale": "source.json before and after both use `for (let attempt = 0; attempt <= retries; attempt++)`, so the inclusive bound is kept. after() adds `if (!error.retryable || attempt === retries) throw error`, and probe-results.json after.permanent.calls is 1 versus before.permanent.calls 2. after() requests `sleep(10 * 2 ** attempt)` versus before() `sleep(10)`; probe-results.json after.exhausted.delays is [10, 20] versus before [10, 10]."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The updated loop preserves the attempt budget and awaits each send:",
+      "status": "supported",
+      "rationale": "after() keeps `for (let attempt = 0; attempt <= retries; attempt++)` and `return await send()` from before() (source.json before/after; functions.mjs). Adjacent sentences and CODE:0 describe that same loop, not a new bound."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries.",
+      "status": "supported",
+      "rationale": "Both functions start at attempt 0 with `attempt <= retries`. probe.mjs exhausted uses retries=2 and asserts calls===3 with message 'retries counts extra attempts, not all attempts'. probe-results.json after.exhausted.calls is 3 and after.zeroBudget.calls is 1 with retries=0."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Returning the awaited result stops the loop on success.",
+      "status": "supported",
+      "rationale": "after() does `return await send()` inside try (source.json after; functions.mjs lines 14–15). On resolve, the function returns and does not continue the for-loop. probe-results.json after.duplicate.result is \"delivered\" after a later successful send."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The catch block now decides whether another attempt is eligible before requesting a delay:",
+      "status": "supported",
+      "rationale": "after() catch throws when `!error.retryable || attempt === retries`, then otherwise `await sleep(...)` (source.json after; functions.mjs lines 16–18). Eligibility is decided before any delay request. before() only gated on `attempt === retries`; the retryable check is the new filter. Adjacent CODE:1 matches that catch."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "A permanent error or exhausted budget throws immediately.",
+      "status": "supported",
+      "rationale": "Immediate here is adjacent to the catch: throw without sleep. after() throws on `!error.retryable` or `attempt === retries` before sleep. probe-results.json after.permanent has calls 1, delays [], error \"permanent\". after.exhausted has three sends and only two delays, then error \"transient\"."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "Otherwise, the requested delays grow as 10, 20, 40 milliseconds, and so on.",
+      "status": "supported",
+      "rationale": "after() uses `await sleep(10 * 2 ** attempt)` (source.json after; functions.mjs line 18). For attempt 0, 1, 2 that is 10, 20, 40. Contract: delays are requested milliseconds. The exhaustion probe only observes 10 and 20 because retries=2; the 40 term is the code formula, not a probe-measured universal guarantee."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before.",
+      "status": "supported",
+      "rationale": "probe-results.json after.exhausted.calls is 3 and delays [10, 20]; before.exhausted.delays is [10, 10]. Matches probe.mjs asserts on exhausted.calls and the two delay arrays."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "These are requested delays: the probe resolves sleep immediately.",
+      "status": "supported",
+      "rationale": "source.json contract: 'Delays are requested milliseconds, not measured wall-clock durations.' probe.mjs sleep only pushes the delay argument and optionally rejects. probe-results.json assumptions: 'immediate sleep promises; no timing or production measurement.'"
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "A rejected sleep propagates and prevents another send.",
+      "status": "supported",
+      "rationale": "source.json contract: 'sleep returns a promise; rejection propagates.' after() awaits sleep inside catch, so a rejection exits without another send(). probe.mjs asserts sleepFailure.calls===1 and error 'sleep-failed'. probe-results.json after.sleepFailure has calls 1, delays [10], error \"sleep-failed\"."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "A send rejection may happen after the remote side effect commits. There is no deduplication or idempotency contract. An eligible retry can therefore repeat a committed effect.",
+      "source_or_contract": "source.json contracts[1]; probe.mjs duplicate scenario and assert 'a lost acknowledgment permits duplicate side effects'; probe-results.json after.duplicate.effects === 2 (also before.duplicate.effects === 2).",
+      "conflicting_or_omitted_claim": "The excerpt says the catch 'decides whether another attempt is eligible' and describes permanent versus exhausted failures. It never states that retryable is not an idempotency signal, or that a lost acknowledgment can commit twice. That omission changes what 'eligible' means: the filter skips non-retryable errors; it does not make a retry safe against duplicate side effects.",
+      "why_material": "The section’s causal story is when the loop retries. Without the commit-after-reject limit, a reader can treat retryable plus backoff as safe redelivery. source.json body even records an exactly-once claim; the modeled duplicate probe falsifies that guarantee. Passing exhausted/permanent examples do not prove once-only delivery."
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "pass",
+    "quotes": [
+      {
+        "quote": "Keep the bound, filter the error, double the delay",
+        "verdict": "pass",
+        "rationale": "Names the three after() differences versus before() without claiming exactly-once delivery or wall-clock waits."
+      },
+      {
+        "quote": "Starting at zero makes the inclusive bound allow one initial attempt plus the configured retries.",
+        "verdict": "pass",
+        "rationale": "Matches the loop and the retries=2 → 3 calls / retries=0 → 1 call probe results."
+      },
+      {
+        "quote": "The exhaustion probe records three sends and delays of 10 and 20 milliseconds, versus 10 and 10 before.",
+        "verdict": "pass",
+        "rationale": "Scoped to the modeled exhaustion probe rather than a universal production guarantee."
+      },
+      {
+        "quote": "These are requested delays: the probe resolves sleep immediately.",
+        "verdict": "pass",
+        "rationale": "Keeps requested milliseconds distinct from measured duration, matching the sleep contract and probe assumptions."
+      },
+      {
+        "quote": "A rejected sleep propagates and prevents another send.",
+        "verdict": "pass",
+        "rationale": "Matches the sleep-rejection contract and after.sleepFailure (1 call, error sleep-failed)."
+      }
+    ],
+    "note": "Stated mechanism claims are accurate and qualified. The missing idempotency limit is listed separately; it is an omission, not a false sentence in this excerpt. No title or summary here asserts exactly-once delivery."
+  },
+  "unresolved_uncertainty": [
+    {
+      "item": "Whether source.json contracts[3] (separate calls share no retry counter; no lock or cross-call delivery exclusion) is a material omission in this excerpt.",
+      "why_unresolved": "probe-results.json after.concurrentCalls shows two independent deliveries (effects 1+1). The excerpt never mentions shared counters or exclusion. That is a real contract, but this saved section only explains one call’s loop, catch filter, and delay formula. It does not claim global budgeting or mutual exclusion. Not listed as a material limitation; not treated as a prose failure."
+    },
+    {
+      "item": "Whether omitting the author’s 'exactly once' line from source.json body should itself fail reader-facing prose.",
+      "why_unresolved": "The excerpt does not repeat that claim. The material gap is the missing no-idempotency contract, already listed. Prose is rated pass for the sentences that appear. If a fuller walkthrough were required to rebut the source body, that requirement is not evidenced in the saved excerpt alone."
+    }
+  ]
+}

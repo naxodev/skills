@@ -1,0 +1,80 @@
+{
+  "inputSha256": "dbea5d9c7a60c4d0d22143cfca2f22f9b6e0404078a56d593c975c238954bceb",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/title",
+      "problem": "The title asserts atomic commitment of the payment and notification. The changed function instead commits the database transaction before invoking external publication. Publication can then reject without delivering a notification while the payment remains committed, as the modeled publish-before case illustrates. The contract also permits a process stop between awaited operations without a durable outbox or background retry. The title repeats the author's unsupported atomicity claim and contradicts the supported body and recap.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/after",
+          "quote": "  await db.transaction(async (tx) => {\n    await tx.markPaid(id);\n  });\n  await publish(id);"
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/0",
+          "quote": "It fulfills with undefined after commit."
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/1",
+          "quote": "publish is an external operation outside the database transaction. Its rejection may happen before or after an externally visible notification."
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/3",
+          "quote": "A process can stop between awaited operations. No durable outbox, background retry, or cross-call lock is supplied."
+        },
+        {
+          "file": "source",
+          "pointer": "/body",
+          "quote": "The author says moving publish prevents notifications for failed commits and makes payment and notification atomic."
+        },
+        {
+          "file": "probe",
+          "pointer": "/assumptions",
+          "quote": "In-memory staged transaction and external notification counter; no actual database or process-kill simulation."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/publish-before",
+          "value": {
+            "paid": true,
+            "notifications": 0,
+            "events": ["begin", "write", "commit", "publish"],
+            "errors": ["publish-before"]
+          }
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/title",
+      "findingIds": ["A1"],
+      "value": "Payment commits before notification, with a remaining delivery gap"
+    }
+  ],
+  "blockers": []
+}

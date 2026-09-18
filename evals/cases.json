@@ -1,0 +1,248 @@
+[
+  {
+    "id": "docs-tutorial",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-package"],
+    "prompt": "Write a tutorial for a novice learning to make their first local release label and then change its prefix in the supplied package. Save tutorial.md and report verification.",
+    "criteria": [
+      { "id": "learning", "expect": "Provides a controlled start, an ordered learning progression, and observable results for the first label and changed prefix. Explains what the learner observes without a choice-heavy task checklist. Neither we nor you is mandatory lexical evidence." },
+      { "id": "replay", "expect": "A reader can execute the page in order from a fresh fixture copy with Bun using stated files and working directory, without hidden setup, and observe both promised labels." },
+      { "id": "grounding", "expect": "Reads package.json, index.ts, release-label.ts, and README usage; uses the public export and source-backed options and behavior. Runnable examples include real imports/context; signatures or fragments are clearly scoped rather than treated as runnable." },
+      { "id": "verification", "expect": "Actually executes procedural examples, discovers and inspects suitable rendered Markdown output, verifies the README entry point and links, and reports accurate statuses. No docs build/sidebar exist; unsupported completion is a failure." }
+    ]
+  },
+  {
+    "id": "docs-reference",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-package"],
+    "prompt": "Write an API reference page for an experienced developer who needs to look up the exact releaseLabel contract in the supplied package. Save reference.md and report verification.",
+    "criteria": [
+      { "id": "lookup", "expect": "Organizes the exact API for quick lookup without an unnecessary setup walkthrough. Signatures/type shapes may be non-runnable when labeled or clearly scoped. No artificial next-step section or invented route is needed." },
+      { "id": "contract", "expect": "Documents required string version, optional options and string prefix, defaults for omitted/undefined options or prefix, string return, trimmed version, valid empty prefix, and Error('version must not be blank') for blank/whitespace version. Preserves the blank-version invariant regardless of prefix. Does not confuse nullish runtime behavior with typed support for null or invent version validation/side effects." },
+      { "id": "grounding", "expect": "Reads package exports, implementation and README usage; precise defaults, errors, and meaningful effects match source. Runnable examples use the public index.ts and replay correctly when present; no runnable recipe is required." },
+      { "id": "verification", "expect": "Checks claims against source, runs any runnable examples, discovers and inspects suitable rendered Markdown output, verifies README navigation and local links, and reports accurate statuses. Missing build/sidebar are not applicable, not proof that rendering is unavailable." }
+    ]
+  },
+  {
+    "id": "docs-local-api",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-package"],
+    "prompt": "Write a how-to page for changing the release-label prefix in the supplied package. Read the source and run the example with Bun. Save guide.md in the copied fixture directory and report verification.",
+    "criteria": [
+      { "id": "grounding", "expect": "Uses releaseLabel(version, { prefix }) from the public index.ts and invents no options." },
+      { "id": "execution", "expect": "Runs a working example and records its actual output or assertion result." },
+      { "id": "applicability", "expect": "Marks docs build and sidebar not applicable with reasons; does not demand a src directory." },
+      { "id": "quadrant", "expect": "Produces a task-focused how-to with a verification step." },
+      { "id": "reader-fit", "expect": "States the relevant package context and Bun requirement without unrelated setup; gives a check and expected prefixed label that establish the requested result." }
+    ]
+  },
+  {
+    "id": "docs-external-api",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/external-api.md"],
+    "prompt": "Draft a how-to for creating a parcel with the supplied fictional provider reference. Treat that file as the official evidence for this offline evaluation. No service or credentials exist. Save guide.md and report verification.",
+    "criteria": [
+      { "id": "contract", "expect": "Uses POST /v2/parcels, destination, weightGrams, and bearer authentication; invents no SDK or retryPolicy field." },
+      { "id": "honesty", "expect": "Reports live execution untested and labels the output a draft rather than claiming a successful request." },
+      { "id": "scope", "expect": "Uses provider evidence rather than looking for a local implementation of the external API." }
+    ]
+  },
+  {
+    "id": "docs-concept",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/operations.md"],
+    "prompt": "Write an explanation of why incident history lives outside chat, based on the supplied decision record. Save explanation.md and report verification.",
+    "criteria": [
+      { "id": "reasoning", "expect": "Explains durable timelines and handover from the decision without inventing retention guarantees or response commitments." },
+      { "id": "quadrant", "expect": "Writes an explanation, not a forced step-by-step API tutorial." },
+      { "id": "applicability", "expect": "Treats code execution, docs build, and sidebar as not applicable with reasons." },
+      { "id": "reader-fit", "expect": "Helps the reader distinguish live chat coordination from durable tracker timelines and handover, without a setup checklist, runnable procedure, or unsupported guarantees." }
+    ]
+  },
+  {
+    "id": "docs-reader-start",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-reader"],
+    "prompt": "Write a how-to for a competent developer who is new to this workspace and needs to generate the release team's local release card from a fresh copy. Save guide.md and report verification.",
+    "criteria": [
+      { "id": "grounding", "expect": "Uses card.ts and the README contract with configs/release.json, preserving the supplied release prefix/version; invents no options, links, setup, or external service." },
+      { "id": "reader-fit", "expect": "Establishes Bun and the workspace root, creates the initially absent release config from the example, and requires no hidden setup when replayed in a fresh copy." },
+      { "id": "outcome", "expect": "Writes generated/release.txt containing release-2.4.0 and a newline; includes a runnable verification command and expected observable success that checks the saved artifact." },
+      { "id": "rationale", "expect": "Briefly explains that --write saves the artifact while default dry-run output does not establish saved success." },
+      { "id": "execution", "expect": "Actually executes the documented workflow and compares the saved result, with truthful verification statuses." },
+      { "id": "applicability", "expect": "Marks absent build, sidebar, and live checks not applicable with reasons; inspects plain Markdown and its entry point." },
+      { "id": "quadrant", "expect": "Produces one task-focused how-to, without extended conceptual background or visible drafting contracts." }
+    ]
+  },
+  {
+    "id": "docs-render-markdown",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-render/markdown"],
+    "prompt": "Perform step 5 verification only of the existing page.md, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged.",
+    "criteria": [
+      { "id": "discovery", "expect": "Inspects project build/preview configuration and discovers a capable installed renderer. Before evaluating this case, the reviewer verifies a suitable terminal Markdown viewer is installed." },
+      { "id": "presentation", "expect": "Runs a suitable viewer and inspects actual rendered output. Raw source, exit status alone, and unsupported unavailable-viewer claims do not pass." },
+      { "id": "independence", "expect": "Independently checks the source decision and README/page links. Marks the absent build and procedural replay not applicable with reasons, without making rendering not applicable." },
+      { "id": "scope", "expect": "Reports terminal Markdown review within its capability, without claiming site CSS or browser interaction verification." }
+    ]
+  },
+  {
+    "id": "docs-render-mdx",
+    "kind": "workflow",
+    "skill": "writing-technical-docs",
+    "fixtures": ["evals/fixtures/docs-render/mdx"],
+    "prompt": "Perform step 5 verification only of the existing page.mdx, using the supplied source files and README environment constraints. Report your verification findings and handoff status. Keep all supplied files unchanged.",
+    "criteria": [
+      { "id": "discovery", "expect": "Inspects package scripts, host configuration, and installed dependencies or renderer capability. A terminal Markdown viewer remains installed but cannot run this component." },
+      { "id": "capability", "expect": "Reports MDX presentation and interaction untested because the MDX/React host and dependencies are missing. Does not equate Markdown rendering or source inspection with component verification." },
+      { "id": "independence", "expect": "Checks the component and contract for the 30/90-day local-state behavior, and checks README/page links independently." },
+      { "id": "handoff", "expect": "Labels the page a draft with concrete attempted discovery and missing capability; respects offline/no-install/no-browser constraints." }
+    ]
+  },
+  {
+    "id": "discord-audit",
+    "kind": "workflow",
+    "skill": "discord-community-server",
+    "fixtures": ["evals/fixtures/discord-audit.md"],
+    "prompt": "Audit this fictional server from the supplied snapshot. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md.",
+    "criteria": [
+      { "id": "read-only", "expect": "Produces an audit with no writes to a live server or claims of applied changes." },
+      { "id": "mode-fit", "expect": "Finishes with an audit handoff, without requiring an operating-state file, plan approval, apps, events, invites, modifying tests, or launch acceptance. Any next actions concern relevant corrections or verification gaps." },
+      { "id": "findings", "expect": "Finds writable announcements, missing required forum tags, and privileged interest-role permissions. Each finding states an observed fact and source, impact and priority rationale, a correction explicitly not applied, and a verification method classified using the existing roles matrix." },
+      { "id": "scope", "expect": "Records scope, as-of information (unknown snapshot date is valid), and evidence sources. Separates unknown or unavailable checks from observed failures; missing evidence is not an insecure setting." },
+      { "id": "evidence", "expect": "Separates the supplied role-preview observation from untested fresh-member checks and unverified current feature labels." },
+      { "id": "fit", "expect": "Uses command execution and build previews as relevant community terms and preserves the durable reporting routes." }
+    ]
+  },
+  {
+    "id": "discord-audit-incomplete",
+    "kind": "workflow",
+    "skill": "discord-community-server",
+    "fixtures": ["evals/fixtures/discord-audit-incomplete.md"],
+    "prompt": "Audit this fictional server from the supplied snapshot. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md.",
+    "criteria": [
+      { "id": "read-only", "expect": "Produces an audit with no writes to a live server or claims of applied changes." },
+      { "id": "mode-fit", "expect": "Finishes with an audit handoff, without requiring an operating-state file, plan approval, apps, events, invites, modifying tests, or launch acceptance. Any next actions concern relevant corrections or verification gaps." },
+      { "id": "findings", "expect": "Invents no failures from healthy observed roles, channels, and tags or absent evidence. Records healthy observations and separates unobserved checks. If a failure is claimed, its observed fact and source must support its impact, priority, unapplied correction, and matrix-classified verification method." },
+      { "id": "scope", "expect": "Records scope, as-of information (unknown snapshot date is valid), and evidence sources. Separates unknown or unavailable checks from observed failures; missing evidence is not an insecure setting." },
+      { "id": "evidence", "expect": "Separates supplied role-preview observations and configuration records from untested fresh-member checks and unverified current feature labels; does not certify the whole server as secure." },
+      { "id": "fit", "expect": "Uses command execution and build previews as relevant community terms and preserves the durable reporting routes." }
+    ]
+  },
+  {
+    "id": "pr-grounding",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #42. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "causality", "expect": "Explains that refresh moves before send to avoid the first failed request after expiry." },
+      { "id": "evidence", "expect": "Attributes the extra-clock-read claim to the PR body, distinguishes it from the moved check in the diff, and names the streaming follow-up. Invents no rejected alternatives, linked issues, or benchmarks." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML from a manifest and reports the actual file path." },
+      { "id": "proportion", "expect": "Uses 4–11 sections with distinct setting, gap/motivation, implementation, and recap sections in that order; setting is first and recap last. Defaults to four sections and at most 900 words. Any optional section before the recap earns its place through distinct supplied evidence; adds no unsupported story to fill sections." }
+    ]
+  },
+  {
+    "id": "pr-cache-units",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr-cache-units.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #73. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "semantics", "expect": "Explains that the old 60 seconds multiplied by 1000 and the new 60000 milliseconds give the same one-minute lifetime under the supplied contract." },
+      { "id": "evidence", "expect": "Distinguishes the unchanged lifetime from the author's doubling claim and treats the claimed halving of upstream requests as unverified. Invents no disk-cache implementation, measured results, or rejected alternatives." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML from a manifest and reports the actual file path." },
+      { "id": "proportion", "expect": "Uses 4–11 sections with distinct setting, gap/motivation, implementation, and recap sections in that order; setting is first and recap last. Defaults to four sections and at most 900 words. Any optional section before the recap earns its place through distinct supplied evidence. Explains the unit representation change and evidence conflict without adding unsupported benefits to fill the narrative." }
+    ]
+  },
+  {
+    "id": "pr-batch-limit",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr-batch-limit.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #108. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "causality", "expect": "Explains the startup setting, bounded prefix removal, and worker call as one change that leaves excess jobs pending." },
+      { "id": "code-evidence", "expect": "Returns at most four contiguous verbatim diff excerpts with matching file context and diff signs, sufficient to explain the mechanism without quota-driven repetition. Renders at most four source-faithful after-change code blocks that explain configuration, prefix removal, and caller integration; distinct explanations may use separate blocks." },
+      { "id": "evidence", "expect": "Preserves the default 100 and positive-integer validation. Distinguishes batch count from memory or processing-time guarantees. Names the missing tenant key as the documented scheduling limitation. Invents no alternatives, follow-up issues, priorities, or measured benefits." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML from a manifest and reports the actual file path." },
+      { "id": "proportion", "expect": "Uses 4–11 sections with distinct setting, gap/motivation, implementation, and recap sections in that order; setting is first and recap last. Each optional section before the recap adds a distinct explanation grounded in supplied material. Stays within 1800 words without padding to a minimum." }
+    ]
+  },
+  {
+    "id": "pr-grounding-quality",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #42. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "causality", "expect": "Explains the refresh-before-send change and attributes the reported expiry failure to the author." },
+      { "id": "code-evidence", "expect": "Returns the smallest sufficient set of up to four contiguous verbatim diff excerpts with matching file context and diff signs. Shows source-faithful after-change code explaining refresh before dispatch, with one self-contained block preferred; neither report excerpts nor rendered blocks split or repeat code merely to meet a quota. Two blocks can pass when distinct explanations justify them." },
+      { "id": "evidence", "expect": "Distinguishes the author's extra-read claim from relocation of the existing check and keeps the unshown streaming path's implementation unknown." },
+      { "id": "guarantees", "expect": "Makes no unqualified request-success or exact per-call clock-count guarantee. Recognizes that exceptions or unknown client methods limit runtime conclusions." },
+      { "id": "reader-facing", "expect": "Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML reflecting the final manifest and reports the output path." }
+    ]
+  },
+  {
+    "id": "pr-lock-cleanup",
+    "kind": "workflow",
+    "skill": "pr-walkthrough",
+    "fixtures": ["evals/fixtures/pr-lock-cleanup.json"],
+    "prompt": "Use pr-walkthrough to produce a text-only walkthrough of fixture PR #91. I want the walkthrough despite its small size. For this offline evaluation, the supplied JSON replaces the gh fetch in step 2; do not call GitHub. Keep the remaining evidence and build steps. Write the output in this evaluation directory.",
+    "criteria": [
+      { "id": "mechanics", "expect": "Explains that release is attempted after task fulfillment or rejection once acquisition fulfills, while acquisition remains outside the try/finally." },
+      { "id": "evidence", "expect": "Distinguishes the author's always-released and always-preserved assertions from what the shown code establishes; invents no batch-job implementation or production results." },
+      { "id": "guarantees", "expect": "Explains that a rejected acquisition does not enter the finally block, a rejected release does not establish successful cleanup, and a release rejection can replace an earlier task rejection." },
+      { "id": "reader-facing", "expect": "Produces a coherent explanation for a developer, with no internal fact IDs, approval labels, reviewer directives, or descriptions of the drafting process in the reader-facing content." },
+      { "id": "artifact", "expect": "Builds readable text-only HTML reflecting the final manifest and reports the output path." }
+    ]
+  },
+  {
+    "id": "route-docs-positive",
+    "kind": "routing",
+    "skill": "writing-technical-docs",
+    "fixtures": [],
+    "prompt": "Improve this README installation guide and verify that its commands work.",
+    "criteria": [{ "id": "selection", "expect": "Selects writing-technical-docs." }]
+  },
+  {
+    "id": "route-docs-negative",
+    "kind": "routing",
+    "skill": null,
+    "fixtures": [],
+    "prompt": "Rename an internal variable in the parser. No documentation changes are needed.",
+    "criteria": [{ "id": "selection", "expect": "Selects none of the catalog skills." }]
+  },
+  {
+    "id": "route-discord-positive",
+    "kind": "routing",
+    "skill": "discord-community-server",
+    "fixtures": [],
+    "prompt": "Audit the roles and onboarding of our official Discord beta community.",
+    "criteria": [{ "id": "selection", "expect": "Selects discord-community-server." }]
+  },
+  {
+    "id": "route-discord-negative",
+    "kind": "routing",
+    "skill": null,
+    "fixtures": [],
+    "prompt": "Fix the JSON parser in our Discord webhook HTTP client. Server configuration is out of scope.",
+    "criteria": [{ "id": "selection", "expect": "Selects none of the catalog skills; a Discord keyword alone is insufficient." }]
+  },
+  {
+    "id": "route-pr-negative",
+    "kind": "routing",
+    "skill": null,
+    "fixtures": [],
+    "prompt": "Review this PR for bugs and report findings inline.",
+    "criteria": [{ "id": "selection", "expect": "Selects none of the catalog skills; pr-walkthrough is explicitly user-invoked and is not a code review." }]
+  }
+]

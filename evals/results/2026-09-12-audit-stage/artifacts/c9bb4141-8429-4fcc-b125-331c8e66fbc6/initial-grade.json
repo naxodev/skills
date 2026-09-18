@@ -1,0 +1,187 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Invalidate after the write, with a concurrency limit",
+      "status": "unsupported",
+      "rationale": "source.after and functions.mjs after() delete only after await db.write, which matches “Invalidate after the write”. Neither the contracts, before/after functions, nor probes name or implement a concurrency limiter. lateSnapshot shows a remaining stale refill after invalidation, which is a coverage hole rather than a concurrency limit. No supplied input uses the phrase “concurrency limit”."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Moss Catalog · Component study",
+      "status": "nonfactual",
+      "rationale": "Kicker/genre label. “Moss Catalog” appears in source.title; “Component study” has no checkable meaning in the contracts, functions, or probe results."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "Moving cache deletion after a successful write clears fills completed during that write. An older read can still refill the cache afterward.",
+      "status": "supported",
+      "rationale": "after() runs cache.delete only after await db.write; a thrown write skips deletion. Probe fillDuringWrite after: cached is null and nextRead is “new” (probe.mjs assert and probe-results.json). Probe lateSnapshot after: cached and nextRead remain “old”. The first sentence is the after() mechanism on a synchronous Map for that key, illustrated by fillDuringWrite, not a probe-only universal."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Fictional change · Source and supplied deterministic probes",
+      "status": "nonfactual",
+      "rationale": "Provenance/genre line, not a program claim. probe-results.json assumptions describe explicit promise gates and no wall-clock timing, which fits “deterministic probes”, but “Fictional change” is not a source contract."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "Scope: one process, one shared synchronous Map, and the supplied database contracts.",
+      "status": "supported",
+      "rationale": "Matches source contracts (synchronous Map, same Map per read/update, db.write commit-before-fulfillment, db.read snapshot-at-invoke) and probe-results.json assumptions (“One process and one Map”)."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Section label with no program claim."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "Reads keep their database result",
+      "status": "supported",
+      "rationale": "unchanged read() returns a cache hit or the awaited db.read value and cache.set that same value. The snapshot contract says that value may already be old when the promise fulfills."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The database captures a snapshot when db.read starts. Its promise can finish later, so the value cached after await may already be old.",
+      "status": "supported",
+      "rationale": "Source contract: db.read captures a snapshot when invoked, and the promise may fulfill after a later write commits. probe.mjs overlapping read() assigns snapshot = stored, then awaits a gate before returning it. lateSnapshot overlappingRead is “old” after stored is “new”. The lead sentences match read() (miss → db.read → cache.set) and the contract that read is unchanged."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The gap",
+      "status": "nonfactual",
+      "rationale": "Section label with no program claim."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Deleting first leaves time to refill",
+      "status": "supported",
+      "rationale": "before() is cache.delete then await db.write. fillDuringWrite before: overlappingRead “old”, cached “old”, nextRead “old”. The following paragraph states the window is gated promises, not elapsed time, so “time” here is that interval."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The previous update deleted the cache entry before awaiting the write. While that write waited, a reader could miss the cache, fetch old, and cache it. The write then committed new without another deletion. Later readers still received old.",
+      "status": "supported",
+      "rationale": "Matches source.before / functions.mjs before() (single delete before await write). fillDuringWrite before results: stored “new”, overlappingRead “old”, cached “old”, nextRead “old”. Sequential nextRead is “new” for before and after. Probe.mjs overlapping() uses deferred gates; assumptions say no wall-clock timing. The difference cited is fillDuringWrite nextRead (“old” vs “new”); lateSnapshot overlap is unchanged between versions, which this field does not claim."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The changed mechanism",
+      "status": "nonfactual",
+      "rationale": "Section label with no program claim."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "Clear completed fills after commit",
+      "status": "supported",
+      "rationale": "after() deletes after await db.write. Contract: a successful write commits before fulfillment. fillDuringWrite after: cached is null and nextRead is “new” after a fill that completed while write was gated."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "A successful write commits before its promise fulfills. Deletion therefore removes any cache fill completed during the pending write. In that probe, the overlapping reader still receives old, but the next read receives new.",
+      "status": "supported",
+      "rationale": "Commit-before-fulfillment is a source contract; overlapping write() assigns stored then returns. after() then cache.delete(key) removes whatever that key holds on a synchronous Map, including a fill that already ran cache.set. fillDuringWrite after: overlappingRead “old”, cached null, nextRead “new”. Failed-write sentences match after() (await throw skips delete), the rejection contract (stored stays “old”), after.failedWrite.cachedAfterUpdate “old”, and before.failedWrite.cachedAfterUpdate null. “Any” is the after() mechanism in this model, not a claim that one probe schedule exhausts all interleavings."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Section label with no program claim."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "A narrower fix than all concurrent reads",
+      "status": "supported",
+      "rationale": "source.body says the author claims post-write invalidation removes stale cache reads, including concurrent readers. lateSnapshot nextRead is “old” for both before and after, so after() does not cover that concurrent schedule."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "The supplied verification file records no findings; the concrete evidence is the source and these bounded probes.",
+      "status": "unsupported",
+      "rationale": "No verification file or findings list is among source.json, functions.mjs, probe.mjs, or probe-results.json, so “records no findings” is not evidenced here. The rest of the field is supported: fillDuringWrite after nextRead “new”; source.body’s author claim vs lateSnapshot nextRead “old” in both versions; lateSnapshot order (snapshot old → write commit/delete → cache.set old); contract that read has no generation check or in-flight coordination."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "Overlapping probes start with an empty Map, so they model a miss during the write rather than a pre-write delete of a warm entry.",
+      "rationale": "probe.mjs overlapping() uses `const cache = new Map()`, while sequential/failedWrite start from `new Map([['key', 'old']])`. Gap prose attributes the miss to deleting first. In the actual fillDuringWrite probe the miss is the empty Map; before() delete is a no-op. A warm cache with after() would hit “old” during the write and would not produce a fill-during-write. That warm overlapping schedule is not in the supplied probes."
+    },
+    {
+      "limitation": "Only two overlapping interleavings are modeled, both single-reader and single-key.",
+      "rationale": "probe.mjs overlapping() has lateSnapshot true/false only, key “key”, values “old”/“new”. Failed writes are sequential only. Other interleavings (two readers, miss after delete of a warm entry, reject during overlap) are untested. Footer scopes process/Map/contracts but does not state these probe bounds."
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/3/content",
+      "quote": "It does not support the author's broader claim of removing stale reads for concurrent readers.",
+      "rationale": "Review-verdict diction (“does not support”, “broader claim”) aimed at the source author rather than explaining the program. source.body does state that author claim; the leakage is the reviewer framing, not a false attribution."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "The supplied verification file records no findings; the concrete evidence is the source and these bounded probes.",
+      "rationale": "Audit-process residue: verification-file status and what counts as “concrete evidence” are not reader explanation of cache invalidation."
+    }
+  ],
+  "code_diagram_errors": [],
+  "reader_facing_prose": {
+    "rating": "fail",
+    "quotes": [
+      {
+        "rating": "fail",
+        "pointer": "/sections/3/content",
+        "quote": "The supplied verification file records no findings; the concrete evidence is the source and these bounded probes."
+      },
+      {
+        "rating": "fail",
+        "pointer": "/sections/3/content",
+        "quote": "It does not support the author's broader claim of removing stale reads for concurrent readers."
+      },
+      {
+        "rating": "fail",
+        "pointer": "/title",
+        "quote": "Invalidate after the write, with a concurrency limit"
+      },
+      {
+        "rating": "pass",
+        "pointer": "/dek",
+        "quote": "Moving cache deletion after a successful write clears fills completed during that write. An older read can still refill the cache afterward."
+      },
+      {
+        "rating": "pass",
+        "pointer": "/sections/1/content",
+        "quote": "The supplied probe reproduces this order with explicit promise gates, rather than elapsed time."
+      },
+      {
+        "rating": "pass",
+        "pointer": "/sections/2/content",
+        "quote": "If the write rejects, execution skips deletion. The database remains unchanged, and the failed-write probe retains its existing old cache entry. Previously, that entry was removed even though the write failed."
+      },
+      {
+        "rating": "pass",
+        "pointer": "/sections/3/content",
+        "quote": "In the late-snapshot probe, a reader captures old, the update commits and deletes, then the reader finishes and caches old. The next read is stale in both versions."
+      }
+    ]
+  },
+  "unresolved_uncertainty": [
+    "Whether “concurrency limit” in /title was meant as the late-snapshot coverage hole rather than a limiter feature. That reading is not stated in the title, so the field is unsupported rather than contradicted.",
+    "Whether a verification file exists and records no findings cannot be checked from the listed review inputs. That sentence is unsupported, not contradicted.",
+    "No mechanism claim in the manifest was contradicted by source contracts, functions.mjs, probe.mjs, or probe-results.json. Remaining issues are unsupported phrasing, omitted probe bounds, and reviewer-language leakage."
+  ],
+  "code_blocks": [
+    {
+      "pointer": "/sections/0/code/0/source",
+      "status": "supported",
+      "rationale": "Exact match of functions.mjs read() and source.unchanged."
+    },
+    {
+      "pointer": "/sections/2/code/0/source",
+      "status": "supported",
+      "rationale": "Exact match of functions.mjs after() and source.after. No diagrams in the manifest."
+    }
+  ]
+}

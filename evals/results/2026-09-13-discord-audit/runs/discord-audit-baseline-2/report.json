@@ -1,0 +1,38 @@
+{
+  "caseId": "discord-audit",
+  "model": "openai/gpt-6-astra#medium (build)",
+  "revision": "e97165e2",
+  "transcript": "transcript.md",
+  "criteria": [
+    {
+      "id": "read-only",
+      "result": "pass",
+      "evidence": "tool-evidence.json records workspace-only reads and one Add File: audit.md per session. The sole shell call (incomplete baseline 1) reads local matrix/report text. No live, invite, credential, or server-modifying tools occur. Input hashes remain unchanged; exported locations match each packet."
+    },
+    {
+      "id": "mode-fit",
+      "result": "fail",
+      "evidence": "audit.md:186: 2. Record the operating plan and owners: successor, Admin backup, moderation lead, conduct recusal backup, appeals, response expectations, launch policy, and Community rationale. Confirm actual role membership. The snapshot cannot identify which roles are vacant. The artifact does finish, but its remaining-actions list carries operating-plan/state or launch-policy work into a snapshot audit. This fails the mode-fit follow-up contract, not the read-only criterion. No run actually blocked awaiting approval."
+    },
+    {
+      "id": "findings",
+      "result": "fail",
+      "evidence": "audit.md:43: | F2 | Medium | `snapshot.md:11`: announcements allow member messages. The local criteria require read-only announcements (`REFERENCE.md`, Permission rules). | Make announcements read-only for members while retaining approved staff posting. Review replies, thread creation, polls, and invite permissions as well as ordinary messages. | A real member must be rejected for each prohibited action. The snapshot proves writable messages, not the current behavior of every related permission. | The findings table lists priorities and control violations, but omits community impact and priority rationale for writable announcements and missing tags. Detection itself is correct."
+    },
+    {
+      "id": "scope",
+      "result": "pass",
+      "evidence": "audit.md:7: - **Mode:** offline, read-only audit, dated 2026-09-13. Scope and local sources are stated, and unknown checks are separate from observed failures. A freshness caveat counts as as-of uncertainty; an entirely omitted temporal limit does not."
+    },
+    {
+      "id": "evidence",
+      "result": "pass",
+      "evidence": "audit.md:42: | F1 | High | `snapshot.md:13`: the interest role has `Manage Roles`. Interest roles must never grant privileged permissions (`REFERENCE.md`, Role model; `VERIFICATION.md`, interest roles). | Remove role-management permission from the interest role. Keep product interests limited to intended channels or notifications. Review assignments, hierarchy, overrides, and combined roles. If onboarding grants this role, correct that path too. | Preview the role and relevant combinations. A human-operated non-privileged member must be unable to manage roles or webhooks. The snapshot does not establish exploit reach or which members hold this role. | The report keeps fresh-member behavior untested and exact-current Discord labels unverified. Recorded configuration is not treated as proof of real-member enforcement."
+    },
+    {
+      "id": "fit",
+      "result": "pass",
+      "evidence": "audit.md:19: The server has 20 invited beta users and two maintainers (`snapshot.md:3`). Its product surfaces are **command execution** and **build previews** (`snapshot.md:4`). Community is enabled (`snapshot.md:9`). The reason for enabling it is not recorded. The report retains support/bugs in the issue tracker, security in the private security-reporting form, and conduct with the human owner. Unknown durable conduct handling is not asserted absent."
+    }
+  ]
+}

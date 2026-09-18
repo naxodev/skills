@@ -1,0 +1,46 @@
+{
+  "title": "One batch, not the whole queue",
+  "eyebrow": "PR #108 · Queue worker · Feature",
+  "dek": "A configurable job limit caps each send while leaving the rest of the queue for later drains.",
+  "meta": "feat: bound queue batches",
+  "footer": "PR #108 · feat: bound queue batches",
+  "sections": [
+    {
+      "eyebrow": "The setting",
+      "title": "Each send took everything waiting",
+      "content": "<p class=\"lead\">The worker sent jobs to <code>/jobs</code> by draining a pending array. On each call to <code>tick</code>, it passed that array to <code>drain</code> and sent the returned jobs. The drain used <code>pending.splice(0)</code>, which removed every entry from the array.</p><p>That made the pending queue determine the size of each send. Ten waiting jobs meant a batch of ten; a thousand waiting jobs meant a batch of a thousand. The worker had no configured limit between the queue and the send.</p>"
+    },
+    {
+      "eyebrow": "The gap / motivation",
+      "title": "A busy queue needed a smaller next step",
+      "content": "<p>The missing control was a maximum number of jobs per send. If 250 jobs were waiting, the old drain handed all 250 to the sender. With the new default limit of 100, that same drain returns the first 100 and leaves 150 pending. Later drains can take the remainder in further batches.</p><p>The guarantee concerns job count. It does not bound job memory or processing time: a batch of 100 jobs still has no promised byte size or duration. This distinction defines what the new setting controls.</p>"
+    },
+    {
+      "eyebrow": "What we built",
+      "title": "Validate the limit, then drain only that many",
+      "content": "<p>The change puts a validated limit on the existing drain-and-send path. In <code>config.ts</code>, <code>BATCH_LIMIT</code> supplies the value through the environment. If it is absent, the limit defaults to 100. The configuration module converts the value to a number and checks it at startup.</p>{{CODE:0}}<p>The guard rejects anything that does not become a positive integer. A value of zero, a fraction, or nonnumeric text throws the stated error when the module loads. The worker therefore receives a validated setting.</p><p>In <code>queue.ts</code>, the drain now accepts that limit as the number of entries to remove.</p>{{CODE:1}}<p>The second argument to <code>splice</code> supplies the cap. The function returns the first jobs in array order and leaves every remaining entry in the same pending array. If fewer jobs are waiting than the limit allows, it returns only those available.</p><p>In <code>worker.ts</code>, the worker imports <code>batchLimit</code> alongside <code>endpoint</code> from the configuration module. It passes the setting into the drain before sending the result.</p>{{CODE:2}}<p>This connects startup validation to each send without changing the destination. The batch comes from the bounded drain; later drains can consume the entries left behind.</p><p>Per-tenant scheduling remains out of scope because the queue has no tenant key. The limit operates on the existing array order, with no tenant-based selection.</p>",
+      "code": [
+        {
+          "lang": "ts",
+          "file": "config.ts",
+          "source": "export const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "queue.ts",
+          "source": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}"
+        },
+        {
+          "lang": "ts",
+          "file": "worker.ts",
+          "source": "export async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}"
+        }
+      ]
+    },
+    {
+      "eyebrow": "The short version",
+      "title": "A cap on the next send",
+      "content": "<p>PR #108 replaces whole-queue drains with batches capped by <code>BATCH_LIMIT</code>, defaulting to 100. Startup validation requires a positive integer. Each worker tick sends only the bounded drain result, leaving the rest queued for later drains. The result is a per-send job-count bound, not a memory or processing-time bound; tenant-aware scheduling remains outside the change because the queue has no tenant key.</p>"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "inputSha256": "be773c3d928d73aa84d491b5a1cdb086195e2926595c12ff86e645da98f31105",
+  "verdict": "revise",
+  "reviewedPointers": [
+    "/title",
+    "/eyebrow",
+    "/dek",
+    "/meta",
+    "/footer",
+    "/sections/0/eyebrow",
+    "/sections/0/title",
+    "/sections/0/content",
+    "/sections/1/eyebrow",
+    "/sections/1/title",
+    "/sections/1/content",
+    "/sections/2/eyebrow",
+    "/sections/2/title",
+    "/sections/2/content",
+    "/sections/3/eyebrow",
+    "/sections/3/title",
+    "/sections/3/content"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "pointer": "/sections/1/content",
+      "problem": "The paragraph presents an unpaid payment and exactly one notification as general consequences of the original function. The contract guarantees rollback of staged writes, not that the prior payment state was unpaid or that publication emits exactly one notification. Those concrete outcomes belong to the supplied model. The later phrase 'rolls back the payment' also needs to identify the staged write rather than imply a known final payment state.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/contracts/0",
+          "quote": "Callback or commit rejection rolls back all staged writes."
+        },
+        {
+          "file": "source",
+          "pointer": "/contracts/1",
+          "quote": "publish is an external operation outside the database transaction. Its rejection may happen before or after an externally visible notification."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/before/commit",
+          "value": {
+            "paid": false,
+            "notifications": 1,
+            "events": ["begin", "write", "publish", "rollback"],
+            "errors": ["commit"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "pointer": "/sections/2/content",
+      "problem": "Saying the first await 'completes only after commit' does not distinguish successful completion from exceptional completion. The transaction can reject without committing. Although the next sentence describes rejection correctly, the ordering guarantee should explicitly apply to successful completion.",
+      "evidence": [
+        {
+          "file": "source",
+          "pointer": "/contracts/0",
+          "quote": "It fulfills with undefined after commit. Callback or commit rejection rolls back all staged writes."
+        },
+        {
+          "file": "probe",
+          "pointer": "/results/after/commit/events",
+          "value": ["begin", "write", "rollback"]
+        }
+      ]
+    }
+  ],
+  "edits": [
+    {
+      "pointer": "/sections/1/content",
+      "findingIds": ["A1"],
+      "value": "<p>If publication succeeded and the later commit failed, the original function rolled back the staged payment write but could not retract the notification. In the supplied probe, the payment starts unpaid and remains unpaid, with one notification recorded. Its event sequence is begin, write, publish, rollback. The source does not specify the payment's prior state.</p><p>Publication itself can also reject after producing a visible notification. In the original function, that rejection rolls back the staged payment write while the notification remains. The author's atomicity claim therefore needs a narrower reading: changing the order prevents this invocation from publishing when its commit fails, but cannot make the two operations succeed together.</p>"
+    },
+    {
+      "pointer": "/sections/2/content",
+      "findingIds": ["A2"],
+      "value": "<p>The changed function waits for the transaction itself, rather than publishing inside its callback:</p>{{CODE:0}}<p>Under the supplied contract, that first await completes successfully only after commit. A write or commit rejection exits before <code>publish</code>. Publication failure now leaves the payment committed.</p><p>The probe models the two possible publication failures explicitly:</p>{{CODE:1}}<p>The counter represents an externally visible notification. Recorded results leave the changed payment paid in both cases, with zero notifications before the increment and one afterward. These are in-memory observations; the supplied verification file records no separate findings.</p>"
+    }
+  ],
+  "blockers": []
+}

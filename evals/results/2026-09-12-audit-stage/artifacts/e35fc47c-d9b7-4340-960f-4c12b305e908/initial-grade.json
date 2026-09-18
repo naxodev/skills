@@ -1,0 +1,170 @@
+{
+  "fields": [
+    {
+      "pointer": "/title",
+      "quote": "Retry only retryable failures, within a fixed budget",
+      "status": "supported",
+      "rationale": "after throws when !error.retryable or attempt === retries (source after; functions.mjs). after.permanent.calls is 1 with error permanent; before.permanent.calls is 2. exhausted.calls is 3 when retries is 2, matching attempt <= retries. The title does not claim successful delivery or cross-invocation exclusion."
+    },
+    {
+      "pointer": "/eyebrow",
+      "quote": "Cedar Relay",
+      "status": "supported",
+      "rationale": "source.json title begins with \"Cedar Relay: filter retries and increase delays\"."
+    },
+    {
+      "pointer": "/dek",
+      "quote": "Permanent failures stop immediately; retryable failures use increasing requested delays without a delivery deduplication guarantee.",
+      "status": "supported",
+      "rationale": "after.permanent: calls 1, delays [], error permanent. after.exhausted delays are [10, 20] from sleep(10 * 2 ** attempt), and contract 3 says delays are requested milliseconds. Contract 2 and duplicate.effects === 2 deny a deduplication guarantee. The dek describes the changed loop, not the old loop (before.permanent.calls === 2)."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Fictional source change and deterministic modeled examples",
+      "status": "unsupported",
+      "rationale": "\"deterministic modeled examples\" matches probe-results.assumptions (\"Deterministic modeled send outcomes and immediate sleep promises; no timing or production measurement\"). Nothing in source.json, contracts, probe.mjs, or probe-results.json labels the source change as fictional. That word is not evidenced by the supplied inputs."
+    },
+    {
+      "pointer": "/footer",
+      "quote": "A rejected acknowledgment can still follow a committed remote effect.",
+      "status": "supported",
+      "rationale": "Contract 2: a send rejection may happen after the remote side effect commits. The duplicate probe models effect: true with a retryable error, then a second effect; duplicate.effects is 2 for before and after. probe.mjs comments that case as a lost acknowledgment."
+    },
+    {
+      "pointer": "/sections/0/eyebrow",
+      "quote": "The setting",
+      "status": "nonfactual",
+      "rationale": "Organizational heading. It does not assert a checkable fact about the source, contracts, or probes."
+    },
+    {
+      "pointer": "/sections/0/title",
+      "quote": "The old loop retried every rejection",
+      "status": "supported",
+      "rationale": "before has no retryable check; it sleeps and continues until attempt === retries. before.permanent.calls is 2 after a non-retryable rejection. before.exhausted retries transients until the budget ends. \"Every\" is the classification policy (all rejections are retryable until the budget throws), not a claim that a zero budget still retries."
+    },
+    {
+      "pointer": "/sections/0/content",
+      "quote": "The old loop retried rejected sends until the retry budget ran out. It requested a ten-millisecond delay between attempts.",
+      "status": "supported",
+      "rationale": "before sleeps 10 after each failed send unless attempt === retries. before.exhausted: calls 3, delays [10, 10], error transient. Contract 3: delays are requested milliseconds. before.zeroBudget: calls 1, delays [] when retries is 0, so the budget can run out with no delay."
+    },
+    {
+      "pointer": "/sections/1/eyebrow",
+      "quote": "The change",
+      "status": "nonfactual",
+      "rationale": "Organizational heading, not a checkable source or probe claim."
+    },
+    {
+      "pointer": "/sections/1/title",
+      "quote": "Classify failures before waiting",
+      "status": "supported",
+      "rationale": "after inspects error.retryable before sleep. after.permanent delays are [] (stop with no wait). Retryable paths sleep only after that check fails to throw."
+    },
+    {
+      "pointer": "/sections/1/content",
+      "quote": "The changed loop stops on a non-retryable error. Otherwise it requests delays of 10, 20, then 40 milliseconds as the attempt index increases. A budget of two retries permits up to three sends. A rejected sleep prevents the next send.",
+      "status": "contradicted",
+      "rationale": "Stop-on-non-retryable is supported (after.permanent.calls === 1, delays []). Two retries → three sends is supported (attempt <= retries; after.exhausted.calls === 3). Sleep rejection preventing the next send is supported (after.sleepFailure.calls === 1, error sleep-failed; contract 3). The delay list is not: sleep runs only when retryable and attempt !== retries, so after.exhausted.delays is [10, 20], not [10, 20, 40]. 40 would be 10 * 2 ** 2 at attempt 2, which is the throw path when retries is 2. The same paragraph states that two-retry budget, so the 40 ms request is contradicted by the modeled trace, not merely unshown."
+    },
+    {
+      "pointer": "/sections/2/eyebrow",
+      "quote": "The boundary",
+      "status": "nonfactual",
+      "rationale": "Organizational heading, not a checkable source or probe claim."
+    },
+    {
+      "pointer": "/sections/2/title",
+      "quote": "A retry can duplicate a remote effect",
+      "status": "supported",
+      "rationale": "Contract 2: no deduplication or idempotency. duplicate.effects is 2 for before and after (effect on the rejected send, then a second successful send)."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The author describes exactly-once delivery, but the supplied contract permits a send to reject after its effect commits. The modeled lost-acknowledgment example records two effects. Separate invocations share no retry budget or exclusion mechanism.",
+      "status": "supported",
+      "rationale": "source.body: the author says the change \"makes delivery exactly once.\" Contract 2 permits reject-after-commit and supplies no deduplication. duplicate.effects === 2. Contract 4: separate calls share no retry counter and no lock or cross-call exclusion. concurrentCalls totals 2 effects from two invocations. These sentences report the author claim and then the contract/probe limits; they do not treat exactly-once as established."
+    },
+    {
+      "pointer": "/sections/3/eyebrow",
+      "quote": "The short version",
+      "status": "nonfactual",
+      "rationale": "Organizational heading, not a checkable source or probe claim."
+    },
+    {
+      "pointer": "/sections/3/title",
+      "quote": "Fewer retries for permanent failures",
+      "status": "supported",
+      "rationale": "after.permanent.calls is 1 versus before.permanent.calls of 2. Retryable exhausted paths still use three sends when retries is 2; the title limits the claim to permanent failures."
+    },
+    {
+      "pointer": "/sections/3/content",
+      "quote": "The change filters failures and increases requested delays. It bounds send attempts per invocation, not successful delivery or duplicate effects.",
+      "status": "supported",
+      "rationale": "after filters on error.retryable. after.exhausted delays [10, 20] versus before [10, 10]. Bounds are per call (attempt <= retries; contract 4). duplicate.effects remains 2; contract 2 supplies no delivery or idempotency guarantee. This does not treat the modeled traces as a universal delivery guarantee."
+    }
+  ],
+  "missing_material_limitations": [
+    {
+      "limitation": "Sleep is not requested on the throwing attempt, so 10 * 2 ** attempt is never passed to sleep when attempt === retries or the error is non-retryable.",
+      "why_material": "Section 1 states delays of 10, 20, then 40 as the attempt index increases in the same paragraph as a two-retry / three-send budget. The exhausted probe for that budget records only [10, 20]. Readers are not told the last attempt never waits.",
+      "sources": [
+        "source after: await sleep(10 * 2 ** attempt) only after the retryable && attempt !== retries guard",
+        "probe-results after.exhausted.delays [10, 20]",
+        "after.permanent.delays []"
+      ]
+    },
+    {
+      "limitation": "Requested delays are not measured wall-clock durations; probe sleeps resolve immediately with no timing or production measurement.",
+      "why_material": "Partly hedged by \"requested\" in the dek and section 1, but the 10/20/40 list still reads as durations the loop will wait. Contract 3 and probe-results.assumptions are the full limit.",
+      "sources": [
+        "contract 3",
+        "probe-results.assumptions"
+      ]
+    }
+  ],
+  "attribution_errors": [],
+  "reviewer_language_leakage": [
+    {
+      "pointer": "/sections/2/content",
+      "quote": "the supplied contract",
+      "rationale": "\"Supplied contract\" is audit-harness phrasing for source.json contracts, not reader-facing product language."
+    },
+    {
+      "pointer": "/sections/2/content",
+      "quote": "The modeled lost-acknowledgment example records two effects.",
+      "rationale": "Names a modeled probe scenario in reviewer terms. The duplicate trace and probe.mjs comment support the two-effect fact, but the wording leaks the evaluation setup."
+    },
+    {
+      "pointer": "/meta",
+      "quote": "Fictional source change and deterministic modeled examples",
+      "rationale": "Methodology label for the audit packet rather than a reader-facing claim about Cedar Relay behavior. \"Fictional\" is also unevidenced (see /meta unsupported)."
+    }
+  ],
+  "code_diagram_errors": [
+    {
+      "pointer": "/sections/1/content",
+      "quote": "Otherwise it requests delays of 10, 20, then 40 milliseconds as the attempt index increases.",
+      "error": "The after formula is 10 * 2 ** attempt, which equals 10, 20, 40 at attempt 0, 1, 2, but sleep is skipped when attempt === retries. With the paragraph's budget of two retries, after.exhausted.delays is [10, 20]. No 40 is requested. There is no diagram; this is a prose mis-trace of the loop.",
+      "probe": {
+        "after.exhausted.delays": [10, 20],
+        "before.exhausted.delays": [10, 10],
+        "after.permanent.delays": []
+      }
+    }
+  ],
+  "reader_facing_prose": {
+    "rating": "fail",
+    "quotes": [
+      "Otherwise it requests delays of 10, 20, then 40 milliseconds as the attempt index increases.",
+      "A budget of two retries permits up to three sends.",
+      "the supplied contract",
+      "The modeled lost-acknowledgment example records two effects."
+    ],
+    "rationale": "Most body copy matches the after function and the modeled traces, and section 3 correctly refuses a delivery or uniqueness guarantee. The change section still states that the loop requests 10, 20, then 40 ms while also stating the two-retry budget whose exhausted probe records only [10, 20]. That is a reader-facing contradiction of exact modeled results, not an extra untested case. Reviewer phrasing in section 2 and meta also leaks into the prose. Passing traces (permanent stop, three sends, two duplicate effects, sleep failure) are not a reason to treat the 40 ms delay as observed."
+  },
+  "unresolved_uncertainty": [
+    "If \"10, 20, then 40 milliseconds as the attempt index increases\" is read only as the closed form of 10 * 2 ** attempt at indices 0–2, and not as sleeps actually requested under retries === 2, /sections/1/content could be scored supported with a missing-limitation note instead of contradicted. The next sentence names that two-retry budget, so this review treats the 40 ms request as contradicted.",
+    "\"Fictional\" in /meta has no source or probe witness. If meta is allowed as an unevidenced methodology label, some rubrics would mark it nonfactual instead of unsupported.",
+    "Section eyebrows are scored nonfactual as labels. If headings must be supported or unsupported, they would be unsupported as source claims because the contracts never use those labels."
+  ]
+}

@@ -1,0 +1,14 @@
+# Frozen concise audit comparison
+
+Baseline is revision `2d31f953`. The candidate adds two audit-presentation paragraphs in A1 and A2 only.
+Freeze both versions and all references before any model run. No outcome-driven tuning or semantic reruns.
+
+Run twelve fresh `openai/gpt-6-astra#medium` build sessions: baseline versus candidate, three repeats each of `discord-audit` and `discord-audit-incomplete`, at most three concurrent. Reuse the exact neutral task prompt from the previous Discord audit comparison. Each full offline audit reads the local skill and references directly. Each fresh sibling jj clone is stripped of history, evals, rubric, and prior results. Only snapshot and local skill files remain. Models may write audit.md and ephemeral local work, not modify inputs or use network/server/browser services. API location, model, agent, local reads, and immutable hashes must be verified from exports.
+
+Source-review all existing six criteria: read-only; audit-mode fit; complete findings/no invented failures; scope/as-of/sources/separate unknowns; preview versus member evidence/current-label limits; project terms/durable routes. The defect snapshot establishes three failures; the healthy snapshot establishes zero. Review compression completeness manually against actual source evidence: all finding fields, material restrictions, unknown/failure distinctions, evidence class, as-of/source, and no changes or rollout requirements. Quote outputs for verdicts. No semantic grader.
+
+Adopt only if all six candidate runs pass every source/evidence/mode-fit check, preserve all known findings, contain no false assurance or claimed server changes, and reduce median whitespace-separated report words by at least 25% against this same batch's baseline. Count `text.trim().split(/\s+/).length`. Length alone never earns a pass. If the gate fails, revert the active candidate exactly and retain the experiment. No extra model runs or candidate tuning after outcomes.
+
+Allow at most one fresh infrastructure retry only for a zero-token attempt; otherwise preserve failed/unrun attempts. Bound each trial to fifteen minutes and interrupt only owned stale sessions. Archive exact inputs, hashes, prompts, raw exports, and visible tool transcripts under ignored `.evals/discord-concise` and the sibling `discord-concise-evidence-20260917` directory. Publish twelve reports, source-quoted review scores, plan, hashes, and evidence. Remove owned trial clones after archival, retaining the owner clone.
+
+This measures page usability through report size and evidence completeness, not real user task time. Live Discord, exact-current labels, greenfield, improvement, and routing evaluations remain unrun. Verify byte-identical guards, setup steps 2–8, shared handoff, references, and frontmatter. Run root and nested frozen installs, `bun run check`, and strict TypeScript checks for new scripts.

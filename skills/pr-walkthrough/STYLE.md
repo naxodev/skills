@@ -8,14 +8,16 @@ Write the through-line before any section: one sentence naming the single story 
 - **One idea per paragraph, stated in its first sentence.** The rest of the paragraph earns that sentence.
 - **End sentences on the new information.** Readers place emphasis where a sentence lands: "the build fails loudly" beats "loud failure is what the build produces."
 - **The reader has not seen the diff.** Name a thing before leaning on it — a flag, acronym, or internal name used before its introduction costs the reader a re-read.
-- **Before shipping, delete the weakest section.** If the essay survives, it was padding. Repeat until it doesn't.
+- **Before shipping, prune padding.** Remove optional sections that add no distinct explanation; trim required sections while preserving their explanatory beats.
 
-## The arc — a menu, not a checklist (6–9 sections)
+## The arc
 
-Four beats are mandatory: the setting, the gap, what we built, the short version. Everything else is on the menu and must earn its place via the through-line. Beats 1–3 are one story — give each its own section only when each carries distinct weight; otherwise merge them.
+Use 4–11 sections total. Four distinct sections are required in this order: the setting → the gap / motivation → what we built → the short version. The setting comes first; the short version comes last. Each must explain its beat, not just carry its label.
+
+Optional sections belong before the recap and earn their place only when supplied evidence adds a distinct, reader-relevant explanation to the through-line. The menu below is not a quota to fill.
 
 1. **The setting** — what the system was before this PR. Anchor the reader. Use `<p class="lead">` here.
-2. **The gap / the bug nobody saw** — what was missing or wrong, with a concrete example, not an abstraction.
+2. **The gap / motivation** — what was missing or wrong, or why the change was wanted, with a concrete example, not an abstraction.
 3. **Why it matters** — the user-visible or operational cost. Translate technical correctness into "what does this cost a developer."
 4. **The mechanic, briefly** — explain the underlying domain concept the PR touches (Go build tags, ESM/CJS interop, JIT compilation, whatever). Plain language. Imagine the reader is sharp but new to the area. This section is the natural home for a diagram; if the concept has structure — a flow, a lifecycle, a before/after shape — draw it rather than describing it in prose.
 5. **What we built** — the chosen approach in narrative form. Algorithm shape, where it plugs in. NOT a file-by-file dump yet. Include the one or two most load-bearing code hunks here, each introduced and explained (see "The key code").
@@ -23,13 +25,15 @@ Four beats are mandatory: the setting, the gap, what we built, the short version
 7. **Alternatives considered** — what was rejected and why. One short paragraph per alternative. If none are documented in the materials, omit this section entirely; don't fabricate.
 8. **What the diff looks like** — file-by-file tour, usually as a 2-column table. Each row: file name (with status: "new" / "modified") + one narrative sentence.
 9. **A note on the test strategy** — optional. Only if tests are unusually structured (real-fs integration tests, fuzz, golden files, etc.). Skip for vanilla unit-test PRs.
-10. **What's next** — open follow-ups, known issues filed, the priority order. Tie back to "trade-offs" — these are usually the same items.
+10. **What's next** — documented follow-ups, known issues filed, and any supplied priority order. Tie back to "trade-offs" where relevant; omit when none are documented.
 11. **The short version** — one paragraph for skimmers, at the END. Never at the top.
 
-For small PRs (single-file refactors), collapse to 5 sections: setting → why → what we built → trade-offs → what's next. For sprawling PRs the hard ceiling is 11, but reaching it means the through-line is probably carrying two stories — cut before you stack.
+Small PRs default to the four required sections. Put documented trade-offs and follow-ups inside the relevant core sections unless the supplied material warrants a separate optional explanation. Keep any optional section before the recap. For sprawling PRs, prune secondary stories before adding sections.
 
 ## Voice
 
+- **Reader-facing.** Keep internal fact IDs, approval labels, reviewer directions, and drafting instructions in analysis artifacts. Use identifiers from the actual source when they help explain the program. Check the title, subtitle, sections, recap, and narration for leaked review material before handing off.
+- **Natural attribution.** Translate evidence notes into prose: use "The author reports…" or "The diff shows…" where attribution matters. Preserve the meaning of important qualifications without copying reviewer wording or repeating the same caveat throughout the essay.
 - **Essay-shaped.** Long paragraphs over short bullets. Bullets only when the items are genuinely parallel and don't carry their own narrative.
 - **Second person + first-person plural.** "You might ask." "We rejected this path." Avoid passive ("it was rejected") — it's a tell of AI-generated prose.
 - **Concrete > abstract.** Show the file, the constraint comment, the failure mode. A reader who can picture a real case beats one with a vague principle.
@@ -72,7 +76,7 @@ Multi-line code goes in the section's `code` array, not in `content`. Reference 
 
 ### The key code
 
-The document should include 2–4 code blocks total showing the most load-bearing code from the PR. Rules:
+Use up to 4 code blocks total, enough to explain the central mechanism of a code change. Prefer one self-contained, load-bearing block for a simple change. Split only when distinct explanations need separate blocks, never to fill a quota. Content-only PRs may omit code. Rules:
 
 - Show the code as it exists AFTER the PR — never raw diff hunks with `+`/`-` markers.
 - Trim each block to its essential lines; elide the rest with a `// …` comment. Max ~20 lines per block.
@@ -138,9 +142,9 @@ Max 1–2 in the entire document. They're for asides the reader needs but that b
 
 ## Length
 
-Word-count ceilings, not goals — the reader's attention is the budget, and a walkthrough that finishes at the bottom of its band beats one that fills it:
-- Small PR walkthrough: 500–900 words
-- Typical: 1100–1800 words
+Word-count ceilings, not goals. There is no minimum; finish when the supported story is clear:
+- Small PR walkthrough: up to 900 words
+- Typical: up to 1800 words
 - Large / multi-feature: up to 2400 words
 
 If you're pushing 2400, you have multiple stories — pick the strongest one and let the rest go.

@@ -1,0 +1,658 @@
+[
+  {
+    "id": "docs-reader-start-baseline-1",
+    "startedAt": "2026-09-13T20:05:18.346Z",
+    "packetEntries": [
+      "card.ts",
+      "README.md",
+      "configs",
+      "skills"
+    ],
+    "inputHashes": {
+      "card.ts": "976836bc7e10fecf19d5adecd15cf73e686fc037dcdc6d3ff556533f9197bfb1",
+      "configs/release.example.json": "0ceec04ddc477a0ef33d4bd781aeae02119a07d5173959ecbb7c8c5dd332f23b",
+      "configs/preview.json": "80a9a41ecf090f32c5fa8b7057c44d22b584b8e17fa900a2af59717331fd74e9",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63a03429ffe03PtULG5Fgvzr6",
+    "status": "completed",
+    "info": {
+      "id": "ses_f63a03429ffe03PtULG5Fgvzr6",
+      "projectID": "9a1801858c436927f5f6b26bcef91ad753e9813f",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 23385,
+        "output": 1819,
+        "reasoning": 252,
+        "cache": {
+          "read": 224640,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329918963,
+        "updated": 1789329920695,
+        "idle": 1789330016808
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-baseline-1-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "README.md",
+      "guide.md"
+    ],
+    "endedAt": "2026-09-13T20:06:56.891Z"
+  },
+  {
+    "id": "docs-reader-start-candidate-1",
+    "startedAt": "2026-09-13T20:05:18.350Z",
+    "packetEntries": [
+      "card.ts",
+      "README.md",
+      "configs",
+      "skills"
+    ],
+    "inputHashes": {
+      "card.ts": "976836bc7e10fecf19d5adecd15cf73e686fc037dcdc6d3ff556533f9197bfb1",
+      "configs/release.example.json": "0ceec04ddc477a0ef33d4bd781aeae02119a07d5173959ecbb7c8c5dd332f23b",
+      "configs/preview.json": "80a9a41ecf090f32c5fa8b7057c44d22b584b8e17fa900a2af59717331fd74e9",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63a03438ffe8qLq5ztEaIfq8g",
+    "status": "completed",
+    "info": {
+      "id": "ses_f63a03438ffe8qLq5ztEaIfq8g",
+      "projectID": "3ef16d5067bb594d6db2522992ba52d43090529e",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 47548,
+        "output": 2357,
+        "reasoning": 52,
+        "cache": {
+          "read": 161664,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329918921,
+        "updated": 1789329919462,
+        "idle": 1789330019467
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-candidate-1-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "README.md",
+      "guide.md"
+    ],
+    "endedAt": "2026-09-13T20:06:59.562Z"
+  },
+  {
+    "id": "docs-reader-start-baseline-2",
+    "startedAt": "2026-09-13T20:05:18.353Z",
+    "packetEntries": [
+      "card.ts",
+      "README.md",
+      "configs",
+      "skills"
+    ],
+    "inputHashes": {
+      "card.ts": "976836bc7e10fecf19d5adecd15cf73e686fc037dcdc6d3ff556533f9197bfb1",
+      "configs/release.example.json": "0ceec04ddc477a0ef33d4bd781aeae02119a07d5173959ecbb7c8c5dd332f23b",
+      "configs/preview.json": "80a9a41ecf090f32c5fa8b7057c44d22b584b8e17fa900a2af59717331fd74e9",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f63a03433ffeUHOi500wgAvczx",
+    "status": "completed",
+    "info": {
+      "id": "ses_f63a03433ffeUHOi500wgAvczx",
+      "projectID": "331d94270fc729f13004a9488698d5724fb2396a",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 50658,
+        "output": 2358,
+        "reasoning": 264,
+        "cache": {
+          "read": 363008,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789329918926,
+        "updated": 1789329920156,
+        "idle": 1789330061051
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-baseline-2-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "README.md",
+      "guide.md"
+    ],
+    "endedAt": "2026-09-13T20:07:41.268Z"
+  },
+  {
+    "id": "docs-reader-start-candidate-2",
+    "startedAt": "2026-09-13T20:06:56.893Z",
+    "packetEntries": [
+      "card.ts",
+      "README.md",
+      "configs",
+      "skills"
+    ],
+    "inputHashes": {
+      "card.ts": "976836bc7e10fecf19d5adecd15cf73e686fc037dcdc6d3ff556533f9197bfb1",
+      "configs/release.example.json": "0ceec04ddc477a0ef33d4bd781aeae02119a07d5173959ecbb7c8c5dd332f23b",
+      "configs/preview.json": "80a9a41ecf090f32c5fa8b7057c44d22b584b8e17fa900a2af59717331fd74e9",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639eb3d9ffewWpPH1CjObGn3t",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639eb3d9ffewWpPH1CjObGn3t",
+      "projectID": "d581161b1f1797f0d8663264cd235b7457f100dc",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 27148,
+        "output": 2255,
+        "reasoning": 54,
+        "cache": {
+          "read": 254208,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330017320,
+        "updated": 1789330017863,
+        "idle": 1789330129063
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-candidate-2-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "README.md",
+      "guide.md"
+    ],
+    "endedAt": "2026-09-13T20:08:49.180Z"
+  },
+  {
+    "id": "docs-reader-start-baseline-3",
+    "startedAt": "2026-09-13T20:06:59.563Z",
+    "packetEntries": [
+      "card.ts",
+      "README.md",
+      "configs",
+      "skills"
+    ],
+    "inputHashes": {
+      "card.ts": "976836bc7e10fecf19d5adecd15cf73e686fc037dcdc6d3ff556533f9197bfb1",
+      "configs/release.example.json": "0ceec04ddc477a0ef33d4bd781aeae02119a07d5173959ecbb7c8c5dd332f23b",
+      "configs/preview.json": "80a9a41ecf090f32c5fa8b7057c44d22b584b8e17fa900a2af59717331fd74e9",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639ea9b3ffeKIGIWZcbimGF4C",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639ea9b3ffeKIGIWZcbimGF4C",
+      "projectID": "97304390a5ea83820dcee529719d8184a4d39197",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 22612,
+        "output": 1826,
+        "reasoning": 216,
+        "cache": {
+          "read": 134272,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330019918,
+        "updated": 1789330020423,
+        "idle": 1789330102364
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-baseline-3-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "README.md",
+      "guide.md"
+    ],
+    "endedAt": "2026-09-13T20:08:22.449Z"
+  },
+  {
+    "id": "docs-reader-start-candidate-3",
+    "startedAt": "2026-09-13T20:07:41.269Z",
+    "packetEntries": [
+      "card.ts",
+      "README.md",
+      "configs",
+      "skills"
+    ],
+    "inputHashes": {
+      "card.ts": "976836bc7e10fecf19d5adecd15cf73e686fc037dcdc6d3ff556533f9197bfb1",
+      "configs/release.example.json": "0ceec04ddc477a0ef33d4bd781aeae02119a07d5173959ecbb7c8c5dd332f23b",
+      "configs/preview.json": "80a9a41ecf090f32c5fa8b7057c44d22b584b8e17fa900a2af59717331fd74e9",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639e05acffePK02N21rOYHbcw",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639e05acffePK02N21rOYHbcw",
+      "projectID": "f678c3f4cb402a0a5e11984e526fec3d6410e5e5",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 27009,
+        "output": 2376,
+        "reasoning": 63,
+        "cache": {
+          "read": 253056,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330061909,
+        "updated": 1789330062424,
+        "idle": 1789330174773
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-reader-start-candidate-3-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "README.md",
+      "guide.md"
+    ],
+    "endedAt": "2026-09-13T20:09:34.872Z"
+  },
+  {
+    "id": "docs-concept-baseline-1",
+    "startedAt": "2026-09-13T20:08:22.450Z",
+    "packetEntries": [
+      "operations.md",
+      "README.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "operations.md": "82f15b7031a426d2d4741ec815de0d98ff33626ce3384895a8dc5a19425dff2a",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639d6564ffewGDDli4zHBkEza",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639d6564ffewGDDli4zHBkEza",
+      "projectID": "82cb650ded9db8fcc1fa216ffc353c775ecfe475",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 21737,
+        "output": 1268,
+        "reasoning": 302,
+        "cache": {
+          "read": 140672,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330102940,
+        "updated": 1789330103497,
+        "idle": 1789330178948
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-baseline-1-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "explanation.md",
+      "README.md"
+    ],
+    "endedAt": "2026-09-13T20:09:39.042Z"
+  },
+  {
+    "id": "docs-concept-candidate-1",
+    "startedAt": "2026-09-13T20:08:49.182Z",
+    "packetEntries": [
+      "operations.md",
+      "README.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "operations.md": "82f15b7031a426d2d4741ec815de0d98ff33626ce3384895a8dc5a19425dff2a",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639cfcb5ffeCKXSaFMGUN8gXk",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639cfcb5ffeCKXSaFMGUN8gXk",
+      "projectID": "f482ad142dceb1ae0244c57dd8cdeeb38fb7b1d9",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 20658,
+        "output": 1165,
+        "reasoning": 115,
+        "cache": {
+          "read": 123264,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330129740,
+        "updated": 1789330130272,
+        "idle": 1789330190598
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-candidate-1-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "explanation.md",
+      "Library/Caches/glow/glow.log",
+      "README.md",
+      "glow/glow.yml"
+    ],
+    "endedAt": "2026-09-13T20:09:50.689Z"
+  },
+  {
+    "id": "docs-concept-baseline-2",
+    "startedAt": "2026-09-13T20:09:34.874Z",
+    "packetEntries": [
+      "operations.md",
+      "README.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "operations.md": "82f15b7031a426d2d4741ec815de0d98ff33626ce3384895a8dc5a19425dff2a",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639c4abeffeUQ5oDHHn22bcyI",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639c4abeffeUQ5oDHHn22bcyI",
+      "projectID": "d5f393f5a15868b564dec40b47deecc2ac6d7763",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 21175,
+        "output": 1147,
+        "reasoning": 167,
+        "cache": {
+          "read": 119808,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330175300,
+        "updated": 1789330175867,
+        "idle": 1789330239428
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-baseline-2-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "explanation.md",
+      "README.md"
+    ],
+    "endedAt": "2026-09-13T20:10:39.536Z"
+  },
+  {
+    "id": "docs-concept-candidate-2",
+    "startedAt": "2026-09-13T20:09:39.043Z",
+    "packetEntries": [
+      "operations.md",
+      "README.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "operations.md": "82f15b7031a426d2d4741ec815de0d98ff33626ce3384895a8dc5a19425dff2a",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639c39b4ffegfYgTW46q7GXKt",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639c39b4ffegfYgTW46q7GXKt",
+      "projectID": "33f07c3b5ebb7c1bf5276803cd8889afd38c605a",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 20834,
+        "output": 1174,
+        "reasoning": 78,
+        "cache": {
+          "read": 185856,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330179661,
+        "updated": 1789330180641,
+        "idle": 1789330250894
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-candidate-2-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "explanation.md",
+      "README.md"
+    ],
+    "endedAt": "2026-09-13T20:10:51.014Z"
+  },
+  {
+    "id": "docs-concept-baseline-3",
+    "startedAt": "2026-09-13T20:09:50.691Z",
+    "packetEntries": [
+      "operations.md",
+      "README.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "operations.md": "82f15b7031a426d2d4741ec815de0d98ff33626ce3384895a8dc5a19425dff2a",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "c4d0816f9b472817610f678b1d7bf8cf32c2574d6add43c0255dd4fd202d8a58",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639c0cefffeQYKXFLWtObhywI",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639c0cefffeQYKXFLWtObhywI",
+      "projectID": "53aea80c2a601607af48856885f3c2600ea0c767",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 19487,
+        "output": 1263,
+        "reasoning": 197,
+        "cache": {
+          "read": 104576,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330191122,
+        "updated": 1789330191610,
+        "idle": 1789330256416
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-baseline-3-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "explanation.md",
+      "README.md"
+    ],
+    "endedAt": "2026-09-13T20:10:56.509Z"
+  },
+  {
+    "id": "docs-concept-candidate-3",
+    "startedAt": "2026-09-13T20:10:39.537Z",
+    "packetEntries": [
+      "operations.md",
+      "README.md",
+      "skills"
+    ],
+    "inputHashes": {
+      "operations.md": "82f15b7031a426d2d4741ec815de0d98ff33626ce3384895a8dc5a19425dff2a",
+      "skills/writing-technical-docs/STYLE.md": "7cb7ce1c1e9f5028c5527d05f3aa9de86968d5fca2ca6ff358ec0da2376c586e",
+      "skills/writing-technical-docs/SKILL.md": "6bdde47350eeebd3073ad504f819a9df495eaeef52c65a2fbee6636f13fa8057",
+      "skills/writing-technical-docs/HOW-TO-TEMPLATE.md": "efde6aa2bc6d350c9e82fc535a55080267935c6d618c361e5f7ac9a41127241b"
+    },
+    "sessionID": "ses_f639b4e1fffeq8KEtjRS30cyTg",
+    "status": "completed",
+    "info": {
+      "id": "ses_f639b4e1fffeq8KEtjRS30cyTg",
+      "projectID": "3fe67c0c4a517979d162c5d14116a25d84b98b7f",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 22412,
+        "output": 1004,
+        "reasoning": 101,
+        "cache": {
+          "read": 121344,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789330239970,
+        "updated": 1789330240600,
+        "idle": 1789330300533
+      },
+      "title": "offline reader documentation",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/e2e-model-docs-concept-candidate-3-20260913"
+      }
+    },
+    "inputsUnchanged": true,
+    "generatedFiles": [
+      "explanation.md",
+      "README.md"
+    ],
+    "endedAt": "2026-09-13T20:11:40.641Z"
+  }
+]
