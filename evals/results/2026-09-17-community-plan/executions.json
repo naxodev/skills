@@ -1,0 +1,698 @@
+[
+  {
+    "id": "beta-baseline-1",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "95598599c2a2beaa6bf63dc818261cc30daa59c67fa140fac3e7090397dd00e6",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e0aeae5ffeXsw6QtvQh5y4Ng",
+    "info": {
+      "id": "ses_f4e0aeae5ffeXsw6QtvQh5y4Ng",
+      "projectID": "a04792a7586e924e78b7d8c7f8f3bc08009fa472",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 35543,
+        "output": 8020,
+        "reasoning": 40,
+        "cache": {
+          "read": 114304,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692024096,
+        "updated": 1789692025022,
+        "idle": 1789692283132
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-baseline-1-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "8c843636d4d8b5836d506d3ee64c894ddeb37ba17f34e60f5b995aa038236659",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "beta-candidate-1",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "95598599c2a2beaa6bf63dc818261cc30daa59c67fa140fac3e7090397dd00e6",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9"
+    },
+    "sessionID": "ses_f4e0aeae6ffeFfHEJemQC90qx6",
+    "info": {
+      "id": "ses_f4e0aeae6ffeFfHEJemQC90qx6",
+      "projectID": "08de982371532b89edc7ddf77857ec045fc29849",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 35686,
+        "output": 8070,
+        "reasoning": 217,
+        "cache": {
+          "read": 107520,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692024091,
+        "updated": 1789692024887,
+        "idle": 1789692291710
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-candidate-1-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "b5fd8f3c864c5062b18d68f995130fad92c5b1e7de14d60304d5c6bae5ee9b0e",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "beta-baseline-2",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "95598599c2a2beaa6bf63dc818261cc30daa59c67fa140fac3e7090397dd00e6",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e0aead7ffe2k881oLDxESus2",
+    "info": {
+      "id": "ses_f4e0aead7ffe2k881oLDxESus2",
+      "projectID": "b4525843a9c5069e57e90337ab634f2ec4689fa9",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 35586,
+        "output": 8429,
+        "reasoning": 201,
+        "cache": {
+          "read": 106496,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692024105,
+        "updated": 1789692024958,
+        "idle": 1789692297961
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-baseline-2-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "a9afeeb7edbd879599ea7c56f60e8b7553a033225c21fa26a94fa1b405fdf03e",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "beta-candidate-2",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "95598599c2a2beaa6bf63dc818261cc30daa59c67fa140fac3e7090397dd00e6",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9"
+    },
+    "sessionID": "ses_f4e06f581ffe5WTApcqKpqKFFG",
+    "info": {
+      "id": "ses_f4e06f581ffe5WTApcqKpqKFFG",
+      "projectID": "7b86cf6d6609a1baa58495247de36cf8d67c58e8",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 40040,
+        "output": 8135,
+        "reasoning": 216,
+        "cache": {
+          "read": 113792,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692283520,
+        "updated": 1789692284512,
+        "idle": 1789692544583
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-candidate-2-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "5aab1a89abbaef56cdaa0cad221a6d169ae149b2ef0d171bb11340ab940450d9",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "beta-baseline-3",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "95598599c2a2beaa6bf63dc818261cc30daa59c67fa140fac3e7090397dd00e6",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e06d42fffe72YLcbnmDFyAJs",
+    "info": {
+      "id": "ses_f4e06d42fffe72YLcbnmDFyAJs",
+      "projectID": "5a24f91ec94e684ae1d32672e35bf3529f6ecced",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 35402,
+        "output": 8430,
+        "reasoning": 271,
+        "cache": {
+          "read": 108672,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692292051,
+        "updated": 1789692292670,
+        "idle": 1789692572871
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-baseline-3-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "ee7e841952031c0e8114de4cf7d9bf4e9e90cc30e4f84c2ec12db211f908f3cf",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "beta-candidate-3",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "95598599c2a2beaa6bf63dc818261cc30daa59c67fa140fac3e7090397dd00e6",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9"
+    },
+    "sessionID": "ses_f4e06bb97ffedBRrT7mIdhc50v",
+    "info": {
+      "id": "ses_f4e06bb97ffedBRrT7mIdhc50v",
+      "projectID": "a6ec9c962d9cde58eff7767925661951d1b2db7a",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 35690,
+        "output": 8167,
+        "reasoning": 195,
+        "cache": {
+          "read": 107648,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692298345,
+        "updated": 1789692299028,
+        "idle": 1789692563799
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-candidate-3-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "d2c6d82fcf56776d9d882bff95f2d73002a837ef14daea95d5bc1a2a9145f575",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "growing-baseline-1",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "f720b7f54d40157e440532ac288567edd9bd0cb5acd867849fb7245f4246e115",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e02f801ffeK7JswVvDMK2CeB",
+    "info": {
+      "id": "ses_f4e02f801ffeK7JswVvDMK2CeB",
+      "projectID": "60f5af0c535f37baadbb55d61ba0878ef12a6968",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 35888,
+        "output": 10138,
+        "reasoning": 222,
+        "cache": {
+          "read": 111232,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692545024,
+        "updated": 1789692546139,
+        "idle": 1789692875544
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-baseline-1-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "14f9799fe5043b5f967adc88e12e99440c10145793db62187a7c921d5a5843e0",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "growing-candidate-1",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "f720b7f54d40157e440532ac288567edd9bd0cb5acd867849fb7245f4246e115",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9"
+    },
+    "sessionID": "ses_f4e02ad0cffemjbtcCnCnwzl4l",
+    "info": {
+      "id": "ses_f4e02ad0cffemjbtcCnCnwzl4l",
+      "projectID": "46a943184876c5a68aec102fe93792e009f9a8f0",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 36863,
+        "output": 10554,
+        "reasoning": 240,
+        "cache": {
+          "read": 113024,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692564212,
+        "updated": 1789692564861,
+        "idle": 1789692909826
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-candidate-1-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "2d7ea23d43e5817bb0ccf4e9ef01ef03e17a88e45e192aff558ad48ae4023732",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "growing-baseline-2",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "f720b7f54d40157e440532ac288567edd9bd0cb5acd867849fb7245f4246e115",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4e0289ceffe4XvoR9vny6dzVO",
+    "info": {
+      "id": "ses_f4e0289ceffe4XvoR9vny6dzVO",
+      "projectID": "26c2f1760012cb2e85e1b95ee0475f0ee064fba9",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 34933,
+        "output": 9749,
+        "reasoning": 71,
+        "cache": {
+          "read": 110592,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692573234,
+        "updated": 1789692573838,
+        "idle": 1789692880806
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-baseline-2-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "064281fb355ae3524f9e8b567375da3b6697513dd714fe0a0af88d3331796e11",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "growing-candidate-2",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "f720b7f54d40157e440532ac288567edd9bd0cb5acd867849fb7245f4246e115",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9"
+    },
+    "sessionID": "ses_f4dfdeb0effeItg75QM32R7pHw",
+    "info": {
+      "id": "ses_f4dfdeb0effeItg75QM32R7pHw",
+      "projectID": "66ab3d467a7024412e776b7fd0dd70de8c599fa1",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 35865,
+        "output": 9843,
+        "reasoning": 124,
+        "cache": {
+          "read": 112256,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692876019,
+        "updated": 1789692876738,
+        "idle": 1789693196259
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-candidate-2-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "a6f0af3af66e444e63f51041086379b4cf9b87dcd0be4dcabed7a5004ce74a42",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "growing-baseline-3",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "f720b7f54d40157e440532ac288567edd9bd0cb5acd867849fb7245f4246e115",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209"
+    },
+    "sessionID": "ses_f4dfdd719ffetftyoWsyaZY1us",
+    "info": {
+      "id": "ses_f4dfdd719ffetftyoWsyaZY1us",
+      "projectID": "00ae5e4b9caf53f73e964d792abc5342bd918b67",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 38110,
+        "output": 10696,
+        "reasoning": 192,
+        "cache": {
+          "read": 109312,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692881128,
+        "updated": 1789692882539,
+        "idle": 1789693224987
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-baseline-3-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "6794b8976d9549d6e48b9bf91c6cd3cb390e48b4f6e8e655f64d20c23ae70ec4",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  },
+  {
+    "id": "growing-candidate-3",
+    "status": "completed",
+    "packetEntries": [
+      "packet.md",
+      ".gitignore",
+      "skills"
+    ],
+    "inputHashes": {
+      "packet.md": "f720b7f54d40157e440532ac288567edd9bd0cb5acd867849fb7245f4246e115",
+      ".gitignore": "33c9d82772fca124f8d329d656655ba39512970683935861b325ede75c235310",
+      "skills/discord-community-server/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+      "skills/discord-community-server/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+      "skills/discord-community-server/STATE-TEMPLATE.md": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+      "skills/discord-community-server/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+      "skills/discord-community-server/SKILL.md": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9"
+    },
+    "sessionID": "ses_f4dfd655dffeu7pdHfCsPOFvao",
+    "info": {
+      "id": "ses_f4dfd655dffeu7pdHfCsPOFvao",
+      "projectID": "ccacc583f1c91d12a236d287479483911fdabb9e",
+      "agent": "build",
+      "model": {
+        "id": "gpt-6-astra",
+        "providerID": "openai",
+        "variant": "medium"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 34931,
+        "output": 9156,
+        "reasoning": 109,
+        "cache": {
+          "read": 111360,
+          "write": 0
+        }
+      },
+      "outcome": "succeeded",
+      "time": {
+        "created": 1789692910244,
+        "updated": 1789692910808,
+        "idle": 1789693209945
+      },
+      "title": "offline community plan",
+      "location": {
+        "directory": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-candidate-3-20260917"
+      }
+    },
+    "inputsUnchanged": true,
+    "planSha256": "9bf547c03079fbeac6c96a9052772eef2b96c24f05df46e39cedffaf5f51578b",
+    "outputEntries": [
+      "packet.md",
+      ".gitignore",
+      ".community",
+      "plan.md",
+      "skills"
+    ]
+  }
+]

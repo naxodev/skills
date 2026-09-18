@@ -46,7 +46,9 @@ Choose an operating mode:
 - **Audit:** assess the supplied snapshot or authorized read-only observations, then finish in A1–A3.
 - **Improvement:** inventory the existing server, write an exact change and rollback plan, and apply only changes the human approves.
 
-**Complete when:** the mode, scope, project terms, and known durable reporting destinations are recorded, with missing information marked unknown. For greenfield or improvement work, every proposed channel maps to a real community job.
+For greenfield or improvement work, map three member journeys before choosing channels: arrive and orient; ask for support or report a bug; contribute or share feedback. For each, identify the entry point, next action, durable handoff destination, and expected human response and owner where needed. Use supplied staff availability and coverage; distinguish confirmed commitments from proposed estimates and unknowns.
+
+**Complete when:** the mode, scope, project terms, and known durable reporting destinations are recorded, with missing information marked unknown. For greenfield or improvement work, all three journeys and supplied staff capacity are recorded before channel choices.
 
 ### A1. Establish audit evidence
 
@@ -98,11 +100,15 @@ Define:
 - Apps, webhooks, and their data access
 - Canonical brand sources and asset ownership
 - Launch checks and unresolved human actions
-- For improvement mode, the approved changes and rollback plan
+- For improvement mode, proposed changes, approval status, and rollback plan
 
-Push back on channel sprawl. Start with the smallest structure that separates orientation, conversation, support, shipping, and staff work.
+Choose the smallest channel and tag structure that serves the mapped journeys, supplied community jobs, and privacy boundaries. The examples in step 4 are options, not a channel checklist.
 
-**Complete when:** the human has approved the operating plan, the plan names an owner for every privileged action, and it contains no shared account or credential.
+Tie recurring moderation, support, release, and event duties to named proposed human owners and their supplied availability or coverage. Keep confirmed commitments separate from estimates and unknowns; a proposed time budget is not measured workload or a response SLA. Combine jobs where appropriate rather than filling every possible role. Defer optional cadences, events, bots, and channel expansions when a host or capacity is missing. Preserve existing commitments when evidence supports them. Set the next review trigger from observed redirects, unanswered posts, or staff load rather than an arbitrary member count.
+
+If the user explicitly requests a draft only, deliver the plan marked unapproved and stop before configuration. Record unresolved ownership or capacity as open actions, without inventing commitments.
+
+**Complete when:** the plan traces channels and tags to journeys and jobs, accounts for recurring work against supplied capacity, records deferred work and an evidence-based review trigger, and contains no shared account or credential. To continue to configuration, the human has approved the plan and every privileged action has a named owner; an explicitly requested draft instead ends here marked unapproved with unresolved actions recorded.
 
 ### 3. Configure access and safety first
 

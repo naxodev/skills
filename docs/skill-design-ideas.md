@@ -58,7 +58,7 @@ Use one audience and one through-line per walkthrough; preserve the same evidenc
 
 ## Discord community: optimize participation and operating cost
 
-### Start from three member journeys
+### Start from three member journeys — adopted clarification
 
 Before choosing channels, map how a new member gets oriented, asks for help, and contributes feedback.
 For each journey, name the entry point, action, durable destination, and expected human response.
@@ -66,13 +66,17 @@ Derive channels and tags from those journeys instead of starting with a standard
 
 The skill already uses community jobs. Journeys make those jobs observable and easier to test with a real member.
 
+**Planning-only evidence:** a [twelve-session comparison](../evals/results/2026-09-17-community-plan/README.md) passed all source criteria in both arms. Candidate plans place the three journeys before channel choices. Beta candidates use two member-facing channels versus four in baselines; this is not measured member-usability improvement. The change also resolves step 2's approval requirement for explicitly draft-only requests, which now finish unapproved before configuration.
+
 **Measure:** whether a fresh member reaches the right destination without moderator correction.
 
-### Budget the human work
+### Budget the human work — adopted clarification
 
 Treat moderation, office hours, support, and release curation as recurring costs with named owners and available time.
 A two-maintainer beta should not inherit the operating plan of a large public community.
 Offer a small baseline and expand it only when traffic or a new access boundary requires it.
+
+**Evidence limit:** both arms already respected supplied capacity, unknown coverage, durable routes, and the existing hosted cadence. No completeness uplift was measured. The adopted instructions make named proposed ownership, availability, estimates, deferrals, and workload-based review explicit. Live staff load, member navigation, permissions, and route delivery remain untested.
 
 **Measure:** unanswered support posts, time spent redirecting requests, and inactive channels after a defined review period.
 Use those observations to simplify or expand the plan; avoid arbitrary community-growth targets.

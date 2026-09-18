@@ -1,0 +1,123 @@
+{
+  "frozenAt": "2026-09-18T00:40:18.982Z",
+  "baseline": "ef6f9456",
+  "model": {
+    "providerID": "openai",
+    "id": "gpt-6-astra",
+    "variant": "medium"
+  },
+  "hashes": {
+    "baseline/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+    "baseline/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+    "baseline/STATE-TEMPLATE.md": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+    "baseline/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+    "baseline/SKILL.md": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+    "candidate/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+    "candidate/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+    "candidate/STATE-TEMPLATE.md": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+    "candidate/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+    "candidate/SKILL.md": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9",
+    "beta.md": "95598599c2a2beaa6bf63dc818261cc30daa59c67fa140fac3e7090397dd00e6",
+    "growing.md": "f720b7f54d40157e440532ac288567edd9bd0cb5acd867849fb7245f4246e115",
+    "PLAN.md": "f9ef317433100bc11604bfaf75a6d89b920bda84e42dfb0598a308e0d6600768",
+    "run.ts": "cd5ad884348245d04f9f7f68e3c68b40e8faae11f3f5ad257608be7c2096c07e"
+  },
+  "trials": [
+    {
+      "id": "beta-baseline-1",
+      "arm": "baseline",
+      "fixture": "beta",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-baseline-1-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable new community operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "b3983f49340ce95ea083f44964bddb029cdae4e468cf22d41f87dffd85557107"
+    },
+    {
+      "id": "beta-candidate-1",
+      "arm": "candidate",
+      "fixture": "beta",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-candidate-1-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable new community operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "b3983f49340ce95ea083f44964bddb029cdae4e468cf22d41f87dffd85557107"
+    },
+    {
+      "id": "beta-baseline-2",
+      "arm": "baseline",
+      "fixture": "beta",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-baseline-2-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable new community operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "b3983f49340ce95ea083f44964bddb029cdae4e468cf22d41f87dffd85557107"
+    },
+    {
+      "id": "beta-candidate-2",
+      "arm": "candidate",
+      "fixture": "beta",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-candidate-2-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable new community operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "b3983f49340ce95ea083f44964bddb029cdae4e468cf22d41f87dffd85557107"
+    },
+    {
+      "id": "beta-baseline-3",
+      "arm": "baseline",
+      "fixture": "beta",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-baseline-3-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable new community operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "b3983f49340ce95ea083f44964bddb029cdae4e468cf22d41f87dffd85557107"
+    },
+    {
+      "id": "beta-candidate-3",
+      "arm": "candidate",
+      "fixture": "beta",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-beta-candidate-3-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable new community operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "b3983f49340ce95ea083f44964bddb029cdae4e468cf22d41f87dffd85557107"
+    },
+    {
+      "id": "growing-baseline-1",
+      "arm": "baseline",
+      "fixture": "growing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-baseline-1-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable community improvement operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "c265afa71fd72a17b99da5848aa438fccc746094a968eaaa68a66de2eb013efc"
+    },
+    {
+      "id": "growing-candidate-1",
+      "arm": "candidate",
+      "fixture": "growing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-candidate-1-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable community improvement operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "c265afa71fd72a17b99da5848aa438fccc746094a968eaaa68a66de2eb013efc"
+    },
+    {
+      "id": "growing-baseline-2",
+      "arm": "baseline",
+      "fixture": "growing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-baseline-2-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable community improvement operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "c265afa71fd72a17b99da5848aa438fccc746094a968eaaa68a66de2eb013efc"
+    },
+    {
+      "id": "growing-candidate-2",
+      "arm": "candidate",
+      "fixture": "growing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-candidate-2-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable community improvement operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "c265afa71fd72a17b99da5848aa438fccc746094a968eaaa68a66de2eb013efc"
+    },
+    {
+      "id": "growing-baseline-3",
+      "arm": "baseline",
+      "fixture": "growing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-baseline-3-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable community improvement operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "c265afa71fd72a17b99da5848aa438fccc746094a968eaaa68a66de2eb013efc"
+    },
+    {
+      "id": "growing-candidate-3",
+      "arm": "candidate",
+      "fixture": "growing",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-plan-trial-growing-candidate-3-20260917",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local references, not an installed skill. Using only packet.md, draft a sustainable community improvement operating plan for this fictional project. Members need to find their way, get help, and participate without overloading the team. This is a DRAFT ONLY request: leave it unapproved and stop before any configuration. Work offline; no live services, browsers, network research, delegation, other skills, or files outside this workspace. Keep inputs unchanged. A .gitignore already excludes .community/; confirm the exclusion before saving private operating state there. Also save plan.md as a sanitized public draft, using fictional role jobs rather than operator identities or private operational details. State evidence limits. No server configuration or live action is authorized.",
+      "promptSha256": "c265afa71fd72a17b99da5848aa438fccc746094a968eaaa68a66de2eb013efc"
+    }
+  ]
+}

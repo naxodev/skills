@@ -12,7 +12,7 @@ This full template records sensitive project-specific Discord operations data. S
 - Moderation lead:
 - Conduct recusal backup:
 - Last reviewed:
-- Next review:
+- Next review trigger (observed redirects, unanswered posts, or staff load):
 
 ## Launch
 
@@ -20,6 +20,7 @@ This full template records sensitive project-specific Discord operations data. S
 - Audience:
 - Stage: private / staged / public
 - Operating plan approved by:
+- Plan status: draft unapproved / approved
 - Community features: enabled / disabled
 - Community decision reason:
 - Invite policy:
@@ -54,6 +55,8 @@ Do not record invite URLs.
 
 ## Roles
 
+Use only roles needed by the plan; record unconfirmed assignments as proposed or unknown.
+
 | Role        | Purpose | Privileged permissions | Assigned owners |
 | ----------- | ------- | ---------------------- | --------------- |
 | Admin       |         |                        |                 |
@@ -63,6 +66,22 @@ Do not record invite URLs.
 | Member      |         |                        |                 |
 
 List interest, notification, partner, and bot roles below the privileged roles.
+
+## Member journeys
+
+| Journey | Entry point | Next action | Durable handoff | Human response and owner, if needed |
+| ------- | ----------- | ----------- | --------------- | ---------------------------------- |
+| Arrive and orient | | | | |
+| Ask for support or report a bug | | | | |
+| Contribute or share feedback | | | | |
+
+## Recurring work and capacity
+
+| Duty | Proposed human owner | Supplied availability or coverage | Confirmed commitment / estimate / unknown | Scope or deferral |
+| ---- | -------------------- | -------------------------------- | ---------------------------------------- | ----------------- |
+|      |                      |                                  |                                          |                   |
+
+Include applicable moderation, support, release, and event work. Separate proposed allocations from measured workload and response commitments.
 
 ## Channels
 
