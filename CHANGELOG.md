@@ -6,7 +6,7 @@ This file records notable user-facing changes to the skills collection.
 
 ## 0.9.0 - 2026-09-17
 
-Prepared locally; not published. The 0.8.0 entry below retains its original preparation date.
+This release includes the locally prepared 0.8.0 changes. The entry below retains their original preparation date.
 
 ### Added
 
