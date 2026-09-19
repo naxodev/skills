@@ -1,0 +1,765 @@
+{
+  "/api/session": {
+    "get": {
+      "tags": [
+        "session"
+      ],
+      "operationId": "session.list",
+      "parameters": [
+        {
+          "name": "limit",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Maximum number of sessions to return. Defaults to the newest 50 sessions."
+          },
+          "required": false
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "asc",
+                  "desc"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Session order for the first page. Use desc for newest first or asc for oldest first."
+          },
+          "required": false
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": false
+        },
+        {
+          "name": "parentID",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^ses"
+                  },
+                  {
+                    "type": "string",
+                    "enum": [
+                      "null"
+                    ]
+                  }
+                ],
+                "description": "Filter by parent session. Use null to return only root sessions."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": false
+        },
+        {
+          "name": "directory",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": false
+        },
+        {
+          "name": "project",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": false
+        },
+        {
+          "name": "subpath",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": false
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "Opaque pagination cursor returned as cursor.previous or cursor.next in the previous response."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": false
+        }
+      ],
+      "security": [],
+      "responses": {
+        "200": {
+          "description": "SessionsResponse",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionsResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "InvalidCursorError | InvalidRequestError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/InvalidCursorErrorEncoded"
+                  },
+                  {
+                    "$ref": "#/components/schemas/InvalidRequestErrorEncoded"
+                  },
+                  {
+                    "$ref": "#/components/schemas/InvalidRequestErrorEncoded"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "UnauthorizedError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnauthorizedErrorEncoded"
+              }
+            }
+          }
+        }
+      },
+      "description": "Retrieve sessions in the requested order. Items keep that order across pages; use cursor.next or cursor.previous to move through the ordered list.",
+      "summary": "List sessions"
+    },
+    "post": {
+      "tags": [
+        "session"
+      ],
+      "operationId": "session.create",
+      "parameters": [],
+      "security": [],
+      "responses": {
+        "200": {
+          "description": "Success",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/Session.Info"
+                  }
+                },
+                "required": [
+                  "data"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "InvalidRequestError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvalidRequestErrorEncoded"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "UnauthorizedError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnauthorizedErrorEncoded"
+              }
+            }
+          }
+        }
+      },
+      "description": "Create a session at the requested location.",
+      "summary": "Create session",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^ses"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "title": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "agent": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "model": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Model.Ref"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "location": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Location.PublicRef"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "metadata": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Session.Metadata"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "permissions": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Permission.Ruleset"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": true
+      }
+    }
+  },
+  "/api/session/{sessionID}/prompt": {
+    "post": {
+      "tags": [
+        "session"
+      ],
+      "operationId": "session.prompt",
+      "parameters": [
+        {
+          "name": "sessionID",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "pattern": "^ses"
+          },
+          "required": true
+        }
+      ],
+      "security": [],
+      "responses": {
+        "200": {
+          "description": "Success",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/Session.Inbox.User"
+                  }
+                },
+                "required": [
+                  "data"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "InvalidRequestError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/InvalidRequestErrorEncoded"
+                  },
+                  {
+                    "$ref": "#/components/schemas/InvalidRequestErrorEncoded"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "UnauthorizedError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnauthorizedErrorEncoded"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "SessionNotFoundError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/SessionNotFoundErrorEncoded"
+                  },
+                  {
+                    "$ref": "#/components/schemas/SessionNotFoundErrorEncoded"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "409": {
+          "description": "ConflictError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConflictErrorEncoded"
+              }
+            }
+          }
+        }
+      },
+      "description": "Durably admit one session input and schedule agent-loop execution unless resume is false.",
+      "summary": "Send message",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^msg_"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "text": {
+                  "type": "string"
+                },
+                "files": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PromptInput.FileAttachment"
+                  }
+                },
+                "agents": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Prompt.AgentAttachment"
+                  }
+                },
+                "skills": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PromptInput.SkillAttachment"
+                  }
+                },
+                "metadata": {
+                  "type": "object"
+                },
+                "delivery": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Session.Inbox.Delivery"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "resume": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "text"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": true
+      }
+    }
+  },
+  "/api/experimental/session/{sessionID}/wait": {
+    "post": {
+      "tags": [
+        "session"
+      ],
+      "operationId": "experimental.session.wait",
+      "parameters": [
+        {
+          "name": "sessionID",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "pattern": "^ses"
+          },
+          "required": true
+        }
+      ],
+      "security": [],
+      "responses": {
+        "204": {
+          "description": "<No Content>"
+        },
+        "400": {
+          "description": "InvalidRequestError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvalidRequestErrorEncoded"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "UnauthorizedError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnauthorizedErrorEncoded"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "SessionNotFoundError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/SessionNotFoundErrorEncoded"
+                  },
+                  {
+                    "$ref": "#/components/schemas/SessionNotFoundErrorEncoded"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "503": {
+          "description": "ServiceUnavailableError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceUnavailableErrorEncoded"
+              }
+            }
+          }
+        }
+      },
+      "description": "Wait for a session agent loop to become idle.",
+      "summary": "Wait for session"
+    }
+  },
+  "/api/experimental/session/{sessionID}/export": {
+    "get": {
+      "tags": [
+        "session"
+      ],
+      "operationId": "experimental.session.export",
+      "parameters": [
+        {
+          "name": "sessionID",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "pattern": "^ses"
+          },
+          "required": true
+        },
+        {
+          "name": "sanitize",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "true",
+                  "false"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": false
+        }
+      ],
+      "security": [],
+      "responses": {
+        "200": {
+          "description": "Success",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/SessionTransfer.Data"
+                  }
+                },
+                "required": [
+                  "data"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "InvalidRequestError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvalidRequestErrorEncoded"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "UnauthorizedError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnauthorizedErrorEncoded"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "SessionNotFoundError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionNotFoundErrorEncoded"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "UnknownError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnknownErrorEncoded"
+              }
+            }
+          }
+        }
+      },
+      "description": "Export a complete projected session transcript.",
+      "summary": "Export session"
+    }
+  },
+  "/api/session/{sessionID}/interrupt": {
+    "post": {
+      "tags": [
+        "session"
+      ],
+      "operationId": "session.interrupt",
+      "parameters": [
+        {
+          "name": "sessionID",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "pattern": "^ses"
+          },
+          "required": true
+        },
+        {
+          "name": "resume",
+          "in": "query",
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "true",
+                  "false"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": false
+        }
+      ],
+      "security": [],
+      "responses": {
+        "200": {
+          "description": "SessionInterruptResponse",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionInterruptResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "InvalidRequestError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvalidRequestErrorEncoded"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "UnauthorizedError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnauthorizedErrorEncoded"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "SessionNotFoundError",
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/SessionNotFoundErrorEncoded"
+                  },
+                  {
+                    "$ref": "#/components/schemas/SessionNotFoundErrorEncoded"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "description": "Interrupt active execution owned by this OpenCode process. Returns interrupted=true when an active execution was interrupted and false for the idle no-op. When resume=true, execution resumes pending steering input and next-in-line control items (manual compaction, moves) while queued prompts remain parked.",
+      "summary": "Interrupt session execution"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "discord-audit-1": {
+    "criteria": {
+      "read-only": { "result": "pass", "lines": [7, 82], "note": "Visible tools independently confirm local reads and audit.md creation only." },
+      "mode-fit": { "result": "pass", "lines": [72, 76, 78], "note": "Completed local handoff; future corrections and verification are not completion gates." },
+      "findings": { "result": "pass", "lines": [22, 24, 26, 28, 32, 34, 36, 38, 42, 44, 46, 48], "note": "All three snapshot defects retain source, impact and priority rationale, explicitly unapplied correction, and matrix-classified verification. Posting checks cover every denial; forum correction keeps domain tags member-selectable and states moderator-only." },
+      "scope": { "result": "pass", "lines": [8, 9, 10, 59, 63, 68, 69], "note": "Unknown snapshot date, sole server source, separate unknowns, and conditional applicability remain explicit. No approval does not become proof of no installed integrations." },
+      "evidence": { "result": "pass", "lines": [14, 52, 76], "note": "Recorded preview is a narrow static result; no live or fresh-member pass or current-label verification is claimed." },
+      "fit": { "result": "pass", "lines": [11, 12, 46], "note": "Both product surfaces and all supplied support/bug, security, and conduct destinations are preserved." }
+    },
+    "no-planning-detour": { "result": "pass", "lines": [11, 67, 70, 72, 78, 80], "note": "Staff capacity and review ownership are unknowns or follow-up suggestions. They do not gate audit completion. No journeys, budget, operating plan, state file, or steps 2–8 execution." }
+  },
+  "discord-audit-2": {
+    "criteria": {
+      "read-only": { "result": "pass", "lines": [5, 77], "note": "Visible tools confirm local reads and audit.md creation only." },
+      "mode-fit": { "result": "pass", "lines": [7, 77, 81, 83], "note": "The audit finishes without additional server activity. Follow-up addresses known defects and unknown controls." },
+      "findings": { "result": "pass", "lines": [23, 25, 27, 29, 33, 35, 37, 39, 43, 45, 47, 49], "note": "Three complete findings match snapshot lines 11–13. All posting-denial checks, member-selectable product tags, and moderator-only states are preserved." },
+      "scope": { "result": "pass", "lines": [8, 9, 10, 61, 71, 72], "note": "Scope, unknown snapshot date, sole evidence source, and grouped unknown controls are explicit. Conditional cohort and integration controls are not invented failures." },
+      "evidence": { "result": "pass", "lines": [11, 17, 55, 79], "note": "Supplied static preview is separated from real-member checks and live labels; no whole-server assurance." },
+      "fit": { "result": "pass", "lines": [13, 47], "note": "Exact product terms and durable issue/security/conduct destinations remain intact." }
+    },
+    "no-planning-detour": { "result": "pass", "lines": [69, 73, 77, 81, 83], "note": "Staff-role and workload notes remain verification follow-up, not a staffing budget or planning prerequisite. Only audit.md was written; steps 2–8 did not run." }
+  },
+  "discord-audit-3": {
+    "criteria": {
+      "read-only": { "result": "pass", "lines": [11, 72], "note": "Visible tools confirm local reads and audit.md creation only." },
+      "mode-fit": { "result": "pass", "lines": [7, 72, 74, 76], "note": "Local audit handoff completed; later authorized verification does not block completion." },
+      "findings": { "result": "pass", "lines": [21, 23, 25, 27, 31, 33, 35, 37, 41, 43, 45, 47], "note": "All three observed defects retain every finding field and qualified impact. Complete posting denials and forum domain/state restrictions are retained." },
+      "scope": { "result": "pass", "lines": [8, 9, 10, 58, 66, 67], "note": "Snapshot date unknown, source and criteria distinguished, unknowns separated; lack of approvals does not become an unauthorized-installation finding." },
+      "evidence": { "result": "pass", "lines": [11, 13, 53, 74], "note": "No live or real-member verification; supplied staff preview is limited and current labels unverified." },
+      "fit": { "result": "pass", "lines": [15, 45], "note": "Project terms and all durable destinations match the snapshot." }
+    },
+    "no-planning-detour": { "result": "pass", "lines": [65, 68, 72, 76], "note": "Coverage, successor, and review-trigger suggestions remain conditional follow-up. No mandatory journey map, staffing budget, plan approval, private state, or steps 2–8 execution." }
+  },
+  "discord-audit-incomplete-1": {
+    "criteria": {
+      "read-only": { "result": "pass", "lines": [9, 11], "note": "Visible tools confirm local reads and audit.md creation only." },
+      "mode-fit": { "result": "pass", "lines": [7, 45, 56, 64], "note": "Finished audit requires no operating state, invite, event, app, or implementation. Future verification is separately authorized." },
+      "findings": { "result": "pass", "lines": [5, 34, 35, 36, 37, 41], "note": "No invented failures. Healthy observations retain all six announcement-denial actions, both product tags, moderator-only states, and narrow static permission/visibility results." },
+      "scope": { "result": "pass", "lines": [8, 9, 10, 45, 53, 55], "note": "Scope, unknown snapshot date, source/criteria distinction, and grouped unknowns remain explicit. Conditional features and integration inventory are not assumed absent." },
+      "evidence": { "result": "pass", "lines": [13, 29, 34, 36, 37, 60], "note": "Recorded configuration and supplied previews do not become fresh-member tests, new attestations, or exact-current label claims." },
+      "fit": { "result": "pass", "lines": [17, 21, 22, 23, 62], "note": "Both product surfaces and all supplied durable routes are preserved." }
+    },
+    "no-planning-detour": { "result": "pass", "lines": [25, 54, 56, 62, 64], "note": "Member-journey references describe later behavioral verification, not mandatory journey mapping. Staffing remains unknown; audit completion has no plan, budget, approval, or state requirement." }
+  },
+  "discord-audit-incomplete-2": {
+    "criteria": {
+      "read-only": { "result": "pass", "lines": [7, 12, 99], "note": "Visible tools confirm local reads and audit.md creation only." },
+      "mode-fit": { "result": "pass", "lines": [45, 83, 89, 106], "note": "Future checks are not authorization or completion prerequisites. The offline audit explicitly completes." },
+      "findings": { "result": "pass", "lines": [5, 34, 35, 36, 37, 41], "note": "Healthy announcement denials, domain/state tag restrictions, interest-role shape, and baseline visibility are retained without invented failures." },
+      "scope": { "result": "pass", "lines": [8, 9, 10, 45, 81, 87], "note": "Scope, unknown date, sources, and separate gaps are complete. Unknown private programs and unapproved integration inventory are not inferred absent or insecure." },
+      "evidence": { "result": "pass", "lines": [12, 14, 34, 37, 100, 101], "note": "No whole-server assurance; configuration and preview evidence remain distinct from runtime enforcement and current-label checks." },
+      "fit": { "result": "pass", "lines": [18, 22, 23, 24, 26], "note": "Exact product surfaces and issue-tracker, private security-form, and human conduct-owner routes match source." }
+    },
+    "no-planning-detour": { "result": "pass", "lines": [18, 73, 93, 95, 103, 106], "note": "Coverage and staff load appear as unknowns or later review suggestions. No three-journey map, staffing budget, operating plan, private state, or steps 2–8 execution." }
+  },
+  "discord-audit-incomplete-3": {
+    "criteria": {
+      "read-only": { "result": "pass", "lines": [7, 9, 92], "note": "Visible tools confirm local reads and audit.md creation only." },
+      "mode-fit": { "result": "pass", "lines": [10, 76, 82, 96, 98], "note": "Audit handoff does not require setup activity. Implementation is explicitly a later separately authorized improvement." },
+      "findings": { "result": "pass", "lines": [5, 22, 23, 24, 25, 30], "note": "No failure invented from missing evidence. All recorded announcement denials, member-selectable domain tags, moderator-only states, and limited preview results remain intact." },
+      "scope": { "result": "pass", "lines": [8, 9, 10, 34, 43, 80, 82], "note": "Unknown date, snapshot-only facts, separate criteria, and unknown controls are explicit. No approval violation is inferred without inventory." },
+      "evidence": { "result": "pass", "lines": [14, 22, 24, 25, 59, 94], "note": "Role preview remains static evidence; member behavior, fresh attestations, and current labels remain unverified." },
+      "fit": { "result": "pass", "lines": [11, 12, 23, 96], "note": "Project terminology and all supplied durable routes are retained." }
+    },
+    "no-planning-detour": { "result": "pass", "lines": [88, 92, 96, 98], "note": "The imperative staff-coverage sentence concerns later operational readiness, not an audit-completion condition. The report already hands off a completed local audit, creates no state, and requires no journey map, budget, or operating-plan approval. This wording is recorded rather than treating any capacity mention as failure." }
+  }
+}

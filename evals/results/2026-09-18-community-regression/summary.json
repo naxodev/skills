@@ -1,0 +1,34 @@
+{
+  "attempts": 6,
+  "criteria": {
+    "read-only": {
+      "pass": 6,
+      "denominator": 6
+    },
+    "mode-fit": {
+      "pass": 6,
+      "denominator": 6
+    },
+    "findings": {
+      "pass": 6,
+      "denominator": 6
+    },
+    "scope": {
+      "pass": 6,
+      "denominator": 6
+    },
+    "evidence": {
+      "pass": 6,
+      "denominator": 6
+    },
+    "fit": {
+      "pass": 6,
+      "denominator": 6
+    },
+    "no-planning-detour": {
+      "pass": 6,
+      "denominator": 6
+    }
+  },
+  "interpretation": "Current-candidate conformance regression; no measured uplift."
+}

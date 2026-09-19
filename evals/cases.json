@@ -1,5 +1,31 @@
 [
   {
+    "id": "discord-plan-beta",
+    "kind": "workflow",
+    "skill": "discord-community-server",
+    "fixtures": ["evals/results/2026-09-17-community-plan/inputs/beta.md"],
+    "prompt": "Using only the supplied Sprig packet, draft a sustainable new-community operating plan. Members need to find their way, get help, and participate without overloading the team. This is DRAFT ONLY: leave it unapproved and stop before configuration. Work offline, without live services, browsers, research, delegation, or other skills. Keep inputs unchanged. Confirm .community/ is ignored before saving private state there; add that ignore rule if absent. Save a sanitized public plan.md using role jobs rather than operator identities or private operational details. State evidence limits.",
+    "criteria": [
+      { "id": "journeys", "expect": "Orientation, support/bug reporting, and contribution/feedback each provide an entry, next action, durable handoff, and human ownership where needed." },
+      { "id": "capacity", "expect": "Recurring work respects the supplied 60 and 45 weekly minutes, with proposed allocations distinguished from confirmed commitments and measured demand. Missing coverage remains unknown; no response SLA or event host is invented." },
+      { "id": "scope", "expect": "Uses a small job-based structure with Community disabled; defers unsupported cadences, events, bots, and channel expansion. Review uses redirects, unanswered posts, or staff load." },
+      { "id": "constraints", "expect": "Preserves supplied durable bug, idea, contribution, security, and conduct routes, private safety boundaries, and no Administrator. Produces an unapproved draft without live actions or current-label verification claims. Private state is ignored and public output is sanitized." }
+    ]
+  },
+  {
+    "id": "discord-plan-improvement",
+    "kind": "workflow",
+    "skill": "discord-community-server",
+    "fixtures": ["evals/results/2026-09-17-community-plan/inputs/growing.md"],
+    "prompt": "Using only the supplied Tideway packet, draft a sustainable community-improvement operating plan. Members need to find their way, get help, and participate without overloading the team. This is DRAFT ONLY: leave it unapproved and stop before configuration. Work offline, without live services, browsers, research, delegation, or other skills. Keep inputs unchanged. Confirm .community/ is ignored before saving private state there; add that ignore rule if absent. Save a sanitized public plan.md using role jobs rather than operator identities or private operational details. State evidence limits.",
+    "criteria": [
+      { "id": "journeys", "expect": "Orientation, support/bug reporting, and contribution/feedback each provide an entry, next action, durable handoff, and human ownership where needed. Navigation addresses the supplied redirects and unanswered dashboard questions." },
+      { "id": "capacity", "expect": "Uses confirmed 90 and 60 weekly minutes and 60 monthly clinic minutes without inventing SDK availability or an SLA. Preserves the supported monthly clinic and event-driven release context; new allocations remain proposals." },
+      { "id": "scope", "expect": "Improves existing job-based channels without unjustified expansion; proposes exact changes and rollback while preserving content. Review uses observed redirects, unanswered posts, or staff load." },
+      { "id": "constraints", "expect": "Preserves Community as a planning assumption, purpose versus moderated state tags, confidential preview access and restricted durable work, external private security/conduct routes, and no Administrator. Delivers an unapproved sanitized draft with ignored private state and no live actions or current-label verification claims." }
+    ]
+  },
+  {
     "id": "docs-tutorial",
     "kind": "workflow",
     "skill": "writing-technical-docs",

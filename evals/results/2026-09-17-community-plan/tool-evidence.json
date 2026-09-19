@@ -1,0 +1,1553 @@
+[
+  {
+    "id": "beta-baseline-1",
+    "exportSha256": "a61f945378a2e96674c9796c3a7d8dc22bc135e4eaf98766be8bab7f558c54b0",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "5f4807b20b1e3358f0ea9af6f52ef5835f5bf6d6af4546111fb9adbbdba69e95"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b4972c40a510e84a0767387e7f3001f5e876a0e17ee8f181fc848c7362db17b8"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "e2ba8809c91d0cc8f8aa614e70315d66f1efbe1891da3726b4acdd93076ec056"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "grep",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "4b4d7ac22cee34f92cd16fbe4193b0eb106e185100ea38f72b0190e1affaf933"
+      },
+      {
+        "index": 10,
+        "name": "glob",
+        "status": "completed",
+        "outputSha256": "949d59b7ee8dabf8c14f26bb88463d19a331f38aa2542534727cb77fc3b94338"
+      },
+      {
+        "index": 11,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 12,
+        "name": "read",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "1ef1663a24fe064a298857b3fed648a8a24c9cdce7ead426decdb15892a968ef"
+      },
+      {
+        "index": 13,
+        "name": "read",
+        "status": "completed",
+        "path": ".community/state.md",
+        "outputSha256": "72ae8c7e3c85f9e28691a80ae4c680cbd2fd74e3738f5122b9b71b9f442ff068"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+        "calls": 1,
+        "observedLines": 177,
+        "expectedLines": 177,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+        "calls": 1,
+        "observedLines": 211,
+        "expectedLines": 211,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1272,
+    "publicPlanSha256": "8c843636d4d8b5836d506d3ee64c894ddeb37ba17f34e60f5b995aa038236659"
+  },
+  {
+    "id": "beta-candidate-1",
+    "exportSha256": "6ae0cbcd5bd997132485ccf4053aef49a7acb045990459ffeae47a9648037242",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "ea08287d09213b62eb80a11dc4f4e9edf2fbb79c7ac8b56c9725161d4c2ca8b5"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b4972c40a510e84a0767387e7f3001f5e876a0e17ee8f181fc848c7362db17b8"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "bd0891e08442a1ccc36928ff0e38ab13043e35f5d6f95d6244d93348ca5f842e"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "4c5e44e257d6f1e020d5adddf166660c51f781a04f6e15f965eff76459926fdc"
+      },
+      {
+        "index": 9,
+        "name": "shell",
+        "status": "completed",
+        "commandSha256": "bc41dcbde998d8541487990bab247ecf4d1187b8d9dfe022a287161ea3107334",
+        "outputSha256": "3b5b16c1d935942b043280729211fdff1ee9e9b52eb9416cd79d05a44d67b26f"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+        "calls": 1,
+        "observedLines": 196,
+        "expectedLines": 196,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9",
+        "calls": 1,
+        "observedLines": 217,
+        "expectedLines": 217,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1108,
+    "publicPlanSha256": "b5fd8f3c864c5062b18d68f995130fad92c5b1e7de14d60304d5c6bae5ee9b0e"
+  },
+  {
+    "id": "beta-baseline-2",
+    "exportSha256": "8a037f68b5dda29874ee9896064c4b60672de0a702d82e5923ad7430b6652c9a",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "5f4807b20b1e3358f0ea9af6f52ef5835f5bf6d6af4546111fb9adbbdba69e95"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b4972c40a510e84a0767387e7f3001f5e876a0e17ee8f181fc848c7362db17b8"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "e2ba8809c91d0cc8f8aa614e70315d66f1efbe1891da3726b4acdd93076ec056"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "shell",
+        "status": "completed",
+        "commandSha256": "7f0260a792a08c75d19dceee2dd311efd2539329e66b777d1df233ef22761119",
+        "outputSha256": "4d2e299500743be74bc56a230db5f134075bc4771bd326e26c4c8fa6ada29cec"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+        "calls": 1,
+        "observedLines": 177,
+        "expectedLines": 177,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+        "calls": 1,
+        "observedLines": 211,
+        "expectedLines": 211,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1227,
+    "publicPlanSha256": "a9afeeb7edbd879599ea7c56f60e8b7553a033225c21fa26a94fa1b405fdf03e"
+  },
+  {
+    "id": "beta-candidate-2",
+    "exportSha256": "4c13a08d1ff421598f32f3a8880b52f2f96d30fd648b5373a10f1d96182c3d34",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "ea08287d09213b62eb80a11dc4f4e9edf2fbb79c7ac8b56c9725161d4c2ca8b5"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b4972c40a510e84a0767387e7f3001f5e876a0e17ee8f181fc848c7362db17b8"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "bd0891e08442a1ccc36928ff0e38ab13043e35f5d6f95d6244d93348ca5f842e"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "grep",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "4b4d7ac22cee34f92cd16fbe4193b0eb106e185100ea38f72b0190e1affaf933"
+      },
+      {
+        "index": 10,
+        "name": "read",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "e0c51df863220f18e020666e22b87781c0926a428630abd525ce9d20b1799acc"
+      },
+      {
+        "index": 11,
+        "name": "glob",
+        "status": "completed",
+        "outputSha256": "50cac84c2e0f57d825384602c60d292525ab8207a7bc5a63fd80916dcbff681a"
+      },
+      {
+        "index": 12,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+        "calls": 1,
+        "observedLines": 196,
+        "expectedLines": 196,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9",
+        "calls": 1,
+        "observedLines": 217,
+        "expectedLines": 217,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1022,
+    "publicPlanSha256": "5aab1a89abbaef56cdaa0cad221a6d169ae149b2ef0d171bb11340ab940450d9"
+  },
+  {
+    "id": "beta-baseline-3",
+    "exportSha256": "d4551108b3ee2432f1f0c199f62eaabc2e641292da8a01c7fb0b742378cee2cc",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "5f4807b20b1e3358f0ea9af6f52ef5835f5bf6d6af4546111fb9adbbdba69e95"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b4972c40a510e84a0767387e7f3001f5e876a0e17ee8f181fc848c7362db17b8"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "e2ba8809c91d0cc8f8aa614e70315d66f1efbe1891da3726b4acdd93076ec056"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "read",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "567aef7c4e5250dcf15af57fd9a25e5fe999c768c96d6208cad7f01cd3c9e930"
+      },
+      {
+        "index": 10,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 11,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "95f8bac0f89b6847a700ec338b371ccdd333b14177b4872fe0bbb69c40770080"
+      },
+      {
+        "index": 12,
+        "name": "grep",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "4b4d7ac22cee34f92cd16fbe4193b0eb106e185100ea38f72b0190e1affaf933"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+        "calls": 1,
+        "observedLines": 177,
+        "expectedLines": 177,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+        "calls": 1,
+        "observedLines": 211,
+        "expectedLines": 211,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1139,
+    "publicPlanSha256": "ee7e841952031c0e8114de4cf7d9bf4e9e90cc30e4f84c2ec12db211f908f3cf"
+  },
+  {
+    "id": "beta-candidate-3",
+    "exportSha256": "58e77ef08f6dcd1802b153570aca167354d50144d7fc9c00a04633d0b8a9186d",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "ea08287d09213b62eb80a11dc4f4e9edf2fbb79c7ac8b56c9725161d4c2ca8b5"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b4972c40a510e84a0767387e7f3001f5e876a0e17ee8f181fc848c7362db17b8"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "bd0891e08442a1ccc36928ff0e38ab13043e35f5d6f95d6244d93348ca5f842e"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "shell",
+        "status": "completed",
+        "commandSha256": "20050a86a8773b494580419b7eae69b70e6a81d6383b7d6c0884d666158ed06d",
+        "outputSha256": "8b6412dc28bcb105657971a9034ca5aa15e2fabf327cb0c8dc9b534cca5b727a"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+        "calls": 1,
+        "observedLines": 196,
+        "expectedLines": 196,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9",
+        "calls": 1,
+        "observedLines": 217,
+        "expectedLines": 217,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1226,
+    "publicPlanSha256": "d2c6d82fcf56776d9d882bff95f2d73002a837ef14daea95d5bc1a2a9145f575"
+  },
+  {
+    "id": "growing-baseline-1",
+    "exportSha256": "48a4cd910af2f0ac898a84fc385d7f55174ee9c03d85cdff0b0054d52b2b8479",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "5f4807b20b1e3358f0ea9af6f52ef5835f5bf6d6af4546111fb9adbbdba69e95"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b8eab4717d24fd30d7a0fb83217ffd9448394217355128ff00a33b9173d11e60"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "e2ba8809c91d0cc8f8aa614e70315d66f1efbe1891da3726b4acdd93076ec056"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "grep",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "4b4d7ac22cee34f92cd16fbe4193b0eb106e185100ea38f72b0190e1affaf933"
+      },
+      {
+        "index": 10,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 11,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "95f8bac0f89b6847a700ec338b371ccdd333b14177b4872fe0bbb69c40770080"
+      },
+      {
+        "index": 12,
+        "name": "grep",
+        "status": "completed",
+        "path": ".community/state.md",
+        "outputSha256": "a5b884e9e6a39c51f99bc77bcb3f77153605482ca31570d620690eb0667088a6"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+        "calls": 1,
+        "observedLines": 177,
+        "expectedLines": 177,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+        "calls": 1,
+        "observedLines": 211,
+        "expectedLines": 211,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1984,
+    "publicPlanSha256": "14f9799fe5043b5f967adc88e12e99440c10145793db62187a7c921d5a5843e0"
+  },
+  {
+    "id": "growing-candidate-1",
+    "exportSha256": "b4bfddff50cdd4bd4dcd3ea24bac87fc3c6fc89f150103eddb50a763aa2995e5",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "ea08287d09213b62eb80a11dc4f4e9edf2fbb79c7ac8b56c9725161d4c2ca8b5"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b8eab4717d24fd30d7a0fb83217ffd9448394217355128ff00a33b9173d11e60"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "bd0891e08442a1ccc36928ff0e38ab13043e35f5d6f95d6244d93348ca5f842e"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "grep",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "4b4d7ac22cee34f92cd16fbe4193b0eb106e185100ea38f72b0190e1affaf933"
+      },
+      {
+        "index": 10,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 11,
+        "name": "glob",
+        "status": "completed",
+        "outputSha256": "6b83ba26c721fe1eee8a0f5b3b2c78fc4d9a89c0a1b102eaced5ffc692d4fc4a"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+        "calls": 1,
+        "observedLines": 196,
+        "expectedLines": 196,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9",
+        "calls": 1,
+        "observedLines": 217,
+        "expectedLines": 217,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1598,
+    "publicPlanSha256": "2d7ea23d43e5817bb0ccf4e9ef01ef03e17a88e45e192aff558ad48ae4023732"
+  },
+  {
+    "id": "growing-baseline-2",
+    "exportSha256": "8a0fab970f06d121c4a12ee872a5d0317a6a18cdeec92257b411d16601e78b48",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "5f4807b20b1e3358f0ea9af6f52ef5835f5bf6d6af4546111fb9adbbdba69e95"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b8eab4717d24fd30d7a0fb83217ffd9448394217355128ff00a33b9173d11e60"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "e2ba8809c91d0cc8f8aa614e70315d66f1efbe1891da3726b4acdd93076ec056"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "4c5e44e257d6f1e020d5adddf166660c51f781a04f6e15f965eff76459926fdc"
+      },
+      {
+        "index": 9,
+        "name": "shell",
+        "status": "completed",
+        "commandSha256": "2d32104d00c0b44ee1bfddb9fc602b361640254ba82fccff741ad890b154e95d",
+        "outputSha256": "f8d88870245f97245980f27007b6c8fe8c1c72e6803898c5ccce4f0e170faf9a"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+        "calls": 1,
+        "observedLines": 177,
+        "expectedLines": 177,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+        "calls": 1,
+        "observedLines": 211,
+        "expectedLines": 211,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1592,
+    "publicPlanSha256": "064281fb355ae3524f9e8b567375da3b6697513dd714fe0a0af88d3331796e11"
+  },
+  {
+    "id": "growing-candidate-2",
+    "exportSha256": "76863cb62bf37d7d972cf085d3a236abd243e460f0610c2894b3e56001959a1e",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "ea08287d09213b62eb80a11dc4f4e9edf2fbb79c7ac8b56c9725161d4c2ca8b5"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b8eab4717d24fd30d7a0fb83217ffd9448394217355128ff00a33b9173d11e60"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "bd0891e08442a1ccc36928ff0e38ab13043e35f5d6f95d6244d93348ca5f842e"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "grep",
+        "status": "completed",
+        "path": "plan.md",
+        "outputSha256": "4b4d7ac22cee34f92cd16fbe4193b0eb106e185100ea38f72b0190e1affaf933"
+      },
+      {
+        "index": 10,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 11,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "95f8bac0f89b6847a700ec338b371ccdd333b14177b4872fe0bbb69c40770080"
+      },
+      {
+        "index": 12,
+        "name": "grep",
+        "status": "completed",
+        "path": ".community/state.md",
+        "outputSha256": "3f1978696a98cc50f712d00ba1ea947329ec8b98b8f7c5b7d5a056ee732590d2"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+        "calls": 1,
+        "observedLines": 196,
+        "expectedLines": 196,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9",
+        "calls": 1,
+        "observedLines": 217,
+        "expectedLines": 217,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1851,
+    "publicPlanSha256": "a6f0af3af66e444e63f51041086379b4cf9b87dcd0be4dcabed7a5004ce74a42"
+  },
+  {
+    "id": "growing-baseline-3",
+    "exportSha256": "41e6442dc13328921812eaafbd004df913557ae1d4659bbbab0cd49a00e16be7",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "5f4807b20b1e3358f0ea9af6f52ef5835f5bf6d6af4546111fb9adbbdba69e95"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b8eab4717d24fd30d7a0fb83217ffd9448394217355128ff00a33b9173d11e60"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "e2ba8809c91d0cc8f8aa614e70315d66f1efbe1891da3726b4acdd93076ec056"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "c32b41dac38d505ba21ffeded7775bfe4f8be91cea40488a544727b8e3d85f78"
+      },
+      {
+        "index": 9,
+        "name": "shell",
+        "status": "completed",
+        "commandSha256": "4e59b0d6b45ccae0bd86e52c83d605bddcd09ce70e440504f6cbaaf9cf394133",
+        "outputSha256": "42fd4b3814d80e6c41c259bdafcac320f5b717a2b0953d01df42703613a632f8"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "dfdb3fce805a195cdc324d636ca4f10c4d8d99edd8852bc0f505af2b9faf6735",
+        "calls": 1,
+        "observedLines": 177,
+        "expectedLines": 177,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "f1c4afd3ea69b71823f060f289dbfc15e2510e8087ac8106ff04e05b4bc86209",
+        "calls": 1,
+        "observedLines": 211,
+        "expectedLines": 211,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1883,
+    "publicPlanSha256": "6794b8976d9549d6e48b9bf91c6cd3cb390e48b4f6e8e655f64d20c23ae70ec4"
+  },
+  {
+    "id": "growing-candidate-3",
+    "exportSha256": "c3e9188e82ea7ab52c63f4fbd1730ac2af202070e60db114f67aab6884677c02",
+    "tools": [
+      {
+        "index": 0,
+        "name": "read",
+        "status": "completed",
+        "path": ".",
+        "outputSha256": "15143ddea37f3c1c8e21842d92a32fa447dac25a1267af48eba21585941fd963"
+      },
+      {
+        "index": 1,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/SKILL.md",
+        "outputSha256": "ea08287d09213b62eb80a11dc4f4e9edf2fbb79c7ac8b56c9725161d4c2ca8b5"
+      },
+      {
+        "index": 2,
+        "name": "read",
+        "status": "completed",
+        "path": "packet.md",
+        "outputSha256": "b8eab4717d24fd30d7a0fb83217ffd9448394217355128ff00a33b9173d11e60"
+      },
+      {
+        "index": 3,
+        "name": "read",
+        "status": "completed",
+        "path": ".gitignore",
+        "outputSha256": "b5752739e37e791c6b8df4d5d8bf65b9372336ecebaa91f1ecc7b6af52d5e7e2"
+      },
+      {
+        "index": 4,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "outputSha256": "4942c1ad036de63a4703ff858c8238c325ce35721ecbc392fae58182a39898d8"
+      },
+      {
+        "index": 5,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "outputSha256": "a519027e1fad07991c4d513af1903a2fd6ea6acb3b3e08ab68cfa93f81a87afe"
+      },
+      {
+        "index": 6,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "outputSha256": "bd0891e08442a1ccc36928ff0e38ab13043e35f5d6f95d6244d93348ca5f842e"
+      },
+      {
+        "index": 7,
+        "name": "read",
+        "status": "completed",
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "outputSha256": "2467238c0b34d59c0592934dbf1bd7f1dd8d423a118bf730296cd0d2cabe1dee"
+      },
+      {
+        "index": 8,
+        "name": "patch",
+        "status": "completed",
+        "outputSha256": "4c5e44e257d6f1e020d5adddf166660c51f781a04f6e15f965eff76459926fdc"
+      },
+      {
+        "index": 9,
+        "name": "shell",
+        "status": "completed",
+        "commandSha256": "88deaceaab302fd3b0400d1d6cc71944c7c47b889ad289bcbb759fe108f2f887",
+        "outputSha256": "8fafe26ce48fff0d846f45d62340eb5bc812b5a4057542a2e1b56edabcea945d"
+      }
+    ],
+    "reads": [
+      {
+        "path": "skills/discord-community-server/REFERENCE.md",
+        "sha256": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+        "calls": 1,
+        "observedLines": 149,
+        "expectedLines": 149,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/OPERATIONS.md",
+        "sha256": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+        "calls": 1,
+        "observedLines": 84,
+        "expectedLines": 84,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/STATE-TEMPLATE.md",
+        "sha256": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+        "calls": 1,
+        "observedLines": 196,
+        "expectedLines": 196,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/VERIFICATION.md",
+        "sha256": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+        "calls": 1,
+        "observedLines": 114,
+        "expectedLines": 114,
+        "completeRead": true
+      },
+      {
+        "path": "skills/discord-community-server/SKILL.md",
+        "sha256": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9",
+        "calls": 1,
+        "observedLines": 217,
+        "expectedLines": 217,
+        "completeRead": true
+      }
+    ],
+    "publicPlanWords": 1704,
+    "publicPlanSha256": "9bf547c03079fbeac6c96a9052772eef2b96c24f05df46e39cedffaf5f51578b"
+  }
+]

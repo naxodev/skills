@@ -1,0 +1,45 @@
+{
+  "frontmatter-mode-hook-guards": {
+    "baseline": "756952ab7107363282ac929145db5aa5a9a9a6fc91cccb733508a215053b0ee4",
+    "current": "756952ab7107363282ac929145db5aa5a9a9a6fc91cccb733508a215053b0ee4",
+    "byteIdentical": true
+  },
+  "operating-modes": {
+    "baseline": "1576a78da5c8ef544f8820f40112085fb92fe83d7196ebca996960e5d4bb0f2f",
+    "current": "1576a78da5c8ef544f8820f40112085fb92fe83d7196ebca996960e5d4bb0f2f",
+    "byteIdentical": true
+  },
+  "audit-A1-through-A3": {
+    "baseline": "0e3ebf5ce8c4bda6563371348b719a64a4a823cc64cce27c5a5b3deec851f1d9",
+    "current": "0e3ebf5ce8c4bda6563371348b719a64a4a823cc64cce27c5a5b3deec851f1d9",
+    "byteIdentical": true
+  },
+  "configuration-3-through-8-and-handoff": {
+    "baseline": "ad524d3fa997854726925048196261dc3c2b6b868d1ec20b291a3dcaa7ea80a4",
+    "current": "ad524d3fa997854726925048196261dc3c2b6b868d1ec20b291a3dcaa7ea80a4",
+    "byteIdentical": true
+  },
+  "REFERENCE.md": {
+    "baseline": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+    "current": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+    "byteIdentical": true
+  },
+  "OPERATIONS.md": {
+    "baseline": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+    "current": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+    "byteIdentical": true
+  },
+  "VERIFICATION.md": {
+    "baseline": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+    "current": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+    "byteIdentical": true
+  },
+  "conditionalPlanning": [
+    "For greenfield or improvement work, map three member journeys before choosing channels: arrive and orient; ask for support or report a bug; contribute or share feedback. For each, identify the entry point, next action, durable handoff destination, and expected human response and owner where needed. Use supplied staff availability and coverage; distinguish confirmed commitments from proposed estimates and unknowns.",
+    "**Complete when:** the mode, scope, project terms, and known durable reporting destinations are recorded, with missing information marked unknown. For greenfield or improvement work, all three journeys and supplied staff capacity are recorded before channel choices."
+  ],
+  "prompt": {
+    "byteIdentical": true,
+    "sha256": "5b479082ad230023a00762212684f0403e763bc56ba0b8b0596f322b9e831ead"
+  }
+}
