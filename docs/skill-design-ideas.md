@@ -68,6 +68,8 @@ The skill already uses community jobs. Journeys make those jobs observable and e
 
 **Planning-only evidence:** a [twelve-session comparison](../evals/results/2026-09-17-community-plan/README.md) passed all source criteria in both arms. Candidate plans place the three journeys before channel choices. Beta candidates use two member-facing channels versus four in baselines; this is not measured member-usability improvement. The change also resolves step 2's approval requirement for explicitly draft-only requests, which now finish unapproved before configuration.
 
+**Audit regression coverage:** [six current-instruction audits](../evals/results/2026-09-18-community-regression/README.md) passed all existing source criteria and the no-planning-detour check. Shared discovery kept journey mapping and staff budgeting scoped to greenfield/improvement work. Audits completed without operating-plan approval or private state. This is offline conformance, not measured uplift; live effects remain untested.
+
 **Measure:** whether a fresh member reaches the right destination without moderator correction.
 
 ### Budget the human work — adopted clarification

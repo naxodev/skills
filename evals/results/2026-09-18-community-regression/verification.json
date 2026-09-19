@@ -1,0 +1,10 @@
+{
+  "rootFrozenInstall": { "command": "bun install --frozen-lockfile", "exit": 0 },
+  "nestedFrozenInstall": { "directory": "skills/pr-walkthrough/scripts", "command": "bun install --frozen-lockfile", "exit": 0 },
+  "projectChecks": { "command": "bun run check", "exit": 0, "typecheck": "pass", "lint": "pass", "tests": { "pass": 40, "fail": 0 }, "repositoryValidation": "pass" },
+  "strictEvaluationTypecheck": { "command": "bunx tsc --noEmit -p evals/results/2026-09-18-community-regression/tsconfig.json", "exit": 0, "initialIssue": "The new tsconfig initially pointed one directory above the root; corrected before the passing check." },
+  "sourceReportValidation": { "command": "bun evals/results/2026-09-18-community-regression/score.ts", "exit": 0, "reports": 6 },
+  "guardComparison": { "command": "bun evals/results/2026-09-18-community-regression/guards.ts", "exit": 0 },
+  "exactLocalReads": { "command": "bun evals/results/2026-09-18-community-regression/inspect.ts", "exit": 0, "sessions": 6 },
+  "unrun": ["live Discord", "exact-current platform labels", "automatic skill routing", "live planning effects"]
+}

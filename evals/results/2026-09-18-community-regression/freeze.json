@@ -1,0 +1,64 @@
+{
+  "frozenAt": "2026-09-19T01:58:13.851Z",
+  "revision": "455bac4e",
+  "model": {
+    "providerID": "openai",
+    "id": "gpt-6-astra",
+    "variant": "medium"
+  },
+  "hashes": {
+    "current/REFERENCE.md": "460fb5939679d41206b2a85000c26c5315f65f4070d0f87a9b5420e16ca84c6b",
+    "current/OPERATIONS.md": "ab66109110ad7430b3146608daad191eb3586673b98f10ad1efe43dc993beb84",
+    "current/STATE-TEMPLATE.md": "b1ca2547c06839f86102ad3062505939460cbf7ef5ade154a5d2448c5c9571e2",
+    "current/VERIFICATION.md": "b9d1384dcb589b3bcc2f61d0c5ce6c9748471326f9909f2986a7d9a66d3133ae",
+    "current/SKILL.md": "545e7550ed8ff52765404f2e01b78dfef45d497ad152cf57e5fefa988e763cf9",
+    "discord-audit.md": "cbf730b02596917e3a4c963f0997962626567e2271033afb1f7df9520338dfdc",
+    "discord-audit-incomplete.md": "14da5d051c6983ccce602c9d7efc4cdaff4de34c1138e5f132bbf36f74ce030e"
+  },
+  "planSha256": "d9af64a38fc67badfbfa5e83241fe0dfa19e13788ce56cd0c54dfc62780a8073",
+  "runnerSha256": "0c3b65a94d22985ae4c395c7c6430bc4bf932960d02f7f1ced09d77640129c01",
+  "trials": [
+    {
+      "id": "discord-audit-1",
+      "fixture": "discord-audit",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-review-trial-discord-audit-1-20260918",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local reference files, not an installed skill. Audit this fictional server using only snapshot.md. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md in this directory. Keep the supplied input files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "promptSha256": "5b479082ad230023a00762212684f0403e763bc56ba0b8b0596f322b9e831ead"
+    },
+    {
+      "id": "discord-audit-2",
+      "fixture": "discord-audit",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-review-trial-discord-audit-2-20260918",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local reference files, not an installed skill. Audit this fictional server using only snapshot.md. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md in this directory. Keep the supplied input files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "promptSha256": "5b479082ad230023a00762212684f0403e763bc56ba0b8b0596f322b9e831ead"
+    },
+    {
+      "id": "discord-audit-3",
+      "fixture": "discord-audit",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-review-trial-discord-audit-3-20260918",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local reference files, not an installed skill. Audit this fictional server using only snapshot.md. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md in this directory. Keep the supplied input files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "promptSha256": "5b479082ad230023a00762212684f0403e763bc56ba0b8b0596f322b9e831ead"
+    },
+    {
+      "id": "discord-audit-incomplete-1",
+      "fixture": "discord-audit-incomplete",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-review-trial-discord-audit-incomplete-1-20260918",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local reference files, not an installed skill. Audit this fictional server using only snapshot.md. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md in this directory. Keep the supplied input files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "promptSha256": "5b479082ad230023a00762212684f0403e763bc56ba0b8b0596f322b9e831ead"
+    },
+    {
+      "id": "discord-audit-incomplete-2",
+      "fixture": "discord-audit-incomplete",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-review-trial-discord-audit-incomplete-2-20260918",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local reference files, not an installed skill. Audit this fictional server using only snapshot.md. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md in this directory. Keep the supplied input files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "promptSha256": "5b479082ad230023a00762212684f0403e763bc56ba0b8b0596f322b9e831ead"
+    },
+    {
+      "id": "discord-audit-incomplete-3",
+      "fixture": "discord-audit-incomplete",
+      "work": "/private/var/folders/fh/zx6t2vf55zd3rmf08mrg5jdc0000gn/T/opencode/community-review-trial-discord-audit-incomplete-3-20260918",
+      "prompt": "Read skills/discord-community-server/SKILL.md directly and follow its local reference files, not an installed skill. Audit this fictional server using only snapshot.md. Work offline, record gaps, and report the verification limits. No server changes are authorized. Save audit.md in this directory. Keep the supplied input files unchanged. Do not use live services, other skills, delegation, or files outside this workspace.",
+      "promptSha256": "5b479082ad230023a00762212684f0403e763bc56ba0b8b0596f322b9e831ead"
+    }
+  ]
+}
