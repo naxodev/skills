@@ -1,6 +1,6 @@
 {
   "name": "skills",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "naxodev's agent skills for Claude Code.",
   "author": { "name": "Nacho Vazquez" },
   "homepage": "https://github.com/naxodev/skills",

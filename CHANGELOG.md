@@ -4,6 +4,8 @@ This file records notable user-facing changes to the skills collection.
 
 ## Unreleased
 
+## 0.10.0 - 2026-09-19
+
 ### Changed
 
 - Discord greenfield and improvement plans now map member journeys before channels and budget recurring work against supplied staff capacity. Draft-only requests finish with an unapproved plan; configuration still requires approval.
