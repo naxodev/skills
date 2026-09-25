@@ -49,6 +49,8 @@ Choose the analysis budget using the number of distinct behaviors, not changed-l
 
 **Adopted source-scaled evidence:** the diff-tour now requests up to four contiguous verbatim excerpts, rather than two to four full hunks. One excerpt is sufficient when it explains the central mechanism. Rendered code likewise uses the smallest sufficient set, with one self-contained block preferred for simple changes. This removes the tiny-diff quota without removing central code evidence. The [current-candidate conformance report](../evals/results/2026-09-17-pr-evidence/README.md) records six source-grounded artifacts, with one complete code block in all three tiny walkthroughs and one interrupted report recovered by its native parent. It is not a paired improvement estimate.
 
+**Browser coverage:** a [direct text-only browser check](../evals/results/2026-09-25-browser/README.md) inspected three saved outputs at desktop and narrow widths. Code text, theme switching, and keyboard reading worked in the tested Chrome environment. This closes part of the earlier rendering gap without changing the writing instructions; audio and diagrams remain untested.
+
 ### Make the audience an input
 
 A maintainer needs mechanism and consequences. A new contributor needs domain context. A stakeholder needs user-visible effects.
