@@ -1,0 +1,19 @@
+{
+  "title": "Diagram rendering checks",
+  "eyebrow": "Local browser fixture",
+  "dek": "Flow and sequence diagrams should remain readable in both themes.",
+  "sections": [
+    {
+      "eyebrow": "Flow",
+      "title": "The bounded request path",
+      "content": "<p class=\"lead\">A local rendering fixture, not a claim about a production system.</p>{{DIAGRAM:0}}",
+      "diagrams": ["flowchart LR\n  A[Read request] --> B{Within limit?}\n  B -->|Yes| C[Process batch]\n  B -->|No| D[Retain excess]\n  C --> E[Return result]\n  D --> E"]
+    },
+    {
+      "eyebrow": "Sequence",
+      "title": "Follow the handoff",
+      "content": "<p>Three participants exchange a request and result.</p>{{DIAGRAM:0}}",
+      "diagrams": ["sequenceDiagram\n  participant Reader\n  participant Worker\n  participant Queue\n  Reader->>Worker: Request bounded batch\n  Worker->>Queue: Remove prefix\n  Queue-->>Worker: Selected jobs\n  Worker-->>Reader: Return batch"]
+    }
+  ]
+}

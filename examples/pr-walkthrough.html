@@ -157,8 +157,13 @@
       overflow-x: auto;
     }
     .mermaid-fig svg {
-      max-width: 100%;
+      display: block;
+      margin: 0 auto;
       height: auto;
+    }
+    .mermaid-fig:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
     .mermaid-dark { display: none; }
     :root[data-theme="dark"] .mermaid-light { display: none; }

@@ -1,0 +1,316 @@
+{
+  "date": "2026-09-26",
+  "baselineRevision": "f00f8675",
+  "mermaidVersion": "11.16.0",
+  "sources": {
+    "skills/pr-walkthrough/scripts/build.mjs": "e6fa8b6644bac146c0098f3db5e3cc08486e4c7540bacabfe594340be5c4aeea",
+    "skills/pr-walkthrough/template.html": "9533d9c31d9316365cd4e2a60faf4c2de833b8d8833b230cb341e0509717a130",
+    "evals/fixtures/diagram-layout/valid.json": "fcb30f82531bc5b7c94e745c4e07b9784b98ae3f3dfeb7c42b54e2c4da532613",
+    "evals/fixtures/diagram-layout/invalid.json": "e0fba910f7f08cfbdec1f20d7bef42b6dfb8d31faca38c1244861e9d730fb581",
+    "evals/fixtures/diagram-layout/assertions.js": "c9df3251eb649b903a2bcab207e3fcf927833a7f6fecead88c1e47c83e670177"
+  },
+  "htmlSha256": "bfa16621a2fe0b799fc2ddb88abe7dbf24f139e21bebfc89e1d16fc5ee249be7",
+  "before": {
+    "passed": false,
+    "failures": [
+      "Diagram 1: labels shrink with the viewport",
+      "Diagram 1: scroll container lacks named keyboard access",
+      "Diagram 2: labels shrink with the viewport",
+      "Diagram 2: scroll container lacks named keyboard access"
+    ],
+    "theme": "dark",
+    "viewport": 390,
+    "pageWidth": 390,
+    "measurements": [
+      {
+        "variants": 2,
+        "visibleVariants": 1,
+        "tabIndex": -1,
+        "label": null,
+        "width": 342,
+        "scrollWidth": 342,
+        "svgWidth": 342,
+        "naturalWidth": 759.421875
+      },
+      {
+        "variants": 2,
+        "visibleVariants": 1,
+        "tabIndex": -1,
+        "label": null,
+        "width": 342,
+        "scrollWidth": 342,
+        "svgWidth": 342,
+        "naturalWidth": 683
+      }
+    ]
+  },
+  "after": [
+    {
+      "passed": true,
+      "failures": [],
+      "theme": "dark",
+      "viewport": 1280,
+      "pageWidth": 1265,
+      "measurements": [
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-dark",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 1",
+          "width": 720,
+          "scrollWidth": 759,
+          "svgWidth": 759.421875,
+          "naturalWidth": 759.421875
+        },
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-dark",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 2",
+          "width": 720,
+          "scrollWidth": 720,
+          "svgWidth": 683,
+          "naturalWidth": 683
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "failures": [],
+      "theme": "dark",
+      "viewport": 390,
+      "pageWidth": 390,
+      "measurements": [
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-dark",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 1",
+          "width": 342,
+          "scrollWidth": 759,
+          "svgWidth": 759.421875,
+          "naturalWidth": 759.421875
+        },
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-dark",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 2",
+          "width": 342,
+          "scrollWidth": 683,
+          "svgWidth": 683,
+          "naturalWidth": 683
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "failures": [],
+      "theme": "dark",
+      "viewport": 320,
+      "pageWidth": 320,
+      "measurements": [
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-dark",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 1",
+          "width": 272,
+          "scrollWidth": 759,
+          "svgWidth": 759.421875,
+          "naturalWidth": 759.421875
+        },
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-dark",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 2",
+          "width": 272,
+          "scrollWidth": 683,
+          "svgWidth": 683,
+          "naturalWidth": 683
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "failures": [],
+      "theme": "light",
+      "viewport": 1280,
+      "pageWidth": 1265,
+      "measurements": [
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-light",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 1",
+          "width": 720,
+          "scrollWidth": 759,
+          "svgWidth": 759.421875,
+          "naturalWidth": 759.421875
+        },
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-light",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 2",
+          "width": 720,
+          "scrollWidth": 720,
+          "svgWidth": 683,
+          "naturalWidth": 683
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "failures": [],
+      "theme": "light",
+      "viewport": 390,
+      "pageWidth": 390,
+      "measurements": [
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-light",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 1",
+          "width": 342,
+          "scrollWidth": 759,
+          "svgWidth": 759.421875,
+          "naturalWidth": 759.421875
+        },
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-light",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 2",
+          "width": 342,
+          "scrollWidth": 683,
+          "svgWidth": 683,
+          "naturalWidth": 683
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "failures": [],
+      "theme": "light",
+      "viewport": 320,
+      "pageWidth": 320,
+      "measurements": [
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-light",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 1",
+          "width": 272,
+          "scrollWidth": 759,
+          "svgWidth": 759.421875,
+          "naturalWidth": 759.421875
+        },
+        {
+          "variants": 2,
+          "visibleVariants": 1,
+          "visibleVariant": "mermaid-variant mermaid-light",
+          "matchesTheme": true,
+          "tabIndex": 0,
+          "label": "Diagram 2",
+          "width": 272,
+          "scrollWidth": 683,
+          "svgWidth": 683,
+          "naturalWidth": 683
+        }
+      ]
+    }
+  ],
+  "wrongTheme": {
+    "passed": false,
+    "failures": [
+      "Diagram 1: visible variant does not match dark theme",
+      "Diagram 2: visible variant does not match dark theme"
+    ],
+    "theme": "dark",
+    "viewport": 1720,
+    "pageWidth": 1705,
+    "measurements": [
+      {
+        "variants": 2,
+        "visibleVariants": 1,
+        "visibleVariant": "mermaid-variant mermaid-light",
+        "matchesTheme": false,
+        "tabIndex": 0,
+        "label": "Diagram 1",
+        "width": 720,
+        "scrollWidth": 759,
+        "svgWidth": 759.421875,
+        "naturalWidth": 759.421875
+      },
+      {
+        "variants": 2,
+        "visibleVariants": 1,
+        "visibleVariant": "mermaid-variant mermaid-light",
+        "matchesTheme": false,
+        "tabIndex": 0,
+        "label": "Diagram 2",
+        "width": 720,
+        "scrollWidth": 720,
+        "svgWidth": 683,
+        "naturalWidth": 683
+      }
+    ]
+  },
+  "keyboard": [
+    {
+      "focus": "mermaid-fig",
+      "label": "Diagram 1",
+      "scrollLeft": 487,
+      "width": 272,
+      "scrollWidth": 759,
+      "right": 296,
+      "svgRight": 296.421875
+    },
+    {
+      "focus": "mermaid-fig",
+      "label": "Diagram 2",
+      "scrollLeft": 411,
+      "width": 272,
+      "scrollWidth": 683,
+      "right": 296,
+      "svgRight": 296
+    }
+  ],
+  "fallback": {
+    "source": "flowchart LR\n A[Unclosed node --> B\n",
+    "figures": 0,
+    "svgs": 0,
+    "visibleErrors": []
+  },
+  "console": {
+    "valid": "No messages",
+    "invalid": "Unsafe attempt to load URL file: ... 'file:' URLs are treated as unique security origins. Present before and after the fix."
+  },
+  "network": {
+    "valid": "One local HTML document request, status 200; no external requests observed"
+  }
+}

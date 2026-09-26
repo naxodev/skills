@@ -1,0 +1,731 @@
+{
+  "date": "2026-09-25",
+  "revision": "20bde2149f141765174ff57cdf3e6d77a90eef28",
+  "tool": "Chrome DevTools MCP; isolated file:// contexts",
+  "sources": [
+    {
+      "id": "sample",
+      "manifest": "examples/pr-walkthrough.json",
+      "html": "examples/pr-walkthrough.html",
+      "manifestSha256": "4ee0c9ff4a0ac5124b98a2f938b4187747e1ef5b09b55525f6bef7c95b7c65d2",
+      "htmlSha256": "b72996f769b08a77a555031f6a5ee70cba479d4731e2c64048af96cea32f1257"
+    },
+    {
+      "id": "credential",
+      "manifest": "evals/results/2026-09-17-pr-evidence/manifests/pr-grounding-quality-1.json",
+      "html": ".evals/browser-20260925/credential.html",
+      "manifestSha256": "f1334101e8193fa365f54d3cdcc3cf45e3b489aa4835e1666c238ea07546b7b3",
+      "htmlSha256": "b0b2abc12eaf2d5dcfb8b92087375aa213fcc24e6519d7a154af20fef3072582"
+    },
+    {
+      "id": "batch",
+      "manifest": "evals/results/2026-09-17-pr-evidence/manifests/pr-batch-limit-3.json",
+      "html": ".evals/browser-20260925/batch.html",
+      "manifestSha256": "de8d4692de928a5104a59db7d96e74f4e09039b3e6235b09630a57c05adbe757",
+      "htmlSha256": "76a91c608e50c058857405fed9b7119060e55f42a38aca9a061156e8ecafe9c6"
+    }
+  ],
+  "records": [
+    {
+      "source": "sample",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/examples/pr-walkthrough.html",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "pageWidth": 1280,
+        "theme": "light",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "false"
+        },
+        "headings": [
+          {
+            "text": "Refresh before the first request",
+            "width": 720
+          },
+          {
+            "text": "1 · The settingThe request owned the refresh",
+            "width": 720
+          },
+          {
+            "text": "2 · Why it mattersThe first request paid for the ordering",
+            "width": 720
+          },
+          {
+            "text": "3 · What we builtMake freshness a precondition of sending",
+            "width": 720
+          },
+          {
+            "text": "4 · The trade-offA check before dispatch",
+            "width": 720
+          },
+          {
+            "text": "5 · The short versionOne ordering fixed, one path left to follow",
+            "width": 720
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 720,
+            "scrollWidth": 720,
+            "text": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 11.600000023841858,
+            "domContentLoaded": 10.600000023841858
+          }
+        ]
+      }
+    },
+    {
+      "source": "sample",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/examples/pr-walkthrough.html",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "pageWidth": 390,
+        "theme": "light",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "false"
+        },
+        "headings": [
+          {
+            "text": "Refresh before the first request",
+            "width": 342
+          },
+          {
+            "text": "1 · The settingThe request owned the refresh",
+            "width": 342
+          },
+          {
+            "text": "2 · Why it mattersThe first request paid for the ordering",
+            "width": 342
+          },
+          {
+            "text": "3 · What we builtMake freshness a precondition of sending",
+            "width": 342
+          },
+          {
+            "text": "4 · The trade-offA check before dispatch",
+            "width": 342
+          },
+          {
+            "text": "5 · The short versionOne ordering fixed, one path left to follow",
+            "width": 342
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 342,
+            "scrollWidth": 560,
+            "text": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 13.100000023841858,
+            "domContentLoaded": 12.199999928474426
+          }
+        ]
+      }
+    },
+    {
+      "source": "sample",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/examples/pr-walkthrough.html",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "pageWidth": 320,
+        "theme": "light",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "false"
+        },
+        "headings": [
+          {
+            "text": "Refresh before the first request",
+            "width": 272
+          },
+          {
+            "text": "1 · The settingThe request owned the refresh",
+            "width": 272
+          },
+          {
+            "text": "2 · Why it mattersThe first request paid for the ordering",
+            "width": 272
+          },
+          {
+            "text": "3 · What we builtMake freshness a precondition of sending",
+            "width": 272
+          },
+          {
+            "text": "4 · The trade-offA check before dispatch",
+            "width": 272
+          },
+          {
+            "text": "5 · The short versionOne ordering fixed, one path left to follow",
+            "width": 272
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 272,
+            "scrollWidth": 560,
+            "text": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 13.100000023841858,
+            "domContentLoaded": 12.199999928474426
+          }
+        ]
+      }
+    },
+    {
+      "source": "credential",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/.evals/browser-20260925/credential.html",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "pageWidth": 1280,
+        "theme": "dark",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "true"
+        },
+        "headings": [
+          {
+            "text": "Refresh before the request leaves",
+            "width": 720
+          },
+          {
+            "text": "1 · The settingThe refresh came after the send",
+            "width": 720
+          },
+          {
+            "text": "2 · The gap / motivationThe first request reached the check too late",
+            "width": 720
+          },
+          {
+            "text": "3 · What we builtWait for refresh, then dispatch",
+            "width": 720
+          },
+          {
+            "text": "4 · The short versionPut credential preparation first",
+            "width": 720
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 720,
+            "scrollWidth": 720,
+            "text": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 29.799999952316284,
+            "domContentLoaded": 29.100000023841858
+          }
+        ]
+      }
+    },
+    {
+      "source": "credential",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/.evals/browser-20260925/credential.html",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "pageWidth": 390,
+        "theme": "dark",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "true"
+        },
+        "headings": [
+          {
+            "text": "Refresh before the request leaves",
+            "width": 342
+          },
+          {
+            "text": "1 · The settingThe refresh came after the send",
+            "width": 342
+          },
+          {
+            "text": "2 · The gap / motivationThe first request reached the check too late",
+            "width": 342
+          },
+          {
+            "text": "3 · What we builtWait for refresh, then dispatch",
+            "width": 342
+          },
+          {
+            "text": "4 · The short versionPut credential preparation first",
+            "width": 342
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 342,
+            "scrollWidth": 560,
+            "text": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 12.600000023841858,
+            "domContentLoaded": 11.700000047683716
+          }
+        ]
+      }
+    },
+    {
+      "source": "credential",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/.evals/browser-20260925/credential.html",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "pageWidth": 320,
+        "theme": "dark",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "true"
+        },
+        "headings": [
+          {
+            "text": "Refresh before the request leaves",
+            "width": 272
+          },
+          {
+            "text": "1 · The settingThe refresh came after the send",
+            "width": 272
+          },
+          {
+            "text": "2 · The gap / motivationThe first request reached the check too late",
+            "width": 272
+          },
+          {
+            "text": "3 · What we builtWait for refresh, then dispatch",
+            "width": 272
+          },
+          {
+            "text": "4 · The short versionPut credential preparation first",
+            "width": 272
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 272,
+            "scrollWidth": 560,
+            "text": "export async function request(client, payload) {\n  if (client.expiresAt <= Date.now()) await client.refresh();\n  const response = await client.send(payload);\n  return response;\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 12.600000023841858,
+            "domContentLoaded": 11.700000047683716
+          }
+        ]
+      }
+    },
+    {
+      "source": "batch",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/.evals/browser-20260925/batch.html",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "pageWidth": 1280,
+        "theme": "light",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "false"
+        },
+        "headings": [
+          {
+            "text": "A ceiling on each send",
+            "width": 720
+          },
+          {
+            "text": "1 · The settingEvery pending job left at once",
+            "width": 720
+          },
+          {
+            "text": "2 · The gap / motivationA growing queue meant a growing batch",
+            "width": 720
+          },
+          {
+            "text": "3 · What we builtConfigure the count, then retain the remainder",
+            "width": 720
+          },
+          {
+            "text": "4 · The short versionSend a bounded batch and leave the rest queued",
+            "width": 720
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 720,
+            "scrollWidth": 720,
+            "text": "export const endpoint = '/jobs';\nexport const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          },
+          {
+            "width": 720,
+            "scrollWidth": 720,
+            "text": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          },
+          {
+            "width": 720,
+            "scrollWidth": 720,
+            "text": "import { endpoint, batchLimit } from './config';\nimport { drain } from './queue';\nexport async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 15.399999976158142,
+            "domContentLoaded": 14.5
+          }
+        ]
+      }
+    },
+    {
+      "source": "batch",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/.evals/browser-20260925/batch.html",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "pageWidth": 390,
+        "theme": "light",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "false"
+        },
+        "headings": [
+          {
+            "text": "A ceiling on each send",
+            "width": 342
+          },
+          {
+            "text": "1 · The settingEvery pending job left at once",
+            "width": 342
+          },
+          {
+            "text": "2 · The gap / motivationA growing queue meant a growing batch",
+            "width": 342
+          },
+          {
+            "text": "3 · What we builtConfigure the count, then retain the remainder",
+            "width": 342
+          },
+          {
+            "text": "4 · The short versionSend a bounded batch and leave the rest queued",
+            "width": 342
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 342,
+            "scrollWidth": 594,
+            "text": "export const endpoint = '/jobs';\nexport const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          },
+          {
+            "width": 342,
+            "scrollWidth": 371,
+            "text": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          },
+          {
+            "width": 342,
+            "scrollWidth": 474,
+            "text": "import { endpoint, batchLimit } from './config';\nimport { drain } from './queue';\nexport async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 13.099999904632568,
+            "domContentLoaded": 12.099999904632568
+          }
+        ]
+      }
+    },
+    {
+      "source": "batch",
+      "checks": {
+        "viewport": true,
+        "noPageOverflow": true,
+        "codeMatchesManifest": true,
+        "headingCount": true,
+        "textOnly": true,
+        "focusableCode": true
+      },
+      "observation": {
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "url": "file:///Users/nachovazquez/work/1-projects/naxodev/skills/.evals/browser-20260925/batch.html",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "pageWidth": 320,
+        "theme": "light",
+        "themeButton": {
+          "label": "Toggle color theme",
+          "pressed": "false"
+        },
+        "headings": [
+          {
+            "text": "A ceiling on each send",
+            "width": 272
+          },
+          {
+            "text": "1 · The settingEvery pending job left at once",
+            "width": 272
+          },
+          {
+            "text": "2 · The gap / motivationA growing queue meant a growing batch",
+            "width": 272
+          },
+          {
+            "text": "3 · What we builtConfigure the count, then retain the remainder",
+            "width": 272
+          },
+          {
+            "text": "4 · The short versionSend a bounded batch and leave the rest queued",
+            "width": 272
+          }
+        ],
+        "audio": 0,
+        "links": [],
+        "code": [
+          {
+            "width": 272,
+            "scrollWidth": 594,
+            "text": "export const endpoint = '/jobs';\nexport const batchLimit = Number(process.env.BATCH_LIMIT ?? 100);\nif (!Number.isInteger(batchLimit) || batchLimit < 1) {\n  throw new Error('BATCH_LIMIT must be a positive integer');\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          },
+          {
+            "width": 272,
+            "scrollWidth": 371,
+            "text": "export function drain(pending, limit) {\n  return pending.splice(0, limit);\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          },
+          {
+            "width": 272,
+            "scrollWidth": 474,
+            "text": "import { endpoint, batchLimit } from './config';\nimport { drain } from './queue';\nexport async function tick(pending, send) {\n  await send(endpoint, drain(pending, batchLimit));\n}",
+            "tabindex": "0",
+            "overflow": "auto"
+          }
+        ],
+        "navigation": [
+          {
+            "duration": 13.099999904632568,
+            "domContentLoaded": 12.099999904632568
+          }
+        ]
+      }
+    }
+  ],
+  "interactions": {
+    "credential-toggle": {
+      "focus": "BUTTON",
+      "theme": "light",
+      "pressed": "false"
+    },
+    "credential-keyboard": {
+      "focus": "PRE",
+      "codeScroll": 40,
+      "width": 272,
+      "scrollWidth": 560
+    },
+    "credential-footer": {
+      "scrollY": 2839,
+      "footerTop": 653.0078125,
+      "footerBottom": 730.1953125,
+      "viewport": 844
+    },
+    "batch-keyboard-0": {
+      "focus": "PRE",
+      "block": 0,
+      "left": 40,
+      "width": 272,
+      "scrollWidth": 594
+    },
+    "batch-keyboard-1": {
+      "focus": "PRE",
+      "block": 1,
+      "left": 40,
+      "width": 272,
+      "scrollWidth": 371
+    },
+    "batch-keyboard-2": {
+      "focus": "PRE",
+      "block": 2,
+      "left": 40,
+      "width": 272,
+      "scrollWidth": 474
+    },
+    "batch-footer": {
+      "scrollY": 3552,
+      "footerTop": 675.421875,
+      "footerBottom": 730.515625,
+      "viewport": 844
+    }
+  },
+  "consoleAndNetwork": {
+    "method": "list_console_messages and list_network_requests on each explicit page after layout and theme checks",
+    "sample": {
+      "consoleMessages": 0,
+      "requests": 1,
+      "requestType": "local HTML document",
+      "status": 200
+    },
+    "credential": {
+      "consoleMessages": 0,
+      "requests": 1,
+      "requestType": "local HTML document",
+      "status": 200
+    },
+    "batch": {
+      "consoleMessages": 0,
+      "requests": 1,
+      "requestType": "local HTML document",
+      "status": 200
+    }
+  },
+  "additionalObservedInteractions": {
+    "sample": "Mouse activation changed dark/aria-pressed=true to light/false. Tab focused PRE; ArrowRight moved code scrollLeft to 40. PageDown reached the footer.",
+    "batch": "Tab and Space changed dark/true to light/false. Reload retained light/false without inspecting browser storage."
+  }
+}
