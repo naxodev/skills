@@ -1,0 +1,13 @@
+{
+  "title": "Invalid diagram fallback",
+  "eyebrow": "Local browser fixture",
+  "dek": "Malformed syntax should leave readable source rather than an orphan error graphic.",
+  "sections": [
+    {
+      "eyebrow": "Fallback",
+      "title": "Keep the supplied source",
+      "content": "<p class=\"lead\">This diagram is deliberately invalid.</p>{{DIAGRAM:0}}",
+      "diagrams": ["flowchart LR\n A[Unclosed node --> B"]
+    }
+  ]
+}

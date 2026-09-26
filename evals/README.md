@@ -54,6 +54,9 @@ The PR case supplies the fetched JSON directly; it evaluates analysis and render
 See [cases.json](cases.json) for prompts and criteria. Run artifacts under `.evals/` are ignored by version control.
 When sharing a result, include the case, model, revision, attempts, criterion outcomes, and evidence locations.
 
+- [Text-only browser check](results/2026-09-25-browser/README.md): three saved walkthroughs fit desktop and narrow viewports, preserved code text, and supported theme switching and keyboard reading. Audio, diagrams, and other browser engines remain untested.
+- [Diagram browser regression](results/2026-09-26-diagrams/README.md): reproduced and fixed shrunken diagram labels; flow and sequence fixtures retain natural size and keyboard scrolling in both themes. A file-origin diagnostic also reproduces without Mermaid; the controlled follow-up records that attribution limit.
+
 - [0.9.0 release preparation](results/2026-09-17-release/README.md): bounded cross-skill selection simulation and offline workflow smoke, with frozen inputs, source review, independent replay, and explicit coverage limits.
 
 - [PR walkthrough evidence experiment](results/2026-09-07-pr-grounding/README.md): baseline and two prompt revisions, three runs each. Neither revision improved the evidence criterion; both were reverted.

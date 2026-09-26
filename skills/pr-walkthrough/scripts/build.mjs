@@ -442,6 +442,9 @@ if (hasMermaid) {
       var src = pre.textContent.trim();
       var fig = document.createElement('div');
       fig.className = 'mermaid-fig';
+      fig.tabIndex = 0;
+      fig.setAttribute('role', 'group');
+      fig.setAttribute('aria-label', 'Diagram ' + (i + 1));
       var renderedBoth = true;
       for (var v = 0; v < VARIANTS.length; v++) {
         var variant = VARIANTS[v];
@@ -457,6 +460,12 @@ if (hasMermaid) {
           var wrap = document.createElement('div');
           wrap.className = 'mermaid-variant mermaid-' + variant.name;
           wrap.innerHTML = out.svg;
+          // Preserve label size; the surrounding figure scrolls on narrow screens.
+          var svg = wrap.querySelector('svg');
+          if (svg && svg.viewBox.baseVal.width > 0) {
+            svg.style.width = svg.viewBox.baseVal.width + 'px';
+            svg.style.maxWidth = 'none';
+          }
           fig.appendChild(wrap);
         } catch (err) {
           // mermaid.render can throw on bad syntax, and on failure it may
