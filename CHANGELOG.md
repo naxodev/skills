@@ -4,6 +4,8 @@ This file records notable user-facing changes to the skills collection.
 
 ## Unreleased
 
+## 0.10.1 - 2026-09-26
+
 ### Fixed
 
 - Kept walkthrough diagrams at their natural size in horizontally scrollable, keyboard-focusable containers so narrow screens do not shrink their labels.
